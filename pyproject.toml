@@ -1,5 +1,5 @@
 [project]
 name = "ubx-sdk-azure"
 version = "0.0.0"
-description = "Generated Python bindings for hashicorp/azurerm@5.0.0 (ubx sdk gen). DO NOT EDIT."
+description = "Generated Python bindings for hashicorp/azurerm@5.0.1 (ubx sdk gen). DO NOT EDIT."
 dependencies = ["ubx_sdk"]
