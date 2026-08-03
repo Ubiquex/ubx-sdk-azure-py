@@ -1,0 +1,240 @@
+name: version-watch
+
+# Weekly check against the real Terraform Registry provider-versions API
+# for a newer hashicorp/azurerm release. On a newer version: bumps
+# VERSION, re-runs `ubx sdk gen --lang py --out .` against it, and opens
+# a PR with the diff for review. Never auto-merges (UBI-99/104/105/108/
+# 109/111/112/113/114/115/116).
+#
+# Ported from ubx-sdk-kubernetes-py's own proven version-watch.yml -- same
+# registry-call shape (just a different provider), same $RUNNER_TEMP
+# scratch-isolation. `ubx_sdk` (the shared Python runtime) resolves via
+# plain PYTHONPATH (no module-proxy like Go, no import map like Deno) --
+# it's vendored into vendor/ubx_sdk/ (see this repo's own README) rather
+# than published to PyPI (re-checked live via the JSON + Simple index
+# APIs, not the bot-challenged HTML page -- UBI-111/114), so vendor/ and
+# .gitignore are excluded from the regeneration diff the same way
+# go.mod/go.sum and deno.json/vendor/ were for Go/TS.
+#
+# UBI-117, checked BEFORE the first dispatch (UBI-116's own lesson,
+# learned the hard way on this same repo's TS sibling -- don't discover
+# this via a bad PR diff): Azure is the first provider in this family
+# whose repo shortname (azure) diverges from its mechanically-derived
+# one (azurerm) -- ubx sdk gen's shortName derivation writes
+# pyproject.toml's "name" as "ubx-sdk-azurerm" on every regen, silently
+# clobbering this repo's real name, "ubx-sdk-azure". Corrected below
+# with a sed, same shape as ubx-sdk-azure-ts's package.json fix and
+# ubx-sdk-azure-go's go.mod fix -- pyproject.toml can't just be excluded
+# from regen like VERSION, since its "description" field legitimately
+# needs the live version-stamp update every run.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # every Monday, 06:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  check-and-regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out ubx-sdk-azure-py
+        uses: actions/checkout@v4
+
+      - name: Query Terraform Registry for the latest hashicorp/azurerm version
+        id: registry
+        run: |
+          set -euo pipefail
+          # Confirmed real API (HashiCorp's own docs, same shape as
+          # hashicorp/aws's/hashicorp/google's/hashicorp/kubernetes's --
+          # UBI-99/111/114): no auth needed.
+          response="$(curl -sf https://registry.terraform.io/v1/providers/hashicorp/azurerm/versions)"
+          latest="$(echo "$response" | jq -r '.versions[].version' | sort -V | tail -1)"
+          if [ -z "$latest" ]; then
+            echo "registry query returned no versions -- failing loudly rather than silently no-op'ing" >&2
+            exit 1
+          fi
+          echo "latest=$latest" >> "$GITHUB_OUTPUT"
+          echo "Terraform Registry reports latest hashicorp/azurerm version: $latest"
+          # Known, accepted limitation for v1 (UBI-99): `sort -V` on
+          # semver strings is usually correct but not bulletproof against
+          # pre-release tags. Fine for v1; harden if HashiCorp ever ships
+          # a pre-release that trips this.
+
+      - name: Compare against this repo's pinned version
+        id: compare
+        run: |
+          set -euo pipefail
+          current="$(cat VERSION)"
+          echo "current=$current" >> "$GITHUB_OUTPUT"
+          echo "This repo was last generated from: $current"
+          if [ "$current" = "${{ steps.registry.outputs.latest }}" ]; then
+            echo "newer=false" >> "$GITHUB_OUTPUT"
+            echo "Already current -- nothing to do."
+          else
+            echo "newer=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # --- everything below only runs when a newer version was found ---
+
+      - name: Check out ubiquex (to build ubx from source)
+        if: steps.compare.outputs.newer == 'true'
+        run: |
+          set -euo pipefail
+          # Plain `git clone` into $RUNNER_TEMP -- deliberately OUTSIDE
+          # this repo's own checkout (which doubles as $GITHUB_WORKSPACE).
+          # ubx-sdk-aws-go's own first live run generated into a scratch
+          # dir INSIDE the repo checkout; `rsync --delete`'s destination
+          # scan then treated its own still-being-read source as
+          # extraneous destination content and deleted it mid-transfer
+          # ("file has vanished", rsync exit 24). Keeping every scratch
+          # path under $RUNNER_TEMP makes that class of source/destination
+          # overlap structurally impossible.
+          #
+          # Fine-grained PAT, contents:read only on Ubiquex/ubiquex.
+          # Needed because ubiquex is private and the default
+          # GITHUB_TOKEN here is scoped to this repo
+          # (ubx-sdk-azure-py) only.
+          git clone --depth=1 \
+            "https://x-access-token:${{ secrets.UBIQUEX_SOURCE_TOKEN }}@github.com/Ubiquex/ubiquex.git" \
+            "${{ runner.temp }}/ubiquex-src"
+
+      - name: Set up Go
+        if: steps.compare.outputs.newer == 'true'
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: ${{ runner.temp }}/ubiquex-src/go.mod
+
+      - name: Set up Python
+        if: steps.compare.outputs.newer == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Build ubx
+        if: steps.compare.outputs.newer == 'true'
+        run: |
+          set -euo pipefail
+          # Built from ubiquex's own `main` HEAD, not a tagged release --
+          # no release cadence yet that tracks feature landings. Accepted
+          # tradeoff for v1. (`-C` must be the FIRST flag to `go build`.)
+          go build -C "${{ runner.temp }}/ubiquex-src" -o "${{ runner.temp }}/ubx" ./cmd/ubx
+          "${{ runner.temp }}/ubx" version
+
+      - name: Regenerate bindings
+        if: steps.compare.outputs.newer == 'true'
+        run: |
+          set -euo pipefail
+          gendir="${{ runner.temp }}/ubxgen"
+          mkdir -p "$gendir/.ubx"
+          cat > "$gendir/.ubx/config.hcl" <<EOF
+          providers = {
+            "hashicorp/azurerm" = "${{ steps.registry.outputs.latest }}"
+          }
+          EOF
+          # `ubx sdk gen` is schema-only: no Configure, no credentials
+          # needed (confirmed by its own --help text, and by this job
+          # never setting any ARM_*/Azure credential at all).
+          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --lang py --out out )
+          # `--out` writes a repo-shaped tree under <out>/<lang>/<source>;
+          # flatten it back to this repo's own root, matching the initial
+          # commit's own layout (pyproject.toml, azurerm/ namespace
+          # directory per UBI-106, at the repo root). vendor//.gitignore
+          # are excluded deliberately: `ubx sdk gen` never generates
+          # either (this repo's own `ubx_sdk` vendoring is hand-
+          # maintained, not codegen output) -- without this exclusion,
+          # rsync --delete would silently wipe the vendored runtime every
+          # run.
+          rsync -a --delete \
+            --exclude='.git' --exclude='.github' --exclude='VERSION' --exclude='README.md' \
+            --exclude='.gitignore' --exclude='vendor' \
+            "$gendir/out/py/hashicorp-azurerm/" ./
+          # pyproject.toml's "name" is NOT excluded above (its
+          # "description" needs the version bump like the kubernetes-py
+          # sibling's own manifest stamp does) -- but `ubx sdk gen`'s
+          # shortName is derived mechanically from the provider source
+          # ("hashicorp/azurerm" -> "azurerm"), so every regen writes
+          # "ubx-sdk-azurerm" there, silently overwriting this repo's
+          # real name, "ubx-sdk-azure" (matching the repo's own name,
+          # ubx-sdk-azure-py -- the same divergence UBI-116 found and
+          # fixed for ubx-sdk-azure-ts's package.json, and UBI-115 for
+          # ubx-sdk-azure-go's go.mod). Corrected back in place every
+          # run, checked and fixed BEFORE this repo's first dispatch,
+          # not discovered via a bad PR diff.
+          sed -i 's/^name = "ubx-sdk-azurerm"$/name = "ubx-sdk-azure"/' pyproject.toml
+          echo "${{ steps.registry.outputs.latest }}" > VERSION
+
+      - name: Sanity-check the regenerated tree -- real import of every module
+        if: steps.compare.outputs.newer == 'true'
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+        run: |
+          set -euo pipefail
+          # Matches UBI-98/105/111/114's own verification bar: a real
+          # recursive `importlib.import_module` of every generated
+          # module (not a syntax lint) -- resolved via plain PYTHONPATH,
+          # no import-map equivalent needed the way Deno's deno.json
+          # required for TS. hashicorp/azurerm has no sibling-`_config`
+          # collision surface (UBI-115/116/117 -- checked directly,
+          # 0/1,103 candidates), so this import is the same general
+          # regression guard every sibling repo runs, not a targeted
+          # re-check of a known-risky pattern here.
+          python3 - <<'PYEOF'
+          import os, sys, importlib
+
+          repo_root = os.getcwd()
+          vendor = os.path.join(repo_root, "vendor")
+          sys.path.insert(0, vendor)
+          sys.path.insert(0, repo_root)
+
+          count = 0
+          errors = []
+          for dirpath, dirnames, filenames in os.walk(repo_root):
+              dirnames[:] = [d for d in dirnames if d not in (".git", ".github", "vendor")]
+              for f in filenames:
+                  if not f.endswith(".py"):
+                      continue
+                  rel = os.path.relpath(os.path.join(dirpath, f), repo_root)
+                  mod = rel[:-3].replace(os.sep, ".")
+                  if mod.endswith(".__init__"):
+                      mod = mod[: -len(".__init__")]
+                  try:
+                      importlib.import_module(mod)
+                      count += 1
+                  except Exception as e:
+                      errors.append((mod, str(e)))
+
+          print(f"imported {count} modules OK")
+          if errors:
+              print(f"{len(errors)} ERRORS:")
+              for m, e in errors:
+                  print(f"  {m}: {e}")
+              sys.exit(1)
+          print("ZERO errors")
+          PYEOF
+
+      - name: Open PR
+        if: steps.compare.outputs.newer == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git config user.name "ubx-bot"
+          git config user.email "actions@users.noreply.github.com"
+          branch="sdk-regen/hashicorp-azurerm-${{ steps.registry.outputs.latest }}"
+          git checkout -b "$branch"
+          git add -A
+          git commit -m "sdk: regenerate from hashicorp/azurerm@${{ steps.registry.outputs.latest }}"
+          git push origin "$branch" --force
+          gh pr create \
+            --title "sdk: regenerate from hashicorp/azurerm@${{ steps.registry.outputs.latest }}" \
+            --body "Automated regeneration (\`.github/workflows/version-watch.yml\`) triggered by a newer \`hashicorp/azurerm\` version on the Terraform Registry.
+
+          Previous: \`${{ steps.compare.outputs.current }}\`
+          New: \`${{ steps.registry.outputs.latest }}\`
+
+          New files = new resource. Modified files = an existing resource's schema changed. This never auto-merges -- review the diff before merging." \
+            --base main --head "$branch"
