@@ -16,15 +16,12 @@ regenerated diff for review (never auto-merges). The version this repo was
 last generated from is tracked in `VERSION`, not `.ubx/config.hcl` — this
 repo carries no ubx stack/config of its own, only generated bindings.
 
-**Shared runtime (`ubx_sdk`)**: vendored directly into this repo at
-`vendor/ubx_sdk/` rather than published to PyPI — `pypi.org/project/ubx-sdk/`
-re-checked live (not assumed) via its JSON API (`pypi.org/pypi/ubx-sdk/json`)
-and Simple index (`pypi.org/simple/ubx-sdk/`), both still 404 as of this
-repo's own creation (2026-08-04), same finding UBI-111/114 made for
-`ubx-sdk-google-py`/`ubx-sdk-kubernetes-py`. Resolution is via `PYTHONPATH`
-(both this repo's root and `vendor/` need to be on it). See
-[UBI-107](https://github.com/ubiquex/ubiquex) for the real PyPI-publish
-follow-up.
+**Shared runtime (`ubx_sdk`)**: a real, published PyPI package —
+[ubx-sdk](https://pypi.org/project/ubx-sdk/) (import name `ubx_sdk`,
+UBI-107) — declared as an ordinary dependency in `pyproject.toml`. This
+repo previously vendored a local copy at `vendor/ubx_sdk/` before the
+real publish existed — that vendored copy is gone as of the switch to
+the real package.
 
 **Python sibling to `ubx-sdk-azure-go` (UBI-115) / `ubx-sdk-azure-ts`
 (UBI-116) — real findings, checked directly for Python, not assumed to
