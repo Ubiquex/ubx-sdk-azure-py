@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryIntegrationRuntimeSelfHosted_RbacAuthorization:
@@ -18,14 +18,14 @@ class FactoryIntegrationRuntimeSelfHosted_Timeouts:
     update: Any = None
 
 _FactoryIntegrationRuntimeSelfHosted_RbacAuthorizationFields = {
-    "resource_id": sdk.FieldSpec(wire_name="resource_id"),
+    "resource_id": ubx.FieldSpec(wire_name="resource_id"),
 }
 
 _FactoryIntegrationRuntimeSelfHosted_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -38,20 +38,20 @@ class FactoryIntegrationRuntimeSelfHostedConfig:
     rbac_authorization: Any = None
     timeouts: Any = None
 
-FactoryIntegrationRuntimeSelfHosted = sdk.ResourceBinding(
+FactoryIntegrationRuntimeSelfHosted = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_integration_runtime_self_hosted",
     fields={
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "self_contained_interactive_authoring_enabled": sdk.FieldSpec(wire_name="self_contained_interactive_authoring_enabled"),
-        "rbac_authorization": sdk.FieldSpec(
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "self_contained_interactive_authoring_enabled": ubx.FieldSpec(wire_name="self_contained_interactive_authoring_enabled"),
+        "rbac_authorization": ubx.FieldSpec(
             wire_name="rbac_authorization",
             kind="set",
             fields=_FactoryIntegrationRuntimeSelfHosted_RbacAuthorizationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryIntegrationRuntimeSelfHosted_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Subnet_Delegation_ServiceDelegation:
@@ -35,13 +35,13 @@ class Subnet_Timeouts:
     update: Any = None
 
 _Subnet_Delegation_ServiceDelegationFields = {
-    "actions": sdk.FieldSpec(wire_name="actions"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "actions": ubx.FieldSpec(wire_name="actions"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _Subnet_DelegationFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "service_delegation": sdk.FieldSpec(
+    "name": ubx.FieldSpec(wire_name="name"),
+    "service_delegation": ubx.FieldSpec(
         wire_name="service_delegation",
         kind="list",
         fields=_Subnet_Delegation_ServiceDelegationFields,
@@ -49,21 +49,21 @@ _Subnet_DelegationFields = {
 }
 
 _Subnet_IpAddressPoolFields = {
-    "allocated_ip_address_prefixes": sdk.FieldSpec(wire_name="allocated_ip_address_prefixes"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "number_of_ip_addresses": sdk.FieldSpec(wire_name="number_of_ip_addresses"),
+    "allocated_ip_address_prefixes": ubx.FieldSpec(wire_name="allocated_ip_address_prefixes"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "number_of_ip_addresses": ubx.FieldSpec(wire_name="number_of_ip_addresses"),
 }
 
 _Subnet_ServiceEndpointFields = {
-    "network_identifier": sdk.FieldSpec(wire_name="network_identifier"),
-    "service": sdk.FieldSpec(wire_name="service"),
+    "network_identifier": ubx.FieldSpec(wire_name="network_identifier"),
+    "service": ubx.FieldSpec(wire_name="service"),
 }
 
 _Subnet_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -87,39 +87,39 @@ class SubnetConfig:
     service_endpoint: Any = None
     timeouts: Any = None
 
-Subnet = sdk.ResourceBinding(
+Subnet = ubx.ResourceBinding(
     wire_type="azurerm_subnet",
     fields={
-        "address_prefixes": sdk.FieldSpec(wire_name="address_prefixes"),
-        "default_outbound_access_enabled": sdk.FieldSpec(wire_name="default_outbound_access_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "network_security_group_id_wo": sdk.FieldSpec(wire_name="network_security_group_id_wo"),
-        "network_security_group_id_wo_version": sdk.FieldSpec(wire_name="network_security_group_id_wo_version"),
-        "private_endpoint_network_policies": sdk.FieldSpec(wire_name="private_endpoint_network_policies"),
-        "private_link_service_network_policies_enabled": sdk.FieldSpec(wire_name="private_link_service_network_policies_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "route_table_id_wo": sdk.FieldSpec(wire_name="route_table_id_wo"),
-        "route_table_id_wo_version": sdk.FieldSpec(wire_name="route_table_id_wo_version"),
-        "service_endpoint_policy_ids": sdk.FieldSpec(wire_name="service_endpoint_policy_ids"),
-        "sharing_scope": sdk.FieldSpec(wire_name="sharing_scope"),
-        "virtual_network_name": sdk.FieldSpec(wire_name="virtual_network_name"),
-        "delegation": sdk.FieldSpec(
+        "address_prefixes": ubx.FieldSpec(wire_name="address_prefixes"),
+        "default_outbound_access_enabled": ubx.FieldSpec(wire_name="default_outbound_access_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network_security_group_id_wo": ubx.FieldSpec(wire_name="network_security_group_id_wo"),
+        "network_security_group_id_wo_version": ubx.FieldSpec(wire_name="network_security_group_id_wo_version"),
+        "private_endpoint_network_policies": ubx.FieldSpec(wire_name="private_endpoint_network_policies"),
+        "private_link_service_network_policies_enabled": ubx.FieldSpec(wire_name="private_link_service_network_policies_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "route_table_id_wo": ubx.FieldSpec(wire_name="route_table_id_wo"),
+        "route_table_id_wo_version": ubx.FieldSpec(wire_name="route_table_id_wo_version"),
+        "service_endpoint_policy_ids": ubx.FieldSpec(wire_name="service_endpoint_policy_ids"),
+        "sharing_scope": ubx.FieldSpec(wire_name="sharing_scope"),
+        "virtual_network_name": ubx.FieldSpec(wire_name="virtual_network_name"),
+        "delegation": ubx.FieldSpec(
             wire_name="delegation",
             kind="list",
             fields=_Subnet_DelegationFields,
         ),
-        "ip_address_pool": sdk.FieldSpec(
+        "ip_address_pool": ubx.FieldSpec(
             wire_name="ip_address_pool",
             kind="list",
             fields=_Subnet_IpAddressPoolFields,
         ),
-        "service_endpoint": sdk.FieldSpec(
+        "service_endpoint": ubx.FieldSpec(
             wire_name="service_endpoint",
             kind="list",
             fields=_Subnet_ServiceEndpointFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Subnet_TimeoutsFields,

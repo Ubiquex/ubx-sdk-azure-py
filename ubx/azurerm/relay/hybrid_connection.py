@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HybridConnection_Timeouts:
@@ -14,10 +14,10 @@ class HybridConnection_Timeouts:
     update: Any = None
 
 _HybridConnection_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class HybridConnectionConfig:
     user_metadata: Any = None
     timeouts: Any = None
 
-HybridConnection = sdk.ResourceBinding(
+HybridConnection = ubx.ResourceBinding(
     wire_type="azurerm_relay_hybrid_connection",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "relay_namespace_name": sdk.FieldSpec(wire_name="relay_namespace_name"),
-        "requires_client_authorization": sdk.FieldSpec(wire_name="requires_client_authorization"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "user_metadata": sdk.FieldSpec(wire_name="user_metadata"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "relay_namespace_name": ubx.FieldSpec(wire_name="relay_namespace_name"),
+        "requires_client_authorization": ubx.FieldSpec(wire_name="requires_client_authorization"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "user_metadata": ubx.FieldSpec(wire_name="user_metadata"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_HybridConnection_TimeoutsFields,

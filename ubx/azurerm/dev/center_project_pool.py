@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CenterProjectPool_Timeouts:
@@ -14,10 +14,10 @@ class CenterProjectPool_Timeouts:
     update: Any = None
 
 _CenterProjectPool_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -35,21 +35,21 @@ class CenterProjectPoolConfig:
     tags: Any = None
     timeouts: Any = None
 
-CenterProjectPool = sdk.ResourceBinding(
+CenterProjectPool = ubx.ResourceBinding(
     wire_type="azurerm_dev_center_project_pool",
     fields={
-        "dev_box_definition_name": sdk.FieldSpec(wire_name="dev_box_definition_name"),
-        "dev_center_attached_network_name": sdk.FieldSpec(wire_name="dev_center_attached_network_name"),
-        "dev_center_project_id": sdk.FieldSpec(wire_name="dev_center_project_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "local_administrator_enabled": sdk.FieldSpec(wire_name="local_administrator_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "managed_virtual_network_regions": sdk.FieldSpec(wire_name="managed_virtual_network_regions"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "single_sign_on_enabled": sdk.FieldSpec(wire_name="single_sign_on_enabled"),
-        "stop_on_disconnect_grace_period_minutes": sdk.FieldSpec(wire_name="stop_on_disconnect_grace_period_minutes"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "dev_box_definition_name": ubx.FieldSpec(wire_name="dev_box_definition_name"),
+        "dev_center_attached_network_name": ubx.FieldSpec(wire_name="dev_center_attached_network_name"),
+        "dev_center_project_id": ubx.FieldSpec(wire_name="dev_center_project_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "local_administrator_enabled": ubx.FieldSpec(wire_name="local_administrator_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "managed_virtual_network_regions": ubx.FieldSpec(wire_name="managed_virtual_network_regions"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "single_sign_on_enabled": ubx.FieldSpec(wire_name="single_sign_on_enabled"),
+        "stop_on_disconnect_grace_period_minutes": ubx.FieldSpec(wire_name="stop_on_disconnect_grace_period_minutes"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CenterProjectPool_TimeoutsFields,

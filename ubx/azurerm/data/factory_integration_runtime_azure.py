@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryIntegrationRuntimeAzure_Timeouts:
@@ -14,10 +14,10 @@ class FactoryIntegrationRuntimeAzure_Timeouts:
     update: Any = None
 
 _FactoryIntegrationRuntimeAzure_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -35,21 +35,21 @@ class FactoryIntegrationRuntimeAzureConfig:
     virtual_network_enabled: Any = None
     timeouts: Any = None
 
-FactoryIntegrationRuntimeAzure = sdk.ResourceBinding(
+FactoryIntegrationRuntimeAzure = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_integration_runtime_azure",
     fields={
-        "cleanup_enabled": sdk.FieldSpec(wire_name="cleanup_enabled"),
-        "compute_type": sdk.FieldSpec(wire_name="compute_type"),
-        "core_count": sdk.FieldSpec(wire_name="core_count"),
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "interactive_authoring_time_to_live_in_minutes": sdk.FieldSpec(wire_name="interactive_authoring_time_to_live_in_minutes"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "time_to_live_min": sdk.FieldSpec(wire_name="time_to_live_min"),
-        "virtual_network_enabled": sdk.FieldSpec(wire_name="virtual_network_enabled"),
-        "timeouts": sdk.FieldSpec(
+        "cleanup_enabled": ubx.FieldSpec(wire_name="cleanup_enabled"),
+        "compute_type": ubx.FieldSpec(wire_name="compute_type"),
+        "core_count": ubx.FieldSpec(wire_name="core_count"),
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "interactive_authoring_time_to_live_in_minutes": ubx.FieldSpec(wire_name="interactive_authoring_time_to_live_in_minutes"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "time_to_live_min": ubx.FieldSpec(wire_name="time_to_live_min"),
+        "virtual_network_enabled": ubx.FieldSpec(wire_name="virtual_network_enabled"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryIntegrationRuntimeAzure_TimeoutsFields,

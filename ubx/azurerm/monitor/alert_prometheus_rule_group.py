@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AlertPrometheusRuleGroup_Rule_Action:
@@ -37,30 +37,30 @@ class AlertPrometheusRuleGroup_Timeouts:
     update: Any = None
 
 _AlertPrometheusRuleGroup_Rule_ActionFields = {
-    "action_group_id": sdk.FieldSpec(wire_name="action_group_id"),
-    "action_properties": sdk.FieldSpec(wire_name="action_properties"),
+    "action_group_id": ubx.FieldSpec(wire_name="action_group_id"),
+    "action_properties": ubx.FieldSpec(wire_name="action_properties"),
 }
 
 _AlertPrometheusRuleGroup_Rule_AlertResolutionFields = {
-    "auto_resolved": sdk.FieldSpec(wire_name="auto_resolved"),
-    "time_to_resolve": sdk.FieldSpec(wire_name="time_to_resolve"),
+    "auto_resolved": ubx.FieldSpec(wire_name="auto_resolved"),
+    "time_to_resolve": ubx.FieldSpec(wire_name="time_to_resolve"),
 }
 
 _AlertPrometheusRuleGroup_RuleFields = {
-    "alert": sdk.FieldSpec(wire_name="alert"),
-    "annotations": sdk.FieldSpec(wire_name="annotations"),
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "expression": sdk.FieldSpec(wire_name="expression"),
-    "for_": sdk.FieldSpec(wire_name="for"),
-    "labels": sdk.FieldSpec(wire_name="labels"),
-    "record": sdk.FieldSpec(wire_name="record"),
-    "severity": sdk.FieldSpec(wire_name="severity"),
-    "action": sdk.FieldSpec(
+    "alert": ubx.FieldSpec(wire_name="alert"),
+    "annotations": ubx.FieldSpec(wire_name="annotations"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "expression": ubx.FieldSpec(wire_name="expression"),
+    "for_": ubx.FieldSpec(wire_name="for"),
+    "labels": ubx.FieldSpec(wire_name="labels"),
+    "record": ubx.FieldSpec(wire_name="record"),
+    "severity": ubx.FieldSpec(wire_name="severity"),
+    "action": ubx.FieldSpec(
         wire_name="action",
         kind="list",
         fields=_AlertPrometheusRuleGroup_Rule_ActionFields,
     ),
-    "alert_resolution": sdk.FieldSpec(
+    "alert_resolution": ubx.FieldSpec(
         wire_name="alert_resolution",
         kind="list",
         fields=_AlertPrometheusRuleGroup_Rule_AlertResolutionFields,
@@ -68,10 +68,10 @@ _AlertPrometheusRuleGroup_RuleFields = {
 }
 
 _AlertPrometheusRuleGroup_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -89,25 +89,25 @@ class AlertPrometheusRuleGroupConfig:
     rule: Any = None
     timeouts: Any = None
 
-AlertPrometheusRuleGroup = sdk.ResourceBinding(
+AlertPrometheusRuleGroup = ubx.ResourceBinding(
     wire_type="azurerm_monitor_alert_prometheus_rule_group",
     fields={
-        "cluster_name": sdk.FieldSpec(wire_name="cluster_name"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "interval": sdk.FieldSpec(wire_name="interval"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "rule_group_enabled": sdk.FieldSpec(wire_name="rule_group_enabled"),
-        "scopes": sdk.FieldSpec(wire_name="scopes"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "rule": sdk.FieldSpec(
+        "cluster_name": ubx.FieldSpec(wire_name="cluster_name"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "interval": ubx.FieldSpec(wire_name="interval"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "rule_group_enabled": ubx.FieldSpec(wire_name="rule_group_enabled"),
+        "scopes": ubx.FieldSpec(wire_name="scopes"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "rule": ubx.FieldSpec(
             wire_name="rule",
             kind="list",
             fields=_AlertPrometheusRuleGroup_RuleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AlertPrometheusRuleGroup_TimeoutsFields,

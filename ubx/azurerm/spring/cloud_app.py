@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudApp_CustomPersistentDisk:
@@ -42,38 +42,38 @@ class CloudApp_Timeouts:
     update: Any = None
 
 _CloudApp_CustomPersistentDiskFields = {
-    "mount_options": sdk.FieldSpec(wire_name="mount_options"),
-    "mount_path": sdk.FieldSpec(wire_name="mount_path"),
-    "read_only_enabled": sdk.FieldSpec(wire_name="read_only_enabled"),
-    "share_name": sdk.FieldSpec(wire_name="share_name"),
-    "storage_name": sdk.FieldSpec(wire_name="storage_name"),
+    "mount_options": ubx.FieldSpec(wire_name="mount_options"),
+    "mount_path": ubx.FieldSpec(wire_name="mount_path"),
+    "read_only_enabled": ubx.FieldSpec(wire_name="read_only_enabled"),
+    "share_name": ubx.FieldSpec(wire_name="share_name"),
+    "storage_name": ubx.FieldSpec(wire_name="storage_name"),
 }
 
 _CloudApp_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _CloudApp_IngressSettingsFields = {
-    "backend_protocol": sdk.FieldSpec(wire_name="backend_protocol"),
-    "read_timeout_in_seconds": sdk.FieldSpec(wire_name="read_timeout_in_seconds"),
-    "send_timeout_in_seconds": sdk.FieldSpec(wire_name="send_timeout_in_seconds"),
-    "session_affinity": sdk.FieldSpec(wire_name="session_affinity"),
-    "session_cookie_max_age": sdk.FieldSpec(wire_name="session_cookie_max_age"),
+    "backend_protocol": ubx.FieldSpec(wire_name="backend_protocol"),
+    "read_timeout_in_seconds": ubx.FieldSpec(wire_name="read_timeout_in_seconds"),
+    "send_timeout_in_seconds": ubx.FieldSpec(wire_name="send_timeout_in_seconds"),
+    "session_affinity": ubx.FieldSpec(wire_name="session_affinity"),
+    "session_cookie_max_age": ubx.FieldSpec(wire_name="session_cookie_max_age"),
 }
 
 _CloudApp_PersistentDiskFields = {
-    "mount_path": sdk.FieldSpec(wire_name="mount_path"),
-    "size_in_gb": sdk.FieldSpec(wire_name="size_in_gb"),
+    "mount_path": ubx.FieldSpec(wire_name="mount_path"),
+    "size_in_gb": ubx.FieldSpec(wire_name="size_in_gb"),
 }
 
 _CloudApp_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -93,39 +93,39 @@ class CloudAppConfig:
     persistent_disk: Any = None
     timeouts: Any = None
 
-CloudApp = sdk.ResourceBinding(
+CloudApp = ubx.ResourceBinding(
     wire_type="azurerm_spring_cloud_app",
     fields={
-        "addon_json": sdk.FieldSpec(wire_name="addon_json"),
-        "https_only": sdk.FieldSpec(wire_name="https_only"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "is_public": sdk.FieldSpec(wire_name="is_public"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_endpoint_enabled": sdk.FieldSpec(wire_name="public_endpoint_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "service_name": sdk.FieldSpec(wire_name="service_name"),
-        "tls_enabled": sdk.FieldSpec(wire_name="tls_enabled"),
-        "custom_persistent_disk": sdk.FieldSpec(
+        "addon_json": ubx.FieldSpec(wire_name="addon_json"),
+        "https_only": ubx.FieldSpec(wire_name="https_only"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "is_public": ubx.FieldSpec(wire_name="is_public"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_endpoint_enabled": ubx.FieldSpec(wire_name="public_endpoint_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "service_name": ubx.FieldSpec(wire_name="service_name"),
+        "tls_enabled": ubx.FieldSpec(wire_name="tls_enabled"),
+        "custom_persistent_disk": ubx.FieldSpec(
             wire_name="custom_persistent_disk",
             kind="list",
             fields=_CloudApp_CustomPersistentDiskFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_CloudApp_IdentityFields,
         ),
-        "ingress_settings": sdk.FieldSpec(
+        "ingress_settings": ubx.FieldSpec(
             wire_name="ingress_settings",
             kind="list",
             fields=_CloudApp_IngressSettingsFields,
         ),
-        "persistent_disk": sdk.FieldSpec(
+        "persistent_disk": ubx.FieldSpec(
             wire_name="persistent_disk",
             kind="list",
             fields=_CloudApp_PersistentDiskFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CloudApp_TimeoutsFields,

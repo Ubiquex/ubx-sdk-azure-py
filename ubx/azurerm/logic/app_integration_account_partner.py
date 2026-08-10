@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppIntegrationAccountPartner_BusinessIdentity:
@@ -19,15 +19,15 @@ class AppIntegrationAccountPartner_Timeouts:
     update: Any = None
 
 _AppIntegrationAccountPartner_BusinessIdentityFields = {
-    "qualifier": sdk.FieldSpec(wire_name="qualifier"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "qualifier": ubx.FieldSpec(wire_name="qualifier"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _AppIntegrationAccountPartner_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -40,20 +40,20 @@ class AppIntegrationAccountPartnerConfig:
     business_identity: Any = None
     timeouts: Any = None
 
-AppIntegrationAccountPartner = sdk.ResourceBinding(
+AppIntegrationAccountPartner = ubx.ResourceBinding(
     wire_type="azurerm_logic_app_integration_account_partner",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "integration_account_name": sdk.FieldSpec(wire_name="integration_account_name"),
-        "metadata": sdk.FieldSpec(wire_name="metadata"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "business_identity": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "integration_account_name": ubx.FieldSpec(wire_name="integration_account_name"),
+        "metadata": ubx.FieldSpec(wire_name="metadata"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "business_identity": ubx.FieldSpec(
             wire_name="business_identity",
             kind="set",
             fields=_AppIntegrationAccountPartner_BusinessIdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AppIntegrationAccountPartner_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Share_Acl_AccessPolicy:
@@ -25,14 +25,14 @@ class Share_Timeouts:
     update: Any = None
 
 _Share_Acl_AccessPolicyFields = {
-    "expiry": sdk.FieldSpec(wire_name="expiry"),
-    "permissions": sdk.FieldSpec(wire_name="permissions"),
-    "start": sdk.FieldSpec(wire_name="start"),
+    "expiry": ubx.FieldSpec(wire_name="expiry"),
+    "permissions": ubx.FieldSpec(wire_name="permissions"),
+    "start": ubx.FieldSpec(wire_name="start"),
 }
 
 _Share_AclFields = {
-    "id": sdk.FieldSpec(wire_name="id"),
-    "access_policy": sdk.FieldSpec(
+    "id": ubx.FieldSpec(wire_name="id"),
+    "access_policy": ubx.FieldSpec(
         wire_name="access_policy",
         kind="list",
         fields=_Share_Acl_AccessPolicyFields,
@@ -40,10 +40,10 @@ _Share_AclFields = {
 }
 
 _Share_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -58,22 +58,22 @@ class ShareConfig:
     acl: Any = None
     timeouts: Any = None
 
-Share = sdk.ResourceBinding(
+Share = ubx.ResourceBinding(
     wire_type="azurerm_storage_share",
     fields={
-        "access_tier": sdk.FieldSpec(wire_name="access_tier"),
-        "enabled_protocol": sdk.FieldSpec(wire_name="enabled_protocol"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "metadata": sdk.FieldSpec(wire_name="metadata"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "quota": sdk.FieldSpec(wire_name="quota"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "acl": sdk.FieldSpec(
+        "access_tier": ubx.FieldSpec(wire_name="access_tier"),
+        "enabled_protocol": ubx.FieldSpec(wire_name="enabled_protocol"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "metadata": ubx.FieldSpec(wire_name="metadata"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "quota": ubx.FieldSpec(wire_name="quota"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "acl": ubx.FieldSpec(
             wire_name="acl",
             kind="set",
             fields=_Share_AclFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Share_TimeoutsFields,

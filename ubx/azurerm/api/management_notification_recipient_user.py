@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementNotificationRecipientUser_Timeouts:
@@ -13,9 +13,9 @@ class ManagementNotificationRecipientUser_Timeouts:
     read: Any = None
 
 _ManagementNotificationRecipientUser_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -26,14 +26,14 @@ class ManagementNotificationRecipientUserConfig:
     user_id: Any = None
     timeouts: Any = None
 
-ManagementNotificationRecipientUser = sdk.ResourceBinding(
+ManagementNotificationRecipientUser = ubx.ResourceBinding(
     wire_type="azurerm_api_management_notification_recipient_user",
     fields={
-        "api_management_id": sdk.FieldSpec(wire_name="api_management_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "notification_type": sdk.FieldSpec(wire_name="notification_type"),
-        "user_id": sdk.FieldSpec(wire_name="user_id"),
-        "timeouts": sdk.FieldSpec(
+        "api_management_id": ubx.FieldSpec(wire_name="api_management_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "notification_type": ubx.FieldSpec(wire_name="notification_type"),
+        "user_id": ubx.FieldSpec(wire_name="user_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementNotificationRecipientUser_TimeoutsFields,

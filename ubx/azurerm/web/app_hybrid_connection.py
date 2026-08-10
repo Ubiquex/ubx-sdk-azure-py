@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppHybridConnection_Timeouts:
@@ -14,10 +14,10 @@ class AppHybridConnection_Timeouts:
     update: Any = None
 
 _AppHybridConnection_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class AppHybridConnectionConfig:
     web_app_id: Any = None
     timeouts: Any = None
 
-AppHybridConnection = sdk.ResourceBinding(
+AppHybridConnection = ubx.ResourceBinding(
     wire_type="azurerm_web_app_hybrid_connection",
     fields={
-        "hostname": sdk.FieldSpec(wire_name="hostname"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "port": sdk.FieldSpec(wire_name="port"),
-        "relay_id": sdk.FieldSpec(wire_name="relay_id"),
-        "send_key_name": sdk.FieldSpec(wire_name="send_key_name"),
-        "web_app_id": sdk.FieldSpec(wire_name="web_app_id"),
-        "timeouts": sdk.FieldSpec(
+        "hostname": ubx.FieldSpec(wire_name="hostname"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "port": ubx.FieldSpec(wire_name="port"),
+        "relay_id": ubx.FieldSpec(wire_name="relay_id"),
+        "send_key_name": ubx.FieldSpec(wire_name="send_key_name"),
+        "web_app_id": ubx.FieldSpec(wire_name="web_app_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AppHybridConnection_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class IdentityCredential_Timeouts:
@@ -14,10 +14,10 @@ class IdentityCredential_Timeouts:
     update: Any = None
 
 _IdentityCredential_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class IdentityCredentialConfig:
     user_assigned_identity_id: Any = None
     timeouts: Any = None
 
-IdentityCredential = sdk.ResourceBinding(
+IdentityCredential = ubx.ResourceBinding(
     wire_type="azurerm_federated_identity_credential",
     fields={
-        "audience": sdk.FieldSpec(wire_name="audience"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "issuer": sdk.FieldSpec(wire_name="issuer"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "subject": sdk.FieldSpec(wire_name="subject"),
-        "user_assigned_identity_id": sdk.FieldSpec(wire_name="user_assigned_identity_id"),
-        "timeouts": sdk.FieldSpec(
+        "audience": ubx.FieldSpec(wire_name="audience"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "issuer": ubx.FieldSpec(wire_name="issuer"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "subject": ubx.FieldSpec(wire_name="subject"),
+        "user_assigned_identity_id": ubx.FieldSpec(wire_name="user_assigned_identity_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_IdentityCredential_TimeoutsFields,

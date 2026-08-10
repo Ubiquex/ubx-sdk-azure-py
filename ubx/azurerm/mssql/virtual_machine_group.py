@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VirtualMachineGroup_Timeouts:
@@ -25,21 +25,21 @@ class VirtualMachineGroup_WsfcDomainProfile:
     storage_account_url: Any = None
 
 _VirtualMachineGroup_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _VirtualMachineGroup_WsfcDomainProfileFields = {
-    "cluster_bootstrap_account_name": sdk.FieldSpec(wire_name="cluster_bootstrap_account_name"),
-    "cluster_operator_account_name": sdk.FieldSpec(wire_name="cluster_operator_account_name"),
-    "cluster_subnet_type": sdk.FieldSpec(wire_name="cluster_subnet_type"),
-    "fqdn": sdk.FieldSpec(wire_name="fqdn"),
-    "organizational_unit_path": sdk.FieldSpec(wire_name="organizational_unit_path"),
-    "sql_service_account_name": sdk.FieldSpec(wire_name="sql_service_account_name"),
-    "storage_account_primary_key": sdk.FieldSpec(wire_name="storage_account_primary_key"),
-    "storage_account_url": sdk.FieldSpec(wire_name="storage_account_url"),
+    "cluster_bootstrap_account_name": ubx.FieldSpec(wire_name="cluster_bootstrap_account_name"),
+    "cluster_operator_account_name": ubx.FieldSpec(wire_name="cluster_operator_account_name"),
+    "cluster_subnet_type": ubx.FieldSpec(wire_name="cluster_subnet_type"),
+    "fqdn": ubx.FieldSpec(wire_name="fqdn"),
+    "organizational_unit_path": ubx.FieldSpec(wire_name="organizational_unit_path"),
+    "sql_service_account_name": ubx.FieldSpec(wire_name="sql_service_account_name"),
+    "storage_account_primary_key": ubx.FieldSpec(wire_name="storage_account_primary_key"),
+    "storage_account_url": ubx.FieldSpec(wire_name="storage_account_url"),
 }
 
 @dataclasses.dataclass
@@ -54,22 +54,22 @@ class VirtualMachineGroupConfig:
     timeouts: Any = None
     wsfc_domain_profile: Any = None
 
-VirtualMachineGroup = sdk.ResourceBinding(
+VirtualMachineGroup = ubx.ResourceBinding(
     wire_type="azurerm_mssql_virtual_machine_group",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sql_image_offer": sdk.FieldSpec(wire_name="sql_image_offer"),
-        "sql_image_sku": sdk.FieldSpec(wire_name="sql_image_sku"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sql_image_offer": ubx.FieldSpec(wire_name="sql_image_offer"),
+        "sql_image_sku": ubx.FieldSpec(wire_name="sql_image_sku"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_VirtualMachineGroup_TimeoutsFields,
         ),
-        "wsfc_domain_profile": sdk.FieldSpec(
+        "wsfc_domain_profile": ubx.FieldSpec(
             wire_name="wsfc_domain_profile",
             kind="list",
             fields=_VirtualMachineGroup_WsfcDomainProfileFields,

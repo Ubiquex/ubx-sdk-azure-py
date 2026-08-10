@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Watcher_Timeouts:
@@ -14,10 +14,10 @@ class Watcher_Timeouts:
     update: Any = None
 
 _Watcher_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -35,21 +35,21 @@ class WatcherConfig:
     tags: Any = None
     timeouts: Any = None
 
-Watcher = sdk.ResourceBinding(
+Watcher = ubx.ResourceBinding(
     wire_type="azurerm_automation_watcher",
     fields={
-        "automation_account_id": sdk.FieldSpec(wire_name="automation_account_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "etag": sdk.FieldSpec(wire_name="etag"),
-        "execution_frequency_in_seconds": sdk.FieldSpec(wire_name="execution_frequency_in_seconds"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "script_name": sdk.FieldSpec(wire_name="script_name"),
-        "script_parameters": sdk.FieldSpec(wire_name="script_parameters"),
-        "script_run_on": sdk.FieldSpec(wire_name="script_run_on"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "automation_account_id": ubx.FieldSpec(wire_name="automation_account_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "etag": ubx.FieldSpec(wire_name="etag"),
+        "execution_frequency_in_seconds": ubx.FieldSpec(wire_name="execution_frequency_in_seconds"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "script_name": ubx.FieldSpec(wire_name="script_name"),
+        "script_parameters": ubx.FieldSpec(wire_name="script_parameters"),
+        "script_run_on": ubx.FieldSpec(wire_name="script_run_on"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Watcher_TimeoutsFields,

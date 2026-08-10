@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagerIpamPoolStaticCidr_Timeouts:
@@ -14,10 +14,10 @@ class ManagerIpamPoolStaticCidr_Timeouts:
     update: Any = None
 
 _ManagerIpamPoolStaticCidr_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class ManagerIpamPoolStaticCidrConfig:
     number_of_ip_addresses_to_allocate: Any = None
     timeouts: Any = None
 
-ManagerIpamPoolStaticCidr = sdk.ResourceBinding(
+ManagerIpamPoolStaticCidr = ubx.ResourceBinding(
     wire_type="azurerm_network_manager_ipam_pool_static_cidr",
     fields={
-        "address_prefixes": sdk.FieldSpec(wire_name="address_prefixes"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "ipam_pool_id": sdk.FieldSpec(wire_name="ipam_pool_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "number_of_ip_addresses_to_allocate": sdk.FieldSpec(wire_name="number_of_ip_addresses_to_allocate"),
-        "timeouts": sdk.FieldSpec(
+        "address_prefixes": ubx.FieldSpec(wire_name="address_prefixes"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "ipam_pool_id": ubx.FieldSpec(wire_name="ipam_pool_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "number_of_ip_addresses_to_allocate": ubx.FieldSpec(wire_name="number_of_ip_addresses_to_allocate"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagerIpamPoolStaticCidr_TimeoutsFields,

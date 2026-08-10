@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnomalyAlert_Timeouts:
@@ -14,10 +14,10 @@ class AnomalyAlert_Timeouts:
     update: Any = None
 
 _AnomalyAlert_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -32,18 +32,18 @@ class AnomalyAlertConfig:
     subscription_id: Any = None
     timeouts: Any = None
 
-AnomalyAlert = sdk.ResourceBinding(
+AnomalyAlert = ubx.ResourceBinding(
     wire_type="azurerm_cost_anomaly_alert",
     fields={
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "email_addresses": sdk.FieldSpec(wire_name="email_addresses"),
-        "email_subject": sdk.FieldSpec(wire_name="email_subject"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "message": sdk.FieldSpec(wire_name="message"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "notification_email": sdk.FieldSpec(wire_name="notification_email"),
-        "subscription_id": sdk.FieldSpec(wire_name="subscription_id"),
-        "timeouts": sdk.FieldSpec(
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "email_addresses": ubx.FieldSpec(wire_name="email_addresses"),
+        "email_subject": ubx.FieldSpec(wire_name="email_subject"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "message": ubx.FieldSpec(wire_name="message"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "notification_email": ubx.FieldSpec(wire_name="notification_email"),
+        "subscription_id": ubx.FieldSpec(wire_name="subscription_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AnomalyAlert_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InsightsWorkbookTemplate_Galleries:
@@ -22,18 +22,18 @@ class InsightsWorkbookTemplate_Timeouts:
     update: Any = None
 
 _InsightsWorkbookTemplate_GalleriesFields = {
-    "category": sdk.FieldSpec(wire_name="category"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "order": sdk.FieldSpec(wire_name="order"),
-    "resource_type": sdk.FieldSpec(wire_name="resource_type"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "category": ubx.FieldSpec(wire_name="category"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "order": ubx.FieldSpec(wire_name="order"),
+    "resource_type": ubx.FieldSpec(wire_name="resource_type"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _InsightsWorkbookTemplate_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -50,24 +50,24 @@ class InsightsWorkbookTemplateConfig:
     galleries: Any = None
     timeouts: Any = None
 
-InsightsWorkbookTemplate = sdk.ResourceBinding(
+InsightsWorkbookTemplate = ubx.ResourceBinding(
     wire_type="azurerm_application_insights_workbook_template",
     fields={
-        "author": sdk.FieldSpec(wire_name="author"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "localized": sdk.FieldSpec(wire_name="localized"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "priority": sdk.FieldSpec(wire_name="priority"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "template_data": sdk.FieldSpec(wire_name="template_data"),
-        "galleries": sdk.FieldSpec(
+        "author": ubx.FieldSpec(wire_name="author"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "localized": ubx.FieldSpec(wire_name="localized"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "priority": ubx.FieldSpec(wire_name="priority"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "template_data": ubx.FieldSpec(wire_name="template_data"),
+        "galleries": ubx.FieldSpec(
             wire_name="galleries",
             kind="list",
             fields=_InsightsWorkbookTemplate_GalleriesFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_InsightsWorkbookTemplate_TimeoutsFields,

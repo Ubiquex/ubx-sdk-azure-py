@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagerConnectivityConfiguration_AppliesToGroup:
@@ -26,22 +26,22 @@ class ManagerConnectivityConfiguration_Timeouts:
     update: Any = None
 
 _ManagerConnectivityConfiguration_AppliesToGroupFields = {
-    "global_mesh_enabled": sdk.FieldSpec(wire_name="global_mesh_enabled"),
-    "group_connectivity": sdk.FieldSpec(wire_name="group_connectivity"),
-    "network_group_id": sdk.FieldSpec(wire_name="network_group_id"),
-    "use_hub_gateway": sdk.FieldSpec(wire_name="use_hub_gateway"),
+    "global_mesh_enabled": ubx.FieldSpec(wire_name="global_mesh_enabled"),
+    "group_connectivity": ubx.FieldSpec(wire_name="group_connectivity"),
+    "network_group_id": ubx.FieldSpec(wire_name="network_group_id"),
+    "use_hub_gateway": ubx.FieldSpec(wire_name="use_hub_gateway"),
 }
 
 _ManagerConnectivityConfiguration_HubFields = {
-    "resource_id": sdk.FieldSpec(wire_name="resource_id"),
-    "resource_type": sdk.FieldSpec(wire_name="resource_type"),
+    "resource_id": ubx.FieldSpec(wire_name="resource_id"),
+    "resource_type": ubx.FieldSpec(wire_name="resource_type"),
 }
 
 _ManagerConnectivityConfiguration_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -60,30 +60,30 @@ class ManagerConnectivityConfigurationConfig:
     hub: Any = None
     timeouts: Any = None
 
-ManagerConnectivityConfiguration = sdk.ResourceBinding(
+ManagerConnectivityConfiguration = ubx.ResourceBinding(
     wire_type="azurerm_network_manager_connectivity_configuration",
     fields={
-        "connected_group_address_overlap_enabled": sdk.FieldSpec(wire_name="connected_group_address_overlap_enabled"),
-        "connected_group_private_endpoints_scale": sdk.FieldSpec(wire_name="connected_group_private_endpoints_scale"),
-        "connectivity_topology": sdk.FieldSpec(wire_name="connectivity_topology"),
-        "delete_existing_peering_enabled": sdk.FieldSpec(wire_name="delete_existing_peering_enabled"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "global_mesh_enabled": sdk.FieldSpec(wire_name="global_mesh_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "network_manager_id": sdk.FieldSpec(wire_name="network_manager_id"),
-        "peering_enforcement_enabled": sdk.FieldSpec(wire_name="peering_enforcement_enabled"),
-        "applies_to_group": sdk.FieldSpec(
+        "connected_group_address_overlap_enabled": ubx.FieldSpec(wire_name="connected_group_address_overlap_enabled"),
+        "connected_group_private_endpoints_scale": ubx.FieldSpec(wire_name="connected_group_private_endpoints_scale"),
+        "connectivity_topology": ubx.FieldSpec(wire_name="connectivity_topology"),
+        "delete_existing_peering_enabled": ubx.FieldSpec(wire_name="delete_existing_peering_enabled"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "global_mesh_enabled": ubx.FieldSpec(wire_name="global_mesh_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network_manager_id": ubx.FieldSpec(wire_name="network_manager_id"),
+        "peering_enforcement_enabled": ubx.FieldSpec(wire_name="peering_enforcement_enabled"),
+        "applies_to_group": ubx.FieldSpec(
             wire_name="applies_to_group",
             kind="list",
             fields=_ManagerConnectivityConfiguration_AppliesToGroupFields,
         ),
-        "hub": sdk.FieldSpec(
+        "hub": ubx.FieldSpec(
             wire_name="hub",
             kind="list",
             fields=_ManagerConnectivityConfiguration_HubFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagerConnectivityConfiguration_TimeoutsFields,

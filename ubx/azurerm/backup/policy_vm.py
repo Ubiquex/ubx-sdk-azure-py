@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PolicyVm_Backup:
@@ -63,52 +63,52 @@ class PolicyVm_Timeouts:
     update: Any = None
 
 _PolicyVm_BackupFields = {
-    "frequency": sdk.FieldSpec(wire_name="frequency"),
-    "hour_duration": sdk.FieldSpec(wire_name="hour_duration"),
-    "hour_interval": sdk.FieldSpec(wire_name="hour_interval"),
-    "time": sdk.FieldSpec(wire_name="time"),
-    "weekdays": sdk.FieldSpec(wire_name="weekdays"),
+    "frequency": ubx.FieldSpec(wire_name="frequency"),
+    "hour_duration": ubx.FieldSpec(wire_name="hour_duration"),
+    "hour_interval": ubx.FieldSpec(wire_name="hour_interval"),
+    "time": ubx.FieldSpec(wire_name="time"),
+    "weekdays": ubx.FieldSpec(wire_name="weekdays"),
 }
 
 _PolicyVm_InstantRestoreResourceGroupFields = {
-    "prefix": sdk.FieldSpec(wire_name="prefix"),
-    "suffix": sdk.FieldSpec(wire_name="suffix"),
+    "prefix": ubx.FieldSpec(wire_name="prefix"),
+    "suffix": ubx.FieldSpec(wire_name="suffix"),
 }
 
 _PolicyVm_RetentionDailyFields = {
-    "count": sdk.FieldSpec(wire_name="count"),
+    "count": ubx.FieldSpec(wire_name="count"),
 }
 
 _PolicyVm_RetentionMonthlyFields = {
-    "count": sdk.FieldSpec(wire_name="count"),
-    "days": sdk.FieldSpec(wire_name="days"),
-    "include_last_days": sdk.FieldSpec(wire_name="include_last_days"),
-    "weekdays": sdk.FieldSpec(wire_name="weekdays"),
-    "weeks": sdk.FieldSpec(wire_name="weeks"),
+    "count": ubx.FieldSpec(wire_name="count"),
+    "days": ubx.FieldSpec(wire_name="days"),
+    "include_last_days": ubx.FieldSpec(wire_name="include_last_days"),
+    "weekdays": ubx.FieldSpec(wire_name="weekdays"),
+    "weeks": ubx.FieldSpec(wire_name="weeks"),
 }
 
 _PolicyVm_RetentionWeeklyFields = {
-    "count": sdk.FieldSpec(wire_name="count"),
-    "weekdays": sdk.FieldSpec(wire_name="weekdays"),
+    "count": ubx.FieldSpec(wire_name="count"),
+    "weekdays": ubx.FieldSpec(wire_name="weekdays"),
 }
 
 _PolicyVm_RetentionYearlyFields = {
-    "count": sdk.FieldSpec(wire_name="count"),
-    "days": sdk.FieldSpec(wire_name="days"),
-    "include_last_days": sdk.FieldSpec(wire_name="include_last_days"),
-    "months": sdk.FieldSpec(wire_name="months"),
-    "weekdays": sdk.FieldSpec(wire_name="weekdays"),
-    "weeks": sdk.FieldSpec(wire_name="weeks"),
+    "count": ubx.FieldSpec(wire_name="count"),
+    "days": ubx.FieldSpec(wire_name="days"),
+    "include_last_days": ubx.FieldSpec(wire_name="include_last_days"),
+    "months": ubx.FieldSpec(wire_name="months"),
+    "weekdays": ubx.FieldSpec(wire_name="weekdays"),
+    "weeks": ubx.FieldSpec(wire_name="weeks"),
 }
 
 _PolicyVm_TieringPolicy_ArchivedRestorePointFields = {
-    "duration": sdk.FieldSpec(wire_name="duration"),
-    "duration_type": sdk.FieldSpec(wire_name="duration_type"),
-    "mode": sdk.FieldSpec(wire_name="mode"),
+    "duration": ubx.FieldSpec(wire_name="duration"),
+    "duration_type": ubx.FieldSpec(wire_name="duration_type"),
+    "mode": ubx.FieldSpec(wire_name="mode"),
 }
 
 _PolicyVm_TieringPolicyFields = {
-    "archived_restore_point": sdk.FieldSpec(
+    "archived_restore_point": ubx.FieldSpec(
         wire_name="archived_restore_point",
         kind="list",
         fields=_PolicyVm_TieringPolicy_ArchivedRestorePointFields,
@@ -116,10 +116,10 @@ _PolicyVm_TieringPolicyFields = {
 }
 
 _PolicyVm_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -141,53 +141,53 @@ class PolicyVmConfig:
     tiering_policy: Any = None
     timeouts: Any = None
 
-PolicyVm = sdk.ResourceBinding(
+PolicyVm = ubx.ResourceBinding(
     wire_type="azurerm_backup_policy_vm",
     fields={
-        "consistency_type": sdk.FieldSpec(wire_name="consistency_type"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "instant_restore_retention_days": sdk.FieldSpec(wire_name="instant_restore_retention_days"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "policy_type": sdk.FieldSpec(wire_name="policy_type"),
-        "recovery_vault_name": sdk.FieldSpec(wire_name="recovery_vault_name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "timezone": sdk.FieldSpec(wire_name="timezone"),
-        "backup": sdk.FieldSpec(
+        "consistency_type": ubx.FieldSpec(wire_name="consistency_type"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "instant_restore_retention_days": ubx.FieldSpec(wire_name="instant_restore_retention_days"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "policy_type": ubx.FieldSpec(wire_name="policy_type"),
+        "recovery_vault_name": ubx.FieldSpec(wire_name="recovery_vault_name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "timezone": ubx.FieldSpec(wire_name="timezone"),
+        "backup": ubx.FieldSpec(
             wire_name="backup",
             kind="list",
             fields=_PolicyVm_BackupFields,
         ),
-        "instant_restore_resource_group": sdk.FieldSpec(
+        "instant_restore_resource_group": ubx.FieldSpec(
             wire_name="instant_restore_resource_group",
             kind="list",
             fields=_PolicyVm_InstantRestoreResourceGroupFields,
         ),
-        "retention_daily": sdk.FieldSpec(
+        "retention_daily": ubx.FieldSpec(
             wire_name="retention_daily",
             kind="list",
             fields=_PolicyVm_RetentionDailyFields,
         ),
-        "retention_monthly": sdk.FieldSpec(
+        "retention_monthly": ubx.FieldSpec(
             wire_name="retention_monthly",
             kind="list",
             fields=_PolicyVm_RetentionMonthlyFields,
         ),
-        "retention_weekly": sdk.FieldSpec(
+        "retention_weekly": ubx.FieldSpec(
             wire_name="retention_weekly",
             kind="list",
             fields=_PolicyVm_RetentionWeeklyFields,
         ),
-        "retention_yearly": sdk.FieldSpec(
+        "retention_yearly": ubx.FieldSpec(
             wire_name="retention_yearly",
             kind="list",
             fields=_PolicyVm_RetentionYearlyFields,
         ),
-        "tiering_policy": sdk.FieldSpec(
+        "tiering_policy": ubx.FieldSpec(
             wire_name="tiering_policy",
             kind="list",
             fields=_PolicyVm_TieringPolicyFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_PolicyVm_TimeoutsFields,

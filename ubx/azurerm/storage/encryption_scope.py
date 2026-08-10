@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EncryptionScope_Timeouts:
@@ -14,10 +14,10 @@ class EncryptionScope_Timeouts:
     update: Any = None
 
 _EncryptionScope_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class EncryptionScopeConfig:
     storage_account_id: Any = None
     timeouts: Any = None
 
-EncryptionScope = sdk.ResourceBinding(
+EncryptionScope = ubx.ResourceBinding(
     wire_type="azurerm_storage_encryption_scope",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "infrastructure_encryption_required": sdk.FieldSpec(wire_name="infrastructure_encryption_required"),
-        "key_vault_key_id": sdk.FieldSpec(wire_name="key_vault_key_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "source": sdk.FieldSpec(wire_name="source"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "infrastructure_encryption_required": ubx.FieldSpec(wire_name="infrastructure_encryption_required"),
+        "key_vault_key_id": ubx.FieldSpec(wire_name="key_vault_key_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "source": ubx.FieldSpec(wire_name="source"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_EncryptionScope_TimeoutsFields,

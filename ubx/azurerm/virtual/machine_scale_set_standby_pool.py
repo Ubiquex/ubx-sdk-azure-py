@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MachineScaleSetStandbyPool_ElasticityProfile:
@@ -19,15 +19,15 @@ class MachineScaleSetStandbyPool_Timeouts:
     update: Any = None
 
 _MachineScaleSetStandbyPool_ElasticityProfileFields = {
-    "max_ready_capacity": sdk.FieldSpec(wire_name="max_ready_capacity"),
-    "min_ready_capacity": sdk.FieldSpec(wire_name="min_ready_capacity"),
+    "max_ready_capacity": ubx.FieldSpec(wire_name="max_ready_capacity"),
+    "min_ready_capacity": ubx.FieldSpec(wire_name="min_ready_capacity"),
 }
 
 _MachineScaleSetStandbyPool_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -42,22 +42,22 @@ class MachineScaleSetStandbyPoolConfig:
     elasticity_profile: Any = None
     timeouts: Any = None
 
-MachineScaleSetStandbyPool = sdk.ResourceBinding(
+MachineScaleSetStandbyPool = ubx.ResourceBinding(
     wire_type="azurerm_virtual_machine_scale_set_standby_pool",
     fields={
-        "attached_virtual_machine_scale_set_id": sdk.FieldSpec(wire_name="attached_virtual_machine_scale_set_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "virtual_machine_state": sdk.FieldSpec(wire_name="virtual_machine_state"),
-        "elasticity_profile": sdk.FieldSpec(
+        "attached_virtual_machine_scale_set_id": ubx.FieldSpec(wire_name="attached_virtual_machine_scale_set_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "virtual_machine_state": ubx.FieldSpec(wire_name="virtual_machine_state"),
+        "elasticity_profile": ubx.FieldSpec(
             wire_name="elasticity_profile",
             kind="list",
             fields=_MachineScaleSetStandbyPool_ElasticityProfileFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_MachineScaleSetStandbyPool_TimeoutsFields,

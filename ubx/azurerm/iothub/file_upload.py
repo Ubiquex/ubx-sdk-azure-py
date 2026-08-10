@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FileUpload_Timeouts:
@@ -14,10 +14,10 @@ class FileUpload_Timeouts:
     update: Any = None
 
 _FileUpload_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -35,21 +35,21 @@ class FileUploadConfig:
     sas_ttl: Any = None
     timeouts: Any = None
 
-FileUpload = sdk.ResourceBinding(
+FileUpload = ubx.ResourceBinding(
     wire_type="azurerm_iothub_file_upload",
     fields={
-        "authentication_type": sdk.FieldSpec(wire_name="authentication_type"),
-        "connection_string": sdk.FieldSpec(wire_name="connection_string"),
-        "container_name": sdk.FieldSpec(wire_name="container_name"),
-        "default_ttl": sdk.FieldSpec(wire_name="default_ttl"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "identity_id": sdk.FieldSpec(wire_name="identity_id"),
-        "iothub_id": sdk.FieldSpec(wire_name="iothub_id"),
-        "lock_duration": sdk.FieldSpec(wire_name="lock_duration"),
-        "max_delivery_count": sdk.FieldSpec(wire_name="max_delivery_count"),
-        "notifications_enabled": sdk.FieldSpec(wire_name="notifications_enabled"),
-        "sas_ttl": sdk.FieldSpec(wire_name="sas_ttl"),
-        "timeouts": sdk.FieldSpec(
+        "authentication_type": ubx.FieldSpec(wire_name="authentication_type"),
+        "connection_string": ubx.FieldSpec(wire_name="connection_string"),
+        "container_name": ubx.FieldSpec(wire_name="container_name"),
+        "default_ttl": ubx.FieldSpec(wire_name="default_ttl"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "identity_id": ubx.FieldSpec(wire_name="identity_id"),
+        "iothub_id": ubx.FieldSpec(wire_name="iothub_id"),
+        "lock_duration": ubx.FieldSpec(wire_name="lock_duration"),
+        "max_delivery_count": ubx.FieldSpec(wire_name="max_delivery_count"),
+        "notifications_enabled": ubx.FieldSpec(wire_name="notifications_enabled"),
+        "sas_ttl": ubx.FieldSpec(wire_name="sas_ttl"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FileUpload_TimeoutsFields,

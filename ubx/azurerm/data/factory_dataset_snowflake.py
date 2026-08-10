@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryDatasetSnowflake_SchemaColumn:
@@ -21,17 +21,17 @@ class FactoryDatasetSnowflake_Timeouts:
     update: Any = None
 
 _FactoryDatasetSnowflake_SchemaColumnFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "precision": sdk.FieldSpec(wire_name="precision"),
-    "scale": sdk.FieldSpec(wire_name="scale"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "precision": ubx.FieldSpec(wire_name="precision"),
+    "scale": ubx.FieldSpec(wire_name="scale"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _FactoryDatasetSnowflake_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -50,26 +50,26 @@ class FactoryDatasetSnowflakeConfig:
     schema_column: Any = None
     timeouts: Any = None
 
-FactoryDatasetSnowflake = sdk.ResourceBinding(
+FactoryDatasetSnowflake = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_dataset_snowflake",
     fields={
-        "additional_properties": sdk.FieldSpec(wire_name="additional_properties"),
-        "annotations": sdk.FieldSpec(wire_name="annotations"),
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "folder": sdk.FieldSpec(wire_name="folder"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "linked_service_name": sdk.FieldSpec(wire_name="linked_service_name"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parameters": sdk.FieldSpec(wire_name="parameters"),
-        "schema_name": sdk.FieldSpec(wire_name="schema_name"),
-        "table_name": sdk.FieldSpec(wire_name="table_name"),
-        "schema_column": sdk.FieldSpec(
+        "additional_properties": ubx.FieldSpec(wire_name="additional_properties"),
+        "annotations": ubx.FieldSpec(wire_name="annotations"),
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "folder": ubx.FieldSpec(wire_name="folder"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "linked_service_name": ubx.FieldSpec(wire_name="linked_service_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parameters": ubx.FieldSpec(wire_name="parameters"),
+        "schema_name": ubx.FieldSpec(wire_name="schema_name"),
+        "table_name": ubx.FieldSpec(wire_name="table_name"),
+        "schema_column": ubx.FieldSpec(
             wire_name="schema_column",
             kind="list",
             fields=_FactoryDatasetSnowflake_SchemaColumnFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryDatasetSnowflake_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InterfaceSecurityGroupAssociation_Timeouts:
@@ -13,9 +13,9 @@ class InterfaceSecurityGroupAssociation_Timeouts:
     read: Any = None
 
 _InterfaceSecurityGroupAssociation_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -25,13 +25,13 @@ class InterfaceSecurityGroupAssociationConfig:
     network_security_group_id: Any = None
     timeouts: Any = None
 
-InterfaceSecurityGroupAssociation = sdk.ResourceBinding(
+InterfaceSecurityGroupAssociation = ubx.ResourceBinding(
     wire_type="azurerm_network_interface_security_group_association",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "network_interface_id": sdk.FieldSpec(wire_name="network_interface_id"),
-        "network_security_group_id": sdk.FieldSpec(wire_name="network_security_group_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "network_interface_id": ubx.FieldSpec(wire_name="network_interface_id"),
+        "network_security_group_id": ubx.FieldSpec(wire_name="network_security_group_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_InterfaceSecurityGroupAssociation_TimeoutsFields,

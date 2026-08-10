@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ChannelLine_LineChannel:
@@ -19,15 +19,15 @@ class ChannelLine_Timeouts:
     update: Any = None
 
 _ChannelLine_LineChannelFields = {
-    "access_token": sdk.FieldSpec(wire_name="access_token"),
-    "secret": sdk.FieldSpec(wire_name="secret"),
+    "access_token": ubx.FieldSpec(wire_name="access_token"),
+    "secret": ubx.FieldSpec(wire_name="secret"),
 }
 
 _ChannelLine_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -39,19 +39,19 @@ class ChannelLineConfig:
     line_channel: Any = None
     timeouts: Any = None
 
-ChannelLine = sdk.ResourceBinding(
+ChannelLine = ubx.ResourceBinding(
     wire_type="azurerm_bot_channel_line",
     fields={
-        "bot_name": sdk.FieldSpec(wire_name="bot_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "line_channel": sdk.FieldSpec(
+        "bot_name": ubx.FieldSpec(wire_name="bot_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "line_channel": ubx.FieldSpec(
             wire_name="line_channel",
             kind="set",
             fields=_ChannelLine_LineChannelFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ChannelLine_TimeoutsFields,

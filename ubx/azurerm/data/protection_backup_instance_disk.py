@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ProtectionBackupInstanceDisk_Timeouts:
@@ -14,10 +14,10 @@ class ProtectionBackupInstanceDisk_Timeouts:
     update: Any = None
 
 _ProtectionBackupInstanceDisk_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -32,18 +32,18 @@ class ProtectionBackupInstanceDiskConfig:
     vault_id: Any = None
     timeouts: Any = None
 
-ProtectionBackupInstanceDisk = sdk.ResourceBinding(
+ProtectionBackupInstanceDisk = ubx.ResourceBinding(
     wire_type="azurerm_data_protection_backup_instance_disk",
     fields={
-        "backup_policy_id": sdk.FieldSpec(wire_name="backup_policy_id"),
-        "disk_id": sdk.FieldSpec(wire_name="disk_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "snapshot_resource_group_name": sdk.FieldSpec(wire_name="snapshot_resource_group_name"),
-        "snapshot_subscription_id": sdk.FieldSpec(wire_name="snapshot_subscription_id"),
-        "vault_id": sdk.FieldSpec(wire_name="vault_id"),
-        "timeouts": sdk.FieldSpec(
+        "backup_policy_id": ubx.FieldSpec(wire_name="backup_policy_id"),
+        "disk_id": ubx.FieldSpec(wire_name="disk_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "snapshot_resource_group_name": ubx.FieldSpec(wire_name="snapshot_resource_group_name"),
+        "snapshot_subscription_id": ubx.FieldSpec(wire_name="snapshot_subscription_id"),
+        "vault_id": ubx.FieldSpec(wire_name="vault_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ProtectionBackupInstanceDisk_TimeoutsFields,

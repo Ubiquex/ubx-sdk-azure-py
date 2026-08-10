@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FirewallRule_Timeouts:
@@ -14,10 +14,10 @@ class FirewallRule_Timeouts:
     update: Any = None
 
 _FirewallRule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class FirewallRuleConfig:
     start_ip: Any = None
     timeouts: Any = None
 
-FirewallRule = sdk.ResourceBinding(
+FirewallRule = ubx.ResourceBinding(
     wire_type="azurerm_redis_firewall_rule",
     fields={
-        "end_ip": sdk.FieldSpec(wire_name="end_ip"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "redis_cache_name": sdk.FieldSpec(wire_name="redis_cache_name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "start_ip": sdk.FieldSpec(wire_name="start_ip"),
-        "timeouts": sdk.FieldSpec(
+        "end_ip": ubx.FieldSpec(wire_name="end_ip"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "redis_cache_name": ubx.FieldSpec(wire_name="redis_cache_name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "start_ip": ubx.FieldSpec(wire_name="start_ip"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FirewallRule_TimeoutsFields,

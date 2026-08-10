@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RecoveryHypervNetworkMapping_Timeouts:
@@ -13,9 +13,9 @@ class RecoveryHypervNetworkMapping_Timeouts:
     read: Any = None
 
 _RecoveryHypervNetworkMapping_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -28,16 +28,16 @@ class RecoveryHypervNetworkMappingConfig:
     target_network_id: Any = None
     timeouts: Any = None
 
-RecoveryHypervNetworkMapping = sdk.ResourceBinding(
+RecoveryHypervNetworkMapping = ubx.ResourceBinding(
     wire_type="azurerm_site_recovery_hyperv_network_mapping",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "recovery_vault_id": sdk.FieldSpec(wire_name="recovery_vault_id"),
-        "source_network_name": sdk.FieldSpec(wire_name="source_network_name"),
-        "source_system_center_virtual_machine_manager_name": sdk.FieldSpec(wire_name="source_system_center_virtual_machine_manager_name"),
-        "target_network_id": sdk.FieldSpec(wire_name="target_network_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "recovery_vault_id": ubx.FieldSpec(wire_name="recovery_vault_id"),
+        "source_network_name": ubx.FieldSpec(wire_name="source_network_name"),
+        "source_system_center_virtual_machine_manager_name": ubx.FieldSpec(wire_name="source_system_center_virtual_machine_manager_name"),
+        "target_network_id": ubx.FieldSpec(wire_name="target_network_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RecoveryHypervNetworkMapping_TimeoutsFields,

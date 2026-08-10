@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Gateway_Timeouts:
@@ -14,10 +14,10 @@ class Gateway_Timeouts:
     update: Any = None
 
 _Gateway_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -32,18 +32,18 @@ class GatewayConfig:
     zones: Any = None
     timeouts: Any = None
 
-Gateway = sdk.ResourceBinding(
+Gateway = ubx.ResourceBinding(
     wire_type="azurerm_nat_gateway",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "idle_timeout_in_minutes": sdk.FieldSpec(wire_name="idle_timeout_in_minutes"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "zones": sdk.FieldSpec(wire_name="zones"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "idle_timeout_in_minutes": ubx.FieldSpec(wire_name="idle_timeout_in_minutes"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "zones": ubx.FieldSpec(wire_name="zones"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Gateway_TimeoutsFields,

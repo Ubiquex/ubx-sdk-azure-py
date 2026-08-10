@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryDatasetBinary_AzureBlobStorageLocation:
@@ -43,39 +43,39 @@ class FactoryDatasetBinary_Timeouts:
     update: Any = None
 
 _FactoryDatasetBinary_AzureBlobStorageLocationFields = {
-    "container": sdk.FieldSpec(wire_name="container"),
-    "dynamic_container_enabled": sdk.FieldSpec(wire_name="dynamic_container_enabled"),
-    "dynamic_filename_enabled": sdk.FieldSpec(wire_name="dynamic_filename_enabled"),
-    "dynamic_path_enabled": sdk.FieldSpec(wire_name="dynamic_path_enabled"),
-    "filename": sdk.FieldSpec(wire_name="filename"),
-    "path": sdk.FieldSpec(wire_name="path"),
+    "container": ubx.FieldSpec(wire_name="container"),
+    "dynamic_container_enabled": ubx.FieldSpec(wire_name="dynamic_container_enabled"),
+    "dynamic_filename_enabled": ubx.FieldSpec(wire_name="dynamic_filename_enabled"),
+    "dynamic_path_enabled": ubx.FieldSpec(wire_name="dynamic_path_enabled"),
+    "filename": ubx.FieldSpec(wire_name="filename"),
+    "path": ubx.FieldSpec(wire_name="path"),
 }
 
 _FactoryDatasetBinary_CompressionFields = {
-    "level": sdk.FieldSpec(wire_name="level"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "level": ubx.FieldSpec(wire_name="level"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _FactoryDatasetBinary_HttpServerLocationFields = {
-    "dynamic_filename_enabled": sdk.FieldSpec(wire_name="dynamic_filename_enabled"),
-    "dynamic_path_enabled": sdk.FieldSpec(wire_name="dynamic_path_enabled"),
-    "filename": sdk.FieldSpec(wire_name="filename"),
-    "path": sdk.FieldSpec(wire_name="path"),
-    "relative_url": sdk.FieldSpec(wire_name="relative_url"),
+    "dynamic_filename_enabled": ubx.FieldSpec(wire_name="dynamic_filename_enabled"),
+    "dynamic_path_enabled": ubx.FieldSpec(wire_name="dynamic_path_enabled"),
+    "filename": ubx.FieldSpec(wire_name="filename"),
+    "path": ubx.FieldSpec(wire_name="path"),
+    "relative_url": ubx.FieldSpec(wire_name="relative_url"),
 }
 
 _FactoryDatasetBinary_SftpServerLocationFields = {
-    "dynamic_filename_enabled": sdk.FieldSpec(wire_name="dynamic_filename_enabled"),
-    "dynamic_path_enabled": sdk.FieldSpec(wire_name="dynamic_path_enabled"),
-    "filename": sdk.FieldSpec(wire_name="filename"),
-    "path": sdk.FieldSpec(wire_name="path"),
+    "dynamic_filename_enabled": ubx.FieldSpec(wire_name="dynamic_filename_enabled"),
+    "dynamic_path_enabled": ubx.FieldSpec(wire_name="dynamic_path_enabled"),
+    "filename": ubx.FieldSpec(wire_name="filename"),
+    "path": ubx.FieldSpec(wire_name="path"),
 }
 
 _FactoryDatasetBinary_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -95,39 +95,39 @@ class FactoryDatasetBinaryConfig:
     sftp_server_location: Any = None
     timeouts: Any = None
 
-FactoryDatasetBinary = sdk.ResourceBinding(
+FactoryDatasetBinary = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_dataset_binary",
     fields={
-        "additional_properties": sdk.FieldSpec(wire_name="additional_properties"),
-        "annotations": sdk.FieldSpec(wire_name="annotations"),
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "folder": sdk.FieldSpec(wire_name="folder"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "linked_service_name": sdk.FieldSpec(wire_name="linked_service_name"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parameters": sdk.FieldSpec(wire_name="parameters"),
-        "azure_blob_storage_location": sdk.FieldSpec(
+        "additional_properties": ubx.FieldSpec(wire_name="additional_properties"),
+        "annotations": ubx.FieldSpec(wire_name="annotations"),
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "folder": ubx.FieldSpec(wire_name="folder"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "linked_service_name": ubx.FieldSpec(wire_name="linked_service_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parameters": ubx.FieldSpec(wire_name="parameters"),
+        "azure_blob_storage_location": ubx.FieldSpec(
             wire_name="azure_blob_storage_location",
             kind="list",
             fields=_FactoryDatasetBinary_AzureBlobStorageLocationFields,
         ),
-        "compression": sdk.FieldSpec(
+        "compression": ubx.FieldSpec(
             wire_name="compression",
             kind="list",
             fields=_FactoryDatasetBinary_CompressionFields,
         ),
-        "http_server_location": sdk.FieldSpec(
+        "http_server_location": ubx.FieldSpec(
             wire_name="http_server_location",
             kind="list",
             fields=_FactoryDatasetBinary_HttpServerLocationFields,
         ),
-        "sftp_server_location": sdk.FieldSpec(
+        "sftp_server_location": ubx.FieldSpec(
             wire_name="sftp_server_location",
             kind="list",
             fields=_FactoryDatasetBinary_SftpServerLocationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryDatasetBinary_TimeoutsFields,

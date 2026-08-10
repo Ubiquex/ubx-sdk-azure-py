@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppEnvironmentDaprComponent_Metadata:
@@ -27,23 +27,23 @@ class AppEnvironmentDaprComponent_Timeouts:
     update: Any = None
 
 _AppEnvironmentDaprComponent_MetadataFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "secret_name": sdk.FieldSpec(wire_name="secret_name"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "secret_name": ubx.FieldSpec(wire_name="secret_name"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _AppEnvironmentDaprComponent_SecretFields = {
-    "identity": sdk.FieldSpec(wire_name="identity"),
-    "key_vault_secret_id": sdk.FieldSpec(wire_name="key_vault_secret_id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "identity": ubx.FieldSpec(wire_name="identity"),
+    "key_vault_secret_id": ubx.FieldSpec(wire_name="key_vault_secret_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _AppEnvironmentDaprComponent_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -60,28 +60,28 @@ class AppEnvironmentDaprComponentConfig:
     secret: Any = None
     timeouts: Any = None
 
-AppEnvironmentDaprComponent = sdk.ResourceBinding(
+AppEnvironmentDaprComponent = ubx.ResourceBinding(
     wire_type="azurerm_container_app_environment_dapr_component",
     fields={
-        "component_type": sdk.FieldSpec(wire_name="component_type"),
-        "container_app_environment_id": sdk.FieldSpec(wire_name="container_app_environment_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "ignore_errors": sdk.FieldSpec(wire_name="ignore_errors"),
-        "init_timeout": sdk.FieldSpec(wire_name="init_timeout"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "scopes": sdk.FieldSpec(wire_name="scopes"),
-        "version": sdk.FieldSpec(wire_name="version"),
-        "metadata": sdk.FieldSpec(
+        "component_type": ubx.FieldSpec(wire_name="component_type"),
+        "container_app_environment_id": ubx.FieldSpec(wire_name="container_app_environment_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "ignore_errors": ubx.FieldSpec(wire_name="ignore_errors"),
+        "init_timeout": ubx.FieldSpec(wire_name="init_timeout"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "scopes": ubx.FieldSpec(wire_name="scopes"),
+        "version": ubx.FieldSpec(wire_name="version"),
+        "metadata": ubx.FieldSpec(
             wire_name="metadata",
             kind="list",
             fields=_AppEnvironmentDaprComponent_MetadataFields,
         ),
-        "secret": sdk.FieldSpec(
+        "secret": ubx.FieldSpec(
             wire_name="secret",
             kind="set",
             fields=_AppEnvironmentDaprComponent_SecretFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AppEnvironmentDaprComponent_TimeoutsFields,

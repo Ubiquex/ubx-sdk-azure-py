@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Script_Timeouts:
@@ -14,10 +14,10 @@ class Script_Timeouts:
     update: Any = None
 
 _Script_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -34,20 +34,20 @@ class ScriptConfig:
     url: Any = None
     timeouts: Any = None
 
-Script = sdk.ResourceBinding(
+Script = ubx.ResourceBinding(
     wire_type="azurerm_kusto_script",
     fields={
-        "continue_on_errors_enabled": sdk.FieldSpec(wire_name="continue_on_errors_enabled"),
-        "database_id": sdk.FieldSpec(wire_name="database_id"),
-        "force_an_update_when_value_changed": sdk.FieldSpec(wire_name="force_an_update_when_value_changed"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "principal_permissions_action": sdk.FieldSpec(wire_name="principal_permissions_action"),
-        "sas_token": sdk.FieldSpec(wire_name="sas_token"),
-        "script_content": sdk.FieldSpec(wire_name="script_content"),
-        "script_level": sdk.FieldSpec(wire_name="script_level"),
-        "url": sdk.FieldSpec(wire_name="url"),
-        "timeouts": sdk.FieldSpec(
+        "continue_on_errors_enabled": ubx.FieldSpec(wire_name="continue_on_errors_enabled"),
+        "database_id": ubx.FieldSpec(wire_name="database_id"),
+        "force_an_update_when_value_changed": ubx.FieldSpec(wire_name="force_an_update_when_value_changed"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "principal_permissions_action": ubx.FieldSpec(wire_name="principal_permissions_action"),
+        "sas_token": ubx.FieldSpec(wire_name="sas_token"),
+        "script_content": ubx.FieldSpec(wire_name="script_content"),
+        "script_level": ubx.FieldSpec(wire_name="script_level"),
+        "url": ubx.FieldSpec(wire_name="url"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Script_TimeoutsFields,

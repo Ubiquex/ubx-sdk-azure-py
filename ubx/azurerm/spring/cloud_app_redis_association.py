@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudAppRedisAssociation_Timeouts:
@@ -14,10 +14,10 @@ class CloudAppRedisAssociation_Timeouts:
     update: Any = None
 
 _CloudAppRedisAssociation_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class CloudAppRedisAssociationConfig:
     ssl_enabled: Any = None
     timeouts: Any = None
 
-CloudAppRedisAssociation = sdk.ResourceBinding(
+CloudAppRedisAssociation = ubx.ResourceBinding(
     wire_type="azurerm_spring_cloud_app_redis_association",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "redis_access_key": sdk.FieldSpec(wire_name="redis_access_key"),
-        "redis_cache_id": sdk.FieldSpec(wire_name="redis_cache_id"),
-        "spring_cloud_app_id": sdk.FieldSpec(wire_name="spring_cloud_app_id"),
-        "ssl_enabled": sdk.FieldSpec(wire_name="ssl_enabled"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "redis_access_key": ubx.FieldSpec(wire_name="redis_access_key"),
+        "redis_cache_id": ubx.FieldSpec(wire_name="redis_cache_id"),
+        "spring_cloud_app_id": ubx.FieldSpec(wire_name="spring_cloud_app_id"),
+        "ssl_enabled": ubx.FieldSpec(wire_name="ssl_enabled"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CloudAppRedisAssociation_TimeoutsFields,

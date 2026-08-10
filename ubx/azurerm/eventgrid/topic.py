@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Topic_InboundIpRule:
@@ -41,37 +41,37 @@ class Topic_Timeouts:
     update: Any = None
 
 _Topic_InboundIpRuleFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "ip_mask": sdk.FieldSpec(wire_name="ip_mask"),
+    "action": ubx.FieldSpec(wire_name="action"),
+    "ip_mask": ubx.FieldSpec(wire_name="ip_mask"),
 }
 
 _Topic_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Topic_InputMappingDefaultValuesFields = {
-    "data_version": sdk.FieldSpec(wire_name="data_version"),
-    "event_type": sdk.FieldSpec(wire_name="event_type"),
-    "subject": sdk.FieldSpec(wire_name="subject"),
+    "data_version": ubx.FieldSpec(wire_name="data_version"),
+    "event_type": ubx.FieldSpec(wire_name="event_type"),
+    "subject": ubx.FieldSpec(wire_name="subject"),
 }
 
 _Topic_InputMappingFieldsFields = {
-    "data_version": sdk.FieldSpec(wire_name="data_version"),
-    "event_time": sdk.FieldSpec(wire_name="event_time"),
-    "event_type": sdk.FieldSpec(wire_name="event_type"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "subject": sdk.FieldSpec(wire_name="subject"),
-    "topic": sdk.FieldSpec(wire_name="topic"),
+    "data_version": ubx.FieldSpec(wire_name="data_version"),
+    "event_time": ubx.FieldSpec(wire_name="event_time"),
+    "event_type": ubx.FieldSpec(wire_name="event_type"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "subject": ubx.FieldSpec(wire_name="subject"),
+    "topic": ubx.FieldSpec(wire_name="topic"),
 }
 
 _Topic_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -90,38 +90,38 @@ class TopicConfig:
     input_mapping_fields: Any = None
     timeouts: Any = None
 
-Topic = sdk.ResourceBinding(
+Topic = ubx.ResourceBinding(
     wire_type="azurerm_eventgrid_topic",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "inbound_ip_rule": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "inbound_ip_rule": ubx.FieldSpec(
             wire_name="inbound_ip_rule",
             kind="list",
             fields=_Topic_InboundIpRuleFields,
         ),
-        "input_schema": sdk.FieldSpec(wire_name="input_schema"),
-        "local_auth_enabled": sdk.FieldSpec(wire_name="local_auth_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "identity": sdk.FieldSpec(
+        "input_schema": ubx.FieldSpec(wire_name="input_schema"),
+        "local_auth_enabled": ubx.FieldSpec(wire_name="local_auth_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Topic_IdentityFields,
         ),
-        "input_mapping_default_values": sdk.FieldSpec(
+        "input_mapping_default_values": ubx.FieldSpec(
             wire_name="input_mapping_default_values",
             kind="list",
             fields=_Topic_InputMappingDefaultValuesFields,
         ),
-        "input_mapping_fields": sdk.FieldSpec(
+        "input_mapping_fields": ubx.FieldSpec(
             wire_name="input_mapping_fields",
             kind="list",
             fields=_Topic_InputMappingFieldsFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Topic_TimeoutsFields,

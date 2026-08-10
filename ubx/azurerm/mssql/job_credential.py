@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class JobCredential_Timeouts:
@@ -14,10 +14,10 @@ class JobCredential_Timeouts:
     update: Any = None
 
 _JobCredential_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class JobCredentialConfig:
     username: Any = None
     timeouts: Any = None
 
-JobCredential = sdk.ResourceBinding(
+JobCredential = ubx.ResourceBinding(
     wire_type="azurerm_mssql_job_credential",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "job_agent_id": sdk.FieldSpec(wire_name="job_agent_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "password": sdk.FieldSpec(wire_name="password"),
-        "password_wo": sdk.FieldSpec(wire_name="password_wo"),
-        "password_wo_version": sdk.FieldSpec(wire_name="password_wo_version"),
-        "username": sdk.FieldSpec(wire_name="username"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "job_agent_id": ubx.FieldSpec(wire_name="job_agent_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "password": ubx.FieldSpec(wire_name="password"),
+        "password_wo": ubx.FieldSpec(wire_name="password_wo"),
+        "password_wo_version": ubx.FieldSpec(wire_name="password_wo_version"),
+        "username": ubx.FieldSpec(wire_name="username"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_JobCredential_TimeoutsFields,

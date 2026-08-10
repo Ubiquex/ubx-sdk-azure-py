@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PrivateLinkScope_Timeouts:
@@ -14,10 +14,10 @@ class PrivateLinkScope_Timeouts:
     update: Any = None
 
 _PrivateLinkScope_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class PrivateLinkScopeConfig:
     tags: Any = None
     timeouts: Any = None
 
-PrivateLinkScope = sdk.ResourceBinding(
+PrivateLinkScope = ubx.ResourceBinding(
     wire_type="azurerm_monitor_private_link_scope",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "ingestion_access_mode": sdk.FieldSpec(wire_name="ingestion_access_mode"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "query_access_mode": sdk.FieldSpec(wire_name="query_access_mode"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "ingestion_access_mode": ubx.FieldSpec(wire_name="ingestion_access_mode"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "query_access_mode": ubx.FieldSpec(wire_name="query_access_mode"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_PrivateLinkScope_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RulesEngine_Rule_Action_RequestHeader:
@@ -41,18 +41,18 @@ class RulesEngine_Timeouts:
     update: Any = None
 
 _RulesEngine_Rule_Action_RequestHeaderFields = {
-    "header_action_type": sdk.FieldSpec(wire_name="header_action_type"),
-    "header_name": sdk.FieldSpec(wire_name="header_name"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "header_action_type": ubx.FieldSpec(wire_name="header_action_type"),
+    "header_name": ubx.FieldSpec(wire_name="header_name"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _RulesEngine_Rule_ActionFields = {
-    "request_header": sdk.FieldSpec(
+    "request_header": ubx.FieldSpec(
         wire_name="request_header",
         kind="list",
         fields=_RulesEngine_Rule_Action_RequestHeaderFields,
     ),
-    "response_header": sdk.FieldSpec(
+    "response_header": ubx.FieldSpec(
         wire_name="response_header",
         kind="list",
         fields=_RulesEngine_Rule_Action_RequestHeaderFields,
@@ -60,23 +60,23 @@ _RulesEngine_Rule_ActionFields = {
 }
 
 _RulesEngine_Rule_MatchConditionFields = {
-    "negate_condition": sdk.FieldSpec(wire_name="negate_condition"),
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "selector": sdk.FieldSpec(wire_name="selector"),
-    "transform": sdk.FieldSpec(wire_name="transform"),
-    "value": sdk.FieldSpec(wire_name="value"),
-    "variable": sdk.FieldSpec(wire_name="variable"),
+    "negate_condition": ubx.FieldSpec(wire_name="negate_condition"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "selector": ubx.FieldSpec(wire_name="selector"),
+    "transform": ubx.FieldSpec(wire_name="transform"),
+    "value": ubx.FieldSpec(wire_name="value"),
+    "variable": ubx.FieldSpec(wire_name="variable"),
 }
 
 _RulesEngine_RuleFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "priority": sdk.FieldSpec(wire_name="priority"),
-    "action": sdk.FieldSpec(
+    "name": ubx.FieldSpec(wire_name="name"),
+    "priority": ubx.FieldSpec(wire_name="priority"),
+    "action": ubx.FieldSpec(
         wire_name="action",
         kind="list",
         fields=_RulesEngine_Rule_ActionFields,
     ),
-    "match_condition": sdk.FieldSpec(
+    "match_condition": ubx.FieldSpec(
         wire_name="match_condition",
         kind="list",
         fields=_RulesEngine_Rule_MatchConditionFields,
@@ -84,10 +84,10 @@ _RulesEngine_RuleFields = {
 }
 
 _RulesEngine_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -100,20 +100,20 @@ class RulesEngineConfig:
     rule: Any = None
     timeouts: Any = None
 
-RulesEngine = sdk.ResourceBinding(
+RulesEngine = ubx.ResourceBinding(
     wire_type="azurerm_frontdoor_rules_engine",
     fields={
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "frontdoor_name": sdk.FieldSpec(wire_name="frontdoor_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "rule": sdk.FieldSpec(
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "frontdoor_name": ubx.FieldSpec(wire_name="frontdoor_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "rule": ubx.FieldSpec(
             wire_name="rule",
             kind="list",
             fields=_RulesEngine_RuleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RulesEngine_TimeoutsFields,

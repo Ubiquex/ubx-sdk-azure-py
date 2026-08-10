@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementApiOperationTag_Timeouts:
@@ -14,10 +14,10 @@ class ManagementApiOperationTag_Timeouts:
     update: Any = None
 
 _ManagementApiOperationTag_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -28,14 +28,14 @@ class ManagementApiOperationTagConfig:
     name: Any = None
     timeouts: Any = None
 
-ManagementApiOperationTag = sdk.ResourceBinding(
+ManagementApiOperationTag = ubx.ResourceBinding(
     wire_type="azurerm_api_management_api_operation_tag",
     fields={
-        "api_operation_id": sdk.FieldSpec(wire_name="api_operation_id"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "timeouts": sdk.FieldSpec(
+        "api_operation_id": ubx.FieldSpec(wire_name="api_operation_id"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementApiOperationTag_TimeoutsFields,

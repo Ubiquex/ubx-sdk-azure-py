@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConsumerGroup_Timeouts:
@@ -14,10 +14,10 @@ class ConsumerGroup_Timeouts:
     update: Any = None
 
 _ConsumerGroup_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class ConsumerGroupConfig:
     user_metadata: Any = None
     timeouts: Any = None
 
-ConsumerGroup = sdk.ResourceBinding(
+ConsumerGroup = ubx.ResourceBinding(
     wire_type="azurerm_eventhub_consumer_group",
     fields={
-        "eventhub_name": sdk.FieldSpec(wire_name="eventhub_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "namespace_name": sdk.FieldSpec(wire_name="namespace_name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "user_metadata": sdk.FieldSpec(wire_name="user_metadata"),
-        "timeouts": sdk.FieldSpec(
+        "eventhub_name": ubx.FieldSpec(wire_name="eventhub_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "namespace_name": ubx.FieldSpec(wire_name="namespace_name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "user_metadata": ubx.FieldSpec(wire_name="user_metadata"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ConsumerGroup_TimeoutsFields,

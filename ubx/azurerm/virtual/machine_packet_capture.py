@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MachinePacketCapture_Filter:
@@ -27,23 +27,23 @@ class MachinePacketCapture_Timeouts:
     read: Any = None
 
 _MachinePacketCapture_FilterFields = {
-    "local_ip_address": sdk.FieldSpec(wire_name="local_ip_address"),
-    "local_port": sdk.FieldSpec(wire_name="local_port"),
-    "protocol": sdk.FieldSpec(wire_name="protocol"),
-    "remote_ip_address": sdk.FieldSpec(wire_name="remote_ip_address"),
-    "remote_port": sdk.FieldSpec(wire_name="remote_port"),
+    "local_ip_address": ubx.FieldSpec(wire_name="local_ip_address"),
+    "local_port": ubx.FieldSpec(wire_name="local_port"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
+    "remote_ip_address": ubx.FieldSpec(wire_name="remote_ip_address"),
+    "remote_port": ubx.FieldSpec(wire_name="remote_port"),
 }
 
 _MachinePacketCapture_StorageLocationFields = {
-    "file_path": sdk.FieldSpec(wire_name="file_path"),
-    "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-    "storage_path": sdk.FieldSpec(wire_name="storage_path"),
+    "file_path": ubx.FieldSpec(wire_name="file_path"),
+    "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+    "storage_path": ubx.FieldSpec(wire_name="storage_path"),
 }
 
 _MachinePacketCapture_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -59,27 +59,27 @@ class MachinePacketCaptureConfig:
     storage_location: Any = None
     timeouts: Any = None
 
-MachinePacketCapture = sdk.ResourceBinding(
+MachinePacketCapture = ubx.ResourceBinding(
     wire_type="azurerm_virtual_machine_packet_capture",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "maximum_bytes_per_packet": sdk.FieldSpec(wire_name="maximum_bytes_per_packet"),
-        "maximum_bytes_per_session": sdk.FieldSpec(wire_name="maximum_bytes_per_session"),
-        "maximum_capture_duration_in_seconds": sdk.FieldSpec(wire_name="maximum_capture_duration_in_seconds"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "network_watcher_id": sdk.FieldSpec(wire_name="network_watcher_id"),
-        "virtual_machine_id": sdk.FieldSpec(wire_name="virtual_machine_id"),
-        "filter": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "maximum_bytes_per_packet": ubx.FieldSpec(wire_name="maximum_bytes_per_packet"),
+        "maximum_bytes_per_session": ubx.FieldSpec(wire_name="maximum_bytes_per_session"),
+        "maximum_capture_duration_in_seconds": ubx.FieldSpec(wire_name="maximum_capture_duration_in_seconds"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network_watcher_id": ubx.FieldSpec(wire_name="network_watcher_id"),
+        "virtual_machine_id": ubx.FieldSpec(wire_name="virtual_machine_id"),
+        "filter": ubx.FieldSpec(
             wire_name="filter",
             kind="list",
             fields=_MachinePacketCapture_FilterFields,
         ),
-        "storage_location": sdk.FieldSpec(
+        "storage_location": ubx.FieldSpec(
             wire_name="storage_location",
             kind="list",
             fields=_MachinePacketCapture_StorageLocationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_MachinePacketCapture_TimeoutsFields,

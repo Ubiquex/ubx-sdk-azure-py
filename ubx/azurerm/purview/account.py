@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Account_Identity:
@@ -21,17 +21,17 @@ class Account_Timeouts:
     update: Any = None
 
 _Account_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Account_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -47,23 +47,23 @@ class AccountConfig:
     identity: Any = None
     timeouts: Any = None
 
-Account = sdk.ResourceBinding(
+Account = ubx.ResourceBinding(
     wire_type="azurerm_purview_account",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "managed_event_hub_enabled": sdk.FieldSpec(wire_name="managed_event_hub_enabled"),
-        "managed_resource_group_name": sdk.FieldSpec(wire_name="managed_resource_group_name"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_enabled": sdk.FieldSpec(wire_name="public_network_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "identity": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "managed_event_hub_enabled": ubx.FieldSpec(wire_name="managed_event_hub_enabled"),
+        "managed_resource_group_name": ubx.FieldSpec(wire_name="managed_resource_group_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_enabled": ubx.FieldSpec(wire_name="public_network_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Account_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Account_TimeoutsFields,

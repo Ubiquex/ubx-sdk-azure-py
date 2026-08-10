@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MoverAgent_Timeouts:
@@ -14,10 +14,10 @@ class MoverAgent_Timeouts:
     update: Any = None
 
 _MoverAgent_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class MoverAgentConfig:
     storage_mover_id: Any = None
     timeouts: Any = None
 
-MoverAgent = sdk.ResourceBinding(
+MoverAgent = ubx.ResourceBinding(
     wire_type="azurerm_storage_mover_agent",
     fields={
-        "arc_virtual_machine_id": sdk.FieldSpec(wire_name="arc_virtual_machine_id"),
-        "arc_virtual_machine_uuid": sdk.FieldSpec(wire_name="arc_virtual_machine_uuid"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "storage_mover_id": sdk.FieldSpec(wire_name="storage_mover_id"),
-        "timeouts": sdk.FieldSpec(
+        "arc_virtual_machine_id": ubx.FieldSpec(wire_name="arc_virtual_machine_id"),
+        "arc_virtual_machine_uuid": ubx.FieldSpec(wire_name="arc_virtual_machine_uuid"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "storage_mover_id": ubx.FieldSpec(wire_name="storage_mover_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_MoverAgent_TimeoutsFields,

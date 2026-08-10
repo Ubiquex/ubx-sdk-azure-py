@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RuntimeEnvironment_Timeouts:
@@ -14,10 +14,10 @@ class RuntimeEnvironment_Timeouts:
     update: Any = None
 
 _RuntimeEnvironment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -33,19 +33,19 @@ class RuntimeEnvironmentConfig:
     tags: Any = None
     timeouts: Any = None
 
-RuntimeEnvironment = sdk.ResourceBinding(
+RuntimeEnvironment = ubx.ResourceBinding(
     wire_type="azurerm_automation_runtime_environment",
     fields={
-        "automation_account_id": sdk.FieldSpec(wire_name="automation_account_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "runtime_default_packages": sdk.FieldSpec(wire_name="runtime_default_packages"),
-        "runtime_language": sdk.FieldSpec(wire_name="runtime_language"),
-        "runtime_version": sdk.FieldSpec(wire_name="runtime_version"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "automation_account_id": ubx.FieldSpec(wire_name="automation_account_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "runtime_default_packages": ubx.FieldSpec(wire_name="runtime_default_packages"),
+        "runtime_language": ubx.FieldSpec(wire_name="runtime_language"),
+        "runtime_version": ubx.FieldSpec(wire_name="runtime_version"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RuntimeEnvironment_TimeoutsFields,

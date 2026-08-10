@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MachineImplicitDataDiskFromSource_Timeouts:
@@ -14,10 +14,10 @@ class MachineImplicitDataDiskFromSource_Timeouts:
     update: Any = None
 
 _MachineImplicitDataDiskFromSource_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -33,19 +33,19 @@ class MachineImplicitDataDiskFromSourceConfig:
     write_accelerator_enabled: Any = None
     timeouts: Any = None
 
-MachineImplicitDataDiskFromSource = sdk.ResourceBinding(
+MachineImplicitDataDiskFromSource = ubx.ResourceBinding(
     wire_type="azurerm_virtual_machine_implicit_data_disk_from_source",
     fields={
-        "caching": sdk.FieldSpec(wire_name="caching"),
-        "create_option": sdk.FieldSpec(wire_name="create_option"),
-        "disk_size_gb": sdk.FieldSpec(wire_name="disk_size_gb"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "lun": sdk.FieldSpec(wire_name="lun"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "source_resource_id": sdk.FieldSpec(wire_name="source_resource_id"),
-        "virtual_machine_id": sdk.FieldSpec(wire_name="virtual_machine_id"),
-        "write_accelerator_enabled": sdk.FieldSpec(wire_name="write_accelerator_enabled"),
-        "timeouts": sdk.FieldSpec(
+        "caching": ubx.FieldSpec(wire_name="caching"),
+        "create_option": ubx.FieldSpec(wire_name="create_option"),
+        "disk_size_gb": ubx.FieldSpec(wire_name="disk_size_gb"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "lun": ubx.FieldSpec(wire_name="lun"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "source_resource_id": ubx.FieldSpec(wire_name="source_resource_id"),
+        "virtual_machine_id": ubx.FieldSpec(wire_name="virtual_machine_id"),
+        "write_accelerator_enabled": ubx.FieldSpec(wire_name="write_accelerator_enabled"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_MachineImplicitDataDiskFromSource_TimeoutsFields,

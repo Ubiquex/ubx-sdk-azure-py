@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AltoLocalRulestackCertificate_Timeouts:
@@ -14,10 +14,10 @@ class AltoLocalRulestackCertificate_Timeouts:
     update: Any = None
 
 _AltoLocalRulestackCertificate_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class AltoLocalRulestackCertificateConfig:
     self_signed: Any = None
     timeouts: Any = None
 
-AltoLocalRulestackCertificate = sdk.ResourceBinding(
+AltoLocalRulestackCertificate = ubx.ResourceBinding(
     wire_type="azurerm_palo_alto_local_rulestack_certificate",
     fields={
-        "audit_comment": sdk.FieldSpec(wire_name="audit_comment"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "key_vault_certificate_id": sdk.FieldSpec(wire_name="key_vault_certificate_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "rulestack_id": sdk.FieldSpec(wire_name="rulestack_id"),
-        "self_signed": sdk.FieldSpec(wire_name="self_signed"),
-        "timeouts": sdk.FieldSpec(
+        "audit_comment": ubx.FieldSpec(wire_name="audit_comment"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "key_vault_certificate_id": ubx.FieldSpec(wire_name="key_vault_certificate_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "rulestack_id": ubx.FieldSpec(wire_name="rulestack_id"),
+        "self_signed": ubx.FieldSpec(wire_name="self_signed"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AltoLocalRulestackCertificate_TimeoutsFields,

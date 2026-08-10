@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementApiDiagnostic_BackendRequest_DataMasking_Headers:
@@ -30,17 +30,17 @@ class ManagementApiDiagnostic_Timeouts:
     update: Any = None
 
 _ManagementApiDiagnostic_BackendRequest_DataMasking_HeadersFields = {
-    "mode": sdk.FieldSpec(wire_name="mode"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "mode": ubx.FieldSpec(wire_name="mode"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _ManagementApiDiagnostic_BackendRequest_DataMaskingFields = {
-    "headers": sdk.FieldSpec(
+    "headers": ubx.FieldSpec(
         wire_name="headers",
         kind="list",
         fields=_ManagementApiDiagnostic_BackendRequest_DataMasking_HeadersFields,
     ),
-    "query_params": sdk.FieldSpec(
+    "query_params": ubx.FieldSpec(
         wire_name="query_params",
         kind="list",
         fields=_ManagementApiDiagnostic_BackendRequest_DataMasking_HeadersFields,
@@ -48,9 +48,9 @@ _ManagementApiDiagnostic_BackendRequest_DataMaskingFields = {
 }
 
 _ManagementApiDiagnostic_BackendRequestFields = {
-    "body_bytes": sdk.FieldSpec(wire_name="body_bytes"),
-    "headers_to_log": sdk.FieldSpec(wire_name="headers_to_log"),
-    "data_masking": sdk.FieldSpec(
+    "body_bytes": ubx.FieldSpec(wire_name="body_bytes"),
+    "headers_to_log": ubx.FieldSpec(wire_name="headers_to_log"),
+    "data_masking": ubx.FieldSpec(
         wire_name="data_masking",
         kind="list",
         fields=_ManagementApiDiagnostic_BackendRequest_DataMaskingFields,
@@ -58,10 +58,10 @@ _ManagementApiDiagnostic_BackendRequestFields = {
 }
 
 _ManagementApiDiagnostic_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -84,42 +84,42 @@ class ManagementApiDiagnosticConfig:
     frontend_response: Any = None
     timeouts: Any = None
 
-ManagementApiDiagnostic = sdk.ResourceBinding(
+ManagementApiDiagnostic = ubx.ResourceBinding(
     wire_type="azurerm_api_management_api_diagnostic",
     fields={
-        "always_log_errors": sdk.FieldSpec(wire_name="always_log_errors"),
-        "api_management_logger_id": sdk.FieldSpec(wire_name="api_management_logger_id"),
-        "api_management_name": sdk.FieldSpec(wire_name="api_management_name"),
-        "api_name": sdk.FieldSpec(wire_name="api_name"),
-        "http_correlation_protocol": sdk.FieldSpec(wire_name="http_correlation_protocol"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "identifier": sdk.FieldSpec(wire_name="identifier"),
-        "log_client_ip": sdk.FieldSpec(wire_name="log_client_ip"),
-        "operation_name_format": sdk.FieldSpec(wire_name="operation_name_format"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sampling_percentage": sdk.FieldSpec(wire_name="sampling_percentage"),
-        "verbosity": sdk.FieldSpec(wire_name="verbosity"),
-        "backend_request": sdk.FieldSpec(
+        "always_log_errors": ubx.FieldSpec(wire_name="always_log_errors"),
+        "api_management_logger_id": ubx.FieldSpec(wire_name="api_management_logger_id"),
+        "api_management_name": ubx.FieldSpec(wire_name="api_management_name"),
+        "api_name": ubx.FieldSpec(wire_name="api_name"),
+        "http_correlation_protocol": ubx.FieldSpec(wire_name="http_correlation_protocol"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "identifier": ubx.FieldSpec(wire_name="identifier"),
+        "log_client_ip": ubx.FieldSpec(wire_name="log_client_ip"),
+        "operation_name_format": ubx.FieldSpec(wire_name="operation_name_format"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sampling_percentage": ubx.FieldSpec(wire_name="sampling_percentage"),
+        "verbosity": ubx.FieldSpec(wire_name="verbosity"),
+        "backend_request": ubx.FieldSpec(
             wire_name="backend_request",
             kind="list",
             fields=_ManagementApiDiagnostic_BackendRequestFields,
         ),
-        "backend_response": sdk.FieldSpec(
+        "backend_response": ubx.FieldSpec(
             wire_name="backend_response",
             kind="list",
             fields=_ManagementApiDiagnostic_BackendRequestFields,
         ),
-        "frontend_request": sdk.FieldSpec(
+        "frontend_request": ubx.FieldSpec(
             wire_name="frontend_request",
             kind="list",
             fields=_ManagementApiDiagnostic_BackendRequestFields,
         ),
-        "frontend_response": sdk.FieldSpec(
+        "frontend_response": ubx.FieldSpec(
             wire_name="frontend_response",
             kind="list",
             fields=_ManagementApiDiagnostic_BackendRequestFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementApiDiagnostic_TimeoutsFields,

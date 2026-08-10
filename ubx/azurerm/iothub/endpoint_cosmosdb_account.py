@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EndpointCosmosdbAccount_Timeouts:
@@ -14,10 +14,10 @@ class EndpointCosmosdbAccount_Timeouts:
     update: Any = None
 
 _EndpointCosmosdbAccount_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -38,24 +38,24 @@ class EndpointCosmosdbAccountConfig:
     subscription_id: Any = None
     timeouts: Any = None
 
-EndpointCosmosdbAccount = sdk.ResourceBinding(
+EndpointCosmosdbAccount = ubx.ResourceBinding(
     wire_type="azurerm_iothub_endpoint_cosmosdb_account",
     fields={
-        "authentication_type": sdk.FieldSpec(wire_name="authentication_type"),
-        "container_name": sdk.FieldSpec(wire_name="container_name"),
-        "database_name": sdk.FieldSpec(wire_name="database_name"),
-        "endpoint_uri": sdk.FieldSpec(wire_name="endpoint_uri"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "identity_id": sdk.FieldSpec(wire_name="identity_id"),
-        "iothub_id": sdk.FieldSpec(wire_name="iothub_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "partition_key_name": sdk.FieldSpec(wire_name="partition_key_name"),
-        "partition_key_template": sdk.FieldSpec(wire_name="partition_key_template"),
-        "primary_key": sdk.FieldSpec(wire_name="primary_key"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "secondary_key": sdk.FieldSpec(wire_name="secondary_key"),
-        "subscription_id": sdk.FieldSpec(wire_name="subscription_id"),
-        "timeouts": sdk.FieldSpec(
+        "authentication_type": ubx.FieldSpec(wire_name="authentication_type"),
+        "container_name": ubx.FieldSpec(wire_name="container_name"),
+        "database_name": ubx.FieldSpec(wire_name="database_name"),
+        "endpoint_uri": ubx.FieldSpec(wire_name="endpoint_uri"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "identity_id": ubx.FieldSpec(wire_name="identity_id"),
+        "iothub_id": ubx.FieldSpec(wire_name="iothub_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "partition_key_name": ubx.FieldSpec(wire_name="partition_key_name"),
+        "partition_key_template": ubx.FieldSpec(wire_name="partition_key_template"),
+        "primary_key": ubx.FieldSpec(wire_name="primary_key"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "secondary_key": ubx.FieldSpec(wire_name="secondary_key"),
+        "subscription_id": ubx.FieldSpec(wire_name="subscription_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_EndpointCosmosdbAccount_TimeoutsFields,

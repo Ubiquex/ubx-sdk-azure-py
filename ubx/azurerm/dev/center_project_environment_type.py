@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CenterProjectEnvironmentType_Identity:
@@ -26,22 +26,22 @@ class CenterProjectEnvironmentType_UserRoleAssignment:
     user_id: Any = None
 
 _CenterProjectEnvironmentType_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _CenterProjectEnvironmentType_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _CenterProjectEnvironmentType_UserRoleAssignmentFields = {
-    "roles": sdk.FieldSpec(wire_name="roles"),
-    "user_id": sdk.FieldSpec(wire_name="user_id"),
+    "roles": ubx.FieldSpec(wire_name="roles"),
+    "user_id": ubx.FieldSpec(wire_name="user_id"),
 }
 
 @dataclasses.dataclass
@@ -57,27 +57,27 @@ class CenterProjectEnvironmentTypeConfig:
     timeouts: Any = None
     user_role_assignment: Any = None
 
-CenterProjectEnvironmentType = sdk.ResourceBinding(
+CenterProjectEnvironmentType = ubx.ResourceBinding(
     wire_type="azurerm_dev_center_project_environment_type",
     fields={
-        "creator_role_assignment_roles": sdk.FieldSpec(wire_name="creator_role_assignment_roles"),
-        "deployment_target_id": sdk.FieldSpec(wire_name="deployment_target_id"),
-        "dev_center_project_id": sdk.FieldSpec(wire_name="dev_center_project_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "identity": sdk.FieldSpec(
+        "creator_role_assignment_roles": ubx.FieldSpec(wire_name="creator_role_assignment_roles"),
+        "deployment_target_id": ubx.FieldSpec(wire_name="deployment_target_id"),
+        "dev_center_project_id": ubx.FieldSpec(wire_name="dev_center_project_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_CenterProjectEnvironmentType_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CenterProjectEnvironmentType_TimeoutsFields,
         ),
-        "user_role_assignment": sdk.FieldSpec(
+        "user_role_assignment": ubx.FieldSpec(
             wire_name="user_role_assignment",
             kind="set",
             fields=_CenterProjectEnvironmentType_UserRoleAssignmentFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InsightsStandardWebTest_Request_Header:
@@ -41,17 +41,17 @@ class InsightsStandardWebTest_ValidationRules:
     content: Any = None
 
 _InsightsStandardWebTest_Request_HeaderFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _InsightsStandardWebTest_RequestFields = {
-    "body": sdk.FieldSpec(wire_name="body"),
-    "follow_redirects_enabled": sdk.FieldSpec(wire_name="follow_redirects_enabled"),
-    "http_verb": sdk.FieldSpec(wire_name="http_verb"),
-    "parse_dependent_requests_enabled": sdk.FieldSpec(wire_name="parse_dependent_requests_enabled"),
-    "url": sdk.FieldSpec(wire_name="url"),
-    "header": sdk.FieldSpec(
+    "body": ubx.FieldSpec(wire_name="body"),
+    "follow_redirects_enabled": ubx.FieldSpec(wire_name="follow_redirects_enabled"),
+    "http_verb": ubx.FieldSpec(wire_name="http_verb"),
+    "parse_dependent_requests_enabled": ubx.FieldSpec(wire_name="parse_dependent_requests_enabled"),
+    "url": ubx.FieldSpec(wire_name="url"),
+    "header": ubx.FieldSpec(
         wire_name="header",
         kind="list",
         fields=_InsightsStandardWebTest_Request_HeaderFields,
@@ -59,23 +59,23 @@ _InsightsStandardWebTest_RequestFields = {
 }
 
 _InsightsStandardWebTest_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _InsightsStandardWebTest_ValidationRules_ContentFields = {
-    "content_match": sdk.FieldSpec(wire_name="content_match"),
-    "ignore_case": sdk.FieldSpec(wire_name="ignore_case"),
-    "pass_if_text_found": sdk.FieldSpec(wire_name="pass_if_text_found"),
+    "content_match": ubx.FieldSpec(wire_name="content_match"),
+    "ignore_case": ubx.FieldSpec(wire_name="ignore_case"),
+    "pass_if_text_found": ubx.FieldSpec(wire_name="pass_if_text_found"),
 }
 
 _InsightsStandardWebTest_ValidationRulesFields = {
-    "expected_status_code": sdk.FieldSpec(wire_name="expected_status_code"),
-    "ssl_cert_remaining_lifetime": sdk.FieldSpec(wire_name="ssl_cert_remaining_lifetime"),
-    "ssl_check_enabled": sdk.FieldSpec(wire_name="ssl_check_enabled"),
-    "content": sdk.FieldSpec(
+    "expected_status_code": ubx.FieldSpec(wire_name="expected_status_code"),
+    "ssl_cert_remaining_lifetime": ubx.FieldSpec(wire_name="ssl_cert_remaining_lifetime"),
+    "ssl_check_enabled": ubx.FieldSpec(wire_name="ssl_check_enabled"),
+    "content": ubx.FieldSpec(
         wire_name="content",
         kind="list",
         fields=_InsightsStandardWebTest_ValidationRules_ContentFields,
@@ -100,32 +100,32 @@ class InsightsStandardWebTestConfig:
     timeouts: Any = None
     validation_rules: Any = None
 
-InsightsStandardWebTest = sdk.ResourceBinding(
+InsightsStandardWebTest = ubx.ResourceBinding(
     wire_type="azurerm_application_insights_standard_web_test",
     fields={
-        "application_insights_id": sdk.FieldSpec(wire_name="application_insights_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "frequency": sdk.FieldSpec(wire_name="frequency"),
-        "geo_locations": sdk.FieldSpec(wire_name="geo_locations"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "retry_enabled": sdk.FieldSpec(wire_name="retry_enabled"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeout": sdk.FieldSpec(wire_name="timeout"),
-        "request": sdk.FieldSpec(
+        "application_insights_id": ubx.FieldSpec(wire_name="application_insights_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "frequency": ubx.FieldSpec(wire_name="frequency"),
+        "geo_locations": ubx.FieldSpec(wire_name="geo_locations"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "retry_enabled": ubx.FieldSpec(wire_name="retry_enabled"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeout": ubx.FieldSpec(wire_name="timeout"),
+        "request": ubx.FieldSpec(
             wire_name="request",
             kind="list",
             fields=_InsightsStandardWebTest_RequestFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_InsightsStandardWebTest_TimeoutsFields,
         ),
-        "validation_rules": sdk.FieldSpec(
+        "validation_rules": ubx.FieldSpec(
             wire_name="validation_rules",
             kind="list",
             fields=_InsightsStandardWebTest_ValidationRulesFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MachineRestorePoint_Timeouts:
@@ -13,9 +13,9 @@ class MachineRestorePoint_Timeouts:
     read: Any = None
 
 _MachineRestorePoint_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -27,15 +27,15 @@ class MachineRestorePointConfig:
     virtual_machine_restore_point_collection_id: Any = None
     timeouts: Any = None
 
-MachineRestorePoint = sdk.ResourceBinding(
+MachineRestorePoint = ubx.ResourceBinding(
     wire_type="azurerm_virtual_machine_restore_point",
     fields={
-        "crash_consistency_mode_enabled": sdk.FieldSpec(wire_name="crash_consistency_mode_enabled"),
-        "excluded_disks": sdk.FieldSpec(wire_name="excluded_disks"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "virtual_machine_restore_point_collection_id": sdk.FieldSpec(wire_name="virtual_machine_restore_point_collection_id"),
-        "timeouts": sdk.FieldSpec(
+        "crash_consistency_mode_enabled": ubx.FieldSpec(wire_name="crash_consistency_mode_enabled"),
+        "excluded_disks": ubx.FieldSpec(wire_name="excluded_disks"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "virtual_machine_restore_point_collection_id": ubx.FieldSpec(wire_name="virtual_machine_restore_point_collection_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_MachineRestorePoint_TimeoutsFields,

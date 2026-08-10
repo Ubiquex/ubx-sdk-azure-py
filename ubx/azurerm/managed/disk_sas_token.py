@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DiskSasToken_Timeouts:
@@ -13,9 +13,9 @@ class DiskSasToken_Timeouts:
     read: Any = None
 
 _DiskSasToken_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -26,14 +26,14 @@ class DiskSasTokenConfig:
     managed_disk_id: Any = None
     timeouts: Any = None
 
-DiskSasToken = sdk.ResourceBinding(
+DiskSasToken = ubx.ResourceBinding(
     wire_type="azurerm_managed_disk_sas_token",
     fields={
-        "access_level": sdk.FieldSpec(wire_name="access_level"),
-        "duration_in_seconds": sdk.FieldSpec(wire_name="duration_in_seconds"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "managed_disk_id": sdk.FieldSpec(wire_name="managed_disk_id"),
-        "timeouts": sdk.FieldSpec(
+        "access_level": ubx.FieldSpec(wire_name="access_level"),
+        "duration_in_seconds": ubx.FieldSpec(wire_name="duration_in_seconds"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "managed_disk_id": ubx.FieldSpec(wire_name="managed_disk_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DiskSasToken_TimeoutsFields,

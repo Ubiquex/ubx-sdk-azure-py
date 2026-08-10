@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class NamespaceSchemaGroup_Timeouts:
@@ -13,9 +13,9 @@ class NamespaceSchemaGroup_Timeouts:
     read: Any = None
 
 _NamespaceSchemaGroup_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -27,15 +27,15 @@ class NamespaceSchemaGroupConfig:
     schema_type: Any = None
     timeouts: Any = None
 
-NamespaceSchemaGroup = sdk.ResourceBinding(
+NamespaceSchemaGroup = ubx.ResourceBinding(
     wire_type="azurerm_eventhub_namespace_schema_group",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "namespace_id": sdk.FieldSpec(wire_name="namespace_id"),
-        "schema_compatibility": sdk.FieldSpec(wire_name="schema_compatibility"),
-        "schema_type": sdk.FieldSpec(wire_name="schema_type"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "namespace_id": ubx.FieldSpec(wire_name="namespace_id"),
+        "schema_compatibility": ubx.FieldSpec(wire_name="schema_compatibility"),
+        "schema_type": ubx.FieldSpec(wire_name="schema_type"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_NamespaceSchemaGroup_TimeoutsFields,

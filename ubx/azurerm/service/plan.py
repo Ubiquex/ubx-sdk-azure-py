@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Plan_Timeouts:
@@ -14,10 +14,10 @@ class Plan_Timeouts:
     update: Any = None
 
 _Plan_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -37,23 +37,23 @@ class PlanConfig:
     zone_balancing_enabled: Any = None
     timeouts: Any = None
 
-Plan = sdk.ResourceBinding(
+Plan = ubx.ResourceBinding(
     wire_type="azurerm_service_plan",
     fields={
-        "app_service_environment_id": sdk.FieldSpec(wire_name="app_service_environment_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "maximum_elastic_worker_count": sdk.FieldSpec(wire_name="maximum_elastic_worker_count"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "os_type": sdk.FieldSpec(wire_name="os_type"),
-        "per_site_scaling_enabled": sdk.FieldSpec(wire_name="per_site_scaling_enabled"),
-        "premium_plan_auto_scale_enabled": sdk.FieldSpec(wire_name="premium_plan_auto_scale_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "worker_count": sdk.FieldSpec(wire_name="worker_count"),
-        "zone_balancing_enabled": sdk.FieldSpec(wire_name="zone_balancing_enabled"),
-        "timeouts": sdk.FieldSpec(
+        "app_service_environment_id": ubx.FieldSpec(wire_name="app_service_environment_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "maximum_elastic_worker_count": ubx.FieldSpec(wire_name="maximum_elastic_worker_count"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "os_type": ubx.FieldSpec(wire_name="os_type"),
+        "per_site_scaling_enabled": ubx.FieldSpec(wire_name="per_site_scaling_enabled"),
+        "premium_plan_auto_scale_enabled": ubx.FieldSpec(wire_name="premium_plan_auto_scale_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "worker_count": ubx.FieldSpec(wire_name="worker_count"),
+        "zone_balancing_enabled": ubx.FieldSpec(wire_name="zone_balancing_enabled"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Plan_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TwinsEndpointServicebus_Timeouts:
@@ -14,10 +14,10 @@ class TwinsEndpointServicebus_Timeouts:
     update: Any = None
 
 _TwinsEndpointServicebus_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class TwinsEndpointServicebusConfig:
     servicebus_secondary_connection_string: Any = None
     timeouts: Any = None
 
-TwinsEndpointServicebus = sdk.ResourceBinding(
+TwinsEndpointServicebus = ubx.ResourceBinding(
     wire_type="azurerm_digital_twins_endpoint_servicebus",
     fields={
-        "dead_letter_storage_secret": sdk.FieldSpec(wire_name="dead_letter_storage_secret"),
-        "digital_twins_id": sdk.FieldSpec(wire_name="digital_twins_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "servicebus_primary_connection_string": sdk.FieldSpec(wire_name="servicebus_primary_connection_string"),
-        "servicebus_secondary_connection_string": sdk.FieldSpec(wire_name="servicebus_secondary_connection_string"),
-        "timeouts": sdk.FieldSpec(
+        "dead_letter_storage_secret": ubx.FieldSpec(wire_name="dead_letter_storage_secret"),
+        "digital_twins_id": ubx.FieldSpec(wire_name="digital_twins_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "servicebus_primary_connection_string": ubx.FieldSpec(wire_name="servicebus_primary_connection_string"),
+        "servicebus_secondary_connection_string": ubx.FieldSpec(wire_name="servicebus_secondary_connection_string"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_TwinsEndpointServicebus_TimeoutsFields,

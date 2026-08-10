@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Profile_ContainerNetworkInterface_IpConfiguration:
@@ -24,13 +24,13 @@ class Profile_Timeouts:
     update: Any = None
 
 _Profile_ContainerNetworkInterface_IpConfigurationFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _Profile_ContainerNetworkInterfaceFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "ip_configuration": sdk.FieldSpec(
+    "name": ubx.FieldSpec(wire_name="name"),
+    "ip_configuration": ubx.FieldSpec(
         wire_name="ip_configuration",
         kind="list",
         fields=_Profile_ContainerNetworkInterface_IpConfigurationFields,
@@ -38,10 +38,10 @@ _Profile_ContainerNetworkInterfaceFields = {
 }
 
 _Profile_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -54,20 +54,20 @@ class ProfileConfig:
     container_network_interface: Any = None
     timeouts: Any = None
 
-Profile = sdk.ResourceBinding(
+Profile = ubx.ResourceBinding(
     wire_type="azurerm_network_profile",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "container_network_interface": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "container_network_interface": ubx.FieldSpec(
             wire_name="container_network_interface",
             kind="list",
             fields=_Profile_ContainerNetworkInterfaceFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Profile_TimeoutsFields,

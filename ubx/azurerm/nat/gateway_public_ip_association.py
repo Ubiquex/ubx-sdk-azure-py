@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GatewayPublicIpAssociation_Timeouts:
@@ -13,9 +13,9 @@ class GatewayPublicIpAssociation_Timeouts:
     read: Any = None
 
 _GatewayPublicIpAssociation_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -25,13 +25,13 @@ class GatewayPublicIpAssociationConfig:
     public_ip_address_id: Any = None
     timeouts: Any = None
 
-GatewayPublicIpAssociation = sdk.ResourceBinding(
+GatewayPublicIpAssociation = ubx.ResourceBinding(
     wire_type="azurerm_nat_gateway_public_ip_association",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "nat_gateway_id": sdk.FieldSpec(wire_name="nat_gateway_id"),
-        "public_ip_address_id": sdk.FieldSpec(wire_name="public_ip_address_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "nat_gateway_id": ubx.FieldSpec(wire_name="nat_gateway_id"),
+        "public_ip_address_id": ubx.FieldSpec(wire_name="public_ip_address_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_GatewayPublicIpAssociation_TimeoutsFields,

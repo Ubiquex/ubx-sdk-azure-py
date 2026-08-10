@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagedInstanceFailoverGroup_ReadWriteEndpointFailoverPolicy:
@@ -19,15 +19,15 @@ class ManagedInstanceFailoverGroup_Timeouts:
     update: Any = None
 
 _ManagedInstanceFailoverGroup_ReadWriteEndpointFailoverPolicyFields = {
-    "grace_minutes": sdk.FieldSpec(wire_name="grace_minutes"),
-    "mode": sdk.FieldSpec(wire_name="mode"),
+    "grace_minutes": ubx.FieldSpec(wire_name="grace_minutes"),
+    "mode": ubx.FieldSpec(wire_name="mode"),
 }
 
 _ManagedInstanceFailoverGroup_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -42,22 +42,22 @@ class ManagedInstanceFailoverGroupConfig:
     read_write_endpoint_failover_policy: Any = None
     timeouts: Any = None
 
-ManagedInstanceFailoverGroup = sdk.ResourceBinding(
+ManagedInstanceFailoverGroup = ubx.ResourceBinding(
     wire_type="azurerm_mssql_managed_instance_failover_group",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "managed_instance_id": sdk.FieldSpec(wire_name="managed_instance_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "partner_managed_instance_id": sdk.FieldSpec(wire_name="partner_managed_instance_id"),
-        "readonly_endpoint_failover_policy_enabled": sdk.FieldSpec(wire_name="readonly_endpoint_failover_policy_enabled"),
-        "secondary_type": sdk.FieldSpec(wire_name="secondary_type"),
-        "read_write_endpoint_failover_policy": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "managed_instance_id": ubx.FieldSpec(wire_name="managed_instance_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "partner_managed_instance_id": ubx.FieldSpec(wire_name="partner_managed_instance_id"),
+        "readonly_endpoint_failover_policy_enabled": ubx.FieldSpec(wire_name="readonly_endpoint_failover_policy_enabled"),
+        "secondary_type": ubx.FieldSpec(wire_name="secondary_type"),
+        "read_write_endpoint_failover_policy": ubx.FieldSpec(
             wire_name="read_write_endpoint_failover_policy",
             kind="list",
             fields=_ManagedInstanceFailoverGroup_ReadWriteEndpointFailoverPolicyFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagedInstanceFailoverGroup_TimeoutsFields,

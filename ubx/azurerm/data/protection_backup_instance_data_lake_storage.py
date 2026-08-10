@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ProtectionBackupInstanceDataLakeStorage_Timeouts:
@@ -14,10 +14,10 @@ class ProtectionBackupInstanceDataLakeStorage_Timeouts:
     update: Any = None
 
 _ProtectionBackupInstanceDataLakeStorage_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class ProtectionBackupInstanceDataLakeStorageConfig:
     storage_container_names: Any = None
     timeouts: Any = None
 
-ProtectionBackupInstanceDataLakeStorage = sdk.ResourceBinding(
+ProtectionBackupInstanceDataLakeStorage = ubx.ResourceBinding(
     wire_type="azurerm_data_protection_backup_instance_data_lake_storage",
     fields={
-        "backup_policy_data_lake_storage_id": sdk.FieldSpec(wire_name="backup_policy_data_lake_storage_id"),
-        "data_protection_backup_vault_id": sdk.FieldSpec(wire_name="data_protection_backup_vault_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "storage_container_names": sdk.FieldSpec(wire_name="storage_container_names"),
-        "timeouts": sdk.FieldSpec(
+        "backup_policy_data_lake_storage_id": ubx.FieldSpec(wire_name="backup_policy_data_lake_storage_id"),
+        "data_protection_backup_vault_id": ubx.FieldSpec(wire_name="data_protection_backup_vault_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "storage_container_names": ubx.FieldSpec(wire_name="storage_container_names"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ProtectionBackupInstanceDataLakeStorage_TimeoutsFields,

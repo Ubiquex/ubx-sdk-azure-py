@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Monitor_DatadogOrganization:
@@ -37,33 +37,33 @@ class Monitor_User:
     phone_number: Any = None
 
 _Monitor_DatadogOrganizationFields = {
-    "api_key": sdk.FieldSpec(wire_name="api_key"),
-    "application_key": sdk.FieldSpec(wire_name="application_key"),
-    "enterprise_app_id": sdk.FieldSpec(wire_name="enterprise_app_id"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "linking_auth_code": sdk.FieldSpec(wire_name="linking_auth_code"),
-    "linking_client_id": sdk.FieldSpec(wire_name="linking_client_id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "redirect_uri": sdk.FieldSpec(wire_name="redirect_uri"),
+    "api_key": ubx.FieldSpec(wire_name="api_key"),
+    "application_key": ubx.FieldSpec(wire_name="application_key"),
+    "enterprise_app_id": ubx.FieldSpec(wire_name="enterprise_app_id"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "linking_auth_code": ubx.FieldSpec(wire_name="linking_auth_code"),
+    "linking_client_id": ubx.FieldSpec(wire_name="linking_client_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "redirect_uri": ubx.FieldSpec(wire_name="redirect_uri"),
 }
 
 _Monitor_IdentityFields = {
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Monitor_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _Monitor_UserFields = {
-    "email": sdk.FieldSpec(wire_name="email"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "phone_number": sdk.FieldSpec(wire_name="phone_number"),
+    "email": ubx.FieldSpec(wire_name="email"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "phone_number": ubx.FieldSpec(wire_name="phone_number"),
 }
 
 @dataclasses.dataclass
@@ -80,32 +80,32 @@ class MonitorConfig:
     timeouts: Any = None
     user: Any = None
 
-Monitor = sdk.ResourceBinding(
+Monitor = ubx.ResourceBinding(
     wire_type="azurerm_datadog_monitor",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "monitoring_enabled": sdk.FieldSpec(wire_name="monitoring_enabled"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "datadog_organization": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "monitoring_enabled": ubx.FieldSpec(wire_name="monitoring_enabled"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "datadog_organization": ubx.FieldSpec(
             wire_name="datadog_organization",
             kind="list",
             fields=_Monitor_DatadogOrganizationFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Monitor_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Monitor_TimeoutsFields,
         ),
-        "user": sdk.FieldSpec(
+        "user": ubx.FieldSpec(
             wire_name="user",
             kind="list",
             fields=_Monitor_UserFields,

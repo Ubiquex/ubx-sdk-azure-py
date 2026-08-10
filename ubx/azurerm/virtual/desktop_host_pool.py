@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DesktopHostPool_ScheduledAgentUpdates_Schedule:
@@ -26,15 +26,15 @@ class DesktopHostPool_Timeouts:
     update: Any = None
 
 _DesktopHostPool_ScheduledAgentUpdates_ScheduleFields = {
-    "day_of_week": sdk.FieldSpec(wire_name="day_of_week"),
-    "hour_of_day": sdk.FieldSpec(wire_name="hour_of_day"),
+    "day_of_week": ubx.FieldSpec(wire_name="day_of_week"),
+    "hour_of_day": ubx.FieldSpec(wire_name="hour_of_day"),
 }
 
 _DesktopHostPool_ScheduledAgentUpdatesFields = {
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "timezone": sdk.FieldSpec(wire_name="timezone"),
-    "use_session_host_timezone": sdk.FieldSpec(wire_name="use_session_host_timezone"),
-    "schedule": sdk.FieldSpec(
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "timezone": ubx.FieldSpec(wire_name="timezone"),
+    "use_session_host_timezone": ubx.FieldSpec(wire_name="use_session_host_timezone"),
+    "schedule": ubx.FieldSpec(
         wire_name="schedule",
         kind="list",
         fields=_DesktopHostPool_ScheduledAgentUpdates_ScheduleFields,
@@ -42,10 +42,10 @@ _DesktopHostPool_ScheduledAgentUpdatesFields = {
 }
 
 _DesktopHostPool_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -70,32 +70,32 @@ class DesktopHostPoolConfig:
     scheduled_agent_updates: Any = None
     timeouts: Any = None
 
-DesktopHostPool = sdk.ResourceBinding(
+DesktopHostPool = ubx.ResourceBinding(
     wire_type="azurerm_virtual_desktop_host_pool",
     fields={
-        "custom_rdp_properties": sdk.FieldSpec(wire_name="custom_rdp_properties"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "friendly_name": sdk.FieldSpec(wire_name="friendly_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "load_balancer_type": sdk.FieldSpec(wire_name="load_balancer_type"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "maximum_sessions_allowed": sdk.FieldSpec(wire_name="maximum_sessions_allowed"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "personal_desktop_assignment_type": sdk.FieldSpec(wire_name="personal_desktop_assignment_type"),
-        "preferred_app_group_type": sdk.FieldSpec(wire_name="preferred_app_group_type"),
-        "public_network_access": sdk.FieldSpec(wire_name="public_network_access"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "start_vm_on_connect": sdk.FieldSpec(wire_name="start_vm_on_connect"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "type": sdk.FieldSpec(wire_name="type"),
-        "validate_environment": sdk.FieldSpec(wire_name="validate_environment"),
-        "vm_template": sdk.FieldSpec(wire_name="vm_template"),
-        "scheduled_agent_updates": sdk.FieldSpec(
+        "custom_rdp_properties": ubx.FieldSpec(wire_name="custom_rdp_properties"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "friendly_name": ubx.FieldSpec(wire_name="friendly_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "load_balancer_type": ubx.FieldSpec(wire_name="load_balancer_type"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "maximum_sessions_allowed": ubx.FieldSpec(wire_name="maximum_sessions_allowed"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "personal_desktop_assignment_type": ubx.FieldSpec(wire_name="personal_desktop_assignment_type"),
+        "preferred_app_group_type": ubx.FieldSpec(wire_name="preferred_app_group_type"),
+        "public_network_access": ubx.FieldSpec(wire_name="public_network_access"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "start_vm_on_connect": ubx.FieldSpec(wire_name="start_vm_on_connect"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "type": ubx.FieldSpec(wire_name="type"),
+        "validate_environment": ubx.FieldSpec(wire_name="validate_environment"),
+        "vm_template": ubx.FieldSpec(wire_name="vm_template"),
+        "scheduled_agent_updates": ubx.FieldSpec(
             wire_name="scheduled_agent_updates",
             kind="list",
             fields=_DesktopHostPool_ScheduledAgentUpdatesFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DesktopHostPool_TimeoutsFields,

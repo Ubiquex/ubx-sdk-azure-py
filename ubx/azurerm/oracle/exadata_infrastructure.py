@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ExadataInfrastructure_MaintenanceWindow:
@@ -24,20 +24,20 @@ class ExadataInfrastructure_Timeouts:
     update: Any = None
 
 _ExadataInfrastructure_MaintenanceWindowFields = {
-    "days_of_week": sdk.FieldSpec(wire_name="days_of_week"),
-    "hours_of_day": sdk.FieldSpec(wire_name="hours_of_day"),
-    "lead_time_in_weeks": sdk.FieldSpec(wire_name="lead_time_in_weeks"),
-    "months": sdk.FieldSpec(wire_name="months"),
-    "patching_mode": sdk.FieldSpec(wire_name="patching_mode"),
-    "preference": sdk.FieldSpec(wire_name="preference"),
-    "weeks_of_month": sdk.FieldSpec(wire_name="weeks_of_month"),
+    "days_of_week": ubx.FieldSpec(wire_name="days_of_week"),
+    "hours_of_day": ubx.FieldSpec(wire_name="hours_of_day"),
+    "lead_time_in_weeks": ubx.FieldSpec(wire_name="lead_time_in_weeks"),
+    "months": ubx.FieldSpec(wire_name="months"),
+    "patching_mode": ubx.FieldSpec(wire_name="patching_mode"),
+    "preference": ubx.FieldSpec(wire_name="preference"),
+    "weeks_of_month": ubx.FieldSpec(wire_name="weeks_of_month"),
 }
 
 _ExadataInfrastructure_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -58,28 +58,28 @@ class ExadataInfrastructureConfig:
     maintenance_window: Any = None
     timeouts: Any = None
 
-ExadataInfrastructure = sdk.ResourceBinding(
+ExadataInfrastructure = ubx.ResourceBinding(
     wire_type="azurerm_oracle_exadata_infrastructure",
     fields={
-        "compute_count": sdk.FieldSpec(wire_name="compute_count"),
-        "customer_contacts": sdk.FieldSpec(wire_name="customer_contacts"),
-        "database_server_type": sdk.FieldSpec(wire_name="database_server_type"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "shape": sdk.FieldSpec(wire_name="shape"),
-        "storage_count": sdk.FieldSpec(wire_name="storage_count"),
-        "storage_server_type": sdk.FieldSpec(wire_name="storage_server_type"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "zones": sdk.FieldSpec(wire_name="zones"),
-        "maintenance_window": sdk.FieldSpec(
+        "compute_count": ubx.FieldSpec(wire_name="compute_count"),
+        "customer_contacts": ubx.FieldSpec(wire_name="customer_contacts"),
+        "database_server_type": ubx.FieldSpec(wire_name="database_server_type"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "shape": ubx.FieldSpec(wire_name="shape"),
+        "storage_count": ubx.FieldSpec(wire_name="storage_count"),
+        "storage_server_type": ubx.FieldSpec(wire_name="storage_server_type"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "zones": ubx.FieldSpec(wire_name="zones"),
+        "maintenance_window": ubx.FieldSpec(
             wire_name="maintenance_window",
             kind="list",
             fields=_ExadataInfrastructure_MaintenanceWindowFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ExadataInfrastructure_TimeoutsFields,

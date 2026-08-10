@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ApplicationDefinition_Authorization:
@@ -19,15 +19,15 @@ class ApplicationDefinition_Timeouts:
     update: Any = None
 
 _ApplicationDefinition_AuthorizationFields = {
-    "role_definition_id": sdk.FieldSpec(wire_name="role_definition_id"),
-    "service_principal_id": sdk.FieldSpec(wire_name="service_principal_id"),
+    "role_definition_id": ubx.FieldSpec(wire_name="role_definition_id"),
+    "service_principal_id": ubx.FieldSpec(wire_name="service_principal_id"),
 }
 
 _ApplicationDefinition_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -47,27 +47,27 @@ class ApplicationDefinitionConfig:
     authorization: Any = None
     timeouts: Any = None
 
-ApplicationDefinition = sdk.ResourceBinding(
+ApplicationDefinition = ubx.ResourceBinding(
     wire_type="azurerm_managed_application_definition",
     fields={
-        "create_ui_definition": sdk.FieldSpec(wire_name="create_ui_definition"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "lock_level": sdk.FieldSpec(wire_name="lock_level"),
-        "main_template": sdk.FieldSpec(wire_name="main_template"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "package_enabled": sdk.FieldSpec(wire_name="package_enabled"),
-        "package_file_uri": sdk.FieldSpec(wire_name="package_file_uri"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "authorization": sdk.FieldSpec(
+        "create_ui_definition": ubx.FieldSpec(wire_name="create_ui_definition"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "lock_level": ubx.FieldSpec(wire_name="lock_level"),
+        "main_template": ubx.FieldSpec(wire_name="main_template"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "package_enabled": ubx.FieldSpec(wire_name="package_enabled"),
+        "package_file_uri": ubx.FieldSpec(wire_name="package_file_uri"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "authorization": ubx.FieldSpec(
             wire_name="authorization",
             kind="set",
             fields=_ApplicationDefinition_AuthorizationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ApplicationDefinition_TimeoutsFields,

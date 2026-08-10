@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DirectoryDomainServiceReplicaSet_Timeouts:
@@ -13,9 +13,9 @@ class DirectoryDomainServiceReplicaSet_Timeouts:
     read: Any = None
 
 _DirectoryDomainServiceReplicaSet_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -26,14 +26,14 @@ class DirectoryDomainServiceReplicaSetConfig:
     subnet_id: Any = None
     timeouts: Any = None
 
-DirectoryDomainServiceReplicaSet = sdk.ResourceBinding(
+DirectoryDomainServiceReplicaSet = ubx.ResourceBinding(
     wire_type="azurerm_active_directory_domain_service_replica_set",
     fields={
-        "domain_service_id": sdk.FieldSpec(wire_name="domain_service_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-        "timeouts": sdk.FieldSpec(
+        "domain_service_id": ubx.FieldSpec(wire_name="domain_service_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DirectoryDomainServiceReplicaSet_TimeoutsFields,

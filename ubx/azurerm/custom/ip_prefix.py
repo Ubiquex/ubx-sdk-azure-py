@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class IpPrefix_Timeouts:
@@ -14,10 +14,10 @@ class IpPrefix_Timeouts:
     update: Any = None
 
 _IpPrefix_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -36,22 +36,22 @@ class IpPrefixConfig:
     zones: Any = None
     timeouts: Any = None
 
-IpPrefix = sdk.ResourceBinding(
+IpPrefix = ubx.ResourceBinding(
     wire_type="azurerm_custom_ip_prefix",
     fields={
-        "cidr": sdk.FieldSpec(wire_name="cidr"),
-        "commissioning_enabled": sdk.FieldSpec(wire_name="commissioning_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "internet_advertising_disabled": sdk.FieldSpec(wire_name="internet_advertising_disabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parent_custom_ip_prefix_id": sdk.FieldSpec(wire_name="parent_custom_ip_prefix_id"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "roa_validity_end_date": sdk.FieldSpec(wire_name="roa_validity_end_date"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "wan_validation_signed_message": sdk.FieldSpec(wire_name="wan_validation_signed_message"),
-        "zones": sdk.FieldSpec(wire_name="zones"),
-        "timeouts": sdk.FieldSpec(
+        "cidr": ubx.FieldSpec(wire_name="cidr"),
+        "commissioning_enabled": ubx.FieldSpec(wire_name="commissioning_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "internet_advertising_disabled": ubx.FieldSpec(wire_name="internet_advertising_disabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parent_custom_ip_prefix_id": ubx.FieldSpec(wire_name="parent_custom_ip_prefix_id"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "roa_validity_end_date": ubx.FieldSpec(wire_name="roa_validity_end_date"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "wan_validation_signed_message": ubx.FieldSpec(wire_name="wan_validation_signed_message"),
+        "zones": ubx.FieldSpec(wire_name="zones"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_IpPrefix_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ToSiteVpnGateway_ConnectionConfiguration_Route_PropagatedRouteTable:
@@ -37,15 +37,15 @@ class ToSiteVpnGateway_Timeouts:
     update: Any = None
 
 _ToSiteVpnGateway_ConnectionConfiguration_Route_PropagatedRouteTableFields = {
-    "ids": sdk.FieldSpec(wire_name="ids"),
-    "labels": sdk.FieldSpec(wire_name="labels"),
+    "ids": ubx.FieldSpec(wire_name="ids"),
+    "labels": ubx.FieldSpec(wire_name="labels"),
 }
 
 _ToSiteVpnGateway_ConnectionConfiguration_RouteFields = {
-    "associated_route_table_id": sdk.FieldSpec(wire_name="associated_route_table_id"),
-    "inbound_route_map_id": sdk.FieldSpec(wire_name="inbound_route_map_id"),
-    "outbound_route_map_id": sdk.FieldSpec(wire_name="outbound_route_map_id"),
-    "propagated_route_table": sdk.FieldSpec(
+    "associated_route_table_id": ubx.FieldSpec(wire_name="associated_route_table_id"),
+    "inbound_route_map_id": ubx.FieldSpec(wire_name="inbound_route_map_id"),
+    "outbound_route_map_id": ubx.FieldSpec(wire_name="outbound_route_map_id"),
+    "propagated_route_table": ubx.FieldSpec(
         wire_name="propagated_route_table",
         kind="list",
         fields=_ToSiteVpnGateway_ConnectionConfiguration_Route_PropagatedRouteTableFields,
@@ -53,18 +53,18 @@ _ToSiteVpnGateway_ConnectionConfiguration_RouteFields = {
 }
 
 _ToSiteVpnGateway_ConnectionConfiguration_VpnClientAddressPoolFields = {
-    "address_prefixes": sdk.FieldSpec(wire_name="address_prefixes"),
+    "address_prefixes": ubx.FieldSpec(wire_name="address_prefixes"),
 }
 
 _ToSiteVpnGateway_ConnectionConfigurationFields = {
-    "internet_security_enabled": sdk.FieldSpec(wire_name="internet_security_enabled"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "route": sdk.FieldSpec(
+    "internet_security_enabled": ubx.FieldSpec(wire_name="internet_security_enabled"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "route": ubx.FieldSpec(
         wire_name="route",
         kind="list",
         fields=_ToSiteVpnGateway_ConnectionConfiguration_RouteFields,
     ),
-    "vpn_client_address_pool": sdk.FieldSpec(
+    "vpn_client_address_pool": ubx.FieldSpec(
         wire_name="vpn_client_address_pool",
         kind="list",
         fields=_ToSiteVpnGateway_ConnectionConfiguration_VpnClientAddressPoolFields,
@@ -72,10 +72,10 @@ _ToSiteVpnGateway_ConnectionConfigurationFields = {
 }
 
 _ToSiteVpnGateway_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -93,25 +93,25 @@ class ToSiteVpnGatewayConfig:
     connection_configuration: Any = None
     timeouts: Any = None
 
-ToSiteVpnGateway = sdk.ResourceBinding(
+ToSiteVpnGateway = ubx.ResourceBinding(
     wire_type="azurerm_point_to_site_vpn_gateway",
     fields={
-        "dns_servers": sdk.FieldSpec(wire_name="dns_servers"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "routing_preference_internet_enabled": sdk.FieldSpec(wire_name="routing_preference_internet_enabled"),
-        "scale_unit": sdk.FieldSpec(wire_name="scale_unit"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "virtual_hub_id": sdk.FieldSpec(wire_name="virtual_hub_id"),
-        "vpn_server_configuration_id": sdk.FieldSpec(wire_name="vpn_server_configuration_id"),
-        "connection_configuration": sdk.FieldSpec(
+        "dns_servers": ubx.FieldSpec(wire_name="dns_servers"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "routing_preference_internet_enabled": ubx.FieldSpec(wire_name="routing_preference_internet_enabled"),
+        "scale_unit": ubx.FieldSpec(wire_name="scale_unit"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "virtual_hub_id": ubx.FieldSpec(wire_name="virtual_hub_id"),
+        "vpn_server_configuration_id": ubx.FieldSpec(wire_name="vpn_server_configuration_id"),
+        "connection_configuration": ubx.FieldSpec(
             wire_name="connection_configuration",
             kind="list",
             fields=_ToSiteVpnGateway_ConnectionConfigurationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ToSiteVpnGateway_TimeoutsFields,

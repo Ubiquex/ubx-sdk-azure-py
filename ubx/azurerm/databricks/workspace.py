@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Workspace_CustomParameters:
@@ -36,32 +36,32 @@ class Workspace_Timeouts:
     update: Any = None
 
 _Workspace_CustomParametersFields = {
-    "machine_learning_workspace_id": sdk.FieldSpec(wire_name="machine_learning_workspace_id"),
-    "nat_gateway_name": sdk.FieldSpec(wire_name="nat_gateway_name"),
-    "no_public_ip": sdk.FieldSpec(wire_name="no_public_ip"),
-    "private_subnet_name": sdk.FieldSpec(wire_name="private_subnet_name"),
-    "private_subnet_network_security_group_association_id": sdk.FieldSpec(wire_name="private_subnet_network_security_group_association_id"),
-    "public_ip_name": sdk.FieldSpec(wire_name="public_ip_name"),
-    "public_subnet_name": sdk.FieldSpec(wire_name="public_subnet_name"),
-    "public_subnet_network_security_group_association_id": sdk.FieldSpec(wire_name="public_subnet_network_security_group_association_id"),
-    "storage_account_name": sdk.FieldSpec(wire_name="storage_account_name"),
-    "storage_account_sku_name": sdk.FieldSpec(wire_name="storage_account_sku_name"),
-    "virtual_network_id": sdk.FieldSpec(wire_name="virtual_network_id"),
-    "vnet_address_prefix": sdk.FieldSpec(wire_name="vnet_address_prefix"),
+    "machine_learning_workspace_id": ubx.FieldSpec(wire_name="machine_learning_workspace_id"),
+    "nat_gateway_name": ubx.FieldSpec(wire_name="nat_gateway_name"),
+    "no_public_ip": ubx.FieldSpec(wire_name="no_public_ip"),
+    "private_subnet_name": ubx.FieldSpec(wire_name="private_subnet_name"),
+    "private_subnet_network_security_group_association_id": ubx.FieldSpec(wire_name="private_subnet_network_security_group_association_id"),
+    "public_ip_name": ubx.FieldSpec(wire_name="public_ip_name"),
+    "public_subnet_name": ubx.FieldSpec(wire_name="public_subnet_name"),
+    "public_subnet_network_security_group_association_id": ubx.FieldSpec(wire_name="public_subnet_network_security_group_association_id"),
+    "storage_account_name": ubx.FieldSpec(wire_name="storage_account_name"),
+    "storage_account_sku_name": ubx.FieldSpec(wire_name="storage_account_sku_name"),
+    "virtual_network_id": ubx.FieldSpec(wire_name="virtual_network_id"),
+    "vnet_address_prefix": ubx.FieldSpec(wire_name="vnet_address_prefix"),
 }
 
 _Workspace_EnhancedSecurityComplianceFields = {
-    "automatic_cluster_update_enabled": sdk.FieldSpec(wire_name="automatic_cluster_update_enabled"),
-    "compliance_security_profile_enabled": sdk.FieldSpec(wire_name="compliance_security_profile_enabled"),
-    "compliance_security_profile_standards": sdk.FieldSpec(wire_name="compliance_security_profile_standards"),
-    "enhanced_security_monitoring_enabled": sdk.FieldSpec(wire_name="enhanced_security_monitoring_enabled"),
+    "automatic_cluster_update_enabled": ubx.FieldSpec(wire_name="automatic_cluster_update_enabled"),
+    "compliance_security_profile_enabled": ubx.FieldSpec(wire_name="compliance_security_profile_enabled"),
+    "compliance_security_profile_standards": ubx.FieldSpec(wire_name="compliance_security_profile_standards"),
+    "enhanced_security_monitoring_enabled": ubx.FieldSpec(wire_name="enhanced_security_monitoring_enabled"),
 }
 
 _Workspace_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -89,39 +89,39 @@ class WorkspaceConfig:
     enhanced_security_compliance: Any = None
     timeouts: Any = None
 
-Workspace = sdk.ResourceBinding(
+Workspace = ubx.ResourceBinding(
     wire_type="azurerm_databricks_workspace",
     fields={
-        "access_connector_id": sdk.FieldSpec(wire_name="access_connector_id"),
-        "customer_managed_key_enabled": sdk.FieldSpec(wire_name="customer_managed_key_enabled"),
-        "default_storage_firewall_enabled": sdk.FieldSpec(wire_name="default_storage_firewall_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "infrastructure_encryption_enabled": sdk.FieldSpec(wire_name="infrastructure_encryption_enabled"),
-        "load_balancer_backend_address_pool_id": sdk.FieldSpec(wire_name="load_balancer_backend_address_pool_id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "managed_disk_cmk_key_vault_id": sdk.FieldSpec(wire_name="managed_disk_cmk_key_vault_id"),
-        "managed_disk_cmk_key_vault_key_id": sdk.FieldSpec(wire_name="managed_disk_cmk_key_vault_key_id"),
-        "managed_disk_cmk_rotation_to_latest_version_enabled": sdk.FieldSpec(wire_name="managed_disk_cmk_rotation_to_latest_version_enabled"),
-        "managed_resource_group_name": sdk.FieldSpec(wire_name="managed_resource_group_name"),
-        "managed_services_cmk_key_vault_id": sdk.FieldSpec(wire_name="managed_services_cmk_key_vault_id"),
-        "managed_services_cmk_key_vault_key_id": sdk.FieldSpec(wire_name="managed_services_cmk_key_vault_key_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "network_security_group_rules_required": sdk.FieldSpec(wire_name="network_security_group_rules_required"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "custom_parameters": sdk.FieldSpec(
+        "access_connector_id": ubx.FieldSpec(wire_name="access_connector_id"),
+        "customer_managed_key_enabled": ubx.FieldSpec(wire_name="customer_managed_key_enabled"),
+        "default_storage_firewall_enabled": ubx.FieldSpec(wire_name="default_storage_firewall_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "infrastructure_encryption_enabled": ubx.FieldSpec(wire_name="infrastructure_encryption_enabled"),
+        "load_balancer_backend_address_pool_id": ubx.FieldSpec(wire_name="load_balancer_backend_address_pool_id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "managed_disk_cmk_key_vault_id": ubx.FieldSpec(wire_name="managed_disk_cmk_key_vault_id"),
+        "managed_disk_cmk_key_vault_key_id": ubx.FieldSpec(wire_name="managed_disk_cmk_key_vault_key_id"),
+        "managed_disk_cmk_rotation_to_latest_version_enabled": ubx.FieldSpec(wire_name="managed_disk_cmk_rotation_to_latest_version_enabled"),
+        "managed_resource_group_name": ubx.FieldSpec(wire_name="managed_resource_group_name"),
+        "managed_services_cmk_key_vault_id": ubx.FieldSpec(wire_name="managed_services_cmk_key_vault_id"),
+        "managed_services_cmk_key_vault_key_id": ubx.FieldSpec(wire_name="managed_services_cmk_key_vault_key_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network_security_group_rules_required": ubx.FieldSpec(wire_name="network_security_group_rules_required"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "custom_parameters": ubx.FieldSpec(
             wire_name="custom_parameters",
             kind="list",
             fields=_Workspace_CustomParametersFields,
         ),
-        "enhanced_security_compliance": sdk.FieldSpec(
+        "enhanced_security_compliance": ubx.FieldSpec(
             wire_name="enhanced_security_compliance",
             kind="list",
             fields=_Workspace_EnhancedSecurityComplianceFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Workspace_TimeoutsFields,

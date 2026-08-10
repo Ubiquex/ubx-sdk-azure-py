@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagerProfile_DnsConfig:
@@ -35,24 +35,24 @@ class ManagerProfile_Timeouts:
     update: Any = None
 
 _ManagerProfile_DnsConfigFields = {
-    "relative_name": sdk.FieldSpec(wire_name="relative_name"),
-    "ttl": sdk.FieldSpec(wire_name="ttl"),
+    "relative_name": ubx.FieldSpec(wire_name="relative_name"),
+    "ttl": ubx.FieldSpec(wire_name="ttl"),
 }
 
 _ManagerProfile_MonitorConfig_CustomHeaderFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _ManagerProfile_MonitorConfigFields = {
-    "expected_status_code_ranges": sdk.FieldSpec(wire_name="expected_status_code_ranges"),
-    "interval_in_seconds": sdk.FieldSpec(wire_name="interval_in_seconds"),
-    "path": sdk.FieldSpec(wire_name="path"),
-    "port": sdk.FieldSpec(wire_name="port"),
-    "protocol": sdk.FieldSpec(wire_name="protocol"),
-    "timeout_in_seconds": sdk.FieldSpec(wire_name="timeout_in_seconds"),
-    "tolerated_number_of_failures": sdk.FieldSpec(wire_name="tolerated_number_of_failures"),
-    "custom_header": sdk.FieldSpec(
+    "expected_status_code_ranges": ubx.FieldSpec(wire_name="expected_status_code_ranges"),
+    "interval_in_seconds": ubx.FieldSpec(wire_name="interval_in_seconds"),
+    "path": ubx.FieldSpec(wire_name="path"),
+    "port": ubx.FieldSpec(wire_name="port"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
+    "timeout_in_seconds": ubx.FieldSpec(wire_name="timeout_in_seconds"),
+    "tolerated_number_of_failures": ubx.FieldSpec(wire_name="tolerated_number_of_failures"),
+    "custom_header": ubx.FieldSpec(
         wire_name="custom_header",
         kind="list",
         fields=_ManagerProfile_MonitorConfig_CustomHeaderFields,
@@ -60,10 +60,10 @@ _ManagerProfile_MonitorConfigFields = {
 }
 
 _ManagerProfile_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -80,28 +80,28 @@ class ManagerProfileConfig:
     monitor_config: Any = None
     timeouts: Any = None
 
-ManagerProfile = sdk.ResourceBinding(
+ManagerProfile = ubx.ResourceBinding(
     wire_type="azurerm_traffic_manager_profile",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "max_return": sdk.FieldSpec(wire_name="max_return"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "profile_status": sdk.FieldSpec(wire_name="profile_status"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "traffic_routing_method": sdk.FieldSpec(wire_name="traffic_routing_method"),
-        "traffic_view_enabled": sdk.FieldSpec(wire_name="traffic_view_enabled"),
-        "dns_config": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "max_return": ubx.FieldSpec(wire_name="max_return"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "profile_status": ubx.FieldSpec(wire_name="profile_status"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "traffic_routing_method": ubx.FieldSpec(wire_name="traffic_routing_method"),
+        "traffic_view_enabled": ubx.FieldSpec(wire_name="traffic_view_enabled"),
+        "dns_config": ubx.FieldSpec(
             wire_name="dns_config",
             kind="list",
             fields=_ManagerProfile_DnsConfigFields,
         ),
-        "monitor_config": sdk.FieldSpec(
+        "monitor_config": ubx.FieldSpec(
             wire_name="monitor_config",
             kind="list",
             fields=_ManagerProfile_MonitorConfigFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagerProfile_TimeoutsFields,

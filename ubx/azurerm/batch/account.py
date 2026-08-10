@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Account_Encryption:
@@ -45,29 +45,29 @@ class Account_Timeouts:
     update: Any = None
 
 _Account_EncryptionFields = {
-    "key_vault_key_id": sdk.FieldSpec(wire_name="key_vault_key_id"),
+    "key_vault_key_id": ubx.FieldSpec(wire_name="key_vault_key_id"),
 }
 
 _Account_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Account_KeyVaultReferenceFields = {
-    "id": sdk.FieldSpec(wire_name="id"),
-    "url": sdk.FieldSpec(wire_name="url"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "url": ubx.FieldSpec(wire_name="url"),
 }
 
 _Account_NetworkProfile_AccountAccess_IpRuleFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "ip_range": sdk.FieldSpec(wire_name="ip_range"),
+    "action": ubx.FieldSpec(wire_name="action"),
+    "ip_range": ubx.FieldSpec(wire_name="ip_range"),
 }
 
 _Account_NetworkProfile_AccountAccessFields = {
-    "default_action": sdk.FieldSpec(wire_name="default_action"),
-    "ip_rule": sdk.FieldSpec(
+    "default_action": ubx.FieldSpec(wire_name="default_action"),
+    "ip_rule": ubx.FieldSpec(
         wire_name="ip_rule",
         kind="list",
         fields=_Account_NetworkProfile_AccountAccess_IpRuleFields,
@@ -75,12 +75,12 @@ _Account_NetworkProfile_AccountAccessFields = {
 }
 
 _Account_NetworkProfileFields = {
-    "account_access": sdk.FieldSpec(
+    "account_access": ubx.FieldSpec(
         wire_name="account_access",
         kind="list",
         fields=_Account_NetworkProfile_AccountAccessFields,
     ),
-    "node_management_access": sdk.FieldSpec(
+    "node_management_access": ubx.FieldSpec(
         wire_name="node_management_access",
         kind="list",
         fields=_Account_NetworkProfile_AccountAccessFields,
@@ -88,10 +88,10 @@ _Account_NetworkProfileFields = {
 }
 
 _Account_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -113,41 +113,41 @@ class AccountConfig:
     network_profile: Any = None
     timeouts: Any = None
 
-Account = sdk.ResourceBinding(
+Account = ubx.ResourceBinding(
     wire_type="azurerm_batch_account",
     fields={
-        "allowed_authentication_modes": sdk.FieldSpec(wire_name="allowed_authentication_modes"),
-        "encryption": sdk.FieldSpec(
+        "allowed_authentication_modes": ubx.FieldSpec(wire_name="allowed_authentication_modes"),
+        "encryption": ubx.FieldSpec(
             wire_name="encryption",
             kind="list",
             fields=_Account_EncryptionFields,
         ),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "pool_allocation_mode": sdk.FieldSpec(wire_name="pool_allocation_mode"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "storage_account_authentication_mode": sdk.FieldSpec(wire_name="storage_account_authentication_mode"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "storage_account_node_identity": sdk.FieldSpec(wire_name="storage_account_node_identity"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "identity": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "pool_allocation_mode": ubx.FieldSpec(wire_name="pool_allocation_mode"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "storage_account_authentication_mode": ubx.FieldSpec(wire_name="storage_account_authentication_mode"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "storage_account_node_identity": ubx.FieldSpec(wire_name="storage_account_node_identity"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Account_IdentityFields,
         ),
-        "key_vault_reference": sdk.FieldSpec(
+        "key_vault_reference": ubx.FieldSpec(
             wire_name="key_vault_reference",
             kind="list",
             fields=_Account_KeyVaultReferenceFields,
         ),
-        "network_profile": sdk.FieldSpec(
+        "network_profile": ubx.FieldSpec(
             wire_name="network_profile",
             kind="list",
             fields=_Account_NetworkProfileFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Account_TimeoutsFields,

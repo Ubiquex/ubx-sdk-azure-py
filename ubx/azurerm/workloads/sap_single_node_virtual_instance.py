@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SapSingleNodeVirtualInstance_Identity:
@@ -68,38 +68,38 @@ class SapSingleNodeVirtualInstance_Timeouts:
     update: Any = None
 
 _SapSingleNodeVirtualInstance_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _SapSingleNodeVirtualInstance_SingleServerConfiguration_DiskVolumeConfigurationFields = {
-    "number_of_disks": sdk.FieldSpec(wire_name="number_of_disks"),
-    "size_in_gb": sdk.FieldSpec(wire_name="size_in_gb"),
-    "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-    "volume_name": sdk.FieldSpec(wire_name="volume_name"),
+    "number_of_disks": ubx.FieldSpec(wire_name="number_of_disks"),
+    "size_in_gb": ubx.FieldSpec(wire_name="size_in_gb"),
+    "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+    "volume_name": ubx.FieldSpec(wire_name="volume_name"),
 }
 
 _SapSingleNodeVirtualInstance_SingleServerConfiguration_VirtualMachineConfiguration_ImageFields = {
-    "offer": sdk.FieldSpec(wire_name="offer"),
-    "publisher": sdk.FieldSpec(wire_name="publisher"),
-    "sku": sdk.FieldSpec(wire_name="sku"),
-    "version": sdk.FieldSpec(wire_name="version"),
+    "offer": ubx.FieldSpec(wire_name="offer"),
+    "publisher": ubx.FieldSpec(wire_name="publisher"),
+    "sku": ubx.FieldSpec(wire_name="sku"),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _SapSingleNodeVirtualInstance_SingleServerConfiguration_VirtualMachineConfiguration_OsProfileFields = {
-    "admin_username": sdk.FieldSpec(wire_name="admin_username"),
-    "ssh_private_key": sdk.FieldSpec(wire_name="ssh_private_key"),
-    "ssh_public_key": sdk.FieldSpec(wire_name="ssh_public_key"),
+    "admin_username": ubx.FieldSpec(wire_name="admin_username"),
+    "ssh_private_key": ubx.FieldSpec(wire_name="ssh_private_key"),
+    "ssh_public_key": ubx.FieldSpec(wire_name="ssh_public_key"),
 }
 
 _SapSingleNodeVirtualInstance_SingleServerConfiguration_VirtualMachineConfigurationFields = {
-    "virtual_machine_size": sdk.FieldSpec(wire_name="virtual_machine_size"),
-    "image": sdk.FieldSpec(
+    "virtual_machine_size": ubx.FieldSpec(wire_name="virtual_machine_size"),
+    "image": ubx.FieldSpec(
         wire_name="image",
         kind="list",
         fields=_SapSingleNodeVirtualInstance_SingleServerConfiguration_VirtualMachineConfiguration_ImageFields,
     ),
-    "os_profile": sdk.FieldSpec(
+    "os_profile": ubx.FieldSpec(
         wire_name="os_profile",
         kind="list",
         fields=_SapSingleNodeVirtualInstance_SingleServerConfiguration_VirtualMachineConfiguration_OsProfileFields,
@@ -107,16 +107,16 @@ _SapSingleNodeVirtualInstance_SingleServerConfiguration_VirtualMachineConfigurat
 }
 
 _SapSingleNodeVirtualInstance_SingleServerConfiguration_VirtualMachineResourceNames_DataDiskFields = {
-    "names": sdk.FieldSpec(wire_name="names"),
-    "volume_name": sdk.FieldSpec(wire_name="volume_name"),
+    "names": ubx.FieldSpec(wire_name="names"),
+    "volume_name": ubx.FieldSpec(wire_name="volume_name"),
 }
 
 _SapSingleNodeVirtualInstance_SingleServerConfiguration_VirtualMachineResourceNamesFields = {
-    "host_name": sdk.FieldSpec(wire_name="host_name"),
-    "network_interface_names": sdk.FieldSpec(wire_name="network_interface_names"),
-    "os_disk_name": sdk.FieldSpec(wire_name="os_disk_name"),
-    "virtual_machine_name": sdk.FieldSpec(wire_name="virtual_machine_name"),
-    "data_disk": sdk.FieldSpec(
+    "host_name": ubx.FieldSpec(wire_name="host_name"),
+    "network_interface_names": ubx.FieldSpec(wire_name="network_interface_names"),
+    "os_disk_name": ubx.FieldSpec(wire_name="os_disk_name"),
+    "virtual_machine_name": ubx.FieldSpec(wire_name="virtual_machine_name"),
+    "data_disk": ubx.FieldSpec(
         wire_name="data_disk",
         kind="set",
         fields=_SapSingleNodeVirtualInstance_SingleServerConfiguration_VirtualMachineResourceNames_DataDiskFields,
@@ -124,21 +124,21 @@ _SapSingleNodeVirtualInstance_SingleServerConfiguration_VirtualMachineResourceNa
 }
 
 _SapSingleNodeVirtualInstance_SingleServerConfigurationFields = {
-    "app_resource_group_name": sdk.FieldSpec(wire_name="app_resource_group_name"),
-    "database_type": sdk.FieldSpec(wire_name="database_type"),
-    "secondary_ip_enabled": sdk.FieldSpec(wire_name="secondary_ip_enabled"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-    "disk_volume_configuration": sdk.FieldSpec(
+    "app_resource_group_name": ubx.FieldSpec(wire_name="app_resource_group_name"),
+    "database_type": ubx.FieldSpec(wire_name="database_type"),
+    "secondary_ip_enabled": ubx.FieldSpec(wire_name="secondary_ip_enabled"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+    "disk_volume_configuration": ubx.FieldSpec(
         wire_name="disk_volume_configuration",
         kind="set",
         fields=_SapSingleNodeVirtualInstance_SingleServerConfiguration_DiskVolumeConfigurationFields,
     ),
-    "virtual_machine_configuration": sdk.FieldSpec(
+    "virtual_machine_configuration": ubx.FieldSpec(
         wire_name="virtual_machine_configuration",
         kind="list",
         fields=_SapSingleNodeVirtualInstance_SingleServerConfiguration_VirtualMachineConfigurationFields,
     ),
-    "virtual_machine_resource_names": sdk.FieldSpec(
+    "virtual_machine_resource_names": ubx.FieldSpec(
         wire_name="virtual_machine_resource_names",
         kind="list",
         fields=_SapSingleNodeVirtualInstance_SingleServerConfiguration_VirtualMachineResourceNamesFields,
@@ -146,10 +146,10 @@ _SapSingleNodeVirtualInstance_SingleServerConfigurationFields = {
 }
 
 _SapSingleNodeVirtualInstance_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -169,31 +169,31 @@ class SapSingleNodeVirtualInstanceConfig:
     single_server_configuration: Any = None
     timeouts: Any = None
 
-SapSingleNodeVirtualInstance = sdk.ResourceBinding(
+SapSingleNodeVirtualInstance = ubx.ResourceBinding(
     wire_type="azurerm_workloads_sap_single_node_virtual_instance",
     fields={
-        "app_location": sdk.FieldSpec(wire_name="app_location"),
-        "environment": sdk.FieldSpec(wire_name="environment"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "managed_resource_group_name": sdk.FieldSpec(wire_name="managed_resource_group_name"),
-        "managed_resources_network_access_type": sdk.FieldSpec(wire_name="managed_resources_network_access_type"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sap_fqdn": sdk.FieldSpec(wire_name="sap_fqdn"),
-        "sap_product": sdk.FieldSpec(wire_name="sap_product"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "identity": sdk.FieldSpec(
+        "app_location": ubx.FieldSpec(wire_name="app_location"),
+        "environment": ubx.FieldSpec(wire_name="environment"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "managed_resource_group_name": ubx.FieldSpec(wire_name="managed_resource_group_name"),
+        "managed_resources_network_access_type": ubx.FieldSpec(wire_name="managed_resources_network_access_type"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sap_fqdn": ubx.FieldSpec(wire_name="sap_fqdn"),
+        "sap_product": ubx.FieldSpec(wire_name="sap_product"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_SapSingleNodeVirtualInstance_IdentityFields,
         ),
-        "single_server_configuration": sdk.FieldSpec(
+        "single_server_configuration": ubx.FieldSpec(
             wire_name="single_server_configuration",
             kind="list",
             fields=_SapSingleNodeVirtualInstance_SingleServerConfigurationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SapSingleNodeVirtualInstance_TimeoutsFields,

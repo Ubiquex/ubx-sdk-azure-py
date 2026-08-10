@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryManagedPrivateEndpoint_Timeouts:
@@ -13,9 +13,9 @@ class FactoryManagedPrivateEndpoint_Timeouts:
     read: Any = None
 
 _FactoryManagedPrivateEndpoint_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -28,16 +28,16 @@ class FactoryManagedPrivateEndpointConfig:
     target_resource_id: Any = None
     timeouts: Any = None
 
-FactoryManagedPrivateEndpoint = sdk.ResourceBinding(
+FactoryManagedPrivateEndpoint = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_managed_private_endpoint",
     fields={
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "fqdns": sdk.FieldSpec(wire_name="fqdns"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "subresource_name": sdk.FieldSpec(wire_name="subresource_name"),
-        "target_resource_id": sdk.FieldSpec(wire_name="target_resource_id"),
-        "timeouts": sdk.FieldSpec(
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "fqdns": ubx.FieldSpec(wire_name="fqdns"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "subresource_name": ubx.FieldSpec(wire_name="subresource_name"),
+        "target_resource_id": ubx.FieldSpec(wire_name="target_resource_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryManagedPrivateEndpoint_TimeoutsFields,

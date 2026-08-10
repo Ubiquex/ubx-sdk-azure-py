@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VaultManagedHardwareSecurityModule_NetworkAcls:
@@ -19,15 +19,15 @@ class VaultManagedHardwareSecurityModule_Timeouts:
     update: Any = None
 
 _VaultManagedHardwareSecurityModule_NetworkAclsFields = {
-    "bypass": sdk.FieldSpec(wire_name="bypass"),
-    "default_action": sdk.FieldSpec(wire_name="default_action"),
+    "bypass": ubx.FieldSpec(wire_name="bypass"),
+    "default_action": ubx.FieldSpec(wire_name="default_action"),
 }
 
 _VaultManagedHardwareSecurityModule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -48,28 +48,28 @@ class VaultManagedHardwareSecurityModuleConfig:
     network_acls: Any = None
     timeouts: Any = None
 
-VaultManagedHardwareSecurityModule = sdk.ResourceBinding(
+VaultManagedHardwareSecurityModule = ubx.ResourceBinding(
     wire_type="azurerm_key_vault_managed_hardware_security_module",
     fields={
-        "admin_object_ids": sdk.FieldSpec(wire_name="admin_object_ids"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "purge_protection_enabled": sdk.FieldSpec(wire_name="purge_protection_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "security_domain_key_vault_certificate_ids": sdk.FieldSpec(wire_name="security_domain_key_vault_certificate_ids"),
-        "security_domain_quorum": sdk.FieldSpec(wire_name="security_domain_quorum"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "soft_delete_retention_days": sdk.FieldSpec(wire_name="soft_delete_retention_days"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-        "network_acls": sdk.FieldSpec(
+        "admin_object_ids": ubx.FieldSpec(wire_name="admin_object_ids"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "purge_protection_enabled": ubx.FieldSpec(wire_name="purge_protection_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "security_domain_key_vault_certificate_ids": ubx.FieldSpec(wire_name="security_domain_key_vault_certificate_ids"),
+        "security_domain_quorum": ubx.FieldSpec(wire_name="security_domain_quorum"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "soft_delete_retention_days": ubx.FieldSpec(wire_name="soft_delete_retention_days"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+        "network_acls": ubx.FieldSpec(
             wire_name="network_acls",
             kind="list",
             fields=_VaultManagedHardwareSecurityModule_NetworkAclsFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_VaultManagedHardwareSecurityModule_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementApiSchema_Timeouts:
@@ -14,10 +14,10 @@ class ManagementApiSchema_Timeouts:
     update: Any = None
 
 _ManagementApiSchema_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -33,19 +33,19 @@ class ManagementApiSchemaConfig:
     value: Any = None
     timeouts: Any = None
 
-ManagementApiSchema = sdk.ResourceBinding(
+ManagementApiSchema = ubx.ResourceBinding(
     wire_type="azurerm_api_management_api_schema",
     fields={
-        "api_management_name": sdk.FieldSpec(wire_name="api_management_name"),
-        "api_name": sdk.FieldSpec(wire_name="api_name"),
-        "components": sdk.FieldSpec(wire_name="components"),
-        "content_type": sdk.FieldSpec(wire_name="content_type"),
-        "definitions": sdk.FieldSpec(wire_name="definitions"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "schema_id": sdk.FieldSpec(wire_name="schema_id"),
-        "value": sdk.FieldSpec(wire_name="value"),
-        "timeouts": sdk.FieldSpec(
+        "api_management_name": ubx.FieldSpec(wire_name="api_management_name"),
+        "api_name": ubx.FieldSpec(wire_name="api_name"),
+        "components": ubx.FieldSpec(wire_name="components"),
+        "content_type": ubx.FieldSpec(wire_name="content_type"),
+        "definitions": ubx.FieldSpec(wire_name="definitions"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "schema_id": ubx.FieldSpec(wire_name="schema_id"),
+        "value": ubx.FieldSpec(wire_name="value"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementApiSchema_TimeoutsFields,

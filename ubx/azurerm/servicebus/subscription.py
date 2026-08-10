@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Subscription_ClientScopedSubscription:
@@ -20,16 +20,16 @@ class Subscription_Timeouts:
     update: Any = None
 
 _Subscription_ClientScopedSubscriptionFields = {
-    "client_id": sdk.FieldSpec(wire_name="client_id"),
-    "is_client_scoped_subscription_durable": sdk.FieldSpec(wire_name="is_client_scoped_subscription_durable"),
-    "is_client_scoped_subscription_shareable": sdk.FieldSpec(wire_name="is_client_scoped_subscription_shareable"),
+    "client_id": ubx.FieldSpec(wire_name="client_id"),
+    "is_client_scoped_subscription_durable": ubx.FieldSpec(wire_name="is_client_scoped_subscription_durable"),
+    "is_client_scoped_subscription_shareable": ubx.FieldSpec(wire_name="is_client_scoped_subscription_shareable"),
 }
 
 _Subscription_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -52,30 +52,30 @@ class SubscriptionConfig:
     client_scoped_subscription: Any = None
     timeouts: Any = None
 
-Subscription = sdk.ResourceBinding(
+Subscription = ubx.ResourceBinding(
     wire_type="azurerm_servicebus_subscription",
     fields={
-        "auto_delete_on_idle": sdk.FieldSpec(wire_name="auto_delete_on_idle"),
-        "batched_operations_enabled": sdk.FieldSpec(wire_name="batched_operations_enabled"),
-        "client_scoped_subscription_enabled": sdk.FieldSpec(wire_name="client_scoped_subscription_enabled"),
-        "dead_lettering_on_filter_evaluation_error": sdk.FieldSpec(wire_name="dead_lettering_on_filter_evaluation_error"),
-        "dead_lettering_on_message_expiration": sdk.FieldSpec(wire_name="dead_lettering_on_message_expiration"),
-        "default_message_ttl": sdk.FieldSpec(wire_name="default_message_ttl"),
-        "forward_dead_lettered_messages_to": sdk.FieldSpec(wire_name="forward_dead_lettered_messages_to"),
-        "forward_to": sdk.FieldSpec(wire_name="forward_to"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "lock_duration": sdk.FieldSpec(wire_name="lock_duration"),
-        "max_delivery_count": sdk.FieldSpec(wire_name="max_delivery_count"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "requires_session": sdk.FieldSpec(wire_name="requires_session"),
-        "status": sdk.FieldSpec(wire_name="status"),
-        "topic_id": sdk.FieldSpec(wire_name="topic_id"),
-        "client_scoped_subscription": sdk.FieldSpec(
+        "auto_delete_on_idle": ubx.FieldSpec(wire_name="auto_delete_on_idle"),
+        "batched_operations_enabled": ubx.FieldSpec(wire_name="batched_operations_enabled"),
+        "client_scoped_subscription_enabled": ubx.FieldSpec(wire_name="client_scoped_subscription_enabled"),
+        "dead_lettering_on_filter_evaluation_error": ubx.FieldSpec(wire_name="dead_lettering_on_filter_evaluation_error"),
+        "dead_lettering_on_message_expiration": ubx.FieldSpec(wire_name="dead_lettering_on_message_expiration"),
+        "default_message_ttl": ubx.FieldSpec(wire_name="default_message_ttl"),
+        "forward_dead_lettered_messages_to": ubx.FieldSpec(wire_name="forward_dead_lettered_messages_to"),
+        "forward_to": ubx.FieldSpec(wire_name="forward_to"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "lock_duration": ubx.FieldSpec(wire_name="lock_duration"),
+        "max_delivery_count": ubx.FieldSpec(wire_name="max_delivery_count"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "requires_session": ubx.FieldSpec(wire_name="requires_session"),
+        "status": ubx.FieldSpec(wire_name="status"),
+        "topic_id": ubx.FieldSpec(wire_name="topic_id"),
+        "client_scoped_subscription": ubx.FieldSpec(
             wire_name="client_scoped_subscription",
             kind="list",
             fields=_Subscription_ClientScopedSubscriptionFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Subscription_TimeoutsFields,

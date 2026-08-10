@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HubSecurityPartnerProvider_Timeouts:
@@ -14,10 +14,10 @@ class HubSecurityPartnerProvider_Timeouts:
     update: Any = None
 
 _HubSecurityPartnerProvider_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class HubSecurityPartnerProviderConfig:
     virtual_hub_id: Any = None
     timeouts: Any = None
 
-HubSecurityPartnerProvider = sdk.ResourceBinding(
+HubSecurityPartnerProvider = ubx.ResourceBinding(
     wire_type="azurerm_virtual_hub_security_partner_provider",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "security_provider_name": sdk.FieldSpec(wire_name="security_provider_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "virtual_hub_id": sdk.FieldSpec(wire_name="virtual_hub_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "security_provider_name": ubx.FieldSpec(wire_name="security_provider_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "virtual_hub_id": ubx.FieldSpec(wire_name="virtual_hub_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_HubSecurityPartnerProvider_TimeoutsFields,

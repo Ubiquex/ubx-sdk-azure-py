@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GrafanaManagedPrivateEndpoint_Timeouts:
@@ -14,10 +14,10 @@ class GrafanaManagedPrivateEndpoint_Timeouts:
     update: Any = None
 
 _GrafanaManagedPrivateEndpoint_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -34,20 +34,20 @@ class GrafanaManagedPrivateEndpointConfig:
     tags: Any = None
     timeouts: Any = None
 
-GrafanaManagedPrivateEndpoint = sdk.ResourceBinding(
+GrafanaManagedPrivateEndpoint = ubx.ResourceBinding(
     wire_type="azurerm_dashboard_grafana_managed_private_endpoint",
     fields={
-        "grafana_id": sdk.FieldSpec(wire_name="grafana_id"),
-        "group_ids": sdk.FieldSpec(wire_name="group_ids"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "private_link_resource_id": sdk.FieldSpec(wire_name="private_link_resource_id"),
-        "private_link_resource_region": sdk.FieldSpec(wire_name="private_link_resource_region"),
-        "private_link_service_url": sdk.FieldSpec(wire_name="private_link_service_url"),
-        "request_message": sdk.FieldSpec(wire_name="request_message"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "grafana_id": ubx.FieldSpec(wire_name="grafana_id"),
+        "group_ids": ubx.FieldSpec(wire_name="group_ids"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "private_link_resource_id": ubx.FieldSpec(wire_name="private_link_resource_id"),
+        "private_link_resource_region": ubx.FieldSpec(wire_name="private_link_resource_region"),
+        "private_link_service_url": ubx.FieldSpec(wire_name="private_link_service_url"),
+        "request_message": ubx.FieldSpec(wire_name="request_message"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_GrafanaManagedPrivateEndpoint_TimeoutsFields,

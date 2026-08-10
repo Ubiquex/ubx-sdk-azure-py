@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MongoCollection_AutoscaleSettings:
@@ -23,19 +23,19 @@ class MongoCollection_Timeouts:
     update: Any = None
 
 _MongoCollection_AutoscaleSettingsFields = {
-    "max_throughput": sdk.FieldSpec(wire_name="max_throughput"),
+    "max_throughput": ubx.FieldSpec(wire_name="max_throughput"),
 }
 
 _MongoCollection_IndexFields = {
-    "keys": sdk.FieldSpec(wire_name="keys"),
-    "unique": sdk.FieldSpec(wire_name="unique"),
+    "keys": ubx.FieldSpec(wire_name="keys"),
+    "unique": ubx.FieldSpec(wire_name="unique"),
 }
 
 _MongoCollection_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -53,29 +53,29 @@ class MongoCollectionConfig:
     index: Any = None
     timeouts: Any = None
 
-MongoCollection = sdk.ResourceBinding(
+MongoCollection = ubx.ResourceBinding(
     wire_type="azurerm_cosmosdb_mongo_collection",
     fields={
-        "account_name": sdk.FieldSpec(wire_name="account_name"),
-        "analytical_storage_ttl": sdk.FieldSpec(wire_name="analytical_storage_ttl"),
-        "database_name": sdk.FieldSpec(wire_name="database_name"),
-        "default_ttl_seconds": sdk.FieldSpec(wire_name="default_ttl_seconds"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "shard_key": sdk.FieldSpec(wire_name="shard_key"),
-        "throughput": sdk.FieldSpec(wire_name="throughput"),
-        "autoscale_settings": sdk.FieldSpec(
+        "account_name": ubx.FieldSpec(wire_name="account_name"),
+        "analytical_storage_ttl": ubx.FieldSpec(wire_name="analytical_storage_ttl"),
+        "database_name": ubx.FieldSpec(wire_name="database_name"),
+        "default_ttl_seconds": ubx.FieldSpec(wire_name="default_ttl_seconds"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "shard_key": ubx.FieldSpec(wire_name="shard_key"),
+        "throughput": ubx.FieldSpec(wire_name="throughput"),
+        "autoscale_settings": ubx.FieldSpec(
             wire_name="autoscale_settings",
             kind="list",
             fields=_MongoCollection_AutoscaleSettingsFields,
         ),
-        "index": sdk.FieldSpec(
+        "index": ubx.FieldSpec(
             wire_name="index",
             kind="set",
             fields=_MongoCollection_IndexFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_MongoCollection_TimeoutsFields,

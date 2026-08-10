@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagerIpamPool_Timeouts:
@@ -14,10 +14,10 @@ class ManagerIpamPool_Timeouts:
     update: Any = None
 
 _ManagerIpamPool_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -33,19 +33,19 @@ class ManagerIpamPoolConfig:
     tags: Any = None
     timeouts: Any = None
 
-ManagerIpamPool = sdk.ResourceBinding(
+ManagerIpamPool = ubx.ResourceBinding(
     wire_type="azurerm_network_manager_ipam_pool",
     fields={
-        "address_prefixes": sdk.FieldSpec(wire_name="address_prefixes"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "network_manager_id": sdk.FieldSpec(wire_name="network_manager_id"),
-        "parent_pool_name": sdk.FieldSpec(wire_name="parent_pool_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "address_prefixes": ubx.FieldSpec(wire_name="address_prefixes"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network_manager_id": ubx.FieldSpec(wire_name="network_manager_id"),
+        "parent_pool_name": ubx.FieldSpec(wire_name="parent_pool_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagerIpamPool_TimeoutsFields,

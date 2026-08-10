@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VaultManagedHardwareSecurityModuleKeyRotationPolicy_Timeouts:
@@ -14,10 +14,10 @@ class VaultManagedHardwareSecurityModuleKeyRotationPolicy_Timeouts:
     update: Any = None
 
 _VaultManagedHardwareSecurityModuleKeyRotationPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class VaultManagedHardwareSecurityModuleKeyRotationPolicyConfig:
     time_before_expiry: Any = None
     timeouts: Any = None
 
-VaultManagedHardwareSecurityModuleKeyRotationPolicy = sdk.ResourceBinding(
+VaultManagedHardwareSecurityModuleKeyRotationPolicy = ubx.ResourceBinding(
     wire_type="azurerm_key_vault_managed_hardware_security_module_key_rotation_policy",
     fields={
-        "expire_after": sdk.FieldSpec(wire_name="expire_after"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "managed_hsm_key_id": sdk.FieldSpec(wire_name="managed_hsm_key_id"),
-        "time_after_creation": sdk.FieldSpec(wire_name="time_after_creation"),
-        "time_before_expiry": sdk.FieldSpec(wire_name="time_before_expiry"),
-        "timeouts": sdk.FieldSpec(
+        "expire_after": ubx.FieldSpec(wire_name="expire_after"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "managed_hsm_key_id": ubx.FieldSpec(wire_name="managed_hsm_key_id"),
+        "time_after_creation": ubx.FieldSpec(wire_name="time_after_creation"),
+        "time_before_expiry": ubx.FieldSpec(wire_name="time_before_expiry"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_VaultManagedHardwareSecurityModuleKeyRotationPolicy_TimeoutsFields,

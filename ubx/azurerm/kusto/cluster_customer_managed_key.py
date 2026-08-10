@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ClusterCustomerManagedKey_Timeouts:
@@ -14,10 +14,10 @@ class ClusterCustomerManagedKey_Timeouts:
     update: Any = None
 
 _ClusterCustomerManagedKey_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class ClusterCustomerManagedKeyConfig:
     user_identity: Any = None
     timeouts: Any = None
 
-ClusterCustomerManagedKey = sdk.ResourceBinding(
+ClusterCustomerManagedKey = ubx.ResourceBinding(
     wire_type="azurerm_kusto_cluster_customer_managed_key",
     fields={
-        "cluster_id": sdk.FieldSpec(wire_name="cluster_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "key_name": sdk.FieldSpec(wire_name="key_name"),
-        "key_vault_id": sdk.FieldSpec(wire_name="key_vault_id"),
-        "key_version": sdk.FieldSpec(wire_name="key_version"),
-        "managed_hsm_key_id": sdk.FieldSpec(wire_name="managed_hsm_key_id"),
-        "user_identity": sdk.FieldSpec(wire_name="user_identity"),
-        "timeouts": sdk.FieldSpec(
+        "cluster_id": ubx.FieldSpec(wire_name="cluster_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "key_name": ubx.FieldSpec(wire_name="key_name"),
+        "key_vault_id": ubx.FieldSpec(wire_name="key_vault_id"),
+        "key_version": ubx.FieldSpec(wire_name="key_version"),
+        "managed_hsm_key_id": ubx.FieldSpec(wire_name="managed_hsm_key_id"),
+        "user_identity": ubx.FieldSpec(wire_name="user_identity"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ClusterCustomerManagedKey_TimeoutsFields,

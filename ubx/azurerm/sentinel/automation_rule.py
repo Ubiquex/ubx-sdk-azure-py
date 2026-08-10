@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AutomationRule_ActionIncident:
@@ -36,32 +36,32 @@ class AutomationRule_Timeouts:
     update: Any = None
 
 _AutomationRule_ActionIncidentFields = {
-    "classification": sdk.FieldSpec(wire_name="classification"),
-    "classification_comment": sdk.FieldSpec(wire_name="classification_comment"),
-    "labels": sdk.FieldSpec(wire_name="labels"),
-    "order": sdk.FieldSpec(wire_name="order"),
-    "owner_id": sdk.FieldSpec(wire_name="owner_id"),
-    "severity": sdk.FieldSpec(wire_name="severity"),
-    "status": sdk.FieldSpec(wire_name="status"),
+    "classification": ubx.FieldSpec(wire_name="classification"),
+    "classification_comment": ubx.FieldSpec(wire_name="classification_comment"),
+    "labels": ubx.FieldSpec(wire_name="labels"),
+    "order": ubx.FieldSpec(wire_name="order"),
+    "owner_id": ubx.FieldSpec(wire_name="owner_id"),
+    "severity": ubx.FieldSpec(wire_name="severity"),
+    "status": ubx.FieldSpec(wire_name="status"),
 }
 
 _AutomationRule_ActionIncidentTaskFields = {
-    "description": sdk.FieldSpec(wire_name="description"),
-    "order": sdk.FieldSpec(wire_name="order"),
-    "title": sdk.FieldSpec(wire_name="title"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "order": ubx.FieldSpec(wire_name="order"),
+    "title": ubx.FieldSpec(wire_name="title"),
 }
 
 _AutomationRule_ActionPlaybookFields = {
-    "logic_app_id": sdk.FieldSpec(wire_name="logic_app_id"),
-    "order": sdk.FieldSpec(wire_name="order"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
+    "logic_app_id": ubx.FieldSpec(wire_name="logic_app_id"),
+    "order": ubx.FieldSpec(wire_name="order"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
 }
 
 _AutomationRule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -81,35 +81,35 @@ class AutomationRuleConfig:
     action_playbook: Any = None
     timeouts: Any = None
 
-AutomationRule = sdk.ResourceBinding(
+AutomationRule = ubx.ResourceBinding(
     wire_type="azurerm_sentinel_automation_rule",
     fields={
-        "condition_json": sdk.FieldSpec(wire_name="condition_json"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "expiration": sdk.FieldSpec(wire_name="expiration"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "log_analytics_workspace_id": sdk.FieldSpec(wire_name="log_analytics_workspace_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "order": sdk.FieldSpec(wire_name="order"),
-        "triggers_on": sdk.FieldSpec(wire_name="triggers_on"),
-        "triggers_when": sdk.FieldSpec(wire_name="triggers_when"),
-        "action_incident": sdk.FieldSpec(
+        "condition_json": ubx.FieldSpec(wire_name="condition_json"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "expiration": ubx.FieldSpec(wire_name="expiration"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "log_analytics_workspace_id": ubx.FieldSpec(wire_name="log_analytics_workspace_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "order": ubx.FieldSpec(wire_name="order"),
+        "triggers_on": ubx.FieldSpec(wire_name="triggers_on"),
+        "triggers_when": ubx.FieldSpec(wire_name="triggers_when"),
+        "action_incident": ubx.FieldSpec(
             wire_name="action_incident",
             kind="list",
             fields=_AutomationRule_ActionIncidentFields,
         ),
-        "action_incident_task": sdk.FieldSpec(
+        "action_incident_task": ubx.FieldSpec(
             wire_name="action_incident_task",
             kind="list",
             fields=_AutomationRule_ActionIncidentTaskFields,
         ),
-        "action_playbook": sdk.FieldSpec(
+        "action_playbook": ubx.FieldSpec(
             wire_name="action_playbook",
             kind="list",
             fields=_AutomationRule_ActionPlaybookFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AutomationRule_TimeoutsFields,

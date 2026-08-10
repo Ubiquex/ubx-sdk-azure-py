@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EndpointCustomDomain_CdnManagedHttps:
@@ -25,21 +25,21 @@ class EndpointCustomDomain_UserManagedHttps:
     tls_version: Any = None
 
 _EndpointCustomDomain_CdnManagedHttpsFields = {
-    "certificate_type": sdk.FieldSpec(wire_name="certificate_type"),
-    "protocol_type": sdk.FieldSpec(wire_name="protocol_type"),
-    "tls_version": sdk.FieldSpec(wire_name="tls_version"),
+    "certificate_type": ubx.FieldSpec(wire_name="certificate_type"),
+    "protocol_type": ubx.FieldSpec(wire_name="protocol_type"),
+    "tls_version": ubx.FieldSpec(wire_name="tls_version"),
 }
 
 _EndpointCustomDomain_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _EndpointCustomDomain_UserManagedHttpsFields = {
-    "key_vault_secret_id": sdk.FieldSpec(wire_name="key_vault_secret_id"),
-    "tls_version": sdk.FieldSpec(wire_name="tls_version"),
+    "key_vault_secret_id": ubx.FieldSpec(wire_name="key_vault_secret_id"),
+    "tls_version": ubx.FieldSpec(wire_name="tls_version"),
 }
 
 @dataclasses.dataclass
@@ -52,24 +52,24 @@ class EndpointCustomDomainConfig:
     timeouts: Any = None
     user_managed_https: Any = None
 
-EndpointCustomDomain = sdk.ResourceBinding(
+EndpointCustomDomain = ubx.ResourceBinding(
     wire_type="azurerm_cdn_endpoint_custom_domain",
     fields={
-        "cdn_endpoint_id": sdk.FieldSpec(wire_name="cdn_endpoint_id"),
-        "host_name": sdk.FieldSpec(wire_name="host_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "cdn_managed_https": sdk.FieldSpec(
+        "cdn_endpoint_id": ubx.FieldSpec(wire_name="cdn_endpoint_id"),
+        "host_name": ubx.FieldSpec(wire_name="host_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "cdn_managed_https": ubx.FieldSpec(
             wire_name="cdn_managed_https",
             kind="list",
             fields=_EndpointCustomDomain_CdnManagedHttpsFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_EndpointCustomDomain_TimeoutsFields,
         ),
-        "user_managed_https": sdk.FieldSpec(
+        "user_managed_https": ubx.FieldSpec(
             wire_name="user_managed_https",
             kind="list",
             fields=_EndpointCustomDomain_UserManagedHttpsFields,

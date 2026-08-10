@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AlertProcessingRuleActionGroup_Condition_AlertContext:
@@ -63,62 +63,62 @@ class AlertProcessingRuleActionGroup_Timeouts:
     update: Any = None
 
 _AlertProcessingRuleActionGroup_Condition_AlertContextFields = {
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "values": sdk.FieldSpec(wire_name="values"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "values": ubx.FieldSpec(wire_name="values"),
 }
 
 _AlertProcessingRuleActionGroup_ConditionFields = {
-    "alert_context": sdk.FieldSpec(
+    "alert_context": ubx.FieldSpec(
         wire_name="alert_context",
         kind="list",
         fields=_AlertProcessingRuleActionGroup_Condition_AlertContextFields,
     ),
-    "alert_rule_id": sdk.FieldSpec(
+    "alert_rule_id": ubx.FieldSpec(
         wire_name="alert_rule_id",
         kind="list",
         fields=_AlertProcessingRuleActionGroup_Condition_AlertContextFields,
     ),
-    "alert_rule_name": sdk.FieldSpec(
+    "alert_rule_name": ubx.FieldSpec(
         wire_name="alert_rule_name",
         kind="list",
         fields=_AlertProcessingRuleActionGroup_Condition_AlertContextFields,
     ),
-    "description": sdk.FieldSpec(
+    "description": ubx.FieldSpec(
         wire_name="description",
         kind="list",
         fields=_AlertProcessingRuleActionGroup_Condition_AlertContextFields,
     ),
-    "monitor_condition": sdk.FieldSpec(
+    "monitor_condition": ubx.FieldSpec(
         wire_name="monitor_condition",
         kind="list",
         fields=_AlertProcessingRuleActionGroup_Condition_AlertContextFields,
     ),
-    "monitor_service": sdk.FieldSpec(
+    "monitor_service": ubx.FieldSpec(
         wire_name="monitor_service",
         kind="list",
         fields=_AlertProcessingRuleActionGroup_Condition_AlertContextFields,
     ),
-    "severity": sdk.FieldSpec(
+    "severity": ubx.FieldSpec(
         wire_name="severity",
         kind="list",
         fields=_AlertProcessingRuleActionGroup_Condition_AlertContextFields,
     ),
-    "signal_type": sdk.FieldSpec(
+    "signal_type": ubx.FieldSpec(
         wire_name="signal_type",
         kind="list",
         fields=_AlertProcessingRuleActionGroup_Condition_AlertContextFields,
     ),
-    "target_resource": sdk.FieldSpec(
+    "target_resource": ubx.FieldSpec(
         wire_name="target_resource",
         kind="list",
         fields=_AlertProcessingRuleActionGroup_Condition_AlertContextFields,
     ),
-    "target_resource_group": sdk.FieldSpec(
+    "target_resource_group": ubx.FieldSpec(
         wire_name="target_resource_group",
         kind="list",
         fields=_AlertProcessingRuleActionGroup_Condition_AlertContextFields,
     ),
-    "target_resource_type": sdk.FieldSpec(
+    "target_resource_type": ubx.FieldSpec(
         wire_name="target_resource_type",
         kind="list",
         fields=_AlertProcessingRuleActionGroup_Condition_AlertContextFields,
@@ -126,34 +126,34 @@ _AlertProcessingRuleActionGroup_ConditionFields = {
 }
 
 _AlertProcessingRuleActionGroup_Schedule_Recurrence_DailyFields = {
-    "end_time": sdk.FieldSpec(wire_name="end_time"),
-    "start_time": sdk.FieldSpec(wire_name="start_time"),
+    "end_time": ubx.FieldSpec(wire_name="end_time"),
+    "start_time": ubx.FieldSpec(wire_name="start_time"),
 }
 
 _AlertProcessingRuleActionGroup_Schedule_Recurrence_MonthlyFields = {
-    "days_of_month": sdk.FieldSpec(wire_name="days_of_month"),
-    "end_time": sdk.FieldSpec(wire_name="end_time"),
-    "start_time": sdk.FieldSpec(wire_name="start_time"),
+    "days_of_month": ubx.FieldSpec(wire_name="days_of_month"),
+    "end_time": ubx.FieldSpec(wire_name="end_time"),
+    "start_time": ubx.FieldSpec(wire_name="start_time"),
 }
 
 _AlertProcessingRuleActionGroup_Schedule_Recurrence_WeeklyFields = {
-    "days_of_week": sdk.FieldSpec(wire_name="days_of_week"),
-    "end_time": sdk.FieldSpec(wire_name="end_time"),
-    "start_time": sdk.FieldSpec(wire_name="start_time"),
+    "days_of_week": ubx.FieldSpec(wire_name="days_of_week"),
+    "end_time": ubx.FieldSpec(wire_name="end_time"),
+    "start_time": ubx.FieldSpec(wire_name="start_time"),
 }
 
 _AlertProcessingRuleActionGroup_Schedule_RecurrenceFields = {
-    "daily": sdk.FieldSpec(
+    "daily": ubx.FieldSpec(
         wire_name="daily",
         kind="list",
         fields=_AlertProcessingRuleActionGroup_Schedule_Recurrence_DailyFields,
     ),
-    "monthly": sdk.FieldSpec(
+    "monthly": ubx.FieldSpec(
         wire_name="monthly",
         kind="list",
         fields=_AlertProcessingRuleActionGroup_Schedule_Recurrence_MonthlyFields,
     ),
-    "weekly": sdk.FieldSpec(
+    "weekly": ubx.FieldSpec(
         wire_name="weekly",
         kind="list",
         fields=_AlertProcessingRuleActionGroup_Schedule_Recurrence_WeeklyFields,
@@ -161,10 +161,10 @@ _AlertProcessingRuleActionGroup_Schedule_RecurrenceFields = {
 }
 
 _AlertProcessingRuleActionGroup_ScheduleFields = {
-    "effective_from": sdk.FieldSpec(wire_name="effective_from"),
-    "effective_until": sdk.FieldSpec(wire_name="effective_until"),
-    "time_zone": sdk.FieldSpec(wire_name="time_zone"),
-    "recurrence": sdk.FieldSpec(
+    "effective_from": ubx.FieldSpec(wire_name="effective_from"),
+    "effective_until": ubx.FieldSpec(wire_name="effective_until"),
+    "time_zone": ubx.FieldSpec(wire_name="time_zone"),
+    "recurrence": ubx.FieldSpec(
         wire_name="recurrence",
         kind="list",
         fields=_AlertProcessingRuleActionGroup_Schedule_RecurrenceFields,
@@ -172,10 +172,10 @@ _AlertProcessingRuleActionGroup_ScheduleFields = {
 }
 
 _AlertProcessingRuleActionGroup_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -192,28 +192,28 @@ class AlertProcessingRuleActionGroupConfig:
     schedule: Any = None
     timeouts: Any = None
 
-AlertProcessingRuleActionGroup = sdk.ResourceBinding(
+AlertProcessingRuleActionGroup = ubx.ResourceBinding(
     wire_type="azurerm_monitor_alert_processing_rule_action_group",
     fields={
-        "add_action_group_ids": sdk.FieldSpec(wire_name="add_action_group_ids"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "scopes": sdk.FieldSpec(wire_name="scopes"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "condition": sdk.FieldSpec(
+        "add_action_group_ids": ubx.FieldSpec(wire_name="add_action_group_ids"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "scopes": ubx.FieldSpec(wire_name="scopes"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "condition": ubx.FieldSpec(
             wire_name="condition",
             kind="list",
             fields=_AlertProcessingRuleActionGroup_ConditionFields,
         ),
-        "schedule": sdk.FieldSpec(
+        "schedule": ubx.FieldSpec(
             wire_name="schedule",
             kind="list",
             fields=_AlertProcessingRuleActionGroup_ScheduleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AlertProcessingRuleActionGroup_TimeoutsFields,

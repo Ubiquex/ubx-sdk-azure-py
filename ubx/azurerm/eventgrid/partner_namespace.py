@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PartnerNamespace_InboundIpRule:
@@ -19,15 +19,15 @@ class PartnerNamespace_Timeouts:
     update: Any = None
 
 _PartnerNamespace_InboundIpRuleFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "ip_mask": sdk.FieldSpec(wire_name="ip_mask"),
+    "action": ubx.FieldSpec(wire_name="action"),
+    "ip_mask": ubx.FieldSpec(wire_name="ip_mask"),
 }
 
 _PartnerNamespace_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -44,24 +44,24 @@ class PartnerNamespaceConfig:
     inbound_ip_rule: Any = None
     timeouts: Any = None
 
-PartnerNamespace = sdk.ResourceBinding(
+PartnerNamespace = ubx.ResourceBinding(
     wire_type="azurerm_eventgrid_partner_namespace",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "local_authentication_enabled": sdk.FieldSpec(wire_name="local_authentication_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "partner_registration_id": sdk.FieldSpec(wire_name="partner_registration_id"),
-        "partner_topic_routing_mode": sdk.FieldSpec(wire_name="partner_topic_routing_mode"),
-        "public_network_access": sdk.FieldSpec(wire_name="public_network_access"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "inbound_ip_rule": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "local_authentication_enabled": ubx.FieldSpec(wire_name="local_authentication_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "partner_registration_id": ubx.FieldSpec(wire_name="partner_registration_id"),
+        "partner_topic_routing_mode": ubx.FieldSpec(wire_name="partner_topic_routing_mode"),
+        "public_network_access": ubx.FieldSpec(wire_name="public_network_access"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "inbound_ip_rule": ubx.FieldSpec(
             wire_name="inbound_ip_rule",
             kind="list",
             fields=_PartnerNamespace_InboundIpRuleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_PartnerNamespace_TimeoutsFields,

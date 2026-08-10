@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServicesVault_Encryption:
@@ -36,32 +36,32 @@ class ServicesVault_Timeouts:
     update: Any = None
 
 _ServicesVault_EncryptionFields = {
-    "infrastructure_encryption_enabled": sdk.FieldSpec(wire_name="infrastructure_encryption_enabled"),
-    "key_id": sdk.FieldSpec(wire_name="key_id"),
-    "use_system_assigned_identity": sdk.FieldSpec(wire_name="use_system_assigned_identity"),
-    "user_assigned_identity_id": sdk.FieldSpec(wire_name="user_assigned_identity_id"),
+    "infrastructure_encryption_enabled": ubx.FieldSpec(wire_name="infrastructure_encryption_enabled"),
+    "key_id": ubx.FieldSpec(wire_name="key_id"),
+    "use_system_assigned_identity": ubx.FieldSpec(wire_name="use_system_assigned_identity"),
+    "user_assigned_identity_id": ubx.FieldSpec(wire_name="user_assigned_identity_id"),
 }
 
 _ServicesVault_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _ServicesVault_MonitoringFields = {
-    "alerts_for_all_failover_issues_enabled": sdk.FieldSpec(wire_name="alerts_for_all_failover_issues_enabled"),
-    "alerts_for_all_job_failures_enabled": sdk.FieldSpec(wire_name="alerts_for_all_job_failures_enabled"),
-    "alerts_for_all_replication_issues_enabled": sdk.FieldSpec(wire_name="alerts_for_all_replication_issues_enabled"),
-    "alerts_for_critical_operation_failures_enabled": sdk.FieldSpec(wire_name="alerts_for_critical_operation_failures_enabled"),
-    "email_notifications_for_site_recovery_enabled": sdk.FieldSpec(wire_name="email_notifications_for_site_recovery_enabled"),
+    "alerts_for_all_failover_issues_enabled": ubx.FieldSpec(wire_name="alerts_for_all_failover_issues_enabled"),
+    "alerts_for_all_job_failures_enabled": ubx.FieldSpec(wire_name="alerts_for_all_job_failures_enabled"),
+    "alerts_for_all_replication_issues_enabled": ubx.FieldSpec(wire_name="alerts_for_all_replication_issues_enabled"),
+    "alerts_for_critical_operation_failures_enabled": ubx.FieldSpec(wire_name="alerts_for_critical_operation_failures_enabled"),
+    "email_notifications_for_site_recovery_enabled": ubx.FieldSpec(wire_name="email_notifications_for_site_recovery_enabled"),
 }
 
 _ServicesVault_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -82,36 +82,36 @@ class ServicesVaultConfig:
     monitoring: Any = None
     timeouts: Any = None
 
-ServicesVault = sdk.ResourceBinding(
+ServicesVault = ubx.ResourceBinding(
     wire_type="azurerm_recovery_services_vault",
     fields={
-        "classic_vmware_replication_enabled": sdk.FieldSpec(wire_name="classic_vmware_replication_enabled"),
-        "cross_region_restore_enabled": sdk.FieldSpec(wire_name="cross_region_restore_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "immutability": sdk.FieldSpec(wire_name="immutability"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "storage_mode_type": sdk.FieldSpec(wire_name="storage_mode_type"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "encryption": sdk.FieldSpec(
+        "classic_vmware_replication_enabled": ubx.FieldSpec(wire_name="classic_vmware_replication_enabled"),
+        "cross_region_restore_enabled": ubx.FieldSpec(wire_name="cross_region_restore_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "immutability": ubx.FieldSpec(wire_name="immutability"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "storage_mode_type": ubx.FieldSpec(wire_name="storage_mode_type"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "encryption": ubx.FieldSpec(
             wire_name="encryption",
             kind="list",
             fields=_ServicesVault_EncryptionFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_ServicesVault_IdentityFields,
         ),
-        "monitoring": sdk.FieldSpec(
+        "monitoring": ubx.FieldSpec(
             wire_name="monitoring",
             kind="list",
             fields=_ServicesVault_MonitoringFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ServicesVault_TimeoutsFields,

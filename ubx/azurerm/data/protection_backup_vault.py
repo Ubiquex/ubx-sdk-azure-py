@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ProtectionBackupVault_Identity:
@@ -21,17 +21,17 @@ class ProtectionBackupVault_Timeouts:
     update: Any = None
 
 _ProtectionBackupVault_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _ProtectionBackupVault_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -50,26 +50,26 @@ class ProtectionBackupVaultConfig:
     identity: Any = None
     timeouts: Any = None
 
-ProtectionBackupVault = sdk.ResourceBinding(
+ProtectionBackupVault = ubx.ResourceBinding(
     wire_type="azurerm_data_protection_backup_vault",
     fields={
-        "cross_region_restore_enabled": sdk.FieldSpec(wire_name="cross_region_restore_enabled"),
-        "datastore_type": sdk.FieldSpec(wire_name="datastore_type"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "immutability": sdk.FieldSpec(wire_name="immutability"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "redundancy": sdk.FieldSpec(wire_name="redundancy"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "retention_duration_in_days": sdk.FieldSpec(wire_name="retention_duration_in_days"),
-        "soft_delete": sdk.FieldSpec(wire_name="soft_delete"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "identity": sdk.FieldSpec(
+        "cross_region_restore_enabled": ubx.FieldSpec(wire_name="cross_region_restore_enabled"),
+        "datastore_type": ubx.FieldSpec(wire_name="datastore_type"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "immutability": ubx.FieldSpec(wire_name="immutability"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "redundancy": ubx.FieldSpec(wire_name="redundancy"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "retention_duration_in_days": ubx.FieldSpec(wire_name="retention_duration_in_days"),
+        "soft_delete": ubx.FieldSpec(wire_name="soft_delete"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_ProtectionBackupVault_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ProtectionBackupVault_TimeoutsFields,

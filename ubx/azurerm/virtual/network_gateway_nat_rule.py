@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class NetworkGatewayNatRule_ExternalMapping:
@@ -19,15 +19,15 @@ class NetworkGatewayNatRule_Timeouts:
     update: Any = None
 
 _NetworkGatewayNatRule_ExternalMappingFields = {
-    "address_space": sdk.FieldSpec(wire_name="address_space"),
-    "port_range": sdk.FieldSpec(wire_name="port_range"),
+    "address_space": ubx.FieldSpec(wire_name="address_space"),
+    "port_range": ubx.FieldSpec(wire_name="port_range"),
 }
 
 _NetworkGatewayNatRule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -43,27 +43,27 @@ class NetworkGatewayNatRuleConfig:
     internal_mapping: Any = None
     timeouts: Any = None
 
-NetworkGatewayNatRule = sdk.ResourceBinding(
+NetworkGatewayNatRule = ubx.ResourceBinding(
     wire_type="azurerm_virtual_network_gateway_nat_rule",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "ip_configuration_id": sdk.FieldSpec(wire_name="ip_configuration_id"),
-        "mode": sdk.FieldSpec(wire_name="mode"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "type": sdk.FieldSpec(wire_name="type"),
-        "virtual_network_gateway_id": sdk.FieldSpec(wire_name="virtual_network_gateway_id"),
-        "external_mapping": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "ip_configuration_id": ubx.FieldSpec(wire_name="ip_configuration_id"),
+        "mode": ubx.FieldSpec(wire_name="mode"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "type": ubx.FieldSpec(wire_name="type"),
+        "virtual_network_gateway_id": ubx.FieldSpec(wire_name="virtual_network_gateway_id"),
+        "external_mapping": ubx.FieldSpec(
             wire_name="external_mapping",
             kind="list",
             fields=_NetworkGatewayNatRule_ExternalMappingFields,
         ),
-        "internal_mapping": sdk.FieldSpec(
+        "internal_mapping": ubx.FieldSpec(
             wire_name="internal_mapping",
             kind="list",
             fields=_NetworkGatewayNatRule_ExternalMappingFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_NetworkGatewayNatRule_TimeoutsFields,

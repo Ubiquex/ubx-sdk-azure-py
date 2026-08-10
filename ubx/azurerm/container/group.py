@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Group_ExposedPort:
@@ -116,25 +116,25 @@ class Group_Timeouts:
     update: Any = None
 
 _Group_ExposedPortFields = {
-    "port": sdk.FieldSpec(wire_name="port"),
-    "protocol": sdk.FieldSpec(wire_name="protocol"),
+    "port": ubx.FieldSpec(wire_name="port"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
 }
 
 _Group_Container_LivenessProbe_HttpGetFields = {
-    "http_headers": sdk.FieldSpec(wire_name="http_headers"),
-    "path": sdk.FieldSpec(wire_name="path"),
-    "port": sdk.FieldSpec(wire_name="port"),
-    "scheme": sdk.FieldSpec(wire_name="scheme"),
+    "http_headers": ubx.FieldSpec(wire_name="http_headers"),
+    "path": ubx.FieldSpec(wire_name="path"),
+    "port": ubx.FieldSpec(wire_name="port"),
+    "scheme": ubx.FieldSpec(wire_name="scheme"),
 }
 
 _Group_Container_LivenessProbeFields = {
-    "exec": sdk.FieldSpec(wire_name="exec"),
-    "failure_threshold": sdk.FieldSpec(wire_name="failure_threshold"),
-    "initial_delay_seconds": sdk.FieldSpec(wire_name="initial_delay_seconds"),
-    "period_seconds": sdk.FieldSpec(wire_name="period_seconds"),
-    "success_threshold": sdk.FieldSpec(wire_name="success_threshold"),
-    "timeout_seconds": sdk.FieldSpec(wire_name="timeout_seconds"),
-    "http_get": sdk.FieldSpec(
+    "exec": ubx.FieldSpec(wire_name="exec"),
+    "failure_threshold": ubx.FieldSpec(wire_name="failure_threshold"),
+    "initial_delay_seconds": ubx.FieldSpec(wire_name="initial_delay_seconds"),
+    "period_seconds": ubx.FieldSpec(wire_name="period_seconds"),
+    "success_threshold": ubx.FieldSpec(wire_name="success_threshold"),
+    "timeout_seconds": ubx.FieldSpec(wire_name="timeout_seconds"),
+    "http_get": ubx.FieldSpec(
         wire_name="http_get",
         kind="list",
         fields=_Group_Container_LivenessProbe_HttpGetFields,
@@ -142,25 +142,25 @@ _Group_Container_LivenessProbeFields = {
 }
 
 _Group_Container_SecurityFields = {
-    "privilege_enabled": sdk.FieldSpec(wire_name="privilege_enabled"),
+    "privilege_enabled": ubx.FieldSpec(wire_name="privilege_enabled"),
 }
 
 _Group_Container_Volume_GitRepoFields = {
-    "directory": sdk.FieldSpec(wire_name="directory"),
-    "revision": sdk.FieldSpec(wire_name="revision"),
-    "url": sdk.FieldSpec(wire_name="url"),
+    "directory": ubx.FieldSpec(wire_name="directory"),
+    "revision": ubx.FieldSpec(wire_name="revision"),
+    "url": ubx.FieldSpec(wire_name="url"),
 }
 
 _Group_Container_VolumeFields = {
-    "empty_dir": sdk.FieldSpec(wire_name="empty_dir"),
-    "mount_path": sdk.FieldSpec(wire_name="mount_path"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "read_only": sdk.FieldSpec(wire_name="read_only"),
-    "secret": sdk.FieldSpec(wire_name="secret"),
-    "share_name": sdk.FieldSpec(wire_name="share_name"),
-    "storage_account_key": sdk.FieldSpec(wire_name="storage_account_key"),
-    "storage_account_name": sdk.FieldSpec(wire_name="storage_account_name"),
-    "git_repo": sdk.FieldSpec(
+    "empty_dir": ubx.FieldSpec(wire_name="empty_dir"),
+    "mount_path": ubx.FieldSpec(wire_name="mount_path"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "read_only": ubx.FieldSpec(wire_name="read_only"),
+    "secret": ubx.FieldSpec(wire_name="secret"),
+    "share_name": ubx.FieldSpec(wire_name="share_name"),
+    "storage_account_key": ubx.FieldSpec(wire_name="storage_account_key"),
+    "storage_account_name": ubx.FieldSpec(wire_name="storage_account_name"),
+    "git_repo": ubx.FieldSpec(
         wire_name="git_repo",
         kind="list",
         fields=_Group_Container_Volume_GitRepoFields,
@@ -168,36 +168,36 @@ _Group_Container_VolumeFields = {
 }
 
 _Group_ContainerFields = {
-    "commands": sdk.FieldSpec(wire_name="commands"),
-    "cpu": sdk.FieldSpec(wire_name="cpu"),
-    "cpu_limit": sdk.FieldSpec(wire_name="cpu_limit"),
-    "environment_variables": sdk.FieldSpec(wire_name="environment_variables"),
-    "image": sdk.FieldSpec(wire_name="image"),
-    "memory": sdk.FieldSpec(wire_name="memory"),
-    "memory_limit": sdk.FieldSpec(wire_name="memory_limit"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "secure_environment_variables": sdk.FieldSpec(wire_name="secure_environment_variables"),
-    "liveness_probe": sdk.FieldSpec(
+    "commands": ubx.FieldSpec(wire_name="commands"),
+    "cpu": ubx.FieldSpec(wire_name="cpu"),
+    "cpu_limit": ubx.FieldSpec(wire_name="cpu_limit"),
+    "environment_variables": ubx.FieldSpec(wire_name="environment_variables"),
+    "image": ubx.FieldSpec(wire_name="image"),
+    "memory": ubx.FieldSpec(wire_name="memory"),
+    "memory_limit": ubx.FieldSpec(wire_name="memory_limit"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "secure_environment_variables": ubx.FieldSpec(wire_name="secure_environment_variables"),
+    "liveness_probe": ubx.FieldSpec(
         wire_name="liveness_probe",
         kind="list",
         fields=_Group_Container_LivenessProbeFields,
     ),
-    "ports": sdk.FieldSpec(
+    "ports": ubx.FieldSpec(
         wire_name="ports",
         kind="set",
         fields=_Group_ExposedPortFields,
     ),
-    "readiness_probe": sdk.FieldSpec(
+    "readiness_probe": ubx.FieldSpec(
         wire_name="readiness_probe",
         kind="list",
         fields=_Group_Container_LivenessProbeFields,
     ),
-    "security": sdk.FieldSpec(
+    "security": ubx.FieldSpec(
         wire_name="security",
         kind="list",
         fields=_Group_Container_SecurityFields,
     ),
-    "volume": sdk.FieldSpec(
+    "volume": ubx.FieldSpec(
         wire_name="volume",
         kind="list",
         fields=_Group_Container_VolumeFields,
@@ -205,14 +205,14 @@ _Group_ContainerFields = {
 }
 
 _Group_Diagnostics_LogAnalyticsFields = {
-    "log_type": sdk.FieldSpec(wire_name="log_type"),
-    "metadata": sdk.FieldSpec(wire_name="metadata"),
-    "workspace_id": sdk.FieldSpec(wire_name="workspace_id"),
-    "workspace_key": sdk.FieldSpec(wire_name="workspace_key"),
+    "log_type": ubx.FieldSpec(wire_name="log_type"),
+    "metadata": ubx.FieldSpec(wire_name="metadata"),
+    "workspace_id": ubx.FieldSpec(wire_name="workspace_id"),
+    "workspace_key": ubx.FieldSpec(wire_name="workspace_key"),
 }
 
 _Group_DiagnosticsFields = {
-    "log_analytics": sdk.FieldSpec(
+    "log_analytics": ubx.FieldSpec(
         wire_name="log_analytics",
         kind="list",
         fields=_Group_Diagnostics_LogAnalyticsFields,
@@ -220,37 +220,37 @@ _Group_DiagnosticsFields = {
 }
 
 _Group_DnsConfigFields = {
-    "nameservers": sdk.FieldSpec(wire_name="nameservers"),
-    "options": sdk.FieldSpec(wire_name="options"),
-    "search_domains": sdk.FieldSpec(wire_name="search_domains"),
+    "nameservers": ubx.FieldSpec(wire_name="nameservers"),
+    "options": ubx.FieldSpec(wire_name="options"),
+    "search_domains": ubx.FieldSpec(wire_name="search_domains"),
 }
 
 _Group_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Group_ImageRegistryCredentialFields = {
-    "password": sdk.FieldSpec(wire_name="password"),
-    "server": sdk.FieldSpec(wire_name="server"),
-    "user_assigned_identity_id": sdk.FieldSpec(wire_name="user_assigned_identity_id"),
-    "username": sdk.FieldSpec(wire_name="username"),
+    "password": ubx.FieldSpec(wire_name="password"),
+    "server": ubx.FieldSpec(wire_name="server"),
+    "user_assigned_identity_id": ubx.FieldSpec(wire_name="user_assigned_identity_id"),
+    "username": ubx.FieldSpec(wire_name="username"),
 }
 
 _Group_InitContainerFields = {
-    "commands": sdk.FieldSpec(wire_name="commands"),
-    "environment_variables": sdk.FieldSpec(wire_name="environment_variables"),
-    "image": sdk.FieldSpec(wire_name="image"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "secure_environment_variables": sdk.FieldSpec(wire_name="secure_environment_variables"),
-    "security": sdk.FieldSpec(
+    "commands": ubx.FieldSpec(wire_name="commands"),
+    "environment_variables": ubx.FieldSpec(wire_name="environment_variables"),
+    "image": ubx.FieldSpec(wire_name="image"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "secure_environment_variables": ubx.FieldSpec(wire_name="secure_environment_variables"),
+    "security": ubx.FieldSpec(
         wire_name="security",
         kind="list",
         fields=_Group_Container_SecurityFields,
     ),
-    "volume": sdk.FieldSpec(
+    "volume": ubx.FieldSpec(
         wire_name="volume",
         kind="list",
         fields=_Group_Container_VolumeFields,
@@ -258,10 +258,10 @@ _Group_InitContainerFields = {
 }
 
 _Group_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -292,62 +292,62 @@ class GroupConfig:
     init_container: Any = None
     timeouts: Any = None
 
-Group = sdk.ResourceBinding(
+Group = ubx.ResourceBinding(
     wire_type="azurerm_container_group",
     fields={
-        "dns_name_label": sdk.FieldSpec(wire_name="dns_name_label"),
-        "dns_name_label_reuse_policy": sdk.FieldSpec(wire_name="dns_name_label_reuse_policy"),
-        "exposed_port": sdk.FieldSpec(
+        "dns_name_label": ubx.FieldSpec(wire_name="dns_name_label"),
+        "dns_name_label_reuse_policy": ubx.FieldSpec(wire_name="dns_name_label_reuse_policy"),
+        "exposed_port": ubx.FieldSpec(
             wire_name="exposed_port",
             kind="set",
             fields=_Group_ExposedPortFields,
         ),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "ip_address_type": sdk.FieldSpec(wire_name="ip_address_type"),
-        "key_vault_key_id": sdk.FieldSpec(wire_name="key_vault_key_id"),
-        "key_vault_user_assigned_identity_id": sdk.FieldSpec(wire_name="key_vault_user_assigned_identity_id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "network_profile_id": sdk.FieldSpec(wire_name="network_profile_id"),
-        "os_type": sdk.FieldSpec(wire_name="os_type"),
-        "priority": sdk.FieldSpec(wire_name="priority"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "restart_policy": sdk.FieldSpec(wire_name="restart_policy"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "subnet_ids": sdk.FieldSpec(wire_name="subnet_ids"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "zones": sdk.FieldSpec(wire_name="zones"),
-        "container": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "ip_address_type": ubx.FieldSpec(wire_name="ip_address_type"),
+        "key_vault_key_id": ubx.FieldSpec(wire_name="key_vault_key_id"),
+        "key_vault_user_assigned_identity_id": ubx.FieldSpec(wire_name="key_vault_user_assigned_identity_id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network_profile_id": ubx.FieldSpec(wire_name="network_profile_id"),
+        "os_type": ubx.FieldSpec(wire_name="os_type"),
+        "priority": ubx.FieldSpec(wire_name="priority"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "restart_policy": ubx.FieldSpec(wire_name="restart_policy"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "subnet_ids": ubx.FieldSpec(wire_name="subnet_ids"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "zones": ubx.FieldSpec(wire_name="zones"),
+        "container": ubx.FieldSpec(
             wire_name="container",
             kind="list",
             fields=_Group_ContainerFields,
         ),
-        "diagnostics": sdk.FieldSpec(
+        "diagnostics": ubx.FieldSpec(
             wire_name="diagnostics",
             kind="list",
             fields=_Group_DiagnosticsFields,
         ),
-        "dns_config": sdk.FieldSpec(
+        "dns_config": ubx.FieldSpec(
             wire_name="dns_config",
             kind="list",
             fields=_Group_DnsConfigFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Group_IdentityFields,
         ),
-        "image_registry_credential": sdk.FieldSpec(
+        "image_registry_credential": ubx.FieldSpec(
             wire_name="image_registry_credential",
             kind="list",
             fields=_Group_ImageRegistryCredentialFields,
         ),
-        "init_container": sdk.FieldSpec(
+        "init_container": ubx.FieldSpec(
             wire_name="init_container",
             kind="list",
             fields=_Group_InitContainerFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Group_TimeoutsFields,

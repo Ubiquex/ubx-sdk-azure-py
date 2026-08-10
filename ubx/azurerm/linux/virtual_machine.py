@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VirtualMachine_AdditionalCapabilities:
@@ -93,51 +93,51 @@ class VirtualMachine_Timeouts:
     update: Any = None
 
 _VirtualMachine_AdditionalCapabilitiesFields = {
-    "hibernation_enabled": sdk.FieldSpec(wire_name="hibernation_enabled"),
-    "ultra_ssd_enabled": sdk.FieldSpec(wire_name="ultra_ssd_enabled"),
+    "hibernation_enabled": ubx.FieldSpec(wire_name="hibernation_enabled"),
+    "ultra_ssd_enabled": ubx.FieldSpec(wire_name="ultra_ssd_enabled"),
 }
 
 _VirtualMachine_AdminSshKeyFields = {
-    "public_key": sdk.FieldSpec(wire_name="public_key"),
-    "username": sdk.FieldSpec(wire_name="username"),
+    "public_key": ubx.FieldSpec(wire_name="public_key"),
+    "username": ubx.FieldSpec(wire_name="username"),
 }
 
 _VirtualMachine_BootDiagnosticsFields = {
-    "storage_account_uri": sdk.FieldSpec(wire_name="storage_account_uri"),
+    "storage_account_uri": ubx.FieldSpec(wire_name="storage_account_uri"),
 }
 
 _VirtualMachine_GalleryApplicationFields = {
-    "automatic_upgrade_enabled": sdk.FieldSpec(wire_name="automatic_upgrade_enabled"),
-    "configuration_blob_uri": sdk.FieldSpec(wire_name="configuration_blob_uri"),
-    "order": sdk.FieldSpec(wire_name="order"),
-    "tag": sdk.FieldSpec(wire_name="tag"),
-    "treat_failure_as_deployment_failure_enabled": sdk.FieldSpec(wire_name="treat_failure_as_deployment_failure_enabled"),
-    "version_id": sdk.FieldSpec(wire_name="version_id"),
+    "automatic_upgrade_enabled": ubx.FieldSpec(wire_name="automatic_upgrade_enabled"),
+    "configuration_blob_uri": ubx.FieldSpec(wire_name="configuration_blob_uri"),
+    "order": ubx.FieldSpec(wire_name="order"),
+    "tag": ubx.FieldSpec(wire_name="tag"),
+    "treat_failure_as_deployment_failure_enabled": ubx.FieldSpec(wire_name="treat_failure_as_deployment_failure_enabled"),
+    "version_id": ubx.FieldSpec(wire_name="version_id"),
 }
 
 _VirtualMachine_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _VirtualMachine_OsDisk_DiffDiskSettingsFields = {
-    "option": sdk.FieldSpec(wire_name="option"),
-    "placement": sdk.FieldSpec(wire_name="placement"),
+    "option": ubx.FieldSpec(wire_name="option"),
+    "placement": ubx.FieldSpec(wire_name="placement"),
 }
 
 _VirtualMachine_OsDiskFields = {
-    "caching": sdk.FieldSpec(wire_name="caching"),
-    "disk_encryption_set_id": sdk.FieldSpec(wire_name="disk_encryption_set_id"),
-    "disk_size_gb": sdk.FieldSpec(wire_name="disk_size_gb"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "secure_vm_disk_encryption_set_id": sdk.FieldSpec(wire_name="secure_vm_disk_encryption_set_id"),
-    "security_encryption_type": sdk.FieldSpec(wire_name="security_encryption_type"),
-    "storage_account_type": sdk.FieldSpec(wire_name="storage_account_type"),
-    "write_accelerator_enabled": sdk.FieldSpec(wire_name="write_accelerator_enabled"),
-    "diff_disk_settings": sdk.FieldSpec(
+    "caching": ubx.FieldSpec(wire_name="caching"),
+    "disk_encryption_set_id": ubx.FieldSpec(wire_name="disk_encryption_set_id"),
+    "disk_size_gb": ubx.FieldSpec(wire_name="disk_size_gb"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "secure_vm_disk_encryption_set_id": ubx.FieldSpec(wire_name="secure_vm_disk_encryption_set_id"),
+    "security_encryption_type": ubx.FieldSpec(wire_name="security_encryption_type"),
+    "storage_account_type": ubx.FieldSpec(wire_name="storage_account_type"),
+    "write_accelerator_enabled": ubx.FieldSpec(wire_name="write_accelerator_enabled"),
+    "diff_disk_settings": ubx.FieldSpec(
         wire_name="diff_disk_settings",
         kind="list",
         fields=_VirtualMachine_OsDisk_DiffDiskSettingsFields,
@@ -145,22 +145,22 @@ _VirtualMachine_OsDiskFields = {
 }
 
 _VirtualMachine_OsImageNotificationFields = {
-    "timeout": sdk.FieldSpec(wire_name="timeout"),
+    "timeout": ubx.FieldSpec(wire_name="timeout"),
 }
 
 _VirtualMachine_PlanFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "product": sdk.FieldSpec(wire_name="product"),
-    "publisher": sdk.FieldSpec(wire_name="publisher"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "product": ubx.FieldSpec(wire_name="product"),
+    "publisher": ubx.FieldSpec(wire_name="publisher"),
 }
 
 _VirtualMachine_Secret_CertificateFields = {
-    "url": sdk.FieldSpec(wire_name="url"),
+    "url": ubx.FieldSpec(wire_name="url"),
 }
 
 _VirtualMachine_SecretFields = {
-    "key_vault_id": sdk.FieldSpec(wire_name="key_vault_id"),
-    "certificate": sdk.FieldSpec(
+    "key_vault_id": ubx.FieldSpec(wire_name="key_vault_id"),
+    "certificate": ubx.FieldSpec(
         wire_name="certificate",
         kind="set",
         fields=_VirtualMachine_Secret_CertificateFields,
@@ -168,22 +168,22 @@ _VirtualMachine_SecretFields = {
 }
 
 _VirtualMachine_SourceImageReferenceFields = {
-    "offer": sdk.FieldSpec(wire_name="offer"),
-    "publisher": sdk.FieldSpec(wire_name="publisher"),
-    "sku": sdk.FieldSpec(wire_name="sku"),
-    "version": sdk.FieldSpec(wire_name="version"),
+    "offer": ubx.FieldSpec(wire_name="offer"),
+    "publisher": ubx.FieldSpec(wire_name="publisher"),
+    "sku": ubx.FieldSpec(wire_name="sku"),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _VirtualMachine_TerminationNotificationFields = {
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "timeout": sdk.FieldSpec(wire_name="timeout"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "timeout": ubx.FieldSpec(wire_name="timeout"),
 }
 
 _VirtualMachine_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -240,104 +240,104 @@ class VirtualMachineConfig:
     termination_notification: Any = None
     timeouts: Any = None
 
-VirtualMachine = sdk.ResourceBinding(
+VirtualMachine = ubx.ResourceBinding(
     wire_type="azurerm_linux_virtual_machine",
     fields={
-        "admin_password": sdk.FieldSpec(wire_name="admin_password"),
-        "admin_username": sdk.FieldSpec(wire_name="admin_username"),
-        "allow_extension_operations": sdk.FieldSpec(wire_name="allow_extension_operations"),
-        "availability_set_id": sdk.FieldSpec(wire_name="availability_set_id"),
-        "bypass_platform_safety_checks_on_user_schedule_enabled": sdk.FieldSpec(wire_name="bypass_platform_safety_checks_on_user_schedule_enabled"),
-        "capacity_reservation_group_id": sdk.FieldSpec(wire_name="capacity_reservation_group_id"),
-        "computer_name": sdk.FieldSpec(wire_name="computer_name"),
-        "custom_data": sdk.FieldSpec(wire_name="custom_data"),
-        "dedicated_host_group_id": sdk.FieldSpec(wire_name="dedicated_host_group_id"),
-        "dedicated_host_id": sdk.FieldSpec(wire_name="dedicated_host_id"),
-        "disable_password_authentication": sdk.FieldSpec(wire_name="disable_password_authentication"),
-        "disk_controller_type": sdk.FieldSpec(wire_name="disk_controller_type"),
-        "edge_zone": sdk.FieldSpec(wire_name="edge_zone"),
-        "encryption_at_host_enabled": sdk.FieldSpec(wire_name="encryption_at_host_enabled"),
-        "eviction_policy": sdk.FieldSpec(wire_name="eviction_policy"),
-        "extensions_time_budget": sdk.FieldSpec(wire_name="extensions_time_budget"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "license_type": sdk.FieldSpec(wire_name="license_type"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "max_bid_price": sdk.FieldSpec(wire_name="max_bid_price"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "network_interface_ids": sdk.FieldSpec(wire_name="network_interface_ids"),
-        "os_managed_disk_id": sdk.FieldSpec(wire_name="os_managed_disk_id"),
-        "patch_assessment_mode": sdk.FieldSpec(wire_name="patch_assessment_mode"),
-        "patch_mode": sdk.FieldSpec(wire_name="patch_mode"),
-        "platform_fault_domain": sdk.FieldSpec(wire_name="platform_fault_domain"),
-        "priority": sdk.FieldSpec(wire_name="priority"),
-        "provision_vm_agent": sdk.FieldSpec(wire_name="provision_vm_agent"),
-        "proximity_placement_group_id": sdk.FieldSpec(wire_name="proximity_placement_group_id"),
-        "reboot_setting": sdk.FieldSpec(wire_name="reboot_setting"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "secure_boot_enabled": sdk.FieldSpec(wire_name="secure_boot_enabled"),
-        "size": sdk.FieldSpec(wire_name="size"),
-        "source_image_id": sdk.FieldSpec(wire_name="source_image_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "user_data": sdk.FieldSpec(wire_name="user_data"),
-        "virtual_machine_scale_set_id": sdk.FieldSpec(wire_name="virtual_machine_scale_set_id"),
-        "vtpm_enabled": sdk.FieldSpec(wire_name="vtpm_enabled"),
-        "zone": sdk.FieldSpec(wire_name="zone"),
-        "additional_capabilities": sdk.FieldSpec(
+        "admin_password": ubx.FieldSpec(wire_name="admin_password"),
+        "admin_username": ubx.FieldSpec(wire_name="admin_username"),
+        "allow_extension_operations": ubx.FieldSpec(wire_name="allow_extension_operations"),
+        "availability_set_id": ubx.FieldSpec(wire_name="availability_set_id"),
+        "bypass_platform_safety_checks_on_user_schedule_enabled": ubx.FieldSpec(wire_name="bypass_platform_safety_checks_on_user_schedule_enabled"),
+        "capacity_reservation_group_id": ubx.FieldSpec(wire_name="capacity_reservation_group_id"),
+        "computer_name": ubx.FieldSpec(wire_name="computer_name"),
+        "custom_data": ubx.FieldSpec(wire_name="custom_data"),
+        "dedicated_host_group_id": ubx.FieldSpec(wire_name="dedicated_host_group_id"),
+        "dedicated_host_id": ubx.FieldSpec(wire_name="dedicated_host_id"),
+        "disable_password_authentication": ubx.FieldSpec(wire_name="disable_password_authentication"),
+        "disk_controller_type": ubx.FieldSpec(wire_name="disk_controller_type"),
+        "edge_zone": ubx.FieldSpec(wire_name="edge_zone"),
+        "encryption_at_host_enabled": ubx.FieldSpec(wire_name="encryption_at_host_enabled"),
+        "eviction_policy": ubx.FieldSpec(wire_name="eviction_policy"),
+        "extensions_time_budget": ubx.FieldSpec(wire_name="extensions_time_budget"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "license_type": ubx.FieldSpec(wire_name="license_type"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "max_bid_price": ubx.FieldSpec(wire_name="max_bid_price"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network_interface_ids": ubx.FieldSpec(wire_name="network_interface_ids"),
+        "os_managed_disk_id": ubx.FieldSpec(wire_name="os_managed_disk_id"),
+        "patch_assessment_mode": ubx.FieldSpec(wire_name="patch_assessment_mode"),
+        "patch_mode": ubx.FieldSpec(wire_name="patch_mode"),
+        "platform_fault_domain": ubx.FieldSpec(wire_name="platform_fault_domain"),
+        "priority": ubx.FieldSpec(wire_name="priority"),
+        "provision_vm_agent": ubx.FieldSpec(wire_name="provision_vm_agent"),
+        "proximity_placement_group_id": ubx.FieldSpec(wire_name="proximity_placement_group_id"),
+        "reboot_setting": ubx.FieldSpec(wire_name="reboot_setting"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "secure_boot_enabled": ubx.FieldSpec(wire_name="secure_boot_enabled"),
+        "size": ubx.FieldSpec(wire_name="size"),
+        "source_image_id": ubx.FieldSpec(wire_name="source_image_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "user_data": ubx.FieldSpec(wire_name="user_data"),
+        "virtual_machine_scale_set_id": ubx.FieldSpec(wire_name="virtual_machine_scale_set_id"),
+        "vtpm_enabled": ubx.FieldSpec(wire_name="vtpm_enabled"),
+        "zone": ubx.FieldSpec(wire_name="zone"),
+        "additional_capabilities": ubx.FieldSpec(
             wire_name="additional_capabilities",
             kind="list",
             fields=_VirtualMachine_AdditionalCapabilitiesFields,
         ),
-        "admin_ssh_key": sdk.FieldSpec(
+        "admin_ssh_key": ubx.FieldSpec(
             wire_name="admin_ssh_key",
             kind="set",
             fields=_VirtualMachine_AdminSshKeyFields,
         ),
-        "boot_diagnostics": sdk.FieldSpec(
+        "boot_diagnostics": ubx.FieldSpec(
             wire_name="boot_diagnostics",
             kind="list",
             fields=_VirtualMachine_BootDiagnosticsFields,
         ),
-        "gallery_application": sdk.FieldSpec(
+        "gallery_application": ubx.FieldSpec(
             wire_name="gallery_application",
             kind="list",
             fields=_VirtualMachine_GalleryApplicationFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_VirtualMachine_IdentityFields,
         ),
-        "os_disk": sdk.FieldSpec(
+        "os_disk": ubx.FieldSpec(
             wire_name="os_disk",
             kind="list",
             fields=_VirtualMachine_OsDiskFields,
         ),
-        "os_image_notification": sdk.FieldSpec(
+        "os_image_notification": ubx.FieldSpec(
             wire_name="os_image_notification",
             kind="list",
             fields=_VirtualMachine_OsImageNotificationFields,
         ),
-        "plan": sdk.FieldSpec(
+        "plan": ubx.FieldSpec(
             wire_name="plan",
             kind="list",
             fields=_VirtualMachine_PlanFields,
         ),
-        "secret": sdk.FieldSpec(
+        "secret": ubx.FieldSpec(
             wire_name="secret",
             kind="list",
             fields=_VirtualMachine_SecretFields,
         ),
-        "source_image_reference": sdk.FieldSpec(
+        "source_image_reference": ubx.FieldSpec(
             wire_name="source_image_reference",
             kind="list",
             fields=_VirtualMachine_SourceImageReferenceFields,
         ),
-        "termination_notification": sdk.FieldSpec(
+        "termination_notification": ubx.FieldSpec(
             wire_name="termination_notification",
             kind="list",
             fields=_VirtualMachine_TerminationNotificationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_VirtualMachine_TimeoutsFields,

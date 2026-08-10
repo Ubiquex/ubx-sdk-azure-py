@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryIntegrationRuntimeAzureSsis_CatalogInfo:
@@ -88,36 +88,36 @@ class FactoryIntegrationRuntimeAzureSsis_VnetIntegration:
     vnet_id: Any = None
 
 _FactoryIntegrationRuntimeAzureSsis_CatalogInfoFields = {
-    "administrator_login": sdk.FieldSpec(wire_name="administrator_login"),
-    "administrator_password": sdk.FieldSpec(wire_name="administrator_password"),
-    "dual_standby_pair_name": sdk.FieldSpec(wire_name="dual_standby_pair_name"),
-    "elastic_pool_name": sdk.FieldSpec(wire_name="elastic_pool_name"),
-    "pricing_tier": sdk.FieldSpec(wire_name="pricing_tier"),
-    "server_endpoint": sdk.FieldSpec(wire_name="server_endpoint"),
+    "administrator_login": ubx.FieldSpec(wire_name="administrator_login"),
+    "administrator_password": ubx.FieldSpec(wire_name="administrator_password"),
+    "dual_standby_pair_name": ubx.FieldSpec(wire_name="dual_standby_pair_name"),
+    "elastic_pool_name": ubx.FieldSpec(wire_name="elastic_pool_name"),
+    "pricing_tier": ubx.FieldSpec(wire_name="pricing_tier"),
+    "server_endpoint": ubx.FieldSpec(wire_name="server_endpoint"),
 }
 
 _FactoryIntegrationRuntimeAzureSsis_CopyComputeScaleFields = {
-    "data_integration_unit": sdk.FieldSpec(wire_name="data_integration_unit"),
-    "time_to_live": sdk.FieldSpec(wire_name="time_to_live"),
+    "data_integration_unit": ubx.FieldSpec(wire_name="data_integration_unit"),
+    "time_to_live": ubx.FieldSpec(wire_name="time_to_live"),
 }
 
 _FactoryIntegrationRuntimeAzureSsis_CustomSetupScriptFields = {
-    "blob_container_uri": sdk.FieldSpec(wire_name="blob_container_uri"),
-    "sas_token": sdk.FieldSpec(wire_name="sas_token"),
+    "blob_container_uri": ubx.FieldSpec(wire_name="blob_container_uri"),
+    "sas_token": ubx.FieldSpec(wire_name="sas_token"),
 }
 
 _FactoryIntegrationRuntimeAzureSsis_ExpressCustomSetup_CommandKey_KeyVaultPasswordFields = {
-    "linked_service_name": sdk.FieldSpec(wire_name="linked_service_name"),
-    "parameters": sdk.FieldSpec(wire_name="parameters"),
-    "secret_name": sdk.FieldSpec(wire_name="secret_name"),
-    "secret_version": sdk.FieldSpec(wire_name="secret_version"),
+    "linked_service_name": ubx.FieldSpec(wire_name="linked_service_name"),
+    "parameters": ubx.FieldSpec(wire_name="parameters"),
+    "secret_name": ubx.FieldSpec(wire_name="secret_name"),
+    "secret_version": ubx.FieldSpec(wire_name="secret_version"),
 }
 
 _FactoryIntegrationRuntimeAzureSsis_ExpressCustomSetup_CommandKeyFields = {
-    "password": sdk.FieldSpec(wire_name="password"),
-    "target_name": sdk.FieldSpec(wire_name="target_name"),
-    "user_name": sdk.FieldSpec(wire_name="user_name"),
-    "key_vault_password": sdk.FieldSpec(
+    "password": ubx.FieldSpec(wire_name="password"),
+    "target_name": ubx.FieldSpec(wire_name="target_name"),
+    "user_name": ubx.FieldSpec(wire_name="user_name"),
+    "key_vault_password": ubx.FieldSpec(
         wire_name="key_vault_password",
         kind="list",
         fields=_FactoryIntegrationRuntimeAzureSsis_ExpressCustomSetup_CommandKey_KeyVaultPasswordFields,
@@ -125,9 +125,9 @@ _FactoryIntegrationRuntimeAzureSsis_ExpressCustomSetup_CommandKeyFields = {
 }
 
 _FactoryIntegrationRuntimeAzureSsis_ExpressCustomSetup_ComponentFields = {
-    "license": sdk.FieldSpec(wire_name="license"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "key_vault_license": sdk.FieldSpec(
+    "license": ubx.FieldSpec(wire_name="license"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "key_vault_license": ubx.FieldSpec(
         wire_name="key_vault_license",
         kind="list",
         fields=_FactoryIntegrationRuntimeAzureSsis_ExpressCustomSetup_CommandKey_KeyVaultPasswordFields,
@@ -135,14 +135,14 @@ _FactoryIntegrationRuntimeAzureSsis_ExpressCustomSetup_ComponentFields = {
 }
 
 _FactoryIntegrationRuntimeAzureSsis_ExpressCustomSetupFields = {
-    "environment": sdk.FieldSpec(wire_name="environment"),
-    "powershell_version": sdk.FieldSpec(wire_name="powershell_version"),
-    "command_key": sdk.FieldSpec(
+    "environment": ubx.FieldSpec(wire_name="environment"),
+    "powershell_version": ubx.FieldSpec(wire_name="powershell_version"),
+    "command_key": ubx.FieldSpec(
         wire_name="command_key",
         kind="list",
         fields=_FactoryIntegrationRuntimeAzureSsis_ExpressCustomSetup_CommandKeyFields,
     ),
-    "component": sdk.FieldSpec(
+    "component": ubx.FieldSpec(
         wire_name="component",
         kind="list",
         fields=_FactoryIntegrationRuntimeAzureSsis_ExpressCustomSetup_ComponentFields,
@@ -150,38 +150,38 @@ _FactoryIntegrationRuntimeAzureSsis_ExpressCustomSetupFields = {
 }
 
 _FactoryIntegrationRuntimeAzureSsis_ExpressVnetIntegrationFields = {
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _FactoryIntegrationRuntimeAzureSsis_PackageStoreFields = {
-    "linked_service_name": sdk.FieldSpec(wire_name="linked_service_name"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "linked_service_name": ubx.FieldSpec(wire_name="linked_service_name"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _FactoryIntegrationRuntimeAzureSsis_PipelineExternalComputeScaleFields = {
-    "number_of_external_nodes": sdk.FieldSpec(wire_name="number_of_external_nodes"),
-    "number_of_pipeline_nodes": sdk.FieldSpec(wire_name="number_of_pipeline_nodes"),
-    "time_to_live": sdk.FieldSpec(wire_name="time_to_live"),
+    "number_of_external_nodes": ubx.FieldSpec(wire_name="number_of_external_nodes"),
+    "number_of_pipeline_nodes": ubx.FieldSpec(wire_name="number_of_pipeline_nodes"),
+    "time_to_live": ubx.FieldSpec(wire_name="time_to_live"),
 }
 
 _FactoryIntegrationRuntimeAzureSsis_ProxyFields = {
-    "path": sdk.FieldSpec(wire_name="path"),
-    "self_hosted_integration_runtime_name": sdk.FieldSpec(wire_name="self_hosted_integration_runtime_name"),
-    "staging_storage_linked_service_name": sdk.FieldSpec(wire_name="staging_storage_linked_service_name"),
+    "path": ubx.FieldSpec(wire_name="path"),
+    "self_hosted_integration_runtime_name": ubx.FieldSpec(wire_name="self_hosted_integration_runtime_name"),
+    "staging_storage_linked_service_name": ubx.FieldSpec(wire_name="staging_storage_linked_service_name"),
 }
 
 _FactoryIntegrationRuntimeAzureSsis_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _FactoryIntegrationRuntimeAzureSsis_VnetIntegrationFields = {
-    "public_ips": sdk.FieldSpec(wire_name="public_ips"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-    "subnet_name": sdk.FieldSpec(wire_name="subnet_name"),
-    "vnet_id": sdk.FieldSpec(wire_name="vnet_id"),
+    "public_ips": ubx.FieldSpec(wire_name="public_ips"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+    "subnet_name": ubx.FieldSpec(wire_name="subnet_name"),
+    "vnet_id": ubx.FieldSpec(wire_name="vnet_id"),
 }
 
 @dataclasses.dataclass
@@ -208,66 +208,66 @@ class FactoryIntegrationRuntimeAzureSsisConfig:
     timeouts: Any = None
     vnet_integration: Any = None
 
-FactoryIntegrationRuntimeAzureSsis = sdk.ResourceBinding(
+FactoryIntegrationRuntimeAzureSsis = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_integration_runtime_azure_ssis",
     fields={
-        "credential_name": sdk.FieldSpec(wire_name="credential_name"),
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "edition": sdk.FieldSpec(wire_name="edition"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "license_type": sdk.FieldSpec(wire_name="license_type"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "max_parallel_executions_per_node": sdk.FieldSpec(wire_name="max_parallel_executions_per_node"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "node_size": sdk.FieldSpec(wire_name="node_size"),
-        "number_of_nodes": sdk.FieldSpec(wire_name="number_of_nodes"),
-        "catalog_info": sdk.FieldSpec(
+        "credential_name": ubx.FieldSpec(wire_name="credential_name"),
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "edition": ubx.FieldSpec(wire_name="edition"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "license_type": ubx.FieldSpec(wire_name="license_type"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "max_parallel_executions_per_node": ubx.FieldSpec(wire_name="max_parallel_executions_per_node"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "node_size": ubx.FieldSpec(wire_name="node_size"),
+        "number_of_nodes": ubx.FieldSpec(wire_name="number_of_nodes"),
+        "catalog_info": ubx.FieldSpec(
             wire_name="catalog_info",
             kind="list",
             fields=_FactoryIntegrationRuntimeAzureSsis_CatalogInfoFields,
         ),
-        "copy_compute_scale": sdk.FieldSpec(
+        "copy_compute_scale": ubx.FieldSpec(
             wire_name="copy_compute_scale",
             kind="list",
             fields=_FactoryIntegrationRuntimeAzureSsis_CopyComputeScaleFields,
         ),
-        "custom_setup_script": sdk.FieldSpec(
+        "custom_setup_script": ubx.FieldSpec(
             wire_name="custom_setup_script",
             kind="list",
             fields=_FactoryIntegrationRuntimeAzureSsis_CustomSetupScriptFields,
         ),
-        "express_custom_setup": sdk.FieldSpec(
+        "express_custom_setup": ubx.FieldSpec(
             wire_name="express_custom_setup",
             kind="list",
             fields=_FactoryIntegrationRuntimeAzureSsis_ExpressCustomSetupFields,
         ),
-        "express_vnet_integration": sdk.FieldSpec(
+        "express_vnet_integration": ubx.FieldSpec(
             wire_name="express_vnet_integration",
             kind="list",
             fields=_FactoryIntegrationRuntimeAzureSsis_ExpressVnetIntegrationFields,
         ),
-        "package_store": sdk.FieldSpec(
+        "package_store": ubx.FieldSpec(
             wire_name="package_store",
             kind="list",
             fields=_FactoryIntegrationRuntimeAzureSsis_PackageStoreFields,
         ),
-        "pipeline_external_compute_scale": sdk.FieldSpec(
+        "pipeline_external_compute_scale": ubx.FieldSpec(
             wire_name="pipeline_external_compute_scale",
             kind="list",
             fields=_FactoryIntegrationRuntimeAzureSsis_PipelineExternalComputeScaleFields,
         ),
-        "proxy": sdk.FieldSpec(
+        "proxy": ubx.FieldSpec(
             wire_name="proxy",
             kind="list",
             fields=_FactoryIntegrationRuntimeAzureSsis_ProxyFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryIntegrationRuntimeAzureSsis_TimeoutsFields,
         ),
-        "vnet_integration": sdk.FieldSpec(
+        "vnet_integration": ubx.FieldSpec(
             wire_name="vnet_integration",
             kind="list",
             fields=_FactoryIntegrationRuntimeAzureSsis_VnetIntegrationFields,

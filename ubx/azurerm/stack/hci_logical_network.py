@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HciLogicalNetwork_Subnet_IpPool:
@@ -33,26 +33,26 @@ class HciLogicalNetwork_Timeouts:
     update: Any = None
 
 _HciLogicalNetwork_Subnet_IpPoolFields = {
-    "end": sdk.FieldSpec(wire_name="end"),
-    "start": sdk.FieldSpec(wire_name="start"),
+    "end": ubx.FieldSpec(wire_name="end"),
+    "start": ubx.FieldSpec(wire_name="start"),
 }
 
 _HciLogicalNetwork_Subnet_RouteFields = {
-    "address_prefix": sdk.FieldSpec(wire_name="address_prefix"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "next_hop_ip_address": sdk.FieldSpec(wire_name="next_hop_ip_address"),
+    "address_prefix": ubx.FieldSpec(wire_name="address_prefix"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "next_hop_ip_address": ubx.FieldSpec(wire_name="next_hop_ip_address"),
 }
 
 _HciLogicalNetwork_SubnetFields = {
-    "address_prefix": sdk.FieldSpec(wire_name="address_prefix"),
-    "ip_allocation_method": sdk.FieldSpec(wire_name="ip_allocation_method"),
-    "vlan_id": sdk.FieldSpec(wire_name="vlan_id"),
-    "ip_pool": sdk.FieldSpec(
+    "address_prefix": ubx.FieldSpec(wire_name="address_prefix"),
+    "ip_allocation_method": ubx.FieldSpec(wire_name="ip_allocation_method"),
+    "vlan_id": ubx.FieldSpec(wire_name="vlan_id"),
+    "ip_pool": ubx.FieldSpec(
         wire_name="ip_pool",
         kind="list",
         fields=_HciLogicalNetwork_Subnet_IpPoolFields,
     ),
-    "route": sdk.FieldSpec(
+    "route": ubx.FieldSpec(
         wire_name="route",
         kind="list",
         fields=_HciLogicalNetwork_Subnet_RouteFields,
@@ -60,10 +60,10 @@ _HciLogicalNetwork_SubnetFields = {
 }
 
 _HciLogicalNetwork_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -79,23 +79,23 @@ class HciLogicalNetworkConfig:
     subnet: Any = None
     timeouts: Any = None
 
-HciLogicalNetwork = sdk.ResourceBinding(
+HciLogicalNetwork = ubx.ResourceBinding(
     wire_type="azurerm_stack_hci_logical_network",
     fields={
-        "custom_location_id": sdk.FieldSpec(wire_name="custom_location_id"),
-        "dns_servers": sdk.FieldSpec(wire_name="dns_servers"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "virtual_switch_name": sdk.FieldSpec(wire_name="virtual_switch_name"),
-        "subnet": sdk.FieldSpec(
+        "custom_location_id": ubx.FieldSpec(wire_name="custom_location_id"),
+        "dns_servers": ubx.FieldSpec(wire_name="dns_servers"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "virtual_switch_name": ubx.FieldSpec(wire_name="virtual_switch_name"),
+        "subnet": ubx.FieldSpec(
             wire_name="subnet",
             kind="list",
             fields=_HciLogicalNetwork_SubnetFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_HciLogicalNetwork_TimeoutsFields,

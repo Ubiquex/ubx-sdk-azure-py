@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnalyticsWorkspaceTableMicrosoft_Column:
@@ -23,19 +23,19 @@ class AnalyticsWorkspaceTableMicrosoft_Timeouts:
     update: Any = None
 
 _AnalyticsWorkspaceTableMicrosoft_ColumnFields = {
-    "description": sdk.FieldSpec(wire_name="description"),
-    "display_by_default": sdk.FieldSpec(wire_name="display_by_default"),
-    "display_name": sdk.FieldSpec(wire_name="display_name"),
-    "hidden": sdk.FieldSpec(wire_name="hidden"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "display_by_default": ubx.FieldSpec(wire_name="display_by_default"),
+    "display_name": ubx.FieldSpec(wire_name="display_name"),
+    "hidden": ubx.FieldSpec(wire_name="hidden"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _AnalyticsWorkspaceTableMicrosoft_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -51,23 +51,23 @@ class AnalyticsWorkspaceTableMicrosoftConfig:
     column: Any = None
     timeouts: Any = None
 
-AnalyticsWorkspaceTableMicrosoft = sdk.ResourceBinding(
+AnalyticsWorkspaceTableMicrosoft = ubx.ResourceBinding(
     wire_type="azurerm_log_analytics_workspace_table_microsoft",
     fields={
-        "description": sdk.FieldSpec(wire_name="description"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "labels": sdk.FieldSpec(wire_name="labels"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "retention_in_days": sdk.FieldSpec(wire_name="retention_in_days"),
-        "total_retention_in_days": sdk.FieldSpec(wire_name="total_retention_in_days"),
-        "workspace_id": sdk.FieldSpec(wire_name="workspace_id"),
-        "column": sdk.FieldSpec(
+        "description": ubx.FieldSpec(wire_name="description"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "labels": ubx.FieldSpec(wire_name="labels"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "retention_in_days": ubx.FieldSpec(wire_name="retention_in_days"),
+        "total_retention_in_days": ubx.FieldSpec(wire_name="total_retention_in_days"),
+        "workspace_id": ubx.FieldSpec(wire_name="workspace_id"),
+        "column": ubx.FieldSpec(
             wire_name="column",
             kind="list",
             fields=_AnalyticsWorkspaceTableMicrosoft_ColumnFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AnalyticsWorkspaceTableMicrosoft_TimeoutsFields,

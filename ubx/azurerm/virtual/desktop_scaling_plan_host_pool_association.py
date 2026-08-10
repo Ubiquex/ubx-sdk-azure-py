@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DesktopScalingPlanHostPoolAssociation_Timeouts:
@@ -14,10 +14,10 @@ class DesktopScalingPlanHostPoolAssociation_Timeouts:
     update: Any = None
 
 _DesktopScalingPlanHostPoolAssociation_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -28,14 +28,14 @@ class DesktopScalingPlanHostPoolAssociationConfig:
     scaling_plan_id: Any = None
     timeouts: Any = None
 
-DesktopScalingPlanHostPoolAssociation = sdk.ResourceBinding(
+DesktopScalingPlanHostPoolAssociation = ubx.ResourceBinding(
     wire_type="azurerm_virtual_desktop_scaling_plan_host_pool_association",
     fields={
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "host_pool_id": sdk.FieldSpec(wire_name="host_pool_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "scaling_plan_id": sdk.FieldSpec(wire_name="scaling_plan_id"),
-        "timeouts": sdk.FieldSpec(
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "host_pool_id": ubx.FieldSpec(wire_name="host_pool_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "scaling_plan_id": ubx.FieldSpec(wire_name="scaling_plan_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DesktopScalingPlanHostPoolAssociation_TimeoutsFields,

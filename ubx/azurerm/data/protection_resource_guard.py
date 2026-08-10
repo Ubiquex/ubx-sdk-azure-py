@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ProtectionResourceGuard_Timeouts:
@@ -14,10 +14,10 @@ class ProtectionResourceGuard_Timeouts:
     update: Any = None
 
 _ProtectionResourceGuard_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class ProtectionResourceGuardConfig:
     vault_critical_operation_exclusion_list: Any = None
     timeouts: Any = None
 
-ProtectionResourceGuard = sdk.ResourceBinding(
+ProtectionResourceGuard = ubx.ResourceBinding(
     wire_type="azurerm_data_protection_resource_guard",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "vault_critical_operation_exclusion_list": sdk.FieldSpec(wire_name="vault_critical_operation_exclusion_list"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "vault_critical_operation_exclusion_list": ubx.FieldSpec(wire_name="vault_critical_operation_exclusion_list"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ProtectionResourceGuard_TimeoutsFields,

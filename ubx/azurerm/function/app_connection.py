@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppConnection_Authentication:
@@ -28,24 +28,24 @@ class AppConnection_Timeouts:
     update: Any = None
 
 _AppConnection_AuthenticationFields = {
-    "certificate": sdk.FieldSpec(wire_name="certificate"),
-    "client_id": sdk.FieldSpec(wire_name="client_id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "secret": sdk.FieldSpec(wire_name="secret"),
-    "subscription_id": sdk.FieldSpec(wire_name="subscription_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "certificate": ubx.FieldSpec(wire_name="certificate"),
+    "client_id": ubx.FieldSpec(wire_name="client_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "secret": ubx.FieldSpec(wire_name="secret"),
+    "subscription_id": ubx.FieldSpec(wire_name="subscription_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _AppConnection_SecretStoreFields = {
-    "key_vault_id": sdk.FieldSpec(wire_name="key_vault_id"),
+    "key_vault_id": ubx.FieldSpec(wire_name="key_vault_id"),
 }
 
 _AppConnection_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -60,26 +60,26 @@ class AppConnectionConfig:
     secret_store: Any = None
     timeouts: Any = None
 
-AppConnection = sdk.ResourceBinding(
+AppConnection = ubx.ResourceBinding(
     wire_type="azurerm_function_app_connection",
     fields={
-        "client_type": sdk.FieldSpec(wire_name="client_type"),
-        "function_app_id": sdk.FieldSpec(wire_name="function_app_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "target_resource_id": sdk.FieldSpec(wire_name="target_resource_id"),
-        "vnet_solution": sdk.FieldSpec(wire_name="vnet_solution"),
-        "authentication": sdk.FieldSpec(
+        "client_type": ubx.FieldSpec(wire_name="client_type"),
+        "function_app_id": ubx.FieldSpec(wire_name="function_app_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "target_resource_id": ubx.FieldSpec(wire_name="target_resource_id"),
+        "vnet_solution": ubx.FieldSpec(wire_name="vnet_solution"),
+        "authentication": ubx.FieldSpec(
             wire_name="authentication",
             kind="list",
             fields=_AppConnection_AuthenticationFields,
         ),
-        "secret_store": sdk.FieldSpec(
+        "secret_store": ubx.FieldSpec(
             wire_name="secret_store",
             kind="list",
             fields=_AppConnection_SecretStoreFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AppConnection_TimeoutsFields,

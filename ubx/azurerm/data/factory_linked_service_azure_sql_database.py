@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryLinkedServiceAzureSqlDatabase_KeyVaultConnectionString:
@@ -19,15 +19,15 @@ class FactoryLinkedServiceAzureSqlDatabase_Timeouts:
     update: Any = None
 
 _FactoryLinkedServiceAzureSqlDatabase_KeyVaultConnectionStringFields = {
-    "linked_service_name": sdk.FieldSpec(wire_name="linked_service_name"),
-    "secret_name": sdk.FieldSpec(wire_name="secret_name"),
+    "linked_service_name": ubx.FieldSpec(wire_name="linked_service_name"),
+    "secret_name": ubx.FieldSpec(wire_name="secret_name"),
 }
 
 _FactoryLinkedServiceAzureSqlDatabase_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -50,34 +50,34 @@ class FactoryLinkedServiceAzureSqlDatabaseConfig:
     key_vault_password: Any = None
     timeouts: Any = None
 
-FactoryLinkedServiceAzureSqlDatabase = sdk.ResourceBinding(
+FactoryLinkedServiceAzureSqlDatabase = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_linked_service_azure_sql_database",
     fields={
-        "additional_properties": sdk.FieldSpec(wire_name="additional_properties"),
-        "annotations": sdk.FieldSpec(wire_name="annotations"),
-        "connection_string": sdk.FieldSpec(wire_name="connection_string"),
-        "credential_name": sdk.FieldSpec(wire_name="credential_name"),
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "integration_runtime_name": sdk.FieldSpec(wire_name="integration_runtime_name"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parameters": sdk.FieldSpec(wire_name="parameters"),
-        "service_principal_id": sdk.FieldSpec(wire_name="service_principal_id"),
-        "service_principal_key": sdk.FieldSpec(wire_name="service_principal_key"),
-        "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-        "use_managed_identity": sdk.FieldSpec(wire_name="use_managed_identity"),
-        "key_vault_connection_string": sdk.FieldSpec(
+        "additional_properties": ubx.FieldSpec(wire_name="additional_properties"),
+        "annotations": ubx.FieldSpec(wire_name="annotations"),
+        "connection_string": ubx.FieldSpec(wire_name="connection_string"),
+        "credential_name": ubx.FieldSpec(wire_name="credential_name"),
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "integration_runtime_name": ubx.FieldSpec(wire_name="integration_runtime_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parameters": ubx.FieldSpec(wire_name="parameters"),
+        "service_principal_id": ubx.FieldSpec(wire_name="service_principal_id"),
+        "service_principal_key": ubx.FieldSpec(wire_name="service_principal_key"),
+        "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+        "use_managed_identity": ubx.FieldSpec(wire_name="use_managed_identity"),
+        "key_vault_connection_string": ubx.FieldSpec(
             wire_name="key_vault_connection_string",
             kind="list",
             fields=_FactoryLinkedServiceAzureSqlDatabase_KeyVaultConnectionStringFields,
         ),
-        "key_vault_password": sdk.FieldSpec(
+        "key_vault_password": ubx.FieldSpec(
             wire_name="key_vault_password",
             kind="list",
             fields=_FactoryLinkedServiceAzureSqlDatabase_KeyVaultConnectionStringFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryLinkedServiceAzureSqlDatabase_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RedisGeoReplication_Timeouts:
@@ -14,10 +14,10 @@ class RedisGeoReplication_Timeouts:
     update: Any = None
 
 _RedisGeoReplication_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -27,13 +27,13 @@ class RedisGeoReplicationConfig:
     managed_redis_id: Any = None
     timeouts: Any = None
 
-RedisGeoReplication = sdk.ResourceBinding(
+RedisGeoReplication = ubx.ResourceBinding(
     wire_type="azurerm_managed_redis_geo_replication",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "linked_managed_redis_ids": sdk.FieldSpec(wire_name="linked_managed_redis_ids"),
-        "managed_redis_id": sdk.FieldSpec(wire_name="managed_redis_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "linked_managed_redis_ids": ubx.FieldSpec(wire_name="linked_managed_redis_ids"),
+        "managed_redis_id": ubx.FieldSpec(wire_name="managed_redis_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RedisGeoReplication_TimeoutsFields,

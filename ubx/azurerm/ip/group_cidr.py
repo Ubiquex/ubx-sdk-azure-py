@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GroupCidr_Timeouts:
@@ -13,9 +13,9 @@ class GroupCidr_Timeouts:
     read: Any = None
 
 _GroupCidr_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -25,13 +25,13 @@ class GroupCidrConfig:
     ip_group_id: Any = None
     timeouts: Any = None
 
-GroupCidr = sdk.ResourceBinding(
+GroupCidr = ubx.ResourceBinding(
     wire_type="azurerm_ip_group_cidr",
     fields={
-        "cidr": sdk.FieldSpec(wire_name="cidr"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "ip_group_id": sdk.FieldSpec(wire_name="ip_group_id"),
-        "timeouts": sdk.FieldSpec(
+        "cidr": ubx.FieldSpec(wire_name="cidr"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "ip_group_id": ubx.FieldSpec(wire_name="ip_group_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_GroupCidr_TimeoutsFields,

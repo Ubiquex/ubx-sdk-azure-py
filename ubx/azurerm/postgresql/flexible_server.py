@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FlexibleServer_Authentication:
@@ -50,46 +50,46 @@ class FlexibleServer_Timeouts:
     update: Any = None
 
 _FlexibleServer_AuthenticationFields = {
-    "active_directory_auth_enabled": sdk.FieldSpec(wire_name="active_directory_auth_enabled"),
-    "password_auth_enabled": sdk.FieldSpec(wire_name="password_auth_enabled"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
+    "active_directory_auth_enabled": ubx.FieldSpec(wire_name="active_directory_auth_enabled"),
+    "password_auth_enabled": ubx.FieldSpec(wire_name="password_auth_enabled"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
 }
 
 _FlexibleServer_ClusterFields = {
-    "default_database_name": sdk.FieldSpec(wire_name="default_database_name"),
-    "size": sdk.FieldSpec(wire_name="size"),
+    "default_database_name": ubx.FieldSpec(wire_name="default_database_name"),
+    "size": ubx.FieldSpec(wire_name="size"),
 }
 
 _FlexibleServer_CustomerManagedKeyFields = {
-    "geo_backup_key_vault_key_id": sdk.FieldSpec(wire_name="geo_backup_key_vault_key_id"),
-    "geo_backup_user_assigned_identity_id": sdk.FieldSpec(wire_name="geo_backup_user_assigned_identity_id"),
-    "key_vault_key_id": sdk.FieldSpec(wire_name="key_vault_key_id"),
-    "primary_user_assigned_identity_id": sdk.FieldSpec(wire_name="primary_user_assigned_identity_id"),
+    "geo_backup_key_vault_key_id": ubx.FieldSpec(wire_name="geo_backup_key_vault_key_id"),
+    "geo_backup_user_assigned_identity_id": ubx.FieldSpec(wire_name="geo_backup_user_assigned_identity_id"),
+    "key_vault_key_id": ubx.FieldSpec(wire_name="key_vault_key_id"),
+    "primary_user_assigned_identity_id": ubx.FieldSpec(wire_name="primary_user_assigned_identity_id"),
 }
 
 _FlexibleServer_HighAvailabilityFields = {
-    "mode": sdk.FieldSpec(wire_name="mode"),
-    "standby_availability_zone": sdk.FieldSpec(wire_name="standby_availability_zone"),
+    "mode": ubx.FieldSpec(wire_name="mode"),
+    "standby_availability_zone": ubx.FieldSpec(wire_name="standby_availability_zone"),
 }
 
 _FlexibleServer_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _FlexibleServer_MaintenanceWindowFields = {
-    "day_of_week": sdk.FieldSpec(wire_name="day_of_week"),
-    "start_hour": sdk.FieldSpec(wire_name="start_hour"),
-    "start_minute": sdk.FieldSpec(wire_name="start_minute"),
+    "day_of_week": ubx.FieldSpec(wire_name="day_of_week"),
+    "start_hour": ubx.FieldSpec(wire_name="start_hour"),
+    "start_minute": ubx.FieldSpec(wire_name="start_minute"),
 }
 
 _FlexibleServer_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -126,64 +126,64 @@ class FlexibleServerConfig:
     maintenance_window: Any = None
     timeouts: Any = None
 
-FlexibleServer = sdk.ResourceBinding(
+FlexibleServer = ubx.ResourceBinding(
     wire_type="azurerm_postgresql_flexible_server",
     fields={
-        "administrator_login": sdk.FieldSpec(wire_name="administrator_login"),
-        "administrator_password": sdk.FieldSpec(wire_name="administrator_password"),
-        "administrator_password_wo": sdk.FieldSpec(wire_name="administrator_password_wo"),
-        "administrator_password_wo_version": sdk.FieldSpec(wire_name="administrator_password_wo_version"),
-        "auto_grow_enabled": sdk.FieldSpec(wire_name="auto_grow_enabled"),
-        "backup_retention_days": sdk.FieldSpec(wire_name="backup_retention_days"),
-        "create_mode": sdk.FieldSpec(wire_name="create_mode"),
-        "delegated_subnet_id": sdk.FieldSpec(wire_name="delegated_subnet_id"),
-        "geo_redundant_backup_enabled": sdk.FieldSpec(wire_name="geo_redundant_backup_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "point_in_time_restore_time_in_utc": sdk.FieldSpec(wire_name="point_in_time_restore_time_in_utc"),
-        "private_dns_zone_id": sdk.FieldSpec(wire_name="private_dns_zone_id"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "replication_role": sdk.FieldSpec(wire_name="replication_role"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "source_server_id": sdk.FieldSpec(wire_name="source_server_id"),
-        "storage_mb": sdk.FieldSpec(wire_name="storage_mb"),
-        "storage_tier": sdk.FieldSpec(wire_name="storage_tier"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "version": sdk.FieldSpec(wire_name="version"),
-        "zone": sdk.FieldSpec(wire_name="zone"),
-        "authentication": sdk.FieldSpec(
+        "administrator_login": ubx.FieldSpec(wire_name="administrator_login"),
+        "administrator_password": ubx.FieldSpec(wire_name="administrator_password"),
+        "administrator_password_wo": ubx.FieldSpec(wire_name="administrator_password_wo"),
+        "administrator_password_wo_version": ubx.FieldSpec(wire_name="administrator_password_wo_version"),
+        "auto_grow_enabled": ubx.FieldSpec(wire_name="auto_grow_enabled"),
+        "backup_retention_days": ubx.FieldSpec(wire_name="backup_retention_days"),
+        "create_mode": ubx.FieldSpec(wire_name="create_mode"),
+        "delegated_subnet_id": ubx.FieldSpec(wire_name="delegated_subnet_id"),
+        "geo_redundant_backup_enabled": ubx.FieldSpec(wire_name="geo_redundant_backup_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "point_in_time_restore_time_in_utc": ubx.FieldSpec(wire_name="point_in_time_restore_time_in_utc"),
+        "private_dns_zone_id": ubx.FieldSpec(wire_name="private_dns_zone_id"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "replication_role": ubx.FieldSpec(wire_name="replication_role"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "source_server_id": ubx.FieldSpec(wire_name="source_server_id"),
+        "storage_mb": ubx.FieldSpec(wire_name="storage_mb"),
+        "storage_tier": ubx.FieldSpec(wire_name="storage_tier"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "version": ubx.FieldSpec(wire_name="version"),
+        "zone": ubx.FieldSpec(wire_name="zone"),
+        "authentication": ubx.FieldSpec(
             wire_name="authentication",
             kind="list",
             fields=_FlexibleServer_AuthenticationFields,
         ),
-        "cluster": sdk.FieldSpec(
+        "cluster": ubx.FieldSpec(
             wire_name="cluster",
             kind="list",
             fields=_FlexibleServer_ClusterFields,
         ),
-        "customer_managed_key": sdk.FieldSpec(
+        "customer_managed_key": ubx.FieldSpec(
             wire_name="customer_managed_key",
             kind="list",
             fields=_FlexibleServer_CustomerManagedKeyFields,
         ),
-        "high_availability": sdk.FieldSpec(
+        "high_availability": ubx.FieldSpec(
             wire_name="high_availability",
             kind="list",
             fields=_FlexibleServer_HighAvailabilityFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_FlexibleServer_IdentityFields,
         ),
-        "maintenance_window": sdk.FieldSpec(
+        "maintenance_window": ubx.FieldSpec(
             wire_name="maintenance_window",
             kind="list",
             fields=_FlexibleServer_MaintenanceWindowFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FlexibleServer_TimeoutsFields,

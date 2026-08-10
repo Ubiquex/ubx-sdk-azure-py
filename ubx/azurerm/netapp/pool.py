@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Pool_Timeouts:
@@ -14,10 +14,10 @@ class Pool_Timeouts:
     update: Any = None
 
 _Pool_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -36,22 +36,22 @@ class PoolConfig:
     tags: Any = None
     timeouts: Any = None
 
-Pool = sdk.ResourceBinding(
+Pool = ubx.ResourceBinding(
     wire_type="azurerm_netapp_pool",
     fields={
-        "account_name": sdk.FieldSpec(wire_name="account_name"),
-        "cool_access_enabled": sdk.FieldSpec(wire_name="cool_access_enabled"),
-        "custom_throughput_mibps": sdk.FieldSpec(wire_name="custom_throughput_mibps"),
-        "encryption_type": sdk.FieldSpec(wire_name="encryption_type"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "qos_type": sdk.FieldSpec(wire_name="qos_type"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "service_level": sdk.FieldSpec(wire_name="service_level"),
-        "size_in_tb": sdk.FieldSpec(wire_name="size_in_tb"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "account_name": ubx.FieldSpec(wire_name="account_name"),
+        "cool_access_enabled": ubx.FieldSpec(wire_name="cool_access_enabled"),
+        "custom_throughput_mibps": ubx.FieldSpec(wire_name="custom_throughput_mibps"),
+        "encryption_type": ubx.FieldSpec(wire_name="encryption_type"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "qos_type": ubx.FieldSpec(wire_name="qos_type"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "service_level": ubx.FieldSpec(wire_name="service_level"),
+        "size_in_tb": ubx.FieldSpec(wire_name="size_in_tb"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Pool_TimeoutsFields,

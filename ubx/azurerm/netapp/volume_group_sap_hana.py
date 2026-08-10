@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VolumeGroupSapHana_Timeouts:
@@ -60,64 +60,64 @@ class VolumeGroupSapHana_Volume:
     export_policy_rule: Any = None
 
 _VolumeGroupSapHana_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _VolumeGroupSapHana_Volume_DataProtectionReplicationFields = {
-    "endpoint_type": sdk.FieldSpec(wire_name="endpoint_type"),
-    "remote_volume_location": sdk.FieldSpec(wire_name="remote_volume_location"),
-    "remote_volume_resource_id": sdk.FieldSpec(wire_name="remote_volume_resource_id"),
-    "replication_frequency": sdk.FieldSpec(wire_name="replication_frequency"),
+    "endpoint_type": ubx.FieldSpec(wire_name="endpoint_type"),
+    "remote_volume_location": ubx.FieldSpec(wire_name="remote_volume_location"),
+    "remote_volume_resource_id": ubx.FieldSpec(wire_name="remote_volume_resource_id"),
+    "replication_frequency": ubx.FieldSpec(wire_name="replication_frequency"),
 }
 
 _VolumeGroupSapHana_Volume_DataProtectionSnapshotPolicyFields = {
-    "snapshot_policy_id": sdk.FieldSpec(wire_name="snapshot_policy_id"),
+    "snapshot_policy_id": ubx.FieldSpec(wire_name="snapshot_policy_id"),
 }
 
 _VolumeGroupSapHana_Volume_ExportPolicyRuleFields = {
-    "allowed_clients": sdk.FieldSpec(wire_name="allowed_clients"),
-    "nfsv3_enabled": sdk.FieldSpec(wire_name="nfsv3_enabled"),
-    "nfsv41_enabled": sdk.FieldSpec(wire_name="nfsv41_enabled"),
-    "root_access_enabled": sdk.FieldSpec(wire_name="root_access_enabled"),
-    "rule_index": sdk.FieldSpec(wire_name="rule_index"),
-    "unix_read_only": sdk.FieldSpec(wire_name="unix_read_only"),
-    "unix_read_write": sdk.FieldSpec(wire_name="unix_read_write"),
+    "allowed_clients": ubx.FieldSpec(wire_name="allowed_clients"),
+    "nfsv3_enabled": ubx.FieldSpec(wire_name="nfsv3_enabled"),
+    "nfsv41_enabled": ubx.FieldSpec(wire_name="nfsv41_enabled"),
+    "root_access_enabled": ubx.FieldSpec(wire_name="root_access_enabled"),
+    "rule_index": ubx.FieldSpec(wire_name="rule_index"),
+    "unix_read_only": ubx.FieldSpec(wire_name="unix_read_only"),
+    "unix_read_write": ubx.FieldSpec(wire_name="unix_read_write"),
 }
 
 _VolumeGroupSapHana_VolumeFields = {
-    "capacity_pool_id": sdk.FieldSpec(wire_name="capacity_pool_id"),
-    "encryption_key_source": sdk.FieldSpec(wire_name="encryption_key_source"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "key_vault_private_endpoint_id": sdk.FieldSpec(wire_name="key_vault_private_endpoint_id"),
-    "mount_ip_addresses": sdk.FieldSpec(wire_name="mount_ip_addresses"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "network_features": sdk.FieldSpec(wire_name="network_features"),
-    "protocols": sdk.FieldSpec(wire_name="protocols"),
-    "proximity_placement_group_id": sdk.FieldSpec(wire_name="proximity_placement_group_id"),
-    "security_style": sdk.FieldSpec(wire_name="security_style"),
-    "service_level": sdk.FieldSpec(wire_name="service_level"),
-    "snapshot_directory_visible": sdk.FieldSpec(wire_name="snapshot_directory_visible"),
-    "storage_quota_in_gb": sdk.FieldSpec(wire_name="storage_quota_in_gb"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-    "tags": sdk.FieldSpec(wire_name="tags"),
-    "throughput_in_mibps": sdk.FieldSpec(wire_name="throughput_in_mibps"),
-    "volume_path": sdk.FieldSpec(wire_name="volume_path"),
-    "volume_spec_name": sdk.FieldSpec(wire_name="volume_spec_name"),
-    "zone": sdk.FieldSpec(wire_name="zone"),
-    "data_protection_replication": sdk.FieldSpec(
+    "capacity_pool_id": ubx.FieldSpec(wire_name="capacity_pool_id"),
+    "encryption_key_source": ubx.FieldSpec(wire_name="encryption_key_source"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "key_vault_private_endpoint_id": ubx.FieldSpec(wire_name="key_vault_private_endpoint_id"),
+    "mount_ip_addresses": ubx.FieldSpec(wire_name="mount_ip_addresses"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "network_features": ubx.FieldSpec(wire_name="network_features"),
+    "protocols": ubx.FieldSpec(wire_name="protocols"),
+    "proximity_placement_group_id": ubx.FieldSpec(wire_name="proximity_placement_group_id"),
+    "security_style": ubx.FieldSpec(wire_name="security_style"),
+    "service_level": ubx.FieldSpec(wire_name="service_level"),
+    "snapshot_directory_visible": ubx.FieldSpec(wire_name="snapshot_directory_visible"),
+    "storage_quota_in_gb": ubx.FieldSpec(wire_name="storage_quota_in_gb"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+    "tags": ubx.FieldSpec(wire_name="tags"),
+    "throughput_in_mibps": ubx.FieldSpec(wire_name="throughput_in_mibps"),
+    "volume_path": ubx.FieldSpec(wire_name="volume_path"),
+    "volume_spec_name": ubx.FieldSpec(wire_name="volume_spec_name"),
+    "zone": ubx.FieldSpec(wire_name="zone"),
+    "data_protection_replication": ubx.FieldSpec(
         wire_name="data_protection_replication",
         kind="list",
         fields=_VolumeGroupSapHana_Volume_DataProtectionReplicationFields,
     ),
-    "data_protection_snapshot_policy": sdk.FieldSpec(
+    "data_protection_snapshot_policy": ubx.FieldSpec(
         wire_name="data_protection_snapshot_policy",
         kind="list",
         fields=_VolumeGroupSapHana_Volume_DataProtectionSnapshotPolicyFields,
     ),
-    "export_policy_rule": sdk.FieldSpec(
+    "export_policy_rule": ubx.FieldSpec(
         wire_name="export_policy_rule",
         kind="list",
         fields=_VolumeGroupSapHana_Volume_ExportPolicyRuleFields,
@@ -136,22 +136,22 @@ class VolumeGroupSapHanaConfig:
     timeouts: Any = None
     volume: Any = None
 
-VolumeGroupSapHana = sdk.ResourceBinding(
+VolumeGroupSapHana = ubx.ResourceBinding(
     wire_type="azurerm_netapp_volume_group_sap_hana",
     fields={
-        "account_name": sdk.FieldSpec(wire_name="account_name"),
-        "application_identifier": sdk.FieldSpec(wire_name="application_identifier"),
-        "group_description": sdk.FieldSpec(wire_name="group_description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "timeouts": sdk.FieldSpec(
+        "account_name": ubx.FieldSpec(wire_name="account_name"),
+        "application_identifier": ubx.FieldSpec(wire_name="application_identifier"),
+        "group_description": ubx.FieldSpec(wire_name="group_description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_VolumeGroupSapHana_TimeoutsFields,
         ),
-        "volume": sdk.FieldSpec(
+        "volume": ubx.FieldSpec(
             wire_name="volume",
             kind="list",
             fields=_VolumeGroupSapHana_VolumeFields,

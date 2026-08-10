@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FrontdoorProfile_Identity:
@@ -25,21 +25,21 @@ class FrontdoorProfile_Timeouts:
     update: Any = None
 
 _FrontdoorProfile_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _FrontdoorProfile_LogScrubbingRuleFields = {
-    "match_variable": sdk.FieldSpec(wire_name="match_variable"),
+    "match_variable": ubx.FieldSpec(wire_name="match_variable"),
 }
 
 _FrontdoorProfile_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -54,26 +54,26 @@ class FrontdoorProfileConfig:
     log_scrubbing_rule: Any = None
     timeouts: Any = None
 
-FrontdoorProfile = sdk.ResourceBinding(
+FrontdoorProfile = ubx.ResourceBinding(
     wire_type="azurerm_cdn_frontdoor_profile",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "response_timeout_seconds": sdk.FieldSpec(wire_name="response_timeout_seconds"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "identity": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "response_timeout_seconds": ubx.FieldSpec(wire_name="response_timeout_seconds"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_FrontdoorProfile_IdentityFields,
         ),
-        "log_scrubbing_rule": sdk.FieldSpec(
+        "log_scrubbing_rule": ubx.FieldSpec(
             wire_name="log_scrubbing_rule",
             kind="set",
             fields=_FrontdoorProfile_LogScrubbingRuleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FrontdoorProfile_TimeoutsFields,

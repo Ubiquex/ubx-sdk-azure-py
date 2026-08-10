@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CenterContact_Timeouts:
@@ -14,10 +14,10 @@ class CenterContact_Timeouts:
     update: Any = None
 
 _CenterContact_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class CenterContactConfig:
     phone: Any = None
     timeouts: Any = None
 
-CenterContact = sdk.ResourceBinding(
+CenterContact = ubx.ResourceBinding(
     wire_type="azurerm_security_center_contact",
     fields={
-        "alert_notifications": sdk.FieldSpec(wire_name="alert_notifications"),
-        "alerts_to_admins": sdk.FieldSpec(wire_name="alerts_to_admins"),
-        "email": sdk.FieldSpec(wire_name="email"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "phone": sdk.FieldSpec(wire_name="phone"),
-        "timeouts": sdk.FieldSpec(
+        "alert_notifications": ubx.FieldSpec(wire_name="alert_notifications"),
+        "alerts_to_admins": ubx.FieldSpec(wire_name="alerts_to_admins"),
+        "email": ubx.FieldSpec(wire_name="email"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "phone": ubx.FieldSpec(wire_name="phone"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CenterContact_TimeoutsFields,

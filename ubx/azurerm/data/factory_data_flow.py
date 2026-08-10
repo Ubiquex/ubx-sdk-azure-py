@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryDataFlow_Sink_Dataset:
@@ -43,40 +43,40 @@ class FactoryDataFlow_Transformation:
     linked_service: Any = None
 
 _FactoryDataFlow_Sink_DatasetFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "parameters": sdk.FieldSpec(wire_name="parameters"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "parameters": ubx.FieldSpec(wire_name="parameters"),
 }
 
 _FactoryDataFlow_Sink_FlowletFields = {
-    "dataset_parameters": sdk.FieldSpec(wire_name="dataset_parameters"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "parameters": sdk.FieldSpec(wire_name="parameters"),
+    "dataset_parameters": ubx.FieldSpec(wire_name="dataset_parameters"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "parameters": ubx.FieldSpec(wire_name="parameters"),
 }
 
 _FactoryDataFlow_SinkFields = {
-    "description": sdk.FieldSpec(wire_name="description"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "dataset": sdk.FieldSpec(
+    "description": ubx.FieldSpec(wire_name="description"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "dataset": ubx.FieldSpec(
         wire_name="dataset",
         kind="list",
         fields=_FactoryDataFlow_Sink_DatasetFields,
     ),
-    "flowlet": sdk.FieldSpec(
+    "flowlet": ubx.FieldSpec(
         wire_name="flowlet",
         kind="list",
         fields=_FactoryDataFlow_Sink_FlowletFields,
     ),
-    "linked_service": sdk.FieldSpec(
+    "linked_service": ubx.FieldSpec(
         wire_name="linked_service",
         kind="list",
         fields=_FactoryDataFlow_Sink_DatasetFields,
     ),
-    "rejected_linked_service": sdk.FieldSpec(
+    "rejected_linked_service": ubx.FieldSpec(
         wire_name="rejected_linked_service",
         kind="list",
         fields=_FactoryDataFlow_Sink_DatasetFields,
     ),
-    "schema_linked_service": sdk.FieldSpec(
+    "schema_linked_service": ubx.FieldSpec(
         wire_name="schema_linked_service",
         kind="list",
         fields=_FactoryDataFlow_Sink_DatasetFields,
@@ -84,26 +84,26 @@ _FactoryDataFlow_SinkFields = {
 }
 
 _FactoryDataFlow_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _FactoryDataFlow_TransformationFields = {
-    "description": sdk.FieldSpec(wire_name="description"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "dataset": sdk.FieldSpec(
+    "description": ubx.FieldSpec(wire_name="description"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "dataset": ubx.FieldSpec(
         wire_name="dataset",
         kind="list",
         fields=_FactoryDataFlow_Sink_DatasetFields,
     ),
-    "flowlet": sdk.FieldSpec(
+    "flowlet": ubx.FieldSpec(
         wire_name="flowlet",
         kind="list",
         fields=_FactoryDataFlow_Sink_FlowletFields,
     ),
-    "linked_service": sdk.FieldSpec(
+    "linked_service": ubx.FieldSpec(
         wire_name="linked_service",
         kind="list",
         fields=_FactoryDataFlow_Sink_DatasetFields,
@@ -125,33 +125,33 @@ class FactoryDataFlowConfig:
     timeouts: Any = None
     transformation: Any = None
 
-FactoryDataFlow = sdk.ResourceBinding(
+FactoryDataFlow = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_data_flow",
     fields={
-        "annotations": sdk.FieldSpec(wire_name="annotations"),
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "folder": sdk.FieldSpec(wire_name="folder"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "script": sdk.FieldSpec(wire_name="script"),
-        "script_lines": sdk.FieldSpec(wire_name="script_lines"),
-        "sink": sdk.FieldSpec(
+        "annotations": ubx.FieldSpec(wire_name="annotations"),
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "folder": ubx.FieldSpec(wire_name="folder"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "script": ubx.FieldSpec(wire_name="script"),
+        "script_lines": ubx.FieldSpec(wire_name="script_lines"),
+        "sink": ubx.FieldSpec(
             wire_name="sink",
             kind="list",
             fields=_FactoryDataFlow_SinkFields,
         ),
-        "source": sdk.FieldSpec(
+        "source": ubx.FieldSpec(
             wire_name="source",
             kind="list",
             fields=_FactoryDataFlow_SinkFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryDataFlow_TimeoutsFields,
         ),
-        "transformation": sdk.FieldSpec(
+        "transformation": ubx.FieldSpec(
             wire_name="transformation",
             kind="list",
             fields=_FactoryDataFlow_TransformationFields,

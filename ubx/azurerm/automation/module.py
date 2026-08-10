@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Module_ModuleLink_Hash:
@@ -24,13 +24,13 @@ class Module_Timeouts:
     update: Any = None
 
 _Module_ModuleLink_HashFields = {
-    "algorithm": sdk.FieldSpec(wire_name="algorithm"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "algorithm": ubx.FieldSpec(wire_name="algorithm"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _Module_ModuleLinkFields = {
-    "uri": sdk.FieldSpec(wire_name="uri"),
-    "hash": sdk.FieldSpec(
+    "uri": ubx.FieldSpec(wire_name="uri"),
+    "hash": ubx.FieldSpec(
         wire_name="hash",
         kind="list",
         fields=_Module_ModuleLink_HashFields,
@@ -38,10 +38,10 @@ _Module_ModuleLinkFields = {
 }
 
 _Module_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -53,19 +53,19 @@ class ModuleConfig:
     module_link: Any = None
     timeouts: Any = None
 
-Module = sdk.ResourceBinding(
+Module = ubx.ResourceBinding(
     wire_type="azurerm_automation_module",
     fields={
-        "automation_account_name": sdk.FieldSpec(wire_name="automation_account_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "module_link": sdk.FieldSpec(
+        "automation_account_name": ubx.FieldSpec(wire_name="automation_account_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "module_link": ubx.FieldSpec(
             wire_name="module_link",
             kind="list",
             fields=_Module_ModuleLinkFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Module_TimeoutsFields,

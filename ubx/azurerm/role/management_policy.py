@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementPolicy_ActivationRules_ApprovalStage_PrimaryApprover:
@@ -64,12 +64,12 @@ class ManagementPolicy_Timeouts:
     update: Any = None
 
 _ManagementPolicy_ActivationRules_ApprovalStage_PrimaryApproverFields = {
-    "object_id": sdk.FieldSpec(wire_name="object_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "object_id": ubx.FieldSpec(wire_name="object_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _ManagementPolicy_ActivationRules_ApprovalStageFields = {
-    "primary_approver": sdk.FieldSpec(
+    "primary_approver": ubx.FieldSpec(
         wire_name="primary_approver",
         kind="set",
         fields=_ManagementPolicy_ActivationRules_ApprovalStage_PrimaryApproverFields,
@@ -77,13 +77,13 @@ _ManagementPolicy_ActivationRules_ApprovalStageFields = {
 }
 
 _ManagementPolicy_ActivationRulesFields = {
-    "maximum_duration": sdk.FieldSpec(wire_name="maximum_duration"),
-    "require_approval": sdk.FieldSpec(wire_name="require_approval"),
-    "require_justification": sdk.FieldSpec(wire_name="require_justification"),
-    "require_multifactor_authentication": sdk.FieldSpec(wire_name="require_multifactor_authentication"),
-    "require_ticket_info": sdk.FieldSpec(wire_name="require_ticket_info"),
-    "required_conditional_access_authentication_context": sdk.FieldSpec(wire_name="required_conditional_access_authentication_context"),
-    "approval_stage": sdk.FieldSpec(
+    "maximum_duration": ubx.FieldSpec(wire_name="maximum_duration"),
+    "require_approval": ubx.FieldSpec(wire_name="require_approval"),
+    "require_justification": ubx.FieldSpec(wire_name="require_justification"),
+    "require_multifactor_authentication": ubx.FieldSpec(wire_name="require_multifactor_authentication"),
+    "require_ticket_info": ubx.FieldSpec(wire_name="require_ticket_info"),
+    "required_conditional_access_authentication_context": ubx.FieldSpec(wire_name="required_conditional_access_authentication_context"),
+    "approval_stage": ubx.FieldSpec(
         wire_name="approval_stage",
         kind="list",
         fields=_ManagementPolicy_ActivationRules_ApprovalStageFields,
@@ -91,36 +91,36 @@ _ManagementPolicy_ActivationRulesFields = {
 }
 
 _ManagementPolicy_ActiveAssignmentRulesFields = {
-    "expiration_required": sdk.FieldSpec(wire_name="expiration_required"),
-    "expire_after": sdk.FieldSpec(wire_name="expire_after"),
-    "require_justification": sdk.FieldSpec(wire_name="require_justification"),
-    "require_multifactor_authentication": sdk.FieldSpec(wire_name="require_multifactor_authentication"),
-    "require_ticket_info": sdk.FieldSpec(wire_name="require_ticket_info"),
+    "expiration_required": ubx.FieldSpec(wire_name="expiration_required"),
+    "expire_after": ubx.FieldSpec(wire_name="expire_after"),
+    "require_justification": ubx.FieldSpec(wire_name="require_justification"),
+    "require_multifactor_authentication": ubx.FieldSpec(wire_name="require_multifactor_authentication"),
+    "require_ticket_info": ubx.FieldSpec(wire_name="require_ticket_info"),
 }
 
 _ManagementPolicy_EligibleAssignmentRulesFields = {
-    "expiration_required": sdk.FieldSpec(wire_name="expiration_required"),
-    "expire_after": sdk.FieldSpec(wire_name="expire_after"),
+    "expiration_required": ubx.FieldSpec(wire_name="expiration_required"),
+    "expire_after": ubx.FieldSpec(wire_name="expire_after"),
 }
 
 _ManagementPolicy_NotificationRules_ActiveAssignments_AdminNotificationsFields = {
-    "additional_recipients": sdk.FieldSpec(wire_name="additional_recipients"),
-    "default_recipients": sdk.FieldSpec(wire_name="default_recipients"),
-    "notification_level": sdk.FieldSpec(wire_name="notification_level"),
+    "additional_recipients": ubx.FieldSpec(wire_name="additional_recipients"),
+    "default_recipients": ubx.FieldSpec(wire_name="default_recipients"),
+    "notification_level": ubx.FieldSpec(wire_name="notification_level"),
 }
 
 _ManagementPolicy_NotificationRules_ActiveAssignmentsFields = {
-    "admin_notifications": sdk.FieldSpec(
+    "admin_notifications": ubx.FieldSpec(
         wire_name="admin_notifications",
         kind="list",
         fields=_ManagementPolicy_NotificationRules_ActiveAssignments_AdminNotificationsFields,
     ),
-    "approver_notifications": sdk.FieldSpec(
+    "approver_notifications": ubx.FieldSpec(
         wire_name="approver_notifications",
         kind="list",
         fields=_ManagementPolicy_NotificationRules_ActiveAssignments_AdminNotificationsFields,
     ),
-    "assignee_notifications": sdk.FieldSpec(
+    "assignee_notifications": ubx.FieldSpec(
         wire_name="assignee_notifications",
         kind="list",
         fields=_ManagementPolicy_NotificationRules_ActiveAssignments_AdminNotificationsFields,
@@ -128,17 +128,17 @@ _ManagementPolicy_NotificationRules_ActiveAssignmentsFields = {
 }
 
 _ManagementPolicy_NotificationRulesFields = {
-    "active_assignments": sdk.FieldSpec(
+    "active_assignments": ubx.FieldSpec(
         wire_name="active_assignments",
         kind="list",
         fields=_ManagementPolicy_NotificationRules_ActiveAssignmentsFields,
     ),
-    "eligible_activations": sdk.FieldSpec(
+    "eligible_activations": ubx.FieldSpec(
         wire_name="eligible_activations",
         kind="list",
         fields=_ManagementPolicy_NotificationRules_ActiveAssignmentsFields,
     ),
-    "eligible_assignments": sdk.FieldSpec(
+    "eligible_assignments": ubx.FieldSpec(
         wire_name="eligible_assignments",
         kind="list",
         fields=_ManagementPolicy_NotificationRules_ActiveAssignmentsFields,
@@ -146,10 +146,10 @@ _ManagementPolicy_NotificationRulesFields = {
 }
 
 _ManagementPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -163,33 +163,33 @@ class ManagementPolicyConfig:
     notification_rules: Any = None
     timeouts: Any = None
 
-ManagementPolicy = sdk.ResourceBinding(
+ManagementPolicy = ubx.ResourceBinding(
     wire_type="azurerm_role_management_policy",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "role_definition_id": sdk.FieldSpec(wire_name="role_definition_id"),
-        "scope": sdk.FieldSpec(wire_name="scope"),
-        "activation_rules": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "role_definition_id": ubx.FieldSpec(wire_name="role_definition_id"),
+        "scope": ubx.FieldSpec(wire_name="scope"),
+        "activation_rules": ubx.FieldSpec(
             wire_name="activation_rules",
             kind="list",
             fields=_ManagementPolicy_ActivationRulesFields,
         ),
-        "active_assignment_rules": sdk.FieldSpec(
+        "active_assignment_rules": ubx.FieldSpec(
             wire_name="active_assignment_rules",
             kind="list",
             fields=_ManagementPolicy_ActiveAssignmentRulesFields,
         ),
-        "eligible_assignment_rules": sdk.FieldSpec(
+        "eligible_assignment_rules": ubx.FieldSpec(
             wire_name="eligible_assignment_rules",
             kind="list",
             fields=_ManagementPolicy_EligibleAssignmentRulesFields,
         ),
-        "notification_rules": sdk.FieldSpec(
+        "notification_rules": ubx.FieldSpec(
             wire_name="notification_rules",
             kind="list",
             fields=_ManagementPolicy_NotificationRulesFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementPolicy_TimeoutsFields,

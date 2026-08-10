@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LearningComputeCluster_Identity:
@@ -33,29 +33,29 @@ class LearningComputeCluster_Timeouts:
     update: Any = None
 
 _LearningComputeCluster_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _LearningComputeCluster_ScaleSettingsFields = {
-    "max_node_count": sdk.FieldSpec(wire_name="max_node_count"),
-    "min_node_count": sdk.FieldSpec(wire_name="min_node_count"),
-    "scale_down_nodes_after_idle_duration": sdk.FieldSpec(wire_name="scale_down_nodes_after_idle_duration"),
+    "max_node_count": ubx.FieldSpec(wire_name="max_node_count"),
+    "min_node_count": ubx.FieldSpec(wire_name="min_node_count"),
+    "scale_down_nodes_after_idle_duration": ubx.FieldSpec(wire_name="scale_down_nodes_after_idle_duration"),
 }
 
 _LearningComputeCluster_SshFields = {
-    "admin_password": sdk.FieldSpec(wire_name="admin_password"),
-    "admin_username": sdk.FieldSpec(wire_name="admin_username"),
-    "key_value": sdk.FieldSpec(wire_name="key_value"),
+    "admin_password": ubx.FieldSpec(wire_name="admin_password"),
+    "admin_username": ubx.FieldSpec(wire_name="admin_username"),
+    "key_value": ubx.FieldSpec(wire_name="key_value"),
 }
 
 _LearningComputeCluster_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -77,37 +77,37 @@ class LearningComputeClusterConfig:
     ssh: Any = None
     timeouts: Any = None
 
-LearningComputeCluster = sdk.ResourceBinding(
+LearningComputeCluster = ubx.ResourceBinding(
     wire_type="azurerm_machine_learning_compute_cluster",
     fields={
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "local_auth_enabled": sdk.FieldSpec(wire_name="local_auth_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "machine_learning_workspace_id": sdk.FieldSpec(wire_name="machine_learning_workspace_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "node_public_ip_enabled": sdk.FieldSpec(wire_name="node_public_ip_enabled"),
-        "ssh_public_access_enabled": sdk.FieldSpec(wire_name="ssh_public_access_enabled"),
-        "subnet_resource_id": sdk.FieldSpec(wire_name="subnet_resource_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "vm_priority": sdk.FieldSpec(wire_name="vm_priority"),
-        "vm_size": sdk.FieldSpec(wire_name="vm_size"),
-        "identity": sdk.FieldSpec(
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "local_auth_enabled": ubx.FieldSpec(wire_name="local_auth_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "machine_learning_workspace_id": ubx.FieldSpec(wire_name="machine_learning_workspace_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "node_public_ip_enabled": ubx.FieldSpec(wire_name="node_public_ip_enabled"),
+        "ssh_public_access_enabled": ubx.FieldSpec(wire_name="ssh_public_access_enabled"),
+        "subnet_resource_id": ubx.FieldSpec(wire_name="subnet_resource_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "vm_priority": ubx.FieldSpec(wire_name="vm_priority"),
+        "vm_size": ubx.FieldSpec(wire_name="vm_size"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_LearningComputeCluster_IdentityFields,
         ),
-        "scale_settings": sdk.FieldSpec(
+        "scale_settings": ubx.FieldSpec(
             wire_name="scale_settings",
             kind="list",
             fields=_LearningComputeCluster_ScaleSettingsFields,
         ),
-        "ssh": sdk.FieldSpec(
+        "ssh": ubx.FieldSpec(
             wire_name="ssh",
             kind="list",
             fields=_LearningComputeCluster_SshFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_LearningComputeCluster_TimeoutsFields,

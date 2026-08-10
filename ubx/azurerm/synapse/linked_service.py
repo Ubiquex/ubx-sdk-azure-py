@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LinkedService_IntegrationRuntime:
@@ -19,15 +19,15 @@ class LinkedService_Timeouts:
     update: Any = None
 
 _LinkedService_IntegrationRuntimeFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "parameters": sdk.FieldSpec(wire_name="parameters"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "parameters": ubx.FieldSpec(wire_name="parameters"),
 }
 
 _LinkedService_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -44,24 +44,24 @@ class LinkedServiceConfig:
     integration_runtime: Any = None
     timeouts: Any = None
 
-LinkedService = sdk.ResourceBinding(
+LinkedService = ubx.ResourceBinding(
     wire_type="azurerm_synapse_linked_service",
     fields={
-        "additional_properties": sdk.FieldSpec(wire_name="additional_properties"),
-        "annotations": sdk.FieldSpec(wire_name="annotations"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parameters": sdk.FieldSpec(wire_name="parameters"),
-        "synapse_workspace_id": sdk.FieldSpec(wire_name="synapse_workspace_id"),
-        "type": sdk.FieldSpec(wire_name="type"),
-        "type_properties_json": sdk.FieldSpec(wire_name="type_properties_json"),
-        "integration_runtime": sdk.FieldSpec(
+        "additional_properties": ubx.FieldSpec(wire_name="additional_properties"),
+        "annotations": ubx.FieldSpec(wire_name="annotations"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parameters": ubx.FieldSpec(wire_name="parameters"),
+        "synapse_workspace_id": ubx.FieldSpec(wire_name="synapse_workspace_id"),
+        "type": ubx.FieldSpec(wire_name="type"),
+        "type_properties_json": ubx.FieldSpec(wire_name="type_properties_json"),
+        "integration_runtime": ubx.FieldSpec(
             wire_name="integration_runtime",
             kind="list",
             fields=_LinkedService_IntegrationRuntimeFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_LinkedService_TimeoutsFields,

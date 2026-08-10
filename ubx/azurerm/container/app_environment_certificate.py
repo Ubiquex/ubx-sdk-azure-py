@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppEnvironmentCertificate_CertificateKeyVault:
@@ -19,15 +19,15 @@ class AppEnvironmentCertificate_Timeouts:
     update: Any = None
 
 _AppEnvironmentCertificate_CertificateKeyVaultFields = {
-    "identity": sdk.FieldSpec(wire_name="identity"),
-    "key_vault_secret_id": sdk.FieldSpec(wire_name="key_vault_secret_id"),
+    "identity": ubx.FieldSpec(wire_name="identity"),
+    "key_vault_secret_id": ubx.FieldSpec(wire_name="key_vault_secret_id"),
 }
 
 _AppEnvironmentCertificate_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -41,21 +41,21 @@ class AppEnvironmentCertificateConfig:
     certificate_key_vault: Any = None
     timeouts: Any = None
 
-AppEnvironmentCertificate = sdk.ResourceBinding(
+AppEnvironmentCertificate = ubx.ResourceBinding(
     wire_type="azurerm_container_app_environment_certificate",
     fields={
-        "certificate_blob_base64": sdk.FieldSpec(wire_name="certificate_blob_base64"),
-        "certificate_password": sdk.FieldSpec(wire_name="certificate_password"),
-        "container_app_environment_id": sdk.FieldSpec(wire_name="container_app_environment_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "certificate_key_vault": sdk.FieldSpec(
+        "certificate_blob_base64": ubx.FieldSpec(wire_name="certificate_blob_base64"),
+        "certificate_password": ubx.FieldSpec(wire_name="certificate_password"),
+        "container_app_environment_id": ubx.FieldSpec(wire_name="container_app_environment_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "certificate_key_vault": ubx.FieldSpec(
             wire_name="certificate_key_vault",
             kind="list",
             fields=_AppEnvironmentCertificate_CertificateKeyVaultFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AppEnvironmentCertificate_TimeoutsFields,

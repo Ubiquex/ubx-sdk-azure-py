@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagerStaticMember_Timeouts:
@@ -13,9 +13,9 @@ class ManagerStaticMember_Timeouts:
     read: Any = None
 
 _ManagerStaticMember_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -26,14 +26,14 @@ class ManagerStaticMemberConfig:
     target_virtual_network_id: Any = None
     timeouts: Any = None
 
-ManagerStaticMember = sdk.ResourceBinding(
+ManagerStaticMember = ubx.ResourceBinding(
     wire_type="azurerm_network_manager_static_member",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "network_group_id": sdk.FieldSpec(wire_name="network_group_id"),
-        "target_virtual_network_id": sdk.FieldSpec(wire_name="target_virtual_network_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network_group_id": ubx.FieldSpec(wire_name="network_group_id"),
+        "target_virtual_network_id": ubx.FieldSpec(wire_name="target_virtual_network_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagerStaticMember_TimeoutsFields,

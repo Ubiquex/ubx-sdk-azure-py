@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class NetappVolumeAttachment_Timeouts:
@@ -13,9 +13,9 @@ class NetappVolumeAttachment_Timeouts:
     read: Any = None
 
 _NetappVolumeAttachment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -26,14 +26,14 @@ class NetappVolumeAttachmentConfig:
     vmware_cluster_id: Any = None
     timeouts: Any = None
 
-NetappVolumeAttachment = sdk.ResourceBinding(
+NetappVolumeAttachment = ubx.ResourceBinding(
     wire_type="azurerm_vmware_netapp_volume_attachment",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "netapp_volume_id": sdk.FieldSpec(wire_name="netapp_volume_id"),
-        "vmware_cluster_id": sdk.FieldSpec(wire_name="vmware_cluster_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "netapp_volume_id": ubx.FieldSpec(wire_name="netapp_volume_id"),
+        "vmware_cluster_id": ubx.FieldSpec(wire_name="vmware_cluster_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_NetappVolumeAttachment_TimeoutsFields,

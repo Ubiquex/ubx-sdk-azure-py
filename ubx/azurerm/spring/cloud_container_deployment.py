@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudContainerDeployment_Quota:
@@ -19,15 +19,15 @@ class CloudContainerDeployment_Timeouts:
     update: Any = None
 
 _CloudContainerDeployment_QuotaFields = {
-    "cpu": sdk.FieldSpec(wire_name="cpu"),
-    "memory": sdk.FieldSpec(wire_name="memory"),
+    "cpu": ubx.FieldSpec(wire_name="cpu"),
+    "memory": ubx.FieldSpec(wire_name="memory"),
 }
 
 _CloudContainerDeployment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -47,27 +47,27 @@ class CloudContainerDeploymentConfig:
     quota: Any = None
     timeouts: Any = None
 
-CloudContainerDeployment = sdk.ResourceBinding(
+CloudContainerDeployment = ubx.ResourceBinding(
     wire_type="azurerm_spring_cloud_container_deployment",
     fields={
-        "addon_json": sdk.FieldSpec(wire_name="addon_json"),
-        "application_performance_monitoring_ids": sdk.FieldSpec(wire_name="application_performance_monitoring_ids"),
-        "arguments": sdk.FieldSpec(wire_name="arguments"),
-        "commands": sdk.FieldSpec(wire_name="commands"),
-        "environment_variables": sdk.FieldSpec(wire_name="environment_variables"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "image": sdk.FieldSpec(wire_name="image"),
-        "instance_count": sdk.FieldSpec(wire_name="instance_count"),
-        "language_framework": sdk.FieldSpec(wire_name="language_framework"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "server": sdk.FieldSpec(wire_name="server"),
-        "spring_cloud_app_id": sdk.FieldSpec(wire_name="spring_cloud_app_id"),
-        "quota": sdk.FieldSpec(
+        "addon_json": ubx.FieldSpec(wire_name="addon_json"),
+        "application_performance_monitoring_ids": ubx.FieldSpec(wire_name="application_performance_monitoring_ids"),
+        "arguments": ubx.FieldSpec(wire_name="arguments"),
+        "commands": ubx.FieldSpec(wire_name="commands"),
+        "environment_variables": ubx.FieldSpec(wire_name="environment_variables"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "image": ubx.FieldSpec(wire_name="image"),
+        "instance_count": ubx.FieldSpec(wire_name="instance_count"),
+        "language_framework": ubx.FieldSpec(wire_name="language_framework"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "server": ubx.FieldSpec(wire_name="server"),
+        "spring_cloud_app_id": ubx.FieldSpec(wire_name="spring_cloud_app_id"),
+        "quota": ubx.FieldSpec(
             wire_name="quota",
             kind="list",
             fields=_CloudContainerDeployment_QuotaFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CloudContainerDeployment_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MongoDatabase_AutoscaleSettings:
@@ -18,14 +18,14 @@ class MongoDatabase_Timeouts:
     update: Any = None
 
 _MongoDatabase_AutoscaleSettingsFields = {
-    "max_throughput": sdk.FieldSpec(wire_name="max_throughput"),
+    "max_throughput": ubx.FieldSpec(wire_name="max_throughput"),
 }
 
 _MongoDatabase_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -38,20 +38,20 @@ class MongoDatabaseConfig:
     autoscale_settings: Any = None
     timeouts: Any = None
 
-MongoDatabase = sdk.ResourceBinding(
+MongoDatabase = ubx.ResourceBinding(
     wire_type="azurerm_cosmosdb_mongo_database",
     fields={
-        "account_name": sdk.FieldSpec(wire_name="account_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "throughput": sdk.FieldSpec(wire_name="throughput"),
-        "autoscale_settings": sdk.FieldSpec(
+        "account_name": ubx.FieldSpec(wire_name="account_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "throughput": ubx.FieldSpec(wire_name="throughput"),
+        "autoscale_settings": ubx.FieldSpec(
             wire_name="autoscale_settings",
             kind="list",
             fields=_MongoDatabase_AutoscaleSettingsFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_MongoDatabase_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ActiveRoleAssignment_Schedule_Expiration:
@@ -29,14 +29,14 @@ class ActiveRoleAssignment_Timeouts:
     read: Any = None
 
 _ActiveRoleAssignment_Schedule_ExpirationFields = {
-    "duration_days": sdk.FieldSpec(wire_name="duration_days"),
-    "duration_hours": sdk.FieldSpec(wire_name="duration_hours"),
-    "end_date_time": sdk.FieldSpec(wire_name="end_date_time"),
+    "duration_days": ubx.FieldSpec(wire_name="duration_days"),
+    "duration_hours": ubx.FieldSpec(wire_name="duration_hours"),
+    "end_date_time": ubx.FieldSpec(wire_name="end_date_time"),
 }
 
 _ActiveRoleAssignment_ScheduleFields = {
-    "start_date_time": sdk.FieldSpec(wire_name="start_date_time"),
-    "expiration": sdk.FieldSpec(
+    "start_date_time": ubx.FieldSpec(wire_name="start_date_time"),
+    "expiration": ubx.FieldSpec(
         wire_name="expiration",
         kind="list",
         fields=_ActiveRoleAssignment_Schedule_ExpirationFields,
@@ -44,14 +44,14 @@ _ActiveRoleAssignment_ScheduleFields = {
 }
 
 _ActiveRoleAssignment_TicketFields = {
-    "number": sdk.FieldSpec(wire_name="number"),
-    "system": sdk.FieldSpec(wire_name="system"),
+    "number": ubx.FieldSpec(wire_name="number"),
+    "system": ubx.FieldSpec(wire_name="system"),
 }
 
 _ActiveRoleAssignment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -65,25 +65,25 @@ class ActiveRoleAssignmentConfig:
     ticket: Any = None
     timeouts: Any = None
 
-ActiveRoleAssignment = sdk.ResourceBinding(
+ActiveRoleAssignment = ubx.ResourceBinding(
     wire_type="azurerm_pim_active_role_assignment",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "justification": sdk.FieldSpec(wire_name="justification"),
-        "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-        "role_definition_id": sdk.FieldSpec(wire_name="role_definition_id"),
-        "scope": sdk.FieldSpec(wire_name="scope"),
-        "schedule": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "justification": ubx.FieldSpec(wire_name="justification"),
+        "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+        "role_definition_id": ubx.FieldSpec(wire_name="role_definition_id"),
+        "scope": ubx.FieldSpec(wire_name="scope"),
+        "schedule": ubx.FieldSpec(
             wire_name="schedule",
             kind="list",
             fields=_ActiveRoleAssignment_ScheduleFields,
         ),
-        "ticket": sdk.FieldSpec(
+        "ticket": ubx.FieldSpec(
             wire_name="ticket",
             kind="list",
             fields=_ActiveRoleAssignment_TicketFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ActiveRoleAssignment_TimeoutsFields,

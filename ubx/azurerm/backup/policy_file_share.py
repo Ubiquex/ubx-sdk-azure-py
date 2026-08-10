@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PolicyFileShare_Backup_Hourly:
@@ -52,15 +52,15 @@ class PolicyFileShare_Timeouts:
     update: Any = None
 
 _PolicyFileShare_Backup_HourlyFields = {
-    "interval": sdk.FieldSpec(wire_name="interval"),
-    "start_time": sdk.FieldSpec(wire_name="start_time"),
-    "window_duration": sdk.FieldSpec(wire_name="window_duration"),
+    "interval": ubx.FieldSpec(wire_name="interval"),
+    "start_time": ubx.FieldSpec(wire_name="start_time"),
+    "window_duration": ubx.FieldSpec(wire_name="window_duration"),
 }
 
 _PolicyFileShare_BackupFields = {
-    "frequency": sdk.FieldSpec(wire_name="frequency"),
-    "time": sdk.FieldSpec(wire_name="time"),
-    "hourly": sdk.FieldSpec(
+    "frequency": ubx.FieldSpec(wire_name="frequency"),
+    "time": ubx.FieldSpec(wire_name="time"),
+    "hourly": ubx.FieldSpec(
         wire_name="hourly",
         kind="list",
         fields=_PolicyFileShare_Backup_HourlyFields,
@@ -68,36 +68,36 @@ _PolicyFileShare_BackupFields = {
 }
 
 _PolicyFileShare_RetentionDailyFields = {
-    "count": sdk.FieldSpec(wire_name="count"),
+    "count": ubx.FieldSpec(wire_name="count"),
 }
 
 _PolicyFileShare_RetentionMonthlyFields = {
-    "count": sdk.FieldSpec(wire_name="count"),
-    "days": sdk.FieldSpec(wire_name="days"),
-    "include_last_days": sdk.FieldSpec(wire_name="include_last_days"),
-    "weekdays": sdk.FieldSpec(wire_name="weekdays"),
-    "weeks": sdk.FieldSpec(wire_name="weeks"),
+    "count": ubx.FieldSpec(wire_name="count"),
+    "days": ubx.FieldSpec(wire_name="days"),
+    "include_last_days": ubx.FieldSpec(wire_name="include_last_days"),
+    "weekdays": ubx.FieldSpec(wire_name="weekdays"),
+    "weeks": ubx.FieldSpec(wire_name="weeks"),
 }
 
 _PolicyFileShare_RetentionWeeklyFields = {
-    "count": sdk.FieldSpec(wire_name="count"),
-    "weekdays": sdk.FieldSpec(wire_name="weekdays"),
+    "count": ubx.FieldSpec(wire_name="count"),
+    "weekdays": ubx.FieldSpec(wire_name="weekdays"),
 }
 
 _PolicyFileShare_RetentionYearlyFields = {
-    "count": sdk.FieldSpec(wire_name="count"),
-    "days": sdk.FieldSpec(wire_name="days"),
-    "include_last_days": sdk.FieldSpec(wire_name="include_last_days"),
-    "months": sdk.FieldSpec(wire_name="months"),
-    "weekdays": sdk.FieldSpec(wire_name="weekdays"),
-    "weeks": sdk.FieldSpec(wire_name="weeks"),
+    "count": ubx.FieldSpec(wire_name="count"),
+    "days": ubx.FieldSpec(wire_name="days"),
+    "include_last_days": ubx.FieldSpec(wire_name="include_last_days"),
+    "months": ubx.FieldSpec(wire_name="months"),
+    "weekdays": ubx.FieldSpec(wire_name="weekdays"),
+    "weeks": ubx.FieldSpec(wire_name="weeks"),
 }
 
 _PolicyFileShare_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -116,42 +116,42 @@ class PolicyFileShareConfig:
     retention_yearly: Any = None
     timeouts: Any = None
 
-PolicyFileShare = sdk.ResourceBinding(
+PolicyFileShare = ubx.ResourceBinding(
     wire_type="azurerm_backup_policy_file_share",
     fields={
-        "backup_tier": sdk.FieldSpec(wire_name="backup_tier"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "recovery_vault_name": sdk.FieldSpec(wire_name="recovery_vault_name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "snapshot_retention_in_days": sdk.FieldSpec(wire_name="snapshot_retention_in_days"),
-        "timezone": sdk.FieldSpec(wire_name="timezone"),
-        "backup": sdk.FieldSpec(
+        "backup_tier": ubx.FieldSpec(wire_name="backup_tier"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "recovery_vault_name": ubx.FieldSpec(wire_name="recovery_vault_name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "snapshot_retention_in_days": ubx.FieldSpec(wire_name="snapshot_retention_in_days"),
+        "timezone": ubx.FieldSpec(wire_name="timezone"),
+        "backup": ubx.FieldSpec(
             wire_name="backup",
             kind="list",
             fields=_PolicyFileShare_BackupFields,
         ),
-        "retention_daily": sdk.FieldSpec(
+        "retention_daily": ubx.FieldSpec(
             wire_name="retention_daily",
             kind="list",
             fields=_PolicyFileShare_RetentionDailyFields,
         ),
-        "retention_monthly": sdk.FieldSpec(
+        "retention_monthly": ubx.FieldSpec(
             wire_name="retention_monthly",
             kind="list",
             fields=_PolicyFileShare_RetentionMonthlyFields,
         ),
-        "retention_weekly": sdk.FieldSpec(
+        "retention_weekly": ubx.FieldSpec(
             wire_name="retention_weekly",
             kind="list",
             fields=_PolicyFileShare_RetentionWeeklyFields,
         ),
-        "retention_yearly": sdk.FieldSpec(
+        "retention_yearly": ubx.FieldSpec(
             wire_name="retention_yearly",
             kind="list",
             fields=_PolicyFileShare_RetentionYearlyFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_PolicyFileShare_TimeoutsFields,

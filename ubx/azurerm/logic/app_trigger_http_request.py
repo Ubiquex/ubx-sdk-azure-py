@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppTriggerHttpRequest_Timeouts:
@@ -14,10 +14,10 @@ class AppTriggerHttpRequest_Timeouts:
     update: Any = None
 
 _AppTriggerHttpRequest_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class AppTriggerHttpRequestConfig:
     schema: Any = None
     timeouts: Any = None
 
-AppTriggerHttpRequest = sdk.ResourceBinding(
+AppTriggerHttpRequest = ubx.ResourceBinding(
     wire_type="azurerm_logic_app_trigger_http_request",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "logic_app_id": sdk.FieldSpec(wire_name="logic_app_id"),
-        "method": sdk.FieldSpec(wire_name="method"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "relative_path": sdk.FieldSpec(wire_name="relative_path"),
-        "schema": sdk.FieldSpec(wire_name="schema"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "logic_app_id": ubx.FieldSpec(wire_name="logic_app_id"),
+        "method": ubx.FieldSpec(wire_name="method"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "relative_path": ubx.FieldSpec(wire_name="relative_path"),
+        "schema": ubx.FieldSpec(wire_name="schema"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AppTriggerHttpRequest_TimeoutsFields,

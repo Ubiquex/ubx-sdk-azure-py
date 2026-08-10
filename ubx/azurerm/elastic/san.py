@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class San_Sku:
@@ -19,15 +19,15 @@ class San_Timeouts:
     update: Any = None
 
 _San_SkuFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "tier": sdk.FieldSpec(wire_name="tier"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "tier": ubx.FieldSpec(wire_name="tier"),
 }
 
 _San_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -43,23 +43,23 @@ class SanConfig:
     sku: Any = None
     timeouts: Any = None
 
-San = sdk.ResourceBinding(
+San = ubx.ResourceBinding(
     wire_type="azurerm_elastic_san",
     fields={
-        "base_size_in_tib": sdk.FieldSpec(wire_name="base_size_in_tib"),
-        "extended_size_in_tib": sdk.FieldSpec(wire_name="extended_size_in_tib"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "zones": sdk.FieldSpec(wire_name="zones"),
-        "sku": sdk.FieldSpec(
+        "base_size_in_tib": ubx.FieldSpec(wire_name="base_size_in_tib"),
+        "extended_size_in_tib": ubx.FieldSpec(wire_name="extended_size_in_tib"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "zones": ubx.FieldSpec(wire_name="zones"),
+        "sku": ubx.FieldSpec(
             wire_name="sku",
             kind="list",
             fields=_San_SkuFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_San_TimeoutsFields,

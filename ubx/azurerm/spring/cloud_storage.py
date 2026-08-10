@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudStorage_Timeouts:
@@ -14,10 +14,10 @@ class CloudStorage_Timeouts:
     update: Any = None
 
 _CloudStorage_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class CloudStorageConfig:
     storage_account_name: Any = None
     timeouts: Any = None
 
-CloudStorage = sdk.ResourceBinding(
+CloudStorage = ubx.ResourceBinding(
     wire_type="azurerm_spring_cloud_storage",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "spring_cloud_service_id": sdk.FieldSpec(wire_name="spring_cloud_service_id"),
-        "storage_account_key": sdk.FieldSpec(wire_name="storage_account_key"),
-        "storage_account_name": sdk.FieldSpec(wire_name="storage_account_name"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "spring_cloud_service_id": ubx.FieldSpec(wire_name="spring_cloud_service_id"),
+        "storage_account_key": ubx.FieldSpec(wire_name="storage_account_key"),
+        "storage_account_name": ubx.FieldSpec(wire_name="storage_account_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CloudStorage_TimeoutsFields,

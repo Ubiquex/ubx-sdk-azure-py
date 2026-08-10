@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InsightsWorkbook_Identity:
@@ -21,17 +21,17 @@ class InsightsWorkbook_Timeouts:
     update: Any = None
 
 _InsightsWorkbook_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _InsightsWorkbook_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -50,26 +50,26 @@ class InsightsWorkbookConfig:
     identity: Any = None
     timeouts: Any = None
 
-InsightsWorkbook = sdk.ResourceBinding(
+InsightsWorkbook = ubx.ResourceBinding(
     wire_type="azurerm_application_insights_workbook",
     fields={
-        "category": sdk.FieldSpec(wire_name="category"),
-        "data_json": sdk.FieldSpec(wire_name="data_json"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "source_id": sdk.FieldSpec(wire_name="source_id"),
-        "storage_container_id": sdk.FieldSpec(wire_name="storage_container_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "identity": sdk.FieldSpec(
+        "category": ubx.FieldSpec(wire_name="category"),
+        "data_json": ubx.FieldSpec(wire_name="data_json"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "source_id": ubx.FieldSpec(wire_name="source_id"),
+        "storage_container_id": ubx.FieldSpec(wire_name="storage_container_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_InsightsWorkbook_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_InsightsWorkbook_TimeoutsFields,

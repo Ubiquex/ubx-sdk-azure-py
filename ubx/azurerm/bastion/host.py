@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Host_IpConfiguration:
@@ -20,16 +20,16 @@ class Host_Timeouts:
     update: Any = None
 
 _Host_IpConfigurationFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "public_ip_address_id": sdk.FieldSpec(wire_name="public_ip_address_id"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "public_ip_address_id": ubx.FieldSpec(wire_name="public_ip_address_id"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _Host_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -53,31 +53,31 @@ class HostConfig:
     ip_configuration: Any = None
     timeouts: Any = None
 
-Host = sdk.ResourceBinding(
+Host = ubx.ResourceBinding(
     wire_type="azurerm_bastion_host",
     fields={
-        "copy_paste_enabled": sdk.FieldSpec(wire_name="copy_paste_enabled"),
-        "file_copy_enabled": sdk.FieldSpec(wire_name="file_copy_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "ip_connect_enabled": sdk.FieldSpec(wire_name="ip_connect_enabled"),
-        "kerberos_enabled": sdk.FieldSpec(wire_name="kerberos_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "scale_units": sdk.FieldSpec(wire_name="scale_units"),
-        "session_recording_enabled": sdk.FieldSpec(wire_name="session_recording_enabled"),
-        "shareable_link_enabled": sdk.FieldSpec(wire_name="shareable_link_enabled"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "tunneling_enabled": sdk.FieldSpec(wire_name="tunneling_enabled"),
-        "virtual_network_id": sdk.FieldSpec(wire_name="virtual_network_id"),
-        "zones": sdk.FieldSpec(wire_name="zones"),
-        "ip_configuration": sdk.FieldSpec(
+        "copy_paste_enabled": ubx.FieldSpec(wire_name="copy_paste_enabled"),
+        "file_copy_enabled": ubx.FieldSpec(wire_name="file_copy_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "ip_connect_enabled": ubx.FieldSpec(wire_name="ip_connect_enabled"),
+        "kerberos_enabled": ubx.FieldSpec(wire_name="kerberos_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "scale_units": ubx.FieldSpec(wire_name="scale_units"),
+        "session_recording_enabled": ubx.FieldSpec(wire_name="session_recording_enabled"),
+        "shareable_link_enabled": ubx.FieldSpec(wire_name="shareable_link_enabled"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "tunneling_enabled": ubx.FieldSpec(wire_name="tunneling_enabled"),
+        "virtual_network_id": ubx.FieldSpec(wire_name="virtual_network_id"),
+        "zones": ubx.FieldSpec(wire_name="zones"),
+        "ip_configuration": ubx.FieldSpec(
             wire_name="ip_configuration",
             kind="list",
             fields=_Host_IpConfigurationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Host_TimeoutsFields,

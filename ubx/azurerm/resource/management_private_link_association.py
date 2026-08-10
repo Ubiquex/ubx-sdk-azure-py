@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementPrivateLinkAssociation_Timeouts:
@@ -13,9 +13,9 @@ class ManagementPrivateLinkAssociation_Timeouts:
     read: Any = None
 
 _ManagementPrivateLinkAssociation_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -27,15 +27,15 @@ class ManagementPrivateLinkAssociationConfig:
     resource_management_private_link_id: Any = None
     timeouts: Any = None
 
-ManagementPrivateLinkAssociation = sdk.ResourceBinding(
+ManagementPrivateLinkAssociation = ubx.ResourceBinding(
     wire_type="azurerm_resource_management_private_link_association",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "management_group_id": sdk.FieldSpec(wire_name="management_group_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "resource_management_private_link_id": sdk.FieldSpec(wire_name="resource_management_private_link_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "management_group_id": ubx.FieldSpec(wire_name="management_group_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "resource_management_private_link_id": ubx.FieldSpec(wire_name="resource_management_private_link_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementPrivateLinkAssociation_TimeoutsFields,

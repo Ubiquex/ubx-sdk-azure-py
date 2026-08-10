@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RelayServer_CustomerManagedKey:
@@ -26,22 +26,22 @@ class RelayServer_Timeouts:
     update: Any = None
 
 _RelayServer_CustomerManagedKeyFields = {
-    "key_vault_key_id": sdk.FieldSpec(wire_name="key_vault_key_id"),
-    "user_assigned_identity_id": sdk.FieldSpec(wire_name="user_assigned_identity_id"),
+    "key_vault_key_id": ubx.FieldSpec(wire_name="key_vault_key_id"),
+    "user_assigned_identity_id": ubx.FieldSpec(wire_name="user_assigned_identity_id"),
 }
 
 _RelayServer_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _RelayServer_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -56,26 +56,26 @@ class RelayServerConfig:
     identity: Any = None
     timeouts: Any = None
 
-RelayServer = sdk.ResourceBinding(
+RelayServer = ubx.ResourceBinding(
     wire_type="azurerm_fluid_relay_server",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "storage_sku": sdk.FieldSpec(wire_name="storage_sku"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "customer_managed_key": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "storage_sku": ubx.FieldSpec(wire_name="storage_sku"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "customer_managed_key": ubx.FieldSpec(
             wire_name="customer_managed_key",
             kind="list",
             fields=_RelayServer_CustomerManagedKeyFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_RelayServer_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RelayServer_TimeoutsFields,

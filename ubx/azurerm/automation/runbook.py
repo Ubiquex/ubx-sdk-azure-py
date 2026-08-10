@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Runbook_JobSchedule:
@@ -49,21 +49,21 @@ class Runbook_Timeouts:
     update: Any = None
 
 _Runbook_JobScheduleFields = {
-    "job_schedule_id": sdk.FieldSpec(wire_name="job_schedule_id"),
-    "parameters": sdk.FieldSpec(wire_name="parameters"),
-    "run_on": sdk.FieldSpec(wire_name="run_on"),
-    "schedule_name": sdk.FieldSpec(wire_name="schedule_name"),
+    "job_schedule_id": ubx.FieldSpec(wire_name="job_schedule_id"),
+    "parameters": ubx.FieldSpec(wire_name="parameters"),
+    "run_on": ubx.FieldSpec(wire_name="run_on"),
+    "schedule_name": ubx.FieldSpec(wire_name="schedule_name"),
 }
 
 _Runbook_Draft_ContentLink_HashFields = {
-    "algorithm": sdk.FieldSpec(wire_name="algorithm"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "algorithm": ubx.FieldSpec(wire_name="algorithm"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _Runbook_Draft_ContentLinkFields = {
-    "uri": sdk.FieldSpec(wire_name="uri"),
-    "version": sdk.FieldSpec(wire_name="version"),
-    "hash": sdk.FieldSpec(
+    "uri": ubx.FieldSpec(wire_name="uri"),
+    "version": ubx.FieldSpec(wire_name="version"),
+    "hash": ubx.FieldSpec(
         wire_name="hash",
         kind="list",
         fields=_Runbook_Draft_ContentLink_HashFields,
@@ -71,24 +71,24 @@ _Runbook_Draft_ContentLinkFields = {
 }
 
 _Runbook_Draft_ParametersFields = {
-    "default_value": sdk.FieldSpec(wire_name="default_value"),
-    "key": sdk.FieldSpec(wire_name="key"),
-    "mandatory": sdk.FieldSpec(wire_name="mandatory"),
-    "position": sdk.FieldSpec(wire_name="position"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "default_value": ubx.FieldSpec(wire_name="default_value"),
+    "key": ubx.FieldSpec(wire_name="key"),
+    "mandatory": ubx.FieldSpec(wire_name="mandatory"),
+    "position": ubx.FieldSpec(wire_name="position"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Runbook_DraftFields = {
-    "creation_time": sdk.FieldSpec(wire_name="creation_time"),
-    "edit_mode_enabled": sdk.FieldSpec(wire_name="edit_mode_enabled"),
-    "last_modified_time": sdk.FieldSpec(wire_name="last_modified_time"),
-    "output_types": sdk.FieldSpec(wire_name="output_types"),
-    "content_link": sdk.FieldSpec(
+    "creation_time": ubx.FieldSpec(wire_name="creation_time"),
+    "edit_mode_enabled": ubx.FieldSpec(wire_name="edit_mode_enabled"),
+    "last_modified_time": ubx.FieldSpec(wire_name="last_modified_time"),
+    "output_types": ubx.FieldSpec(wire_name="output_types"),
+    "content_link": ubx.FieldSpec(
         wire_name="content_link",
         kind="list",
         fields=_Runbook_Draft_ContentLinkFields,
     ),
-    "parameters": sdk.FieldSpec(
+    "parameters": ubx.FieldSpec(
         wire_name="parameters",
         kind="list",
         fields=_Runbook_Draft_ParametersFields,
@@ -96,10 +96,10 @@ _Runbook_DraftFields = {
 }
 
 _Runbook_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -122,38 +122,38 @@ class RunbookConfig:
     publish_content_link: Any = None
     timeouts: Any = None
 
-Runbook = sdk.ResourceBinding(
+Runbook = ubx.ResourceBinding(
     wire_type="azurerm_automation_runbook",
     fields={
-        "automation_account_name": sdk.FieldSpec(wire_name="automation_account_name"),
-        "content": sdk.FieldSpec(wire_name="content"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "job_schedule": sdk.FieldSpec(
+        "automation_account_name": ubx.FieldSpec(wire_name="automation_account_name"),
+        "content": ubx.FieldSpec(wire_name="content"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "job_schedule": ubx.FieldSpec(
             wire_name="job_schedule",
             kind="set",
             fields=_Runbook_JobScheduleFields,
         ),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "log_activity_trace_level": sdk.FieldSpec(wire_name="log_activity_trace_level"),
-        "log_progress": sdk.FieldSpec(wire_name="log_progress"),
-        "log_verbose": sdk.FieldSpec(wire_name="log_verbose"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "runbook_type": sdk.FieldSpec(wire_name="runbook_type"),
-        "runtime_environment_name": sdk.FieldSpec(wire_name="runtime_environment_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "draft": sdk.FieldSpec(
+        "location": ubx.FieldSpec(wire_name="location"),
+        "log_activity_trace_level": ubx.FieldSpec(wire_name="log_activity_trace_level"),
+        "log_progress": ubx.FieldSpec(wire_name="log_progress"),
+        "log_verbose": ubx.FieldSpec(wire_name="log_verbose"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "runbook_type": ubx.FieldSpec(wire_name="runbook_type"),
+        "runtime_environment_name": ubx.FieldSpec(wire_name="runtime_environment_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "draft": ubx.FieldSpec(
             wire_name="draft",
             kind="list",
             fields=_Runbook_DraftFields,
         ),
-        "publish_content_link": sdk.FieldSpec(
+        "publish_content_link": ubx.FieldSpec(
             wire_name="publish_content_link",
             kind="list",
             fields=_Runbook_Draft_ContentLinkFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Runbook_TimeoutsFields,

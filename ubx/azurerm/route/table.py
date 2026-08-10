@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Table_Route:
@@ -21,17 +21,17 @@ class Table_Timeouts:
     update: Any = None
 
 _Table_RouteFields = {
-    "address_prefix": sdk.FieldSpec(wire_name="address_prefix"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "next_hop_in_ip_address": sdk.FieldSpec(wire_name="next_hop_in_ip_address"),
-    "next_hop_type": sdk.FieldSpec(wire_name="next_hop_type"),
+    "address_prefix": ubx.FieldSpec(wire_name="address_prefix"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "next_hop_in_ip_address": ubx.FieldSpec(wire_name="next_hop_in_ip_address"),
+    "next_hop_type": ubx.FieldSpec(wire_name="next_hop_type"),
 }
 
 _Table_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -45,21 +45,21 @@ class TableConfig:
     tags: Any = None
     timeouts: Any = None
 
-Table = sdk.ResourceBinding(
+Table = ubx.ResourceBinding(
     wire_type="azurerm_route_table",
     fields={
-        "bgp_route_propagation_enabled": sdk.FieldSpec(wire_name="bgp_route_propagation_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "route": sdk.FieldSpec(
+        "bgp_route_propagation_enabled": ubx.FieldSpec(wire_name="bgp_route_propagation_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "route": ubx.FieldSpec(
             wire_name="route",
             kind="set",
             fields=_Table_RouteFields,
         ),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Table_TimeoutsFields,

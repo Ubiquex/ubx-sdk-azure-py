@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServiceNetworkAcl_PrivateEndpoint:
@@ -25,21 +25,21 @@ class ServiceNetworkAcl_Timeouts:
     update: Any = None
 
 _ServiceNetworkAcl_PrivateEndpointFields = {
-    "allowed_request_types": sdk.FieldSpec(wire_name="allowed_request_types"),
-    "denied_request_types": sdk.FieldSpec(wire_name="denied_request_types"),
-    "id": sdk.FieldSpec(wire_name="id"),
+    "allowed_request_types": ubx.FieldSpec(wire_name="allowed_request_types"),
+    "denied_request_types": ubx.FieldSpec(wire_name="denied_request_types"),
+    "id": ubx.FieldSpec(wire_name="id"),
 }
 
 _ServiceNetworkAcl_PublicNetworkFields = {
-    "allowed_request_types": sdk.FieldSpec(wire_name="allowed_request_types"),
-    "denied_request_types": sdk.FieldSpec(wire_name="denied_request_types"),
+    "allowed_request_types": ubx.FieldSpec(wire_name="allowed_request_types"),
+    "denied_request_types": ubx.FieldSpec(wire_name="denied_request_types"),
 }
 
 _ServiceNetworkAcl_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -51,23 +51,23 @@ class ServiceNetworkAclConfig:
     public_network: Any = None
     timeouts: Any = None
 
-ServiceNetworkAcl = sdk.ResourceBinding(
+ServiceNetworkAcl = ubx.ResourceBinding(
     wire_type="azurerm_signalr_service_network_acl",
     fields={
-        "default_action": sdk.FieldSpec(wire_name="default_action"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "signalr_service_id": sdk.FieldSpec(wire_name="signalr_service_id"),
-        "private_endpoint": sdk.FieldSpec(
+        "default_action": ubx.FieldSpec(wire_name="default_action"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "signalr_service_id": ubx.FieldSpec(wire_name="signalr_service_id"),
+        "private_endpoint": ubx.FieldSpec(
             wire_name="private_endpoint",
             kind="set",
             fields=_ServiceNetworkAcl_PrivateEndpointFields,
         ),
-        "public_network": sdk.FieldSpec(
+        "public_network": ubx.FieldSpec(
             wire_name="public_network",
             kind="list",
             fields=_ServiceNetworkAcl_PublicNetworkFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ServiceNetworkAcl_TimeoutsFields,

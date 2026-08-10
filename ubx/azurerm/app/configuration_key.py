@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConfigurationKey_Timeouts:
@@ -14,10 +14,10 @@ class ConfigurationKey_Timeouts:
     update: Any = None
 
 _ConfigurationKey_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -35,21 +35,21 @@ class ConfigurationKeyConfig:
     vault_key_reference: Any = None
     timeouts: Any = None
 
-ConfigurationKey = sdk.ResourceBinding(
+ConfigurationKey = ubx.ResourceBinding(
     wire_type="azurerm_app_configuration_key",
     fields={
-        "configuration_store_id": sdk.FieldSpec(wire_name="configuration_store_id"),
-        "content_type": sdk.FieldSpec(wire_name="content_type"),
-        "etag": sdk.FieldSpec(wire_name="etag"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "key": sdk.FieldSpec(wire_name="key"),
-        "label": sdk.FieldSpec(wire_name="label"),
-        "locked": sdk.FieldSpec(wire_name="locked"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "type": sdk.FieldSpec(wire_name="type"),
-        "value": sdk.FieldSpec(wire_name="value"),
-        "vault_key_reference": sdk.FieldSpec(wire_name="vault_key_reference"),
-        "timeouts": sdk.FieldSpec(
+        "configuration_store_id": ubx.FieldSpec(wire_name="configuration_store_id"),
+        "content_type": ubx.FieldSpec(wire_name="content_type"),
+        "etag": ubx.FieldSpec(wire_name="etag"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "key": ubx.FieldSpec(wire_name="key"),
+        "label": ubx.FieldSpec(wire_name="label"),
+        "locked": ubx.FieldSpec(wire_name="locked"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "type": ubx.FieldSpec(wire_name="type"),
+        "value": ubx.FieldSpec(wire_name="value"),
+        "vault_key_reference": ubx.FieldSpec(wire_name="vault_key_reference"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ConfigurationKey_TimeoutsFields,

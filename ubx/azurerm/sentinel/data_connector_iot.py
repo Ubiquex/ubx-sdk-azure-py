@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DataConnectorIot_Timeouts:
@@ -13,9 +13,9 @@ class DataConnectorIot_Timeouts:
     read: Any = None
 
 _DataConnectorIot_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -26,14 +26,14 @@ class DataConnectorIotConfig:
     subscription_id: Any = None
     timeouts: Any = None
 
-DataConnectorIot = sdk.ResourceBinding(
+DataConnectorIot = ubx.ResourceBinding(
     wire_type="azurerm_sentinel_data_connector_iot",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "log_analytics_workspace_id": sdk.FieldSpec(wire_name="log_analytics_workspace_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "subscription_id": sdk.FieldSpec(wire_name="subscription_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "log_analytics_workspace_id": ubx.FieldSpec(wire_name="log_analytics_workspace_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "subscription_id": ubx.FieldSpec(wire_name="subscription_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DataConnectorIot_TimeoutsFields,

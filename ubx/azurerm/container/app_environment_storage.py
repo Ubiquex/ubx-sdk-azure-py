@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppEnvironmentStorage_Timeouts:
@@ -14,10 +14,10 @@ class AppEnvironmentStorage_Timeouts:
     update: Any = None
 
 _AppEnvironmentStorage_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -32,18 +32,18 @@ class AppEnvironmentStorageConfig:
     share_name: Any = None
     timeouts: Any = None
 
-AppEnvironmentStorage = sdk.ResourceBinding(
+AppEnvironmentStorage = ubx.ResourceBinding(
     wire_type="azurerm_container_app_environment_storage",
     fields={
-        "access_key": sdk.FieldSpec(wire_name="access_key"),
-        "access_mode": sdk.FieldSpec(wire_name="access_mode"),
-        "account_name": sdk.FieldSpec(wire_name="account_name"),
-        "container_app_environment_id": sdk.FieldSpec(wire_name="container_app_environment_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "nfs_server_url": sdk.FieldSpec(wire_name="nfs_server_url"),
-        "share_name": sdk.FieldSpec(wire_name="share_name"),
-        "timeouts": sdk.FieldSpec(
+        "access_key": ubx.FieldSpec(wire_name="access_key"),
+        "access_mode": ubx.FieldSpec(wire_name="access_mode"),
+        "account_name": ubx.FieldSpec(wire_name="account_name"),
+        "container_app_environment_id": ubx.FieldSpec(wire_name="container_app_environment_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "nfs_server_url": ubx.FieldSpec(wire_name="nfs_server_url"),
+        "share_name": ubx.FieldSpec(wire_name="share_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AppEnvironmentStorage_TimeoutsFields,

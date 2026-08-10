@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudAppDynamicsApplicationPerformanceMonitoring_Timeouts:
@@ -14,10 +14,10 @@ class CloudAppDynamicsApplicationPerformanceMonitoring_Timeouts:
     update: Any = None
 
 _CloudAppDynamicsApplicationPerformanceMonitoring_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -37,23 +37,23 @@ class CloudAppDynamicsApplicationPerformanceMonitoringConfig:
     spring_cloud_service_id: Any = None
     timeouts: Any = None
 
-CloudAppDynamicsApplicationPerformanceMonitoring = sdk.ResourceBinding(
+CloudAppDynamicsApplicationPerformanceMonitoring = ubx.ResourceBinding(
     wire_type="azurerm_spring_cloud_app_dynamics_application_performance_monitoring",
     fields={
-        "agent_account_access_key": sdk.FieldSpec(wire_name="agent_account_access_key"),
-        "agent_account_name": sdk.FieldSpec(wire_name="agent_account_name"),
-        "agent_application_name": sdk.FieldSpec(wire_name="agent_application_name"),
-        "agent_node_name": sdk.FieldSpec(wire_name="agent_node_name"),
-        "agent_tier_name": sdk.FieldSpec(wire_name="agent_tier_name"),
-        "agent_unique_host_id": sdk.FieldSpec(wire_name="agent_unique_host_id"),
-        "controller_host_name": sdk.FieldSpec(wire_name="controller_host_name"),
-        "controller_port": sdk.FieldSpec(wire_name="controller_port"),
-        "controller_ssl_enabled": sdk.FieldSpec(wire_name="controller_ssl_enabled"),
-        "globally_enabled": sdk.FieldSpec(wire_name="globally_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "spring_cloud_service_id": sdk.FieldSpec(wire_name="spring_cloud_service_id"),
-        "timeouts": sdk.FieldSpec(
+        "agent_account_access_key": ubx.FieldSpec(wire_name="agent_account_access_key"),
+        "agent_account_name": ubx.FieldSpec(wire_name="agent_account_name"),
+        "agent_application_name": ubx.FieldSpec(wire_name="agent_application_name"),
+        "agent_node_name": ubx.FieldSpec(wire_name="agent_node_name"),
+        "agent_tier_name": ubx.FieldSpec(wire_name="agent_tier_name"),
+        "agent_unique_host_id": ubx.FieldSpec(wire_name="agent_unique_host_id"),
+        "controller_host_name": ubx.FieldSpec(wire_name="controller_host_name"),
+        "controller_port": ubx.FieldSpec(wire_name="controller_port"),
+        "controller_ssl_enabled": ubx.FieldSpec(wire_name="controller_ssl_enabled"),
+        "globally_enabled": ubx.FieldSpec(wire_name="globally_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "spring_cloud_service_id": ubx.FieldSpec(wire_name="spring_cloud_service_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CloudAppDynamicsApplicationPerformanceMonitoring_TimeoutsFields,

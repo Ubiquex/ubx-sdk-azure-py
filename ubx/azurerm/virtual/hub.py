@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Hub_Route:
@@ -19,15 +19,15 @@ class Hub_Timeouts:
     update: Any = None
 
 _Hub_RouteFields = {
-    "address_prefixes": sdk.FieldSpec(wire_name="address_prefixes"),
-    "next_hop_ip_address": sdk.FieldSpec(wire_name="next_hop_ip_address"),
+    "address_prefixes": ubx.FieldSpec(wire_name="address_prefixes"),
+    "next_hop_ip_address": ubx.FieldSpec(wire_name="next_hop_ip_address"),
 }
 
 _Hub_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -46,26 +46,26 @@ class HubConfig:
     route: Any = None
     timeouts: Any = None
 
-Hub = sdk.ResourceBinding(
+Hub = ubx.ResourceBinding(
     wire_type="azurerm_virtual_hub",
     fields={
-        "address_prefix": sdk.FieldSpec(wire_name="address_prefix"),
-        "branch_to_branch_traffic_enabled": sdk.FieldSpec(wire_name="branch_to_branch_traffic_enabled"),
-        "hub_routing_preference": sdk.FieldSpec(wire_name="hub_routing_preference"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "virtual_router_auto_scale_min_capacity": sdk.FieldSpec(wire_name="virtual_router_auto_scale_min_capacity"),
-        "virtual_wan_id": sdk.FieldSpec(wire_name="virtual_wan_id"),
-        "route": sdk.FieldSpec(
+        "address_prefix": ubx.FieldSpec(wire_name="address_prefix"),
+        "branch_to_branch_traffic_enabled": ubx.FieldSpec(wire_name="branch_to_branch_traffic_enabled"),
+        "hub_routing_preference": ubx.FieldSpec(wire_name="hub_routing_preference"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "virtual_router_auto_scale_min_capacity": ubx.FieldSpec(wire_name="virtual_router_auto_scale_min_capacity"),
+        "virtual_wan_id": ubx.FieldSpec(wire_name="virtual_wan_id"),
+        "route": ubx.FieldSpec(
             wire_name="route",
             kind="set",
             fields=_Hub_RouteFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Hub_TimeoutsFields,

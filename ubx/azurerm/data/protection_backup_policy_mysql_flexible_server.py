@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ProtectionBackupPolicyMysqlFlexibleServer_DefaultRetentionRule_LifeCycle:
@@ -37,12 +37,12 @@ class ProtectionBackupPolicyMysqlFlexibleServer_Timeouts:
     read: Any = None
 
 _ProtectionBackupPolicyMysqlFlexibleServer_DefaultRetentionRule_LifeCycleFields = {
-    "data_store_type": sdk.FieldSpec(wire_name="data_store_type"),
-    "duration": sdk.FieldSpec(wire_name="duration"),
+    "data_store_type": ubx.FieldSpec(wire_name="data_store_type"),
+    "duration": ubx.FieldSpec(wire_name="duration"),
 }
 
 _ProtectionBackupPolicyMysqlFlexibleServer_DefaultRetentionRuleFields = {
-    "life_cycle": sdk.FieldSpec(
+    "life_cycle": ubx.FieldSpec(
         wire_name="life_cycle",
         kind="list",
         fields=_ProtectionBackupPolicyMysqlFlexibleServer_DefaultRetentionRule_LifeCycleFields,
@@ -50,22 +50,22 @@ _ProtectionBackupPolicyMysqlFlexibleServer_DefaultRetentionRuleFields = {
 }
 
 _ProtectionBackupPolicyMysqlFlexibleServer_RetentionRule_CriteriaFields = {
-    "absolute_criteria": sdk.FieldSpec(wire_name="absolute_criteria"),
-    "days_of_week": sdk.FieldSpec(wire_name="days_of_week"),
-    "months_of_year": sdk.FieldSpec(wire_name="months_of_year"),
-    "scheduled_backup_times": sdk.FieldSpec(wire_name="scheduled_backup_times"),
-    "weeks_of_month": sdk.FieldSpec(wire_name="weeks_of_month"),
+    "absolute_criteria": ubx.FieldSpec(wire_name="absolute_criteria"),
+    "days_of_week": ubx.FieldSpec(wire_name="days_of_week"),
+    "months_of_year": ubx.FieldSpec(wire_name="months_of_year"),
+    "scheduled_backup_times": ubx.FieldSpec(wire_name="scheduled_backup_times"),
+    "weeks_of_month": ubx.FieldSpec(wire_name="weeks_of_month"),
 }
 
 _ProtectionBackupPolicyMysqlFlexibleServer_RetentionRuleFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "priority": sdk.FieldSpec(wire_name="priority"),
-    "criteria": sdk.FieldSpec(
+    "name": ubx.FieldSpec(wire_name="name"),
+    "priority": ubx.FieldSpec(wire_name="priority"),
+    "criteria": ubx.FieldSpec(
         wire_name="criteria",
         kind="list",
         fields=_ProtectionBackupPolicyMysqlFlexibleServer_RetentionRule_CriteriaFields,
     ),
-    "life_cycle": sdk.FieldSpec(
+    "life_cycle": ubx.FieldSpec(
         wire_name="life_cycle",
         kind="list",
         fields=_ProtectionBackupPolicyMysqlFlexibleServer_DefaultRetentionRule_LifeCycleFields,
@@ -73,9 +73,9 @@ _ProtectionBackupPolicyMysqlFlexibleServer_RetentionRuleFields = {
 }
 
 _ProtectionBackupPolicyMysqlFlexibleServer_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -89,25 +89,25 @@ class ProtectionBackupPolicyMysqlFlexibleServerConfig:
     retention_rule: Any = None
     timeouts: Any = None
 
-ProtectionBackupPolicyMysqlFlexibleServer = sdk.ResourceBinding(
+ProtectionBackupPolicyMysqlFlexibleServer = ubx.ResourceBinding(
     wire_type="azurerm_data_protection_backup_policy_mysql_flexible_server",
     fields={
-        "backup_repeating_time_intervals": sdk.FieldSpec(wire_name="backup_repeating_time_intervals"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "time_zone": sdk.FieldSpec(wire_name="time_zone"),
-        "vault_id": sdk.FieldSpec(wire_name="vault_id"),
-        "default_retention_rule": sdk.FieldSpec(
+        "backup_repeating_time_intervals": ubx.FieldSpec(wire_name="backup_repeating_time_intervals"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "time_zone": ubx.FieldSpec(wire_name="time_zone"),
+        "vault_id": ubx.FieldSpec(wire_name="vault_id"),
+        "default_retention_rule": ubx.FieldSpec(
             wire_name="default_retention_rule",
             kind="list",
             fields=_ProtectionBackupPolicyMysqlFlexibleServer_DefaultRetentionRuleFields,
         ),
-        "retention_rule": sdk.FieldSpec(
+        "retention_rule": ubx.FieldSpec(
             wire_name="retention_rule",
             kind="list",
             fields=_ProtectionBackupPolicyMysqlFlexibleServer_RetentionRuleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ProtectionBackupPolicyMysqlFlexibleServer_TimeoutsFields,

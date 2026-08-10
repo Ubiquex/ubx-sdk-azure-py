@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudAppCosmosdbAssociation_Timeouts:
@@ -14,10 +14,10 @@ class CloudAppCosmosdbAssociation_Timeouts:
     update: Any = None
 
 _CloudAppCosmosdbAssociation_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -35,21 +35,21 @@ class CloudAppCosmosdbAssociationConfig:
     spring_cloud_app_id: Any = None
     timeouts: Any = None
 
-CloudAppCosmosdbAssociation = sdk.ResourceBinding(
+CloudAppCosmosdbAssociation = ubx.ResourceBinding(
     wire_type="azurerm_spring_cloud_app_cosmosdb_association",
     fields={
-        "api_type": sdk.FieldSpec(wire_name="api_type"),
-        "cosmosdb_access_key": sdk.FieldSpec(wire_name="cosmosdb_access_key"),
-        "cosmosdb_account_id": sdk.FieldSpec(wire_name="cosmosdb_account_id"),
-        "cosmosdb_cassandra_keyspace_name": sdk.FieldSpec(wire_name="cosmosdb_cassandra_keyspace_name"),
-        "cosmosdb_gremlin_database_name": sdk.FieldSpec(wire_name="cosmosdb_gremlin_database_name"),
-        "cosmosdb_gremlin_graph_name": sdk.FieldSpec(wire_name="cosmosdb_gremlin_graph_name"),
-        "cosmosdb_mongo_database_name": sdk.FieldSpec(wire_name="cosmosdb_mongo_database_name"),
-        "cosmosdb_sql_database_name": sdk.FieldSpec(wire_name="cosmosdb_sql_database_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "spring_cloud_app_id": sdk.FieldSpec(wire_name="spring_cloud_app_id"),
-        "timeouts": sdk.FieldSpec(
+        "api_type": ubx.FieldSpec(wire_name="api_type"),
+        "cosmosdb_access_key": ubx.FieldSpec(wire_name="cosmosdb_access_key"),
+        "cosmosdb_account_id": ubx.FieldSpec(wire_name="cosmosdb_account_id"),
+        "cosmosdb_cassandra_keyspace_name": ubx.FieldSpec(wire_name="cosmosdb_cassandra_keyspace_name"),
+        "cosmosdb_gremlin_database_name": ubx.FieldSpec(wire_name="cosmosdb_gremlin_database_name"),
+        "cosmosdb_gremlin_graph_name": ubx.FieldSpec(wire_name="cosmosdb_gremlin_graph_name"),
+        "cosmosdb_mongo_database_name": ubx.FieldSpec(wire_name="cosmosdb_mongo_database_name"),
+        "cosmosdb_sql_database_name": ubx.FieldSpec(wire_name="cosmosdb_sql_database_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "spring_cloud_app_id": ubx.FieldSpec(wire_name="spring_cloud_app_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CloudAppCosmosdbAssociation_TimeoutsFields,

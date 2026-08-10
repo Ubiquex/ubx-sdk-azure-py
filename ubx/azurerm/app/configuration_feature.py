@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConfigurationFeature_CustomFilter:
@@ -35,19 +35,19 @@ class ConfigurationFeature_TimewindowFilter:
     start: Any = None
 
 _ConfigurationFeature_CustomFilterFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "parameters": sdk.FieldSpec(wire_name="parameters"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "parameters": ubx.FieldSpec(wire_name="parameters"),
 }
 
 _ConfigurationFeature_TargetingFilter_GroupsFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "rollout_percentage": sdk.FieldSpec(wire_name="rollout_percentage"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "rollout_percentage": ubx.FieldSpec(wire_name="rollout_percentage"),
 }
 
 _ConfigurationFeature_TargetingFilterFields = {
-    "default_rollout_percentage": sdk.FieldSpec(wire_name="default_rollout_percentage"),
-    "users": sdk.FieldSpec(wire_name="users"),
-    "groups": sdk.FieldSpec(
+    "default_rollout_percentage": ubx.FieldSpec(wire_name="default_rollout_percentage"),
+    "users": ubx.FieldSpec(wire_name="users"),
+    "groups": ubx.FieldSpec(
         wire_name="groups",
         kind="list",
         fields=_ConfigurationFeature_TargetingFilter_GroupsFields,
@@ -55,15 +55,15 @@ _ConfigurationFeature_TargetingFilterFields = {
 }
 
 _ConfigurationFeature_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _ConfigurationFeature_TimewindowFilterFields = {
-    "end": sdk.FieldSpec(wire_name="end"),
-    "start": sdk.FieldSpec(wire_name="start"),
+    "end": ubx.FieldSpec(wire_name="end"),
+    "start": ubx.FieldSpec(wire_name="start"),
 }
 
 @dataclasses.dataclass
@@ -84,36 +84,36 @@ class ConfigurationFeatureConfig:
     timeouts: Any = None
     timewindow_filter: Any = None
 
-ConfigurationFeature = sdk.ResourceBinding(
+ConfigurationFeature = ubx.ResourceBinding(
     wire_type="azurerm_app_configuration_feature",
     fields={
-        "configuration_store_id": sdk.FieldSpec(wire_name="configuration_store_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "etag": sdk.FieldSpec(wire_name="etag"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "key": sdk.FieldSpec(wire_name="key"),
-        "label": sdk.FieldSpec(wire_name="label"),
-        "locked": sdk.FieldSpec(wire_name="locked"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "percentage_filter_value": sdk.FieldSpec(wire_name="percentage_filter_value"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "custom_filter": sdk.FieldSpec(
+        "configuration_store_id": ubx.FieldSpec(wire_name="configuration_store_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "etag": ubx.FieldSpec(wire_name="etag"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "key": ubx.FieldSpec(wire_name="key"),
+        "label": ubx.FieldSpec(wire_name="label"),
+        "locked": ubx.FieldSpec(wire_name="locked"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "percentage_filter_value": ubx.FieldSpec(wire_name="percentage_filter_value"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "custom_filter": ubx.FieldSpec(
             wire_name="custom_filter",
             kind="list",
             fields=_ConfigurationFeature_CustomFilterFields,
         ),
-        "targeting_filter": sdk.FieldSpec(
+        "targeting_filter": ubx.FieldSpec(
             wire_name="targeting_filter",
             kind="list",
             fields=_ConfigurationFeature_TargetingFilterFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ConfigurationFeature_TimeoutsFields,
         ),
-        "timewindow_filter": sdk.FieldSpec(
+        "timewindow_filter": ubx.FieldSpec(
             wire_name="timewindow_filter",
             kind="list",
             fields=_ConfigurationFeature_TimewindowFilterFields,

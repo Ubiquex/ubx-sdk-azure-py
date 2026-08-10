@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Iothub_Endpoint:
@@ -100,46 +100,46 @@ class Iothub_Timeouts:
     update: Any = None
 
 _Iothub_EndpointFields = {
-    "authentication_type": sdk.FieldSpec(wire_name="authentication_type"),
-    "batch_frequency_in_seconds": sdk.FieldSpec(wire_name="batch_frequency_in_seconds"),
-    "connection_string": sdk.FieldSpec(wire_name="connection_string"),
-    "container_name": sdk.FieldSpec(wire_name="container_name"),
-    "encoding": sdk.FieldSpec(wire_name="encoding"),
-    "endpoint_uri": sdk.FieldSpec(wire_name="endpoint_uri"),
-    "entity_path": sdk.FieldSpec(wire_name="entity_path"),
-    "file_name_format": sdk.FieldSpec(wire_name="file_name_format"),
-    "identity_id": sdk.FieldSpec(wire_name="identity_id"),
-    "max_chunk_size_in_bytes": sdk.FieldSpec(wire_name="max_chunk_size_in_bytes"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-    "subscription_id": sdk.FieldSpec(wire_name="subscription_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "authentication_type": ubx.FieldSpec(wire_name="authentication_type"),
+    "batch_frequency_in_seconds": ubx.FieldSpec(wire_name="batch_frequency_in_seconds"),
+    "connection_string": ubx.FieldSpec(wire_name="connection_string"),
+    "container_name": ubx.FieldSpec(wire_name="container_name"),
+    "encoding": ubx.FieldSpec(wire_name="encoding"),
+    "endpoint_uri": ubx.FieldSpec(wire_name="endpoint_uri"),
+    "entity_path": ubx.FieldSpec(wire_name="entity_path"),
+    "file_name_format": ubx.FieldSpec(wire_name="file_name_format"),
+    "identity_id": ubx.FieldSpec(wire_name="identity_id"),
+    "max_chunk_size_in_bytes": ubx.FieldSpec(wire_name="max_chunk_size_in_bytes"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+    "subscription_id": ubx.FieldSpec(wire_name="subscription_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Iothub_EnrichmentFields = {
-    "endpoint_names": sdk.FieldSpec(wire_name="endpoint_names"),
-    "key": sdk.FieldSpec(wire_name="key"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "endpoint_names": ubx.FieldSpec(wire_name="endpoint_names"),
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _Iothub_RouteFields = {
-    "condition": sdk.FieldSpec(wire_name="condition"),
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "endpoint_names": sdk.FieldSpec(wire_name="endpoint_names"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "source": sdk.FieldSpec(wire_name="source"),
+    "condition": ubx.FieldSpec(wire_name="condition"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "endpoint_names": ubx.FieldSpec(wire_name="endpoint_names"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "source": ubx.FieldSpec(wire_name="source"),
 }
 
 _Iothub_CloudToDevice_FeedbackFields = {
-    "lock_duration": sdk.FieldSpec(wire_name="lock_duration"),
-    "max_delivery_count": sdk.FieldSpec(wire_name="max_delivery_count"),
-    "time_to_live": sdk.FieldSpec(wire_name="time_to_live"),
+    "lock_duration": ubx.FieldSpec(wire_name="lock_duration"),
+    "max_delivery_count": ubx.FieldSpec(wire_name="max_delivery_count"),
+    "time_to_live": ubx.FieldSpec(wire_name="time_to_live"),
 }
 
 _Iothub_CloudToDeviceFields = {
-    "default_ttl": sdk.FieldSpec(wire_name="default_ttl"),
-    "max_delivery_count": sdk.FieldSpec(wire_name="max_delivery_count"),
-    "feedback": sdk.FieldSpec(
+    "default_ttl": ubx.FieldSpec(wire_name="default_ttl"),
+    "max_delivery_count": ubx.FieldSpec(wire_name="max_delivery_count"),
+    "feedback": ubx.FieldSpec(
         wire_name="feedback",
         kind="list",
         fields=_Iothub_CloudToDevice_FeedbackFields,
@@ -147,41 +147,41 @@ _Iothub_CloudToDeviceFields = {
 }
 
 _Iothub_FallbackRouteFields = {
-    "condition": sdk.FieldSpec(wire_name="condition"),
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "endpoint_names": sdk.FieldSpec(wire_name="endpoint_names"),
-    "source": sdk.FieldSpec(wire_name="source"),
+    "condition": ubx.FieldSpec(wire_name="condition"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "endpoint_names": ubx.FieldSpec(wire_name="endpoint_names"),
+    "source": ubx.FieldSpec(wire_name="source"),
 }
 
 _Iothub_FileUploadFields = {
-    "authentication_type": sdk.FieldSpec(wire_name="authentication_type"),
-    "connection_string": sdk.FieldSpec(wire_name="connection_string"),
-    "container_name": sdk.FieldSpec(wire_name="container_name"),
-    "default_ttl": sdk.FieldSpec(wire_name="default_ttl"),
-    "identity_id": sdk.FieldSpec(wire_name="identity_id"),
-    "lock_duration": sdk.FieldSpec(wire_name="lock_duration"),
-    "max_delivery_count": sdk.FieldSpec(wire_name="max_delivery_count"),
-    "notifications": sdk.FieldSpec(wire_name="notifications"),
-    "sas_ttl": sdk.FieldSpec(wire_name="sas_ttl"),
+    "authentication_type": ubx.FieldSpec(wire_name="authentication_type"),
+    "connection_string": ubx.FieldSpec(wire_name="connection_string"),
+    "container_name": ubx.FieldSpec(wire_name="container_name"),
+    "default_ttl": ubx.FieldSpec(wire_name="default_ttl"),
+    "identity_id": ubx.FieldSpec(wire_name="identity_id"),
+    "lock_duration": ubx.FieldSpec(wire_name="lock_duration"),
+    "max_delivery_count": ubx.FieldSpec(wire_name="max_delivery_count"),
+    "notifications": ubx.FieldSpec(wire_name="notifications"),
+    "sas_ttl": ubx.FieldSpec(wire_name="sas_ttl"),
 }
 
 _Iothub_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Iothub_NetworkRuleSet_IpRuleFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "ip_mask": sdk.FieldSpec(wire_name="ip_mask"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "action": ubx.FieldSpec(wire_name="action"),
+    "ip_mask": ubx.FieldSpec(wire_name="ip_mask"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _Iothub_NetworkRuleSetFields = {
-    "apply_to_builtin_eventhub_endpoint": sdk.FieldSpec(wire_name="apply_to_builtin_eventhub_endpoint"),
-    "default_action": sdk.FieldSpec(wire_name="default_action"),
-    "ip_rule": sdk.FieldSpec(
+    "apply_to_builtin_eventhub_endpoint": ubx.FieldSpec(wire_name="apply_to_builtin_eventhub_endpoint"),
+    "default_action": ubx.FieldSpec(wire_name="default_action"),
+    "ip_rule": ubx.FieldSpec(
         wire_name="ip_rule",
         kind="list",
         fields=_Iothub_NetworkRuleSet_IpRuleFields,
@@ -189,15 +189,15 @@ _Iothub_NetworkRuleSetFields = {
 }
 
 _Iothub_SkuFields = {
-    "capacity": sdk.FieldSpec(wire_name="capacity"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "capacity": ubx.FieldSpec(wire_name="capacity"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _Iothub_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -223,65 +223,65 @@ class IothubConfig:
     sku: Any = None
     timeouts: Any = None
 
-Iothub = sdk.ResourceBinding(
+Iothub = ubx.ResourceBinding(
     wire_type="azurerm_iothub",
     fields={
-        "endpoint": sdk.FieldSpec(
+        "endpoint": ubx.FieldSpec(
             wire_name="endpoint",
             kind="list",
             fields=_Iothub_EndpointFields,
         ),
-        "enrichment": sdk.FieldSpec(
+        "enrichment": ubx.FieldSpec(
             wire_name="enrichment",
             kind="list",
             fields=_Iothub_EnrichmentFields,
         ),
-        "event_hub_partition_count": sdk.FieldSpec(wire_name="event_hub_partition_count"),
-        "event_hub_retention_in_days": sdk.FieldSpec(wire_name="event_hub_retention_in_days"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "local_authentication_enabled": sdk.FieldSpec(wire_name="local_authentication_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "min_tls_version": sdk.FieldSpec(wire_name="min_tls_version"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "route": sdk.FieldSpec(
+        "event_hub_partition_count": ubx.FieldSpec(wire_name="event_hub_partition_count"),
+        "event_hub_retention_in_days": ubx.FieldSpec(wire_name="event_hub_retention_in_days"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "local_authentication_enabled": ubx.FieldSpec(wire_name="local_authentication_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "min_tls_version": ubx.FieldSpec(wire_name="min_tls_version"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "route": ubx.FieldSpec(
             wire_name="route",
             kind="list",
             fields=_Iothub_RouteFields,
         ),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "cloud_to_device": sdk.FieldSpec(
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "cloud_to_device": ubx.FieldSpec(
             wire_name="cloud_to_device",
             kind="list",
             fields=_Iothub_CloudToDeviceFields,
         ),
-        "fallback_route": sdk.FieldSpec(
+        "fallback_route": ubx.FieldSpec(
             wire_name="fallback_route",
             kind="list",
             fields=_Iothub_FallbackRouteFields,
         ),
-        "file_upload": sdk.FieldSpec(
+        "file_upload": ubx.FieldSpec(
             wire_name="file_upload",
             kind="list",
             fields=_Iothub_FileUploadFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Iothub_IdentityFields,
         ),
-        "network_rule_set": sdk.FieldSpec(
+        "network_rule_set": ubx.FieldSpec(
             wire_name="network_rule_set",
             kind="list",
             fields=_Iothub_NetworkRuleSetFields,
         ),
-        "sku": sdk.FieldSpec(
+        "sku": ubx.FieldSpec(
             wire_name="sku",
             kind="list",
             fields=_Iothub_SkuFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Iothub_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Container_Timeouts:
@@ -14,10 +14,10 @@ class Container_Timeouts:
     update: Any = None
 
 _Container_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class ContainerConfig:
     storage_account_id: Any = None
     timeouts: Any = None
 
-Container = sdk.ResourceBinding(
+Container = ubx.ResourceBinding(
     wire_type="azurerm_storage_container",
     fields={
-        "container_access_type": sdk.FieldSpec(wire_name="container_access_type"),
-        "default_encryption_scope": sdk.FieldSpec(wire_name="default_encryption_scope"),
-        "encryption_scope_override_enabled": sdk.FieldSpec(wire_name="encryption_scope_override_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "metadata": sdk.FieldSpec(wire_name="metadata"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "timeouts": sdk.FieldSpec(
+        "container_access_type": ubx.FieldSpec(wire_name="container_access_type"),
+        "default_encryption_scope": ubx.FieldSpec(wire_name="default_encryption_scope"),
+        "encryption_scope_override_enabled": ubx.FieldSpec(wire_name="encryption_scope_override_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "metadata": ubx.FieldSpec(wire_name="metadata"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Container_TimeoutsFields,

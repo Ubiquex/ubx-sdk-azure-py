@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppEnvironment_Identity:
@@ -28,24 +28,24 @@ class AppEnvironment_WorkloadProfile:
     workload_profile_type: Any = None
 
 _AppEnvironment_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _AppEnvironment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _AppEnvironment_WorkloadProfileFields = {
-    "maximum_count": sdk.FieldSpec(wire_name="maximum_count"),
-    "minimum_count": sdk.FieldSpec(wire_name="minimum_count"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "workload_profile_type": sdk.FieldSpec(wire_name="workload_profile_type"),
+    "maximum_count": ubx.FieldSpec(wire_name="maximum_count"),
+    "minimum_count": ubx.FieldSpec(wire_name="minimum_count"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "workload_profile_type": ubx.FieldSpec(wire_name="workload_profile_type"),
 }
 
 @dataclasses.dataclass
@@ -68,34 +68,34 @@ class AppEnvironmentConfig:
     timeouts: Any = None
     workload_profile: Any = None
 
-AppEnvironment = sdk.ResourceBinding(
+AppEnvironment = ubx.ResourceBinding(
     wire_type="azurerm_container_app_environment",
     fields={
-        "dapr_application_insights_connection_string": sdk.FieldSpec(wire_name="dapr_application_insights_connection_string"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "infrastructure_resource_group_name": sdk.FieldSpec(wire_name="infrastructure_resource_group_name"),
-        "infrastructure_subnet_id": sdk.FieldSpec(wire_name="infrastructure_subnet_id"),
-        "internal_load_balancer_enabled": sdk.FieldSpec(wire_name="internal_load_balancer_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "log_analytics_workspace_id": sdk.FieldSpec(wire_name="log_analytics_workspace_id"),
-        "logs_destination": sdk.FieldSpec(wire_name="logs_destination"),
-        "mutual_tls_enabled": sdk.FieldSpec(wire_name="mutual_tls_enabled"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_access": sdk.FieldSpec(wire_name="public_network_access"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "zone_redundancy_enabled": sdk.FieldSpec(wire_name="zone_redundancy_enabled"),
-        "identity": sdk.FieldSpec(
+        "dapr_application_insights_connection_string": ubx.FieldSpec(wire_name="dapr_application_insights_connection_string"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "infrastructure_resource_group_name": ubx.FieldSpec(wire_name="infrastructure_resource_group_name"),
+        "infrastructure_subnet_id": ubx.FieldSpec(wire_name="infrastructure_subnet_id"),
+        "internal_load_balancer_enabled": ubx.FieldSpec(wire_name="internal_load_balancer_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "log_analytics_workspace_id": ubx.FieldSpec(wire_name="log_analytics_workspace_id"),
+        "logs_destination": ubx.FieldSpec(wire_name="logs_destination"),
+        "mutual_tls_enabled": ubx.FieldSpec(wire_name="mutual_tls_enabled"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_access": ubx.FieldSpec(wire_name="public_network_access"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "zone_redundancy_enabled": ubx.FieldSpec(wire_name="zone_redundancy_enabled"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_AppEnvironment_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AppEnvironment_TimeoutsFields,
         ),
-        "workload_profile": sdk.FieldSpec(
+        "workload_profile": ubx.FieldSpec(
             wire_name="workload_profile",
             kind="set",
             fields=_AppEnvironment_WorkloadProfileFields,

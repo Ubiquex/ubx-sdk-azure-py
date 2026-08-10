@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementCertificate_Timeouts:
@@ -14,10 +14,10 @@ class ManagementCertificate_Timeouts:
     update: Any = None
 
 _ManagementCertificate_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -32,18 +32,18 @@ class ManagementCertificateConfig:
     resource_group_name: Any = None
     timeouts: Any = None
 
-ManagementCertificate = sdk.ResourceBinding(
+ManagementCertificate = ubx.ResourceBinding(
     wire_type="azurerm_api_management_certificate",
     fields={
-        "api_management_name": sdk.FieldSpec(wire_name="api_management_name"),
-        "data": sdk.FieldSpec(wire_name="data"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "key_vault_identity_client_id": sdk.FieldSpec(wire_name="key_vault_identity_client_id"),
-        "key_vault_secret_id": sdk.FieldSpec(wire_name="key_vault_secret_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "password": sdk.FieldSpec(wire_name="password"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "timeouts": sdk.FieldSpec(
+        "api_management_name": ubx.FieldSpec(wire_name="api_management_name"),
+        "data": ubx.FieldSpec(wire_name="data"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "key_vault_identity_client_id": ubx.FieldSpec(wire_name="key_vault_identity_client_id"),
+        "key_vault_secret_id": ubx.FieldSpec(wire_name="key_vault_secret_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "password": ubx.FieldSpec(wire_name="password"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementCertificate_TimeoutsFields,

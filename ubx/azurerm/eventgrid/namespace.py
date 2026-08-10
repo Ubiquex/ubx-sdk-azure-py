@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Namespace_Identity:
@@ -40,40 +40,40 @@ class Namespace_TopicSpacesConfiguration:
     static_routing_enrichment: Any = None
 
 _Namespace_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Namespace_InboundIpRuleFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "ip_mask": sdk.FieldSpec(wire_name="ip_mask"),
+    "action": ubx.FieldSpec(wire_name="action"),
+    "ip_mask": ubx.FieldSpec(wire_name="ip_mask"),
 }
 
 _Namespace_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _Namespace_TopicSpacesConfiguration_DynamicRoutingEnrichmentFields = {
-    "key": sdk.FieldSpec(wire_name="key"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _Namespace_TopicSpacesConfigurationFields = {
-    "alternative_authentication_name_source": sdk.FieldSpec(wire_name="alternative_authentication_name_source"),
-    "maximum_client_sessions_per_authentication_name": sdk.FieldSpec(wire_name="maximum_client_sessions_per_authentication_name"),
-    "maximum_session_expiry_in_hours": sdk.FieldSpec(wire_name="maximum_session_expiry_in_hours"),
-    "route_topic_id": sdk.FieldSpec(wire_name="route_topic_id"),
-    "dynamic_routing_enrichment": sdk.FieldSpec(
+    "alternative_authentication_name_source": ubx.FieldSpec(wire_name="alternative_authentication_name_source"),
+    "maximum_client_sessions_per_authentication_name": ubx.FieldSpec(wire_name="maximum_client_sessions_per_authentication_name"),
+    "maximum_session_expiry_in_hours": ubx.FieldSpec(wire_name="maximum_session_expiry_in_hours"),
+    "route_topic_id": ubx.FieldSpec(wire_name="route_topic_id"),
+    "dynamic_routing_enrichment": ubx.FieldSpec(
         wire_name="dynamic_routing_enrichment",
         kind="list",
         fields=_Namespace_TopicSpacesConfiguration_DynamicRoutingEnrichmentFields,
     ),
-    "static_routing_enrichment": sdk.FieldSpec(
+    "static_routing_enrichment": ubx.FieldSpec(
         wire_name="static_routing_enrichment",
         kind="list",
         fields=_Namespace_TopicSpacesConfiguration_DynamicRoutingEnrichmentFields,
@@ -95,33 +95,33 @@ class NamespaceConfig:
     timeouts: Any = None
     topic_spaces_configuration: Any = None
 
-Namespace = sdk.ResourceBinding(
+Namespace = ubx.ResourceBinding(
     wire_type="azurerm_eventgrid_namespace",
     fields={
-        "capacity": sdk.FieldSpec(wire_name="capacity"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_access": sdk.FieldSpec(wire_name="public_network_access"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "identity": sdk.FieldSpec(
+        "capacity": ubx.FieldSpec(wire_name="capacity"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_access": ubx.FieldSpec(wire_name="public_network_access"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Namespace_IdentityFields,
         ),
-        "inbound_ip_rule": sdk.FieldSpec(
+        "inbound_ip_rule": ubx.FieldSpec(
             wire_name="inbound_ip_rule",
             kind="list",
             fields=_Namespace_InboundIpRuleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Namespace_TimeoutsFields,
         ),
-        "topic_spaces_configuration": sdk.FieldSpec(
+        "topic_spaces_configuration": ubx.FieldSpec(
             wire_name="topic_spaces_configuration",
             kind="list",
             fields=_Namespace_TopicSpacesConfigurationFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServiceEnvironmentV3_ClusterSetting:
@@ -19,15 +19,15 @@ class ServiceEnvironmentV3_Timeouts:
     update: Any = None
 
 _ServiceEnvironmentV3_ClusterSettingFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _ServiceEnvironmentV3_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -45,25 +45,25 @@ class ServiceEnvironmentV3Config:
     cluster_setting: Any = None
     timeouts: Any = None
 
-ServiceEnvironmentV3 = sdk.ResourceBinding(
+ServiceEnvironmentV3 = ubx.ResourceBinding(
     wire_type="azurerm_app_service_environment_v3",
     fields={
-        "allow_new_private_endpoint_connections": sdk.FieldSpec(wire_name="allow_new_private_endpoint_connections"),
-        "dedicated_host_count": sdk.FieldSpec(wire_name="dedicated_host_count"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "internal_load_balancing_mode": sdk.FieldSpec(wire_name="internal_load_balancing_mode"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "remote_debugging_enabled": sdk.FieldSpec(wire_name="remote_debugging_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "zone_redundant": sdk.FieldSpec(wire_name="zone_redundant"),
-        "cluster_setting": sdk.FieldSpec(
+        "allow_new_private_endpoint_connections": ubx.FieldSpec(wire_name="allow_new_private_endpoint_connections"),
+        "dedicated_host_count": ubx.FieldSpec(wire_name="dedicated_host_count"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "internal_load_balancing_mode": ubx.FieldSpec(wire_name="internal_load_balancing_mode"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "remote_debugging_enabled": ubx.FieldSpec(wire_name="remote_debugging_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "zone_redundant": ubx.FieldSpec(wire_name="zone_redundant"),
+        "cluster_setting": ubx.FieldSpec(
             wire_name="cluster_setting",
             kind="list",
             fields=_ServiceEnvironmentV3_ClusterSettingFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ServiceEnvironmentV3_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementApi_Contact:
@@ -51,20 +51,20 @@ class ManagementApi_Timeouts:
     update: Any = None
 
 _ManagementApi_ContactFields = {
-    "email": sdk.FieldSpec(wire_name="email"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "url": sdk.FieldSpec(wire_name="url"),
+    "email": ubx.FieldSpec(wire_name="email"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "url": ubx.FieldSpec(wire_name="url"),
 }
 
 _ManagementApi_Import_WsdlSelectorFields = {
-    "endpoint_name": sdk.FieldSpec(wire_name="endpoint_name"),
-    "service_name": sdk.FieldSpec(wire_name="service_name"),
+    "endpoint_name": ubx.FieldSpec(wire_name="endpoint_name"),
+    "service_name": ubx.FieldSpec(wire_name="service_name"),
 }
 
 _ManagementApi_ImportFields = {
-    "content_format": sdk.FieldSpec(wire_name="content_format"),
-    "content_value": sdk.FieldSpec(wire_name="content_value"),
-    "wsdl_selector": sdk.FieldSpec(
+    "content_format": ubx.FieldSpec(wire_name="content_format"),
+    "content_value": ubx.FieldSpec(wire_name="content_value"),
+    "wsdl_selector": ubx.FieldSpec(
         wire_name="wsdl_selector",
         kind="list",
         fields=_ManagementApi_Import_WsdlSelectorFields,
@@ -72,30 +72,30 @@ _ManagementApi_ImportFields = {
 }
 
 _ManagementApi_LicenseFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "url": sdk.FieldSpec(wire_name="url"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "url": ubx.FieldSpec(wire_name="url"),
 }
 
 _ManagementApi_Oauth2AuthorizationFields = {
-    "authorization_server_name": sdk.FieldSpec(wire_name="authorization_server_name"),
-    "scope": sdk.FieldSpec(wire_name="scope"),
+    "authorization_server_name": ubx.FieldSpec(wire_name="authorization_server_name"),
+    "scope": ubx.FieldSpec(wire_name="scope"),
 }
 
 _ManagementApi_OpenidAuthenticationFields = {
-    "bearer_token_sending_methods": sdk.FieldSpec(wire_name="bearer_token_sending_methods"),
-    "openid_provider_name": sdk.FieldSpec(wire_name="openid_provider_name"),
+    "bearer_token_sending_methods": ubx.FieldSpec(wire_name="bearer_token_sending_methods"),
+    "openid_provider_name": ubx.FieldSpec(wire_name="openid_provider_name"),
 }
 
 _ManagementApi_SubscriptionKeyParameterNamesFields = {
-    "header": sdk.FieldSpec(wire_name="header"),
-    "query": sdk.FieldSpec(wire_name="query"),
+    "header": ubx.FieldSpec(wire_name="header"),
+    "query": ubx.FieldSpec(wire_name="query"),
 }
 
 _ManagementApi_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -126,58 +126,58 @@ class ManagementApiConfig:
     subscription_key_parameter_names: Any = None
     timeouts: Any = None
 
-ManagementApi = sdk.ResourceBinding(
+ManagementApi = ubx.ResourceBinding(
     wire_type="azurerm_api_management_api",
     fields={
-        "api_management_name": sdk.FieldSpec(wire_name="api_management_name"),
-        "api_type": sdk.FieldSpec(wire_name="api_type"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "path": sdk.FieldSpec(wire_name="path"),
-        "protocols": sdk.FieldSpec(wire_name="protocols"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "revision": sdk.FieldSpec(wire_name="revision"),
-        "revision_description": sdk.FieldSpec(wire_name="revision_description"),
-        "service_url": sdk.FieldSpec(wire_name="service_url"),
-        "source_api_id": sdk.FieldSpec(wire_name="source_api_id"),
-        "subscription_required": sdk.FieldSpec(wire_name="subscription_required"),
-        "terms_of_service_url": sdk.FieldSpec(wire_name="terms_of_service_url"),
-        "version": sdk.FieldSpec(wire_name="version"),
-        "version_description": sdk.FieldSpec(wire_name="version_description"),
-        "version_set_id": sdk.FieldSpec(wire_name="version_set_id"),
-        "contact": sdk.FieldSpec(
+        "api_management_name": ubx.FieldSpec(wire_name="api_management_name"),
+        "api_type": ubx.FieldSpec(wire_name="api_type"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "path": ubx.FieldSpec(wire_name="path"),
+        "protocols": ubx.FieldSpec(wire_name="protocols"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "revision": ubx.FieldSpec(wire_name="revision"),
+        "revision_description": ubx.FieldSpec(wire_name="revision_description"),
+        "service_url": ubx.FieldSpec(wire_name="service_url"),
+        "source_api_id": ubx.FieldSpec(wire_name="source_api_id"),
+        "subscription_required": ubx.FieldSpec(wire_name="subscription_required"),
+        "terms_of_service_url": ubx.FieldSpec(wire_name="terms_of_service_url"),
+        "version": ubx.FieldSpec(wire_name="version"),
+        "version_description": ubx.FieldSpec(wire_name="version_description"),
+        "version_set_id": ubx.FieldSpec(wire_name="version_set_id"),
+        "contact": ubx.FieldSpec(
             wire_name="contact",
             kind="list",
             fields=_ManagementApi_ContactFields,
         ),
-        "import_": sdk.FieldSpec(
+        "import_": ubx.FieldSpec(
             wire_name="import",
             kind="list",
             fields=_ManagementApi_ImportFields,
         ),
-        "license": sdk.FieldSpec(
+        "license": ubx.FieldSpec(
             wire_name="license",
             kind="list",
             fields=_ManagementApi_LicenseFields,
         ),
-        "oauth2_authorization": sdk.FieldSpec(
+        "oauth2_authorization": ubx.FieldSpec(
             wire_name="oauth2_authorization",
             kind="list",
             fields=_ManagementApi_Oauth2AuthorizationFields,
         ),
-        "openid_authentication": sdk.FieldSpec(
+        "openid_authentication": ubx.FieldSpec(
             wire_name="openid_authentication",
             kind="list",
             fields=_ManagementApi_OpenidAuthenticationFields,
         ),
-        "subscription_key_parameter_names": sdk.FieldSpec(
+        "subscription_key_parameter_names": ubx.FieldSpec(
             wire_name="subscription_key_parameter_names",
             kind="list",
             fields=_ManagementApi_SubscriptionKeyParameterNamesFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementApi_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryLinkedServiceWeb_Timeouts:
@@ -14,10 +14,10 @@ class FactoryLinkedServiceWeb_Timeouts:
     update: Any = None
 
 _FactoryLinkedServiceWeb_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -36,22 +36,22 @@ class FactoryLinkedServiceWebConfig:
     username: Any = None
     timeouts: Any = None
 
-FactoryLinkedServiceWeb = sdk.ResourceBinding(
+FactoryLinkedServiceWeb = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_linked_service_web",
     fields={
-        "additional_properties": sdk.FieldSpec(wire_name="additional_properties"),
-        "annotations": sdk.FieldSpec(wire_name="annotations"),
-        "authentication_type": sdk.FieldSpec(wire_name="authentication_type"),
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "integration_runtime_name": sdk.FieldSpec(wire_name="integration_runtime_name"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parameters": sdk.FieldSpec(wire_name="parameters"),
-        "password": sdk.FieldSpec(wire_name="password"),
-        "url": sdk.FieldSpec(wire_name="url"),
-        "username": sdk.FieldSpec(wire_name="username"),
-        "timeouts": sdk.FieldSpec(
+        "additional_properties": ubx.FieldSpec(wire_name="additional_properties"),
+        "annotations": ubx.FieldSpec(wire_name="annotations"),
+        "authentication_type": ubx.FieldSpec(wire_name="authentication_type"),
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "integration_runtime_name": ubx.FieldSpec(wire_name="integration_runtime_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parameters": ubx.FieldSpec(wire_name="parameters"),
+        "password": ubx.FieldSpec(wire_name="password"),
+        "url": ubx.FieldSpec(wire_name="url"),
+        "username": ubx.FieldSpec(wire_name="username"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryLinkedServiceWeb_TimeoutsFields,

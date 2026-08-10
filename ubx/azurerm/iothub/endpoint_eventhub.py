@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EndpointEventhub_Timeouts:
@@ -14,10 +14,10 @@ class EndpointEventhub_Timeouts:
     update: Any = None
 
 _EndpointEventhub_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -34,20 +34,20 @@ class EndpointEventhubConfig:
     subscription_id: Any = None
     timeouts: Any = None
 
-EndpointEventhub = sdk.ResourceBinding(
+EndpointEventhub = ubx.ResourceBinding(
     wire_type="azurerm_iothub_endpoint_eventhub",
     fields={
-        "authentication_type": sdk.FieldSpec(wire_name="authentication_type"),
-        "connection_string": sdk.FieldSpec(wire_name="connection_string"),
-        "endpoint_uri": sdk.FieldSpec(wire_name="endpoint_uri"),
-        "entity_path": sdk.FieldSpec(wire_name="entity_path"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "identity_id": sdk.FieldSpec(wire_name="identity_id"),
-        "iothub_id": sdk.FieldSpec(wire_name="iothub_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "subscription_id": sdk.FieldSpec(wire_name="subscription_id"),
-        "timeouts": sdk.FieldSpec(
+        "authentication_type": ubx.FieldSpec(wire_name="authentication_type"),
+        "connection_string": ubx.FieldSpec(wire_name="connection_string"),
+        "endpoint_uri": ubx.FieldSpec(wire_name="endpoint_uri"),
+        "entity_path": ubx.FieldSpec(wire_name="entity_path"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "identity_id": ubx.FieldSpec(wire_name="identity_id"),
+        "iothub_id": ubx.FieldSpec(wire_name="iothub_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "subscription_id": ubx.FieldSpec(wire_name="subscription_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_EndpointEventhub_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GatewayConnection_Routing_PropagatedRouteTable:
@@ -66,15 +66,15 @@ class GatewayConnection_VpnLink:
     ipsec_policy: Any = None
 
 _GatewayConnection_Routing_PropagatedRouteTableFields = {
-    "labels": sdk.FieldSpec(wire_name="labels"),
-    "route_table_ids": sdk.FieldSpec(wire_name="route_table_ids"),
+    "labels": ubx.FieldSpec(wire_name="labels"),
+    "route_table_ids": ubx.FieldSpec(wire_name="route_table_ids"),
 }
 
 _GatewayConnection_RoutingFields = {
-    "associated_route_table": sdk.FieldSpec(wire_name="associated_route_table"),
-    "inbound_route_map_id": sdk.FieldSpec(wire_name="inbound_route_map_id"),
-    "outbound_route_map_id": sdk.FieldSpec(wire_name="outbound_route_map_id"),
-    "propagated_route_table": sdk.FieldSpec(
+    "associated_route_table": ubx.FieldSpec(wire_name="associated_route_table"),
+    "inbound_route_map_id": ubx.FieldSpec(wire_name="inbound_route_map_id"),
+    "outbound_route_map_id": ubx.FieldSpec(wire_name="outbound_route_map_id"),
+    "propagated_route_table": ubx.FieldSpec(
         wire_name="propagated_route_table",
         kind="list",
         fields=_GatewayConnection_Routing_PropagatedRouteTableFields,
@@ -82,54 +82,54 @@ _GatewayConnection_RoutingFields = {
 }
 
 _GatewayConnection_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _GatewayConnection_TrafficSelectorPolicyFields = {
-    "local_address_ranges": sdk.FieldSpec(wire_name="local_address_ranges"),
-    "remote_address_ranges": sdk.FieldSpec(wire_name="remote_address_ranges"),
+    "local_address_ranges": ubx.FieldSpec(wire_name="local_address_ranges"),
+    "remote_address_ranges": ubx.FieldSpec(wire_name="remote_address_ranges"),
 }
 
 _GatewayConnection_VpnLink_CustomBgpAddressFields = {
-    "ip_address": sdk.FieldSpec(wire_name="ip_address"),
-    "ip_configuration_id": sdk.FieldSpec(wire_name="ip_configuration_id"),
+    "ip_address": ubx.FieldSpec(wire_name="ip_address"),
+    "ip_configuration_id": ubx.FieldSpec(wire_name="ip_configuration_id"),
 }
 
 _GatewayConnection_VpnLink_IpsecPolicyFields = {
-    "dh_group": sdk.FieldSpec(wire_name="dh_group"),
-    "encryption_algorithm": sdk.FieldSpec(wire_name="encryption_algorithm"),
-    "ike_encryption_algorithm": sdk.FieldSpec(wire_name="ike_encryption_algorithm"),
-    "ike_integrity_algorithm": sdk.FieldSpec(wire_name="ike_integrity_algorithm"),
-    "integrity_algorithm": sdk.FieldSpec(wire_name="integrity_algorithm"),
-    "pfs_group": sdk.FieldSpec(wire_name="pfs_group"),
-    "sa_data_size_kb": sdk.FieldSpec(wire_name="sa_data_size_kb"),
-    "sa_lifetime_sec": sdk.FieldSpec(wire_name="sa_lifetime_sec"),
+    "dh_group": ubx.FieldSpec(wire_name="dh_group"),
+    "encryption_algorithm": ubx.FieldSpec(wire_name="encryption_algorithm"),
+    "ike_encryption_algorithm": ubx.FieldSpec(wire_name="ike_encryption_algorithm"),
+    "ike_integrity_algorithm": ubx.FieldSpec(wire_name="ike_integrity_algorithm"),
+    "integrity_algorithm": ubx.FieldSpec(wire_name="integrity_algorithm"),
+    "pfs_group": ubx.FieldSpec(wire_name="pfs_group"),
+    "sa_data_size_kb": ubx.FieldSpec(wire_name="sa_data_size_kb"),
+    "sa_lifetime_sec": ubx.FieldSpec(wire_name="sa_lifetime_sec"),
 }
 
 _GatewayConnection_VpnLinkFields = {
-    "bandwidth_mbps": sdk.FieldSpec(wire_name="bandwidth_mbps"),
-    "bgp_enabled": sdk.FieldSpec(wire_name="bgp_enabled"),
-    "connection_mode": sdk.FieldSpec(wire_name="connection_mode"),
-    "dpd_timeout_seconds": sdk.FieldSpec(wire_name="dpd_timeout_seconds"),
-    "egress_nat_rule_ids": sdk.FieldSpec(wire_name="egress_nat_rule_ids"),
-    "ingress_nat_rule_ids": sdk.FieldSpec(wire_name="ingress_nat_rule_ids"),
-    "local_azure_ip_address_enabled": sdk.FieldSpec(wire_name="local_azure_ip_address_enabled"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "policy_based_traffic_selector_enabled": sdk.FieldSpec(wire_name="policy_based_traffic_selector_enabled"),
-    "protocol": sdk.FieldSpec(wire_name="protocol"),
-    "ratelimit_enabled": sdk.FieldSpec(wire_name="ratelimit_enabled"),
-    "route_weight": sdk.FieldSpec(wire_name="route_weight"),
-    "shared_key": sdk.FieldSpec(wire_name="shared_key"),
-    "vpn_site_link_id": sdk.FieldSpec(wire_name="vpn_site_link_id"),
-    "custom_bgp_address": sdk.FieldSpec(
+    "bandwidth_mbps": ubx.FieldSpec(wire_name="bandwidth_mbps"),
+    "bgp_enabled": ubx.FieldSpec(wire_name="bgp_enabled"),
+    "connection_mode": ubx.FieldSpec(wire_name="connection_mode"),
+    "dpd_timeout_seconds": ubx.FieldSpec(wire_name="dpd_timeout_seconds"),
+    "egress_nat_rule_ids": ubx.FieldSpec(wire_name="egress_nat_rule_ids"),
+    "ingress_nat_rule_ids": ubx.FieldSpec(wire_name="ingress_nat_rule_ids"),
+    "local_azure_ip_address_enabled": ubx.FieldSpec(wire_name="local_azure_ip_address_enabled"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "policy_based_traffic_selector_enabled": ubx.FieldSpec(wire_name="policy_based_traffic_selector_enabled"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
+    "ratelimit_enabled": ubx.FieldSpec(wire_name="ratelimit_enabled"),
+    "route_weight": ubx.FieldSpec(wire_name="route_weight"),
+    "shared_key": ubx.FieldSpec(wire_name="shared_key"),
+    "vpn_site_link_id": ubx.FieldSpec(wire_name="vpn_site_link_id"),
+    "custom_bgp_address": ubx.FieldSpec(
         wire_name="custom_bgp_address",
         kind="set",
         fields=_GatewayConnection_VpnLink_CustomBgpAddressFields,
     ),
-    "ipsec_policy": sdk.FieldSpec(
+    "ipsec_policy": ubx.FieldSpec(
         wire_name="ipsec_policy",
         kind="list",
         fields=_GatewayConnection_VpnLink_IpsecPolicyFields,
@@ -148,30 +148,30 @@ class GatewayConnectionConfig:
     traffic_selector_policy: Any = None
     vpn_link: Any = None
 
-GatewayConnection = sdk.ResourceBinding(
+GatewayConnection = ubx.ResourceBinding(
     wire_type="azurerm_vpn_gateway_connection",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "internet_security_enabled": sdk.FieldSpec(wire_name="internet_security_enabled"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "remote_vpn_site_id": sdk.FieldSpec(wire_name="remote_vpn_site_id"),
-        "vpn_gateway_id": sdk.FieldSpec(wire_name="vpn_gateway_id"),
-        "routing": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "internet_security_enabled": ubx.FieldSpec(wire_name="internet_security_enabled"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "remote_vpn_site_id": ubx.FieldSpec(wire_name="remote_vpn_site_id"),
+        "vpn_gateway_id": ubx.FieldSpec(wire_name="vpn_gateway_id"),
+        "routing": ubx.FieldSpec(
             wire_name="routing",
             kind="list",
             fields=_GatewayConnection_RoutingFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_GatewayConnection_TimeoutsFields,
         ),
-        "traffic_selector_policy": sdk.FieldSpec(
+        "traffic_selector_policy": ubx.FieldSpec(
             wire_name="traffic_selector_policy",
             kind="set",
             fields=_GatewayConnection_TrafficSelectorPolicyFields,
         ),
-        "vpn_link": sdk.FieldSpec(
+        "vpn_link": ubx.FieldSpec(
             wire_name="vpn_link",
             kind="list",
             fields=_GatewayConnection_VpnLinkFields,

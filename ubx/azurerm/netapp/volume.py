@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Volume_CoolAccess:
@@ -56,52 +56,52 @@ class Volume_Timeouts:
     update: Any = None
 
 _Volume_CoolAccessFields = {
-    "coolness_period_in_days": sdk.FieldSpec(wire_name="coolness_period_in_days"),
-    "retrieval_policy": sdk.FieldSpec(wire_name="retrieval_policy"),
-    "tiering_policy": sdk.FieldSpec(wire_name="tiering_policy"),
+    "coolness_period_in_days": ubx.FieldSpec(wire_name="coolness_period_in_days"),
+    "retrieval_policy": ubx.FieldSpec(wire_name="retrieval_policy"),
+    "tiering_policy": ubx.FieldSpec(wire_name="tiering_policy"),
 }
 
 _Volume_DataProtectionAdvancedRansomwareFields = {
-    "protection_enabled": sdk.FieldSpec(wire_name="protection_enabled"),
+    "protection_enabled": ubx.FieldSpec(wire_name="protection_enabled"),
 }
 
 _Volume_DataProtectionBackupPolicyFields = {
-    "backup_policy_id": sdk.FieldSpec(wire_name="backup_policy_id"),
-    "backup_vault_id": sdk.FieldSpec(wire_name="backup_vault_id"),
-    "policy_enabled": sdk.FieldSpec(wire_name="policy_enabled"),
+    "backup_policy_id": ubx.FieldSpec(wire_name="backup_policy_id"),
+    "backup_vault_id": ubx.FieldSpec(wire_name="backup_vault_id"),
+    "policy_enabled": ubx.FieldSpec(wire_name="policy_enabled"),
 }
 
 _Volume_DataProtectionReplicationFields = {
-    "endpoint_type": sdk.FieldSpec(wire_name="endpoint_type"),
-    "remote_volume_location": sdk.FieldSpec(wire_name="remote_volume_location"),
-    "remote_volume_resource_id": sdk.FieldSpec(wire_name="remote_volume_resource_id"),
-    "replication_frequency": sdk.FieldSpec(wire_name="replication_frequency"),
+    "endpoint_type": ubx.FieldSpec(wire_name="endpoint_type"),
+    "remote_volume_location": ubx.FieldSpec(wire_name="remote_volume_location"),
+    "remote_volume_resource_id": ubx.FieldSpec(wire_name="remote_volume_resource_id"),
+    "replication_frequency": ubx.FieldSpec(wire_name="replication_frequency"),
 }
 
 _Volume_DataProtectionSnapshotPolicyFields = {
-    "snapshot_policy_id": sdk.FieldSpec(wire_name="snapshot_policy_id"),
+    "snapshot_policy_id": ubx.FieldSpec(wire_name="snapshot_policy_id"),
 }
 
 _Volume_ExportPolicyRuleFields = {
-    "allowed_clients": sdk.FieldSpec(wire_name="allowed_clients"),
-    "kerberos_5_read_only_enabled": sdk.FieldSpec(wire_name="kerberos_5_read_only_enabled"),
-    "kerberos_5_read_write_enabled": sdk.FieldSpec(wire_name="kerberos_5_read_write_enabled"),
-    "kerberos_5i_read_only_enabled": sdk.FieldSpec(wire_name="kerberos_5i_read_only_enabled"),
-    "kerberos_5i_read_write_enabled": sdk.FieldSpec(wire_name="kerberos_5i_read_write_enabled"),
-    "kerberos_5p_read_only_enabled": sdk.FieldSpec(wire_name="kerberos_5p_read_only_enabled"),
-    "kerberos_5p_read_write_enabled": sdk.FieldSpec(wire_name="kerberos_5p_read_write_enabled"),
-    "protocol": sdk.FieldSpec(wire_name="protocol"),
-    "root_access_enabled": sdk.FieldSpec(wire_name="root_access_enabled"),
-    "rule_index": sdk.FieldSpec(wire_name="rule_index"),
-    "unix_read_only": sdk.FieldSpec(wire_name="unix_read_only"),
-    "unix_read_write": sdk.FieldSpec(wire_name="unix_read_write"),
+    "allowed_clients": ubx.FieldSpec(wire_name="allowed_clients"),
+    "kerberos_5_read_only_enabled": ubx.FieldSpec(wire_name="kerberos_5_read_only_enabled"),
+    "kerberos_5_read_write_enabled": ubx.FieldSpec(wire_name="kerberos_5_read_write_enabled"),
+    "kerberos_5i_read_only_enabled": ubx.FieldSpec(wire_name="kerberos_5i_read_only_enabled"),
+    "kerberos_5i_read_write_enabled": ubx.FieldSpec(wire_name="kerberos_5i_read_write_enabled"),
+    "kerberos_5p_read_only_enabled": ubx.FieldSpec(wire_name="kerberos_5p_read_only_enabled"),
+    "kerberos_5p_read_write_enabled": ubx.FieldSpec(wire_name="kerberos_5p_read_write_enabled"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
+    "root_access_enabled": ubx.FieldSpec(wire_name="root_access_enabled"),
+    "rule_index": ubx.FieldSpec(wire_name="rule_index"),
+    "unix_read_only": ubx.FieldSpec(wire_name="unix_read_only"),
+    "unix_read_write": ubx.FieldSpec(wire_name="unix_read_write"),
 }
 
 _Volume_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -142,68 +142,68 @@ class VolumeConfig:
     export_policy_rule: Any = None
     timeouts: Any = None
 
-Volume = sdk.ResourceBinding(
+Volume = ubx.ResourceBinding(
     wire_type="azurerm_netapp_volume",
     fields={
-        "accept_grow_capacity_pool_for_short_term_clone_split": sdk.FieldSpec(wire_name="accept_grow_capacity_pool_for_short_term_clone_split"),
-        "account_name": sdk.FieldSpec(wire_name="account_name"),
-        "azure_vmware_data_store_enabled": sdk.FieldSpec(wire_name="azure_vmware_data_store_enabled"),
-        "create_from_snapshot_resource_id": sdk.FieldSpec(wire_name="create_from_snapshot_resource_id"),
-        "encryption_key_source": sdk.FieldSpec(wire_name="encryption_key_source"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "kerberos_enabled": sdk.FieldSpec(wire_name="kerberos_enabled"),
-        "key_vault_private_endpoint_id": sdk.FieldSpec(wire_name="key_vault_private_endpoint_id"),
-        "large_volume_enabled": sdk.FieldSpec(wire_name="large_volume_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "network_features": sdk.FieldSpec(wire_name="network_features"),
-        "pool_name": sdk.FieldSpec(wire_name="pool_name"),
-        "protocols": sdk.FieldSpec(wire_name="protocols"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "security_style": sdk.FieldSpec(wire_name="security_style"),
-        "service_level": sdk.FieldSpec(wire_name="service_level"),
-        "smb3_protocol_encryption_enabled": sdk.FieldSpec(wire_name="smb3_protocol_encryption_enabled"),
-        "smb_access_based_enumeration_enabled": sdk.FieldSpec(wire_name="smb_access_based_enumeration_enabled"),
-        "smb_continuous_availability_enabled": sdk.FieldSpec(wire_name="smb_continuous_availability_enabled"),
-        "smb_non_browsable_enabled": sdk.FieldSpec(wire_name="smb_non_browsable_enabled"),
-        "snapshot_directory_visible": sdk.FieldSpec(wire_name="snapshot_directory_visible"),
-        "storage_quota_in_gb": sdk.FieldSpec(wire_name="storage_quota_in_gb"),
-        "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "throughput_in_mibps": sdk.FieldSpec(wire_name="throughput_in_mibps"),
-        "volume_path": sdk.FieldSpec(wire_name="volume_path"),
-        "zone": sdk.FieldSpec(wire_name="zone"),
-        "cool_access": sdk.FieldSpec(
+        "accept_grow_capacity_pool_for_short_term_clone_split": ubx.FieldSpec(wire_name="accept_grow_capacity_pool_for_short_term_clone_split"),
+        "account_name": ubx.FieldSpec(wire_name="account_name"),
+        "azure_vmware_data_store_enabled": ubx.FieldSpec(wire_name="azure_vmware_data_store_enabled"),
+        "create_from_snapshot_resource_id": ubx.FieldSpec(wire_name="create_from_snapshot_resource_id"),
+        "encryption_key_source": ubx.FieldSpec(wire_name="encryption_key_source"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "kerberos_enabled": ubx.FieldSpec(wire_name="kerberos_enabled"),
+        "key_vault_private_endpoint_id": ubx.FieldSpec(wire_name="key_vault_private_endpoint_id"),
+        "large_volume_enabled": ubx.FieldSpec(wire_name="large_volume_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network_features": ubx.FieldSpec(wire_name="network_features"),
+        "pool_name": ubx.FieldSpec(wire_name="pool_name"),
+        "protocols": ubx.FieldSpec(wire_name="protocols"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "security_style": ubx.FieldSpec(wire_name="security_style"),
+        "service_level": ubx.FieldSpec(wire_name="service_level"),
+        "smb3_protocol_encryption_enabled": ubx.FieldSpec(wire_name="smb3_protocol_encryption_enabled"),
+        "smb_access_based_enumeration_enabled": ubx.FieldSpec(wire_name="smb_access_based_enumeration_enabled"),
+        "smb_continuous_availability_enabled": ubx.FieldSpec(wire_name="smb_continuous_availability_enabled"),
+        "smb_non_browsable_enabled": ubx.FieldSpec(wire_name="smb_non_browsable_enabled"),
+        "snapshot_directory_visible": ubx.FieldSpec(wire_name="snapshot_directory_visible"),
+        "storage_quota_in_gb": ubx.FieldSpec(wire_name="storage_quota_in_gb"),
+        "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "throughput_in_mibps": ubx.FieldSpec(wire_name="throughput_in_mibps"),
+        "volume_path": ubx.FieldSpec(wire_name="volume_path"),
+        "zone": ubx.FieldSpec(wire_name="zone"),
+        "cool_access": ubx.FieldSpec(
             wire_name="cool_access",
             kind="list",
             fields=_Volume_CoolAccessFields,
         ),
-        "data_protection_advanced_ransomware": sdk.FieldSpec(
+        "data_protection_advanced_ransomware": ubx.FieldSpec(
             wire_name="data_protection_advanced_ransomware",
             kind="list",
             fields=_Volume_DataProtectionAdvancedRansomwareFields,
         ),
-        "data_protection_backup_policy": sdk.FieldSpec(
+        "data_protection_backup_policy": ubx.FieldSpec(
             wire_name="data_protection_backup_policy",
             kind="list",
             fields=_Volume_DataProtectionBackupPolicyFields,
         ),
-        "data_protection_replication": sdk.FieldSpec(
+        "data_protection_replication": ubx.FieldSpec(
             wire_name="data_protection_replication",
             kind="list",
             fields=_Volume_DataProtectionReplicationFields,
         ),
-        "data_protection_snapshot_policy": sdk.FieldSpec(
+        "data_protection_snapshot_policy": ubx.FieldSpec(
             wire_name="data_protection_snapshot_policy",
             kind="list",
             fields=_Volume_DataProtectionSnapshotPolicyFields,
         ),
-        "export_policy_rule": sdk.FieldSpec(
+        "export_policy_rule": ubx.FieldSpec(
             wire_name="export_policy_rule",
             kind="list",
             fields=_Volume_ExportPolicyRuleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Volume_TimeoutsFields,

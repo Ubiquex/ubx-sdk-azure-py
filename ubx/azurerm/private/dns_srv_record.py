@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DnsSrvRecord_Record:
@@ -21,17 +21,17 @@ class DnsSrvRecord_Timeouts:
     update: Any = None
 
 _DnsSrvRecord_RecordFields = {
-    "port": sdk.FieldSpec(wire_name="port"),
-    "priority": sdk.FieldSpec(wire_name="priority"),
-    "target": sdk.FieldSpec(wire_name="target"),
-    "weight": sdk.FieldSpec(wire_name="weight"),
+    "port": ubx.FieldSpec(wire_name="port"),
+    "priority": ubx.FieldSpec(wire_name="priority"),
+    "target": ubx.FieldSpec(wire_name="target"),
+    "weight": ubx.FieldSpec(wire_name="weight"),
 }
 
 _DnsSrvRecord_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -44,20 +44,20 @@ class DnsSrvRecordConfig:
     record: Any = None
     timeouts: Any = None
 
-DnsSrvRecord = sdk.ResourceBinding(
+DnsSrvRecord = ubx.ResourceBinding(
     wire_type="azurerm_private_dns_srv_record",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "private_dns_zone_id": sdk.FieldSpec(wire_name="private_dns_zone_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "ttl": sdk.FieldSpec(wire_name="ttl"),
-        "record": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "private_dns_zone_id": ubx.FieldSpec(wire_name="private_dns_zone_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "ttl": ubx.FieldSpec(wire_name="ttl"),
+        "record": ubx.FieldSpec(
             wire_name="record",
             kind="set",
             fields=_DnsSrvRecord_RecordFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DnsSrvRecord_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GroupPolicyAssignment_Identity:
@@ -42,26 +42,26 @@ class GroupPolicyAssignment_Timeouts:
     update: Any = None
 
 _GroupPolicyAssignment_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _GroupPolicyAssignment_NonComplianceMessageFields = {
-    "content": sdk.FieldSpec(wire_name="content"),
-    "policy_definition_reference_id": sdk.FieldSpec(wire_name="policy_definition_reference_id"),
+    "content": ubx.FieldSpec(wire_name="content"),
+    "policy_definition_reference_id": ubx.FieldSpec(wire_name="policy_definition_reference_id"),
 }
 
 _GroupPolicyAssignment_Overrides_SelectorsFields = {
-    "in_": sdk.FieldSpec(wire_name="in"),
-    "kind": sdk.FieldSpec(wire_name="kind"),
-    "not_in": sdk.FieldSpec(wire_name="not_in"),
+    "in_": ubx.FieldSpec(wire_name="in"),
+    "kind": ubx.FieldSpec(wire_name="kind"),
+    "not_in": ubx.FieldSpec(wire_name="not_in"),
 }
 
 _GroupPolicyAssignment_OverridesFields = {
-    "value": sdk.FieldSpec(wire_name="value"),
-    "selectors": sdk.FieldSpec(
+    "value": ubx.FieldSpec(wire_name="value"),
+    "selectors": ubx.FieldSpec(
         wire_name="selectors",
         kind="list",
         fields=_GroupPolicyAssignment_Overrides_SelectorsFields,
@@ -69,8 +69,8 @@ _GroupPolicyAssignment_OverridesFields = {
 }
 
 _GroupPolicyAssignment_ResourceSelectorsFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "selectors": sdk.FieldSpec(
+    "name": ubx.FieldSpec(wire_name="name"),
+    "selectors": ubx.FieldSpec(
         wire_name="selectors",
         kind="list",
         fields=_GroupPolicyAssignment_Overrides_SelectorsFields,
@@ -78,10 +78,10 @@ _GroupPolicyAssignment_ResourceSelectorsFields = {
 }
 
 _GroupPolicyAssignment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -103,41 +103,41 @@ class GroupPolicyAssignmentConfig:
     resource_selectors: Any = None
     timeouts: Any = None
 
-GroupPolicyAssignment = sdk.ResourceBinding(
+GroupPolicyAssignment = ubx.ResourceBinding(
     wire_type="azurerm_management_group_policy_assignment",
     fields={
-        "description": sdk.FieldSpec(wire_name="description"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "enforce": sdk.FieldSpec(wire_name="enforce"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "management_group_id": sdk.FieldSpec(wire_name="management_group_id"),
-        "metadata": sdk.FieldSpec(wire_name="metadata"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "not_scopes": sdk.FieldSpec(wire_name="not_scopes"),
-        "parameters": sdk.FieldSpec(wire_name="parameters"),
-        "policy_definition_id": sdk.FieldSpec(wire_name="policy_definition_id"),
-        "identity": sdk.FieldSpec(
+        "description": ubx.FieldSpec(wire_name="description"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "enforce": ubx.FieldSpec(wire_name="enforce"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "management_group_id": ubx.FieldSpec(wire_name="management_group_id"),
+        "metadata": ubx.FieldSpec(wire_name="metadata"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "not_scopes": ubx.FieldSpec(wire_name="not_scopes"),
+        "parameters": ubx.FieldSpec(wire_name="parameters"),
+        "policy_definition_id": ubx.FieldSpec(wire_name="policy_definition_id"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_GroupPolicyAssignment_IdentityFields,
         ),
-        "non_compliance_message": sdk.FieldSpec(
+        "non_compliance_message": ubx.FieldSpec(
             wire_name="non_compliance_message",
             kind="list",
             fields=_GroupPolicyAssignment_NonComplianceMessageFields,
         ),
-        "overrides": sdk.FieldSpec(
+        "overrides": ubx.FieldSpec(
             wire_name="overrides",
             kind="list",
             fields=_GroupPolicyAssignment_OverridesFields,
         ),
-        "resource_selectors": sdk.FieldSpec(
+        "resource_selectors": ubx.FieldSpec(
             wire_name="resource_selectors",
             kind="list",
             fields=_GroupPolicyAssignment_ResourceSelectorsFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_GroupPolicyAssignment_TimeoutsFields,

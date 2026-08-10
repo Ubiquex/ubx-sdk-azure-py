@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TestPolicy_Timeouts:
@@ -14,10 +14,10 @@ class TestPolicy_Timeouts:
     update: Any = None
 
 _TestPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -34,20 +34,20 @@ class TestPolicyConfig:
     threshold: Any = None
     timeouts: Any = None
 
-TestPolicy = sdk.ResourceBinding(
+TestPolicy = ubx.ResourceBinding(
     wire_type="azurerm_dev_test_policy",
     fields={
-        "description": sdk.FieldSpec(wire_name="description"),
-        "evaluator_type": sdk.FieldSpec(wire_name="evaluator_type"),
-        "fact_data": sdk.FieldSpec(wire_name="fact_data"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "lab_name": sdk.FieldSpec(wire_name="lab_name"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "policy_set_name": sdk.FieldSpec(wire_name="policy_set_name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "threshold": sdk.FieldSpec(wire_name="threshold"),
-        "timeouts": sdk.FieldSpec(
+        "description": ubx.FieldSpec(wire_name="description"),
+        "evaluator_type": ubx.FieldSpec(wire_name="evaluator_type"),
+        "fact_data": ubx.FieldSpec(wire_name="fact_data"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "lab_name": ubx.FieldSpec(wire_name="lab_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "policy_set_name": ubx.FieldSpec(wire_name="policy_set_name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "threshold": ubx.FieldSpec(wire_name="threshold"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_TestPolicy_TimeoutsFields,

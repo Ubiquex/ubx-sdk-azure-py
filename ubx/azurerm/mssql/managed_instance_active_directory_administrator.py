@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagedInstanceActiveDirectoryAdministrator_Timeouts:
@@ -14,10 +14,10 @@ class ManagedInstanceActiveDirectoryAdministrator_Timeouts:
     update: Any = None
 
 _ManagedInstanceActiveDirectoryAdministrator_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class ManagedInstanceActiveDirectoryAdministratorConfig:
     tenant_id: Any = None
     timeouts: Any = None
 
-ManagedInstanceActiveDirectoryAdministrator = sdk.ResourceBinding(
+ManagedInstanceActiveDirectoryAdministrator = ubx.ResourceBinding(
     wire_type="azurerm_mssql_managed_instance_active_directory_administrator",
     fields={
-        "azuread_authentication_only": sdk.FieldSpec(wire_name="azuread_authentication_only"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "login_username": sdk.FieldSpec(wire_name="login_username"),
-        "managed_instance_id": sdk.FieldSpec(wire_name="managed_instance_id"),
-        "object_id": sdk.FieldSpec(wire_name="object_id"),
-        "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-        "timeouts": sdk.FieldSpec(
+        "azuread_authentication_only": ubx.FieldSpec(wire_name="azuread_authentication_only"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "login_username": ubx.FieldSpec(wire_name="login_username"),
+        "managed_instance_id": ubx.FieldSpec(wire_name="managed_instance_id"),
+        "object_id": ubx.FieldSpec(wire_name="object_id"),
+        "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagedInstanceActiveDirectoryAdministrator_TimeoutsFields,

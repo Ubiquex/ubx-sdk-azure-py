@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementPolicyFragment_Timeouts:
@@ -14,10 +14,10 @@ class ManagementPolicyFragment_Timeouts:
     update: Any = None
 
 _ManagementPolicyFragment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class ManagementPolicyFragmentConfig:
     value: Any = None
     timeouts: Any = None
 
-ManagementPolicyFragment = sdk.ResourceBinding(
+ManagementPolicyFragment = ubx.ResourceBinding(
     wire_type="azurerm_api_management_policy_fragment",
     fields={
-        "api_management_id": sdk.FieldSpec(wire_name="api_management_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "format": sdk.FieldSpec(wire_name="format"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "value": sdk.FieldSpec(wire_name="value"),
-        "timeouts": sdk.FieldSpec(
+        "api_management_id": ubx.FieldSpec(wire_name="api_management_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "format": ubx.FieldSpec(wire_name="format"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "value": ubx.FieldSpec(wire_name="value"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementPolicyFragment_TimeoutsFields,

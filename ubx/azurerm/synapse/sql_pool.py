@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SqlPool_Restore:
@@ -19,15 +19,15 @@ class SqlPool_Timeouts:
     update: Any = None
 
 _SqlPool_RestoreFields = {
-    "point_in_time": sdk.FieldSpec(wire_name="point_in_time"),
-    "source_database_id": sdk.FieldSpec(wire_name="source_database_id"),
+    "point_in_time": ubx.FieldSpec(wire_name="point_in_time"),
+    "source_database_id": ubx.FieldSpec(wire_name="source_database_id"),
 }
 
 _SqlPool_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -46,26 +46,26 @@ class SqlPoolConfig:
     restore: Any = None
     timeouts: Any = None
 
-SqlPool = sdk.ResourceBinding(
+SqlPool = ubx.ResourceBinding(
     wire_type="azurerm_synapse_sql_pool",
     fields={
-        "collation": sdk.FieldSpec(wire_name="collation"),
-        "create_mode": sdk.FieldSpec(wire_name="create_mode"),
-        "data_encrypted": sdk.FieldSpec(wire_name="data_encrypted"),
-        "geo_backup_policy_enabled": sdk.FieldSpec(wire_name="geo_backup_policy_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "recovery_database_id": sdk.FieldSpec(wire_name="recovery_database_id"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "storage_account_type": sdk.FieldSpec(wire_name="storage_account_type"),
-        "synapse_workspace_id": sdk.FieldSpec(wire_name="synapse_workspace_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "restore": sdk.FieldSpec(
+        "collation": ubx.FieldSpec(wire_name="collation"),
+        "create_mode": ubx.FieldSpec(wire_name="create_mode"),
+        "data_encrypted": ubx.FieldSpec(wire_name="data_encrypted"),
+        "geo_backup_policy_enabled": ubx.FieldSpec(wire_name="geo_backup_policy_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "recovery_database_id": ubx.FieldSpec(wire_name="recovery_database_id"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "storage_account_type": ubx.FieldSpec(wire_name="storage_account_type"),
+        "synapse_workspace_id": ubx.FieldSpec(wire_name="synapse_workspace_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "restore": ubx.FieldSpec(
             wire_name="restore",
             kind="list",
             fields=_SqlPool_RestoreFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SqlPool_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppFunction_File:
@@ -19,15 +19,15 @@ class AppFunction_Timeouts:
     update: Any = None
 
 _AppFunction_FileFields = {
-    "content": sdk.FieldSpec(wire_name="content"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "content": ubx.FieldSpec(wire_name="content"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _AppFunction_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -42,22 +42,22 @@ class AppFunctionConfig:
     file: Any = None
     timeouts: Any = None
 
-AppFunction = sdk.ResourceBinding(
+AppFunction = ubx.ResourceBinding(
     wire_type="azurerm_function_app_function",
     fields={
-        "config_json": sdk.FieldSpec(wire_name="config_json"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "function_app_id": sdk.FieldSpec(wire_name="function_app_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "language": sdk.FieldSpec(wire_name="language"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "test_data": sdk.FieldSpec(wire_name="test_data"),
-        "file": sdk.FieldSpec(
+        "config_json": ubx.FieldSpec(wire_name="config_json"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "function_app_id": ubx.FieldSpec(wire_name="function_app_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "language": ubx.FieldSpec(wire_name="language"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "test_data": ubx.FieldSpec(wire_name="test_data"),
+        "file": ubx.FieldSpec(
             wire_name="file",
             kind="list",
             fields=_AppFunction_FileFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AppFunction_TimeoutsFields,

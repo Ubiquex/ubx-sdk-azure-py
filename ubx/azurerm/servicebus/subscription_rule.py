@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SubscriptionRule_CorrelationFilter:
@@ -26,22 +26,22 @@ class SubscriptionRule_Timeouts:
     update: Any = None
 
 _SubscriptionRule_CorrelationFilterFields = {
-    "content_type": sdk.FieldSpec(wire_name="content_type"),
-    "correlation_id": sdk.FieldSpec(wire_name="correlation_id"),
-    "label": sdk.FieldSpec(wire_name="label"),
-    "message_id": sdk.FieldSpec(wire_name="message_id"),
-    "properties": sdk.FieldSpec(wire_name="properties"),
-    "reply_to": sdk.FieldSpec(wire_name="reply_to"),
-    "reply_to_session_id": sdk.FieldSpec(wire_name="reply_to_session_id"),
-    "session_id": sdk.FieldSpec(wire_name="session_id"),
-    "to": sdk.FieldSpec(wire_name="to"),
+    "content_type": ubx.FieldSpec(wire_name="content_type"),
+    "correlation_id": ubx.FieldSpec(wire_name="correlation_id"),
+    "label": ubx.FieldSpec(wire_name="label"),
+    "message_id": ubx.FieldSpec(wire_name="message_id"),
+    "properties": ubx.FieldSpec(wire_name="properties"),
+    "reply_to": ubx.FieldSpec(wire_name="reply_to"),
+    "reply_to_session_id": ubx.FieldSpec(wire_name="reply_to_session_id"),
+    "session_id": ubx.FieldSpec(wire_name="session_id"),
+    "to": ubx.FieldSpec(wire_name="to"),
 }
 
 _SubscriptionRule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -55,21 +55,21 @@ class SubscriptionRuleConfig:
     correlation_filter: Any = None
     timeouts: Any = None
 
-SubscriptionRule = sdk.ResourceBinding(
+SubscriptionRule = ubx.ResourceBinding(
     wire_type="azurerm_servicebus_subscription_rule",
     fields={
-        "action": sdk.FieldSpec(wire_name="action"),
-        "filter_type": sdk.FieldSpec(wire_name="filter_type"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "sql_filter": sdk.FieldSpec(wire_name="sql_filter"),
-        "subscription_id": sdk.FieldSpec(wire_name="subscription_id"),
-        "correlation_filter": sdk.FieldSpec(
+        "action": ubx.FieldSpec(wire_name="action"),
+        "filter_type": ubx.FieldSpec(wire_name="filter_type"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "sql_filter": ubx.FieldSpec(wire_name="sql_filter"),
+        "subscription_id": ubx.FieldSpec(wire_name="subscription_id"),
+        "correlation_filter": ubx.FieldSpec(
             wire_name="correlation_filter",
             kind="list",
             fields=_SubscriptionRule_CorrelationFilterFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SubscriptionRule_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DnsTxtRecord_Record:
@@ -18,14 +18,14 @@ class DnsTxtRecord_Timeouts:
     update: Any = None
 
 _DnsTxtRecord_RecordFields = {
-    "value": sdk.FieldSpec(wire_name="value"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _DnsTxtRecord_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -38,20 +38,20 @@ class DnsTxtRecordConfig:
     record: Any = None
     timeouts: Any = None
 
-DnsTxtRecord = sdk.ResourceBinding(
+DnsTxtRecord = ubx.ResourceBinding(
     wire_type="azurerm_private_dns_txt_record",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "private_dns_zone_id": sdk.FieldSpec(wire_name="private_dns_zone_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "ttl": sdk.FieldSpec(wire_name="ttl"),
-        "record": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "private_dns_zone_id": ubx.FieldSpec(wire_name="private_dns_zone_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "ttl": ubx.FieldSpec(wire_name="ttl"),
+        "record": ubx.FieldSpec(
             wire_name="record",
             kind="set",
             fields=_DnsTxtRecord_RecordFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DnsTxtRecord_TimeoutsFields,

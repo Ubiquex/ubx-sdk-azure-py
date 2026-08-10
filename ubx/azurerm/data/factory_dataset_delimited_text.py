@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryDatasetDelimitedText_AzureBlobFsLocation:
@@ -46,42 +46,42 @@ class FactoryDatasetDelimitedText_Timeouts:
     update: Any = None
 
 _FactoryDatasetDelimitedText_AzureBlobFsLocationFields = {
-    "dynamic_file_system_enabled": sdk.FieldSpec(wire_name="dynamic_file_system_enabled"),
-    "dynamic_filename_enabled": sdk.FieldSpec(wire_name="dynamic_filename_enabled"),
-    "dynamic_path_enabled": sdk.FieldSpec(wire_name="dynamic_path_enabled"),
-    "file_system": sdk.FieldSpec(wire_name="file_system"),
-    "filename": sdk.FieldSpec(wire_name="filename"),
-    "path": sdk.FieldSpec(wire_name="path"),
+    "dynamic_file_system_enabled": ubx.FieldSpec(wire_name="dynamic_file_system_enabled"),
+    "dynamic_filename_enabled": ubx.FieldSpec(wire_name="dynamic_filename_enabled"),
+    "dynamic_path_enabled": ubx.FieldSpec(wire_name="dynamic_path_enabled"),
+    "file_system": ubx.FieldSpec(wire_name="file_system"),
+    "filename": ubx.FieldSpec(wire_name="filename"),
+    "path": ubx.FieldSpec(wire_name="path"),
 }
 
 _FactoryDatasetDelimitedText_AzureBlobStorageLocationFields = {
-    "container": sdk.FieldSpec(wire_name="container"),
-    "dynamic_container_enabled": sdk.FieldSpec(wire_name="dynamic_container_enabled"),
-    "dynamic_filename_enabled": sdk.FieldSpec(wire_name="dynamic_filename_enabled"),
-    "dynamic_path_enabled": sdk.FieldSpec(wire_name="dynamic_path_enabled"),
-    "filename": sdk.FieldSpec(wire_name="filename"),
-    "path": sdk.FieldSpec(wire_name="path"),
+    "container": ubx.FieldSpec(wire_name="container"),
+    "dynamic_container_enabled": ubx.FieldSpec(wire_name="dynamic_container_enabled"),
+    "dynamic_filename_enabled": ubx.FieldSpec(wire_name="dynamic_filename_enabled"),
+    "dynamic_path_enabled": ubx.FieldSpec(wire_name="dynamic_path_enabled"),
+    "filename": ubx.FieldSpec(wire_name="filename"),
+    "path": ubx.FieldSpec(wire_name="path"),
 }
 
 _FactoryDatasetDelimitedText_HttpServerLocationFields = {
-    "dynamic_filename_enabled": sdk.FieldSpec(wire_name="dynamic_filename_enabled"),
-    "dynamic_path_enabled": sdk.FieldSpec(wire_name="dynamic_path_enabled"),
-    "filename": sdk.FieldSpec(wire_name="filename"),
-    "path": sdk.FieldSpec(wire_name="path"),
-    "relative_url": sdk.FieldSpec(wire_name="relative_url"),
+    "dynamic_filename_enabled": ubx.FieldSpec(wire_name="dynamic_filename_enabled"),
+    "dynamic_path_enabled": ubx.FieldSpec(wire_name="dynamic_path_enabled"),
+    "filename": ubx.FieldSpec(wire_name="filename"),
+    "path": ubx.FieldSpec(wire_name="path"),
+    "relative_url": ubx.FieldSpec(wire_name="relative_url"),
 }
 
 _FactoryDatasetDelimitedText_SchemaColumnFields = {
-    "description": sdk.FieldSpec(wire_name="description"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _FactoryDatasetDelimitedText_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -110,48 +110,48 @@ class FactoryDatasetDelimitedTextConfig:
     schema_column: Any = None
     timeouts: Any = None
 
-FactoryDatasetDelimitedText = sdk.ResourceBinding(
+FactoryDatasetDelimitedText = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_dataset_delimited_text",
     fields={
-        "additional_properties": sdk.FieldSpec(wire_name="additional_properties"),
-        "annotations": sdk.FieldSpec(wire_name="annotations"),
-        "column_delimiter": sdk.FieldSpec(wire_name="column_delimiter"),
-        "compression_codec": sdk.FieldSpec(wire_name="compression_codec"),
-        "compression_level": sdk.FieldSpec(wire_name="compression_level"),
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "encoding": sdk.FieldSpec(wire_name="encoding"),
-        "escape_character": sdk.FieldSpec(wire_name="escape_character"),
-        "first_row_as_header": sdk.FieldSpec(wire_name="first_row_as_header"),
-        "folder": sdk.FieldSpec(wire_name="folder"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "linked_service_name": sdk.FieldSpec(wire_name="linked_service_name"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "null_value": sdk.FieldSpec(wire_name="null_value"),
-        "parameters": sdk.FieldSpec(wire_name="parameters"),
-        "quote_character": sdk.FieldSpec(wire_name="quote_character"),
-        "row_delimiter": sdk.FieldSpec(wire_name="row_delimiter"),
-        "azure_blob_fs_location": sdk.FieldSpec(
+        "additional_properties": ubx.FieldSpec(wire_name="additional_properties"),
+        "annotations": ubx.FieldSpec(wire_name="annotations"),
+        "column_delimiter": ubx.FieldSpec(wire_name="column_delimiter"),
+        "compression_codec": ubx.FieldSpec(wire_name="compression_codec"),
+        "compression_level": ubx.FieldSpec(wire_name="compression_level"),
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "encoding": ubx.FieldSpec(wire_name="encoding"),
+        "escape_character": ubx.FieldSpec(wire_name="escape_character"),
+        "first_row_as_header": ubx.FieldSpec(wire_name="first_row_as_header"),
+        "folder": ubx.FieldSpec(wire_name="folder"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "linked_service_name": ubx.FieldSpec(wire_name="linked_service_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "null_value": ubx.FieldSpec(wire_name="null_value"),
+        "parameters": ubx.FieldSpec(wire_name="parameters"),
+        "quote_character": ubx.FieldSpec(wire_name="quote_character"),
+        "row_delimiter": ubx.FieldSpec(wire_name="row_delimiter"),
+        "azure_blob_fs_location": ubx.FieldSpec(
             wire_name="azure_blob_fs_location",
             kind="list",
             fields=_FactoryDatasetDelimitedText_AzureBlobFsLocationFields,
         ),
-        "azure_blob_storage_location": sdk.FieldSpec(
+        "azure_blob_storage_location": ubx.FieldSpec(
             wire_name="azure_blob_storage_location",
             kind="list",
             fields=_FactoryDatasetDelimitedText_AzureBlobStorageLocationFields,
         ),
-        "http_server_location": sdk.FieldSpec(
+        "http_server_location": ubx.FieldSpec(
             wire_name="http_server_location",
             kind="list",
             fields=_FactoryDatasetDelimitedText_HttpServerLocationFields,
         ),
-        "schema_column": sdk.FieldSpec(
+        "schema_column": ubx.FieldSpec(
             wire_name="schema_column",
             kind="list",
             fields=_FactoryDatasetDelimitedText_SchemaColumnFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryDatasetDelimitedText_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RoleAssignment_Timeouts:
@@ -13,9 +13,9 @@ class RoleAssignment_Timeouts:
     read: Any = None
 
 _RoleAssignment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -28,16 +28,16 @@ class RoleAssignmentConfig:
     synapse_workspace_id: Any = None
     timeouts: Any = None
 
-RoleAssignment = sdk.ResourceBinding(
+RoleAssignment = ubx.ResourceBinding(
     wire_type="azurerm_synapse_role_assignment",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-        "principal_type": sdk.FieldSpec(wire_name="principal_type"),
-        "role_name": sdk.FieldSpec(wire_name="role_name"),
-        "synapse_spark_pool_id": sdk.FieldSpec(wire_name="synapse_spark_pool_id"),
-        "synapse_workspace_id": sdk.FieldSpec(wire_name="synapse_workspace_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+        "principal_type": ubx.FieldSpec(wire_name="principal_type"),
+        "role_name": ubx.FieldSpec(wire_name="role_name"),
+        "synapse_spark_pool_id": ubx.FieldSpec(wire_name="synapse_spark_pool_id"),
+        "synapse_workspace_id": ubx.FieldSpec(wire_name="synapse_workspace_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RoleAssignment_TimeoutsFields,

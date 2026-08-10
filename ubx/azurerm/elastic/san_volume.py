@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SanVolume_CreateSource:
@@ -19,15 +19,15 @@ class SanVolume_Timeouts:
     update: Any = None
 
 _SanVolume_CreateSourceFields = {
-    "source_id": sdk.FieldSpec(wire_name="source_id"),
-    "source_type": sdk.FieldSpec(wire_name="source_type"),
+    "source_id": ubx.FieldSpec(wire_name="source_id"),
+    "source_type": ubx.FieldSpec(wire_name="source_type"),
 }
 
 _SanVolume_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -39,19 +39,19 @@ class SanVolumeConfig:
     create_source: Any = None
     timeouts: Any = None
 
-SanVolume = sdk.ResourceBinding(
+SanVolume = ubx.ResourceBinding(
     wire_type="azurerm_elastic_san_volume",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "size_in_gib": sdk.FieldSpec(wire_name="size_in_gib"),
-        "volume_group_id": sdk.FieldSpec(wire_name="volume_group_id"),
-        "create_source": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "size_in_gib": ubx.FieldSpec(wire_name="size_in_gib"),
+        "volume_group_id": ubx.FieldSpec(wire_name="volume_group_id"),
+        "create_source": ubx.FieldSpec(
             wire_name="create_source",
             kind="list",
             fields=_SanVolume_CreateSourceFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SanVolume_TimeoutsFields,

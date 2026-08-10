@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementWorkspaceNamedValue_Timeouts:
@@ -19,15 +19,15 @@ class ManagementWorkspaceNamedValue_ValueFromKeyVault:
     secret_id: Any = None
 
 _ManagementWorkspaceNamedValue_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _ManagementWorkspaceNamedValue_ValueFromKeyVaultFields = {
-    "identity_client_id": sdk.FieldSpec(wire_name="identity_client_id"),
-    "secret_id": sdk.FieldSpec(wire_name="secret_id"),
+    "identity_client_id": ubx.FieldSpec(wire_name="identity_client_id"),
+    "secret_id": ubx.FieldSpec(wire_name="secret_id"),
 }
 
 @dataclasses.dataclass
@@ -42,22 +42,22 @@ class ManagementWorkspaceNamedValueConfig:
     timeouts: Any = None
     value_from_key_vault: Any = None
 
-ManagementWorkspaceNamedValue = sdk.ResourceBinding(
+ManagementWorkspaceNamedValue = ubx.ResourceBinding(
     wire_type="azurerm_api_management_workspace_named_value",
     fields={
-        "api_management_workspace_id": sdk.FieldSpec(wire_name="api_management_workspace_id"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "secret": sdk.FieldSpec(wire_name="secret"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "value": sdk.FieldSpec(wire_name="value"),
-        "timeouts": sdk.FieldSpec(
+        "api_management_workspace_id": ubx.FieldSpec(wire_name="api_management_workspace_id"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "secret": ubx.FieldSpec(wire_name="secret"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "value": ubx.FieldSpec(wire_name="value"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementWorkspaceNamedValue_TimeoutsFields,
         ),
-        "value_from_key_vault": sdk.FieldSpec(
+        "value_from_key_vault": ubx.FieldSpec(
             wire_name="value_from_key_vault",
             kind="list",
             fields=_ManagementWorkspaceNamedValue_ValueFromKeyVaultFields,

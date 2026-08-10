@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Foundry_Encryption:
@@ -31,27 +31,27 @@ class Foundry_Timeouts:
     update: Any = None
 
 _Foundry_EncryptionFields = {
-    "key_id": sdk.FieldSpec(wire_name="key_id"),
-    "key_vault_id": sdk.FieldSpec(wire_name="key_vault_id"),
-    "user_assigned_identity_id": sdk.FieldSpec(wire_name="user_assigned_identity_id"),
+    "key_id": ubx.FieldSpec(wire_name="key_id"),
+    "key_vault_id": ubx.FieldSpec(wire_name="key_vault_id"),
+    "user_assigned_identity_id": ubx.FieldSpec(wire_name="user_assigned_identity_id"),
 }
 
 _Foundry_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Foundry_ManagedNetworkFields = {
-    "isolation_mode": sdk.FieldSpec(wire_name="isolation_mode"),
+    "isolation_mode": ubx.FieldSpec(wire_name="isolation_mode"),
 }
 
 _Foundry_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -75,39 +75,39 @@ class FoundryConfig:
     managed_network: Any = None
     timeouts: Any = None
 
-Foundry = sdk.ResourceBinding(
+Foundry = ubx.ResourceBinding(
     wire_type="azurerm_ai_foundry",
     fields={
-        "application_insights_id": sdk.FieldSpec(wire_name="application_insights_id"),
-        "container_registry_id": sdk.FieldSpec(wire_name="container_registry_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "friendly_name": sdk.FieldSpec(wire_name="friendly_name"),
-        "high_business_impact_enabled": sdk.FieldSpec(wire_name="high_business_impact_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "key_vault_id": sdk.FieldSpec(wire_name="key_vault_id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "primary_user_assigned_identity": sdk.FieldSpec(wire_name="primary_user_assigned_identity"),
-        "public_network_access": sdk.FieldSpec(wire_name="public_network_access"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "encryption": sdk.FieldSpec(
+        "application_insights_id": ubx.FieldSpec(wire_name="application_insights_id"),
+        "container_registry_id": ubx.FieldSpec(wire_name="container_registry_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "friendly_name": ubx.FieldSpec(wire_name="friendly_name"),
+        "high_business_impact_enabled": ubx.FieldSpec(wire_name="high_business_impact_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "key_vault_id": ubx.FieldSpec(wire_name="key_vault_id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "primary_user_assigned_identity": ubx.FieldSpec(wire_name="primary_user_assigned_identity"),
+        "public_network_access": ubx.FieldSpec(wire_name="public_network_access"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "encryption": ubx.FieldSpec(
             wire_name="encryption",
             kind="list",
             fields=_Foundry_EncryptionFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Foundry_IdentityFields,
         ),
-        "managed_network": sdk.FieldSpec(
+        "managed_network": ubx.FieldSpec(
             wire_name="managed_network",
             kind="list",
             fields=_Foundry_ManagedNetworkFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Foundry_TimeoutsFields,

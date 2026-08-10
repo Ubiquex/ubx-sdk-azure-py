@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Application_Timeouts:
@@ -14,10 +14,10 @@ class Application_Timeouts:
     update: Any = None
 
 _Application_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -35,21 +35,21 @@ class ApplicationConfig:
     tags: Any = None
     timeouts: Any = None
 
-Application = sdk.ResourceBinding(
+Application = ubx.ResourceBinding(
     wire_type="azurerm_gallery_application",
     fields={
-        "description": sdk.FieldSpec(wire_name="description"),
-        "end_of_life_date": sdk.FieldSpec(wire_name="end_of_life_date"),
-        "eula": sdk.FieldSpec(wire_name="eula"),
-        "gallery_id": sdk.FieldSpec(wire_name="gallery_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "privacy_statement_uri": sdk.FieldSpec(wire_name="privacy_statement_uri"),
-        "release_note_uri": sdk.FieldSpec(wire_name="release_note_uri"),
-        "supported_os_type": sdk.FieldSpec(wire_name="supported_os_type"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "description": ubx.FieldSpec(wire_name="description"),
+        "end_of_life_date": ubx.FieldSpec(wire_name="end_of_life_date"),
+        "eula": ubx.FieldSpec(wire_name="eula"),
+        "gallery_id": ubx.FieldSpec(wire_name="gallery_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "privacy_statement_uri": ubx.FieldSpec(wire_name="privacy_statement_uri"),
+        "release_note_uri": ubx.FieldSpec(wire_name="release_note_uri"),
+        "supported_os_type": ubx.FieldSpec(wire_name="supported_os_type"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Application_TimeoutsFields,

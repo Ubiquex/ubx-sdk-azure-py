@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Deployment_AutoScaleProfile:
@@ -63,66 +63,66 @@ class Deployment_WebApplicationFirewall:
     status: Any = None
 
 _Deployment_AutoScaleProfileFields = {
-    "max_capacity": sdk.FieldSpec(wire_name="max_capacity"),
-    "min_capacity": sdk.FieldSpec(wire_name="min_capacity"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "max_capacity": ubx.FieldSpec(wire_name="max_capacity"),
+    "min_capacity": ubx.FieldSpec(wire_name="min_capacity"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _Deployment_FrontendPrivateFields = {
-    "allocation_method": sdk.FieldSpec(wire_name="allocation_method"),
-    "ip_address": sdk.FieldSpec(wire_name="ip_address"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "allocation_method": ubx.FieldSpec(wire_name="allocation_method"),
+    "ip_address": ubx.FieldSpec(wire_name="ip_address"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _Deployment_FrontendPublicFields = {
-    "ip_address": sdk.FieldSpec(wire_name="ip_address"),
+    "ip_address": ubx.FieldSpec(wire_name="ip_address"),
 }
 
 _Deployment_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Deployment_NetworkInterfaceFields = {
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _Deployment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _Deployment_WebApplicationFirewall_Status_AttackSignaturesPackageFields = {
-    "revision_datetime": sdk.FieldSpec(wire_name="revision_datetime"),
-    "version": sdk.FieldSpec(wire_name="version"),
+    "revision_datetime": ubx.FieldSpec(wire_name="revision_datetime"),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _Deployment_WebApplicationFirewall_Status_ComponentVersionsFields = {
-    "waf_engine_version": sdk.FieldSpec(wire_name="waf_engine_version"),
-    "waf_nginx_version": sdk.FieldSpec(wire_name="waf_nginx_version"),
+    "waf_engine_version": ubx.FieldSpec(wire_name="waf_engine_version"),
+    "waf_nginx_version": ubx.FieldSpec(wire_name="waf_nginx_version"),
 }
 
 _Deployment_WebApplicationFirewall_StatusFields = {
-    "attack_signatures_package": sdk.FieldSpec(
+    "attack_signatures_package": ubx.FieldSpec(
         wire_name="attack_signatures_package",
         kind="list",
         fields=_Deployment_WebApplicationFirewall_Status_AttackSignaturesPackageFields,
     ),
-    "bot_signatures_package": sdk.FieldSpec(
+    "bot_signatures_package": ubx.FieldSpec(
         wire_name="bot_signatures_package",
         kind="list",
         fields=_Deployment_WebApplicationFirewall_Status_AttackSignaturesPackageFields,
     ),
-    "component_versions": sdk.FieldSpec(
+    "component_versions": ubx.FieldSpec(
         wire_name="component_versions",
         kind="list",
         fields=_Deployment_WebApplicationFirewall_Status_ComponentVersionsFields,
     ),
-    "threat_campaigns_package": sdk.FieldSpec(
+    "threat_campaigns_package": ubx.FieldSpec(
         wire_name="threat_campaigns_package",
         kind="list",
         fields=_Deployment_WebApplicationFirewall_Status_AttackSignaturesPackageFields,
@@ -130,8 +130,8 @@ _Deployment_WebApplicationFirewall_StatusFields = {
 }
 
 _Deployment_WebApplicationFirewallFields = {
-    "activation_state_enabled": sdk.FieldSpec(wire_name="activation_state_enabled"),
-    "status": sdk.FieldSpec(
+    "activation_state_enabled": ubx.FieldSpec(wire_name="activation_state_enabled"),
+    "status": ubx.FieldSpec(
         wire_name="status",
         kind="list",
         fields=_Deployment_WebApplicationFirewall_StatusFields,
@@ -157,49 +157,49 @@ class DeploymentConfig:
     timeouts: Any = None
     web_application_firewall: Any = None
 
-Deployment = sdk.ResourceBinding(
+Deployment = ubx.ResourceBinding(
     wire_type="azurerm_nginx_deployment",
     fields={
-        "automatic_upgrade_channel": sdk.FieldSpec(wire_name="automatic_upgrade_channel"),
-        "capacity": sdk.FieldSpec(wire_name="capacity"),
-        "email": sdk.FieldSpec(wire_name="email"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "auto_scale_profile": sdk.FieldSpec(
+        "automatic_upgrade_channel": ubx.FieldSpec(wire_name="automatic_upgrade_channel"),
+        "capacity": ubx.FieldSpec(wire_name="capacity"),
+        "email": ubx.FieldSpec(wire_name="email"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "auto_scale_profile": ubx.FieldSpec(
             wire_name="auto_scale_profile",
             kind="list",
             fields=_Deployment_AutoScaleProfileFields,
         ),
-        "frontend_private": sdk.FieldSpec(
+        "frontend_private": ubx.FieldSpec(
             wire_name="frontend_private",
             kind="list",
             fields=_Deployment_FrontendPrivateFields,
         ),
-        "frontend_public": sdk.FieldSpec(
+        "frontend_public": ubx.FieldSpec(
             wire_name="frontend_public",
             kind="list",
             fields=_Deployment_FrontendPublicFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Deployment_IdentityFields,
         ),
-        "network_interface": sdk.FieldSpec(
+        "network_interface": ubx.FieldSpec(
             wire_name="network_interface",
             kind="list",
             fields=_Deployment_NetworkInterfaceFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Deployment_TimeoutsFields,
         ),
-        "web_application_firewall": sdk.FieldSpec(
+        "web_application_firewall": ubx.FieldSpec(
             wire_name="web_application_firewall",
             kind="list",
             fields=_Deployment_WebApplicationFirewallFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class NamespaceCustomerManagedKey_Timeouts:
@@ -14,10 +14,10 @@ class NamespaceCustomerManagedKey_Timeouts:
     update: Any = None
 
 _NamespaceCustomerManagedKey_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class NamespaceCustomerManagedKeyConfig:
     user_assigned_identity_id: Any = None
     timeouts: Any = None
 
-NamespaceCustomerManagedKey = sdk.ResourceBinding(
+NamespaceCustomerManagedKey = ubx.ResourceBinding(
     wire_type="azurerm_eventhub_namespace_customer_managed_key",
     fields={
-        "eventhub_namespace_id": sdk.FieldSpec(wire_name="eventhub_namespace_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "infrastructure_encryption_enabled": sdk.FieldSpec(wire_name="infrastructure_encryption_enabled"),
-        "key_vault_key_ids": sdk.FieldSpec(wire_name="key_vault_key_ids"),
-        "user_assigned_identity_id": sdk.FieldSpec(wire_name="user_assigned_identity_id"),
-        "timeouts": sdk.FieldSpec(
+        "eventhub_namespace_id": ubx.FieldSpec(wire_name="eventhub_namespace_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "infrastructure_encryption_enabled": ubx.FieldSpec(wire_name="infrastructure_encryption_enabled"),
+        "key_vault_key_ids": ubx.FieldSpec(wire_name="key_vault_key_ids"),
+        "user_assigned_identity_id": ubx.FieldSpec(wire_name="user_assigned_identity_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_NamespaceCustomerManagedKey_TimeoutsFields,

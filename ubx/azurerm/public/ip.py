@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Ip_Timeouts:
@@ -14,10 +14,10 @@ class Ip_Timeouts:
     update: Any = None
 
 _Ip_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -43,29 +43,29 @@ class IpConfig:
     zones: Any = None
     timeouts: Any = None
 
-Ip = sdk.ResourceBinding(
+Ip = ubx.ResourceBinding(
     wire_type="azurerm_public_ip",
     fields={
-        "allocation_method": sdk.FieldSpec(wire_name="allocation_method"),
-        "ddos_protection_mode": sdk.FieldSpec(wire_name="ddos_protection_mode"),
-        "ddos_protection_plan_id": sdk.FieldSpec(wire_name="ddos_protection_plan_id"),
-        "domain_name_label": sdk.FieldSpec(wire_name="domain_name_label"),
-        "domain_name_label_scope": sdk.FieldSpec(wire_name="domain_name_label_scope"),
-        "edge_zone": sdk.FieldSpec(wire_name="edge_zone"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "idle_timeout_in_minutes": sdk.FieldSpec(wire_name="idle_timeout_in_minutes"),
-        "ip_tags": sdk.FieldSpec(wire_name="ip_tags"),
-        "ip_version": sdk.FieldSpec(wire_name="ip_version"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_ip_prefix_id": sdk.FieldSpec(wire_name="public_ip_prefix_id"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "reverse_fqdn": sdk.FieldSpec(wire_name="reverse_fqdn"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "sku_tier": sdk.FieldSpec(wire_name="sku_tier"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "zones": sdk.FieldSpec(wire_name="zones"),
-        "timeouts": sdk.FieldSpec(
+        "allocation_method": ubx.FieldSpec(wire_name="allocation_method"),
+        "ddos_protection_mode": ubx.FieldSpec(wire_name="ddos_protection_mode"),
+        "ddos_protection_plan_id": ubx.FieldSpec(wire_name="ddos_protection_plan_id"),
+        "domain_name_label": ubx.FieldSpec(wire_name="domain_name_label"),
+        "domain_name_label_scope": ubx.FieldSpec(wire_name="domain_name_label_scope"),
+        "edge_zone": ubx.FieldSpec(wire_name="edge_zone"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "idle_timeout_in_minutes": ubx.FieldSpec(wire_name="idle_timeout_in_minutes"),
+        "ip_tags": ubx.FieldSpec(wire_name="ip_tags"),
+        "ip_version": ubx.FieldSpec(wire_name="ip_version"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_ip_prefix_id": ubx.FieldSpec(wire_name="public_ip_prefix_id"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "reverse_fqdn": ubx.FieldSpec(wire_name="reverse_fqdn"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "sku_tier": ubx.FieldSpec(wire_name="sku_tier"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "zones": ubx.FieldSpec(wire_name="zones"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Ip_TimeoutsFields,

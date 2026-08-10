@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ExascaleDatabaseStorageVault_HighCapacityDatabaseStorage:
@@ -19,15 +19,15 @@ class ExascaleDatabaseStorageVault_Timeouts:
     update: Any = None
 
 _ExascaleDatabaseStorageVault_HighCapacityDatabaseStorageFields = {
-    "available_size_in_gb": sdk.FieldSpec(wire_name="available_size_in_gb"),
-    "total_size_in_gb": sdk.FieldSpec(wire_name="total_size_in_gb"),
+    "available_size_in_gb": ubx.FieldSpec(wire_name="available_size_in_gb"),
+    "total_size_in_gb": ubx.FieldSpec(wire_name="total_size_in_gb"),
 }
 
 _ExascaleDatabaseStorageVault_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -45,25 +45,25 @@ class ExascaleDatabaseStorageVaultConfig:
     high_capacity_database_storage: Any = None
     timeouts: Any = None
 
-ExascaleDatabaseStorageVault = sdk.ResourceBinding(
+ExascaleDatabaseStorageVault = ubx.ResourceBinding(
     wire_type="azurerm_oracle_exascale_database_storage_vault",
     fields={
-        "additional_flash_cache_percentage": sdk.FieldSpec(wire_name="additional_flash_cache_percentage"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "time_zone": sdk.FieldSpec(wire_name="time_zone"),
-        "zones": sdk.FieldSpec(wire_name="zones"),
-        "high_capacity_database_storage": sdk.FieldSpec(
+        "additional_flash_cache_percentage": ubx.FieldSpec(wire_name="additional_flash_cache_percentage"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "time_zone": ubx.FieldSpec(wire_name="time_zone"),
+        "zones": ubx.FieldSpec(wire_name="zones"),
+        "high_capacity_database_storage": ubx.FieldSpec(
             wire_name="high_capacity_database_storage",
             kind="list",
             fields=_ExascaleDatabaseStorageVault_HighCapacityDatabaseStorageFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ExascaleDatabaseStorageVault_TimeoutsFields,

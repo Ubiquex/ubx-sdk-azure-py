@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RouteCircuitAuthorization_Timeouts:
@@ -13,9 +13,9 @@ class RouteCircuitAuthorization_Timeouts:
     read: Any = None
 
 _RouteCircuitAuthorization_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -26,14 +26,14 @@ class RouteCircuitAuthorizationConfig:
     resource_group_name: Any = None
     timeouts: Any = None
 
-RouteCircuitAuthorization = sdk.ResourceBinding(
+RouteCircuitAuthorization = ubx.ResourceBinding(
     wire_type="azurerm_express_route_circuit_authorization",
     fields={
-        "express_route_circuit_name": sdk.FieldSpec(wire_name="express_route_circuit_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "timeouts": sdk.FieldSpec(
+        "express_route_circuit_name": ubx.FieldSpec(wire_name="express_route_circuit_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RouteCircuitAuthorization_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CommunicationServiceDomain_Timeouts:
@@ -14,10 +14,10 @@ class CommunicationServiceDomain_Timeouts:
     update: Any = None
 
 _CommunicationServiceDomain_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class CommunicationServiceDomainConfig:
     user_engagement_tracking_enabled: Any = None
     timeouts: Any = None
 
-CommunicationServiceDomain = sdk.ResourceBinding(
+CommunicationServiceDomain = ubx.ResourceBinding(
     wire_type="azurerm_email_communication_service_domain",
     fields={
-        "domain_management": sdk.FieldSpec(wire_name="domain_management"),
-        "email_service_id": sdk.FieldSpec(wire_name="email_service_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "user_engagement_tracking_enabled": sdk.FieldSpec(wire_name="user_engagement_tracking_enabled"),
-        "timeouts": sdk.FieldSpec(
+        "domain_management": ubx.FieldSpec(wire_name="domain_management"),
+        "email_service_id": ubx.FieldSpec(wire_name="email_service_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "user_engagement_tracking_enabled": ubx.FieldSpec(wire_name="user_engagement_tracking_enabled"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CommunicationServiceDomain_TimeoutsFields,

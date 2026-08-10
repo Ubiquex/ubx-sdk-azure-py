@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Watchlist_Timeouts:
@@ -13,9 +13,9 @@ class Watchlist_Timeouts:
     read: Any = None
 
 _Watchlist_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -30,18 +30,18 @@ class WatchlistConfig:
     name: Any = None
     timeouts: Any = None
 
-Watchlist = sdk.ResourceBinding(
+Watchlist = ubx.ResourceBinding(
     wire_type="azurerm_sentinel_watchlist",
     fields={
-        "default_duration": sdk.FieldSpec(wire_name="default_duration"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "item_search_key": sdk.FieldSpec(wire_name="item_search_key"),
-        "labels": sdk.FieldSpec(wire_name="labels"),
-        "log_analytics_workspace_id": sdk.FieldSpec(wire_name="log_analytics_workspace_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "timeouts": sdk.FieldSpec(
+        "default_duration": ubx.FieldSpec(wire_name="default_duration"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "item_search_key": ubx.FieldSpec(wire_name="item_search_key"),
+        "labels": ubx.FieldSpec(wire_name="labels"),
+        "log_analytics_workspace_id": ubx.FieldSpec(wire_name="log_analytics_workspace_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Watchlist_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DscConfiguration_Timeouts:
@@ -14,10 +14,10 @@ class DscConfiguration_Timeouts:
     update: Any = None
 
 _DscConfiguration_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -33,19 +33,19 @@ class DscConfigurationConfig:
     tags: Any = None
     timeouts: Any = None
 
-DscConfiguration = sdk.ResourceBinding(
+DscConfiguration = ubx.ResourceBinding(
     wire_type="azurerm_automation_dsc_configuration",
     fields={
-        "automation_account_name": sdk.FieldSpec(wire_name="automation_account_name"),
-        "content_embedded": sdk.FieldSpec(wire_name="content_embedded"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "log_verbose": sdk.FieldSpec(wire_name="log_verbose"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "automation_account_name": ubx.FieldSpec(wire_name="automation_account_name"),
+        "content_embedded": ubx.FieldSpec(wire_name="content_embedded"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "log_verbose": ubx.FieldSpec(wire_name="log_verbose"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DscConfiguration_TimeoutsFields,

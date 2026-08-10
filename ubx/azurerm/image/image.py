@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Image_DataDisk:
@@ -35,31 +35,31 @@ class Image_Timeouts:
     update: Any = None
 
 _Image_DataDiskFields = {
-    "blob_uri": sdk.FieldSpec(wire_name="blob_uri"),
-    "caching": sdk.FieldSpec(wire_name="caching"),
-    "disk_encryption_set_id": sdk.FieldSpec(wire_name="disk_encryption_set_id"),
-    "lun": sdk.FieldSpec(wire_name="lun"),
-    "managed_disk_id": sdk.FieldSpec(wire_name="managed_disk_id"),
-    "size_gb": sdk.FieldSpec(wire_name="size_gb"),
-    "storage_type": sdk.FieldSpec(wire_name="storage_type"),
+    "blob_uri": ubx.FieldSpec(wire_name="blob_uri"),
+    "caching": ubx.FieldSpec(wire_name="caching"),
+    "disk_encryption_set_id": ubx.FieldSpec(wire_name="disk_encryption_set_id"),
+    "lun": ubx.FieldSpec(wire_name="lun"),
+    "managed_disk_id": ubx.FieldSpec(wire_name="managed_disk_id"),
+    "size_gb": ubx.FieldSpec(wire_name="size_gb"),
+    "storage_type": ubx.FieldSpec(wire_name="storage_type"),
 }
 
 _Image_OsDiskFields = {
-    "blob_uri": sdk.FieldSpec(wire_name="blob_uri"),
-    "caching": sdk.FieldSpec(wire_name="caching"),
-    "disk_encryption_set_id": sdk.FieldSpec(wire_name="disk_encryption_set_id"),
-    "managed_disk_id": sdk.FieldSpec(wire_name="managed_disk_id"),
-    "os_state": sdk.FieldSpec(wire_name="os_state"),
-    "os_type": sdk.FieldSpec(wire_name="os_type"),
-    "size_gb": sdk.FieldSpec(wire_name="size_gb"),
-    "storage_type": sdk.FieldSpec(wire_name="storage_type"),
+    "blob_uri": ubx.FieldSpec(wire_name="blob_uri"),
+    "caching": ubx.FieldSpec(wire_name="caching"),
+    "disk_encryption_set_id": ubx.FieldSpec(wire_name="disk_encryption_set_id"),
+    "managed_disk_id": ubx.FieldSpec(wire_name="managed_disk_id"),
+    "os_state": ubx.FieldSpec(wire_name="os_state"),
+    "os_type": ubx.FieldSpec(wire_name="os_type"),
+    "size_gb": ubx.FieldSpec(wire_name="size_gb"),
+    "storage_type": ubx.FieldSpec(wire_name="storage_type"),
 }
 
 _Image_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -76,28 +76,28 @@ class ImageConfig:
     os_disk: Any = None
     timeouts: Any = None
 
-Image = sdk.ResourceBinding(
+Image = ubx.ResourceBinding(
     wire_type="azurerm_image",
     fields={
-        "hyper_v_generation": sdk.FieldSpec(wire_name="hyper_v_generation"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "source_virtual_machine_id": sdk.FieldSpec(wire_name="source_virtual_machine_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "zone_resilient": sdk.FieldSpec(wire_name="zone_resilient"),
-        "data_disk": sdk.FieldSpec(
+        "hyper_v_generation": ubx.FieldSpec(wire_name="hyper_v_generation"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "source_virtual_machine_id": ubx.FieldSpec(wire_name="source_virtual_machine_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "zone_resilient": ubx.FieldSpec(wire_name="zone_resilient"),
+        "data_disk": ubx.FieldSpec(
             wire_name="data_disk",
             kind="list",
             fields=_Image_DataDiskFields,
         ),
-        "os_disk": sdk.FieldSpec(
+        "os_disk": ubx.FieldSpec(
             wire_name="os_disk",
             kind="list",
             fields=_Image_OsDiskFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Image_TimeoutsFields,

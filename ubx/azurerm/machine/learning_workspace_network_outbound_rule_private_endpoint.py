@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LearningWorkspaceNetworkOutboundRulePrivateEndpoint_Timeouts:
@@ -13,9 +13,9 @@ class LearningWorkspaceNetworkOutboundRulePrivateEndpoint_Timeouts:
     read: Any = None
 
 _LearningWorkspaceNetworkOutboundRulePrivateEndpoint_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -28,16 +28,16 @@ class LearningWorkspaceNetworkOutboundRulePrivateEndpointConfig:
     workspace_id: Any = None
     timeouts: Any = None
 
-LearningWorkspaceNetworkOutboundRulePrivateEndpoint = sdk.ResourceBinding(
+LearningWorkspaceNetworkOutboundRulePrivateEndpoint = ubx.ResourceBinding(
     wire_type="azurerm_machine_learning_workspace_network_outbound_rule_private_endpoint",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "service_resource_id": sdk.FieldSpec(wire_name="service_resource_id"),
-        "spark_enabled": sdk.FieldSpec(wire_name="spark_enabled"),
-        "sub_resource_target": sdk.FieldSpec(wire_name="sub_resource_target"),
-        "workspace_id": sdk.FieldSpec(wire_name="workspace_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "service_resource_id": ubx.FieldSpec(wire_name="service_resource_id"),
+        "spark_enabled": ubx.FieldSpec(wire_name="spark_enabled"),
+        "sub_resource_target": ubx.FieldSpec(wire_name="sub_resource_target"),
+        "workspace_id": ubx.FieldSpec(wire_name="workspace_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_LearningWorkspaceNetworkOutboundRulePrivateEndpoint_TimeoutsFields,

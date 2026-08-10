@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AltoLocalRulestackOutboundUntrustCertificateAssociation_Timeouts:
@@ -13,9 +13,9 @@ class AltoLocalRulestackOutboundUntrustCertificateAssociation_Timeouts:
     read: Any = None
 
 _AltoLocalRulestackOutboundUntrustCertificateAssociation_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -24,12 +24,12 @@ class AltoLocalRulestackOutboundUntrustCertificateAssociationConfig:
     id: Any = None
     timeouts: Any = None
 
-AltoLocalRulestackOutboundUntrustCertificateAssociation = sdk.ResourceBinding(
+AltoLocalRulestackOutboundUntrustCertificateAssociation = ubx.ResourceBinding(
     wire_type="azurerm_palo_alto_local_rulestack_outbound_untrust_certificate_association",
     fields={
-        "certificate_id": sdk.FieldSpec(wire_name="certificate_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "timeouts": sdk.FieldSpec(
+        "certificate_id": ubx.FieldSpec(wire_name="certificate_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AltoLocalRulestackOutboundUntrustCertificateAssociation_TimeoutsFields,

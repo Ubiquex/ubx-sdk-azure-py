@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class StudioTarget_Timeouts:
@@ -13,9 +13,9 @@ class StudioTarget_Timeouts:
     read: Any = None
 
 _StudioTarget_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -26,14 +26,14 @@ class StudioTargetConfig:
     target_type: Any = None
     timeouts: Any = None
 
-StudioTarget = sdk.ResourceBinding(
+StudioTarget = ubx.ResourceBinding(
     wire_type="azurerm_chaos_studio_target",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "target_resource_id": sdk.FieldSpec(wire_name="target_resource_id"),
-        "target_type": sdk.FieldSpec(wire_name="target_type"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "target_resource_id": ubx.FieldSpec(wire_name="target_resource_id"),
+        "target_type": ubx.FieldSpec(wire_name="target_type"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_StudioTarget_TimeoutsFields,

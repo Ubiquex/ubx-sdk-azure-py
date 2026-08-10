@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RecoveryVmwareReplicationPolicy_Timeouts:
@@ -14,10 +14,10 @@ class RecoveryVmwareReplicationPolicy_Timeouts:
     update: Any = None
 
 _RecoveryVmwareReplicationPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class RecoveryVmwareReplicationPolicyConfig:
     recovery_vault_id: Any = None
     timeouts: Any = None
 
-RecoveryVmwareReplicationPolicy = sdk.ResourceBinding(
+RecoveryVmwareReplicationPolicy = ubx.ResourceBinding(
     wire_type="azurerm_site_recovery_vmware_replication_policy",
     fields={
-        "application_consistent_snapshot_frequency_in_minutes": sdk.FieldSpec(wire_name="application_consistent_snapshot_frequency_in_minutes"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "recovery_point_retention_in_minutes": sdk.FieldSpec(wire_name="recovery_point_retention_in_minutes"),
-        "recovery_vault_id": sdk.FieldSpec(wire_name="recovery_vault_id"),
-        "timeouts": sdk.FieldSpec(
+        "application_consistent_snapshot_frequency_in_minutes": ubx.FieldSpec(wire_name="application_consistent_snapshot_frequency_in_minutes"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "recovery_point_retention_in_minutes": ubx.FieldSpec(wire_name="recovery_point_retention_in_minutes"),
+        "recovery_vault_id": ubx.FieldSpec(wire_name="recovery_vault_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RecoveryVmwareReplicationPolicy_TimeoutsFields,

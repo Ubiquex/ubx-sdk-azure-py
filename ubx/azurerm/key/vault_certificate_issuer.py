@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VaultCertificateIssuer_Admin:
@@ -21,17 +21,17 @@ class VaultCertificateIssuer_Timeouts:
     update: Any = None
 
 _VaultCertificateIssuer_AdminFields = {
-    "email_address": sdk.FieldSpec(wire_name="email_address"),
-    "first_name": sdk.FieldSpec(wire_name="first_name"),
-    "last_name": sdk.FieldSpec(wire_name="last_name"),
-    "phone": sdk.FieldSpec(wire_name="phone"),
+    "email_address": ubx.FieldSpec(wire_name="email_address"),
+    "first_name": ubx.FieldSpec(wire_name="first_name"),
+    "last_name": ubx.FieldSpec(wire_name="last_name"),
+    "phone": ubx.FieldSpec(wire_name="phone"),
 }
 
 _VaultCertificateIssuer_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -46,22 +46,22 @@ class VaultCertificateIssuerConfig:
     admin: Any = None
     timeouts: Any = None
 
-VaultCertificateIssuer = sdk.ResourceBinding(
+VaultCertificateIssuer = ubx.ResourceBinding(
     wire_type="azurerm_key_vault_certificate_issuer",
     fields={
-        "account_id": sdk.FieldSpec(wire_name="account_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "key_vault_id": sdk.FieldSpec(wire_name="key_vault_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "org_id": sdk.FieldSpec(wire_name="org_id"),
-        "password": sdk.FieldSpec(wire_name="password"),
-        "provider_name": sdk.FieldSpec(wire_name="provider_name"),
-        "admin": sdk.FieldSpec(
+        "account_id": ubx.FieldSpec(wire_name="account_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "key_vault_id": ubx.FieldSpec(wire_name="key_vault_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "org_id": ubx.FieldSpec(wire_name="org_id"),
+        "password": ubx.FieldSpec(wire_name="password"),
+        "provider_name": ubx.FieldSpec(wire_name="provider_name"),
+        "admin": ubx.FieldSpec(
             wire_name="admin",
             kind="list",
             fields=_VaultCertificateIssuer_AdminFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_VaultCertificateIssuer_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class WorkspaceKey_Timeouts:
@@ -14,10 +14,10 @@ class WorkspaceKey_Timeouts:
     update: Any = None
 
 _WorkspaceKey_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class WorkspaceKeyConfig:
     synapse_workspace_id: Any = None
     timeouts: Any = None
 
-WorkspaceKey = sdk.ResourceBinding(
+WorkspaceKey = ubx.ResourceBinding(
     wire_type="azurerm_synapse_workspace_key",
     fields={
-        "active": sdk.FieldSpec(wire_name="active"),
-        "customer_managed_key_name": sdk.FieldSpec(wire_name="customer_managed_key_name"),
-        "customer_managed_key_versionless_id": sdk.FieldSpec(wire_name="customer_managed_key_versionless_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "synapse_workspace_id": sdk.FieldSpec(wire_name="synapse_workspace_id"),
-        "timeouts": sdk.FieldSpec(
+        "active": ubx.FieldSpec(wire_name="active"),
+        "customer_managed_key_name": ubx.FieldSpec(wire_name="customer_managed_key_name"),
+        "customer_managed_key_versionless_id": ubx.FieldSpec(wire_name="customer_managed_key_versionless_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "synapse_workspace_id": ubx.FieldSpec(wire_name="synapse_workspace_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_WorkspaceKey_TimeoutsFields,

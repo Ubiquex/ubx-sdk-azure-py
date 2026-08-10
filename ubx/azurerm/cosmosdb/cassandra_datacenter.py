@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CassandraDatacenter_Timeouts:
@@ -14,10 +14,10 @@ class CassandraDatacenter_Timeouts:
     update: Any = None
 
 _CassandraDatacenter_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -37,23 +37,23 @@ class CassandraDatacenterConfig:
     sku_name: Any = None
     timeouts: Any = None
 
-CassandraDatacenter = sdk.ResourceBinding(
+CassandraDatacenter = ubx.ResourceBinding(
     wire_type="azurerm_cosmosdb_cassandra_datacenter",
     fields={
-        "availability_zones_enabled": sdk.FieldSpec(wire_name="availability_zones_enabled"),
-        "backup_storage_customer_key_uri": sdk.FieldSpec(wire_name="backup_storage_customer_key_uri"),
-        "base64_encoded_yaml_fragment": sdk.FieldSpec(wire_name="base64_encoded_yaml_fragment"),
-        "cassandra_cluster_id": sdk.FieldSpec(wire_name="cassandra_cluster_id"),
-        "delegated_management_subnet_id": sdk.FieldSpec(wire_name="delegated_management_subnet_id"),
-        "disk_count": sdk.FieldSpec(wire_name="disk_count"),
-        "disk_sku": sdk.FieldSpec(wire_name="disk_sku"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "managed_disk_customer_key_uri": sdk.FieldSpec(wire_name="managed_disk_customer_key_uri"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "node_count": sdk.FieldSpec(wire_name="node_count"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "timeouts": sdk.FieldSpec(
+        "availability_zones_enabled": ubx.FieldSpec(wire_name="availability_zones_enabled"),
+        "backup_storage_customer_key_uri": ubx.FieldSpec(wire_name="backup_storage_customer_key_uri"),
+        "base64_encoded_yaml_fragment": ubx.FieldSpec(wire_name="base64_encoded_yaml_fragment"),
+        "cassandra_cluster_id": ubx.FieldSpec(wire_name="cassandra_cluster_id"),
+        "delegated_management_subnet_id": ubx.FieldSpec(wire_name="delegated_management_subnet_id"),
+        "disk_count": ubx.FieldSpec(wire_name="disk_count"),
+        "disk_sku": ubx.FieldSpec(wire_name="disk_sku"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "managed_disk_customer_key_uri": ubx.FieldSpec(wire_name="managed_disk_customer_key_uri"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "node_count": ubx.FieldSpec(wire_name="node_count"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CassandraDatacenter_TimeoutsFields,

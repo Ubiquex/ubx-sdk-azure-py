@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FleetUpdateStrategy_Stage_Group:
@@ -24,13 +24,13 @@ class FleetUpdateStrategy_Timeouts:
     update: Any = None
 
 _FleetUpdateStrategy_Stage_GroupFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _FleetUpdateStrategy_StageFields = {
-    "after_stage_wait_in_seconds": sdk.FieldSpec(wire_name="after_stage_wait_in_seconds"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "group": sdk.FieldSpec(
+    "after_stage_wait_in_seconds": ubx.FieldSpec(wire_name="after_stage_wait_in_seconds"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "group": ubx.FieldSpec(
         wire_name="group",
         kind="list",
         fields=_FleetUpdateStrategy_Stage_GroupFields,
@@ -38,10 +38,10 @@ _FleetUpdateStrategy_StageFields = {
 }
 
 _FleetUpdateStrategy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -52,18 +52,18 @@ class FleetUpdateStrategyConfig:
     stage: Any = None
     timeouts: Any = None
 
-FleetUpdateStrategy = sdk.ResourceBinding(
+FleetUpdateStrategy = ubx.ResourceBinding(
     wire_type="azurerm_kubernetes_fleet_update_strategy",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "kubernetes_fleet_manager_id": sdk.FieldSpec(wire_name="kubernetes_fleet_manager_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "stage": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "kubernetes_fleet_manager_id": ubx.FieldSpec(wire_name="kubernetes_fleet_manager_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "stage": ubx.FieldSpec(
             wire_name="stage",
             kind="list",
             fields=_FleetUpdateStrategy_StageFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FleetUpdateStrategy_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudConfigurationService_Repository:
@@ -29,25 +29,25 @@ class CloudConfigurationService_Timeouts:
     update: Any = None
 
 _CloudConfigurationService_RepositoryFields = {
-    "ca_certificate_id": sdk.FieldSpec(wire_name="ca_certificate_id"),
-    "host_key": sdk.FieldSpec(wire_name="host_key"),
-    "host_key_algorithm": sdk.FieldSpec(wire_name="host_key_algorithm"),
-    "label": sdk.FieldSpec(wire_name="label"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "password": sdk.FieldSpec(wire_name="password"),
-    "patterns": sdk.FieldSpec(wire_name="patterns"),
-    "private_key": sdk.FieldSpec(wire_name="private_key"),
-    "search_paths": sdk.FieldSpec(wire_name="search_paths"),
-    "strict_host_key_checking": sdk.FieldSpec(wire_name="strict_host_key_checking"),
-    "uri": sdk.FieldSpec(wire_name="uri"),
-    "username": sdk.FieldSpec(wire_name="username"),
+    "ca_certificate_id": ubx.FieldSpec(wire_name="ca_certificate_id"),
+    "host_key": ubx.FieldSpec(wire_name="host_key"),
+    "host_key_algorithm": ubx.FieldSpec(wire_name="host_key_algorithm"),
+    "label": ubx.FieldSpec(wire_name="label"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "password": ubx.FieldSpec(wire_name="password"),
+    "patterns": ubx.FieldSpec(wire_name="patterns"),
+    "private_key": ubx.FieldSpec(wire_name="private_key"),
+    "search_paths": ubx.FieldSpec(wire_name="search_paths"),
+    "strict_host_key_checking": ubx.FieldSpec(wire_name="strict_host_key_checking"),
+    "uri": ubx.FieldSpec(wire_name="uri"),
+    "username": ubx.FieldSpec(wire_name="username"),
 }
 
 _CloudConfigurationService_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -60,20 +60,20 @@ class CloudConfigurationServiceConfig:
     repository: Any = None
     timeouts: Any = None
 
-CloudConfigurationService = sdk.ResourceBinding(
+CloudConfigurationService = ubx.ResourceBinding(
     wire_type="azurerm_spring_cloud_configuration_service",
     fields={
-        "generation": sdk.FieldSpec(wire_name="generation"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "refresh_interval_in_seconds": sdk.FieldSpec(wire_name="refresh_interval_in_seconds"),
-        "spring_cloud_service_id": sdk.FieldSpec(wire_name="spring_cloud_service_id"),
-        "repository": sdk.FieldSpec(
+        "generation": ubx.FieldSpec(wire_name="generation"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "refresh_interval_in_seconds": ubx.FieldSpec(wire_name="refresh_interval_in_seconds"),
+        "spring_cloud_service_id": ubx.FieldSpec(wire_name="spring_cloud_service_id"),
+        "repository": ubx.FieldSpec(
             wire_name="repository",
             kind="list",
             fields=_CloudConfigurationService_RepositoryFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CloudConfigurationService_TimeoutsFields,

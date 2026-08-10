@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Workspace_AzureDevopsRepo:
@@ -46,42 +46,42 @@ class Workspace_Timeouts:
     update: Any = None
 
 _Workspace_AzureDevopsRepoFields = {
-    "account_name": sdk.FieldSpec(wire_name="account_name"),
-    "branch_name": sdk.FieldSpec(wire_name="branch_name"),
-    "last_commit_id": sdk.FieldSpec(wire_name="last_commit_id"),
-    "project_name": sdk.FieldSpec(wire_name="project_name"),
-    "repository_name": sdk.FieldSpec(wire_name="repository_name"),
-    "root_folder": sdk.FieldSpec(wire_name="root_folder"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
+    "account_name": ubx.FieldSpec(wire_name="account_name"),
+    "branch_name": ubx.FieldSpec(wire_name="branch_name"),
+    "last_commit_id": ubx.FieldSpec(wire_name="last_commit_id"),
+    "project_name": ubx.FieldSpec(wire_name="project_name"),
+    "repository_name": ubx.FieldSpec(wire_name="repository_name"),
+    "root_folder": ubx.FieldSpec(wire_name="root_folder"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
 }
 
 _Workspace_CustomerManagedKeyFields = {
-    "key_name": sdk.FieldSpec(wire_name="key_name"),
-    "key_versionless_id": sdk.FieldSpec(wire_name="key_versionless_id"),
-    "user_assigned_identity_id": sdk.FieldSpec(wire_name="user_assigned_identity_id"),
+    "key_name": ubx.FieldSpec(wire_name="key_name"),
+    "key_versionless_id": ubx.FieldSpec(wire_name="key_versionless_id"),
+    "user_assigned_identity_id": ubx.FieldSpec(wire_name="user_assigned_identity_id"),
 }
 
 _Workspace_GithubRepoFields = {
-    "account_name": sdk.FieldSpec(wire_name="account_name"),
-    "branch_name": sdk.FieldSpec(wire_name="branch_name"),
-    "git_url": sdk.FieldSpec(wire_name="git_url"),
-    "last_commit_id": sdk.FieldSpec(wire_name="last_commit_id"),
-    "repository_name": sdk.FieldSpec(wire_name="repository_name"),
-    "root_folder": sdk.FieldSpec(wire_name="root_folder"),
+    "account_name": ubx.FieldSpec(wire_name="account_name"),
+    "branch_name": ubx.FieldSpec(wire_name="branch_name"),
+    "git_url": ubx.FieldSpec(wire_name="git_url"),
+    "last_commit_id": ubx.FieldSpec(wire_name="last_commit_id"),
+    "repository_name": ubx.FieldSpec(wire_name="repository_name"),
+    "root_folder": ubx.FieldSpec(wire_name="root_folder"),
 }
 
 _Workspace_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Workspace_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -109,47 +109,47 @@ class WorkspaceConfig:
     identity: Any = None
     timeouts: Any = None
 
-Workspace = sdk.ResourceBinding(
+Workspace = ubx.ResourceBinding(
     wire_type="azurerm_synapse_workspace",
     fields={
-        "azuread_authentication_only": sdk.FieldSpec(wire_name="azuread_authentication_only"),
-        "compute_subnet_id": sdk.FieldSpec(wire_name="compute_subnet_id"),
-        "data_exfiltration_protection_enabled": sdk.FieldSpec(wire_name="data_exfiltration_protection_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "linking_allowed_for_aad_tenant_ids": sdk.FieldSpec(wire_name="linking_allowed_for_aad_tenant_ids"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "managed_resource_group_name": sdk.FieldSpec(wire_name="managed_resource_group_name"),
-        "managed_virtual_network_enabled": sdk.FieldSpec(wire_name="managed_virtual_network_enabled"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "purview_id": sdk.FieldSpec(wire_name="purview_id"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sql_administrator_login": sdk.FieldSpec(wire_name="sql_administrator_login"),
-        "sql_administrator_login_password": sdk.FieldSpec(wire_name="sql_administrator_login_password"),
-        "sql_identity_control_enabled": sdk.FieldSpec(wire_name="sql_identity_control_enabled"),
-        "storage_data_lake_gen2_filesystem_id": sdk.FieldSpec(wire_name="storage_data_lake_gen2_filesystem_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "azure_devops_repo": sdk.FieldSpec(
+        "azuread_authentication_only": ubx.FieldSpec(wire_name="azuread_authentication_only"),
+        "compute_subnet_id": ubx.FieldSpec(wire_name="compute_subnet_id"),
+        "data_exfiltration_protection_enabled": ubx.FieldSpec(wire_name="data_exfiltration_protection_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "linking_allowed_for_aad_tenant_ids": ubx.FieldSpec(wire_name="linking_allowed_for_aad_tenant_ids"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "managed_resource_group_name": ubx.FieldSpec(wire_name="managed_resource_group_name"),
+        "managed_virtual_network_enabled": ubx.FieldSpec(wire_name="managed_virtual_network_enabled"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "purview_id": ubx.FieldSpec(wire_name="purview_id"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sql_administrator_login": ubx.FieldSpec(wire_name="sql_administrator_login"),
+        "sql_administrator_login_password": ubx.FieldSpec(wire_name="sql_administrator_login_password"),
+        "sql_identity_control_enabled": ubx.FieldSpec(wire_name="sql_identity_control_enabled"),
+        "storage_data_lake_gen2_filesystem_id": ubx.FieldSpec(wire_name="storage_data_lake_gen2_filesystem_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "azure_devops_repo": ubx.FieldSpec(
             wire_name="azure_devops_repo",
             kind="list",
             fields=_Workspace_AzureDevopsRepoFields,
         ),
-        "customer_managed_key": sdk.FieldSpec(
+        "customer_managed_key": ubx.FieldSpec(
             wire_name="customer_managed_key",
             kind="list",
             fields=_Workspace_CustomerManagedKeyFields,
         ),
-        "github_repo": sdk.FieldSpec(
+        "github_repo": ubx.FieldSpec(
             wire_name="github_repo",
             kind="list",
             fields=_Workspace_GithubRepoFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Workspace_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Workspace_TimeoutsFields,

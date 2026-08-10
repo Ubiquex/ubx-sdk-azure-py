@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VaultManagedStorageAccountSasTokenDefinition_Timeouts:
@@ -14,10 +14,10 @@ class VaultManagedStorageAccountSasTokenDefinition_Timeouts:
     update: Any = None
 
 _VaultManagedStorageAccountSasTokenDefinition_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class VaultManagedStorageAccountSasTokenDefinitionConfig:
     validity_period: Any = None
     timeouts: Any = None
 
-VaultManagedStorageAccountSasTokenDefinition = sdk.ResourceBinding(
+VaultManagedStorageAccountSasTokenDefinition = ubx.ResourceBinding(
     wire_type="azurerm_key_vault_managed_storage_account_sas_token_definition",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "managed_storage_account_id": sdk.FieldSpec(wire_name="managed_storage_account_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "sas_template_uri": sdk.FieldSpec(wire_name="sas_template_uri"),
-        "sas_type": sdk.FieldSpec(wire_name="sas_type"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "validity_period": sdk.FieldSpec(wire_name="validity_period"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "managed_storage_account_id": ubx.FieldSpec(wire_name="managed_storage_account_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "sas_template_uri": ubx.FieldSpec(wire_name="sas_template_uri"),
+        "sas_type": ubx.FieldSpec(wire_name="sas_type"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "validity_period": ubx.FieldSpec(wire_name="validity_period"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_VaultManagedStorageAccountSasTokenDefinition_TimeoutsFields,

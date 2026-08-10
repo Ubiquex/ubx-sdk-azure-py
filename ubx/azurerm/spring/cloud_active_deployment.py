@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudActiveDeployment_Timeouts:
@@ -14,10 +14,10 @@ class CloudActiveDeployment_Timeouts:
     update: Any = None
 
 _CloudActiveDeployment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -27,13 +27,13 @@ class CloudActiveDeploymentConfig:
     spring_cloud_app_id: Any = None
     timeouts: Any = None
 
-CloudActiveDeployment = sdk.ResourceBinding(
+CloudActiveDeployment = ubx.ResourceBinding(
     wire_type="azurerm_spring_cloud_active_deployment",
     fields={
-        "deployment_name": sdk.FieldSpec(wire_name="deployment_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "spring_cloud_app_id": sdk.FieldSpec(wire_name="spring_cloud_app_id"),
-        "timeouts": sdk.FieldSpec(
+        "deployment_name": ubx.FieldSpec(wire_name="deployment_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "spring_cloud_app_id": ubx.FieldSpec(wire_name="spring_cloud_app_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CloudActiveDeployment_TimeoutsFields,

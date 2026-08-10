@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CenterSubscriptionPricing_Extension:
@@ -19,15 +19,15 @@ class CenterSubscriptionPricing_Timeouts:
     update: Any = None
 
 _CenterSubscriptionPricing_ExtensionFields = {
-    "additional_extension_properties": sdk.FieldSpec(wire_name="additional_extension_properties"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "additional_extension_properties": ubx.FieldSpec(wire_name="additional_extension_properties"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _CenterSubscriptionPricing_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -39,19 +39,19 @@ class CenterSubscriptionPricingConfig:
     extension: Any = None
     timeouts: Any = None
 
-CenterSubscriptionPricing = sdk.ResourceBinding(
+CenterSubscriptionPricing = ubx.ResourceBinding(
     wire_type="azurerm_security_center_subscription_pricing",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "resource_type": sdk.FieldSpec(wire_name="resource_type"),
-        "subplan": sdk.FieldSpec(wire_name="subplan"),
-        "tier": sdk.FieldSpec(wire_name="tier"),
-        "extension": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "resource_type": ubx.FieldSpec(wire_name="resource_type"),
+        "subplan": ubx.FieldSpec(wire_name="subplan"),
+        "tier": ubx.FieldSpec(wire_name="tier"),
+        "extension": ubx.FieldSpec(
             wire_name="extension",
             kind="set",
             fields=_CenterSubscriptionPricing_ExtensionFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CenterSubscriptionPricing_TimeoutsFields,

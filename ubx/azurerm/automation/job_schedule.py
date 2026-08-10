@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class JobSchedule_Timeouts:
@@ -13,9 +13,9 @@ class JobSchedule_Timeouts:
     read: Any = None
 
 _JobSchedule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -30,18 +30,18 @@ class JobScheduleConfig:
     schedule_name: Any = None
     timeouts: Any = None
 
-JobSchedule = sdk.ResourceBinding(
+JobSchedule = ubx.ResourceBinding(
     wire_type="azurerm_automation_job_schedule",
     fields={
-        "automation_account_name": sdk.FieldSpec(wire_name="automation_account_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "job_schedule_id": sdk.FieldSpec(wire_name="job_schedule_id"),
-        "parameters": sdk.FieldSpec(wire_name="parameters"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "run_on": sdk.FieldSpec(wire_name="run_on"),
-        "runbook_name": sdk.FieldSpec(wire_name="runbook_name"),
-        "schedule_name": sdk.FieldSpec(wire_name="schedule_name"),
-        "timeouts": sdk.FieldSpec(
+        "automation_account_name": ubx.FieldSpec(wire_name="automation_account_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "job_schedule_id": ubx.FieldSpec(wire_name="job_schedule_id"),
+        "parameters": ubx.FieldSpec(wire_name="parameters"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "run_on": ubx.FieldSpec(wire_name="run_on"),
+        "runbook_name": ubx.FieldSpec(wire_name="runbook_name"),
+        "schedule_name": ubx.FieldSpec(wire_name="schedule_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_JobSchedule_TimeoutsFields,

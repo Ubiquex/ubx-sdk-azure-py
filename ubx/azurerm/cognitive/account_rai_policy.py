@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AccountRaiPolicy_ContentFilter:
@@ -22,18 +22,18 @@ class AccountRaiPolicy_Timeouts:
     update: Any = None
 
 _AccountRaiPolicy_ContentFilterFields = {
-    "block_enabled": sdk.FieldSpec(wire_name="block_enabled"),
-    "filter_enabled": sdk.FieldSpec(wire_name="filter_enabled"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "severity_threshold": sdk.FieldSpec(wire_name="severity_threshold"),
-    "source": sdk.FieldSpec(wire_name="source"),
+    "block_enabled": ubx.FieldSpec(wire_name="block_enabled"),
+    "filter_enabled": ubx.FieldSpec(wire_name="filter_enabled"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "severity_threshold": ubx.FieldSpec(wire_name="severity_threshold"),
+    "source": ubx.FieldSpec(wire_name="source"),
 }
 
 _AccountRaiPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -47,21 +47,21 @@ class AccountRaiPolicyConfig:
     content_filter: Any = None
     timeouts: Any = None
 
-AccountRaiPolicy = sdk.ResourceBinding(
+AccountRaiPolicy = ubx.ResourceBinding(
     wire_type="azurerm_cognitive_account_rai_policy",
     fields={
-        "base_policy_name": sdk.FieldSpec(wire_name="base_policy_name"),
-        "cognitive_account_id": sdk.FieldSpec(wire_name="cognitive_account_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "mode": sdk.FieldSpec(wire_name="mode"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "content_filter": sdk.FieldSpec(
+        "base_policy_name": ubx.FieldSpec(wire_name="base_policy_name"),
+        "cognitive_account_id": ubx.FieldSpec(wire_name="cognitive_account_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "mode": ubx.FieldSpec(wire_name="mode"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "content_filter": ubx.FieldSpec(
             wire_name="content_filter",
             kind="list",
             fields=_AccountRaiPolicy_ContentFilterFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AccountRaiPolicy_TimeoutsFields,

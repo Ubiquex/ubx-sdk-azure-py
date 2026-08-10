@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DataConnectorAwsS3_Timeouts:
@@ -14,10 +14,10 @@ class DataConnectorAwsS3_Timeouts:
     update: Any = None
 
 _DataConnectorAwsS3_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class DataConnectorAwsS3Config:
     sqs_urls: Any = None
     timeouts: Any = None
 
-DataConnectorAwsS3 = sdk.ResourceBinding(
+DataConnectorAwsS3 = ubx.ResourceBinding(
     wire_type="azurerm_sentinel_data_connector_aws_s3",
     fields={
-        "aws_role_arn": sdk.FieldSpec(wire_name="aws_role_arn"),
-        "destination_table": sdk.FieldSpec(wire_name="destination_table"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "log_analytics_workspace_id": sdk.FieldSpec(wire_name="log_analytics_workspace_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "sqs_urls": sdk.FieldSpec(wire_name="sqs_urls"),
-        "timeouts": sdk.FieldSpec(
+        "aws_role_arn": ubx.FieldSpec(wire_name="aws_role_arn"),
+        "destination_table": ubx.FieldSpec(wire_name="destination_table"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "log_analytics_workspace_id": ubx.FieldSpec(wire_name="log_analytics_workspace_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "sqs_urls": ubx.FieldSpec(wire_name="sqs_urls"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DataConnectorAwsS3_TimeoutsFields,

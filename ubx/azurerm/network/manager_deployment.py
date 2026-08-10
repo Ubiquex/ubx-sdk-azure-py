@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagerDeployment_Timeouts:
@@ -14,10 +14,10 @@ class ManagerDeployment_Timeouts:
     update: Any = None
 
 _ManagerDeployment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class ManagerDeploymentConfig:
     triggers: Any = None
     timeouts: Any = None
 
-ManagerDeployment = sdk.ResourceBinding(
+ManagerDeployment = ubx.ResourceBinding(
     wire_type="azurerm_network_manager_deployment",
     fields={
-        "configuration_ids": sdk.FieldSpec(wire_name="configuration_ids"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "network_manager_id": sdk.FieldSpec(wire_name="network_manager_id"),
-        "scope_access": sdk.FieldSpec(wire_name="scope_access"),
-        "triggers": sdk.FieldSpec(wire_name="triggers"),
-        "timeouts": sdk.FieldSpec(
+        "configuration_ids": ubx.FieldSpec(wire_name="configuration_ids"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "network_manager_id": ubx.FieldSpec(wire_name="network_manager_id"),
+        "scope_access": ubx.FieldSpec(wire_name="scope_access"),
+        "triggers": ubx.FieldSpec(wire_name="triggers"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagerDeployment_TimeoutsFields,

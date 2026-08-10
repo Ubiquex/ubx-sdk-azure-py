@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HubRouteTable_Route:
@@ -22,18 +22,18 @@ class HubRouteTable_Timeouts:
     update: Any = None
 
 _HubRouteTable_RouteFields = {
-    "destinations": sdk.FieldSpec(wire_name="destinations"),
-    "destinations_type": sdk.FieldSpec(wire_name="destinations_type"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "next_hop": sdk.FieldSpec(wire_name="next_hop"),
-    "next_hop_type": sdk.FieldSpec(wire_name="next_hop_type"),
+    "destinations": ubx.FieldSpec(wire_name="destinations"),
+    "destinations_type": ubx.FieldSpec(wire_name="destinations_type"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "next_hop": ubx.FieldSpec(wire_name="next_hop"),
+    "next_hop_type": ubx.FieldSpec(wire_name="next_hop_type"),
 }
 
 _HubRouteTable_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -45,19 +45,19 @@ class HubRouteTableConfig:
     route: Any = None
     timeouts: Any = None
 
-HubRouteTable = sdk.ResourceBinding(
+HubRouteTable = ubx.ResourceBinding(
     wire_type="azurerm_virtual_hub_route_table",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "labels": sdk.FieldSpec(wire_name="labels"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "virtual_hub_id": sdk.FieldSpec(wire_name="virtual_hub_id"),
-        "route": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "labels": ubx.FieldSpec(wire_name="labels"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "virtual_hub_id": ubx.FieldSpec(wire_name="virtual_hub_id"),
+        "route": ubx.FieldSpec(
             wire_name="route",
             kind="set",
             fields=_HubRouteTable_RouteFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_HubRouteTable_TimeoutsFields,

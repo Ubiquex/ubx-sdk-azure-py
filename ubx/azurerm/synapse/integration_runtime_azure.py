@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class IntegrationRuntimeAzure_Timeouts:
@@ -14,10 +14,10 @@ class IntegrationRuntimeAzure_Timeouts:
     update: Any = None
 
 _IntegrationRuntimeAzure_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -32,18 +32,18 @@ class IntegrationRuntimeAzureConfig:
     time_to_live_min: Any = None
     timeouts: Any = None
 
-IntegrationRuntimeAzure = sdk.ResourceBinding(
+IntegrationRuntimeAzure = ubx.ResourceBinding(
     wire_type="azurerm_synapse_integration_runtime_azure",
     fields={
-        "compute_type": sdk.FieldSpec(wire_name="compute_type"),
-        "core_count": sdk.FieldSpec(wire_name="core_count"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "synapse_workspace_id": sdk.FieldSpec(wire_name="synapse_workspace_id"),
-        "time_to_live_min": sdk.FieldSpec(wire_name="time_to_live_min"),
-        "timeouts": sdk.FieldSpec(
+        "compute_type": ubx.FieldSpec(wire_name="compute_type"),
+        "core_count": ubx.FieldSpec(wire_name="core_count"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "synapse_workspace_id": ubx.FieldSpec(wire_name="synapse_workspace_id"),
+        "time_to_live_min": ubx.FieldSpec(wire_name="time_to_live_min"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_IntegrationRuntimeAzure_TimeoutsFields,

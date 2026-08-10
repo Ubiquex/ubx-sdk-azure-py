@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagedInstance_AzureActiveDirectoryAdministrator:
@@ -29,25 +29,25 @@ class ManagedInstance_Timeouts:
     update: Any = None
 
 _ManagedInstance_AzureActiveDirectoryAdministratorFields = {
-    "azuread_authentication_only_enabled": sdk.FieldSpec(wire_name="azuread_authentication_only_enabled"),
-    "login_username": sdk.FieldSpec(wire_name="login_username"),
-    "object_id": sdk.FieldSpec(wire_name="object_id"),
-    "principal_type": sdk.FieldSpec(wire_name="principal_type"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
+    "azuread_authentication_only_enabled": ubx.FieldSpec(wire_name="azuread_authentication_only_enabled"),
+    "login_username": ubx.FieldSpec(wire_name="login_username"),
+    "object_id": ubx.FieldSpec(wire_name="object_id"),
+    "principal_type": ubx.FieldSpec(wire_name="principal_type"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
 }
 
 _ManagedInstance_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _ManagedInstance_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -82,46 +82,46 @@ class ManagedInstanceConfig:
     identity: Any = None
     timeouts: Any = None
 
-ManagedInstance = sdk.ResourceBinding(
+ManagedInstance = ubx.ResourceBinding(
     wire_type="azurerm_mssql_managed_instance",
     fields={
-        "administrator_login": sdk.FieldSpec(wire_name="administrator_login"),
-        "administrator_login_password": sdk.FieldSpec(wire_name="administrator_login_password"),
-        "collation": sdk.FieldSpec(wire_name="collation"),
-        "database_format": sdk.FieldSpec(wire_name="database_format"),
-        "dns_zone_partner_id": sdk.FieldSpec(wire_name="dns_zone_partner_id"),
-        "general_purpose_v2_enabled": sdk.FieldSpec(wire_name="general_purpose_v2_enabled"),
-        "hybrid_secondary_usage": sdk.FieldSpec(wire_name="hybrid_secondary_usage"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "license_type": sdk.FieldSpec(wire_name="license_type"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "maintenance_configuration_name": sdk.FieldSpec(wire_name="maintenance_configuration_name"),
-        "minimum_tls_version": sdk.FieldSpec(wire_name="minimum_tls_version"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "proxy_override": sdk.FieldSpec(wire_name="proxy_override"),
-        "public_data_endpoint_enabled": sdk.FieldSpec(wire_name="public_data_endpoint_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "service_principal_type": sdk.FieldSpec(wire_name="service_principal_type"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "storage_account_type": sdk.FieldSpec(wire_name="storage_account_type"),
-        "storage_iops": sdk.FieldSpec(wire_name="storage_iops"),
-        "storage_size_in_gb": sdk.FieldSpec(wire_name="storage_size_in_gb"),
-        "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timezone_id": sdk.FieldSpec(wire_name="timezone_id"),
-        "vcores": sdk.FieldSpec(wire_name="vcores"),
-        "zone_redundant_enabled": sdk.FieldSpec(wire_name="zone_redundant_enabled"),
-        "azure_active_directory_administrator": sdk.FieldSpec(
+        "administrator_login": ubx.FieldSpec(wire_name="administrator_login"),
+        "administrator_login_password": ubx.FieldSpec(wire_name="administrator_login_password"),
+        "collation": ubx.FieldSpec(wire_name="collation"),
+        "database_format": ubx.FieldSpec(wire_name="database_format"),
+        "dns_zone_partner_id": ubx.FieldSpec(wire_name="dns_zone_partner_id"),
+        "general_purpose_v2_enabled": ubx.FieldSpec(wire_name="general_purpose_v2_enabled"),
+        "hybrid_secondary_usage": ubx.FieldSpec(wire_name="hybrid_secondary_usage"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "license_type": ubx.FieldSpec(wire_name="license_type"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "maintenance_configuration_name": ubx.FieldSpec(wire_name="maintenance_configuration_name"),
+        "minimum_tls_version": ubx.FieldSpec(wire_name="minimum_tls_version"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "proxy_override": ubx.FieldSpec(wire_name="proxy_override"),
+        "public_data_endpoint_enabled": ubx.FieldSpec(wire_name="public_data_endpoint_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "service_principal_type": ubx.FieldSpec(wire_name="service_principal_type"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "storage_account_type": ubx.FieldSpec(wire_name="storage_account_type"),
+        "storage_iops": ubx.FieldSpec(wire_name="storage_iops"),
+        "storage_size_in_gb": ubx.FieldSpec(wire_name="storage_size_in_gb"),
+        "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timezone_id": ubx.FieldSpec(wire_name="timezone_id"),
+        "vcores": ubx.FieldSpec(wire_name="vcores"),
+        "zone_redundant_enabled": ubx.FieldSpec(wire_name="zone_redundant_enabled"),
+        "azure_active_directory_administrator": ubx.FieldSpec(
             wire_name="azure_active_directory_administrator",
             kind="list",
             fields=_ManagedInstance_AzureActiveDirectoryAdministratorFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_ManagedInstance_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagedInstance_TimeoutsFields,

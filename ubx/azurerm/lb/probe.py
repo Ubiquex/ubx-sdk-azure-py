@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Probe_Timeouts:
@@ -14,10 +14,10 @@ class Probe_Timeouts:
     update: Any = None
 
 _Probe_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -33,19 +33,19 @@ class ProbeConfig:
     request_path: Any = None
     timeouts: Any = None
 
-Probe = sdk.ResourceBinding(
+Probe = ubx.ResourceBinding(
     wire_type="azurerm_lb_probe",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "interval_in_seconds": sdk.FieldSpec(wire_name="interval_in_seconds"),
-        "loadbalancer_id": sdk.FieldSpec(wire_name="loadbalancer_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "number_of_probes": sdk.FieldSpec(wire_name="number_of_probes"),
-        "port": sdk.FieldSpec(wire_name="port"),
-        "probe_threshold": sdk.FieldSpec(wire_name="probe_threshold"),
-        "protocol": sdk.FieldSpec(wire_name="protocol"),
-        "request_path": sdk.FieldSpec(wire_name="request_path"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "interval_in_seconds": ubx.FieldSpec(wire_name="interval_in_seconds"),
+        "loadbalancer_id": ubx.FieldSpec(wire_name="loadbalancer_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "number_of_probes": ubx.FieldSpec(wire_name="number_of_probes"),
+        "port": ubx.FieldSpec(wire_name="port"),
+        "probe_threshold": ubx.FieldSpec(wire_name="probe_threshold"),
+        "protocol": ubx.FieldSpec(wire_name="protocol"),
+        "request_path": ubx.FieldSpec(wire_name="request_path"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Probe_TimeoutsFields,

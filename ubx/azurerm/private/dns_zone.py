@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DnsZone_SoaRecord:
@@ -27,23 +27,23 @@ class DnsZone_Timeouts:
     update: Any = None
 
 _DnsZone_SoaRecordFields = {
-    "email": sdk.FieldSpec(wire_name="email"),
-    "expire_time": sdk.FieldSpec(wire_name="expire_time"),
-    "fqdn": sdk.FieldSpec(wire_name="fqdn"),
-    "host_name": sdk.FieldSpec(wire_name="host_name"),
-    "minimum_ttl": sdk.FieldSpec(wire_name="minimum_ttl"),
-    "refresh_time": sdk.FieldSpec(wire_name="refresh_time"),
-    "retry_time": sdk.FieldSpec(wire_name="retry_time"),
-    "serial_number": sdk.FieldSpec(wire_name="serial_number"),
-    "tags": sdk.FieldSpec(wire_name="tags"),
-    "ttl": sdk.FieldSpec(wire_name="ttl"),
+    "email": ubx.FieldSpec(wire_name="email"),
+    "expire_time": ubx.FieldSpec(wire_name="expire_time"),
+    "fqdn": ubx.FieldSpec(wire_name="fqdn"),
+    "host_name": ubx.FieldSpec(wire_name="host_name"),
+    "minimum_ttl": ubx.FieldSpec(wire_name="minimum_ttl"),
+    "refresh_time": ubx.FieldSpec(wire_name="refresh_time"),
+    "retry_time": ubx.FieldSpec(wire_name="retry_time"),
+    "serial_number": ubx.FieldSpec(wire_name="serial_number"),
+    "tags": ubx.FieldSpec(wire_name="tags"),
+    "ttl": ubx.FieldSpec(wire_name="ttl"),
 }
 
 _DnsZone_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -55,19 +55,19 @@ class DnsZoneConfig:
     soa_record: Any = None
     timeouts: Any = None
 
-DnsZone = sdk.ResourceBinding(
+DnsZone = ubx.ResourceBinding(
     wire_type="azurerm_private_dns_zone",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "soa_record": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "soa_record": ubx.FieldSpec(
             wire_name="soa_record",
             kind="list",
             fields=_DnsZone_SoaRecordFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DnsZone_TimeoutsFields,

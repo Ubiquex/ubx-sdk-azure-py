@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnalyticsOutputFunction_Timeouts:
@@ -14,10 +14,10 @@ class AnalyticsOutputFunction_Timeouts:
     update: Any = None
 
 _AnalyticsOutputFunction_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -33,19 +33,19 @@ class AnalyticsOutputFunctionConfig:
     stream_analytics_job_name: Any = None
     timeouts: Any = None
 
-AnalyticsOutputFunction = sdk.ResourceBinding(
+AnalyticsOutputFunction = ubx.ResourceBinding(
     wire_type="azurerm_stream_analytics_output_function",
     fields={
-        "api_key": sdk.FieldSpec(wire_name="api_key"),
-        "batch_max_count": sdk.FieldSpec(wire_name="batch_max_count"),
-        "batch_max_in_bytes": sdk.FieldSpec(wire_name="batch_max_in_bytes"),
-        "function_app": sdk.FieldSpec(wire_name="function_app"),
-        "function_name": sdk.FieldSpec(wire_name="function_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "stream_analytics_job_name": sdk.FieldSpec(wire_name="stream_analytics_job_name"),
-        "timeouts": sdk.FieldSpec(
+        "api_key": ubx.FieldSpec(wire_name="api_key"),
+        "batch_max_count": ubx.FieldSpec(wire_name="batch_max_count"),
+        "batch_max_in_bytes": ubx.FieldSpec(wire_name="batch_max_in_bytes"),
+        "function_app": ubx.FieldSpec(wire_name="function_app"),
+        "function_name": ubx.FieldSpec(wire_name="function_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "stream_analytics_job_name": ubx.FieldSpec(wire_name="stream_analytics_job_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AnalyticsOutputFunction_TimeoutsFields,

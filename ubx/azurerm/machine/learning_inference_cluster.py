@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LearningInferenceCluster_Identity:
@@ -28,24 +28,24 @@ class LearningInferenceCluster_Timeouts:
     read: Any = None
 
 _LearningInferenceCluster_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _LearningInferenceCluster_SslFields = {
-    "cert": sdk.FieldSpec(wire_name="cert"),
-    "cname": sdk.FieldSpec(wire_name="cname"),
-    "key": sdk.FieldSpec(wire_name="key"),
-    "leaf_domain_label": sdk.FieldSpec(wire_name="leaf_domain_label"),
-    "overwrite_existing_domain": sdk.FieldSpec(wire_name="overwrite_existing_domain"),
+    "cert": ubx.FieldSpec(wire_name="cert"),
+    "cname": ubx.FieldSpec(wire_name="cname"),
+    "key": ubx.FieldSpec(wire_name="key"),
+    "leaf_domain_label": ubx.FieldSpec(wire_name="leaf_domain_label"),
+    "overwrite_existing_domain": ubx.FieldSpec(wire_name="overwrite_existing_domain"),
 }
 
 _LearningInferenceCluster_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -62,28 +62,28 @@ class LearningInferenceClusterConfig:
     ssl: Any = None
     timeouts: Any = None
 
-LearningInferenceCluster = sdk.ResourceBinding(
+LearningInferenceCluster = ubx.ResourceBinding(
     wire_type="azurerm_machine_learning_inference_cluster",
     fields={
-        "cluster_purpose": sdk.FieldSpec(wire_name="cluster_purpose"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "kubernetes_cluster_id": sdk.FieldSpec(wire_name="kubernetes_cluster_id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "machine_learning_workspace_id": sdk.FieldSpec(wire_name="machine_learning_workspace_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "identity": sdk.FieldSpec(
+        "cluster_purpose": ubx.FieldSpec(wire_name="cluster_purpose"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "kubernetes_cluster_id": ubx.FieldSpec(wire_name="kubernetes_cluster_id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "machine_learning_workspace_id": ubx.FieldSpec(wire_name="machine_learning_workspace_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_LearningInferenceCluster_IdentityFields,
         ),
-        "ssl": sdk.FieldSpec(
+        "ssl": ubx.FieldSpec(
             wire_name="ssl",
             kind="list",
             fields=_LearningInferenceCluster_SslFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_LearningInferenceCluster_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServiceCustomDomain_Timeouts:
@@ -13,9 +13,9 @@ class ServiceCustomDomain_Timeouts:
     read: Any = None
 
 _ServiceCustomDomain_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -27,15 +27,15 @@ class ServiceCustomDomainConfig:
     signalr_service_id: Any = None
     timeouts: Any = None
 
-ServiceCustomDomain = sdk.ResourceBinding(
+ServiceCustomDomain = ubx.ResourceBinding(
     wire_type="azurerm_signalr_service_custom_domain",
     fields={
-        "domain_name": sdk.FieldSpec(wire_name="domain_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "signalr_custom_certificate_id": sdk.FieldSpec(wire_name="signalr_custom_certificate_id"),
-        "signalr_service_id": sdk.FieldSpec(wire_name="signalr_service_id"),
-        "timeouts": sdk.FieldSpec(
+        "domain_name": ubx.FieldSpec(wire_name="domain_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "signalr_custom_certificate_id": ubx.FieldSpec(wire_name="signalr_custom_certificate_id"),
+        "signalr_service_id": ubx.FieldSpec(wire_name="signalr_service_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ServiceCustomDomain_TimeoutsFields,

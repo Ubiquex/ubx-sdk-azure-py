@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Lock_Timeouts:
@@ -13,9 +13,9 @@ class Lock_Timeouts:
     read: Any = None
 
 _Lock_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -27,15 +27,15 @@ class LockConfig:
     scope: Any = None
     timeouts: Any = None
 
-Lock = sdk.ResourceBinding(
+Lock = ubx.ResourceBinding(
     wire_type="azurerm_management_lock",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "lock_level": sdk.FieldSpec(wire_name="lock_level"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "notes": sdk.FieldSpec(wire_name="notes"),
-        "scope": sdk.FieldSpec(wire_name="scope"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "lock_level": ubx.FieldSpec(wire_name="lock_level"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "notes": ubx.FieldSpec(wire_name="notes"),
+        "scope": ubx.FieldSpec(wire_name="scope"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Lock_TimeoutsFields,

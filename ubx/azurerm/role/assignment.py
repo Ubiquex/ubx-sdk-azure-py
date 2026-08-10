@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Assignment_Timeouts:
@@ -13,9 +13,9 @@ class Assignment_Timeouts:
     read: Any = None
 
 _Assignment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -34,22 +34,22 @@ class AssignmentConfig:
     skip_service_principal_aad_check: Any = None
     timeouts: Any = None
 
-Assignment = sdk.ResourceBinding(
+Assignment = ubx.ResourceBinding(
     wire_type="azurerm_role_assignment",
     fields={
-        "condition": sdk.FieldSpec(wire_name="condition"),
-        "condition_version": sdk.FieldSpec(wire_name="condition_version"),
-        "delegated_managed_identity_resource_id": sdk.FieldSpec(wire_name="delegated_managed_identity_resource_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-        "principal_type": sdk.FieldSpec(wire_name="principal_type"),
-        "role_definition_id": sdk.FieldSpec(wire_name="role_definition_id"),
-        "role_definition_name": sdk.FieldSpec(wire_name="role_definition_name"),
-        "scope": sdk.FieldSpec(wire_name="scope"),
-        "skip_service_principal_aad_check": sdk.FieldSpec(wire_name="skip_service_principal_aad_check"),
-        "timeouts": sdk.FieldSpec(
+        "condition": ubx.FieldSpec(wire_name="condition"),
+        "condition_version": ubx.FieldSpec(wire_name="condition_version"),
+        "delegated_managed_identity_resource_id": ubx.FieldSpec(wire_name="delegated_managed_identity_resource_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+        "principal_type": ubx.FieldSpec(wire_name="principal_type"),
+        "role_definition_id": ubx.FieldSpec(wire_name="role_definition_id"),
+        "role_definition_name": ubx.FieldSpec(wire_name="role_definition_name"),
+        "scope": ubx.FieldSpec(wire_name="scope"),
+        "skip_service_principal_aad_check": ubx.FieldSpec(wire_name="skip_service_principal_aad_check"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Assignment_TimeoutsFields,

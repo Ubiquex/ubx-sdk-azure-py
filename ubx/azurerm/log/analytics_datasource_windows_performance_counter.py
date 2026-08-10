@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnalyticsDatasourceWindowsPerformanceCounter_Timeouts:
@@ -14,10 +14,10 @@ class AnalyticsDatasourceWindowsPerformanceCounter_Timeouts:
     update: Any = None
 
 _AnalyticsDatasourceWindowsPerformanceCounter_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -32,18 +32,18 @@ class AnalyticsDatasourceWindowsPerformanceCounterConfig:
     workspace_name: Any = None
     timeouts: Any = None
 
-AnalyticsDatasourceWindowsPerformanceCounter = sdk.ResourceBinding(
+AnalyticsDatasourceWindowsPerformanceCounter = ubx.ResourceBinding(
     wire_type="azurerm_log_analytics_datasource_windows_performance_counter",
     fields={
-        "counter_name": sdk.FieldSpec(wire_name="counter_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "instance_name": sdk.FieldSpec(wire_name="instance_name"),
-        "interval_seconds": sdk.FieldSpec(wire_name="interval_seconds"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "object_name": sdk.FieldSpec(wire_name="object_name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "workspace_name": sdk.FieldSpec(wire_name="workspace_name"),
-        "timeouts": sdk.FieldSpec(
+        "counter_name": ubx.FieldSpec(wire_name="counter_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "instance_name": ubx.FieldSpec(wire_name="instance_name"),
+        "interval_seconds": ubx.FieldSpec(wire_name="interval_seconds"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "object_name": ubx.FieldSpec(wire_name="object_name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "workspace_name": ubx.FieldSpec(wire_name="workspace_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AnalyticsDatasourceWindowsPerformanceCounter_TimeoutsFields,

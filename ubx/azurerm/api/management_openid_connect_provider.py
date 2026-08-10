@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementOpenidConnectProvider_Timeouts:
@@ -14,10 +14,10 @@ class ManagementOpenidConnectProvider_Timeouts:
     update: Any = None
 
 _ManagementOpenidConnectProvider_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -33,19 +33,19 @@ class ManagementOpenidConnectProviderConfig:
     resource_group_name: Any = None
     timeouts: Any = None
 
-ManagementOpenidConnectProvider = sdk.ResourceBinding(
+ManagementOpenidConnectProvider = ubx.ResourceBinding(
     wire_type="azurerm_api_management_openid_connect_provider",
     fields={
-        "api_management_name": sdk.FieldSpec(wire_name="api_management_name"),
-        "client_id": sdk.FieldSpec(wire_name="client_id"),
-        "client_secret": sdk.FieldSpec(wire_name="client_secret"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "metadata_endpoint": sdk.FieldSpec(wire_name="metadata_endpoint"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "timeouts": sdk.FieldSpec(
+        "api_management_name": ubx.FieldSpec(wire_name="api_management_name"),
+        "client_id": ubx.FieldSpec(wire_name="client_id"),
+        "client_secret": ubx.FieldSpec(wire_name="client_secret"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "metadata_endpoint": ubx.FieldSpec(wire_name="metadata_endpoint"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementOpenidConnectProvider_TimeoutsFields,

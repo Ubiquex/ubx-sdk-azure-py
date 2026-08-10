@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DesktopApplication_Timeouts:
@@ -14,10 +14,10 @@ class DesktopApplication_Timeouts:
     update: Any = None
 
 _DesktopApplication_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -35,21 +35,21 @@ class DesktopApplicationConfig:
     show_in_portal: Any = None
     timeouts: Any = None
 
-DesktopApplication = sdk.ResourceBinding(
+DesktopApplication = ubx.ResourceBinding(
     wire_type="azurerm_virtual_desktop_application",
     fields={
-        "application_group_id": sdk.FieldSpec(wire_name="application_group_id"),
-        "command_line_argument_policy": sdk.FieldSpec(wire_name="command_line_argument_policy"),
-        "command_line_arguments": sdk.FieldSpec(wire_name="command_line_arguments"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "friendly_name": sdk.FieldSpec(wire_name="friendly_name"),
-        "icon_index": sdk.FieldSpec(wire_name="icon_index"),
-        "icon_path": sdk.FieldSpec(wire_name="icon_path"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "path": sdk.FieldSpec(wire_name="path"),
-        "show_in_portal": sdk.FieldSpec(wire_name="show_in_portal"),
-        "timeouts": sdk.FieldSpec(
+        "application_group_id": ubx.FieldSpec(wire_name="application_group_id"),
+        "command_line_argument_policy": ubx.FieldSpec(wire_name="command_line_argument_policy"),
+        "command_line_arguments": ubx.FieldSpec(wire_name="command_line_arguments"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "friendly_name": ubx.FieldSpec(wire_name="friendly_name"),
+        "icon_index": ubx.FieldSpec(wire_name="icon_index"),
+        "icon_path": ubx.FieldSpec(wire_name="icon_path"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "path": ubx.FieldSpec(wire_name="path"),
+        "show_in_portal": ubx.FieldSpec(wire_name="show_in_portal"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DesktopApplication_TimeoutsFields,

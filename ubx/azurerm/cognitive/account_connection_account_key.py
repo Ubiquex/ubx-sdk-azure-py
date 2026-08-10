@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AccountConnectionAccountKey_Timeouts:
@@ -14,10 +14,10 @@ class AccountConnectionAccountKey_Timeouts:
     update: Any = None
 
 _AccountConnectionAccountKey_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class AccountConnectionAccountKeyConfig:
     target: Any = None
     timeouts: Any = None
 
-AccountConnectionAccountKey = sdk.ResourceBinding(
+AccountConnectionAccountKey = ubx.ResourceBinding(
     wire_type="azurerm_cognitive_account_connection_account_key",
     fields={
-        "account_key": sdk.FieldSpec(wire_name="account_key"),
-        "category": sdk.FieldSpec(wire_name="category"),
-        "cognitive_account_id": sdk.FieldSpec(wire_name="cognitive_account_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "metadata": sdk.FieldSpec(wire_name="metadata"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "target": sdk.FieldSpec(wire_name="target"),
-        "timeouts": sdk.FieldSpec(
+        "account_key": ubx.FieldSpec(wire_name="account_key"),
+        "category": ubx.FieldSpec(wire_name="category"),
+        "cognitive_account_id": ubx.FieldSpec(wire_name="cognitive_account_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "metadata": ubx.FieldSpec(wire_name="metadata"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "target": ubx.FieldSpec(wire_name="target"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AccountConnectionAccountKey_TimeoutsFields,

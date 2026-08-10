@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Interface_IpConfiguration:
@@ -25,21 +25,21 @@ class Interface_Timeouts:
     update: Any = None
 
 _Interface_IpConfigurationFields = {
-    "gateway_load_balancer_frontend_ip_configuration_id": sdk.FieldSpec(wire_name="gateway_load_balancer_frontend_ip_configuration_id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "primary": sdk.FieldSpec(wire_name="primary"),
-    "private_ip_address": sdk.FieldSpec(wire_name="private_ip_address"),
-    "private_ip_address_allocation": sdk.FieldSpec(wire_name="private_ip_address_allocation"),
-    "private_ip_address_version": sdk.FieldSpec(wire_name="private_ip_address_version"),
-    "public_ip_address_id": sdk.FieldSpec(wire_name="public_ip_address_id"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "gateway_load_balancer_frontend_ip_configuration_id": ubx.FieldSpec(wire_name="gateway_load_balancer_frontend_ip_configuration_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "primary": ubx.FieldSpec(wire_name="primary"),
+    "private_ip_address": ubx.FieldSpec(wire_name="private_ip_address"),
+    "private_ip_address_allocation": ubx.FieldSpec(wire_name="private_ip_address_allocation"),
+    "private_ip_address_version": ubx.FieldSpec(wire_name="private_ip_address_version"),
+    "public_ip_address_id": ubx.FieldSpec(wire_name="public_ip_address_id"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _Interface_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -59,27 +59,27 @@ class InterfaceConfig:
     ip_configuration: Any = None
     timeouts: Any = None
 
-Interface = sdk.ResourceBinding(
+Interface = ubx.ResourceBinding(
     wire_type="azurerm_network_interface",
     fields={
-        "accelerated_networking_enabled": sdk.FieldSpec(wire_name="accelerated_networking_enabled"),
-        "auxiliary_mode": sdk.FieldSpec(wire_name="auxiliary_mode"),
-        "auxiliary_sku": sdk.FieldSpec(wire_name="auxiliary_sku"),
-        "dns_servers": sdk.FieldSpec(wire_name="dns_servers"),
-        "edge_zone": sdk.FieldSpec(wire_name="edge_zone"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "internal_dns_name_label": sdk.FieldSpec(wire_name="internal_dns_name_label"),
-        "ip_forwarding_enabled": sdk.FieldSpec(wire_name="ip_forwarding_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "ip_configuration": sdk.FieldSpec(
+        "accelerated_networking_enabled": ubx.FieldSpec(wire_name="accelerated_networking_enabled"),
+        "auxiliary_mode": ubx.FieldSpec(wire_name="auxiliary_mode"),
+        "auxiliary_sku": ubx.FieldSpec(wire_name="auxiliary_sku"),
+        "dns_servers": ubx.FieldSpec(wire_name="dns_servers"),
+        "edge_zone": ubx.FieldSpec(wire_name="edge_zone"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "internal_dns_name_label": ubx.FieldSpec(wire_name="internal_dns_name_label"),
+        "ip_forwarding_enabled": ubx.FieldSpec(wire_name="ip_forwarding_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "ip_configuration": ubx.FieldSpec(
             wire_name="ip_configuration",
             kind="list",
             fields=_Interface_IpConfigurationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Interface_TimeoutsFields,

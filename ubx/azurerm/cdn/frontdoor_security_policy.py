@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FrontdoorSecurityPolicy_SecurityPolicies_Firewall_Association_Domain:
@@ -33,13 +33,13 @@ class FrontdoorSecurityPolicy_Timeouts:
     update: Any = None
 
 _FrontdoorSecurityPolicy_SecurityPolicies_Firewall_Association_DomainFields = {
-    "active": sdk.FieldSpec(wire_name="active"),
-    "cdn_frontdoor_domain_id": sdk.FieldSpec(wire_name="cdn_frontdoor_domain_id"),
+    "active": ubx.FieldSpec(wire_name="active"),
+    "cdn_frontdoor_domain_id": ubx.FieldSpec(wire_name="cdn_frontdoor_domain_id"),
 }
 
 _FrontdoorSecurityPolicy_SecurityPolicies_Firewall_AssociationFields = {
-    "patterns_to_match": sdk.FieldSpec(wire_name="patterns_to_match"),
-    "domain": sdk.FieldSpec(
+    "patterns_to_match": ubx.FieldSpec(wire_name="patterns_to_match"),
+    "domain": ubx.FieldSpec(
         wire_name="domain",
         kind="list",
         fields=_FrontdoorSecurityPolicy_SecurityPolicies_Firewall_Association_DomainFields,
@@ -47,8 +47,8 @@ _FrontdoorSecurityPolicy_SecurityPolicies_Firewall_AssociationFields = {
 }
 
 _FrontdoorSecurityPolicy_SecurityPolicies_FirewallFields = {
-    "cdn_frontdoor_firewall_policy_id": sdk.FieldSpec(wire_name="cdn_frontdoor_firewall_policy_id"),
-    "association": sdk.FieldSpec(
+    "cdn_frontdoor_firewall_policy_id": ubx.FieldSpec(wire_name="cdn_frontdoor_firewall_policy_id"),
+    "association": ubx.FieldSpec(
         wire_name="association",
         kind="list",
         fields=_FrontdoorSecurityPolicy_SecurityPolicies_Firewall_AssociationFields,
@@ -56,7 +56,7 @@ _FrontdoorSecurityPolicy_SecurityPolicies_FirewallFields = {
 }
 
 _FrontdoorSecurityPolicy_SecurityPoliciesFields = {
-    "firewall": sdk.FieldSpec(
+    "firewall": ubx.FieldSpec(
         wire_name="firewall",
         kind="list",
         fields=_FrontdoorSecurityPolicy_SecurityPolicies_FirewallFields,
@@ -64,10 +64,10 @@ _FrontdoorSecurityPolicy_SecurityPoliciesFields = {
 }
 
 _FrontdoorSecurityPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -78,18 +78,18 @@ class FrontdoorSecurityPolicyConfig:
     security_policies: Any = None
     timeouts: Any = None
 
-FrontdoorSecurityPolicy = sdk.ResourceBinding(
+FrontdoorSecurityPolicy = ubx.ResourceBinding(
     wire_type="azurerm_cdn_frontdoor_security_policy",
     fields={
-        "cdn_frontdoor_profile_id": sdk.FieldSpec(wire_name="cdn_frontdoor_profile_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "security_policies": sdk.FieldSpec(
+        "cdn_frontdoor_profile_id": ubx.FieldSpec(wire_name="cdn_frontdoor_profile_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "security_policies": ubx.FieldSpec(
             wire_name="security_policies",
             kind="list",
             fields=_FrontdoorSecurityPolicy_SecurityPoliciesFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FrontdoorSecurityPolicy_TimeoutsFields,

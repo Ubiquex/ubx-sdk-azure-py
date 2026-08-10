@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GroupCostManagementExport_ExportDataOptions:
@@ -24,20 +24,20 @@ class GroupCostManagementExport_Timeouts:
     update: Any = None
 
 _GroupCostManagementExport_ExportDataOptionsFields = {
-    "time_frame": sdk.FieldSpec(wire_name="time_frame"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "time_frame": ubx.FieldSpec(wire_name="time_frame"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _GroupCostManagementExport_ExportDataStorageLocationFields = {
-    "container_id": sdk.FieldSpec(wire_name="container_id"),
-    "root_folder_path": sdk.FieldSpec(wire_name="root_folder_path"),
+    "container_id": ubx.FieldSpec(wire_name="container_id"),
+    "root_folder_path": ubx.FieldSpec(wire_name="root_folder_path"),
 }
 
 _GroupCostManagementExport_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -54,28 +54,28 @@ class GroupCostManagementExportConfig:
     export_data_storage_location: Any = None
     timeouts: Any = None
 
-GroupCostManagementExport = sdk.ResourceBinding(
+GroupCostManagementExport = ubx.ResourceBinding(
     wire_type="azurerm_resource_group_cost_management_export",
     fields={
-        "active": sdk.FieldSpec(wire_name="active"),
-        "file_format": sdk.FieldSpec(wire_name="file_format"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "recurrence_period_end_date": sdk.FieldSpec(wire_name="recurrence_period_end_date"),
-        "recurrence_period_start_date": sdk.FieldSpec(wire_name="recurrence_period_start_date"),
-        "recurrence_type": sdk.FieldSpec(wire_name="recurrence_type"),
-        "resource_group_id": sdk.FieldSpec(wire_name="resource_group_id"),
-        "export_data_options": sdk.FieldSpec(
+        "active": ubx.FieldSpec(wire_name="active"),
+        "file_format": ubx.FieldSpec(wire_name="file_format"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "recurrence_period_end_date": ubx.FieldSpec(wire_name="recurrence_period_end_date"),
+        "recurrence_period_start_date": ubx.FieldSpec(wire_name="recurrence_period_start_date"),
+        "recurrence_type": ubx.FieldSpec(wire_name="recurrence_type"),
+        "resource_group_id": ubx.FieldSpec(wire_name="resource_group_id"),
+        "export_data_options": ubx.FieldSpec(
             wire_name="export_data_options",
             kind="list",
             fields=_GroupCostManagementExport_ExportDataOptionsFields,
         ),
-        "export_data_storage_location": sdk.FieldSpec(
+        "export_data_storage_location": ubx.FieldSpec(
             wire_name="export_data_storage_location",
             kind="list",
             fields=_GroupCostManagementExport_ExportDataStorageLocationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_GroupCostManagementExport_TimeoutsFields,

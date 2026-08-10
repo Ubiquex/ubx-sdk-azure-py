@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HciNetworkInterface_IpConfiguration:
@@ -21,17 +21,17 @@ class HciNetworkInterface_Timeouts:
     update: Any = None
 
 _HciNetworkInterface_IpConfigurationFields = {
-    "gateway": sdk.FieldSpec(wire_name="gateway"),
-    "prefix_length": sdk.FieldSpec(wire_name="prefix_length"),
-    "private_ip_address": sdk.FieldSpec(wire_name="private_ip_address"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "gateway": ubx.FieldSpec(wire_name="gateway"),
+    "prefix_length": ubx.FieldSpec(wire_name="prefix_length"),
+    "private_ip_address": ubx.FieldSpec(wire_name="private_ip_address"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _HciNetworkInterface_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -47,23 +47,23 @@ class HciNetworkInterfaceConfig:
     ip_configuration: Any = None
     timeouts: Any = None
 
-HciNetworkInterface = sdk.ResourceBinding(
+HciNetworkInterface = ubx.ResourceBinding(
     wire_type="azurerm_stack_hci_network_interface",
     fields={
-        "custom_location_id": sdk.FieldSpec(wire_name="custom_location_id"),
-        "dns_servers": sdk.FieldSpec(wire_name="dns_servers"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "mac_address": sdk.FieldSpec(wire_name="mac_address"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "ip_configuration": sdk.FieldSpec(
+        "custom_location_id": ubx.FieldSpec(wire_name="custom_location_id"),
+        "dns_servers": ubx.FieldSpec(wire_name="dns_servers"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "mac_address": ubx.FieldSpec(wire_name="mac_address"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "ip_configuration": ubx.FieldSpec(
             wire_name="ip_configuration",
             kind="list",
             fields=_HciNetworkInterface_IpConfigurationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_HciNetworkInterface_TimeoutsFields,

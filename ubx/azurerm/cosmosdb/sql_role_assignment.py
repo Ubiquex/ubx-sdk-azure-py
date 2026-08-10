@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SqlRoleAssignment_Timeouts:
@@ -14,10 +14,10 @@ class SqlRoleAssignment_Timeouts:
     update: Any = None
 
 _SqlRoleAssignment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class SqlRoleAssignmentConfig:
     scope: Any = None
     timeouts: Any = None
 
-SqlRoleAssignment = sdk.ResourceBinding(
+SqlRoleAssignment = ubx.ResourceBinding(
     wire_type="azurerm_cosmosdb_sql_role_assignment",
     fields={
-        "account_name": sdk.FieldSpec(wire_name="account_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "role_definition_id": sdk.FieldSpec(wire_name="role_definition_id"),
-        "scope": sdk.FieldSpec(wire_name="scope"),
-        "timeouts": sdk.FieldSpec(
+        "account_name": ubx.FieldSpec(wire_name="account_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "role_definition_id": ubx.FieldSpec(wire_name="role_definition_id"),
+        "scope": ubx.FieldSpec(wire_name="scope"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SqlRoleAssignment_TimeoutsFields,

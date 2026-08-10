@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EndpointApplicationSecurityGroupAssociation_Timeouts:
@@ -13,9 +13,9 @@ class EndpointApplicationSecurityGroupAssociation_Timeouts:
     read: Any = None
 
 _EndpointApplicationSecurityGroupAssociation_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -25,13 +25,13 @@ class EndpointApplicationSecurityGroupAssociationConfig:
     private_endpoint_id: Any = None
     timeouts: Any = None
 
-EndpointApplicationSecurityGroupAssociation = sdk.ResourceBinding(
+EndpointApplicationSecurityGroupAssociation = ubx.ResourceBinding(
     wire_type="azurerm_private_endpoint_application_security_group_association",
     fields={
-        "application_security_group_id": sdk.FieldSpec(wire_name="application_security_group_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "private_endpoint_id": sdk.FieldSpec(wire_name="private_endpoint_id"),
-        "timeouts": sdk.FieldSpec(
+        "application_security_group_id": ubx.FieldSpec(wire_name="application_security_group_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "private_endpoint_id": ubx.FieldSpec(wire_name="private_endpoint_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_EndpointApplicationSecurityGroupAssociation_TimeoutsFields,

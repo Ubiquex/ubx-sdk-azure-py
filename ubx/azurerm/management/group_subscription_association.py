@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GroupSubscriptionAssociation_Timeouts:
@@ -13,9 +13,9 @@ class GroupSubscriptionAssociation_Timeouts:
     read: Any = None
 
 _GroupSubscriptionAssociation_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -25,13 +25,13 @@ class GroupSubscriptionAssociationConfig:
     subscription_id: Any = None
     timeouts: Any = None
 
-GroupSubscriptionAssociation = sdk.ResourceBinding(
+GroupSubscriptionAssociation = ubx.ResourceBinding(
     wire_type="azurerm_management_group_subscription_association",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "management_group_id": sdk.FieldSpec(wire_name="management_group_id"),
-        "subscription_id": sdk.FieldSpec(wire_name="subscription_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "management_group_id": ubx.FieldSpec(wire_name="management_group_id"),
+        "subscription_id": ubx.FieldSpec(wire_name="subscription_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_GroupSubscriptionAssociation_TimeoutsFields,

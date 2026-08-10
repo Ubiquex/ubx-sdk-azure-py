@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryLinkedServiceAzureDatabricks_InstancePool:
@@ -39,35 +39,35 @@ class FactoryLinkedServiceAzureDatabricks_Timeouts:
     update: Any = None
 
 _FactoryLinkedServiceAzureDatabricks_InstancePoolFields = {
-    "cluster_version": sdk.FieldSpec(wire_name="cluster_version"),
-    "instance_pool_id": sdk.FieldSpec(wire_name="instance_pool_id"),
-    "max_number_of_workers": sdk.FieldSpec(wire_name="max_number_of_workers"),
-    "min_number_of_workers": sdk.FieldSpec(wire_name="min_number_of_workers"),
+    "cluster_version": ubx.FieldSpec(wire_name="cluster_version"),
+    "instance_pool_id": ubx.FieldSpec(wire_name="instance_pool_id"),
+    "max_number_of_workers": ubx.FieldSpec(wire_name="max_number_of_workers"),
+    "min_number_of_workers": ubx.FieldSpec(wire_name="min_number_of_workers"),
 }
 
 _FactoryLinkedServiceAzureDatabricks_KeyVaultPasswordFields = {
-    "linked_service_name": sdk.FieldSpec(wire_name="linked_service_name"),
-    "secret_name": sdk.FieldSpec(wire_name="secret_name"),
+    "linked_service_name": ubx.FieldSpec(wire_name="linked_service_name"),
+    "secret_name": ubx.FieldSpec(wire_name="secret_name"),
 }
 
 _FactoryLinkedServiceAzureDatabricks_NewClusterConfigFields = {
-    "cluster_version": sdk.FieldSpec(wire_name="cluster_version"),
-    "custom_tags": sdk.FieldSpec(wire_name="custom_tags"),
-    "driver_node_type": sdk.FieldSpec(wire_name="driver_node_type"),
-    "init_scripts": sdk.FieldSpec(wire_name="init_scripts"),
-    "log_destination": sdk.FieldSpec(wire_name="log_destination"),
-    "max_number_of_workers": sdk.FieldSpec(wire_name="max_number_of_workers"),
-    "min_number_of_workers": sdk.FieldSpec(wire_name="min_number_of_workers"),
-    "node_type": sdk.FieldSpec(wire_name="node_type"),
-    "spark_config": sdk.FieldSpec(wire_name="spark_config"),
-    "spark_environment_variables": sdk.FieldSpec(wire_name="spark_environment_variables"),
+    "cluster_version": ubx.FieldSpec(wire_name="cluster_version"),
+    "custom_tags": ubx.FieldSpec(wire_name="custom_tags"),
+    "driver_node_type": ubx.FieldSpec(wire_name="driver_node_type"),
+    "init_scripts": ubx.FieldSpec(wire_name="init_scripts"),
+    "log_destination": ubx.FieldSpec(wire_name="log_destination"),
+    "max_number_of_workers": ubx.FieldSpec(wire_name="max_number_of_workers"),
+    "min_number_of_workers": ubx.FieldSpec(wire_name="min_number_of_workers"),
+    "node_type": ubx.FieldSpec(wire_name="node_type"),
+    "spark_config": ubx.FieldSpec(wire_name="spark_config"),
+    "spark_environment_variables": ubx.FieldSpec(wire_name="spark_environment_variables"),
 }
 
 _FactoryLinkedServiceAzureDatabricks_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -89,37 +89,37 @@ class FactoryLinkedServiceAzureDatabricksConfig:
     new_cluster_config: Any = None
     timeouts: Any = None
 
-FactoryLinkedServiceAzureDatabricks = sdk.ResourceBinding(
+FactoryLinkedServiceAzureDatabricks = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_linked_service_azure_databricks",
     fields={
-        "access_token": sdk.FieldSpec(wire_name="access_token"),
-        "adb_domain": sdk.FieldSpec(wire_name="adb_domain"),
-        "additional_properties": sdk.FieldSpec(wire_name="additional_properties"),
-        "annotations": sdk.FieldSpec(wire_name="annotations"),
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "existing_cluster_id": sdk.FieldSpec(wire_name="existing_cluster_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "integration_runtime_name": sdk.FieldSpec(wire_name="integration_runtime_name"),
-        "msi_workspace_id": sdk.FieldSpec(wire_name="msi_workspace_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parameters": sdk.FieldSpec(wire_name="parameters"),
-        "instance_pool": sdk.FieldSpec(
+        "access_token": ubx.FieldSpec(wire_name="access_token"),
+        "adb_domain": ubx.FieldSpec(wire_name="adb_domain"),
+        "additional_properties": ubx.FieldSpec(wire_name="additional_properties"),
+        "annotations": ubx.FieldSpec(wire_name="annotations"),
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "existing_cluster_id": ubx.FieldSpec(wire_name="existing_cluster_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "integration_runtime_name": ubx.FieldSpec(wire_name="integration_runtime_name"),
+        "msi_workspace_id": ubx.FieldSpec(wire_name="msi_workspace_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parameters": ubx.FieldSpec(wire_name="parameters"),
+        "instance_pool": ubx.FieldSpec(
             wire_name="instance_pool",
             kind="list",
             fields=_FactoryLinkedServiceAzureDatabricks_InstancePoolFields,
         ),
-        "key_vault_password": sdk.FieldSpec(
+        "key_vault_password": ubx.FieldSpec(
             wire_name="key_vault_password",
             kind="list",
             fields=_FactoryLinkedServiceAzureDatabricks_KeyVaultPasswordFields,
         ),
-        "new_cluster_config": sdk.FieldSpec(
+        "new_cluster_config": ubx.FieldSpec(
             wire_name="new_cluster_config",
             kind="list",
             fields=_FactoryLinkedServiceAzureDatabricks_NewClusterConfigFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryLinkedServiceAzureDatabricks_TimeoutsFields,

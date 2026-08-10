@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EndpointStorageContainer_Timeouts:
@@ -14,10 +14,10 @@ class EndpointStorageContainer_Timeouts:
     update: Any = None
 
 _EndpointStorageContainer_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -38,24 +38,24 @@ class EndpointStorageContainerConfig:
     subscription_id: Any = None
     timeouts: Any = None
 
-EndpointStorageContainer = sdk.ResourceBinding(
+EndpointStorageContainer = ubx.ResourceBinding(
     wire_type="azurerm_iothub_endpoint_storage_container",
     fields={
-        "authentication_type": sdk.FieldSpec(wire_name="authentication_type"),
-        "batch_frequency_in_seconds": sdk.FieldSpec(wire_name="batch_frequency_in_seconds"),
-        "connection_string": sdk.FieldSpec(wire_name="connection_string"),
-        "container_name": sdk.FieldSpec(wire_name="container_name"),
-        "encoding": sdk.FieldSpec(wire_name="encoding"),
-        "endpoint_uri": sdk.FieldSpec(wire_name="endpoint_uri"),
-        "file_name_format": sdk.FieldSpec(wire_name="file_name_format"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "identity_id": sdk.FieldSpec(wire_name="identity_id"),
-        "iothub_id": sdk.FieldSpec(wire_name="iothub_id"),
-        "max_chunk_size_in_bytes": sdk.FieldSpec(wire_name="max_chunk_size_in_bytes"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "subscription_id": sdk.FieldSpec(wire_name="subscription_id"),
-        "timeouts": sdk.FieldSpec(
+        "authentication_type": ubx.FieldSpec(wire_name="authentication_type"),
+        "batch_frequency_in_seconds": ubx.FieldSpec(wire_name="batch_frequency_in_seconds"),
+        "connection_string": ubx.FieldSpec(wire_name="connection_string"),
+        "container_name": ubx.FieldSpec(wire_name="container_name"),
+        "encoding": ubx.FieldSpec(wire_name="encoding"),
+        "endpoint_uri": ubx.FieldSpec(wire_name="endpoint_uri"),
+        "file_name_format": ubx.FieldSpec(wire_name="file_name_format"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "identity_id": ubx.FieldSpec(wire_name="identity_id"),
+        "iothub_id": ubx.FieldSpec(wire_name="iothub_id"),
+        "max_chunk_size_in_bytes": ubx.FieldSpec(wire_name="max_chunk_size_in_bytes"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "subscription_id": ubx.FieldSpec(wire_name="subscription_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_EndpointStorageContainer_TimeoutsFields,

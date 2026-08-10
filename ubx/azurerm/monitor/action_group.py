@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ActionGroup_ArmRoleReceiver:
@@ -92,88 +92,88 @@ class ActionGroup_WebhookReceiver:
     aad_auth: Any = None
 
 _ActionGroup_ArmRoleReceiverFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "role_id": sdk.FieldSpec(wire_name="role_id"),
-    "use_common_alert_schema": sdk.FieldSpec(wire_name="use_common_alert_schema"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "role_id": ubx.FieldSpec(wire_name="role_id"),
+    "use_common_alert_schema": ubx.FieldSpec(wire_name="use_common_alert_schema"),
 }
 
 _ActionGroup_AutomationRunbookReceiverFields = {
-    "automation_account_id": sdk.FieldSpec(wire_name="automation_account_id"),
-    "is_global_runbook": sdk.FieldSpec(wire_name="is_global_runbook"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "runbook_name": sdk.FieldSpec(wire_name="runbook_name"),
-    "service_uri": sdk.FieldSpec(wire_name="service_uri"),
-    "use_common_alert_schema": sdk.FieldSpec(wire_name="use_common_alert_schema"),
-    "webhook_resource_id": sdk.FieldSpec(wire_name="webhook_resource_id"),
+    "automation_account_id": ubx.FieldSpec(wire_name="automation_account_id"),
+    "is_global_runbook": ubx.FieldSpec(wire_name="is_global_runbook"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "runbook_name": ubx.FieldSpec(wire_name="runbook_name"),
+    "service_uri": ubx.FieldSpec(wire_name="service_uri"),
+    "use_common_alert_schema": ubx.FieldSpec(wire_name="use_common_alert_schema"),
+    "webhook_resource_id": ubx.FieldSpec(wire_name="webhook_resource_id"),
 }
 
 _ActionGroup_AzureAppPushReceiverFields = {
-    "email_address": sdk.FieldSpec(wire_name="email_address"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "email_address": ubx.FieldSpec(wire_name="email_address"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _ActionGroup_AzureFunctionReceiverFields = {
-    "function_app_resource_id": sdk.FieldSpec(wire_name="function_app_resource_id"),
-    "function_name": sdk.FieldSpec(wire_name="function_name"),
-    "http_trigger_url": sdk.FieldSpec(wire_name="http_trigger_url"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "use_common_alert_schema": sdk.FieldSpec(wire_name="use_common_alert_schema"),
+    "function_app_resource_id": ubx.FieldSpec(wire_name="function_app_resource_id"),
+    "function_name": ubx.FieldSpec(wire_name="function_name"),
+    "http_trigger_url": ubx.FieldSpec(wire_name="http_trigger_url"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "use_common_alert_schema": ubx.FieldSpec(wire_name="use_common_alert_schema"),
 }
 
 _ActionGroup_EmailReceiverFields = {
-    "email_address": sdk.FieldSpec(wire_name="email_address"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "use_common_alert_schema": sdk.FieldSpec(wire_name="use_common_alert_schema"),
+    "email_address": ubx.FieldSpec(wire_name="email_address"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "use_common_alert_schema": ubx.FieldSpec(wire_name="use_common_alert_schema"),
 }
 
 _ActionGroup_EventHubReceiverFields = {
-    "event_hub_name": sdk.FieldSpec(wire_name="event_hub_name"),
-    "event_hub_namespace": sdk.FieldSpec(wire_name="event_hub_namespace"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "subscription_id": sdk.FieldSpec(wire_name="subscription_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "use_common_alert_schema": sdk.FieldSpec(wire_name="use_common_alert_schema"),
+    "event_hub_name": ubx.FieldSpec(wire_name="event_hub_name"),
+    "event_hub_namespace": ubx.FieldSpec(wire_name="event_hub_namespace"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "subscription_id": ubx.FieldSpec(wire_name="subscription_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "use_common_alert_schema": ubx.FieldSpec(wire_name="use_common_alert_schema"),
 }
 
 _ActionGroup_ItsmReceiverFields = {
-    "connection_id": sdk.FieldSpec(wire_name="connection_id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "region": sdk.FieldSpec(wire_name="region"),
-    "ticket_configuration": sdk.FieldSpec(wire_name="ticket_configuration"),
-    "workspace_id": sdk.FieldSpec(wire_name="workspace_id"),
+    "connection_id": ubx.FieldSpec(wire_name="connection_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "region": ubx.FieldSpec(wire_name="region"),
+    "ticket_configuration": ubx.FieldSpec(wire_name="ticket_configuration"),
+    "workspace_id": ubx.FieldSpec(wire_name="workspace_id"),
 }
 
 _ActionGroup_LogicAppReceiverFields = {
-    "callback_url": sdk.FieldSpec(wire_name="callback_url"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "resource_id": sdk.FieldSpec(wire_name="resource_id"),
-    "use_common_alert_schema": sdk.FieldSpec(wire_name="use_common_alert_schema"),
+    "callback_url": ubx.FieldSpec(wire_name="callback_url"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "resource_id": ubx.FieldSpec(wire_name="resource_id"),
+    "use_common_alert_schema": ubx.FieldSpec(wire_name="use_common_alert_schema"),
 }
 
 _ActionGroup_SmsReceiverFields = {
-    "country_code": sdk.FieldSpec(wire_name="country_code"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "phone_number": sdk.FieldSpec(wire_name="phone_number"),
+    "country_code": ubx.FieldSpec(wire_name="country_code"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "phone_number": ubx.FieldSpec(wire_name="phone_number"),
 }
 
 _ActionGroup_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _ActionGroup_WebhookReceiver_AadAuthFields = {
-    "identifier_uri": sdk.FieldSpec(wire_name="identifier_uri"),
-    "object_id": sdk.FieldSpec(wire_name="object_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
+    "identifier_uri": ubx.FieldSpec(wire_name="identifier_uri"),
+    "object_id": ubx.FieldSpec(wire_name="object_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
 }
 
 _ActionGroup_WebhookReceiverFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "service_uri": sdk.FieldSpec(wire_name="service_uri"),
-    "use_common_alert_schema": sdk.FieldSpec(wire_name="use_common_alert_schema"),
-    "aad_auth": sdk.FieldSpec(
+    "name": ubx.FieldSpec(wire_name="name"),
+    "service_uri": ubx.FieldSpec(wire_name="service_uri"),
+    "use_common_alert_schema": ubx.FieldSpec(wire_name="use_common_alert_schema"),
+    "aad_auth": ubx.FieldSpec(
         wire_name="aad_auth",
         kind="list",
         fields=_ActionGroup_WebhookReceiver_AadAuthFields,
@@ -202,72 +202,72 @@ class ActionGroupConfig:
     voice_receiver: Any = None
     webhook_receiver: Any = None
 
-ActionGroup = sdk.ResourceBinding(
+ActionGroup = ubx.ResourceBinding(
     wire_type="azurerm_monitor_action_group",
     fields={
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "short_name": sdk.FieldSpec(wire_name="short_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "arm_role_receiver": sdk.FieldSpec(
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "short_name": ubx.FieldSpec(wire_name="short_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "arm_role_receiver": ubx.FieldSpec(
             wire_name="arm_role_receiver",
             kind="list",
             fields=_ActionGroup_ArmRoleReceiverFields,
         ),
-        "automation_runbook_receiver": sdk.FieldSpec(
+        "automation_runbook_receiver": ubx.FieldSpec(
             wire_name="automation_runbook_receiver",
             kind="list",
             fields=_ActionGroup_AutomationRunbookReceiverFields,
         ),
-        "azure_app_push_receiver": sdk.FieldSpec(
+        "azure_app_push_receiver": ubx.FieldSpec(
             wire_name="azure_app_push_receiver",
             kind="list",
             fields=_ActionGroup_AzureAppPushReceiverFields,
         ),
-        "azure_function_receiver": sdk.FieldSpec(
+        "azure_function_receiver": ubx.FieldSpec(
             wire_name="azure_function_receiver",
             kind="list",
             fields=_ActionGroup_AzureFunctionReceiverFields,
         ),
-        "email_receiver": sdk.FieldSpec(
+        "email_receiver": ubx.FieldSpec(
             wire_name="email_receiver",
             kind="list",
             fields=_ActionGroup_EmailReceiverFields,
         ),
-        "event_hub_receiver": sdk.FieldSpec(
+        "event_hub_receiver": ubx.FieldSpec(
             wire_name="event_hub_receiver",
             kind="list",
             fields=_ActionGroup_EventHubReceiverFields,
         ),
-        "itsm_receiver": sdk.FieldSpec(
+        "itsm_receiver": ubx.FieldSpec(
             wire_name="itsm_receiver",
             kind="list",
             fields=_ActionGroup_ItsmReceiverFields,
         ),
-        "logic_app_receiver": sdk.FieldSpec(
+        "logic_app_receiver": ubx.FieldSpec(
             wire_name="logic_app_receiver",
             kind="list",
             fields=_ActionGroup_LogicAppReceiverFields,
         ),
-        "sms_receiver": sdk.FieldSpec(
+        "sms_receiver": ubx.FieldSpec(
             wire_name="sms_receiver",
             kind="list",
             fields=_ActionGroup_SmsReceiverFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ActionGroup_TimeoutsFields,
         ),
-        "voice_receiver": sdk.FieldSpec(
+        "voice_receiver": ubx.FieldSpec(
             wire_name="voice_receiver",
             kind="list",
             fields=_ActionGroup_SmsReceiverFields,
         ),
-        "webhook_receiver": sdk.FieldSpec(
+        "webhook_receiver": ubx.FieldSpec(
             wire_name="webhook_receiver",
             kind="list",
             fields=_ActionGroup_WebhookReceiverFields,

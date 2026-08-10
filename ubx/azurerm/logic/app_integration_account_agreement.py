@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppIntegrationAccountAgreement_GuestIdentity:
@@ -19,15 +19,15 @@ class AppIntegrationAccountAgreement_Timeouts:
     update: Any = None
 
 _AppIntegrationAccountAgreement_GuestIdentityFields = {
-    "qualifier": sdk.FieldSpec(wire_name="qualifier"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "qualifier": ubx.FieldSpec(wire_name="qualifier"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _AppIntegrationAccountAgreement_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -45,29 +45,29 @@ class AppIntegrationAccountAgreementConfig:
     host_identity: Any = None
     timeouts: Any = None
 
-AppIntegrationAccountAgreement = sdk.ResourceBinding(
+AppIntegrationAccountAgreement = ubx.ResourceBinding(
     wire_type="azurerm_logic_app_integration_account_agreement",
     fields={
-        "agreement_type": sdk.FieldSpec(wire_name="agreement_type"),
-        "content": sdk.FieldSpec(wire_name="content"),
-        "guest_partner_name": sdk.FieldSpec(wire_name="guest_partner_name"),
-        "host_partner_name": sdk.FieldSpec(wire_name="host_partner_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "integration_account_name": sdk.FieldSpec(wire_name="integration_account_name"),
-        "metadata": sdk.FieldSpec(wire_name="metadata"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "guest_identity": sdk.FieldSpec(
+        "agreement_type": ubx.FieldSpec(wire_name="agreement_type"),
+        "content": ubx.FieldSpec(wire_name="content"),
+        "guest_partner_name": ubx.FieldSpec(wire_name="guest_partner_name"),
+        "host_partner_name": ubx.FieldSpec(wire_name="host_partner_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "integration_account_name": ubx.FieldSpec(wire_name="integration_account_name"),
+        "metadata": ubx.FieldSpec(wire_name="metadata"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "guest_identity": ubx.FieldSpec(
             wire_name="guest_identity",
             kind="list",
             fields=_AppIntegrationAccountAgreement_GuestIdentityFields,
         ),
-        "host_identity": sdk.FieldSpec(
+        "host_identity": ubx.FieldSpec(
             wire_name="host_identity",
             kind="list",
             fields=_AppIntegrationAccountAgreement_GuestIdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AppIntegrationAccountAgreement_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementIdentityProviderAad_Timeouts:
@@ -14,10 +14,10 @@ class ManagementIdentityProviderAad_Timeouts:
     update: Any = None
 
 _ManagementIdentityProviderAad_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -32,18 +32,18 @@ class ManagementIdentityProviderAadConfig:
     signin_tenant: Any = None
     timeouts: Any = None
 
-ManagementIdentityProviderAad = sdk.ResourceBinding(
+ManagementIdentityProviderAad = ubx.ResourceBinding(
     wire_type="azurerm_api_management_identity_provider_aad",
     fields={
-        "allowed_tenants": sdk.FieldSpec(wire_name="allowed_tenants"),
-        "api_management_name": sdk.FieldSpec(wire_name="api_management_name"),
-        "client_id": sdk.FieldSpec(wire_name="client_id"),
-        "client_library": sdk.FieldSpec(wire_name="client_library"),
-        "client_secret": sdk.FieldSpec(wire_name="client_secret"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "signin_tenant": sdk.FieldSpec(wire_name="signin_tenant"),
-        "timeouts": sdk.FieldSpec(
+        "allowed_tenants": ubx.FieldSpec(wire_name="allowed_tenants"),
+        "api_management_name": ubx.FieldSpec(wire_name="api_management_name"),
+        "client_id": ubx.FieldSpec(wire_name="client_id"),
+        "client_library": ubx.FieldSpec(wire_name="client_library"),
+        "client_secret": ubx.FieldSpec(wire_name="client_secret"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "signin_tenant": ubx.FieldSpec(wire_name="signin_tenant"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementIdentityProviderAad_TimeoutsFields,

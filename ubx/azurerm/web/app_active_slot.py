@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppActiveSlot_Timeouts:
@@ -14,10 +14,10 @@ class AppActiveSlot_Timeouts:
     update: Any = None
 
 _AppActiveSlot_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -27,13 +27,13 @@ class AppActiveSlotConfig:
     slot_id: Any = None
     timeouts: Any = None
 
-AppActiveSlot = sdk.ResourceBinding(
+AppActiveSlot = ubx.ResourceBinding(
     wire_type="azurerm_web_app_active_slot",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "overwrite_network_config": sdk.FieldSpec(wire_name="overwrite_network_config"),
-        "slot_id": sdk.FieldSpec(wire_name="slot_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "overwrite_network_config": ubx.FieldSpec(wire_name="overwrite_network_config"),
+        "slot_id": ubx.FieldSpec(wire_name="slot_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AppActiveSlot_TimeoutsFields,

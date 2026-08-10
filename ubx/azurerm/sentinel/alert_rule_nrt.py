@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AlertRuleNrt_AlertDetailsOverride_DynamicProperty:
@@ -60,16 +60,16 @@ class AlertRuleNrt_Timeouts:
     update: Any = None
 
 _AlertRuleNrt_AlertDetailsOverride_DynamicPropertyFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _AlertRuleNrt_AlertDetailsOverrideFields = {
-    "description_format": sdk.FieldSpec(wire_name="description_format"),
-    "display_name_format": sdk.FieldSpec(wire_name="display_name_format"),
-    "severity_column_name": sdk.FieldSpec(wire_name="severity_column_name"),
-    "tactics_column_name": sdk.FieldSpec(wire_name="tactics_column_name"),
-    "dynamic_property": sdk.FieldSpec(
+    "description_format": ubx.FieldSpec(wire_name="description_format"),
+    "display_name_format": ubx.FieldSpec(wire_name="display_name_format"),
+    "severity_column_name": ubx.FieldSpec(wire_name="severity_column_name"),
+    "tactics_column_name": ubx.FieldSpec(wire_name="tactics_column_name"),
+    "dynamic_property": ubx.FieldSpec(
         wire_name="dynamic_property",
         kind="list",
         fields=_AlertRuleNrt_AlertDetailsOverride_DynamicPropertyFields,
@@ -77,13 +77,13 @@ _AlertRuleNrt_AlertDetailsOverrideFields = {
 }
 
 _AlertRuleNrt_EntityMapping_FieldMappingFields = {
-    "column_name": sdk.FieldSpec(wire_name="column_name"),
-    "identifier": sdk.FieldSpec(wire_name="identifier"),
+    "column_name": ubx.FieldSpec(wire_name="column_name"),
+    "identifier": ubx.FieldSpec(wire_name="identifier"),
 }
 
 _AlertRuleNrt_EntityMappingFields = {
-    "entity_type": sdk.FieldSpec(wire_name="entity_type"),
-    "field_mapping": sdk.FieldSpec(
+    "entity_type": ubx.FieldSpec(wire_name="entity_type"),
+    "field_mapping": ubx.FieldSpec(
         wire_name="field_mapping",
         kind="list",
         fields=_AlertRuleNrt_EntityMapping_FieldMappingFields,
@@ -91,22 +91,22 @@ _AlertRuleNrt_EntityMappingFields = {
 }
 
 _AlertRuleNrt_EventGroupingFields = {
-    "aggregation_method": sdk.FieldSpec(wire_name="aggregation_method"),
+    "aggregation_method": ubx.FieldSpec(wire_name="aggregation_method"),
 }
 
 _AlertRuleNrt_Incident_GroupingFields = {
-    "by_alert_details": sdk.FieldSpec(wire_name="by_alert_details"),
-    "by_custom_details": sdk.FieldSpec(wire_name="by_custom_details"),
-    "by_entities": sdk.FieldSpec(wire_name="by_entities"),
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "entity_matching_method": sdk.FieldSpec(wire_name="entity_matching_method"),
-    "lookback_duration": sdk.FieldSpec(wire_name="lookback_duration"),
-    "reopen_closed_incidents": sdk.FieldSpec(wire_name="reopen_closed_incidents"),
+    "by_alert_details": ubx.FieldSpec(wire_name="by_alert_details"),
+    "by_custom_details": ubx.FieldSpec(wire_name="by_custom_details"),
+    "by_entities": ubx.FieldSpec(wire_name="by_entities"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "entity_matching_method": ubx.FieldSpec(wire_name="entity_matching_method"),
+    "lookback_duration": ubx.FieldSpec(wire_name="lookback_duration"),
+    "reopen_closed_incidents": ubx.FieldSpec(wire_name="reopen_closed_incidents"),
 }
 
 _AlertRuleNrt_IncidentFields = {
-    "create_incident_enabled": sdk.FieldSpec(wire_name="create_incident_enabled"),
-    "grouping": sdk.FieldSpec(
+    "create_incident_enabled": ubx.FieldSpec(wire_name="create_incident_enabled"),
+    "grouping": ubx.FieldSpec(
         wire_name="grouping",
         kind="list",
         fields=_AlertRuleNrt_Incident_GroupingFields,
@@ -114,14 +114,14 @@ _AlertRuleNrt_IncidentFields = {
 }
 
 _AlertRuleNrt_SentinelEntityMappingFields = {
-    "column_name": sdk.FieldSpec(wire_name="column_name"),
+    "column_name": ubx.FieldSpec(wire_name="column_name"),
 }
 
 _AlertRuleNrt_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -148,50 +148,50 @@ class AlertRuleNrtConfig:
     sentinel_entity_mapping: Any = None
     timeouts: Any = None
 
-AlertRuleNrt = sdk.ResourceBinding(
+AlertRuleNrt = ubx.ResourceBinding(
     wire_type="azurerm_sentinel_alert_rule_nrt",
     fields={
-        "alert_rule_template_guid": sdk.FieldSpec(wire_name="alert_rule_template_guid"),
-        "alert_rule_template_version": sdk.FieldSpec(wire_name="alert_rule_template_version"),
-        "custom_details": sdk.FieldSpec(wire_name="custom_details"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "log_analytics_workspace_id": sdk.FieldSpec(wire_name="log_analytics_workspace_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "query": sdk.FieldSpec(wire_name="query"),
-        "severity": sdk.FieldSpec(wire_name="severity"),
-        "suppression_duration": sdk.FieldSpec(wire_name="suppression_duration"),
-        "suppression_enabled": sdk.FieldSpec(wire_name="suppression_enabled"),
-        "tactics": sdk.FieldSpec(wire_name="tactics"),
-        "techniques": sdk.FieldSpec(wire_name="techniques"),
-        "alert_details_override": sdk.FieldSpec(
+        "alert_rule_template_guid": ubx.FieldSpec(wire_name="alert_rule_template_guid"),
+        "alert_rule_template_version": ubx.FieldSpec(wire_name="alert_rule_template_version"),
+        "custom_details": ubx.FieldSpec(wire_name="custom_details"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "log_analytics_workspace_id": ubx.FieldSpec(wire_name="log_analytics_workspace_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "query": ubx.FieldSpec(wire_name="query"),
+        "severity": ubx.FieldSpec(wire_name="severity"),
+        "suppression_duration": ubx.FieldSpec(wire_name="suppression_duration"),
+        "suppression_enabled": ubx.FieldSpec(wire_name="suppression_enabled"),
+        "tactics": ubx.FieldSpec(wire_name="tactics"),
+        "techniques": ubx.FieldSpec(wire_name="techniques"),
+        "alert_details_override": ubx.FieldSpec(
             wire_name="alert_details_override",
             kind="list",
             fields=_AlertRuleNrt_AlertDetailsOverrideFields,
         ),
-        "entity_mapping": sdk.FieldSpec(
+        "entity_mapping": ubx.FieldSpec(
             wire_name="entity_mapping",
             kind="list",
             fields=_AlertRuleNrt_EntityMappingFields,
         ),
-        "event_grouping": sdk.FieldSpec(
+        "event_grouping": ubx.FieldSpec(
             wire_name="event_grouping",
             kind="list",
             fields=_AlertRuleNrt_EventGroupingFields,
         ),
-        "incident": sdk.FieldSpec(
+        "incident": ubx.FieldSpec(
             wire_name="incident",
             kind="list",
             fields=_AlertRuleNrt_IncidentFields,
         ),
-        "sentinel_entity_mapping": sdk.FieldSpec(
+        "sentinel_entity_mapping": ubx.FieldSpec(
             wire_name="sentinel_entity_mapping",
             kind="list",
             fields=_AlertRuleNrt_SentinelEntityMappingFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AlertRuleNrt_TimeoutsFields,

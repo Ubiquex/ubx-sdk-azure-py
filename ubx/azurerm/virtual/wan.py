@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Wan_Timeouts:
@@ -14,10 +14,10 @@ class Wan_Timeouts:
     update: Any = None
 
 _Wan_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -33,19 +33,19 @@ class WanConfig:
     type: Any = None
     timeouts: Any = None
 
-Wan = sdk.ResourceBinding(
+Wan = ubx.ResourceBinding(
     wire_type="azurerm_virtual_wan",
     fields={
-        "allow_branch_to_branch_traffic": sdk.FieldSpec(wire_name="allow_branch_to_branch_traffic"),
-        "disable_vpn_encryption": sdk.FieldSpec(wire_name="disable_vpn_encryption"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "office365_local_breakout_category": sdk.FieldSpec(wire_name="office365_local_breakout_category"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "type": sdk.FieldSpec(wire_name="type"),
-        "timeouts": sdk.FieldSpec(
+        "allow_branch_to_branch_traffic": ubx.FieldSpec(wire_name="allow_branch_to_branch_traffic"),
+        "disable_vpn_encryption": ubx.FieldSpec(wire_name="disable_vpn_encryption"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "office365_local_breakout_category": ubx.FieldSpec(wire_name="office365_local_breakout_category"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "type": ubx.FieldSpec(wire_name="type"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Wan_TimeoutsFields,

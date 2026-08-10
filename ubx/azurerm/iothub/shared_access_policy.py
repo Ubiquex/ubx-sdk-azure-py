@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SharedAccessPolicy_Timeouts:
@@ -14,10 +14,10 @@ class SharedAccessPolicy_Timeouts:
     update: Any = None
 
 _SharedAccessPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -32,18 +32,18 @@ class SharedAccessPolicyConfig:
     service_connect: Any = None
     timeouts: Any = None
 
-SharedAccessPolicy = sdk.ResourceBinding(
+SharedAccessPolicy = ubx.ResourceBinding(
     wire_type="azurerm_iothub_shared_access_policy",
     fields={
-        "device_connect": sdk.FieldSpec(wire_name="device_connect"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "iothub_name": sdk.FieldSpec(wire_name="iothub_name"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "registry_read": sdk.FieldSpec(wire_name="registry_read"),
-        "registry_write": sdk.FieldSpec(wire_name="registry_write"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "service_connect": sdk.FieldSpec(wire_name="service_connect"),
-        "timeouts": sdk.FieldSpec(
+        "device_connect": ubx.FieldSpec(wire_name="device_connect"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "iothub_name": ubx.FieldSpec(wire_name="iothub_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "registry_read": ubx.FieldSpec(wire_name="registry_read"),
+        "registry_write": ubx.FieldSpec(wire_name="registry_write"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "service_connect": ubx.FieldSpec(wire_name="service_connect"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SharedAccessPolicy_TimeoutsFields,

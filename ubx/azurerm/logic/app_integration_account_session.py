@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppIntegrationAccountSession_Timeouts:
@@ -14,10 +14,10 @@ class AppIntegrationAccountSession_Timeouts:
     update: Any = None
 
 _AppIntegrationAccountSession_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class AppIntegrationAccountSessionConfig:
     resource_group_name: Any = None
     timeouts: Any = None
 
-AppIntegrationAccountSession = sdk.ResourceBinding(
+AppIntegrationAccountSession = ubx.ResourceBinding(
     wire_type="azurerm_logic_app_integration_account_session",
     fields={
-        "content": sdk.FieldSpec(wire_name="content"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "integration_account_name": sdk.FieldSpec(wire_name="integration_account_name"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "timeouts": sdk.FieldSpec(
+        "content": ubx.FieldSpec(wire_name="content"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "integration_account_name": ubx.FieldSpec(wire_name="integration_account_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AppIntegrationAccountSession_TimeoutsFields,

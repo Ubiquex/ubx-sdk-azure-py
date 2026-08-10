@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudNewRelicApplicationPerformanceMonitoring_Timeouts:
@@ -14,10 +14,10 @@ class CloudNewRelicApplicationPerformanceMonitoring_Timeouts:
     update: Any = None
 
 _CloudNewRelicApplicationPerformanceMonitoring_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -37,23 +37,23 @@ class CloudNewRelicApplicationPerformanceMonitoringConfig:
     spring_cloud_service_id: Any = None
     timeouts: Any = None
 
-CloudNewRelicApplicationPerformanceMonitoring = sdk.ResourceBinding(
+CloudNewRelicApplicationPerformanceMonitoring = ubx.ResourceBinding(
     wire_type="azurerm_spring_cloud_new_relic_application_performance_monitoring",
     fields={
-        "agent_enabled": sdk.FieldSpec(wire_name="agent_enabled"),
-        "app_name": sdk.FieldSpec(wire_name="app_name"),
-        "app_server_port": sdk.FieldSpec(wire_name="app_server_port"),
-        "audit_mode_enabled": sdk.FieldSpec(wire_name="audit_mode_enabled"),
-        "auto_app_naming_enabled": sdk.FieldSpec(wire_name="auto_app_naming_enabled"),
-        "auto_transaction_naming_enabled": sdk.FieldSpec(wire_name="auto_transaction_naming_enabled"),
-        "custom_tracing_enabled": sdk.FieldSpec(wire_name="custom_tracing_enabled"),
-        "globally_enabled": sdk.FieldSpec(wire_name="globally_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "labels": sdk.FieldSpec(wire_name="labels"),
-        "license_key": sdk.FieldSpec(wire_name="license_key"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "spring_cloud_service_id": sdk.FieldSpec(wire_name="spring_cloud_service_id"),
-        "timeouts": sdk.FieldSpec(
+        "agent_enabled": ubx.FieldSpec(wire_name="agent_enabled"),
+        "app_name": ubx.FieldSpec(wire_name="app_name"),
+        "app_server_port": ubx.FieldSpec(wire_name="app_server_port"),
+        "audit_mode_enabled": ubx.FieldSpec(wire_name="audit_mode_enabled"),
+        "auto_app_naming_enabled": ubx.FieldSpec(wire_name="auto_app_naming_enabled"),
+        "auto_transaction_naming_enabled": ubx.FieldSpec(wire_name="auto_transaction_naming_enabled"),
+        "custom_tracing_enabled": ubx.FieldSpec(wire_name="custom_tracing_enabled"),
+        "globally_enabled": ubx.FieldSpec(wire_name="globally_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "labels": ubx.FieldSpec(wire_name="labels"),
+        "license_key": ubx.FieldSpec(wire_name="license_key"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "spring_cloud_service_id": ubx.FieldSpec(wire_name="spring_cloud_service_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CloudNewRelicApplicationPerformanceMonitoring_TimeoutsFields,

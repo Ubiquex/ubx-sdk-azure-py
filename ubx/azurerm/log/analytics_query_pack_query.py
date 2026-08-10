@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnalyticsQueryPackQuery_Timeouts:
@@ -14,10 +14,10 @@ class AnalyticsQueryPackQuery_Timeouts:
     update: Any = None
 
 _AnalyticsQueryPackQuery_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -35,21 +35,21 @@ class AnalyticsQueryPackQueryConfig:
     tags: Any = None
     timeouts: Any = None
 
-AnalyticsQueryPackQuery = sdk.ResourceBinding(
+AnalyticsQueryPackQuery = ubx.ResourceBinding(
     wire_type="azurerm_log_analytics_query_pack_query",
     fields={
-        "additional_settings_json": sdk.FieldSpec(wire_name="additional_settings_json"),
-        "body": sdk.FieldSpec(wire_name="body"),
-        "categories": sdk.FieldSpec(wire_name="categories"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "query_pack_id": sdk.FieldSpec(wire_name="query_pack_id"),
-        "resource_types": sdk.FieldSpec(wire_name="resource_types"),
-        "solutions": sdk.FieldSpec(wire_name="solutions"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "additional_settings_json": ubx.FieldSpec(wire_name="additional_settings_json"),
+        "body": ubx.FieldSpec(wire_name="body"),
+        "categories": ubx.FieldSpec(wire_name="categories"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "query_pack_id": ubx.FieldSpec(wire_name="query_pack_id"),
+        "resource_types": ubx.FieldSpec(wire_name="resource_types"),
+        "solutions": ubx.FieldSpec(wire_name="solutions"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AnalyticsQueryPackQuery_TimeoutsFields,

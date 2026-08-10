@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InterfaceNatRuleAssociation_Timeouts:
@@ -13,9 +13,9 @@ class InterfaceNatRuleAssociation_Timeouts:
     read: Any = None
 
 _InterfaceNatRuleAssociation_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -26,14 +26,14 @@ class InterfaceNatRuleAssociationConfig:
     network_interface_id: Any = None
     timeouts: Any = None
 
-InterfaceNatRuleAssociation = sdk.ResourceBinding(
+InterfaceNatRuleAssociation = ubx.ResourceBinding(
     wire_type="azurerm_network_interface_nat_rule_association",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "ip_configuration_name": sdk.FieldSpec(wire_name="ip_configuration_name"),
-        "nat_rule_id": sdk.FieldSpec(wire_name="nat_rule_id"),
-        "network_interface_id": sdk.FieldSpec(wire_name="network_interface_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "ip_configuration_name": ubx.FieldSpec(wire_name="ip_configuration_name"),
+        "nat_rule_id": ubx.FieldSpec(wire_name="nat_rule_id"),
+        "network_interface_id": ubx.FieldSpec(wire_name="network_interface_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_InterfaceNatRuleAssociation_TimeoutsFields,

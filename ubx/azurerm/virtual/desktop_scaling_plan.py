@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DesktopScalingPlan_HostPool:
@@ -40,36 +40,36 @@ class DesktopScalingPlan_Timeouts:
     update: Any = None
 
 _DesktopScalingPlan_HostPoolFields = {
-    "hostpool_id": sdk.FieldSpec(wire_name="hostpool_id"),
-    "scaling_plan_enabled": sdk.FieldSpec(wire_name="scaling_plan_enabled"),
+    "hostpool_id": ubx.FieldSpec(wire_name="hostpool_id"),
+    "scaling_plan_enabled": ubx.FieldSpec(wire_name="scaling_plan_enabled"),
 }
 
 _DesktopScalingPlan_ScheduleFields = {
-    "days_of_week": sdk.FieldSpec(wire_name="days_of_week"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "off_peak_load_balancing_algorithm": sdk.FieldSpec(wire_name="off_peak_load_balancing_algorithm"),
-    "off_peak_start_time": sdk.FieldSpec(wire_name="off_peak_start_time"),
-    "peak_load_balancing_algorithm": sdk.FieldSpec(wire_name="peak_load_balancing_algorithm"),
-    "peak_start_time": sdk.FieldSpec(wire_name="peak_start_time"),
-    "ramp_down_capacity_threshold_percent": sdk.FieldSpec(wire_name="ramp_down_capacity_threshold_percent"),
-    "ramp_down_force_logoff_users": sdk.FieldSpec(wire_name="ramp_down_force_logoff_users"),
-    "ramp_down_load_balancing_algorithm": sdk.FieldSpec(wire_name="ramp_down_load_balancing_algorithm"),
-    "ramp_down_minimum_hosts_percent": sdk.FieldSpec(wire_name="ramp_down_minimum_hosts_percent"),
-    "ramp_down_notification_message": sdk.FieldSpec(wire_name="ramp_down_notification_message"),
-    "ramp_down_start_time": sdk.FieldSpec(wire_name="ramp_down_start_time"),
-    "ramp_down_stop_hosts_when": sdk.FieldSpec(wire_name="ramp_down_stop_hosts_when"),
-    "ramp_down_wait_time_minutes": sdk.FieldSpec(wire_name="ramp_down_wait_time_minutes"),
-    "ramp_up_capacity_threshold_percent": sdk.FieldSpec(wire_name="ramp_up_capacity_threshold_percent"),
-    "ramp_up_load_balancing_algorithm": sdk.FieldSpec(wire_name="ramp_up_load_balancing_algorithm"),
-    "ramp_up_minimum_hosts_percent": sdk.FieldSpec(wire_name="ramp_up_minimum_hosts_percent"),
-    "ramp_up_start_time": sdk.FieldSpec(wire_name="ramp_up_start_time"),
+    "days_of_week": ubx.FieldSpec(wire_name="days_of_week"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "off_peak_load_balancing_algorithm": ubx.FieldSpec(wire_name="off_peak_load_balancing_algorithm"),
+    "off_peak_start_time": ubx.FieldSpec(wire_name="off_peak_start_time"),
+    "peak_load_balancing_algorithm": ubx.FieldSpec(wire_name="peak_load_balancing_algorithm"),
+    "peak_start_time": ubx.FieldSpec(wire_name="peak_start_time"),
+    "ramp_down_capacity_threshold_percent": ubx.FieldSpec(wire_name="ramp_down_capacity_threshold_percent"),
+    "ramp_down_force_logoff_users": ubx.FieldSpec(wire_name="ramp_down_force_logoff_users"),
+    "ramp_down_load_balancing_algorithm": ubx.FieldSpec(wire_name="ramp_down_load_balancing_algorithm"),
+    "ramp_down_minimum_hosts_percent": ubx.FieldSpec(wire_name="ramp_down_minimum_hosts_percent"),
+    "ramp_down_notification_message": ubx.FieldSpec(wire_name="ramp_down_notification_message"),
+    "ramp_down_start_time": ubx.FieldSpec(wire_name="ramp_down_start_time"),
+    "ramp_down_stop_hosts_when": ubx.FieldSpec(wire_name="ramp_down_stop_hosts_when"),
+    "ramp_down_wait_time_minutes": ubx.FieldSpec(wire_name="ramp_down_wait_time_minutes"),
+    "ramp_up_capacity_threshold_percent": ubx.FieldSpec(wire_name="ramp_up_capacity_threshold_percent"),
+    "ramp_up_load_balancing_algorithm": ubx.FieldSpec(wire_name="ramp_up_load_balancing_algorithm"),
+    "ramp_up_minimum_hosts_percent": ubx.FieldSpec(wire_name="ramp_up_minimum_hosts_percent"),
+    "ramp_up_start_time": ubx.FieldSpec(wire_name="ramp_up_start_time"),
 }
 
 _DesktopScalingPlan_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -87,29 +87,29 @@ class DesktopScalingPlanConfig:
     schedule: Any = None
     timeouts: Any = None
 
-DesktopScalingPlan = sdk.ResourceBinding(
+DesktopScalingPlan = ubx.ResourceBinding(
     wire_type="azurerm_virtual_desktop_scaling_plan",
     fields={
-        "description": sdk.FieldSpec(wire_name="description"),
-        "exclusion_tag": sdk.FieldSpec(wire_name="exclusion_tag"),
-        "friendly_name": sdk.FieldSpec(wire_name="friendly_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "time_zone": sdk.FieldSpec(wire_name="time_zone"),
-        "host_pool": sdk.FieldSpec(
+        "description": ubx.FieldSpec(wire_name="description"),
+        "exclusion_tag": ubx.FieldSpec(wire_name="exclusion_tag"),
+        "friendly_name": ubx.FieldSpec(wire_name="friendly_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "time_zone": ubx.FieldSpec(wire_name="time_zone"),
+        "host_pool": ubx.FieldSpec(
             wire_name="host_pool",
             kind="list",
             fields=_DesktopScalingPlan_HostPoolFields,
         ),
-        "schedule": sdk.FieldSpec(
+        "schedule": ubx.FieldSpec(
             wire_name="schedule",
             kind="list",
             fields=_DesktopScalingPlan_ScheduleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DesktopScalingPlan_TimeoutsFields,

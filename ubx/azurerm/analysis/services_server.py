@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServicesServer_Ipv4FirewallRule:
@@ -20,16 +20,16 @@ class ServicesServer_Timeouts:
     update: Any = None
 
 _ServicesServer_Ipv4FirewallRuleFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "range_end": sdk.FieldSpec(wire_name="range_end"),
-    "range_start": sdk.FieldSpec(wire_name="range_start"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "range_end": ubx.FieldSpec(wire_name="range_end"),
+    "range_start": ubx.FieldSpec(wire_name="range_start"),
 }
 
 _ServicesServer_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -47,25 +47,25 @@ class ServicesServerConfig:
     ipv4_firewall_rule: Any = None
     timeouts: Any = None
 
-ServicesServer = sdk.ResourceBinding(
+ServicesServer = ubx.ResourceBinding(
     wire_type="azurerm_analysis_services_server",
     fields={
-        "admin_users": sdk.FieldSpec(wire_name="admin_users"),
-        "backup_blob_container_uri": sdk.FieldSpec(wire_name="backup_blob_container_uri"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "power_bi_service_enabled": sdk.FieldSpec(wire_name="power_bi_service_enabled"),
-        "querypool_connection_mode": sdk.FieldSpec(wire_name="querypool_connection_mode"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "ipv4_firewall_rule": sdk.FieldSpec(
+        "admin_users": ubx.FieldSpec(wire_name="admin_users"),
+        "backup_blob_container_uri": ubx.FieldSpec(wire_name="backup_blob_container_uri"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "power_bi_service_enabled": ubx.FieldSpec(wire_name="power_bi_service_enabled"),
+        "querypool_connection_mode": ubx.FieldSpec(wire_name="querypool_connection_mode"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "ipv4_firewall_rule": ubx.FieldSpec(
             wire_name="ipv4_firewall_rule",
             kind="set",
             fields=_ServicesServer_Ipv4FirewallRuleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ServicesServer_TimeoutsFields,

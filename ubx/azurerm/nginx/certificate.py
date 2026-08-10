@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Certificate_Timeouts:
@@ -14,10 +14,10 @@ class Certificate_Timeouts:
     update: Any = None
 
 _Certificate_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class CertificateConfig:
     nginx_deployment_id: Any = None
     timeouts: Any = None
 
-Certificate = sdk.ResourceBinding(
+Certificate = ubx.ResourceBinding(
     wire_type="azurerm_nginx_certificate",
     fields={
-        "certificate_virtual_path": sdk.FieldSpec(wire_name="certificate_virtual_path"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "key_vault_secret_id": sdk.FieldSpec(wire_name="key_vault_secret_id"),
-        "key_virtual_path": sdk.FieldSpec(wire_name="key_virtual_path"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "nginx_deployment_id": sdk.FieldSpec(wire_name="nginx_deployment_id"),
-        "timeouts": sdk.FieldSpec(
+        "certificate_virtual_path": ubx.FieldSpec(wire_name="certificate_virtual_path"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "key_vault_secret_id": ubx.FieldSpec(wire_name="key_vault_secret_id"),
+        "key_virtual_path": ubx.FieldSpec(wire_name="key_virtual_path"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "nginx_deployment_id": ubx.FieldSpec(wire_name="nginx_deployment_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Certificate_TimeoutsFields,

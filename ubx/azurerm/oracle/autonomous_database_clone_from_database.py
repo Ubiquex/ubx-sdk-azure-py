@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AutonomousDatabaseCloneFromDatabase_Timeouts:
@@ -13,9 +13,9 @@ class AutonomousDatabaseCloneFromDatabase_Timeouts:
     read: Any = None
 
 _AutonomousDatabaseCloneFromDatabase_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -48,36 +48,36 @@ class AutonomousDatabaseCloneFromDatabaseConfig:
     virtual_network_id: Any = None
     timeouts: Any = None
 
-AutonomousDatabaseCloneFromDatabase = sdk.ResourceBinding(
+AutonomousDatabaseCloneFromDatabase = ubx.ResourceBinding(
     wire_type="azurerm_oracle_autonomous_database_clone_from_database",
     fields={
-        "admin_password": sdk.FieldSpec(wire_name="admin_password"),
-        "allowed_ip_addresses": sdk.FieldSpec(wire_name="allowed_ip_addresses"),
-        "auto_scaling_enabled": sdk.FieldSpec(wire_name="auto_scaling_enabled"),
-        "auto_scaling_for_storage_enabled": sdk.FieldSpec(wire_name="auto_scaling_for_storage_enabled"),
-        "backup_retention_period_in_days": sdk.FieldSpec(wire_name="backup_retention_period_in_days"),
-        "character_set": sdk.FieldSpec(wire_name="character_set"),
-        "clone_type": sdk.FieldSpec(wire_name="clone_type"),
-        "compute_count": sdk.FieldSpec(wire_name="compute_count"),
-        "compute_model": sdk.FieldSpec(wire_name="compute_model"),
-        "customer_contacts": sdk.FieldSpec(wire_name="customer_contacts"),
-        "data_storage_size_in_tb": sdk.FieldSpec(wire_name="data_storage_size_in_tb"),
-        "database_version": sdk.FieldSpec(wire_name="database_version"),
-        "database_workload": sdk.FieldSpec(wire_name="database_workload"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "license_model": sdk.FieldSpec(wire_name="license_model"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "mtls_connection_required": sdk.FieldSpec(wire_name="mtls_connection_required"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "national_character_set": sdk.FieldSpec(wire_name="national_character_set"),
-        "refreshable_model": sdk.FieldSpec(wire_name="refreshable_model"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "source_autonomous_database_id": sdk.FieldSpec(wire_name="source_autonomous_database_id"),
-        "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "virtual_network_id": sdk.FieldSpec(wire_name="virtual_network_id"),
-        "timeouts": sdk.FieldSpec(
+        "admin_password": ubx.FieldSpec(wire_name="admin_password"),
+        "allowed_ip_addresses": ubx.FieldSpec(wire_name="allowed_ip_addresses"),
+        "auto_scaling_enabled": ubx.FieldSpec(wire_name="auto_scaling_enabled"),
+        "auto_scaling_for_storage_enabled": ubx.FieldSpec(wire_name="auto_scaling_for_storage_enabled"),
+        "backup_retention_period_in_days": ubx.FieldSpec(wire_name="backup_retention_period_in_days"),
+        "character_set": ubx.FieldSpec(wire_name="character_set"),
+        "clone_type": ubx.FieldSpec(wire_name="clone_type"),
+        "compute_count": ubx.FieldSpec(wire_name="compute_count"),
+        "compute_model": ubx.FieldSpec(wire_name="compute_model"),
+        "customer_contacts": ubx.FieldSpec(wire_name="customer_contacts"),
+        "data_storage_size_in_tb": ubx.FieldSpec(wire_name="data_storage_size_in_tb"),
+        "database_version": ubx.FieldSpec(wire_name="database_version"),
+        "database_workload": ubx.FieldSpec(wire_name="database_workload"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "license_model": ubx.FieldSpec(wire_name="license_model"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "mtls_connection_required": ubx.FieldSpec(wire_name="mtls_connection_required"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "national_character_set": ubx.FieldSpec(wire_name="national_character_set"),
+        "refreshable_model": ubx.FieldSpec(wire_name="refreshable_model"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "source_autonomous_database_id": ubx.FieldSpec(wire_name="source_autonomous_database_id"),
+        "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "virtual_network_id": ubx.FieldSpec(wire_name="virtual_network_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AutonomousDatabaseCloneFromDatabase_TimeoutsFields,

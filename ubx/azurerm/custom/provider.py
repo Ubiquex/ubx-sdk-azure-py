@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Provider_Action:
@@ -29,25 +29,25 @@ class Provider_Validation:
     specification: Any = None
 
 _Provider_ActionFields = {
-    "endpoint": sdk.FieldSpec(wire_name="endpoint"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "endpoint": ubx.FieldSpec(wire_name="endpoint"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _Provider_ResourceTypeFields = {
-    "endpoint": sdk.FieldSpec(wire_name="endpoint"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "routing_type": sdk.FieldSpec(wire_name="routing_type"),
+    "endpoint": ubx.FieldSpec(wire_name="endpoint"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "routing_type": ubx.FieldSpec(wire_name="routing_type"),
 }
 
 _Provider_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _Provider_ValidationFields = {
-    "specification": sdk.FieldSpec(wire_name="specification"),
+    "specification": ubx.FieldSpec(wire_name="specification"),
 }
 
 @dataclasses.dataclass
@@ -62,30 +62,30 @@ class ProviderConfig:
     timeouts: Any = None
     validation: Any = None
 
-Provider = sdk.ResourceBinding(
+Provider = ubx.ResourceBinding(
     wire_type="azurerm_custom_provider",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "action": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "action": ubx.FieldSpec(
             wire_name="action",
             kind="set",
             fields=_Provider_ActionFields,
         ),
-        "resource_type": sdk.FieldSpec(
+        "resource_type": ubx.FieldSpec(
             wire_name="resource_type",
             kind="set",
             fields=_Provider_ResourceTypeFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Provider_TimeoutsFields,
         ),
-        "validation": sdk.FieldSpec(
+        "validation": ubx.FieldSpec(
             wire_name="validation",
             kind="set",
             fields=_Provider_ValidationFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FrontdoorSecret_Secret_CustomerCertificate:
@@ -23,13 +23,13 @@ class FrontdoorSecret_Timeouts:
     read: Any = None
 
 _FrontdoorSecret_Secret_CustomerCertificateFields = {
-    "expiration_date": sdk.FieldSpec(wire_name="expiration_date"),
-    "key_vault_certificate_id": sdk.FieldSpec(wire_name="key_vault_certificate_id"),
-    "subject_alternative_names": sdk.FieldSpec(wire_name="subject_alternative_names"),
+    "expiration_date": ubx.FieldSpec(wire_name="expiration_date"),
+    "key_vault_certificate_id": ubx.FieldSpec(wire_name="key_vault_certificate_id"),
+    "subject_alternative_names": ubx.FieldSpec(wire_name="subject_alternative_names"),
 }
 
 _FrontdoorSecret_SecretFields = {
-    "customer_certificate": sdk.FieldSpec(
+    "customer_certificate": ubx.FieldSpec(
         wire_name="customer_certificate",
         kind="list",
         fields=_FrontdoorSecret_Secret_CustomerCertificateFields,
@@ -37,9 +37,9 @@ _FrontdoorSecret_SecretFields = {
 }
 
 _FrontdoorSecret_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -50,18 +50,18 @@ class FrontdoorSecretConfig:
     secret: Any = None
     timeouts: Any = None
 
-FrontdoorSecret = sdk.ResourceBinding(
+FrontdoorSecret = ubx.ResourceBinding(
     wire_type="azurerm_cdn_frontdoor_secret",
     fields={
-        "cdn_frontdoor_profile_id": sdk.FieldSpec(wire_name="cdn_frontdoor_profile_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "secret": sdk.FieldSpec(
+        "cdn_frontdoor_profile_id": ubx.FieldSpec(wire_name="cdn_frontdoor_profile_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "secret": ubx.FieldSpec(
             wire_name="secret",
             kind="list",
             fields=_FrontdoorSecret_SecretFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FrontdoorSecret_TimeoutsFields,

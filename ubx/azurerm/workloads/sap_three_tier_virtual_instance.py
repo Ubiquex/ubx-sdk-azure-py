@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SapThreeTierVirtualInstance_Identity:
@@ -118,31 +118,31 @@ class SapThreeTierVirtualInstance_Timeouts:
     update: Any = None
 
 _SapThreeTierVirtualInstance_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _SapThreeTierVirtualInstance_ThreeTierConfiguration_ApplicationServerConfiguration_VirtualMachineConfiguration_ImageFields = {
-    "offer": sdk.FieldSpec(wire_name="offer"),
-    "publisher": sdk.FieldSpec(wire_name="publisher"),
-    "sku": sdk.FieldSpec(wire_name="sku"),
-    "version": sdk.FieldSpec(wire_name="version"),
+    "offer": ubx.FieldSpec(wire_name="offer"),
+    "publisher": ubx.FieldSpec(wire_name="publisher"),
+    "sku": ubx.FieldSpec(wire_name="sku"),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _SapThreeTierVirtualInstance_ThreeTierConfiguration_ApplicationServerConfiguration_VirtualMachineConfiguration_OsProfileFields = {
-    "admin_username": sdk.FieldSpec(wire_name="admin_username"),
-    "ssh_private_key": sdk.FieldSpec(wire_name="ssh_private_key"),
-    "ssh_public_key": sdk.FieldSpec(wire_name="ssh_public_key"),
+    "admin_username": ubx.FieldSpec(wire_name="admin_username"),
+    "ssh_private_key": ubx.FieldSpec(wire_name="ssh_private_key"),
+    "ssh_public_key": ubx.FieldSpec(wire_name="ssh_public_key"),
 }
 
 _SapThreeTierVirtualInstance_ThreeTierConfiguration_ApplicationServerConfiguration_VirtualMachineConfigurationFields = {
-    "virtual_machine_size": sdk.FieldSpec(wire_name="virtual_machine_size"),
-    "image": sdk.FieldSpec(
+    "virtual_machine_size": ubx.FieldSpec(wire_name="virtual_machine_size"),
+    "image": ubx.FieldSpec(
         wire_name="image",
         kind="list",
         fields=_SapThreeTierVirtualInstance_ThreeTierConfiguration_ApplicationServerConfiguration_VirtualMachineConfiguration_ImageFields,
     ),
-    "os_profile": sdk.FieldSpec(
+    "os_profile": ubx.FieldSpec(
         wire_name="os_profile",
         kind="list",
         fields=_SapThreeTierVirtualInstance_ThreeTierConfiguration_ApplicationServerConfiguration_VirtualMachineConfiguration_OsProfileFields,
@@ -150,9 +150,9 @@ _SapThreeTierVirtualInstance_ThreeTierConfiguration_ApplicationServerConfigurati
 }
 
 _SapThreeTierVirtualInstance_ThreeTierConfiguration_ApplicationServerConfigurationFields = {
-    "instance_count": sdk.FieldSpec(wire_name="instance_count"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-    "virtual_machine_configuration": sdk.FieldSpec(
+    "instance_count": ubx.FieldSpec(wire_name="instance_count"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+    "virtual_machine_configuration": ubx.FieldSpec(
         wire_name="virtual_machine_configuration",
         kind="list",
         fields=_SapThreeTierVirtualInstance_ThreeTierConfiguration_ApplicationServerConfiguration_VirtualMachineConfigurationFields,
@@ -160,22 +160,22 @@ _SapThreeTierVirtualInstance_ThreeTierConfiguration_ApplicationServerConfigurati
 }
 
 _SapThreeTierVirtualInstance_ThreeTierConfiguration_DatabaseServerConfiguration_DiskVolumeConfigurationFields = {
-    "number_of_disks": sdk.FieldSpec(wire_name="number_of_disks"),
-    "size_in_gb": sdk.FieldSpec(wire_name="size_in_gb"),
-    "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-    "volume_name": sdk.FieldSpec(wire_name="volume_name"),
+    "number_of_disks": ubx.FieldSpec(wire_name="number_of_disks"),
+    "size_in_gb": ubx.FieldSpec(wire_name="size_in_gb"),
+    "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+    "volume_name": ubx.FieldSpec(wire_name="volume_name"),
 }
 
 _SapThreeTierVirtualInstance_ThreeTierConfiguration_DatabaseServerConfigurationFields = {
-    "database_type": sdk.FieldSpec(wire_name="database_type"),
-    "instance_count": sdk.FieldSpec(wire_name="instance_count"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-    "disk_volume_configuration": sdk.FieldSpec(
+    "database_type": ubx.FieldSpec(wire_name="database_type"),
+    "instance_count": ubx.FieldSpec(wire_name="instance_count"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+    "disk_volume_configuration": ubx.FieldSpec(
         wire_name="disk_volume_configuration",
         kind="set",
         fields=_SapThreeTierVirtualInstance_ThreeTierConfiguration_DatabaseServerConfiguration_DiskVolumeConfigurationFields,
     ),
-    "virtual_machine_configuration": sdk.FieldSpec(
+    "virtual_machine_configuration": ubx.FieldSpec(
         wire_name="virtual_machine_configuration",
         kind="list",
         fields=_SapThreeTierVirtualInstance_ThreeTierConfiguration_ApplicationServerConfiguration_VirtualMachineConfigurationFields,
@@ -183,16 +183,16 @@ _SapThreeTierVirtualInstance_ThreeTierConfiguration_DatabaseServerConfigurationF
 }
 
 _SapThreeTierVirtualInstance_ThreeTierConfiguration_ResourceNames_ApplicationServer_VirtualMachine_DataDiskFields = {
-    "names": sdk.FieldSpec(wire_name="names"),
-    "volume_name": sdk.FieldSpec(wire_name="volume_name"),
+    "names": ubx.FieldSpec(wire_name="names"),
+    "volume_name": ubx.FieldSpec(wire_name="volume_name"),
 }
 
 _SapThreeTierVirtualInstance_ThreeTierConfiguration_ResourceNames_ApplicationServer_VirtualMachineFields = {
-    "host_name": sdk.FieldSpec(wire_name="host_name"),
-    "network_interface_names": sdk.FieldSpec(wire_name="network_interface_names"),
-    "os_disk_name": sdk.FieldSpec(wire_name="os_disk_name"),
-    "virtual_machine_name": sdk.FieldSpec(wire_name="virtual_machine_name"),
-    "data_disk": sdk.FieldSpec(
+    "host_name": ubx.FieldSpec(wire_name="host_name"),
+    "network_interface_names": ubx.FieldSpec(wire_name="network_interface_names"),
+    "os_disk_name": ubx.FieldSpec(wire_name="os_disk_name"),
+    "virtual_machine_name": ubx.FieldSpec(wire_name="virtual_machine_name"),
+    "data_disk": ubx.FieldSpec(
         wire_name="data_disk",
         kind="set",
         fields=_SapThreeTierVirtualInstance_ThreeTierConfiguration_ResourceNames_ApplicationServer_VirtualMachine_DataDiskFields,
@@ -200,8 +200,8 @@ _SapThreeTierVirtualInstance_ThreeTierConfiguration_ResourceNames_ApplicationSer
 }
 
 _SapThreeTierVirtualInstance_ThreeTierConfiguration_ResourceNames_ApplicationServerFields = {
-    "availability_set_name": sdk.FieldSpec(wire_name="availability_set_name"),
-    "virtual_machine": sdk.FieldSpec(
+    "availability_set_name": ubx.FieldSpec(wire_name="availability_set_name"),
+    "virtual_machine": ubx.FieldSpec(
         wire_name="virtual_machine",
         kind="list",
         fields=_SapThreeTierVirtualInstance_ThreeTierConfiguration_ResourceNames_ApplicationServer_VirtualMachineFields,
@@ -209,20 +209,20 @@ _SapThreeTierVirtualInstance_ThreeTierConfiguration_ResourceNames_ApplicationSer
 }
 
 _SapThreeTierVirtualInstance_ThreeTierConfiguration_ResourceNames_CentralServer_LoadBalancerFields = {
-    "backend_pool_names": sdk.FieldSpec(wire_name="backend_pool_names"),
-    "frontend_ip_configuration_names": sdk.FieldSpec(wire_name="frontend_ip_configuration_names"),
-    "health_probe_names": sdk.FieldSpec(wire_name="health_probe_names"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "backend_pool_names": ubx.FieldSpec(wire_name="backend_pool_names"),
+    "frontend_ip_configuration_names": ubx.FieldSpec(wire_name="frontend_ip_configuration_names"),
+    "health_probe_names": ubx.FieldSpec(wire_name="health_probe_names"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _SapThreeTierVirtualInstance_ThreeTierConfiguration_ResourceNames_CentralServerFields = {
-    "availability_set_name": sdk.FieldSpec(wire_name="availability_set_name"),
-    "load_balancer": sdk.FieldSpec(
+    "availability_set_name": ubx.FieldSpec(wire_name="availability_set_name"),
+    "load_balancer": ubx.FieldSpec(
         wire_name="load_balancer",
         kind="list",
         fields=_SapThreeTierVirtualInstance_ThreeTierConfiguration_ResourceNames_CentralServer_LoadBalancerFields,
     ),
-    "virtual_machine": sdk.FieldSpec(
+    "virtual_machine": ubx.FieldSpec(
         wire_name="virtual_machine",
         kind="list",
         fields=_SapThreeTierVirtualInstance_ThreeTierConfiguration_ResourceNames_ApplicationServer_VirtualMachineFields,
@@ -230,27 +230,27 @@ _SapThreeTierVirtualInstance_ThreeTierConfiguration_ResourceNames_CentralServerF
 }
 
 _SapThreeTierVirtualInstance_ThreeTierConfiguration_ResourceNames_SharedStorageFields = {
-    "account_name": sdk.FieldSpec(wire_name="account_name"),
-    "private_endpoint_name": sdk.FieldSpec(wire_name="private_endpoint_name"),
+    "account_name": ubx.FieldSpec(wire_name="account_name"),
+    "private_endpoint_name": ubx.FieldSpec(wire_name="private_endpoint_name"),
 }
 
 _SapThreeTierVirtualInstance_ThreeTierConfiguration_ResourceNamesFields = {
-    "application_server": sdk.FieldSpec(
+    "application_server": ubx.FieldSpec(
         wire_name="application_server",
         kind="list",
         fields=_SapThreeTierVirtualInstance_ThreeTierConfiguration_ResourceNames_ApplicationServerFields,
     ),
-    "central_server": sdk.FieldSpec(
+    "central_server": ubx.FieldSpec(
         wire_name="central_server",
         kind="list",
         fields=_SapThreeTierVirtualInstance_ThreeTierConfiguration_ResourceNames_CentralServerFields,
     ),
-    "database_server": sdk.FieldSpec(
+    "database_server": ubx.FieldSpec(
         wire_name="database_server",
         kind="list",
         fields=_SapThreeTierVirtualInstance_ThreeTierConfiguration_ResourceNames_CentralServerFields,
     ),
-    "shared_storage": sdk.FieldSpec(
+    "shared_storage": ubx.FieldSpec(
         wire_name="shared_storage",
         kind="list",
         fields=_SapThreeTierVirtualInstance_ThreeTierConfiguration_ResourceNames_SharedStorageFields,
@@ -258,35 +258,35 @@ _SapThreeTierVirtualInstance_ThreeTierConfiguration_ResourceNamesFields = {
 }
 
 _SapThreeTierVirtualInstance_ThreeTierConfiguration_TransportCreateAndMountFields = {
-    "resource_group_id": sdk.FieldSpec(wire_name="resource_group_id"),
-    "storage_account_name": sdk.FieldSpec(wire_name="storage_account_name"),
+    "resource_group_id": ubx.FieldSpec(wire_name="resource_group_id"),
+    "storage_account_name": ubx.FieldSpec(wire_name="storage_account_name"),
 }
 
 _SapThreeTierVirtualInstance_ThreeTierConfigurationFields = {
-    "app_resource_group_name": sdk.FieldSpec(wire_name="app_resource_group_name"),
-    "high_availability_type": sdk.FieldSpec(wire_name="high_availability_type"),
-    "secondary_ip_enabled": sdk.FieldSpec(wire_name="secondary_ip_enabled"),
-    "application_server_configuration": sdk.FieldSpec(
+    "app_resource_group_name": ubx.FieldSpec(wire_name="app_resource_group_name"),
+    "high_availability_type": ubx.FieldSpec(wire_name="high_availability_type"),
+    "secondary_ip_enabled": ubx.FieldSpec(wire_name="secondary_ip_enabled"),
+    "application_server_configuration": ubx.FieldSpec(
         wire_name="application_server_configuration",
         kind="list",
         fields=_SapThreeTierVirtualInstance_ThreeTierConfiguration_ApplicationServerConfigurationFields,
     ),
-    "central_server_configuration": sdk.FieldSpec(
+    "central_server_configuration": ubx.FieldSpec(
         wire_name="central_server_configuration",
         kind="list",
         fields=_SapThreeTierVirtualInstance_ThreeTierConfiguration_ApplicationServerConfigurationFields,
     ),
-    "database_server_configuration": sdk.FieldSpec(
+    "database_server_configuration": ubx.FieldSpec(
         wire_name="database_server_configuration",
         kind="list",
         fields=_SapThreeTierVirtualInstance_ThreeTierConfiguration_DatabaseServerConfigurationFields,
     ),
-    "resource_names": sdk.FieldSpec(
+    "resource_names": ubx.FieldSpec(
         wire_name="resource_names",
         kind="list",
         fields=_SapThreeTierVirtualInstance_ThreeTierConfiguration_ResourceNamesFields,
     ),
-    "transport_create_and_mount": sdk.FieldSpec(
+    "transport_create_and_mount": ubx.FieldSpec(
         wire_name="transport_create_and_mount",
         kind="list",
         fields=_SapThreeTierVirtualInstance_ThreeTierConfiguration_TransportCreateAndMountFields,
@@ -294,10 +294,10 @@ _SapThreeTierVirtualInstance_ThreeTierConfigurationFields = {
 }
 
 _SapThreeTierVirtualInstance_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -317,31 +317,31 @@ class SapThreeTierVirtualInstanceConfig:
     three_tier_configuration: Any = None
     timeouts: Any = None
 
-SapThreeTierVirtualInstance = sdk.ResourceBinding(
+SapThreeTierVirtualInstance = ubx.ResourceBinding(
     wire_type="azurerm_workloads_sap_three_tier_virtual_instance",
     fields={
-        "app_location": sdk.FieldSpec(wire_name="app_location"),
-        "environment": sdk.FieldSpec(wire_name="environment"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "managed_resource_group_name": sdk.FieldSpec(wire_name="managed_resource_group_name"),
-        "managed_resources_network_access_type": sdk.FieldSpec(wire_name="managed_resources_network_access_type"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sap_fqdn": sdk.FieldSpec(wire_name="sap_fqdn"),
-        "sap_product": sdk.FieldSpec(wire_name="sap_product"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "identity": sdk.FieldSpec(
+        "app_location": ubx.FieldSpec(wire_name="app_location"),
+        "environment": ubx.FieldSpec(wire_name="environment"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "managed_resource_group_name": ubx.FieldSpec(wire_name="managed_resource_group_name"),
+        "managed_resources_network_access_type": ubx.FieldSpec(wire_name="managed_resources_network_access_type"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sap_fqdn": ubx.FieldSpec(wire_name="sap_fqdn"),
+        "sap_product": ubx.FieldSpec(wire_name="sap_product"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_SapThreeTierVirtualInstance_IdentityFields,
         ),
-        "three_tier_configuration": sdk.FieldSpec(
+        "three_tier_configuration": ubx.FieldSpec(
             wire_name="three_tier_configuration",
             kind="list",
             fields=_SapThreeTierVirtualInstance_ThreeTierConfigurationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SapThreeTierVirtualInstance_TimeoutsFields,

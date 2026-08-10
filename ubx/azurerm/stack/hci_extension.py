@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HciExtension_Timeouts:
@@ -14,10 +14,10 @@ class HciExtension_Timeouts:
     update: Any = None
 
 _HciExtension_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -34,20 +34,20 @@ class HciExtensionConfig:
     type_handler_version: Any = None
     timeouts: Any = None
 
-HciExtension = sdk.ResourceBinding(
+HciExtension = ubx.ResourceBinding(
     wire_type="azurerm_stack_hci_extension",
     fields={
-        "arc_setting_id": sdk.FieldSpec(wire_name="arc_setting_id"),
-        "auto_upgrade_minor_version_enabled": sdk.FieldSpec(wire_name="auto_upgrade_minor_version_enabled"),
-        "automatic_upgrade_enabled": sdk.FieldSpec(wire_name="automatic_upgrade_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "protected_settings": sdk.FieldSpec(wire_name="protected_settings"),
-        "publisher": sdk.FieldSpec(wire_name="publisher"),
-        "settings": sdk.FieldSpec(wire_name="settings"),
-        "type": sdk.FieldSpec(wire_name="type"),
-        "type_handler_version": sdk.FieldSpec(wire_name="type_handler_version"),
-        "timeouts": sdk.FieldSpec(
+        "arc_setting_id": ubx.FieldSpec(wire_name="arc_setting_id"),
+        "auto_upgrade_minor_version_enabled": ubx.FieldSpec(wire_name="auto_upgrade_minor_version_enabled"),
+        "automatic_upgrade_enabled": ubx.FieldSpec(wire_name="automatic_upgrade_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "protected_settings": ubx.FieldSpec(wire_name="protected_settings"),
+        "publisher": ubx.FieldSpec(wire_name="publisher"),
+        "settings": ubx.FieldSpec(wire_name="settings"),
+        "type": ubx.FieldSpec(wire_name="type"),
+        "type_handler_version": ubx.FieldSpec(wire_name="type_handler_version"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_HciExtension_TimeoutsFields,

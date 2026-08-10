@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RecoveryVmwareReplicationPolicyAssociation_Timeouts:
@@ -13,9 +13,9 @@ class RecoveryVmwareReplicationPolicyAssociation_Timeouts:
     read: Any = None
 
 _RecoveryVmwareReplicationPolicyAssociation_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -26,14 +26,14 @@ class RecoveryVmwareReplicationPolicyAssociationConfig:
     recovery_vault_id: Any = None
     timeouts: Any = None
 
-RecoveryVmwareReplicationPolicyAssociation = sdk.ResourceBinding(
+RecoveryVmwareReplicationPolicyAssociation = ubx.ResourceBinding(
     wire_type="azurerm_site_recovery_vmware_replication_policy_association",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "policy_id": sdk.FieldSpec(wire_name="policy_id"),
-        "recovery_vault_id": sdk.FieldSpec(wire_name="recovery_vault_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "policy_id": ubx.FieldSpec(wire_name="policy_id"),
+        "recovery_vault_id": ubx.FieldSpec(wire_name="recovery_vault_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RecoveryVmwareReplicationPolicyAssociation_TimeoutsFields,

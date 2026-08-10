@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MachineRunCommand_ErrorBlobManagedIdentity:
@@ -31,20 +31,20 @@ class MachineRunCommand_Timeouts:
     update: Any = None
 
 _MachineRunCommand_ErrorBlobManagedIdentityFields = {
-    "client_id": sdk.FieldSpec(wire_name="client_id"),
-    "object_id": sdk.FieldSpec(wire_name="object_id"),
+    "client_id": ubx.FieldSpec(wire_name="client_id"),
+    "object_id": ubx.FieldSpec(wire_name="object_id"),
 }
 
 _MachineRunCommand_ParameterFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _MachineRunCommand_SourceFields = {
-    "command_id": sdk.FieldSpec(wire_name="command_id"),
-    "script": sdk.FieldSpec(wire_name="script"),
-    "script_uri": sdk.FieldSpec(wire_name="script_uri"),
-    "script_uri_managed_identity": sdk.FieldSpec(
+    "command_id": ubx.FieldSpec(wire_name="command_id"),
+    "script": ubx.FieldSpec(wire_name="script"),
+    "script_uri": ubx.FieldSpec(wire_name="script_uri"),
+    "script_uri_managed_identity": ubx.FieldSpec(
         wire_name="script_uri_managed_identity",
         kind="list",
         fields=_MachineRunCommand_ErrorBlobManagedIdentityFields,
@@ -52,10 +52,10 @@ _MachineRunCommand_SourceFields = {
 }
 
 _MachineRunCommand_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -76,44 +76,44 @@ class MachineRunCommandConfig:
     source: Any = None
     timeouts: Any = None
 
-MachineRunCommand = sdk.ResourceBinding(
+MachineRunCommand = ubx.ResourceBinding(
     wire_type="azurerm_virtual_machine_run_command",
     fields={
-        "error_blob_uri": sdk.FieldSpec(wire_name="error_blob_uri"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "output_blob_uri": sdk.FieldSpec(wire_name="output_blob_uri"),
-        "run_as_password": sdk.FieldSpec(wire_name="run_as_password"),
-        "run_as_user": sdk.FieldSpec(wire_name="run_as_user"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "virtual_machine_id": sdk.FieldSpec(wire_name="virtual_machine_id"),
-        "error_blob_managed_identity": sdk.FieldSpec(
+        "error_blob_uri": ubx.FieldSpec(wire_name="error_blob_uri"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "output_blob_uri": ubx.FieldSpec(wire_name="output_blob_uri"),
+        "run_as_password": ubx.FieldSpec(wire_name="run_as_password"),
+        "run_as_user": ubx.FieldSpec(wire_name="run_as_user"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "virtual_machine_id": ubx.FieldSpec(wire_name="virtual_machine_id"),
+        "error_blob_managed_identity": ubx.FieldSpec(
             wire_name="error_blob_managed_identity",
             kind="list",
             fields=_MachineRunCommand_ErrorBlobManagedIdentityFields,
         ),
-        "output_blob_managed_identity": sdk.FieldSpec(
+        "output_blob_managed_identity": ubx.FieldSpec(
             wire_name="output_blob_managed_identity",
             kind="list",
             fields=_MachineRunCommand_ErrorBlobManagedIdentityFields,
         ),
-        "parameter": sdk.FieldSpec(
+        "parameter": ubx.FieldSpec(
             wire_name="parameter",
             kind="list",
             fields=_MachineRunCommand_ParameterFields,
         ),
-        "protected_parameter": sdk.FieldSpec(
+        "protected_parameter": ubx.FieldSpec(
             wire_name="protected_parameter",
             kind="list",
             fields=_MachineRunCommand_ParameterFields,
         ),
-        "source": sdk.FieldSpec(
+        "source": ubx.FieldSpec(
             wire_name="source",
             kind="list",
             fields=_MachineRunCommand_SourceFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_MachineRunCommand_TimeoutsFields,

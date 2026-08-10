@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ImageGallery_Sharing_CommunityGallery:
@@ -27,16 +27,16 @@ class ImageGallery_Timeouts:
     update: Any = None
 
 _ImageGallery_Sharing_CommunityGalleryFields = {
-    "eula": sdk.FieldSpec(wire_name="eula"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "prefix": sdk.FieldSpec(wire_name="prefix"),
-    "publisher_email": sdk.FieldSpec(wire_name="publisher_email"),
-    "publisher_uri": sdk.FieldSpec(wire_name="publisher_uri"),
+    "eula": ubx.FieldSpec(wire_name="eula"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "prefix": ubx.FieldSpec(wire_name="prefix"),
+    "publisher_email": ubx.FieldSpec(wire_name="publisher_email"),
+    "publisher_uri": ubx.FieldSpec(wire_name="publisher_uri"),
 }
 
 _ImageGallery_SharingFields = {
-    "permission": sdk.FieldSpec(wire_name="permission"),
-    "community_gallery": sdk.FieldSpec(
+    "permission": ubx.FieldSpec(wire_name="permission"),
+    "community_gallery": ubx.FieldSpec(
         wire_name="community_gallery",
         kind="list",
         fields=_ImageGallery_Sharing_CommunityGalleryFields,
@@ -44,10 +44,10 @@ _ImageGallery_SharingFields = {
 }
 
 _ImageGallery_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -61,21 +61,21 @@ class ImageGalleryConfig:
     sharing: Any = None
     timeouts: Any = None
 
-ImageGallery = sdk.ResourceBinding(
+ImageGallery = ubx.ResourceBinding(
     wire_type="azurerm_shared_image_gallery",
     fields={
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "sharing": sdk.FieldSpec(
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "sharing": ubx.FieldSpec(
             wire_name="sharing",
             kind="list",
             fields=_ImageGallery_SharingFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ImageGallery_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LearningDatastoreFileshare_Timeouts:
@@ -14,10 +14,10 @@ class LearningDatastoreFileshare_Timeouts:
     update: Any = None
 
 _LearningDatastoreFileshare_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -33,19 +33,19 @@ class LearningDatastoreFileshareConfig:
     workspace_id: Any = None
     timeouts: Any = None
 
-LearningDatastoreFileshare = sdk.ResourceBinding(
+LearningDatastoreFileshare = ubx.ResourceBinding(
     wire_type="azurerm_machine_learning_datastore_fileshare",
     fields={
-        "account_key": sdk.FieldSpec(wire_name="account_key"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "service_data_identity": sdk.FieldSpec(wire_name="service_data_identity"),
-        "shared_access_signature": sdk.FieldSpec(wire_name="shared_access_signature"),
-        "storage_fileshare_id": sdk.FieldSpec(wire_name="storage_fileshare_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "workspace_id": sdk.FieldSpec(wire_name="workspace_id"),
-        "timeouts": sdk.FieldSpec(
+        "account_key": ubx.FieldSpec(wire_name="account_key"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "service_data_identity": ubx.FieldSpec(wire_name="service_data_identity"),
+        "shared_access_signature": ubx.FieldSpec(wire_name="shared_access_signature"),
+        "storage_fileshare_id": ubx.FieldSpec(wire_name="storage_fileshare_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "workspace_id": ubx.FieldSpec(wire_name="workspace_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_LearningDatastoreFileshare_TimeoutsFields,

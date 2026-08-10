@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class NamespaceTopic_Timeouts:
@@ -14,10 +14,10 @@ class NamespaceTopic_Timeouts:
     update: Any = None
 
 _NamespaceTopic_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -28,14 +28,14 @@ class NamespaceTopicConfig:
     name: Any = None
     timeouts: Any = None
 
-NamespaceTopic = sdk.ResourceBinding(
+NamespaceTopic = ubx.ResourceBinding(
     wire_type="azurerm_eventgrid_namespace_topic",
     fields={
-        "event_retention_in_days": sdk.FieldSpec(wire_name="event_retention_in_days"),
-        "eventgrid_namespace_id": sdk.FieldSpec(wire_name="eventgrid_namespace_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "timeouts": sdk.FieldSpec(
+        "event_retention_in_days": ubx.FieldSpec(wire_name="event_retention_in_days"),
+        "eventgrid_namespace_id": ubx.FieldSpec(wire_name="eventgrid_namespace_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_NamespaceTopic_TimeoutsFields,

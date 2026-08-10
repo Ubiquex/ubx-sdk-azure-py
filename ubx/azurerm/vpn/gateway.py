@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Gateway_BgpSettings_Instance0BgpPeeringAddress:
@@ -29,22 +29,22 @@ class Gateway_Timeouts:
     update: Any = None
 
 _Gateway_BgpSettings_Instance0BgpPeeringAddressFields = {
-    "custom_ips": sdk.FieldSpec(wire_name="custom_ips"),
-    "default_ips": sdk.FieldSpec(wire_name="default_ips"),
-    "ip_configuration_id": sdk.FieldSpec(wire_name="ip_configuration_id"),
-    "tunnel_ips": sdk.FieldSpec(wire_name="tunnel_ips"),
+    "custom_ips": ubx.FieldSpec(wire_name="custom_ips"),
+    "default_ips": ubx.FieldSpec(wire_name="default_ips"),
+    "ip_configuration_id": ubx.FieldSpec(wire_name="ip_configuration_id"),
+    "tunnel_ips": ubx.FieldSpec(wire_name="tunnel_ips"),
 }
 
 _Gateway_BgpSettingsFields = {
-    "asn": sdk.FieldSpec(wire_name="asn"),
-    "bgp_peering_address": sdk.FieldSpec(wire_name="bgp_peering_address"),
-    "peer_weight": sdk.FieldSpec(wire_name="peer_weight"),
-    "instance_0_bgp_peering_address": sdk.FieldSpec(
+    "asn": ubx.FieldSpec(wire_name="asn"),
+    "bgp_peering_address": ubx.FieldSpec(wire_name="bgp_peering_address"),
+    "peer_weight": ubx.FieldSpec(wire_name="peer_weight"),
+    "instance_0_bgp_peering_address": ubx.FieldSpec(
         wire_name="instance_0_bgp_peering_address",
         kind="list",
         fields=_Gateway_BgpSettings_Instance0BgpPeeringAddressFields,
     ),
-    "instance_1_bgp_peering_address": sdk.FieldSpec(
+    "instance_1_bgp_peering_address": ubx.FieldSpec(
         wire_name="instance_1_bgp_peering_address",
         kind="list",
         fields=_Gateway_BgpSettings_Instance0BgpPeeringAddressFields,
@@ -52,10 +52,10 @@ _Gateway_BgpSettingsFields = {
 }
 
 _Gateway_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -72,24 +72,24 @@ class GatewayConfig:
     bgp_settings: Any = None
     timeouts: Any = None
 
-Gateway = sdk.ResourceBinding(
+Gateway = ubx.ResourceBinding(
     wire_type="azurerm_vpn_gateway",
     fields={
-        "bgp_route_translation_for_nat_enabled": sdk.FieldSpec(wire_name="bgp_route_translation_for_nat_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "routing_preference": sdk.FieldSpec(wire_name="routing_preference"),
-        "scale_unit": sdk.FieldSpec(wire_name="scale_unit"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "virtual_hub_id": sdk.FieldSpec(wire_name="virtual_hub_id"),
-        "bgp_settings": sdk.FieldSpec(
+        "bgp_route_translation_for_nat_enabled": ubx.FieldSpec(wire_name="bgp_route_translation_for_nat_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "routing_preference": ubx.FieldSpec(wire_name="routing_preference"),
+        "scale_unit": ubx.FieldSpec(wire_name="scale_unit"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "virtual_hub_id": ubx.FieldSpec(wire_name="virtual_hub_id"),
+        "bgp_settings": ubx.FieldSpec(
             wire_name="bgp_settings",
             kind="list",
             fields=_Gateway_BgpSettingsFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Gateway_TimeoutsFields,

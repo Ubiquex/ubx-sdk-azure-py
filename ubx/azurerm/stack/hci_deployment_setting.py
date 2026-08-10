@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HciDeploymentSetting_ScaleUnit_Cluster:
@@ -115,48 +115,48 @@ class HciDeploymentSetting_Timeouts:
     read: Any = None
 
 _HciDeploymentSetting_ScaleUnit_ClusterFields = {
-    "azure_service_endpoint": sdk.FieldSpec(wire_name="azure_service_endpoint"),
-    "cloud_account_name": sdk.FieldSpec(wire_name="cloud_account_name"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "witness_path": sdk.FieldSpec(wire_name="witness_path"),
-    "witness_type": sdk.FieldSpec(wire_name="witness_type"),
+    "azure_service_endpoint": ubx.FieldSpec(wire_name="azure_service_endpoint"),
+    "cloud_account_name": ubx.FieldSpec(wire_name="cloud_account_name"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "witness_path": ubx.FieldSpec(wire_name="witness_path"),
+    "witness_type": ubx.FieldSpec(wire_name="witness_type"),
 }
 
 _HciDeploymentSetting_ScaleUnit_HostNetwork_Intent_AdapterPropertyOverrideFields = {
-    "jumbo_packet": sdk.FieldSpec(wire_name="jumbo_packet"),
-    "network_direct": sdk.FieldSpec(wire_name="network_direct"),
-    "network_direct_technology": sdk.FieldSpec(wire_name="network_direct_technology"),
+    "jumbo_packet": ubx.FieldSpec(wire_name="jumbo_packet"),
+    "network_direct": ubx.FieldSpec(wire_name="network_direct"),
+    "network_direct_technology": ubx.FieldSpec(wire_name="network_direct_technology"),
 }
 
 _HciDeploymentSetting_ScaleUnit_HostNetwork_Intent_QosPolicyOverrideFields = {
-    "bandwidth_percentage_smb": sdk.FieldSpec(wire_name="bandwidth_percentage_smb"),
-    "priority_value8021_action_cluster": sdk.FieldSpec(wire_name="priority_value8021_action_cluster"),
-    "priority_value8021_action_smb": sdk.FieldSpec(wire_name="priority_value8021_action_smb"),
+    "bandwidth_percentage_smb": ubx.FieldSpec(wire_name="bandwidth_percentage_smb"),
+    "priority_value8021_action_cluster": ubx.FieldSpec(wire_name="priority_value8021_action_cluster"),
+    "priority_value8021_action_smb": ubx.FieldSpec(wire_name="priority_value8021_action_smb"),
 }
 
 _HciDeploymentSetting_ScaleUnit_HostNetwork_Intent_VirtualSwitchConfigurationOverrideFields = {
-    "enable_iov": sdk.FieldSpec(wire_name="enable_iov"),
-    "load_balancing_algorithm": sdk.FieldSpec(wire_name="load_balancing_algorithm"),
+    "enable_iov": ubx.FieldSpec(wire_name="enable_iov"),
+    "load_balancing_algorithm": ubx.FieldSpec(wire_name="load_balancing_algorithm"),
 }
 
 _HciDeploymentSetting_ScaleUnit_HostNetwork_IntentFields = {
-    "adapter": sdk.FieldSpec(wire_name="adapter"),
-    "adapter_property_override_enabled": sdk.FieldSpec(wire_name="adapter_property_override_enabled"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "qos_policy_override_enabled": sdk.FieldSpec(wire_name="qos_policy_override_enabled"),
-    "traffic_type": sdk.FieldSpec(wire_name="traffic_type"),
-    "virtual_switch_configuration_override_enabled": sdk.FieldSpec(wire_name="virtual_switch_configuration_override_enabled"),
-    "adapter_property_override": sdk.FieldSpec(
+    "adapter": ubx.FieldSpec(wire_name="adapter"),
+    "adapter_property_override_enabled": ubx.FieldSpec(wire_name="adapter_property_override_enabled"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "qos_policy_override_enabled": ubx.FieldSpec(wire_name="qos_policy_override_enabled"),
+    "traffic_type": ubx.FieldSpec(wire_name="traffic_type"),
+    "virtual_switch_configuration_override_enabled": ubx.FieldSpec(wire_name="virtual_switch_configuration_override_enabled"),
+    "adapter_property_override": ubx.FieldSpec(
         wire_name="adapter_property_override",
         kind="list",
         fields=_HciDeploymentSetting_ScaleUnit_HostNetwork_Intent_AdapterPropertyOverrideFields,
     ),
-    "qos_policy_override": sdk.FieldSpec(
+    "qos_policy_override": ubx.FieldSpec(
         wire_name="qos_policy_override",
         kind="list",
         fields=_HciDeploymentSetting_ScaleUnit_HostNetwork_Intent_QosPolicyOverrideFields,
     ),
-    "virtual_switch_configuration_override": sdk.FieldSpec(
+    "virtual_switch_configuration_override": ubx.FieldSpec(
         wire_name="virtual_switch_configuration_override",
         kind="list",
         fields=_HciDeploymentSetting_ScaleUnit_HostNetwork_Intent_VirtualSwitchConfigurationOverrideFields,
@@ -164,20 +164,20 @@ _HciDeploymentSetting_ScaleUnit_HostNetwork_IntentFields = {
 }
 
 _HciDeploymentSetting_ScaleUnit_HostNetwork_StorageNetworkFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "network_adapter_name": sdk.FieldSpec(wire_name="network_adapter_name"),
-    "vlan_id": sdk.FieldSpec(wire_name="vlan_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "network_adapter_name": ubx.FieldSpec(wire_name="network_adapter_name"),
+    "vlan_id": ubx.FieldSpec(wire_name="vlan_id"),
 }
 
 _HciDeploymentSetting_ScaleUnit_HostNetworkFields = {
-    "storage_auto_ip_enabled": sdk.FieldSpec(wire_name="storage_auto_ip_enabled"),
-    "storage_connectivity_switchless_enabled": sdk.FieldSpec(wire_name="storage_connectivity_switchless_enabled"),
-    "intent": sdk.FieldSpec(
+    "storage_auto_ip_enabled": ubx.FieldSpec(wire_name="storage_auto_ip_enabled"),
+    "storage_connectivity_switchless_enabled": ubx.FieldSpec(wire_name="storage_connectivity_switchless_enabled"),
+    "intent": ubx.FieldSpec(
         wire_name="intent",
         kind="list",
         fields=_HciDeploymentSetting_ScaleUnit_HostNetwork_IntentFields,
     ),
-    "storage_network": sdk.FieldSpec(
+    "storage_network": ubx.FieldSpec(
         wire_name="storage_network",
         kind="list",
         fields=_HciDeploymentSetting_ScaleUnit_HostNetwork_StorageNetworkFields,
@@ -185,16 +185,16 @@ _HciDeploymentSetting_ScaleUnit_HostNetworkFields = {
 }
 
 _HciDeploymentSetting_ScaleUnit_InfrastructureNetwork_IpPoolFields = {
-    "ending_address": sdk.FieldSpec(wire_name="ending_address"),
-    "starting_address": sdk.FieldSpec(wire_name="starting_address"),
+    "ending_address": ubx.FieldSpec(wire_name="ending_address"),
+    "starting_address": ubx.FieldSpec(wire_name="starting_address"),
 }
 
 _HciDeploymentSetting_ScaleUnit_InfrastructureNetworkFields = {
-    "dhcp_enabled": sdk.FieldSpec(wire_name="dhcp_enabled"),
-    "dns_server": sdk.FieldSpec(wire_name="dns_server"),
-    "gateway": sdk.FieldSpec(wire_name="gateway"),
-    "subnet_mask": sdk.FieldSpec(wire_name="subnet_mask"),
-    "ip_pool": sdk.FieldSpec(
+    "dhcp_enabled": ubx.FieldSpec(wire_name="dhcp_enabled"),
+    "dns_server": ubx.FieldSpec(wire_name="dns_server"),
+    "gateway": ubx.FieldSpec(wire_name="gateway"),
+    "subnet_mask": ubx.FieldSpec(wire_name="subnet_mask"),
+    "ip_pool": ubx.FieldSpec(
         wire_name="ip_pool",
         kind="list",
         fields=_HciDeploymentSetting_ScaleUnit_InfrastructureNetwork_IpPoolFields,
@@ -202,62 +202,62 @@ _HciDeploymentSetting_ScaleUnit_InfrastructureNetworkFields = {
 }
 
 _HciDeploymentSetting_ScaleUnit_OptionalServiceFields = {
-    "custom_location": sdk.FieldSpec(wire_name="custom_location"),
+    "custom_location": ubx.FieldSpec(wire_name="custom_location"),
 }
 
 _HciDeploymentSetting_ScaleUnit_PhysicalNodeFields = {
-    "ipv4_address": sdk.FieldSpec(wire_name="ipv4_address"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "ipv4_address": ubx.FieldSpec(wire_name="ipv4_address"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _HciDeploymentSetting_ScaleUnit_StorageFields = {
-    "configuration_mode": sdk.FieldSpec(wire_name="configuration_mode"),
+    "configuration_mode": ubx.FieldSpec(wire_name="configuration_mode"),
 }
 
 _HciDeploymentSetting_ScaleUnitFields = {
-    "active_directory_organizational_unit_path": sdk.FieldSpec(wire_name="active_directory_organizational_unit_path"),
-    "bitlocker_boot_volume_enabled": sdk.FieldSpec(wire_name="bitlocker_boot_volume_enabled"),
-    "bitlocker_data_volume_enabled": sdk.FieldSpec(wire_name="bitlocker_data_volume_enabled"),
-    "credential_guard_enabled": sdk.FieldSpec(wire_name="credential_guard_enabled"),
-    "domain_fqdn": sdk.FieldSpec(wire_name="domain_fqdn"),
-    "drift_control_enabled": sdk.FieldSpec(wire_name="drift_control_enabled"),
-    "drtm_protection_enabled": sdk.FieldSpec(wire_name="drtm_protection_enabled"),
-    "episodic_data_upload_enabled": sdk.FieldSpec(wire_name="episodic_data_upload_enabled"),
-    "eu_location_enabled": sdk.FieldSpec(wire_name="eu_location_enabled"),
-    "hvci_protection_enabled": sdk.FieldSpec(wire_name="hvci_protection_enabled"),
-    "name_prefix": sdk.FieldSpec(wire_name="name_prefix"),
-    "secrets_location": sdk.FieldSpec(wire_name="secrets_location"),
-    "side_channel_mitigation_enabled": sdk.FieldSpec(wire_name="side_channel_mitigation_enabled"),
-    "smb_cluster_encryption_enabled": sdk.FieldSpec(wire_name="smb_cluster_encryption_enabled"),
-    "smb_signing_enabled": sdk.FieldSpec(wire_name="smb_signing_enabled"),
-    "streaming_data_client_enabled": sdk.FieldSpec(wire_name="streaming_data_client_enabled"),
-    "wdac_enabled": sdk.FieldSpec(wire_name="wdac_enabled"),
-    "cluster": sdk.FieldSpec(
+    "active_directory_organizational_unit_path": ubx.FieldSpec(wire_name="active_directory_organizational_unit_path"),
+    "bitlocker_boot_volume_enabled": ubx.FieldSpec(wire_name="bitlocker_boot_volume_enabled"),
+    "bitlocker_data_volume_enabled": ubx.FieldSpec(wire_name="bitlocker_data_volume_enabled"),
+    "credential_guard_enabled": ubx.FieldSpec(wire_name="credential_guard_enabled"),
+    "domain_fqdn": ubx.FieldSpec(wire_name="domain_fqdn"),
+    "drift_control_enabled": ubx.FieldSpec(wire_name="drift_control_enabled"),
+    "drtm_protection_enabled": ubx.FieldSpec(wire_name="drtm_protection_enabled"),
+    "episodic_data_upload_enabled": ubx.FieldSpec(wire_name="episodic_data_upload_enabled"),
+    "eu_location_enabled": ubx.FieldSpec(wire_name="eu_location_enabled"),
+    "hvci_protection_enabled": ubx.FieldSpec(wire_name="hvci_protection_enabled"),
+    "name_prefix": ubx.FieldSpec(wire_name="name_prefix"),
+    "secrets_location": ubx.FieldSpec(wire_name="secrets_location"),
+    "side_channel_mitigation_enabled": ubx.FieldSpec(wire_name="side_channel_mitigation_enabled"),
+    "smb_cluster_encryption_enabled": ubx.FieldSpec(wire_name="smb_cluster_encryption_enabled"),
+    "smb_signing_enabled": ubx.FieldSpec(wire_name="smb_signing_enabled"),
+    "streaming_data_client_enabled": ubx.FieldSpec(wire_name="streaming_data_client_enabled"),
+    "wdac_enabled": ubx.FieldSpec(wire_name="wdac_enabled"),
+    "cluster": ubx.FieldSpec(
         wire_name="cluster",
         kind="list",
         fields=_HciDeploymentSetting_ScaleUnit_ClusterFields,
     ),
-    "host_network": sdk.FieldSpec(
+    "host_network": ubx.FieldSpec(
         wire_name="host_network",
         kind="list",
         fields=_HciDeploymentSetting_ScaleUnit_HostNetworkFields,
     ),
-    "infrastructure_network": sdk.FieldSpec(
+    "infrastructure_network": ubx.FieldSpec(
         wire_name="infrastructure_network",
         kind="list",
         fields=_HciDeploymentSetting_ScaleUnit_InfrastructureNetworkFields,
     ),
-    "optional_service": sdk.FieldSpec(
+    "optional_service": ubx.FieldSpec(
         wire_name="optional_service",
         kind="list",
         fields=_HciDeploymentSetting_ScaleUnit_OptionalServiceFields,
     ),
-    "physical_node": sdk.FieldSpec(
+    "physical_node": ubx.FieldSpec(
         wire_name="physical_node",
         kind="list",
         fields=_HciDeploymentSetting_ScaleUnit_PhysicalNodeFields,
     ),
-    "storage": sdk.FieldSpec(
+    "storage": ubx.FieldSpec(
         wire_name="storage",
         kind="list",
         fields=_HciDeploymentSetting_ScaleUnit_StorageFields,
@@ -265,9 +265,9 @@ _HciDeploymentSetting_ScaleUnitFields = {
 }
 
 _HciDeploymentSetting_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -279,19 +279,19 @@ class HciDeploymentSettingConfig:
     scale_unit: Any = None
     timeouts: Any = None
 
-HciDeploymentSetting = sdk.ResourceBinding(
+HciDeploymentSetting = ubx.ResourceBinding(
     wire_type="azurerm_stack_hci_deployment_setting",
     fields={
-        "arc_resource_ids": sdk.FieldSpec(wire_name="arc_resource_ids"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "stack_hci_cluster_id": sdk.FieldSpec(wire_name="stack_hci_cluster_id"),
-        "version": sdk.FieldSpec(wire_name="version"),
-        "scale_unit": sdk.FieldSpec(
+        "arc_resource_ids": ubx.FieldSpec(wire_name="arc_resource_ids"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "stack_hci_cluster_id": ubx.FieldSpec(wire_name="stack_hci_cluster_id"),
+        "version": ubx.FieldSpec(wire_name="version"),
+        "scale_unit": ubx.FieldSpec(
             wire_name="scale_unit",
             kind="list",
             fields=_HciDeploymentSetting_ScaleUnitFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_HciDeploymentSetting_TimeoutsFields,

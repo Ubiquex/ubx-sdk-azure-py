@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Vault_AccessPolicy:
@@ -31,27 +31,27 @@ class Vault_Timeouts:
     update: Any = None
 
 _Vault_AccessPolicyFields = {
-    "application_id": sdk.FieldSpec(wire_name="application_id"),
-    "certificate_permissions": sdk.FieldSpec(wire_name="certificate_permissions"),
-    "key_permissions": sdk.FieldSpec(wire_name="key_permissions"),
-    "object_id": sdk.FieldSpec(wire_name="object_id"),
-    "secret_permissions": sdk.FieldSpec(wire_name="secret_permissions"),
-    "storage_permissions": sdk.FieldSpec(wire_name="storage_permissions"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
+    "application_id": ubx.FieldSpec(wire_name="application_id"),
+    "certificate_permissions": ubx.FieldSpec(wire_name="certificate_permissions"),
+    "key_permissions": ubx.FieldSpec(wire_name="key_permissions"),
+    "object_id": ubx.FieldSpec(wire_name="object_id"),
+    "secret_permissions": ubx.FieldSpec(wire_name="secret_permissions"),
+    "storage_permissions": ubx.FieldSpec(wire_name="storage_permissions"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
 }
 
 _Vault_NetworkAclsFields = {
-    "bypass": sdk.FieldSpec(wire_name="bypass"),
-    "default_action": sdk.FieldSpec(wire_name="default_action"),
-    "ip_rules": sdk.FieldSpec(wire_name="ip_rules"),
-    "virtual_network_subnet_ids": sdk.FieldSpec(wire_name="virtual_network_subnet_ids"),
+    "bypass": ubx.FieldSpec(wire_name="bypass"),
+    "default_action": ubx.FieldSpec(wire_name="default_action"),
+    "ip_rules": ubx.FieldSpec(wire_name="ip_rules"),
+    "virtual_network_subnet_ids": ubx.FieldSpec(wire_name="virtual_network_subnet_ids"),
 }
 
 _Vault_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -74,34 +74,34 @@ class VaultConfig:
     network_acls: Any = None
     timeouts: Any = None
 
-Vault = sdk.ResourceBinding(
+Vault = ubx.ResourceBinding(
     wire_type="azurerm_key_vault",
     fields={
-        "access_policy": sdk.FieldSpec(
+        "access_policy": ubx.FieldSpec(
             wire_name="access_policy",
             kind="list",
             fields=_Vault_AccessPolicyFields,
         ),
-        "enabled_for_deployment": sdk.FieldSpec(wire_name="enabled_for_deployment"),
-        "enabled_for_disk_encryption": sdk.FieldSpec(wire_name="enabled_for_disk_encryption"),
-        "enabled_for_template_deployment": sdk.FieldSpec(wire_name="enabled_for_template_deployment"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "purge_protection_enabled": sdk.FieldSpec(wire_name="purge_protection_enabled"),
-        "rbac_authorization_enabled": sdk.FieldSpec(wire_name="rbac_authorization_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "soft_delete_retention_days": sdk.FieldSpec(wire_name="soft_delete_retention_days"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-        "network_acls": sdk.FieldSpec(
+        "enabled_for_deployment": ubx.FieldSpec(wire_name="enabled_for_deployment"),
+        "enabled_for_disk_encryption": ubx.FieldSpec(wire_name="enabled_for_disk_encryption"),
+        "enabled_for_template_deployment": ubx.FieldSpec(wire_name="enabled_for_template_deployment"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "purge_protection_enabled": ubx.FieldSpec(wire_name="purge_protection_enabled"),
+        "rbac_authorization_enabled": ubx.FieldSpec(wire_name="rbac_authorization_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "soft_delete_retention_days": ubx.FieldSpec(wire_name="soft_delete_retention_days"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+        "network_acls": ubx.FieldSpec(
             wire_name="network_acls",
             kind="list",
             fields=_Vault_NetworkAclsFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Vault_TimeoutsFields,

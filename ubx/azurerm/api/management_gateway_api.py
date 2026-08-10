@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementGatewayApi_Timeouts:
@@ -13,9 +13,9 @@ class ManagementGatewayApi_Timeouts:
     read: Any = None
 
 _ManagementGatewayApi_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -25,13 +25,13 @@ class ManagementGatewayApiConfig:
     id: Any = None
     timeouts: Any = None
 
-ManagementGatewayApi = sdk.ResourceBinding(
+ManagementGatewayApi = ubx.ResourceBinding(
     wire_type="azurerm_api_management_gateway_api",
     fields={
-        "api_id": sdk.FieldSpec(wire_name="api_id"),
-        "gateway_id": sdk.FieldSpec(wire_name="gateway_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "timeouts": sdk.FieldSpec(
+        "api_id": ubx.FieldSpec(wire_name="api_id"),
+        "gateway_id": ubx.FieldSpec(wire_name="gateway_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementGatewayApi_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CenterVirtualMachineManagerVirtualMachineInstanceGuestAgent_Timeouts:
@@ -13,9 +13,9 @@ class CenterVirtualMachineManagerVirtualMachineInstanceGuestAgent_Timeouts:
     read: Any = None
 
 _CenterVirtualMachineManagerVirtualMachineInstanceGuestAgent_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -27,15 +27,15 @@ class CenterVirtualMachineManagerVirtualMachineInstanceGuestAgentConfig:
     username: Any = None
     timeouts: Any = None
 
-CenterVirtualMachineManagerVirtualMachineInstanceGuestAgent = sdk.ResourceBinding(
+CenterVirtualMachineManagerVirtualMachineInstanceGuestAgent = ubx.ResourceBinding(
     wire_type="azurerm_system_center_virtual_machine_manager_virtual_machine_instance_guest_agent",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "password": sdk.FieldSpec(wire_name="password"),
-        "provisioning_action": sdk.FieldSpec(wire_name="provisioning_action"),
-        "scoped_resource_id": sdk.FieldSpec(wire_name="scoped_resource_id"),
-        "username": sdk.FieldSpec(wire_name="username"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "password": ubx.FieldSpec(wire_name="password"),
+        "provisioning_action": ubx.FieldSpec(wire_name="provisioning_action"),
+        "scoped_resource_id": ubx.FieldSpec(wire_name="scoped_resource_id"),
+        "username": ubx.FieldSpec(wire_name="username"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CenterVirtualMachineManagerVirtualMachineInstanceGuestAgent_TimeoutsFields,

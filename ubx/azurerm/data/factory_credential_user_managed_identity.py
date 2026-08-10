@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryCredentialUserManagedIdentity_Timeouts:
@@ -14,10 +14,10 @@ class FactoryCredentialUserManagedIdentity_Timeouts:
     update: Any = None
 
 _FactoryCredentialUserManagedIdentity_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class FactoryCredentialUserManagedIdentityConfig:
     name: Any = None
     timeouts: Any = None
 
-FactoryCredentialUserManagedIdentity = sdk.ResourceBinding(
+FactoryCredentialUserManagedIdentity = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_credential_user_managed_identity",
     fields={
-        "annotations": sdk.FieldSpec(wire_name="annotations"),
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "identity_id": sdk.FieldSpec(wire_name="identity_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "timeouts": sdk.FieldSpec(
+        "annotations": ubx.FieldSpec(wire_name="annotations"),
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "identity_id": ubx.FieldSpec(wire_name="identity_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryCredentialUserManagedIdentity_TimeoutsFields,

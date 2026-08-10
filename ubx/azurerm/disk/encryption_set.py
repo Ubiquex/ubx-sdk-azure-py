@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EncryptionSet_Identity:
@@ -21,17 +21,17 @@ class EncryptionSet_Timeouts:
     update: Any = None
 
 _EncryptionSet_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _EncryptionSet_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -48,24 +48,24 @@ class EncryptionSetConfig:
     identity: Any = None
     timeouts: Any = None
 
-EncryptionSet = sdk.ResourceBinding(
+EncryptionSet = ubx.ResourceBinding(
     wire_type="azurerm_disk_encryption_set",
     fields={
-        "auto_key_rotation_enabled": sdk.FieldSpec(wire_name="auto_key_rotation_enabled"),
-        "encryption_type": sdk.FieldSpec(wire_name="encryption_type"),
-        "federated_client_id": sdk.FieldSpec(wire_name="federated_client_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "key_vault_key_id": sdk.FieldSpec(wire_name="key_vault_key_id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "identity": sdk.FieldSpec(
+        "auto_key_rotation_enabled": ubx.FieldSpec(wire_name="auto_key_rotation_enabled"),
+        "encryption_type": ubx.FieldSpec(wire_name="encryption_type"),
+        "federated_client_id": ubx.FieldSpec(wire_name="federated_client_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "key_vault_key_id": ubx.FieldSpec(wire_name="key_vault_key_id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_EncryptionSet_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_EncryptionSet_TimeoutsFields,

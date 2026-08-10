@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TestVirtualNetwork_Subnet_SharedPublicIpAddress_AllowedPorts:
@@ -30,12 +30,12 @@ class TestVirtualNetwork_Timeouts:
     update: Any = None
 
 _TestVirtualNetwork_Subnet_SharedPublicIpAddress_AllowedPortsFields = {
-    "backend_port": sdk.FieldSpec(wire_name="backend_port"),
-    "transport_protocol": sdk.FieldSpec(wire_name="transport_protocol"),
+    "backend_port": ubx.FieldSpec(wire_name="backend_port"),
+    "transport_protocol": ubx.FieldSpec(wire_name="transport_protocol"),
 }
 
 _TestVirtualNetwork_Subnet_SharedPublicIpAddressFields = {
-    "allowed_ports": sdk.FieldSpec(
+    "allowed_ports": ubx.FieldSpec(
         wire_name="allowed_ports",
         kind="list",
         fields=_TestVirtualNetwork_Subnet_SharedPublicIpAddress_AllowedPortsFields,
@@ -43,10 +43,10 @@ _TestVirtualNetwork_Subnet_SharedPublicIpAddressFields = {
 }
 
 _TestVirtualNetwork_SubnetFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "use_in_virtual_machine_creation": sdk.FieldSpec(wire_name="use_in_virtual_machine_creation"),
-    "use_public_ip_address": sdk.FieldSpec(wire_name="use_public_ip_address"),
-    "shared_public_ip_address": sdk.FieldSpec(
+    "name": ubx.FieldSpec(wire_name="name"),
+    "use_in_virtual_machine_creation": ubx.FieldSpec(wire_name="use_in_virtual_machine_creation"),
+    "use_public_ip_address": ubx.FieldSpec(wire_name="use_public_ip_address"),
+    "shared_public_ip_address": ubx.FieldSpec(
         wire_name="shared_public_ip_address",
         kind="list",
         fields=_TestVirtualNetwork_Subnet_SharedPublicIpAddressFields,
@@ -54,10 +54,10 @@ _TestVirtualNetwork_SubnetFields = {
 }
 
 _TestVirtualNetwork_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -71,21 +71,21 @@ class TestVirtualNetworkConfig:
     subnet: Any = None
     timeouts: Any = None
 
-TestVirtualNetwork = sdk.ResourceBinding(
+TestVirtualNetwork = ubx.ResourceBinding(
     wire_type="azurerm_dev_test_virtual_network",
     fields={
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "lab_name": sdk.FieldSpec(wire_name="lab_name"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "subnet": sdk.FieldSpec(
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "lab_name": ubx.FieldSpec(wire_name="lab_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "subnet": ubx.FieldSpec(
             wire_name="subnet",
             kind="list",
             fields=_TestVirtualNetwork_SubnetFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_TestVirtualNetwork_TimeoutsFields,

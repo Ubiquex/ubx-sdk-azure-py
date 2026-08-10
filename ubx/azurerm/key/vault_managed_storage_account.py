@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VaultManagedStorageAccount_Timeouts:
@@ -14,10 +14,10 @@ class VaultManagedStorageAccount_Timeouts:
     update: Any = None
 
 _VaultManagedStorageAccount_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -32,18 +32,18 @@ class VaultManagedStorageAccountConfig:
     tags: Any = None
     timeouts: Any = None
 
-VaultManagedStorageAccount = sdk.ResourceBinding(
+VaultManagedStorageAccount = ubx.ResourceBinding(
     wire_type="azurerm_key_vault_managed_storage_account",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "key_vault_id": sdk.FieldSpec(wire_name="key_vault_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "regenerate_key_automatically": sdk.FieldSpec(wire_name="regenerate_key_automatically"),
-        "regeneration_period": sdk.FieldSpec(wire_name="regeneration_period"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "storage_account_key": sdk.FieldSpec(wire_name="storage_account_key"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "key_vault_id": ubx.FieldSpec(wire_name="key_vault_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "regenerate_key_automatically": ubx.FieldSpec(wire_name="regenerate_key_automatically"),
+        "regeneration_period": ubx.FieldSpec(wire_name="regeneration_period"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "storage_account_key": ubx.FieldSpec(wire_name="storage_account_key"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_VaultManagedStorageAccount_TimeoutsFields,

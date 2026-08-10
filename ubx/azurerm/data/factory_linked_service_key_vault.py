@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryLinkedServiceKeyVault_Timeouts:
@@ -14,10 +14,10 @@ class FactoryLinkedServiceKeyVault_Timeouts:
     update: Any = None
 
 _FactoryLinkedServiceKeyVault_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -33,19 +33,19 @@ class FactoryLinkedServiceKeyVaultConfig:
     parameters: Any = None
     timeouts: Any = None
 
-FactoryLinkedServiceKeyVault = sdk.ResourceBinding(
+FactoryLinkedServiceKeyVault = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_linked_service_key_vault",
     fields={
-        "additional_properties": sdk.FieldSpec(wire_name="additional_properties"),
-        "annotations": sdk.FieldSpec(wire_name="annotations"),
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "integration_runtime_name": sdk.FieldSpec(wire_name="integration_runtime_name"),
-        "key_vault_id": sdk.FieldSpec(wire_name="key_vault_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parameters": sdk.FieldSpec(wire_name="parameters"),
-        "timeouts": sdk.FieldSpec(
+        "additional_properties": ubx.FieldSpec(wire_name="additional_properties"),
+        "annotations": ubx.FieldSpec(wire_name="annotations"),
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "integration_runtime_name": ubx.FieldSpec(wire_name="integration_runtime_name"),
+        "key_vault_id": ubx.FieldSpec(wire_name="key_vault_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parameters": ubx.FieldSpec(wire_name="parameters"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryLinkedServiceKeyVault_TimeoutsFields,

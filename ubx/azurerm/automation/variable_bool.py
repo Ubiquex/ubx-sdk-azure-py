@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VariableBool_Timeouts:
@@ -14,10 +14,10 @@ class VariableBool_Timeouts:
     update: Any = None
 
 _VariableBool_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class VariableBoolConfig:
     value: Any = None
     timeouts: Any = None
 
-VariableBool = sdk.ResourceBinding(
+VariableBool = ubx.ResourceBinding(
     wire_type="azurerm_automation_variable_bool",
     fields={
-        "automation_account_name": sdk.FieldSpec(wire_name="automation_account_name"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "encrypted": sdk.FieldSpec(wire_name="encrypted"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "value": sdk.FieldSpec(wire_name="value"),
-        "timeouts": sdk.FieldSpec(
+        "automation_account_name": ubx.FieldSpec(wire_name="automation_account_name"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "encrypted": ubx.FieldSpec(wire_name="encrypted"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "value": ubx.FieldSpec(wire_name="value"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_VariableBool_TimeoutsFields,

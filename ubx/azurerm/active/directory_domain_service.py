@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DirectoryDomainService_InitialReplicaSet:
@@ -49,45 +49,45 @@ class DirectoryDomainService_Timeouts:
     update: Any = None
 
 _DirectoryDomainService_InitialReplicaSetFields = {
-    "domain_controller_ip_addresses": sdk.FieldSpec(wire_name="domain_controller_ip_addresses"),
-    "external_access_ip_address": sdk.FieldSpec(wire_name="external_access_ip_address"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "location": sdk.FieldSpec(wire_name="location"),
-    "service_status": sdk.FieldSpec(wire_name="service_status"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "domain_controller_ip_addresses": ubx.FieldSpec(wire_name="domain_controller_ip_addresses"),
+    "external_access_ip_address": ubx.FieldSpec(wire_name="external_access_ip_address"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "location": ubx.FieldSpec(wire_name="location"),
+    "service_status": ubx.FieldSpec(wire_name="service_status"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _DirectoryDomainService_NotificationsFields = {
-    "additional_recipients": sdk.FieldSpec(wire_name="additional_recipients"),
-    "notify_dc_admins": sdk.FieldSpec(wire_name="notify_dc_admins"),
-    "notify_global_admins": sdk.FieldSpec(wire_name="notify_global_admins"),
+    "additional_recipients": ubx.FieldSpec(wire_name="additional_recipients"),
+    "notify_dc_admins": ubx.FieldSpec(wire_name="notify_dc_admins"),
+    "notify_global_admins": ubx.FieldSpec(wire_name="notify_global_admins"),
 }
 
 _DirectoryDomainService_SecureLdapFields = {
-    "certificate_expiry": sdk.FieldSpec(wire_name="certificate_expiry"),
-    "certificate_thumbprint": sdk.FieldSpec(wire_name="certificate_thumbprint"),
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "external_access_enabled": sdk.FieldSpec(wire_name="external_access_enabled"),
-    "pfx_certificate": sdk.FieldSpec(wire_name="pfx_certificate"),
-    "pfx_certificate_password": sdk.FieldSpec(wire_name="pfx_certificate_password"),
-    "public_certificate": sdk.FieldSpec(wire_name="public_certificate"),
+    "certificate_expiry": ubx.FieldSpec(wire_name="certificate_expiry"),
+    "certificate_thumbprint": ubx.FieldSpec(wire_name="certificate_thumbprint"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "external_access_enabled": ubx.FieldSpec(wire_name="external_access_enabled"),
+    "pfx_certificate": ubx.FieldSpec(wire_name="pfx_certificate"),
+    "pfx_certificate_password": ubx.FieldSpec(wire_name="pfx_certificate_password"),
+    "public_certificate": ubx.FieldSpec(wire_name="public_certificate"),
 }
 
 _DirectoryDomainService_SecurityFields = {
-    "kerberos_armoring_enabled": sdk.FieldSpec(wire_name="kerberos_armoring_enabled"),
-    "kerberos_rc4_encryption_enabled": sdk.FieldSpec(wire_name="kerberos_rc4_encryption_enabled"),
-    "ntlm_v1_enabled": sdk.FieldSpec(wire_name="ntlm_v1_enabled"),
-    "sync_kerberos_passwords": sdk.FieldSpec(wire_name="sync_kerberos_passwords"),
-    "sync_ntlm_passwords": sdk.FieldSpec(wire_name="sync_ntlm_passwords"),
-    "sync_on_prem_passwords": sdk.FieldSpec(wire_name="sync_on_prem_passwords"),
-    "tls_v1_enabled": sdk.FieldSpec(wire_name="tls_v1_enabled"),
+    "kerberos_armoring_enabled": ubx.FieldSpec(wire_name="kerberos_armoring_enabled"),
+    "kerberos_rc4_encryption_enabled": ubx.FieldSpec(wire_name="kerberos_rc4_encryption_enabled"),
+    "ntlm_v1_enabled": ubx.FieldSpec(wire_name="ntlm_v1_enabled"),
+    "sync_kerberos_passwords": ubx.FieldSpec(wire_name="sync_kerberos_passwords"),
+    "sync_ntlm_passwords": ubx.FieldSpec(wire_name="sync_ntlm_passwords"),
+    "sync_on_prem_passwords": ubx.FieldSpec(wire_name="sync_on_prem_passwords"),
+    "tls_v1_enabled": ubx.FieldSpec(wire_name="tls_v1_enabled"),
 }
 
 _DirectoryDomainService_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -107,39 +107,39 @@ class DirectoryDomainServiceConfig:
     security: Any = None
     timeouts: Any = None
 
-DirectoryDomainService = sdk.ResourceBinding(
+DirectoryDomainService = ubx.ResourceBinding(
     wire_type="azurerm_active_directory_domain_service",
     fields={
-        "domain_configuration_type": sdk.FieldSpec(wire_name="domain_configuration_type"),
-        "domain_name": sdk.FieldSpec(wire_name="domain_name"),
-        "filtered_sync_enabled": sdk.FieldSpec(wire_name="filtered_sync_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "initial_replica_set": sdk.FieldSpec(
+        "domain_configuration_type": ubx.FieldSpec(wire_name="domain_configuration_type"),
+        "domain_name": ubx.FieldSpec(wire_name="domain_name"),
+        "filtered_sync_enabled": ubx.FieldSpec(wire_name="filtered_sync_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "initial_replica_set": ubx.FieldSpec(
             wire_name="initial_replica_set",
             kind="list",
             fields=_DirectoryDomainService_InitialReplicaSetFields,
         ),
-        "notifications": sdk.FieldSpec(
+        "notifications": ubx.FieldSpec(
             wire_name="notifications",
             kind="list",
             fields=_DirectoryDomainService_NotificationsFields,
         ),
-        "secure_ldap": sdk.FieldSpec(
+        "secure_ldap": ubx.FieldSpec(
             wire_name="secure_ldap",
             kind="list",
             fields=_DirectoryDomainService_SecureLdapFields,
         ),
-        "security": sdk.FieldSpec(
+        "security": ubx.FieldSpec(
             wire_name="security",
             kind="list",
             fields=_DirectoryDomainService_SecurityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DirectoryDomainService_TimeoutsFields,

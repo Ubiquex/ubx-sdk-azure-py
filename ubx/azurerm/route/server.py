@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Server_Timeouts:
@@ -14,10 +14,10 @@ class Server_Timeouts:
     update: Any = None
 
 _Server_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -34,20 +34,20 @@ class ServerConfig:
     tags: Any = None
     timeouts: Any = None
 
-Server = sdk.ResourceBinding(
+Server = ubx.ResourceBinding(
     wire_type="azurerm_route_server",
     fields={
-        "branch_to_branch_traffic_enabled": sdk.FieldSpec(wire_name="branch_to_branch_traffic_enabled"),
-        "hub_routing_preference": sdk.FieldSpec(wire_name="hub_routing_preference"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_ip_address_id": sdk.FieldSpec(wire_name="public_ip_address_id"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "branch_to_branch_traffic_enabled": ubx.FieldSpec(wire_name="branch_to_branch_traffic_enabled"),
+        "hub_routing_preference": ubx.FieldSpec(wire_name="hub_routing_preference"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_ip_address_id": ubx.FieldSpec(wire_name="public_ip_address_id"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Server_TimeoutsFields,

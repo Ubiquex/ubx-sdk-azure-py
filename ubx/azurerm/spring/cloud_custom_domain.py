@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudCustomDomain_Timeouts:
@@ -14,10 +14,10 @@ class CloudCustomDomain_Timeouts:
     update: Any = None
 
 _CloudCustomDomain_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class CloudCustomDomainConfig:
     thumbprint: Any = None
     timeouts: Any = None
 
-CloudCustomDomain = sdk.ResourceBinding(
+CloudCustomDomain = ubx.ResourceBinding(
     wire_type="azurerm_spring_cloud_custom_domain",
     fields={
-        "certificate_name": sdk.FieldSpec(wire_name="certificate_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "spring_cloud_app_id": sdk.FieldSpec(wire_name="spring_cloud_app_id"),
-        "thumbprint": sdk.FieldSpec(wire_name="thumbprint"),
-        "timeouts": sdk.FieldSpec(
+        "certificate_name": ubx.FieldSpec(wire_name="certificate_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "spring_cloud_app_id": ubx.FieldSpec(wire_name="spring_cloud_app_id"),
+        "thumbprint": ubx.FieldSpec(wire_name="thumbprint"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CloudCustomDomain_TimeoutsFields,

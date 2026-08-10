@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppStandard_ConnectionString:
@@ -76,77 +76,77 @@ class AppStandard_Timeouts:
     update: Any = None
 
 _AppStandard_ConnectionStringFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "type": sdk.FieldSpec(wire_name="type"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "type": ubx.FieldSpec(wire_name="type"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _AppStandard_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _AppStandard_SiteConfig_CorsFields = {
-    "allowed_origins": sdk.FieldSpec(wire_name="allowed_origins"),
-    "support_credentials": sdk.FieldSpec(wire_name="support_credentials"),
+    "allowed_origins": ubx.FieldSpec(wire_name="allowed_origins"),
+    "support_credentials": ubx.FieldSpec(wire_name="support_credentials"),
 }
 
 _AppStandard_SiteConfig_IpRestriction_HeadersFields = {
-    "x_azure_fdid": sdk.FieldSpec(wire_name="x_azure_fdid"),
-    "x_fd_health_probe": sdk.FieldSpec(wire_name="x_fd_health_probe"),
-    "x_forwarded_for": sdk.FieldSpec(wire_name="x_forwarded_for"),
-    "x_forwarded_host": sdk.FieldSpec(wire_name="x_forwarded_host"),
+    "x_azure_fdid": ubx.FieldSpec(wire_name="x_azure_fdid"),
+    "x_fd_health_probe": ubx.FieldSpec(wire_name="x_fd_health_probe"),
+    "x_forwarded_for": ubx.FieldSpec(wire_name="x_forwarded_for"),
+    "x_forwarded_host": ubx.FieldSpec(wire_name="x_forwarded_host"),
 }
 
 _AppStandard_SiteConfig_IpRestrictionFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "description": sdk.FieldSpec(wire_name="description"),
-    "headers": sdk.FieldSpec(
+    "action": ubx.FieldSpec(wire_name="action"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "headers": ubx.FieldSpec(
         wire_name="headers",
         kind="list",
         fields=_AppStandard_SiteConfig_IpRestriction_HeadersFields,
     ),
-    "ip_address": sdk.FieldSpec(wire_name="ip_address"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "priority": sdk.FieldSpec(wire_name="priority"),
-    "service_tag": sdk.FieldSpec(wire_name="service_tag"),
-    "virtual_network_subnet_id": sdk.FieldSpec(wire_name="virtual_network_subnet_id"),
+    "ip_address": ubx.FieldSpec(wire_name="ip_address"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "priority": ubx.FieldSpec(wire_name="priority"),
+    "service_tag": ubx.FieldSpec(wire_name="service_tag"),
+    "virtual_network_subnet_id": ubx.FieldSpec(wire_name="virtual_network_subnet_id"),
 }
 
 _AppStandard_SiteConfigFields = {
-    "always_on": sdk.FieldSpec(wire_name="always_on"),
-    "app_scale_limit": sdk.FieldSpec(wire_name="app_scale_limit"),
-    "auto_swap_slot_name": sdk.FieldSpec(wire_name="auto_swap_slot_name"),
-    "dotnet_framework_version": sdk.FieldSpec(wire_name="dotnet_framework_version"),
-    "elastic_instance_minimum": sdk.FieldSpec(wire_name="elastic_instance_minimum"),
-    "ftps_state": sdk.FieldSpec(wire_name="ftps_state"),
-    "health_check_path": sdk.FieldSpec(wire_name="health_check_path"),
-    "http2_enabled": sdk.FieldSpec(wire_name="http2_enabled"),
-    "ip_restriction_default_action": sdk.FieldSpec(wire_name="ip_restriction_default_action"),
-    "linux_fx_version": sdk.FieldSpec(wire_name="linux_fx_version"),
-    "min_tls_version": sdk.FieldSpec(wire_name="min_tls_version"),
-    "pre_warmed_instance_count": sdk.FieldSpec(wire_name="pre_warmed_instance_count"),
-    "runtime_scale_monitoring_enabled": sdk.FieldSpec(wire_name="runtime_scale_monitoring_enabled"),
-    "scm_ip_restriction_default_action": sdk.FieldSpec(wire_name="scm_ip_restriction_default_action"),
-    "scm_min_tls_version": sdk.FieldSpec(wire_name="scm_min_tls_version"),
-    "scm_type": sdk.FieldSpec(wire_name="scm_type"),
-    "scm_use_main_ip_restriction": sdk.FieldSpec(wire_name="scm_use_main_ip_restriction"),
-    "use_32_bit_worker_process": sdk.FieldSpec(wire_name="use_32_bit_worker_process"),
-    "vnet_route_all_enabled": sdk.FieldSpec(wire_name="vnet_route_all_enabled"),
-    "websockets_enabled": sdk.FieldSpec(wire_name="websockets_enabled"),
-    "cors": sdk.FieldSpec(
+    "always_on": ubx.FieldSpec(wire_name="always_on"),
+    "app_scale_limit": ubx.FieldSpec(wire_name="app_scale_limit"),
+    "auto_swap_slot_name": ubx.FieldSpec(wire_name="auto_swap_slot_name"),
+    "dotnet_framework_version": ubx.FieldSpec(wire_name="dotnet_framework_version"),
+    "elastic_instance_minimum": ubx.FieldSpec(wire_name="elastic_instance_minimum"),
+    "ftps_state": ubx.FieldSpec(wire_name="ftps_state"),
+    "health_check_path": ubx.FieldSpec(wire_name="health_check_path"),
+    "http2_enabled": ubx.FieldSpec(wire_name="http2_enabled"),
+    "ip_restriction_default_action": ubx.FieldSpec(wire_name="ip_restriction_default_action"),
+    "linux_fx_version": ubx.FieldSpec(wire_name="linux_fx_version"),
+    "min_tls_version": ubx.FieldSpec(wire_name="min_tls_version"),
+    "pre_warmed_instance_count": ubx.FieldSpec(wire_name="pre_warmed_instance_count"),
+    "runtime_scale_monitoring_enabled": ubx.FieldSpec(wire_name="runtime_scale_monitoring_enabled"),
+    "scm_ip_restriction_default_action": ubx.FieldSpec(wire_name="scm_ip_restriction_default_action"),
+    "scm_min_tls_version": ubx.FieldSpec(wire_name="scm_min_tls_version"),
+    "scm_type": ubx.FieldSpec(wire_name="scm_type"),
+    "scm_use_main_ip_restriction": ubx.FieldSpec(wire_name="scm_use_main_ip_restriction"),
+    "use_32_bit_worker_process": ubx.FieldSpec(wire_name="use_32_bit_worker_process"),
+    "vnet_route_all_enabled": ubx.FieldSpec(wire_name="vnet_route_all_enabled"),
+    "websockets_enabled": ubx.FieldSpec(wire_name="websockets_enabled"),
+    "cors": ubx.FieldSpec(
         wire_name="cors",
         kind="list",
         fields=_AppStandard_SiteConfig_CorsFields,
     ),
-    "ip_restriction": sdk.FieldSpec(
+    "ip_restriction": ubx.FieldSpec(
         wire_name="ip_restriction",
         kind="list",
         fields=_AppStandard_SiteConfig_IpRestrictionFields,
     ),
-    "scm_ip_restriction": sdk.FieldSpec(
+    "scm_ip_restriction": ubx.FieldSpec(
         wire_name="scm_ip_restriction",
         kind="list",
         fields=_AppStandard_SiteConfig_IpRestrictionFields,
@@ -154,10 +154,10 @@ _AppStandard_SiteConfigFields = {
 }
 
 _AppStandard_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -191,49 +191,49 @@ class AppStandardConfig:
     site_config: Any = None
     timeouts: Any = None
 
-AppStandard = sdk.ResourceBinding(
+AppStandard = ubx.ResourceBinding(
     wire_type="azurerm_logic_app_standard",
     fields={
-        "app_service_plan_id": sdk.FieldSpec(wire_name="app_service_plan_id"),
-        "app_settings": sdk.FieldSpec(wire_name="app_settings"),
-        "bundle_version": sdk.FieldSpec(wire_name="bundle_version"),
-        "client_affinity_enabled": sdk.FieldSpec(wire_name="client_affinity_enabled"),
-        "client_certificate_mode": sdk.FieldSpec(wire_name="client_certificate_mode"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "ftp_publish_basic_authentication_enabled": sdk.FieldSpec(wire_name="ftp_publish_basic_authentication_enabled"),
-        "https_only": sdk.FieldSpec(wire_name="https_only"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "key_vault_reference_identity_id": sdk.FieldSpec(wire_name="key_vault_reference_identity_id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_access": sdk.FieldSpec(wire_name="public_network_access"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "scm_publish_basic_authentication_enabled": sdk.FieldSpec(wire_name="scm_publish_basic_authentication_enabled"),
-        "storage_account_access_key": sdk.FieldSpec(wire_name="storage_account_access_key"),
-        "storage_account_name": sdk.FieldSpec(wire_name="storage_account_name"),
-        "storage_account_share_name": sdk.FieldSpec(wire_name="storage_account_share_name"),
-        "storage_key_vault_secret_id": sdk.FieldSpec(wire_name="storage_key_vault_secret_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "use_extension_bundle": sdk.FieldSpec(wire_name="use_extension_bundle"),
-        "version": sdk.FieldSpec(wire_name="version"),
-        "virtual_network_subnet_id": sdk.FieldSpec(wire_name="virtual_network_subnet_id"),
-        "vnet_content_share_enabled": sdk.FieldSpec(wire_name="vnet_content_share_enabled"),
-        "connection_string": sdk.FieldSpec(
+        "app_service_plan_id": ubx.FieldSpec(wire_name="app_service_plan_id"),
+        "app_settings": ubx.FieldSpec(wire_name="app_settings"),
+        "bundle_version": ubx.FieldSpec(wire_name="bundle_version"),
+        "client_affinity_enabled": ubx.FieldSpec(wire_name="client_affinity_enabled"),
+        "client_certificate_mode": ubx.FieldSpec(wire_name="client_certificate_mode"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "ftp_publish_basic_authentication_enabled": ubx.FieldSpec(wire_name="ftp_publish_basic_authentication_enabled"),
+        "https_only": ubx.FieldSpec(wire_name="https_only"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "key_vault_reference_identity_id": ubx.FieldSpec(wire_name="key_vault_reference_identity_id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_access": ubx.FieldSpec(wire_name="public_network_access"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "scm_publish_basic_authentication_enabled": ubx.FieldSpec(wire_name="scm_publish_basic_authentication_enabled"),
+        "storage_account_access_key": ubx.FieldSpec(wire_name="storage_account_access_key"),
+        "storage_account_name": ubx.FieldSpec(wire_name="storage_account_name"),
+        "storage_account_share_name": ubx.FieldSpec(wire_name="storage_account_share_name"),
+        "storage_key_vault_secret_id": ubx.FieldSpec(wire_name="storage_key_vault_secret_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "use_extension_bundle": ubx.FieldSpec(wire_name="use_extension_bundle"),
+        "version": ubx.FieldSpec(wire_name="version"),
+        "virtual_network_subnet_id": ubx.FieldSpec(wire_name="virtual_network_subnet_id"),
+        "vnet_content_share_enabled": ubx.FieldSpec(wire_name="vnet_content_share_enabled"),
+        "connection_string": ubx.FieldSpec(
             wire_name="connection_string",
             kind="set",
             fields=_AppStandard_ConnectionStringFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_AppStandard_IdentityFields,
         ),
-        "site_config": sdk.FieldSpec(
+        "site_config": ubx.FieldSpec(
             wire_name="site_config",
             kind="list",
             fields=_AppStandard_SiteConfigFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AppStandard_TimeoutsFields,

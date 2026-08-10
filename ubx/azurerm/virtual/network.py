@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Network_Subnet_Delegation_ServiceDelegation:
@@ -58,13 +58,13 @@ class Network_Timeouts:
     update: Any = None
 
 _Network_Subnet_Delegation_ServiceDelegationFields = {
-    "actions": sdk.FieldSpec(wire_name="actions"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "actions": ubx.FieldSpec(wire_name="actions"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _Network_Subnet_DelegationFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "service_delegation": sdk.FieldSpec(
+    "name": ubx.FieldSpec(wire_name="name"),
+    "service_delegation": ubx.FieldSpec(
         wire_name="service_delegation",
         kind="list",
         fields=_Network_Subnet_Delegation_ServiceDelegationFields,
@@ -72,52 +72,52 @@ _Network_Subnet_DelegationFields = {
 }
 
 _Network_Subnet_ServiceEndpointFields = {
-    "network_identifier": sdk.FieldSpec(wire_name="network_identifier"),
-    "service": sdk.FieldSpec(wire_name="service"),
+    "network_identifier": ubx.FieldSpec(wire_name="network_identifier"),
+    "service": ubx.FieldSpec(wire_name="service"),
 }
 
 _Network_SubnetFields = {
-    "address_prefixes": sdk.FieldSpec(wire_name="address_prefixes"),
-    "default_outbound_access_enabled": sdk.FieldSpec(wire_name="default_outbound_access_enabled"),
-    "delegation": sdk.FieldSpec(
+    "address_prefixes": ubx.FieldSpec(wire_name="address_prefixes"),
+    "default_outbound_access_enabled": ubx.FieldSpec(wire_name="default_outbound_access_enabled"),
+    "delegation": ubx.FieldSpec(
         wire_name="delegation",
         kind="list",
         fields=_Network_Subnet_DelegationFields,
     ),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "private_endpoint_network_policies": sdk.FieldSpec(wire_name="private_endpoint_network_policies"),
-    "private_link_service_network_policies_enabled": sdk.FieldSpec(wire_name="private_link_service_network_policies_enabled"),
-    "route_table_id": sdk.FieldSpec(wire_name="route_table_id"),
-    "security_group": sdk.FieldSpec(wire_name="security_group"),
-    "service_endpoint": sdk.FieldSpec(
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "private_endpoint_network_policies": ubx.FieldSpec(wire_name="private_endpoint_network_policies"),
+    "private_link_service_network_policies_enabled": ubx.FieldSpec(wire_name="private_link_service_network_policies_enabled"),
+    "route_table_id": ubx.FieldSpec(wire_name="route_table_id"),
+    "security_group": ubx.FieldSpec(wire_name="security_group"),
+    "service_endpoint": ubx.FieldSpec(
         wire_name="service_endpoint",
         kind="list",
         fields=_Network_Subnet_ServiceEndpointFields,
     ),
-    "service_endpoint_policy_ids": sdk.FieldSpec(wire_name="service_endpoint_policy_ids"),
+    "service_endpoint_policy_ids": ubx.FieldSpec(wire_name="service_endpoint_policy_ids"),
 }
 
 _Network_DdosProtectionPlanFields = {
-    "enable": sdk.FieldSpec(wire_name="enable"),
-    "id": sdk.FieldSpec(wire_name="id"),
+    "enable": ubx.FieldSpec(wire_name="enable"),
+    "id": ubx.FieldSpec(wire_name="id"),
 }
 
 _Network_EncryptionFields = {
-    "enforcement": sdk.FieldSpec(wire_name="enforcement"),
+    "enforcement": ubx.FieldSpec(wire_name="enforcement"),
 }
 
 _Network_IpAddressPoolFields = {
-    "allocated_ip_address_prefixes": sdk.FieldSpec(wire_name="allocated_ip_address_prefixes"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "number_of_ip_addresses": sdk.FieldSpec(wire_name="number_of_ip_addresses"),
+    "allocated_ip_address_prefixes": ubx.FieldSpec(wire_name="allocated_ip_address_prefixes"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "number_of_ip_addresses": ubx.FieldSpec(wire_name="number_of_ip_addresses"),
 }
 
 _Network_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -139,41 +139,41 @@ class NetworkConfig:
     ip_address_pool: Any = None
     timeouts: Any = None
 
-Network = sdk.ResourceBinding(
+Network = ubx.ResourceBinding(
     wire_type="azurerm_virtual_network",
     fields={
-        "address_space": sdk.FieldSpec(wire_name="address_space"),
-        "bgp_community": sdk.FieldSpec(wire_name="bgp_community"),
-        "dns_servers": sdk.FieldSpec(wire_name="dns_servers"),
-        "edge_zone": sdk.FieldSpec(wire_name="edge_zone"),
-        "flow_timeout_in_minutes": sdk.FieldSpec(wire_name="flow_timeout_in_minutes"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "private_endpoint_vnet_policies": sdk.FieldSpec(wire_name="private_endpoint_vnet_policies"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "subnet": sdk.FieldSpec(
+        "address_space": ubx.FieldSpec(wire_name="address_space"),
+        "bgp_community": ubx.FieldSpec(wire_name="bgp_community"),
+        "dns_servers": ubx.FieldSpec(wire_name="dns_servers"),
+        "edge_zone": ubx.FieldSpec(wire_name="edge_zone"),
+        "flow_timeout_in_minutes": ubx.FieldSpec(wire_name="flow_timeout_in_minutes"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "private_endpoint_vnet_policies": ubx.FieldSpec(wire_name="private_endpoint_vnet_policies"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "subnet": ubx.FieldSpec(
             wire_name="subnet",
             kind="set",
             fields=_Network_SubnetFields,
         ),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "ddos_protection_plan": sdk.FieldSpec(
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "ddos_protection_plan": ubx.FieldSpec(
             wire_name="ddos_protection_plan",
             kind="list",
             fields=_Network_DdosProtectionPlanFields,
         ),
-        "encryption": sdk.FieldSpec(
+        "encryption": ubx.FieldSpec(
             wire_name="encryption",
             kind="list",
             fields=_Network_EncryptionFields,
         ),
-        "ip_address_pool": sdk.FieldSpec(
+        "ip_address_pool": ubx.FieldSpec(
             wire_name="ip_address_pool",
             kind="list",
             fields=_Network_IpAddressPoolFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Network_TimeoutsFields,

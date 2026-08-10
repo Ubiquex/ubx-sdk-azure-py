@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GremlinGraph_AutoscaleSettings:
@@ -51,22 +51,22 @@ class GremlinGraph_UniqueKey:
     paths: Any = None
 
 _GremlinGraph_AutoscaleSettingsFields = {
-    "max_throughput": sdk.FieldSpec(wire_name="max_throughput"),
+    "max_throughput": ubx.FieldSpec(wire_name="max_throughput"),
 }
 
 _GremlinGraph_ConflictResolutionPolicyFields = {
-    "conflict_resolution_path": sdk.FieldSpec(wire_name="conflict_resolution_path"),
-    "conflict_resolution_procedure": sdk.FieldSpec(wire_name="conflict_resolution_procedure"),
-    "mode": sdk.FieldSpec(wire_name="mode"),
+    "conflict_resolution_path": ubx.FieldSpec(wire_name="conflict_resolution_path"),
+    "conflict_resolution_procedure": ubx.FieldSpec(wire_name="conflict_resolution_procedure"),
+    "mode": ubx.FieldSpec(wire_name="mode"),
 }
 
 _GremlinGraph_IndexPolicy_CompositeIndex_IndexFields = {
-    "order": sdk.FieldSpec(wire_name="order"),
-    "path": sdk.FieldSpec(wire_name="path"),
+    "order": ubx.FieldSpec(wire_name="order"),
+    "path": ubx.FieldSpec(wire_name="path"),
 }
 
 _GremlinGraph_IndexPolicy_CompositeIndexFields = {
-    "index": sdk.FieldSpec(
+    "index": ubx.FieldSpec(
         wire_name="index",
         kind="list",
         fields=_GremlinGraph_IndexPolicy_CompositeIndex_IndexFields,
@@ -74,21 +74,21 @@ _GremlinGraph_IndexPolicy_CompositeIndexFields = {
 }
 
 _GremlinGraph_IndexPolicy_SpatialIndexFields = {
-    "path": sdk.FieldSpec(wire_name="path"),
-    "types": sdk.FieldSpec(wire_name="types"),
+    "path": ubx.FieldSpec(wire_name="path"),
+    "types": ubx.FieldSpec(wire_name="types"),
 }
 
 _GremlinGraph_IndexPolicyFields = {
-    "automatic": sdk.FieldSpec(wire_name="automatic"),
-    "excluded_paths": sdk.FieldSpec(wire_name="excluded_paths"),
-    "included_paths": sdk.FieldSpec(wire_name="included_paths"),
-    "indexing_mode": sdk.FieldSpec(wire_name="indexing_mode"),
-    "composite_index": sdk.FieldSpec(
+    "automatic": ubx.FieldSpec(wire_name="automatic"),
+    "excluded_paths": ubx.FieldSpec(wire_name="excluded_paths"),
+    "included_paths": ubx.FieldSpec(wire_name="included_paths"),
+    "indexing_mode": ubx.FieldSpec(wire_name="indexing_mode"),
+    "composite_index": ubx.FieldSpec(
         wire_name="composite_index",
         kind="list",
         fields=_GremlinGraph_IndexPolicy_CompositeIndexFields,
     ),
-    "spatial_index": sdk.FieldSpec(
+    "spatial_index": ubx.FieldSpec(
         wire_name="spatial_index",
         kind="list",
         fields=_GremlinGraph_IndexPolicy_SpatialIndexFields,
@@ -96,14 +96,14 @@ _GremlinGraph_IndexPolicyFields = {
 }
 
 _GremlinGraph_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _GremlinGraph_UniqueKeyFields = {
-    "paths": sdk.FieldSpec(wire_name="paths"),
+    "paths": ubx.FieldSpec(wire_name="paths"),
 }
 
 @dataclasses.dataclass
@@ -124,40 +124,40 @@ class GremlinGraphConfig:
     timeouts: Any = None
     unique_key: Any = None
 
-GremlinGraph = sdk.ResourceBinding(
+GremlinGraph = ubx.ResourceBinding(
     wire_type="azurerm_cosmosdb_gremlin_graph",
     fields={
-        "account_name": sdk.FieldSpec(wire_name="account_name"),
-        "analytical_storage_ttl": sdk.FieldSpec(wire_name="analytical_storage_ttl"),
-        "database_name": sdk.FieldSpec(wire_name="database_name"),
-        "default_ttl": sdk.FieldSpec(wire_name="default_ttl"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "partition_key_path": sdk.FieldSpec(wire_name="partition_key_path"),
-        "partition_key_version": sdk.FieldSpec(wire_name="partition_key_version"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "throughput": sdk.FieldSpec(wire_name="throughput"),
-        "autoscale_settings": sdk.FieldSpec(
+        "account_name": ubx.FieldSpec(wire_name="account_name"),
+        "analytical_storage_ttl": ubx.FieldSpec(wire_name="analytical_storage_ttl"),
+        "database_name": ubx.FieldSpec(wire_name="database_name"),
+        "default_ttl": ubx.FieldSpec(wire_name="default_ttl"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "partition_key_path": ubx.FieldSpec(wire_name="partition_key_path"),
+        "partition_key_version": ubx.FieldSpec(wire_name="partition_key_version"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "throughput": ubx.FieldSpec(wire_name="throughput"),
+        "autoscale_settings": ubx.FieldSpec(
             wire_name="autoscale_settings",
             kind="list",
             fields=_GremlinGraph_AutoscaleSettingsFields,
         ),
-        "conflict_resolution_policy": sdk.FieldSpec(
+        "conflict_resolution_policy": ubx.FieldSpec(
             wire_name="conflict_resolution_policy",
             kind="list",
             fields=_GremlinGraph_ConflictResolutionPolicyFields,
         ),
-        "index_policy": sdk.FieldSpec(
+        "index_policy": ubx.FieldSpec(
             wire_name="index_policy",
             kind="list",
             fields=_GremlinGraph_IndexPolicyFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_GremlinGraph_TimeoutsFields,
         ),
-        "unique_key": sdk.FieldSpec(
+        "unique_key": ubx.FieldSpec(
             wire_name="unique_key",
             kind="set",
             fields=_GremlinGraph_UniqueKeyFields,

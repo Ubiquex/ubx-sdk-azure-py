@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LearningComputeInstance_AssignToUser:
@@ -31,27 +31,27 @@ class LearningComputeInstance_Timeouts:
     read: Any = None
 
 _LearningComputeInstance_AssignToUserFields = {
-    "object_id": sdk.FieldSpec(wire_name="object_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
+    "object_id": ubx.FieldSpec(wire_name="object_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
 }
 
 _LearningComputeInstance_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _LearningComputeInstance_SshFields = {
-    "port": sdk.FieldSpec(wire_name="port"),
-    "public_key": sdk.FieldSpec(wire_name="public_key"),
-    "username": sdk.FieldSpec(wire_name="username"),
+    "port": ubx.FieldSpec(wire_name="port"),
+    "public_key": ubx.FieldSpec(wire_name="public_key"),
+    "username": ubx.FieldSpec(wire_name="username"),
 }
 
 _LearningComputeInstance_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -71,35 +71,35 @@ class LearningComputeInstanceConfig:
     ssh: Any = None
     timeouts: Any = None
 
-LearningComputeInstance = sdk.ResourceBinding(
+LearningComputeInstance = ubx.ResourceBinding(
     wire_type="azurerm_machine_learning_compute_instance",
     fields={
-        "authorization_type": sdk.FieldSpec(wire_name="authorization_type"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "local_auth_enabled": sdk.FieldSpec(wire_name="local_auth_enabled"),
-        "machine_learning_workspace_id": sdk.FieldSpec(wire_name="machine_learning_workspace_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "node_public_ip_enabled": sdk.FieldSpec(wire_name="node_public_ip_enabled"),
-        "subnet_resource_id": sdk.FieldSpec(wire_name="subnet_resource_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "virtual_machine_size": sdk.FieldSpec(wire_name="virtual_machine_size"),
-        "assign_to_user": sdk.FieldSpec(
+        "authorization_type": ubx.FieldSpec(wire_name="authorization_type"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "local_auth_enabled": ubx.FieldSpec(wire_name="local_auth_enabled"),
+        "machine_learning_workspace_id": ubx.FieldSpec(wire_name="machine_learning_workspace_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "node_public_ip_enabled": ubx.FieldSpec(wire_name="node_public_ip_enabled"),
+        "subnet_resource_id": ubx.FieldSpec(wire_name="subnet_resource_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "virtual_machine_size": ubx.FieldSpec(wire_name="virtual_machine_size"),
+        "assign_to_user": ubx.FieldSpec(
             wire_name="assign_to_user",
             kind="list",
             fields=_LearningComputeInstance_AssignToUserFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_LearningComputeInstance_IdentityFields,
         ),
-        "ssh": sdk.FieldSpec(
+        "ssh": ubx.FieldSpec(
             wire_name="ssh",
             kind="list",
             fields=_LearningComputeInstance_SshFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_LearningComputeInstance_TimeoutsFields,

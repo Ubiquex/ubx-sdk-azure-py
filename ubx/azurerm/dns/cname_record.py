@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CnameRecord_Timeouts:
@@ -14,10 +14,10 @@ class CnameRecord_Timeouts:
     update: Any = None
 
 _CnameRecord_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -32,18 +32,18 @@ class CnameRecordConfig:
     zone_name: Any = None
     timeouts: Any = None
 
-CnameRecord = sdk.ResourceBinding(
+CnameRecord = ubx.ResourceBinding(
     wire_type="azurerm_dns_cname_record",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "record": sdk.FieldSpec(wire_name="record"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "target_resource_id": sdk.FieldSpec(wire_name="target_resource_id"),
-        "ttl": sdk.FieldSpec(wire_name="ttl"),
-        "zone_name": sdk.FieldSpec(wire_name="zone_name"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "record": ubx.FieldSpec(wire_name="record"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "target_resource_id": ubx.FieldSpec(wire_name="target_resource_id"),
+        "ttl": ubx.FieldSpec(wire_name="ttl"),
+        "zone_name": ubx.FieldSpec(wire_name="zone_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CnameRecord_TimeoutsFields,

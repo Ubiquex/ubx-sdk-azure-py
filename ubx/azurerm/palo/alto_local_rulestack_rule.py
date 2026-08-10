@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AltoLocalRulestackRule_Category:
@@ -34,30 +34,30 @@ class AltoLocalRulestackRule_Timeouts:
     update: Any = None
 
 _AltoLocalRulestackRule_CategoryFields = {
-    "custom_urls": sdk.FieldSpec(wire_name="custom_urls"),
-    "feeds": sdk.FieldSpec(wire_name="feeds"),
+    "custom_urls": ubx.FieldSpec(wire_name="custom_urls"),
+    "feeds": ubx.FieldSpec(wire_name="feeds"),
 }
 
 _AltoLocalRulestackRule_DestinationFields = {
-    "cidrs": sdk.FieldSpec(wire_name="cidrs"),
-    "countries": sdk.FieldSpec(wire_name="countries"),
-    "feeds": sdk.FieldSpec(wire_name="feeds"),
-    "local_rulestack_fqdn_list_ids": sdk.FieldSpec(wire_name="local_rulestack_fqdn_list_ids"),
-    "local_rulestack_prefix_list_ids": sdk.FieldSpec(wire_name="local_rulestack_prefix_list_ids"),
+    "cidrs": ubx.FieldSpec(wire_name="cidrs"),
+    "countries": ubx.FieldSpec(wire_name="countries"),
+    "feeds": ubx.FieldSpec(wire_name="feeds"),
+    "local_rulestack_fqdn_list_ids": ubx.FieldSpec(wire_name="local_rulestack_fqdn_list_ids"),
+    "local_rulestack_prefix_list_ids": ubx.FieldSpec(wire_name="local_rulestack_prefix_list_ids"),
 }
 
 _AltoLocalRulestackRule_SourceFields = {
-    "cidrs": sdk.FieldSpec(wire_name="cidrs"),
-    "countries": sdk.FieldSpec(wire_name="countries"),
-    "feeds": sdk.FieldSpec(wire_name="feeds"),
-    "local_rulestack_prefix_list_ids": sdk.FieldSpec(wire_name="local_rulestack_prefix_list_ids"),
+    "cidrs": ubx.FieldSpec(wire_name="cidrs"),
+    "countries": ubx.FieldSpec(wire_name="countries"),
+    "feeds": ubx.FieldSpec(wire_name="feeds"),
+    "local_rulestack_prefix_list_ids": ubx.FieldSpec(wire_name="local_rulestack_prefix_list_ids"),
 }
 
 _AltoLocalRulestackRule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -84,42 +84,42 @@ class AltoLocalRulestackRuleConfig:
     source: Any = None
     timeouts: Any = None
 
-AltoLocalRulestackRule = sdk.ResourceBinding(
+AltoLocalRulestackRule = ubx.ResourceBinding(
     wire_type="azurerm_palo_alto_local_rulestack_rule",
     fields={
-        "action": sdk.FieldSpec(wire_name="action"),
-        "applications": sdk.FieldSpec(wire_name="applications"),
-        "audit_comment": sdk.FieldSpec(wire_name="audit_comment"),
-        "decryption_rule_type": sdk.FieldSpec(wire_name="decryption_rule_type"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "inspection_certificate_id": sdk.FieldSpec(wire_name="inspection_certificate_id"),
-        "logging_enabled": sdk.FieldSpec(wire_name="logging_enabled"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "negate_destination": sdk.FieldSpec(wire_name="negate_destination"),
-        "negate_source": sdk.FieldSpec(wire_name="negate_source"),
-        "priority": sdk.FieldSpec(wire_name="priority"),
-        "protocol": sdk.FieldSpec(wire_name="protocol"),
-        "protocol_ports": sdk.FieldSpec(wire_name="protocol_ports"),
-        "rulestack_id": sdk.FieldSpec(wire_name="rulestack_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "category": sdk.FieldSpec(
+        "action": ubx.FieldSpec(wire_name="action"),
+        "applications": ubx.FieldSpec(wire_name="applications"),
+        "audit_comment": ubx.FieldSpec(wire_name="audit_comment"),
+        "decryption_rule_type": ubx.FieldSpec(wire_name="decryption_rule_type"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "inspection_certificate_id": ubx.FieldSpec(wire_name="inspection_certificate_id"),
+        "logging_enabled": ubx.FieldSpec(wire_name="logging_enabled"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "negate_destination": ubx.FieldSpec(wire_name="negate_destination"),
+        "negate_source": ubx.FieldSpec(wire_name="negate_source"),
+        "priority": ubx.FieldSpec(wire_name="priority"),
+        "protocol": ubx.FieldSpec(wire_name="protocol"),
+        "protocol_ports": ubx.FieldSpec(wire_name="protocol_ports"),
+        "rulestack_id": ubx.FieldSpec(wire_name="rulestack_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "category": ubx.FieldSpec(
             wire_name="category",
             kind="list",
             fields=_AltoLocalRulestackRule_CategoryFields,
         ),
-        "destination": sdk.FieldSpec(
+        "destination": ubx.FieldSpec(
             wire_name="destination",
             kind="list",
             fields=_AltoLocalRulestackRule_DestinationFields,
         ),
-        "source": sdk.FieldSpec(
+        "source": ubx.FieldSpec(
             wire_name="source",
             kind="list",
             fields=_AltoLocalRulestackRule_SourceFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AltoLocalRulestackRule_TimeoutsFields,

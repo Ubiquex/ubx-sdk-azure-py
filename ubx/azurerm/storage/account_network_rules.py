@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AccountNetworkRules_PrivateLinkAccess:
@@ -19,15 +19,15 @@ class AccountNetworkRules_Timeouts:
     update: Any = None
 
 _AccountNetworkRules_PrivateLinkAccessFields = {
-    "endpoint_resource_id": sdk.FieldSpec(wire_name="endpoint_resource_id"),
-    "endpoint_tenant_id": sdk.FieldSpec(wire_name="endpoint_tenant_id"),
+    "endpoint_resource_id": ubx.FieldSpec(wire_name="endpoint_resource_id"),
+    "endpoint_tenant_id": ubx.FieldSpec(wire_name="endpoint_tenant_id"),
 }
 
 _AccountNetworkRules_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -41,21 +41,21 @@ class AccountNetworkRulesConfig:
     private_link_access: Any = None
     timeouts: Any = None
 
-AccountNetworkRules = sdk.ResourceBinding(
+AccountNetworkRules = ubx.ResourceBinding(
     wire_type="azurerm_storage_account_network_rules",
     fields={
-        "bypass": sdk.FieldSpec(wire_name="bypass"),
-        "default_action": sdk.FieldSpec(wire_name="default_action"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "ip_rules": sdk.FieldSpec(wire_name="ip_rules"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "virtual_network_subnet_ids": sdk.FieldSpec(wire_name="virtual_network_subnet_ids"),
-        "private_link_access": sdk.FieldSpec(
+        "bypass": ubx.FieldSpec(wire_name="bypass"),
+        "default_action": ubx.FieldSpec(wire_name="default_action"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "ip_rules": ubx.FieldSpec(wire_name="ip_rules"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "virtual_network_subnet_ids": ubx.FieldSpec(wire_name="virtual_network_subnet_ids"),
+        "private_link_access": ubx.FieldSpec(
             wire_name="private_link_access",
             kind="list",
             fields=_AccountNetworkRules_PrivateLinkAccessFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AccountNetworkRules_TimeoutsFields,

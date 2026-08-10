@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryLinkedServiceAzureFileStorage_KeyVaultPassword:
@@ -19,15 +19,15 @@ class FactoryLinkedServiceAzureFileStorage_Timeouts:
     update: Any = None
 
 _FactoryLinkedServiceAzureFileStorage_KeyVaultPasswordFields = {
-    "linked_service_name": sdk.FieldSpec(wire_name="linked_service_name"),
-    "secret_name": sdk.FieldSpec(wire_name="secret_name"),
+    "linked_service_name": ubx.FieldSpec(wire_name="linked_service_name"),
+    "secret_name": ubx.FieldSpec(wire_name="secret_name"),
 }
 
 _FactoryLinkedServiceAzureFileStorage_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -48,28 +48,28 @@ class FactoryLinkedServiceAzureFileStorageConfig:
     key_vault_password: Any = None
     timeouts: Any = None
 
-FactoryLinkedServiceAzureFileStorage = sdk.ResourceBinding(
+FactoryLinkedServiceAzureFileStorage = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_linked_service_azure_file_storage",
     fields={
-        "additional_properties": sdk.FieldSpec(wire_name="additional_properties"),
-        "annotations": sdk.FieldSpec(wire_name="annotations"),
-        "connection_string": sdk.FieldSpec(wire_name="connection_string"),
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "file_share": sdk.FieldSpec(wire_name="file_share"),
-        "host": sdk.FieldSpec(wire_name="host"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "integration_runtime_name": sdk.FieldSpec(wire_name="integration_runtime_name"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parameters": sdk.FieldSpec(wire_name="parameters"),
-        "password": sdk.FieldSpec(wire_name="password"),
-        "user_id": sdk.FieldSpec(wire_name="user_id"),
-        "key_vault_password": sdk.FieldSpec(
+        "additional_properties": ubx.FieldSpec(wire_name="additional_properties"),
+        "annotations": ubx.FieldSpec(wire_name="annotations"),
+        "connection_string": ubx.FieldSpec(wire_name="connection_string"),
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "file_share": ubx.FieldSpec(wire_name="file_share"),
+        "host": ubx.FieldSpec(wire_name="host"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "integration_runtime_name": ubx.FieldSpec(wire_name="integration_runtime_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parameters": ubx.FieldSpec(wire_name="parameters"),
+        "password": ubx.FieldSpec(wire_name="password"),
+        "user_id": ubx.FieldSpec(wire_name="user_id"),
+        "key_vault_password": ubx.FieldSpec(
             wire_name="key_vault_password",
             kind="list",
             fields=_FactoryLinkedServiceAzureFileStorage_KeyVaultPasswordFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryLinkedServiceAzureFileStorage_TimeoutsFields,

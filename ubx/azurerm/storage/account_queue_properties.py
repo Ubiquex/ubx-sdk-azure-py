@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AccountQueueProperties_CorsRule:
@@ -36,32 +36,32 @@ class AccountQueueProperties_Timeouts:
     update: Any = None
 
 _AccountQueueProperties_CorsRuleFields = {
-    "allowed_headers": sdk.FieldSpec(wire_name="allowed_headers"),
-    "allowed_methods": sdk.FieldSpec(wire_name="allowed_methods"),
-    "allowed_origins": sdk.FieldSpec(wire_name="allowed_origins"),
-    "exposed_headers": sdk.FieldSpec(wire_name="exposed_headers"),
-    "max_age_in_seconds": sdk.FieldSpec(wire_name="max_age_in_seconds"),
+    "allowed_headers": ubx.FieldSpec(wire_name="allowed_headers"),
+    "allowed_methods": ubx.FieldSpec(wire_name="allowed_methods"),
+    "allowed_origins": ubx.FieldSpec(wire_name="allowed_origins"),
+    "exposed_headers": ubx.FieldSpec(wire_name="exposed_headers"),
+    "max_age_in_seconds": ubx.FieldSpec(wire_name="max_age_in_seconds"),
 }
 
 _AccountQueueProperties_HourMetricsFields = {
-    "include_apis": sdk.FieldSpec(wire_name="include_apis"),
-    "retention_policy_days": sdk.FieldSpec(wire_name="retention_policy_days"),
-    "version": sdk.FieldSpec(wire_name="version"),
+    "include_apis": ubx.FieldSpec(wire_name="include_apis"),
+    "retention_policy_days": ubx.FieldSpec(wire_name="retention_policy_days"),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _AccountQueueProperties_LoggingFields = {
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "retention_policy_days": sdk.FieldSpec(wire_name="retention_policy_days"),
-    "version": sdk.FieldSpec(wire_name="version"),
-    "write": sdk.FieldSpec(wire_name="write"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "retention_policy_days": ubx.FieldSpec(wire_name="retention_policy_days"),
+    "version": ubx.FieldSpec(wire_name="version"),
+    "write": ubx.FieldSpec(wire_name="write"),
 }
 
 _AccountQueueProperties_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -74,32 +74,32 @@ class AccountQueuePropertiesConfig:
     minute_metrics: Any = None
     timeouts: Any = None
 
-AccountQueueProperties = sdk.ResourceBinding(
+AccountQueueProperties = ubx.ResourceBinding(
     wire_type="azurerm_storage_account_queue_properties",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "cors_rule": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "cors_rule": ubx.FieldSpec(
             wire_name="cors_rule",
             kind="list",
             fields=_AccountQueueProperties_CorsRuleFields,
         ),
-        "hour_metrics": sdk.FieldSpec(
+        "hour_metrics": ubx.FieldSpec(
             wire_name="hour_metrics",
             kind="list",
             fields=_AccountQueueProperties_HourMetricsFields,
         ),
-        "logging": sdk.FieldSpec(
+        "logging": ubx.FieldSpec(
             wire_name="logging",
             kind="list",
             fields=_AccountQueueProperties_LoggingFields,
         ),
-        "minute_metrics": sdk.FieldSpec(
+        "minute_metrics": ubx.FieldSpec(
             wire_name="minute_metrics",
             kind="list",
             fields=_AccountQueueProperties_HourMetricsFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AccountQueueProperties_TimeoutsFields,

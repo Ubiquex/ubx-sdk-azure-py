@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AutonomousDatabase_LongTermBackupSchedule:
@@ -21,17 +21,17 @@ class AutonomousDatabase_Timeouts:
     update: Any = None
 
 _AutonomousDatabase_LongTermBackupScheduleFields = {
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "repeat_cadence": sdk.FieldSpec(wire_name="repeat_cadence"),
-    "retention_period_in_days": sdk.FieldSpec(wire_name="retention_period_in_days"),
-    "time_of_backup": sdk.FieldSpec(wire_name="time_of_backup"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "repeat_cadence": ubx.FieldSpec(wire_name="repeat_cadence"),
+    "retention_period_in_days": ubx.FieldSpec(wire_name="retention_period_in_days"),
+    "time_of_backup": ubx.FieldSpec(wire_name="time_of_backup"),
 }
 
 _AutonomousDatabase_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -62,38 +62,38 @@ class AutonomousDatabaseConfig:
     long_term_backup_schedule: Any = None
     timeouts: Any = None
 
-AutonomousDatabase = sdk.ResourceBinding(
+AutonomousDatabase = ubx.ResourceBinding(
     wire_type="azurerm_oracle_autonomous_database",
     fields={
-        "admin_password": sdk.FieldSpec(wire_name="admin_password"),
-        "allowed_ips": sdk.FieldSpec(wire_name="allowed_ips"),
-        "auto_scaling_enabled": sdk.FieldSpec(wire_name="auto_scaling_enabled"),
-        "auto_scaling_for_storage_enabled": sdk.FieldSpec(wire_name="auto_scaling_for_storage_enabled"),
-        "backup_retention_period_in_days": sdk.FieldSpec(wire_name="backup_retention_period_in_days"),
-        "character_set": sdk.FieldSpec(wire_name="character_set"),
-        "compute_count": sdk.FieldSpec(wire_name="compute_count"),
-        "compute_model": sdk.FieldSpec(wire_name="compute_model"),
-        "customer_contacts": sdk.FieldSpec(wire_name="customer_contacts"),
-        "data_storage_size_in_tbs": sdk.FieldSpec(wire_name="data_storage_size_in_tbs"),
-        "db_version": sdk.FieldSpec(wire_name="db_version"),
-        "db_workload": sdk.FieldSpec(wire_name="db_workload"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "license_model": sdk.FieldSpec(wire_name="license_model"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "mtls_connection_required": sdk.FieldSpec(wire_name="mtls_connection_required"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "national_character_set": sdk.FieldSpec(wire_name="national_character_set"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "virtual_network_id": sdk.FieldSpec(wire_name="virtual_network_id"),
-        "long_term_backup_schedule": sdk.FieldSpec(
+        "admin_password": ubx.FieldSpec(wire_name="admin_password"),
+        "allowed_ips": ubx.FieldSpec(wire_name="allowed_ips"),
+        "auto_scaling_enabled": ubx.FieldSpec(wire_name="auto_scaling_enabled"),
+        "auto_scaling_for_storage_enabled": ubx.FieldSpec(wire_name="auto_scaling_for_storage_enabled"),
+        "backup_retention_period_in_days": ubx.FieldSpec(wire_name="backup_retention_period_in_days"),
+        "character_set": ubx.FieldSpec(wire_name="character_set"),
+        "compute_count": ubx.FieldSpec(wire_name="compute_count"),
+        "compute_model": ubx.FieldSpec(wire_name="compute_model"),
+        "customer_contacts": ubx.FieldSpec(wire_name="customer_contacts"),
+        "data_storage_size_in_tbs": ubx.FieldSpec(wire_name="data_storage_size_in_tbs"),
+        "db_version": ubx.FieldSpec(wire_name="db_version"),
+        "db_workload": ubx.FieldSpec(wire_name="db_workload"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "license_model": ubx.FieldSpec(wire_name="license_model"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "mtls_connection_required": ubx.FieldSpec(wire_name="mtls_connection_required"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "national_character_set": ubx.FieldSpec(wire_name="national_character_set"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "virtual_network_id": ubx.FieldSpec(wire_name="virtual_network_id"),
+        "long_term_backup_schedule": ubx.FieldSpec(
             wire_name="long_term_backup_schedule",
             kind="list",
             fields=_AutonomousDatabase_LongTermBackupScheduleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AutonomousDatabase_TimeoutsFields,

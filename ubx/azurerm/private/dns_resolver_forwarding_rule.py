@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DnsResolverForwardingRule_TargetDnsServers:
@@ -19,15 +19,15 @@ class DnsResolverForwardingRule_Timeouts:
     update: Any = None
 
 _DnsResolverForwardingRule_TargetDnsServersFields = {
-    "ip_address": sdk.FieldSpec(wire_name="ip_address"),
-    "port": sdk.FieldSpec(wire_name="port"),
+    "ip_address": ubx.FieldSpec(wire_name="ip_address"),
+    "port": ubx.FieldSpec(wire_name="port"),
 }
 
 _DnsResolverForwardingRule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -41,21 +41,21 @@ class DnsResolverForwardingRuleConfig:
     target_dns_servers: Any = None
     timeouts: Any = None
 
-DnsResolverForwardingRule = sdk.ResourceBinding(
+DnsResolverForwardingRule = ubx.ResourceBinding(
     wire_type="azurerm_private_dns_resolver_forwarding_rule",
     fields={
-        "dns_forwarding_ruleset_id": sdk.FieldSpec(wire_name="dns_forwarding_ruleset_id"),
-        "domain_name": sdk.FieldSpec(wire_name="domain_name"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "metadata": sdk.FieldSpec(wire_name="metadata"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "target_dns_servers": sdk.FieldSpec(
+        "dns_forwarding_ruleset_id": ubx.FieldSpec(wire_name="dns_forwarding_ruleset_id"),
+        "domain_name": ubx.FieldSpec(wire_name="domain_name"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "metadata": ubx.FieldSpec(wire_name="metadata"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "target_dns_servers": ubx.FieldSpec(
             wire_name="target_dns_servers",
             kind="list",
             fields=_DnsResolverForwardingRule_TargetDnsServersFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DnsResolverForwardingRule_TimeoutsFields,

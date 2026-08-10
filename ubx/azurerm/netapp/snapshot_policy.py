@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SnapshotPolicy_DailySchedule:
@@ -39,35 +39,35 @@ class SnapshotPolicy_WeeklySchedule:
     snapshots_to_keep: Any = None
 
 _SnapshotPolicy_DailyScheduleFields = {
-    "hour": sdk.FieldSpec(wire_name="hour"),
-    "minute": sdk.FieldSpec(wire_name="minute"),
-    "snapshots_to_keep": sdk.FieldSpec(wire_name="snapshots_to_keep"),
+    "hour": ubx.FieldSpec(wire_name="hour"),
+    "minute": ubx.FieldSpec(wire_name="minute"),
+    "snapshots_to_keep": ubx.FieldSpec(wire_name="snapshots_to_keep"),
 }
 
 _SnapshotPolicy_HourlyScheduleFields = {
-    "minute": sdk.FieldSpec(wire_name="minute"),
-    "snapshots_to_keep": sdk.FieldSpec(wire_name="snapshots_to_keep"),
+    "minute": ubx.FieldSpec(wire_name="minute"),
+    "snapshots_to_keep": ubx.FieldSpec(wire_name="snapshots_to_keep"),
 }
 
 _SnapshotPolicy_MonthlyScheduleFields = {
-    "days_of_month": sdk.FieldSpec(wire_name="days_of_month"),
-    "hour": sdk.FieldSpec(wire_name="hour"),
-    "minute": sdk.FieldSpec(wire_name="minute"),
-    "snapshots_to_keep": sdk.FieldSpec(wire_name="snapshots_to_keep"),
+    "days_of_month": ubx.FieldSpec(wire_name="days_of_month"),
+    "hour": ubx.FieldSpec(wire_name="hour"),
+    "minute": ubx.FieldSpec(wire_name="minute"),
+    "snapshots_to_keep": ubx.FieldSpec(wire_name="snapshots_to_keep"),
 }
 
 _SnapshotPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _SnapshotPolicy_WeeklyScheduleFields = {
-    "days_of_week": sdk.FieldSpec(wire_name="days_of_week"),
-    "hour": sdk.FieldSpec(wire_name="hour"),
-    "minute": sdk.FieldSpec(wire_name="minute"),
-    "snapshots_to_keep": sdk.FieldSpec(wire_name="snapshots_to_keep"),
+    "days_of_week": ubx.FieldSpec(wire_name="days_of_week"),
+    "hour": ubx.FieldSpec(wire_name="hour"),
+    "minute": ubx.FieldSpec(wire_name="minute"),
+    "snapshots_to_keep": ubx.FieldSpec(wire_name="snapshots_to_keep"),
 }
 
 @dataclasses.dataclass
@@ -85,37 +85,37 @@ class SnapshotPolicyConfig:
     timeouts: Any = None
     weekly_schedule: Any = None
 
-SnapshotPolicy = sdk.ResourceBinding(
+SnapshotPolicy = ubx.ResourceBinding(
     wire_type="azurerm_netapp_snapshot_policy",
     fields={
-        "account_name": sdk.FieldSpec(wire_name="account_name"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "daily_schedule": sdk.FieldSpec(
+        "account_name": ubx.FieldSpec(wire_name="account_name"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "daily_schedule": ubx.FieldSpec(
             wire_name="daily_schedule",
             kind="list",
             fields=_SnapshotPolicy_DailyScheduleFields,
         ),
-        "hourly_schedule": sdk.FieldSpec(
+        "hourly_schedule": ubx.FieldSpec(
             wire_name="hourly_schedule",
             kind="list",
             fields=_SnapshotPolicy_HourlyScheduleFields,
         ),
-        "monthly_schedule": sdk.FieldSpec(
+        "monthly_schedule": ubx.FieldSpec(
             wire_name="monthly_schedule",
             kind="list",
             fields=_SnapshotPolicy_MonthlyScheduleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SnapshotPolicy_TimeoutsFields,
         ),
-        "weekly_schedule": sdk.FieldSpec(
+        "weekly_schedule": ubx.FieldSpec(
             wire_name="weekly_schedule",
             kind="list",
             fields=_SnapshotPolicy_WeeklyScheduleFields,

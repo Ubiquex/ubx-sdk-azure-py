@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementApiOperation_Request_Header_Example:
@@ -56,23 +56,23 @@ class ManagementApiOperation_Timeouts:
     update: Any = None
 
 _ManagementApiOperation_Request_Header_ExampleFields = {
-    "description": sdk.FieldSpec(wire_name="description"),
-    "external_value": sdk.FieldSpec(wire_name="external_value"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "summary": sdk.FieldSpec(wire_name="summary"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "external_value": ubx.FieldSpec(wire_name="external_value"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "summary": ubx.FieldSpec(wire_name="summary"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _ManagementApiOperation_Request_HeaderFields = {
-    "default_value": sdk.FieldSpec(wire_name="default_value"),
-    "description": sdk.FieldSpec(wire_name="description"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "required": sdk.FieldSpec(wire_name="required"),
-    "schema_id": sdk.FieldSpec(wire_name="schema_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
-    "type_name": sdk.FieldSpec(wire_name="type_name"),
-    "values": sdk.FieldSpec(wire_name="values"),
-    "example": sdk.FieldSpec(
+    "default_value": ubx.FieldSpec(wire_name="default_value"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "required": ubx.FieldSpec(wire_name="required"),
+    "schema_id": ubx.FieldSpec(wire_name="schema_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+    "type_name": ubx.FieldSpec(wire_name="type_name"),
+    "values": ubx.FieldSpec(wire_name="values"),
+    "example": ubx.FieldSpec(
         wire_name="example",
         kind="list",
         fields=_ManagementApiOperation_Request_Header_ExampleFields,
@@ -80,15 +80,15 @@ _ManagementApiOperation_Request_HeaderFields = {
 }
 
 _ManagementApiOperation_Request_RepresentationFields = {
-    "content_type": sdk.FieldSpec(wire_name="content_type"),
-    "schema_id": sdk.FieldSpec(wire_name="schema_id"),
-    "type_name": sdk.FieldSpec(wire_name="type_name"),
-    "example": sdk.FieldSpec(
+    "content_type": ubx.FieldSpec(wire_name="content_type"),
+    "schema_id": ubx.FieldSpec(wire_name="schema_id"),
+    "type_name": ubx.FieldSpec(wire_name="type_name"),
+    "example": ubx.FieldSpec(
         wire_name="example",
         kind="list",
         fields=_ManagementApiOperation_Request_Header_ExampleFields,
     ),
-    "form_parameter": sdk.FieldSpec(
+    "form_parameter": ubx.FieldSpec(
         wire_name="form_parameter",
         kind="list",
         fields=_ManagementApiOperation_Request_HeaderFields,
@@ -96,18 +96,18 @@ _ManagementApiOperation_Request_RepresentationFields = {
 }
 
 _ManagementApiOperation_RequestFields = {
-    "description": sdk.FieldSpec(wire_name="description"),
-    "header": sdk.FieldSpec(
+    "description": ubx.FieldSpec(wire_name="description"),
+    "header": ubx.FieldSpec(
         wire_name="header",
         kind="list",
         fields=_ManagementApiOperation_Request_HeaderFields,
     ),
-    "query_parameter": sdk.FieldSpec(
+    "query_parameter": ubx.FieldSpec(
         wire_name="query_parameter",
         kind="list",
         fields=_ManagementApiOperation_Request_HeaderFields,
     ),
-    "representation": sdk.FieldSpec(
+    "representation": ubx.FieldSpec(
         wire_name="representation",
         kind="list",
         fields=_ManagementApiOperation_Request_RepresentationFields,
@@ -115,14 +115,14 @@ _ManagementApiOperation_RequestFields = {
 }
 
 _ManagementApiOperation_ResponseFields = {
-    "description": sdk.FieldSpec(wire_name="description"),
-    "status_code": sdk.FieldSpec(wire_name="status_code"),
-    "header": sdk.FieldSpec(
+    "description": ubx.FieldSpec(wire_name="description"),
+    "status_code": ubx.FieldSpec(wire_name="status_code"),
+    "header": ubx.FieldSpec(
         wire_name="header",
         kind="list",
         fields=_ManagementApiOperation_Request_HeaderFields,
     ),
-    "representation": sdk.FieldSpec(
+    "representation": ubx.FieldSpec(
         wire_name="representation",
         kind="list",
         fields=_ManagementApiOperation_Request_RepresentationFields,
@@ -130,10 +130,10 @@ _ManagementApiOperation_ResponseFields = {
 }
 
 _ManagementApiOperation_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -152,34 +152,34 @@ class ManagementApiOperationConfig:
     template_parameter: Any = None
     timeouts: Any = None
 
-ManagementApiOperation = sdk.ResourceBinding(
+ManagementApiOperation = ubx.ResourceBinding(
     wire_type="azurerm_api_management_api_operation",
     fields={
-        "api_management_name": sdk.FieldSpec(wire_name="api_management_name"),
-        "api_name": sdk.FieldSpec(wire_name="api_name"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "method": sdk.FieldSpec(wire_name="method"),
-        "operation_id": sdk.FieldSpec(wire_name="operation_id"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "url_template": sdk.FieldSpec(wire_name="url_template"),
-        "request": sdk.FieldSpec(
+        "api_management_name": ubx.FieldSpec(wire_name="api_management_name"),
+        "api_name": ubx.FieldSpec(wire_name="api_name"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "method": ubx.FieldSpec(wire_name="method"),
+        "operation_id": ubx.FieldSpec(wire_name="operation_id"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "url_template": ubx.FieldSpec(wire_name="url_template"),
+        "request": ubx.FieldSpec(
             wire_name="request",
             kind="list",
             fields=_ManagementApiOperation_RequestFields,
         ),
-        "response": sdk.FieldSpec(
+        "response": ubx.FieldSpec(
             wire_name="response",
             kind="list",
             fields=_ManagementApiOperation_ResponseFields,
         ),
-        "template_parameter": sdk.FieldSpec(
+        "template_parameter": ubx.FieldSpec(
             wire_name="template_parameter",
             kind="list",
             fields=_ManagementApiOperation_Request_HeaderFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementApiOperation_TimeoutsFields,

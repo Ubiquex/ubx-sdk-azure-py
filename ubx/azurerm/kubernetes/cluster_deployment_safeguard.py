@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ClusterDeploymentSafeguard_Timeouts:
@@ -14,10 +14,10 @@ class ClusterDeploymentSafeguard_Timeouts:
     update: Any = None
 
 _ClusterDeploymentSafeguard_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class ClusterDeploymentSafeguardConfig:
     pod_security_standards_level: Any = None
     timeouts: Any = None
 
-ClusterDeploymentSafeguard = sdk.ResourceBinding(
+ClusterDeploymentSafeguard = ubx.ResourceBinding(
     wire_type="azurerm_kubernetes_cluster_deployment_safeguard",
     fields={
-        "excluded_namespaces": sdk.FieldSpec(wire_name="excluded_namespaces"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "kubernetes_cluster_id": sdk.FieldSpec(wire_name="kubernetes_cluster_id"),
-        "level": sdk.FieldSpec(wire_name="level"),
-        "pod_security_standards_level": sdk.FieldSpec(wire_name="pod_security_standards_level"),
-        "timeouts": sdk.FieldSpec(
+        "excluded_namespaces": ubx.FieldSpec(wire_name="excluded_namespaces"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "kubernetes_cluster_id": ubx.FieldSpec(wire_name="kubernetes_cluster_id"),
+        "level": ubx.FieldSpec(wire_name="level"),
+        "pod_security_standards_level": ubx.FieldSpec(wire_name="pod_security_standards_level"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ClusterDeploymentSafeguard_TimeoutsFields,

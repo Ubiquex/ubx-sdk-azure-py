@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagedInstanceSecurityAlertPolicy_Timeouts:
@@ -14,10 +14,10 @@ class ManagedInstanceSecurityAlertPolicy_Timeouts:
     update: Any = None
 
 _ManagedInstanceSecurityAlertPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -34,20 +34,20 @@ class ManagedInstanceSecurityAlertPolicyConfig:
     storage_endpoint: Any = None
     timeouts: Any = None
 
-ManagedInstanceSecurityAlertPolicy = sdk.ResourceBinding(
+ManagedInstanceSecurityAlertPolicy = ubx.ResourceBinding(
     wire_type="azurerm_mssql_managed_instance_security_alert_policy",
     fields={
-        "disabled_alerts": sdk.FieldSpec(wire_name="disabled_alerts"),
-        "email_account_admins_enabled": sdk.FieldSpec(wire_name="email_account_admins_enabled"),
-        "email_addresses": sdk.FieldSpec(wire_name="email_addresses"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "managed_instance_name": sdk.FieldSpec(wire_name="managed_instance_name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "retention_days": sdk.FieldSpec(wire_name="retention_days"),
-        "storage_account_access_key": sdk.FieldSpec(wire_name="storage_account_access_key"),
-        "storage_endpoint": sdk.FieldSpec(wire_name="storage_endpoint"),
-        "timeouts": sdk.FieldSpec(
+        "disabled_alerts": ubx.FieldSpec(wire_name="disabled_alerts"),
+        "email_account_admins_enabled": ubx.FieldSpec(wire_name="email_account_admins_enabled"),
+        "email_addresses": ubx.FieldSpec(wire_name="email_addresses"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "managed_instance_name": ubx.FieldSpec(wire_name="managed_instance_name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "retention_days": ubx.FieldSpec(wire_name="retention_days"),
+        "storage_account_access_key": ubx.FieldSpec(wire_name="storage_account_access_key"),
+        "storage_endpoint": ubx.FieldSpec(wire_name="storage_endpoint"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagedInstanceSecurityAlertPolicy_TimeoutsFields,

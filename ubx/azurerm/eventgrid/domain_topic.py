@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DomainTopic_Timeouts:
@@ -13,9 +13,9 @@ class DomainTopic_Timeouts:
     read: Any = None
 
 _DomainTopic_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -26,14 +26,14 @@ class DomainTopicConfig:
     resource_group_name: Any = None
     timeouts: Any = None
 
-DomainTopic = sdk.ResourceBinding(
+DomainTopic = ubx.ResourceBinding(
     wire_type="azurerm_eventgrid_domain_topic",
     fields={
-        "domain_name": sdk.FieldSpec(wire_name="domain_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "timeouts": sdk.FieldSpec(
+        "domain_name": ubx.FieldSpec(wire_name="domain_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DomainTopic_TimeoutsFields,

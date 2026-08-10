@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Filter_Rule:
@@ -21,17 +21,17 @@ class Filter_Timeouts:
     update: Any = None
 
 _Filter_RuleFields = {
-    "access": sdk.FieldSpec(wire_name="access"),
-    "communities": sdk.FieldSpec(wire_name="communities"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "rule_type": sdk.FieldSpec(wire_name="rule_type"),
+    "access": ubx.FieldSpec(wire_name="access"),
+    "communities": ubx.FieldSpec(wire_name="communities"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "rule_type": ubx.FieldSpec(wire_name="rule_type"),
 }
 
 _Filter_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -44,20 +44,20 @@ class FilterConfig:
     tags: Any = None
     timeouts: Any = None
 
-Filter = sdk.ResourceBinding(
+Filter = ubx.ResourceBinding(
     wire_type="azurerm_route_filter",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "rule": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "rule": ubx.FieldSpec(
             wire_name="rule",
             kind="list",
             fields=_Filter_RuleFields,
         ),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Filter_TimeoutsFields,

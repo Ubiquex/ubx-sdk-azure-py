@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CustomHttpsConfiguration_CustomHttpsConfiguration:
@@ -24,20 +24,20 @@ class CustomHttpsConfiguration_Timeouts:
     update: Any = None
 
 _CustomHttpsConfiguration_CustomHttpsConfigurationFields = {
-    "azure_key_vault_certificate_secret_name": sdk.FieldSpec(wire_name="azure_key_vault_certificate_secret_name"),
-    "azure_key_vault_certificate_secret_version": sdk.FieldSpec(wire_name="azure_key_vault_certificate_secret_version"),
-    "azure_key_vault_certificate_vault_id": sdk.FieldSpec(wire_name="azure_key_vault_certificate_vault_id"),
-    "certificate_source": sdk.FieldSpec(wire_name="certificate_source"),
-    "minimum_tls_version": sdk.FieldSpec(wire_name="minimum_tls_version"),
-    "provisioning_state": sdk.FieldSpec(wire_name="provisioning_state"),
-    "provisioning_substate": sdk.FieldSpec(wire_name="provisioning_substate"),
+    "azure_key_vault_certificate_secret_name": ubx.FieldSpec(wire_name="azure_key_vault_certificate_secret_name"),
+    "azure_key_vault_certificate_secret_version": ubx.FieldSpec(wire_name="azure_key_vault_certificate_secret_version"),
+    "azure_key_vault_certificate_vault_id": ubx.FieldSpec(wire_name="azure_key_vault_certificate_vault_id"),
+    "certificate_source": ubx.FieldSpec(wire_name="certificate_source"),
+    "minimum_tls_version": ubx.FieldSpec(wire_name="minimum_tls_version"),
+    "provisioning_state": ubx.FieldSpec(wire_name="provisioning_state"),
+    "provisioning_substate": ubx.FieldSpec(wire_name="provisioning_substate"),
 }
 
 _CustomHttpsConfiguration_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -48,18 +48,18 @@ class CustomHttpsConfigurationConfig:
     custom_https_configuration: Any = None
     timeouts: Any = None
 
-CustomHttpsConfiguration = sdk.ResourceBinding(
+CustomHttpsConfiguration = ubx.ResourceBinding(
     wire_type="azurerm_frontdoor_custom_https_configuration",
     fields={
-        "custom_https_provisioning_enabled": sdk.FieldSpec(wire_name="custom_https_provisioning_enabled"),
-        "frontend_endpoint_id": sdk.FieldSpec(wire_name="frontend_endpoint_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "custom_https_configuration": sdk.FieldSpec(
+        "custom_https_provisioning_enabled": ubx.FieldSpec(wire_name="custom_https_provisioning_enabled"),
+        "frontend_endpoint_id": ubx.FieldSpec(wire_name="frontend_endpoint_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "custom_https_configuration": ubx.FieldSpec(
             wire_name="custom_https_configuration",
             kind="list",
             fields=_CustomHttpsConfiguration_CustomHttpsConfigurationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CustomHttpsConfiguration_TimeoutsFields,

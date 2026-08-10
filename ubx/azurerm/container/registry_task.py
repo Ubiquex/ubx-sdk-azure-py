@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RegistryTask_AgentSetting:
@@ -109,78 +109,78 @@ class RegistryTask_TimerTrigger:
     schedule: Any = None
 
 _RegistryTask_AgentSettingFields = {
-    "cpu": sdk.FieldSpec(wire_name="cpu"),
+    "cpu": ubx.FieldSpec(wire_name="cpu"),
 }
 
 _RegistryTask_BaseImageTriggerFields = {
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "type": sdk.FieldSpec(wire_name="type"),
-    "update_trigger_endpoint": sdk.FieldSpec(wire_name="update_trigger_endpoint"),
-    "update_trigger_payload_type": sdk.FieldSpec(wire_name="update_trigger_payload_type"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "type": ubx.FieldSpec(wire_name="type"),
+    "update_trigger_endpoint": ubx.FieldSpec(wire_name="update_trigger_endpoint"),
+    "update_trigger_payload_type": ubx.FieldSpec(wire_name="update_trigger_payload_type"),
 }
 
 _RegistryTask_DockerStepFields = {
-    "arguments": sdk.FieldSpec(wire_name="arguments"),
-    "cache_enabled": sdk.FieldSpec(wire_name="cache_enabled"),
-    "context_access_token": sdk.FieldSpec(wire_name="context_access_token"),
-    "context_path": sdk.FieldSpec(wire_name="context_path"),
-    "dockerfile_path": sdk.FieldSpec(wire_name="dockerfile_path"),
-    "image_names": sdk.FieldSpec(wire_name="image_names"),
-    "push_enabled": sdk.FieldSpec(wire_name="push_enabled"),
-    "secret_arguments": sdk.FieldSpec(wire_name="secret_arguments"),
-    "target": sdk.FieldSpec(wire_name="target"),
+    "arguments": ubx.FieldSpec(wire_name="arguments"),
+    "cache_enabled": ubx.FieldSpec(wire_name="cache_enabled"),
+    "context_access_token": ubx.FieldSpec(wire_name="context_access_token"),
+    "context_path": ubx.FieldSpec(wire_name="context_path"),
+    "dockerfile_path": ubx.FieldSpec(wire_name="dockerfile_path"),
+    "image_names": ubx.FieldSpec(wire_name="image_names"),
+    "push_enabled": ubx.FieldSpec(wire_name="push_enabled"),
+    "secret_arguments": ubx.FieldSpec(wire_name="secret_arguments"),
+    "target": ubx.FieldSpec(wire_name="target"),
 }
 
 _RegistryTask_EncodedStepFields = {
-    "context_access_token": sdk.FieldSpec(wire_name="context_access_token"),
-    "context_path": sdk.FieldSpec(wire_name="context_path"),
-    "secret_values": sdk.FieldSpec(wire_name="secret_values"),
-    "task_content": sdk.FieldSpec(wire_name="task_content"),
-    "value_content": sdk.FieldSpec(wire_name="value_content"),
-    "values": sdk.FieldSpec(wire_name="values"),
+    "context_access_token": ubx.FieldSpec(wire_name="context_access_token"),
+    "context_path": ubx.FieldSpec(wire_name="context_path"),
+    "secret_values": ubx.FieldSpec(wire_name="secret_values"),
+    "task_content": ubx.FieldSpec(wire_name="task_content"),
+    "value_content": ubx.FieldSpec(wire_name="value_content"),
+    "values": ubx.FieldSpec(wire_name="values"),
 }
 
 _RegistryTask_FileStepFields = {
-    "context_access_token": sdk.FieldSpec(wire_name="context_access_token"),
-    "context_path": sdk.FieldSpec(wire_name="context_path"),
-    "secret_values": sdk.FieldSpec(wire_name="secret_values"),
-    "task_file_path": sdk.FieldSpec(wire_name="task_file_path"),
-    "value_file_path": sdk.FieldSpec(wire_name="value_file_path"),
-    "values": sdk.FieldSpec(wire_name="values"),
+    "context_access_token": ubx.FieldSpec(wire_name="context_access_token"),
+    "context_path": ubx.FieldSpec(wire_name="context_path"),
+    "secret_values": ubx.FieldSpec(wire_name="secret_values"),
+    "task_file_path": ubx.FieldSpec(wire_name="task_file_path"),
+    "value_file_path": ubx.FieldSpec(wire_name="value_file_path"),
+    "values": ubx.FieldSpec(wire_name="values"),
 }
 
 _RegistryTask_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _RegistryTask_PlatformFields = {
-    "architecture": sdk.FieldSpec(wire_name="architecture"),
-    "os": sdk.FieldSpec(wire_name="os"),
-    "variant": sdk.FieldSpec(wire_name="variant"),
+    "architecture": ubx.FieldSpec(wire_name="architecture"),
+    "os": ubx.FieldSpec(wire_name="os"),
+    "variant": ubx.FieldSpec(wire_name="variant"),
 }
 
 _RegistryTask_RegistryCredential_CustomFields = {
-    "identity": sdk.FieldSpec(wire_name="identity"),
-    "login_server": sdk.FieldSpec(wire_name="login_server"),
-    "password": sdk.FieldSpec(wire_name="password"),
-    "username": sdk.FieldSpec(wire_name="username"),
+    "identity": ubx.FieldSpec(wire_name="identity"),
+    "login_server": ubx.FieldSpec(wire_name="login_server"),
+    "password": ubx.FieldSpec(wire_name="password"),
+    "username": ubx.FieldSpec(wire_name="username"),
 }
 
 _RegistryTask_RegistryCredential_SourceFields = {
-    "login_mode": sdk.FieldSpec(wire_name="login_mode"),
+    "login_mode": ubx.FieldSpec(wire_name="login_mode"),
 }
 
 _RegistryTask_RegistryCredentialFields = {
-    "custom": sdk.FieldSpec(
+    "custom": ubx.FieldSpec(
         wire_name="custom",
         kind="set",
         fields=_RegistryTask_RegistryCredential_CustomFields,
     ),
-    "source": sdk.FieldSpec(
+    "source": ubx.FieldSpec(
         wire_name="source",
         kind="list",
         fields=_RegistryTask_RegistryCredential_SourceFields,
@@ -188,21 +188,21 @@ _RegistryTask_RegistryCredentialFields = {
 }
 
 _RegistryTask_SourceTrigger_AuthenticationFields = {
-    "expire_in_seconds": sdk.FieldSpec(wire_name="expire_in_seconds"),
-    "refresh_token": sdk.FieldSpec(wire_name="refresh_token"),
-    "scope": sdk.FieldSpec(wire_name="scope"),
-    "token": sdk.FieldSpec(wire_name="token"),
-    "token_type": sdk.FieldSpec(wire_name="token_type"),
+    "expire_in_seconds": ubx.FieldSpec(wire_name="expire_in_seconds"),
+    "refresh_token": ubx.FieldSpec(wire_name="refresh_token"),
+    "scope": ubx.FieldSpec(wire_name="scope"),
+    "token": ubx.FieldSpec(wire_name="token"),
+    "token_type": ubx.FieldSpec(wire_name="token_type"),
 }
 
 _RegistryTask_SourceTriggerFields = {
-    "branch": sdk.FieldSpec(wire_name="branch"),
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "events": sdk.FieldSpec(wire_name="events"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "repository_url": sdk.FieldSpec(wire_name="repository_url"),
-    "source_type": sdk.FieldSpec(wire_name="source_type"),
-    "authentication": sdk.FieldSpec(
+    "branch": ubx.FieldSpec(wire_name="branch"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "events": ubx.FieldSpec(wire_name="events"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "repository_url": ubx.FieldSpec(wire_name="repository_url"),
+    "source_type": ubx.FieldSpec(wire_name="source_type"),
+    "authentication": ubx.FieldSpec(
         wire_name="authentication",
         kind="list",
         fields=_RegistryTask_SourceTrigger_AuthenticationFields,
@@ -210,16 +210,16 @@ _RegistryTask_SourceTriggerFields = {
 }
 
 _RegistryTask_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _RegistryTask_TimerTriggerFields = {
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "schedule": sdk.FieldSpec(wire_name="schedule"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "schedule": ubx.FieldSpec(wire_name="schedule"),
 }
 
 @dataclasses.dataclass
@@ -245,69 +245,69 @@ class RegistryTaskConfig:
     timeouts: Any = None
     timer_trigger: Any = None
 
-RegistryTask = sdk.ResourceBinding(
+RegistryTask = ubx.ResourceBinding(
     wire_type="azurerm_container_registry_task",
     fields={
-        "agent_pool_name": sdk.FieldSpec(wire_name="agent_pool_name"),
-        "container_registry_id": sdk.FieldSpec(wire_name="container_registry_id"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "is_system_task": sdk.FieldSpec(wire_name="is_system_task"),
-        "log_template": sdk.FieldSpec(wire_name="log_template"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeout_in_seconds": sdk.FieldSpec(wire_name="timeout_in_seconds"),
-        "agent_setting": sdk.FieldSpec(
+        "agent_pool_name": ubx.FieldSpec(wire_name="agent_pool_name"),
+        "container_registry_id": ubx.FieldSpec(wire_name="container_registry_id"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "is_system_task": ubx.FieldSpec(wire_name="is_system_task"),
+        "log_template": ubx.FieldSpec(wire_name="log_template"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeout_in_seconds": ubx.FieldSpec(wire_name="timeout_in_seconds"),
+        "agent_setting": ubx.FieldSpec(
             wire_name="agent_setting",
             kind="list",
             fields=_RegistryTask_AgentSettingFields,
         ),
-        "base_image_trigger": sdk.FieldSpec(
+        "base_image_trigger": ubx.FieldSpec(
             wire_name="base_image_trigger",
             kind="list",
             fields=_RegistryTask_BaseImageTriggerFields,
         ),
-        "docker_step": sdk.FieldSpec(
+        "docker_step": ubx.FieldSpec(
             wire_name="docker_step",
             kind="list",
             fields=_RegistryTask_DockerStepFields,
         ),
-        "encoded_step": sdk.FieldSpec(
+        "encoded_step": ubx.FieldSpec(
             wire_name="encoded_step",
             kind="list",
             fields=_RegistryTask_EncodedStepFields,
         ),
-        "file_step": sdk.FieldSpec(
+        "file_step": ubx.FieldSpec(
             wire_name="file_step",
             kind="list",
             fields=_RegistryTask_FileStepFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_RegistryTask_IdentityFields,
         ),
-        "platform": sdk.FieldSpec(
+        "platform": ubx.FieldSpec(
             wire_name="platform",
             kind="list",
             fields=_RegistryTask_PlatformFields,
         ),
-        "registry_credential": sdk.FieldSpec(
+        "registry_credential": ubx.FieldSpec(
             wire_name="registry_credential",
             kind="list",
             fields=_RegistryTask_RegistryCredentialFields,
         ),
-        "source_trigger": sdk.FieldSpec(
+        "source_trigger": ubx.FieldSpec(
             wire_name="source_trigger",
             kind="list",
             fields=_RegistryTask_SourceTriggerFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RegistryTask_TimeoutsFields,
         ),
-        "timer_trigger": sdk.FieldSpec(
+        "timer_trigger": ubx.FieldSpec(
             wire_name="timer_trigger",
             kind="list",
             fields=_RegistryTask_TimerTriggerFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Table_Acl_AccessPolicy:
@@ -25,14 +25,14 @@ class Table_Timeouts:
     update: Any = None
 
 _Table_Acl_AccessPolicyFields = {
-    "expiry": sdk.FieldSpec(wire_name="expiry"),
-    "permissions": sdk.FieldSpec(wire_name="permissions"),
-    "start": sdk.FieldSpec(wire_name="start"),
+    "expiry": ubx.FieldSpec(wire_name="expiry"),
+    "permissions": ubx.FieldSpec(wire_name="permissions"),
+    "start": ubx.FieldSpec(wire_name="start"),
 }
 
 _Table_AclFields = {
-    "id": sdk.FieldSpec(wire_name="id"),
-    "access_policy": sdk.FieldSpec(
+    "id": ubx.FieldSpec(wire_name="id"),
+    "access_policy": ubx.FieldSpec(
         wire_name="access_policy",
         kind="list",
         fields=_Table_Acl_AccessPolicyFields,
@@ -40,10 +40,10 @@ _Table_AclFields = {
 }
 
 _Table_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -54,18 +54,18 @@ class TableConfig:
     acl: Any = None
     timeouts: Any = None
 
-Table = sdk.ResourceBinding(
+Table = ubx.ResourceBinding(
     wire_type="azurerm_storage_table",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "acl": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "acl": ubx.FieldSpec(
             wire_name="acl",
             kind="set",
             fields=_Table_AclFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Table_TimeoutsFields,

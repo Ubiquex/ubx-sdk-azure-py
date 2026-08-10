@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LocationCustomLocation_Authentication:
@@ -19,15 +19,15 @@ class LocationCustomLocation_Timeouts:
     update: Any = None
 
 _LocationCustomLocation_AuthenticationFields = {
-    "type": sdk.FieldSpec(wire_name="type"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "type": ubx.FieldSpec(wire_name="type"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _LocationCustomLocation_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -44,24 +44,24 @@ class LocationCustomLocationConfig:
     authentication: Any = None
     timeouts: Any = None
 
-LocationCustomLocation = sdk.ResourceBinding(
+LocationCustomLocation = ubx.ResourceBinding(
     wire_type="azurerm_extended_location_custom_location",
     fields={
-        "cluster_extension_ids": sdk.FieldSpec(wire_name="cluster_extension_ids"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "host_resource_id": sdk.FieldSpec(wire_name="host_resource_id"),
-        "host_type": sdk.FieldSpec(wire_name="host_type"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "namespace": sdk.FieldSpec(wire_name="namespace"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "authentication": sdk.FieldSpec(
+        "cluster_extension_ids": ubx.FieldSpec(wire_name="cluster_extension_ids"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "host_resource_id": ubx.FieldSpec(wire_name="host_resource_id"),
+        "host_type": ubx.FieldSpec(wire_name="host_type"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "namespace": ubx.FieldSpec(wire_name="namespace"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "authentication": ubx.FieldSpec(
             wire_name="authentication",
             kind="list",
             fields=_LocationCustomLocation_AuthenticationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_LocationCustomLocation_TimeoutsFields,

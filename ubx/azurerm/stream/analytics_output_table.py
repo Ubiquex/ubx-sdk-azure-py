@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnalyticsOutputTable_Timeouts:
@@ -14,10 +14,10 @@ class AnalyticsOutputTable_Timeouts:
     update: Any = None
 
 _AnalyticsOutputTable_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -35,21 +35,21 @@ class AnalyticsOutputTableConfig:
     table: Any = None
     timeouts: Any = None
 
-AnalyticsOutputTable = sdk.ResourceBinding(
+AnalyticsOutputTable = ubx.ResourceBinding(
     wire_type="azurerm_stream_analytics_output_table",
     fields={
-        "batch_size": sdk.FieldSpec(wire_name="batch_size"),
-        "columns_to_remove": sdk.FieldSpec(wire_name="columns_to_remove"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "partition_key": sdk.FieldSpec(wire_name="partition_key"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "row_key": sdk.FieldSpec(wire_name="row_key"),
-        "storage_account_key": sdk.FieldSpec(wire_name="storage_account_key"),
-        "storage_account_name": sdk.FieldSpec(wire_name="storage_account_name"),
-        "stream_analytics_job_name": sdk.FieldSpec(wire_name="stream_analytics_job_name"),
-        "table": sdk.FieldSpec(wire_name="table"),
-        "timeouts": sdk.FieldSpec(
+        "batch_size": ubx.FieldSpec(wire_name="batch_size"),
+        "columns_to_remove": ubx.FieldSpec(wire_name="columns_to_remove"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "partition_key": ubx.FieldSpec(wire_name="partition_key"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "row_key": ubx.FieldSpec(wire_name="row_key"),
+        "storage_account_key": ubx.FieldSpec(wire_name="storage_account_key"),
+        "storage_account_name": ubx.FieldSpec(wire_name="storage_account_name"),
+        "stream_analytics_job_name": ubx.FieldSpec(wire_name="stream_analytics_job_name"),
+        "table": ubx.FieldSpec(wire_name="table"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AnalyticsOutputTable_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PlacementGroup_Timeouts:
@@ -14,10 +14,10 @@ class PlacementGroup_Timeouts:
     update: Any = None
 
 _PlacementGroup_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class PlacementGroupConfig:
     zone: Any = None
     timeouts: Any = None
 
-PlacementGroup = sdk.ResourceBinding(
+PlacementGroup = ubx.ResourceBinding(
     wire_type="azurerm_proximity_placement_group",
     fields={
-        "allowed_vm_sizes": sdk.FieldSpec(wire_name="allowed_vm_sizes"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "zone": sdk.FieldSpec(wire_name="zone"),
-        "timeouts": sdk.FieldSpec(
+        "allowed_vm_sizes": ubx.FieldSpec(wire_name="allowed_vm_sizes"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "zone": ubx.FieldSpec(wire_name="zone"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_PlacementGroup_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Gateway_AutoscaleConfiguration:
@@ -348,54 +348,54 @@ class Gateway_WafConfiguration:
     exclusion: Any = None
 
 _Gateway_AutoscaleConfigurationFields = {
-    "max_capacity": sdk.FieldSpec(wire_name="max_capacity"),
-    "min_capacity": sdk.FieldSpec(wire_name="min_capacity"),
+    "max_capacity": ubx.FieldSpec(wire_name="max_capacity"),
+    "min_capacity": ubx.FieldSpec(wire_name="min_capacity"),
 }
 
 _Gateway_BackendFields = {
-    "client_ip_preservation_enabled": sdk.FieldSpec(wire_name="client_ip_preservation_enabled"),
-    "host_name": sdk.FieldSpec(wire_name="host_name"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "port": sdk.FieldSpec(wire_name="port"),
-    "probe_id": sdk.FieldSpec(wire_name="probe_id"),
-    "probe_name": sdk.FieldSpec(wire_name="probe_name"),
-    "protocol": sdk.FieldSpec(wire_name="protocol"),
-    "timeout_in_seconds": sdk.FieldSpec(wire_name="timeout_in_seconds"),
-    "trusted_root_certificate_names": sdk.FieldSpec(wire_name="trusted_root_certificate_names"),
+    "client_ip_preservation_enabled": ubx.FieldSpec(wire_name="client_ip_preservation_enabled"),
+    "host_name": ubx.FieldSpec(wire_name="host_name"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "port": ubx.FieldSpec(wire_name="port"),
+    "probe_id": ubx.FieldSpec(wire_name="probe_id"),
+    "probe_name": ubx.FieldSpec(wire_name="probe_name"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
+    "timeout_in_seconds": ubx.FieldSpec(wire_name="timeout_in_seconds"),
+    "trusted_root_certificate_names": ubx.FieldSpec(wire_name="trusted_root_certificate_names"),
 }
 
 _Gateway_BackendAddressPoolFields = {
-    "fqdns": sdk.FieldSpec(wire_name="fqdns"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "ip_addresses": sdk.FieldSpec(wire_name="ip_addresses"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "fqdns": ubx.FieldSpec(wire_name="fqdns"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "ip_addresses": ubx.FieldSpec(wire_name="ip_addresses"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _Gateway_BackendHttpSettings_ConnectionDrainingFields = {
-    "drain_timeout_sec": sdk.FieldSpec(wire_name="drain_timeout_sec"),
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
+    "drain_timeout_sec": ubx.FieldSpec(wire_name="drain_timeout_sec"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
 }
 
 _Gateway_BackendHttpSettingsFields = {
-    "affinity_cookie_name": sdk.FieldSpec(wire_name="affinity_cookie_name"),
-    "certificate_chain_validation_enabled": sdk.FieldSpec(wire_name="certificate_chain_validation_enabled"),
-    "cookie_based_affinity": sdk.FieldSpec(wire_name="cookie_based_affinity"),
-    "dedicated_backend_connection_enabled": sdk.FieldSpec(wire_name="dedicated_backend_connection_enabled"),
-    "host_name": sdk.FieldSpec(wire_name="host_name"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "path": sdk.FieldSpec(wire_name="path"),
-    "pick_host_name_from_backend_address": sdk.FieldSpec(wire_name="pick_host_name_from_backend_address"),
-    "port": sdk.FieldSpec(wire_name="port"),
-    "probe_id": sdk.FieldSpec(wire_name="probe_id"),
-    "probe_name": sdk.FieldSpec(wire_name="probe_name"),
-    "protocol": sdk.FieldSpec(wire_name="protocol"),
-    "request_timeout": sdk.FieldSpec(wire_name="request_timeout"),
-    "sni_name": sdk.FieldSpec(wire_name="sni_name"),
-    "sni_validation_enabled": sdk.FieldSpec(wire_name="sni_validation_enabled"),
-    "trusted_root_certificate_names": sdk.FieldSpec(wire_name="trusted_root_certificate_names"),
-    "connection_draining": sdk.FieldSpec(
+    "affinity_cookie_name": ubx.FieldSpec(wire_name="affinity_cookie_name"),
+    "certificate_chain_validation_enabled": ubx.FieldSpec(wire_name="certificate_chain_validation_enabled"),
+    "cookie_based_affinity": ubx.FieldSpec(wire_name="cookie_based_affinity"),
+    "dedicated_backend_connection_enabled": ubx.FieldSpec(wire_name="dedicated_backend_connection_enabled"),
+    "host_name": ubx.FieldSpec(wire_name="host_name"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "path": ubx.FieldSpec(wire_name="path"),
+    "pick_host_name_from_backend_address": ubx.FieldSpec(wire_name="pick_host_name_from_backend_address"),
+    "port": ubx.FieldSpec(wire_name="port"),
+    "probe_id": ubx.FieldSpec(wire_name="probe_id"),
+    "probe_name": ubx.FieldSpec(wire_name="probe_name"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
+    "request_timeout": ubx.FieldSpec(wire_name="request_timeout"),
+    "sni_name": ubx.FieldSpec(wire_name="sni_name"),
+    "sni_validation_enabled": ubx.FieldSpec(wire_name="sni_validation_enabled"),
+    "trusted_root_certificate_names": ubx.FieldSpec(wire_name="trusted_root_certificate_names"),
+    "connection_draining": ubx.FieldSpec(
         wire_name="connection_draining",
         kind="list",
         fields=_Gateway_BackendHttpSettings_ConnectionDrainingFields,
@@ -403,56 +403,56 @@ _Gateway_BackendHttpSettingsFields = {
 }
 
 _Gateway_CustomErrorConfigurationFields = {
-    "custom_error_page_url": sdk.FieldSpec(wire_name="custom_error_page_url"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "status_code": sdk.FieldSpec(wire_name="status_code"),
+    "custom_error_page_url": ubx.FieldSpec(wire_name="custom_error_page_url"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "status_code": ubx.FieldSpec(wire_name="status_code"),
 }
 
 _Gateway_FrontendIpConfigurationFields = {
-    "id": sdk.FieldSpec(wire_name="id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "private_ip_address": sdk.FieldSpec(wire_name="private_ip_address"),
-    "private_ip_address_allocation": sdk.FieldSpec(wire_name="private_ip_address_allocation"),
-    "private_link_configuration_id": sdk.FieldSpec(wire_name="private_link_configuration_id"),
-    "private_link_configuration_name": sdk.FieldSpec(wire_name="private_link_configuration_name"),
-    "public_ip_address_id": sdk.FieldSpec(wire_name="public_ip_address_id"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "private_ip_address": ubx.FieldSpec(wire_name="private_ip_address"),
+    "private_ip_address_allocation": ubx.FieldSpec(wire_name="private_ip_address_allocation"),
+    "private_link_configuration_id": ubx.FieldSpec(wire_name="private_link_configuration_id"),
+    "private_link_configuration_name": ubx.FieldSpec(wire_name="private_link_configuration_name"),
+    "public_ip_address_id": ubx.FieldSpec(wire_name="public_ip_address_id"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _Gateway_FrontendPortFields = {
-    "id": sdk.FieldSpec(wire_name="id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "port": sdk.FieldSpec(wire_name="port"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "port": ubx.FieldSpec(wire_name="port"),
 }
 
 _Gateway_GatewayIpConfigurationFields = {
-    "id": sdk.FieldSpec(wire_name="id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _Gateway_GlobalFields = {
-    "request_buffering_enabled": sdk.FieldSpec(wire_name="request_buffering_enabled"),
-    "response_buffering_enabled": sdk.FieldSpec(wire_name="response_buffering_enabled"),
+    "request_buffering_enabled": ubx.FieldSpec(wire_name="request_buffering_enabled"),
+    "response_buffering_enabled": ubx.FieldSpec(wire_name="response_buffering_enabled"),
 }
 
 _Gateway_HttpListenerFields = {
-    "firewall_policy_id": sdk.FieldSpec(wire_name="firewall_policy_id"),
-    "frontend_ip_configuration_id": sdk.FieldSpec(wire_name="frontend_ip_configuration_id"),
-    "frontend_ip_configuration_name": sdk.FieldSpec(wire_name="frontend_ip_configuration_name"),
-    "frontend_port_id": sdk.FieldSpec(wire_name="frontend_port_id"),
-    "frontend_port_name": sdk.FieldSpec(wire_name="frontend_port_name"),
-    "host_name": sdk.FieldSpec(wire_name="host_name"),
-    "host_names": sdk.FieldSpec(wire_name="host_names"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "protocol": sdk.FieldSpec(wire_name="protocol"),
-    "require_sni": sdk.FieldSpec(wire_name="require_sni"),
-    "ssl_certificate_id": sdk.FieldSpec(wire_name="ssl_certificate_id"),
-    "ssl_certificate_name": sdk.FieldSpec(wire_name="ssl_certificate_name"),
-    "ssl_profile_id": sdk.FieldSpec(wire_name="ssl_profile_id"),
-    "ssl_profile_name": sdk.FieldSpec(wire_name="ssl_profile_name"),
-    "custom_error_configuration": sdk.FieldSpec(
+    "firewall_policy_id": ubx.FieldSpec(wire_name="firewall_policy_id"),
+    "frontend_ip_configuration_id": ubx.FieldSpec(wire_name="frontend_ip_configuration_id"),
+    "frontend_ip_configuration_name": ubx.FieldSpec(wire_name="frontend_ip_configuration_name"),
+    "frontend_port_id": ubx.FieldSpec(wire_name="frontend_port_id"),
+    "frontend_port_name": ubx.FieldSpec(wire_name="frontend_port_name"),
+    "host_name": ubx.FieldSpec(wire_name="host_name"),
+    "host_names": ubx.FieldSpec(wire_name="host_names"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
+    "require_sni": ubx.FieldSpec(wire_name="require_sni"),
+    "ssl_certificate_id": ubx.FieldSpec(wire_name="ssl_certificate_id"),
+    "ssl_certificate_name": ubx.FieldSpec(wire_name="ssl_certificate_name"),
+    "ssl_profile_id": ubx.FieldSpec(wire_name="ssl_profile_id"),
+    "ssl_profile_name": ubx.FieldSpec(wire_name="ssl_profile_name"),
+    "custom_error_configuration": ubx.FieldSpec(
         wire_name="custom_error_configuration",
         kind="list",
         fields=_Gateway_CustomErrorConfigurationFields,
@@ -460,39 +460,39 @@ _Gateway_HttpListenerFields = {
 }
 
 _Gateway_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Gateway_ListenerFields = {
-    "frontend_ip_configuration_id": sdk.FieldSpec(wire_name="frontend_ip_configuration_id"),
-    "frontend_ip_configuration_name": sdk.FieldSpec(wire_name="frontend_ip_configuration_name"),
-    "frontend_port_id": sdk.FieldSpec(wire_name="frontend_port_id"),
-    "frontend_port_name": sdk.FieldSpec(wire_name="frontend_port_name"),
-    "host_names": sdk.FieldSpec(wire_name="host_names"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "protocol": sdk.FieldSpec(wire_name="protocol"),
-    "ssl_certificate_id": sdk.FieldSpec(wire_name="ssl_certificate_id"),
-    "ssl_certificate_name": sdk.FieldSpec(wire_name="ssl_certificate_name"),
-    "ssl_profile_id": sdk.FieldSpec(wire_name="ssl_profile_id"),
-    "ssl_profile_name": sdk.FieldSpec(wire_name="ssl_profile_name"),
+    "frontend_ip_configuration_id": ubx.FieldSpec(wire_name="frontend_ip_configuration_id"),
+    "frontend_ip_configuration_name": ubx.FieldSpec(wire_name="frontend_ip_configuration_name"),
+    "frontend_port_id": ubx.FieldSpec(wire_name="frontend_port_id"),
+    "frontend_port_name": ubx.FieldSpec(wire_name="frontend_port_name"),
+    "host_names": ubx.FieldSpec(wire_name="host_names"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
+    "ssl_certificate_id": ubx.FieldSpec(wire_name="ssl_certificate_id"),
+    "ssl_certificate_name": ubx.FieldSpec(wire_name="ssl_certificate_name"),
+    "ssl_profile_id": ubx.FieldSpec(wire_name="ssl_profile_id"),
+    "ssl_profile_name": ubx.FieldSpec(wire_name="ssl_profile_name"),
 }
 
 _Gateway_PrivateLinkConfiguration_IpConfigurationFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "primary": sdk.FieldSpec(wire_name="primary"),
-    "private_ip_address": sdk.FieldSpec(wire_name="private_ip_address"),
-    "private_ip_address_allocation": sdk.FieldSpec(wire_name="private_ip_address_allocation"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "primary": ubx.FieldSpec(wire_name="primary"),
+    "private_ip_address": ubx.FieldSpec(wire_name="private_ip_address"),
+    "private_ip_address_allocation": ubx.FieldSpec(wire_name="private_ip_address_allocation"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _Gateway_PrivateLinkConfigurationFields = {
-    "id": sdk.FieldSpec(wire_name="id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "ip_configuration": sdk.FieldSpec(
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "ip_configuration": ubx.FieldSpec(
         wire_name="ip_configuration",
         kind="list",
         fields=_Gateway_PrivateLinkConfiguration_IpConfigurationFields,
@@ -500,24 +500,24 @@ _Gateway_PrivateLinkConfigurationFields = {
 }
 
 _Gateway_Probe_MatchFields = {
-    "body": sdk.FieldSpec(wire_name="body"),
-    "status_code": sdk.FieldSpec(wire_name="status_code"),
+    "body": ubx.FieldSpec(wire_name="body"),
+    "status_code": ubx.FieldSpec(wire_name="status_code"),
 }
 
 _Gateway_ProbeFields = {
-    "host": sdk.FieldSpec(wire_name="host"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "interval": sdk.FieldSpec(wire_name="interval"),
-    "minimum_servers": sdk.FieldSpec(wire_name="minimum_servers"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "path": sdk.FieldSpec(wire_name="path"),
-    "pick_host_name_from_backend_http_settings": sdk.FieldSpec(wire_name="pick_host_name_from_backend_http_settings"),
-    "port": sdk.FieldSpec(wire_name="port"),
-    "protocol": sdk.FieldSpec(wire_name="protocol"),
-    "proxy_protocol_header_enabled": sdk.FieldSpec(wire_name="proxy_protocol_header_enabled"),
-    "timeout": sdk.FieldSpec(wire_name="timeout"),
-    "unhealthy_threshold": sdk.FieldSpec(wire_name="unhealthy_threshold"),
-    "match": sdk.FieldSpec(
+    "host": ubx.FieldSpec(wire_name="host"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "interval": ubx.FieldSpec(wire_name="interval"),
+    "minimum_servers": ubx.FieldSpec(wire_name="minimum_servers"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "path": ubx.FieldSpec(wire_name="path"),
+    "pick_host_name_from_backend_http_settings": ubx.FieldSpec(wire_name="pick_host_name_from_backend_http_settings"),
+    "port": ubx.FieldSpec(wire_name="port"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
+    "proxy_protocol_header_enabled": ubx.FieldSpec(wire_name="proxy_protocol_header_enabled"),
+    "timeout": ubx.FieldSpec(wire_name="timeout"),
+    "unhealthy_threshold": ubx.FieldSpec(wire_name="unhealthy_threshold"),
+    "match": ubx.FieldSpec(
         wire_name="match",
         kind="list",
         fields=_Gateway_Probe_MatchFields,
@@ -525,73 +525,73 @@ _Gateway_ProbeFields = {
 }
 
 _Gateway_RedirectConfigurationFields = {
-    "id": sdk.FieldSpec(wire_name="id"),
-    "include_path": sdk.FieldSpec(wire_name="include_path"),
-    "include_query_string": sdk.FieldSpec(wire_name="include_query_string"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "redirect_type": sdk.FieldSpec(wire_name="redirect_type"),
-    "target_listener_id": sdk.FieldSpec(wire_name="target_listener_id"),
-    "target_listener_name": sdk.FieldSpec(wire_name="target_listener_name"),
-    "target_url": sdk.FieldSpec(wire_name="target_url"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "include_path": ubx.FieldSpec(wire_name="include_path"),
+    "include_query_string": ubx.FieldSpec(wire_name="include_query_string"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "redirect_type": ubx.FieldSpec(wire_name="redirect_type"),
+    "target_listener_id": ubx.FieldSpec(wire_name="target_listener_id"),
+    "target_listener_name": ubx.FieldSpec(wire_name="target_listener_name"),
+    "target_url": ubx.FieldSpec(wire_name="target_url"),
 }
 
 _Gateway_RequestRoutingRuleFields = {
-    "backend_address_pool_id": sdk.FieldSpec(wire_name="backend_address_pool_id"),
-    "backend_address_pool_name": sdk.FieldSpec(wire_name="backend_address_pool_name"),
-    "backend_http_settings_id": sdk.FieldSpec(wire_name="backend_http_settings_id"),
-    "backend_http_settings_name": sdk.FieldSpec(wire_name="backend_http_settings_name"),
-    "http_listener_id": sdk.FieldSpec(wire_name="http_listener_id"),
-    "http_listener_name": sdk.FieldSpec(wire_name="http_listener_name"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "priority": sdk.FieldSpec(wire_name="priority"),
-    "redirect_configuration_id": sdk.FieldSpec(wire_name="redirect_configuration_id"),
-    "redirect_configuration_name": sdk.FieldSpec(wire_name="redirect_configuration_name"),
-    "rewrite_rule_set_id": sdk.FieldSpec(wire_name="rewrite_rule_set_id"),
-    "rewrite_rule_set_name": sdk.FieldSpec(wire_name="rewrite_rule_set_name"),
-    "rule_type": sdk.FieldSpec(wire_name="rule_type"),
-    "url_path_map_id": sdk.FieldSpec(wire_name="url_path_map_id"),
-    "url_path_map_name": sdk.FieldSpec(wire_name="url_path_map_name"),
+    "backend_address_pool_id": ubx.FieldSpec(wire_name="backend_address_pool_id"),
+    "backend_address_pool_name": ubx.FieldSpec(wire_name="backend_address_pool_name"),
+    "backend_http_settings_id": ubx.FieldSpec(wire_name="backend_http_settings_id"),
+    "backend_http_settings_name": ubx.FieldSpec(wire_name="backend_http_settings_name"),
+    "http_listener_id": ubx.FieldSpec(wire_name="http_listener_id"),
+    "http_listener_name": ubx.FieldSpec(wire_name="http_listener_name"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "priority": ubx.FieldSpec(wire_name="priority"),
+    "redirect_configuration_id": ubx.FieldSpec(wire_name="redirect_configuration_id"),
+    "redirect_configuration_name": ubx.FieldSpec(wire_name="redirect_configuration_name"),
+    "rewrite_rule_set_id": ubx.FieldSpec(wire_name="rewrite_rule_set_id"),
+    "rewrite_rule_set_name": ubx.FieldSpec(wire_name="rewrite_rule_set_name"),
+    "rule_type": ubx.FieldSpec(wire_name="rule_type"),
+    "url_path_map_id": ubx.FieldSpec(wire_name="url_path_map_id"),
+    "url_path_map_name": ubx.FieldSpec(wire_name="url_path_map_name"),
 }
 
 _Gateway_RewriteRuleSet_RewriteRule_ConditionFields = {
-    "ignore_case": sdk.FieldSpec(wire_name="ignore_case"),
-    "negate": sdk.FieldSpec(wire_name="negate"),
-    "pattern": sdk.FieldSpec(wire_name="pattern"),
-    "variable": sdk.FieldSpec(wire_name="variable"),
+    "ignore_case": ubx.FieldSpec(wire_name="ignore_case"),
+    "negate": ubx.FieldSpec(wire_name="negate"),
+    "pattern": ubx.FieldSpec(wire_name="pattern"),
+    "variable": ubx.FieldSpec(wire_name="variable"),
 }
 
 _Gateway_RewriteRuleSet_RewriteRule_RequestHeaderConfigurationFields = {
-    "header_name": sdk.FieldSpec(wire_name="header_name"),
-    "header_value": sdk.FieldSpec(wire_name="header_value"),
+    "header_name": ubx.FieldSpec(wire_name="header_name"),
+    "header_value": ubx.FieldSpec(wire_name="header_value"),
 }
 
 _Gateway_RewriteRuleSet_RewriteRule_UrlFields = {
-    "components": sdk.FieldSpec(wire_name="components"),
-    "path": sdk.FieldSpec(wire_name="path"),
-    "query_string": sdk.FieldSpec(wire_name="query_string"),
-    "reroute": sdk.FieldSpec(wire_name="reroute"),
+    "components": ubx.FieldSpec(wire_name="components"),
+    "path": ubx.FieldSpec(wire_name="path"),
+    "query_string": ubx.FieldSpec(wire_name="query_string"),
+    "reroute": ubx.FieldSpec(wire_name="reroute"),
 }
 
 _Gateway_RewriteRuleSet_RewriteRuleFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "rule_sequence": sdk.FieldSpec(wire_name="rule_sequence"),
-    "condition": sdk.FieldSpec(
+    "name": ubx.FieldSpec(wire_name="name"),
+    "rule_sequence": ubx.FieldSpec(wire_name="rule_sequence"),
+    "condition": ubx.FieldSpec(
         wire_name="condition",
         kind="list",
         fields=_Gateway_RewriteRuleSet_RewriteRule_ConditionFields,
     ),
-    "request_header_configuration": sdk.FieldSpec(
+    "request_header_configuration": ubx.FieldSpec(
         wire_name="request_header_configuration",
         kind="list",
         fields=_Gateway_RewriteRuleSet_RewriteRule_RequestHeaderConfigurationFields,
     ),
-    "response_header_configuration": sdk.FieldSpec(
+    "response_header_configuration": ubx.FieldSpec(
         wire_name="response_header_configuration",
         kind="list",
         fields=_Gateway_RewriteRuleSet_RewriteRule_RequestHeaderConfigurationFields,
     ),
-    "url": sdk.FieldSpec(
+    "url": ubx.FieldSpec(
         wire_name="url",
         kind="list",
         fields=_Gateway_RewriteRuleSet_RewriteRule_UrlFields,
@@ -599,9 +599,9 @@ _Gateway_RewriteRuleSet_RewriteRuleFields = {
 }
 
 _Gateway_RewriteRuleSetFields = {
-    "id": sdk.FieldSpec(wire_name="id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "rewrite_rule": sdk.FieldSpec(
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "rewrite_rule": ubx.FieldSpec(
         wire_name="rewrite_rule",
         kind="list",
         fields=_Gateway_RewriteRuleSet_RewriteRuleFields,
@@ -609,47 +609,47 @@ _Gateway_RewriteRuleSetFields = {
 }
 
 _Gateway_RoutingRuleFields = {
-    "backend_address_pool_id": sdk.FieldSpec(wire_name="backend_address_pool_id"),
-    "backend_address_pool_name": sdk.FieldSpec(wire_name="backend_address_pool_name"),
-    "backend_id": sdk.FieldSpec(wire_name="backend_id"),
-    "backend_name": sdk.FieldSpec(wire_name="backend_name"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "listener_id": sdk.FieldSpec(wire_name="listener_id"),
-    "listener_name": sdk.FieldSpec(wire_name="listener_name"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "priority": sdk.FieldSpec(wire_name="priority"),
+    "backend_address_pool_id": ubx.FieldSpec(wire_name="backend_address_pool_id"),
+    "backend_address_pool_name": ubx.FieldSpec(wire_name="backend_address_pool_name"),
+    "backend_id": ubx.FieldSpec(wire_name="backend_id"),
+    "backend_name": ubx.FieldSpec(wire_name="backend_name"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "listener_id": ubx.FieldSpec(wire_name="listener_id"),
+    "listener_name": ubx.FieldSpec(wire_name="listener_name"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "priority": ubx.FieldSpec(wire_name="priority"),
 }
 
 _Gateway_SkuFields = {
-    "capacity": sdk.FieldSpec(wire_name="capacity"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "tier": sdk.FieldSpec(wire_name="tier"),
+    "capacity": ubx.FieldSpec(wire_name="capacity"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "tier": ubx.FieldSpec(wire_name="tier"),
 }
 
 _Gateway_SslCertificateFields = {
-    "data": sdk.FieldSpec(wire_name="data"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "key_vault_secret_id": sdk.FieldSpec(wire_name="key_vault_secret_id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "password": sdk.FieldSpec(wire_name="password"),
-    "public_cert_data": sdk.FieldSpec(wire_name="public_cert_data"),
+    "data": ubx.FieldSpec(wire_name="data"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "key_vault_secret_id": ubx.FieldSpec(wire_name="key_vault_secret_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "password": ubx.FieldSpec(wire_name="password"),
+    "public_cert_data": ubx.FieldSpec(wire_name="public_cert_data"),
 }
 
 _Gateway_SslPolicyFields = {
-    "cipher_suites": sdk.FieldSpec(wire_name="cipher_suites"),
-    "disabled_protocols": sdk.FieldSpec(wire_name="disabled_protocols"),
-    "min_protocol_version": sdk.FieldSpec(wire_name="min_protocol_version"),
-    "policy_name": sdk.FieldSpec(wire_name="policy_name"),
-    "policy_type": sdk.FieldSpec(wire_name="policy_type"),
+    "cipher_suites": ubx.FieldSpec(wire_name="cipher_suites"),
+    "disabled_protocols": ubx.FieldSpec(wire_name="disabled_protocols"),
+    "min_protocol_version": ubx.FieldSpec(wire_name="min_protocol_version"),
+    "policy_name": ubx.FieldSpec(wire_name="policy_name"),
+    "policy_type": ubx.FieldSpec(wire_name="policy_type"),
 }
 
 _Gateway_SslProfileFields = {
-    "id": sdk.FieldSpec(wire_name="id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "trusted_client_certificate_names": sdk.FieldSpec(wire_name="trusted_client_certificate_names"),
-    "verify_client_certificate_issuer_dn": sdk.FieldSpec(wire_name="verify_client_certificate_issuer_dn"),
-    "verify_client_certificate_revocation": sdk.FieldSpec(wire_name="verify_client_certificate_revocation"),
-    "ssl_policy": sdk.FieldSpec(
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "trusted_client_certificate_names": ubx.FieldSpec(wire_name="trusted_client_certificate_names"),
+    "verify_client_certificate_issuer_dn": ubx.FieldSpec(wire_name="verify_client_certificate_issuer_dn"),
+    "verify_client_certificate_revocation": ubx.FieldSpec(wire_name="verify_client_certificate_revocation"),
+    "ssl_policy": ubx.FieldSpec(
         wire_name="ssl_policy",
         kind="list",
         fields=_Gateway_SslPolicyFields,
@@ -657,52 +657,52 @@ _Gateway_SslProfileFields = {
 }
 
 _Gateway_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _Gateway_TrustedClientCertificateFields = {
-    "data": sdk.FieldSpec(wire_name="data"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "data": ubx.FieldSpec(wire_name="data"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _Gateway_TrustedRootCertificateFields = {
-    "data": sdk.FieldSpec(wire_name="data"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "key_vault_secret_id": sdk.FieldSpec(wire_name="key_vault_secret_id"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "data": ubx.FieldSpec(wire_name="data"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "key_vault_secret_id": ubx.FieldSpec(wire_name="key_vault_secret_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _Gateway_UrlPathMap_PathRuleFields = {
-    "backend_address_pool_id": sdk.FieldSpec(wire_name="backend_address_pool_id"),
-    "backend_address_pool_name": sdk.FieldSpec(wire_name="backend_address_pool_name"),
-    "backend_http_settings_id": sdk.FieldSpec(wire_name="backend_http_settings_id"),
-    "backend_http_settings_name": sdk.FieldSpec(wire_name="backend_http_settings_name"),
-    "firewall_policy_id": sdk.FieldSpec(wire_name="firewall_policy_id"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "paths": sdk.FieldSpec(wire_name="paths"),
-    "redirect_configuration_id": sdk.FieldSpec(wire_name="redirect_configuration_id"),
-    "redirect_configuration_name": sdk.FieldSpec(wire_name="redirect_configuration_name"),
-    "rewrite_rule_set_id": sdk.FieldSpec(wire_name="rewrite_rule_set_id"),
-    "rewrite_rule_set_name": sdk.FieldSpec(wire_name="rewrite_rule_set_name"),
+    "backend_address_pool_id": ubx.FieldSpec(wire_name="backend_address_pool_id"),
+    "backend_address_pool_name": ubx.FieldSpec(wire_name="backend_address_pool_name"),
+    "backend_http_settings_id": ubx.FieldSpec(wire_name="backend_http_settings_id"),
+    "backend_http_settings_name": ubx.FieldSpec(wire_name="backend_http_settings_name"),
+    "firewall_policy_id": ubx.FieldSpec(wire_name="firewall_policy_id"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "paths": ubx.FieldSpec(wire_name="paths"),
+    "redirect_configuration_id": ubx.FieldSpec(wire_name="redirect_configuration_id"),
+    "redirect_configuration_name": ubx.FieldSpec(wire_name="redirect_configuration_name"),
+    "rewrite_rule_set_id": ubx.FieldSpec(wire_name="rewrite_rule_set_id"),
+    "rewrite_rule_set_name": ubx.FieldSpec(wire_name="rewrite_rule_set_name"),
 }
 
 _Gateway_UrlPathMapFields = {
-    "default_backend_address_pool_id": sdk.FieldSpec(wire_name="default_backend_address_pool_id"),
-    "default_backend_address_pool_name": sdk.FieldSpec(wire_name="default_backend_address_pool_name"),
-    "default_backend_http_settings_id": sdk.FieldSpec(wire_name="default_backend_http_settings_id"),
-    "default_backend_http_settings_name": sdk.FieldSpec(wire_name="default_backend_http_settings_name"),
-    "default_redirect_configuration_id": sdk.FieldSpec(wire_name="default_redirect_configuration_id"),
-    "default_redirect_configuration_name": sdk.FieldSpec(wire_name="default_redirect_configuration_name"),
-    "default_rewrite_rule_set_id": sdk.FieldSpec(wire_name="default_rewrite_rule_set_id"),
-    "default_rewrite_rule_set_name": sdk.FieldSpec(wire_name="default_rewrite_rule_set_name"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "path_rule": sdk.FieldSpec(
+    "default_backend_address_pool_id": ubx.FieldSpec(wire_name="default_backend_address_pool_id"),
+    "default_backend_address_pool_name": ubx.FieldSpec(wire_name="default_backend_address_pool_name"),
+    "default_backend_http_settings_id": ubx.FieldSpec(wire_name="default_backend_http_settings_id"),
+    "default_backend_http_settings_name": ubx.FieldSpec(wire_name="default_backend_http_settings_name"),
+    "default_redirect_configuration_id": ubx.FieldSpec(wire_name="default_redirect_configuration_id"),
+    "default_redirect_configuration_name": ubx.FieldSpec(wire_name="default_redirect_configuration_name"),
+    "default_rewrite_rule_set_id": ubx.FieldSpec(wire_name="default_rewrite_rule_set_id"),
+    "default_rewrite_rule_set_name": ubx.FieldSpec(wire_name="default_rewrite_rule_set_name"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "path_rule": ubx.FieldSpec(
         wire_name="path_rule",
         kind="list",
         fields=_Gateway_UrlPathMap_PathRuleFields,
@@ -710,30 +710,30 @@ _Gateway_UrlPathMapFields = {
 }
 
 _Gateway_WafConfiguration_DisabledRuleGroupFields = {
-    "rule_group_name": sdk.FieldSpec(wire_name="rule_group_name"),
-    "rules": sdk.FieldSpec(wire_name="rules"),
+    "rule_group_name": ubx.FieldSpec(wire_name="rule_group_name"),
+    "rules": ubx.FieldSpec(wire_name="rules"),
 }
 
 _Gateway_WafConfiguration_ExclusionFields = {
-    "match_variable": sdk.FieldSpec(wire_name="match_variable"),
-    "selector": sdk.FieldSpec(wire_name="selector"),
-    "selector_match_operator": sdk.FieldSpec(wire_name="selector_match_operator"),
+    "match_variable": ubx.FieldSpec(wire_name="match_variable"),
+    "selector": ubx.FieldSpec(wire_name="selector"),
+    "selector_match_operator": ubx.FieldSpec(wire_name="selector_match_operator"),
 }
 
 _Gateway_WafConfigurationFields = {
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "file_upload_limit_mb": sdk.FieldSpec(wire_name="file_upload_limit_mb"),
-    "firewall_mode": sdk.FieldSpec(wire_name="firewall_mode"),
-    "max_request_body_size_kb": sdk.FieldSpec(wire_name="max_request_body_size_kb"),
-    "request_body_check": sdk.FieldSpec(wire_name="request_body_check"),
-    "rule_set_type": sdk.FieldSpec(wire_name="rule_set_type"),
-    "rule_set_version": sdk.FieldSpec(wire_name="rule_set_version"),
-    "disabled_rule_group": sdk.FieldSpec(
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "file_upload_limit_mb": ubx.FieldSpec(wire_name="file_upload_limit_mb"),
+    "firewall_mode": ubx.FieldSpec(wire_name="firewall_mode"),
+    "max_request_body_size_kb": ubx.FieldSpec(wire_name="max_request_body_size_kb"),
+    "request_body_check": ubx.FieldSpec(wire_name="request_body_check"),
+    "rule_set_type": ubx.FieldSpec(wire_name="rule_set_type"),
+    "rule_set_version": ubx.FieldSpec(wire_name="rule_set_version"),
+    "disabled_rule_group": ubx.FieldSpec(
         wire_name="disabled_rule_group",
         kind="list",
         fields=_Gateway_WafConfiguration_DisabledRuleGroupFields,
     ),
-    "exclusion": sdk.FieldSpec(
+    "exclusion": ubx.FieldSpec(
         wire_name="exclusion",
         kind="list",
         fields=_Gateway_WafConfiguration_ExclusionFields,
@@ -780,150 +780,150 @@ class GatewayConfig:
     url_path_map: Any = None
     waf_configuration: Any = None
 
-Gateway = sdk.ResourceBinding(
+Gateway = ubx.ResourceBinding(
     wire_type="azurerm_application_gateway",
     fields={
-        "fips_enabled": sdk.FieldSpec(wire_name="fips_enabled"),
-        "firewall_policy_id": sdk.FieldSpec(wire_name="firewall_policy_id"),
-        "force_firewall_policy_association": sdk.FieldSpec(wire_name="force_firewall_policy_association"),
-        "http2_enabled": sdk.FieldSpec(wire_name="http2_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "zones": sdk.FieldSpec(wire_name="zones"),
-        "autoscale_configuration": sdk.FieldSpec(
+        "fips_enabled": ubx.FieldSpec(wire_name="fips_enabled"),
+        "firewall_policy_id": ubx.FieldSpec(wire_name="firewall_policy_id"),
+        "force_firewall_policy_association": ubx.FieldSpec(wire_name="force_firewall_policy_association"),
+        "http2_enabled": ubx.FieldSpec(wire_name="http2_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "zones": ubx.FieldSpec(wire_name="zones"),
+        "autoscale_configuration": ubx.FieldSpec(
             wire_name="autoscale_configuration",
             kind="list",
             fields=_Gateway_AutoscaleConfigurationFields,
         ),
-        "backend": sdk.FieldSpec(
+        "backend": ubx.FieldSpec(
             wire_name="backend",
             kind="list",
             fields=_Gateway_BackendFields,
         ),
-        "backend_address_pool": sdk.FieldSpec(
+        "backend_address_pool": ubx.FieldSpec(
             wire_name="backend_address_pool",
             kind="set",
             fields=_Gateway_BackendAddressPoolFields,
         ),
-        "backend_http_settings": sdk.FieldSpec(
+        "backend_http_settings": ubx.FieldSpec(
             wire_name="backend_http_settings",
             kind="set",
             fields=_Gateway_BackendHttpSettingsFields,
         ),
-        "custom_error_configuration": sdk.FieldSpec(
+        "custom_error_configuration": ubx.FieldSpec(
             wire_name="custom_error_configuration",
             kind="list",
             fields=_Gateway_CustomErrorConfigurationFields,
         ),
-        "frontend_ip_configuration": sdk.FieldSpec(
+        "frontend_ip_configuration": ubx.FieldSpec(
             wire_name="frontend_ip_configuration",
             kind="list",
             fields=_Gateway_FrontendIpConfigurationFields,
         ),
-        "frontend_port": sdk.FieldSpec(
+        "frontend_port": ubx.FieldSpec(
             wire_name="frontend_port",
             kind="set",
             fields=_Gateway_FrontendPortFields,
         ),
-        "gateway_ip_configuration": sdk.FieldSpec(
+        "gateway_ip_configuration": ubx.FieldSpec(
             wire_name="gateway_ip_configuration",
             kind="list",
             fields=_Gateway_GatewayIpConfigurationFields,
         ),
-        "global_": sdk.FieldSpec(
+        "global_": ubx.FieldSpec(
             wire_name="global",
             kind="list",
             fields=_Gateway_GlobalFields,
         ),
-        "http_listener": sdk.FieldSpec(
+        "http_listener": ubx.FieldSpec(
             wire_name="http_listener",
             kind="set",
             fields=_Gateway_HttpListenerFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Gateway_IdentityFields,
         ),
-        "listener": sdk.FieldSpec(
+        "listener": ubx.FieldSpec(
             wire_name="listener",
             kind="set",
             fields=_Gateway_ListenerFields,
         ),
-        "private_link_configuration": sdk.FieldSpec(
+        "private_link_configuration": ubx.FieldSpec(
             wire_name="private_link_configuration",
             kind="set",
             fields=_Gateway_PrivateLinkConfigurationFields,
         ),
-        "probe": sdk.FieldSpec(
+        "probe": ubx.FieldSpec(
             wire_name="probe",
             kind="set",
             fields=_Gateway_ProbeFields,
         ),
-        "redirect_configuration": sdk.FieldSpec(
+        "redirect_configuration": ubx.FieldSpec(
             wire_name="redirect_configuration",
             kind="set",
             fields=_Gateway_RedirectConfigurationFields,
         ),
-        "request_routing_rule": sdk.FieldSpec(
+        "request_routing_rule": ubx.FieldSpec(
             wire_name="request_routing_rule",
             kind="set",
             fields=_Gateway_RequestRoutingRuleFields,
         ),
-        "rewrite_rule_set": sdk.FieldSpec(
+        "rewrite_rule_set": ubx.FieldSpec(
             wire_name="rewrite_rule_set",
             kind="list",
             fields=_Gateway_RewriteRuleSetFields,
         ),
-        "routing_rule": sdk.FieldSpec(
+        "routing_rule": ubx.FieldSpec(
             wire_name="routing_rule",
             kind="set",
             fields=_Gateway_RoutingRuleFields,
         ),
-        "sku": sdk.FieldSpec(
+        "sku": ubx.FieldSpec(
             wire_name="sku",
             kind="list",
             fields=_Gateway_SkuFields,
         ),
-        "ssl_certificate": sdk.FieldSpec(
+        "ssl_certificate": ubx.FieldSpec(
             wire_name="ssl_certificate",
             kind="set",
             fields=_Gateway_SslCertificateFields,
         ),
-        "ssl_policy": sdk.FieldSpec(
+        "ssl_policy": ubx.FieldSpec(
             wire_name="ssl_policy",
             kind="list",
             fields=_Gateway_SslPolicyFields,
         ),
-        "ssl_profile": sdk.FieldSpec(
+        "ssl_profile": ubx.FieldSpec(
             wire_name="ssl_profile",
             kind="list",
             fields=_Gateway_SslProfileFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Gateway_TimeoutsFields,
         ),
-        "trusted_client_certificate": sdk.FieldSpec(
+        "trusted_client_certificate": ubx.FieldSpec(
             wire_name="trusted_client_certificate",
             kind="list",
             fields=_Gateway_TrustedClientCertificateFields,
         ),
-        "trusted_root_certificate": sdk.FieldSpec(
+        "trusted_root_certificate": ubx.FieldSpec(
             wire_name="trusted_root_certificate",
             kind="list",
             fields=_Gateway_TrustedRootCertificateFields,
         ),
-        "url_path_map": sdk.FieldSpec(
+        "url_path_map": ubx.FieldSpec(
             wire_name="url_path_map",
             kind="list",
             fields=_Gateway_UrlPathMapFields,
         ),
-        "waf_configuration": sdk.FieldSpec(
+        "waf_configuration": ubx.FieldSpec(
             wire_name="waf_configuration",
             kind="list",
             fields=_Gateway_WafConfigurationFields,

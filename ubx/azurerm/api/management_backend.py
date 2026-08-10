@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementBackend_CircuitBreakerRule_FailureCondition_StatusCodeRange:
@@ -71,16 +71,16 @@ class ManagementBackend_Tls:
     validate_certificate_name: Any = None
 
 _ManagementBackend_CircuitBreakerRule_FailureCondition_StatusCodeRangeFields = {
-    "max": sdk.FieldSpec(wire_name="max"),
-    "min": sdk.FieldSpec(wire_name="min"),
+    "max": ubx.FieldSpec(wire_name="max"),
+    "min": ubx.FieldSpec(wire_name="min"),
 }
 
 _ManagementBackend_CircuitBreakerRule_FailureConditionFields = {
-    "count": sdk.FieldSpec(wire_name="count"),
-    "error_reasons": sdk.FieldSpec(wire_name="error_reasons"),
-    "interval_duration": sdk.FieldSpec(wire_name="interval_duration"),
-    "percentage": sdk.FieldSpec(wire_name="percentage"),
-    "status_code_range": sdk.FieldSpec(
+    "count": ubx.FieldSpec(wire_name="count"),
+    "error_reasons": ubx.FieldSpec(wire_name="error_reasons"),
+    "interval_duration": ubx.FieldSpec(wire_name="interval_duration"),
+    "percentage": ubx.FieldSpec(wire_name="percentage"),
+    "status_code_range": ubx.FieldSpec(
         wire_name="status_code_range",
         kind="list",
         fields=_ManagementBackend_CircuitBreakerRule_FailureCondition_StatusCodeRangeFields,
@@ -88,10 +88,10 @@ _ManagementBackend_CircuitBreakerRule_FailureConditionFields = {
 }
 
 _ManagementBackend_CircuitBreakerRuleFields = {
-    "accept_retry_after_enabled": sdk.FieldSpec(wire_name="accept_retry_after_enabled"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "trip_duration": sdk.FieldSpec(wire_name="trip_duration"),
-    "failure_condition": sdk.FieldSpec(
+    "accept_retry_after_enabled": ubx.FieldSpec(wire_name="accept_retry_after_enabled"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "trip_duration": ubx.FieldSpec(wire_name="trip_duration"),
+    "failure_condition": ubx.FieldSpec(
         wire_name="failure_condition",
         kind="list",
         fields=_ManagementBackend_CircuitBreakerRule_FailureConditionFields,
@@ -99,15 +99,15 @@ _ManagementBackend_CircuitBreakerRuleFields = {
 }
 
 _ManagementBackend_Credentials_AuthorizationFields = {
-    "parameter": sdk.FieldSpec(wire_name="parameter"),
-    "scheme": sdk.FieldSpec(wire_name="scheme"),
+    "parameter": ubx.FieldSpec(wire_name="parameter"),
+    "scheme": ubx.FieldSpec(wire_name="scheme"),
 }
 
 _ManagementBackend_CredentialsFields = {
-    "certificate": sdk.FieldSpec(wire_name="certificate"),
-    "header": sdk.FieldSpec(wire_name="header"),
-    "query": sdk.FieldSpec(wire_name="query"),
-    "authorization": sdk.FieldSpec(
+    "certificate": ubx.FieldSpec(wire_name="certificate"),
+    "header": ubx.FieldSpec(wire_name="header"),
+    "query": ubx.FieldSpec(wire_name="query"),
+    "authorization": ubx.FieldSpec(
         wire_name="authorization",
         kind="list",
         fields=_ManagementBackend_Credentials_AuthorizationFields,
@@ -115,23 +115,23 @@ _ManagementBackend_CredentialsFields = {
 }
 
 _ManagementBackend_ProxyFields = {
-    "password": sdk.FieldSpec(wire_name="password"),
-    "url": sdk.FieldSpec(wire_name="url"),
-    "username": sdk.FieldSpec(wire_name="username"),
+    "password": ubx.FieldSpec(wire_name="password"),
+    "url": ubx.FieldSpec(wire_name="url"),
+    "username": ubx.FieldSpec(wire_name="username"),
 }
 
 _ManagementBackend_ServiceFabricCluster_ServerX509NameFields = {
-    "issuer_certificate_thumbprint": sdk.FieldSpec(wire_name="issuer_certificate_thumbprint"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "issuer_certificate_thumbprint": ubx.FieldSpec(wire_name="issuer_certificate_thumbprint"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _ManagementBackend_ServiceFabricClusterFields = {
-    "client_certificate_id": sdk.FieldSpec(wire_name="client_certificate_id"),
-    "client_certificate_thumbprint": sdk.FieldSpec(wire_name="client_certificate_thumbprint"),
-    "management_endpoints": sdk.FieldSpec(wire_name="management_endpoints"),
-    "max_partition_resolution_retries": sdk.FieldSpec(wire_name="max_partition_resolution_retries"),
-    "server_certificate_thumbprints": sdk.FieldSpec(wire_name="server_certificate_thumbprints"),
-    "server_x509_name": sdk.FieldSpec(
+    "client_certificate_id": ubx.FieldSpec(wire_name="client_certificate_id"),
+    "client_certificate_thumbprint": ubx.FieldSpec(wire_name="client_certificate_thumbprint"),
+    "management_endpoints": ubx.FieldSpec(wire_name="management_endpoints"),
+    "max_partition_resolution_retries": ubx.FieldSpec(wire_name="max_partition_resolution_retries"),
+    "server_certificate_thumbprints": ubx.FieldSpec(wire_name="server_certificate_thumbprints"),
+    "server_x509_name": ubx.FieldSpec(
         wire_name="server_x509_name",
         kind="set",
         fields=_ManagementBackend_ServiceFabricCluster_ServerX509NameFields,
@@ -139,15 +139,15 @@ _ManagementBackend_ServiceFabricClusterFields = {
 }
 
 _ManagementBackend_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _ManagementBackend_TlsFields = {
-    "validate_certificate_chain": sdk.FieldSpec(wire_name="validate_certificate_chain"),
-    "validate_certificate_name": sdk.FieldSpec(wire_name="validate_certificate_name"),
+    "validate_certificate_chain": ubx.FieldSpec(wire_name="validate_certificate_chain"),
+    "validate_certificate_name": ubx.FieldSpec(wire_name="validate_certificate_name"),
 }
 
 @dataclasses.dataclass
@@ -168,44 +168,44 @@ class ManagementBackendConfig:
     timeouts: Any = None
     tls: Any = None
 
-ManagementBackend = sdk.ResourceBinding(
+ManagementBackend = ubx.ResourceBinding(
     wire_type="azurerm_api_management_backend",
     fields={
-        "api_management_name": sdk.FieldSpec(wire_name="api_management_name"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "protocol": sdk.FieldSpec(wire_name="protocol"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "resource_id": sdk.FieldSpec(wire_name="resource_id"),
-        "title": sdk.FieldSpec(wire_name="title"),
-        "url": sdk.FieldSpec(wire_name="url"),
-        "circuit_breaker_rule": sdk.FieldSpec(
+        "api_management_name": ubx.FieldSpec(wire_name="api_management_name"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "protocol": ubx.FieldSpec(wire_name="protocol"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "resource_id": ubx.FieldSpec(wire_name="resource_id"),
+        "title": ubx.FieldSpec(wire_name="title"),
+        "url": ubx.FieldSpec(wire_name="url"),
+        "circuit_breaker_rule": ubx.FieldSpec(
             wire_name="circuit_breaker_rule",
             kind="list",
             fields=_ManagementBackend_CircuitBreakerRuleFields,
         ),
-        "credentials": sdk.FieldSpec(
+        "credentials": ubx.FieldSpec(
             wire_name="credentials",
             kind="list",
             fields=_ManagementBackend_CredentialsFields,
         ),
-        "proxy": sdk.FieldSpec(
+        "proxy": ubx.FieldSpec(
             wire_name="proxy",
             kind="list",
             fields=_ManagementBackend_ProxyFields,
         ),
-        "service_fabric_cluster": sdk.FieldSpec(
+        "service_fabric_cluster": ubx.FieldSpec(
             wire_name="service_fabric_cluster",
             kind="list",
             fields=_ManagementBackend_ServiceFabricClusterFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementBackend_TimeoutsFields,
         ),
-        "tls": sdk.FieldSpec(
+        "tls": ubx.FieldSpec(
             wire_name="tls",
             kind="list",
             fields=_ManagementBackend_TlsFields,

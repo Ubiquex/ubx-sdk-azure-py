@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HardwareSecurityModule_ManagementNetworkProfile:
@@ -19,15 +19,15 @@ class HardwareSecurityModule_Timeouts:
     update: Any = None
 
 _HardwareSecurityModule_ManagementNetworkProfileFields = {
-    "network_interface_private_ip_addresses": sdk.FieldSpec(wire_name="network_interface_private_ip_addresses"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "network_interface_private_ip_addresses": ubx.FieldSpec(wire_name="network_interface_private_ip_addresses"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _HardwareSecurityModule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -44,28 +44,28 @@ class HardwareSecurityModuleConfig:
     network_profile: Any = None
     timeouts: Any = None
 
-HardwareSecurityModule = sdk.ResourceBinding(
+HardwareSecurityModule = ubx.ResourceBinding(
     wire_type="azurerm_dedicated_hardware_security_module",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "stamp_id": sdk.FieldSpec(wire_name="stamp_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "zones": sdk.FieldSpec(wire_name="zones"),
-        "management_network_profile": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "stamp_id": ubx.FieldSpec(wire_name="stamp_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "zones": ubx.FieldSpec(wire_name="zones"),
+        "management_network_profile": ubx.FieldSpec(
             wire_name="management_network_profile",
             kind="list",
             fields=_HardwareSecurityModule_ManagementNetworkProfileFields,
         ),
-        "network_profile": sdk.FieldSpec(
+        "network_profile": ubx.FieldSpec(
             wire_name="network_profile",
             kind="list",
             fields=_HardwareSecurityModule_ManagementNetworkProfileFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_HardwareSecurityModule_TimeoutsFields,

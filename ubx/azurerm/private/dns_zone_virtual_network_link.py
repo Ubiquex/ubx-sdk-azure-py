@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DnsZoneVirtualNetworkLink_Timeouts:
@@ -14,10 +14,10 @@ class DnsZoneVirtualNetworkLink_Timeouts:
     update: Any = None
 
 _DnsZoneVirtualNetworkLink_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class DnsZoneVirtualNetworkLinkConfig:
     virtual_network_id: Any = None
     timeouts: Any = None
 
-DnsZoneVirtualNetworkLink = sdk.ResourceBinding(
+DnsZoneVirtualNetworkLink = ubx.ResourceBinding(
     wire_type="azurerm_private_dns_zone_virtual_network_link",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "private_dns_zone_id": sdk.FieldSpec(wire_name="private_dns_zone_id"),
-        "registration_enabled": sdk.FieldSpec(wire_name="registration_enabled"),
-        "resolution_policy": sdk.FieldSpec(wire_name="resolution_policy"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "virtual_network_id": sdk.FieldSpec(wire_name="virtual_network_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "private_dns_zone_id": ubx.FieldSpec(wire_name="private_dns_zone_id"),
+        "registration_enabled": ubx.FieldSpec(wire_name="registration_enabled"),
+        "resolution_policy": ubx.FieldSpec(wire_name="resolution_policy"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "virtual_network_id": ubx.FieldSpec(wire_name="virtual_network_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DnsZoneVirtualNetworkLink_TimeoutsFields,

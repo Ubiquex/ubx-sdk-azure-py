@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SecurityPerimeterAccessRule_Timeouts:
@@ -14,10 +14,10 @@ class SecurityPerimeterAccessRule_Timeouts:
     update: Any = None
 
 _SecurityPerimeterAccessRule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -32,18 +32,18 @@ class SecurityPerimeterAccessRuleConfig:
     subscription_ids: Any = None
     timeouts: Any = None
 
-SecurityPerimeterAccessRule = sdk.ResourceBinding(
+SecurityPerimeterAccessRule = ubx.ResourceBinding(
     wire_type="azurerm_network_security_perimeter_access_rule",
     fields={
-        "address_prefixes": sdk.FieldSpec(wire_name="address_prefixes"),
-        "direction": sdk.FieldSpec(wire_name="direction"),
-        "fqdns": sdk.FieldSpec(wire_name="fqdns"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "network_security_perimeter_profile_id": sdk.FieldSpec(wire_name="network_security_perimeter_profile_id"),
-        "service_tags": sdk.FieldSpec(wire_name="service_tags"),
-        "subscription_ids": sdk.FieldSpec(wire_name="subscription_ids"),
-        "timeouts": sdk.FieldSpec(
+        "address_prefixes": ubx.FieldSpec(wire_name="address_prefixes"),
+        "direction": ubx.FieldSpec(wire_name="direction"),
+        "fqdns": ubx.FieldSpec(wire_name="fqdns"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network_security_perimeter_profile_id": ubx.FieldSpec(wire_name="network_security_perimeter_profile_id"),
+        "service_tags": ubx.FieldSpec(wire_name="service_tags"),
+        "subscription_ids": ubx.FieldSpec(wire_name="subscription_ids"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SecurityPerimeterAccessRule_TimeoutsFields,

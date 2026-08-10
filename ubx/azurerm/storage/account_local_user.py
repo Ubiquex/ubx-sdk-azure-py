@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AccountLocalUser_PermissionScope_Permissions:
@@ -33,17 +33,17 @@ class AccountLocalUser_Timeouts:
     update: Any = None
 
 _AccountLocalUser_PermissionScope_PermissionsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "list": sdk.FieldSpec(wire_name="list"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "write": sdk.FieldSpec(wire_name="write"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "list": ubx.FieldSpec(wire_name="list"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "write": ubx.FieldSpec(wire_name="write"),
 }
 
 _AccountLocalUser_PermissionScopeFields = {
-    "resource_name": sdk.FieldSpec(wire_name="resource_name"),
-    "service": sdk.FieldSpec(wire_name="service"),
-    "permissions": sdk.FieldSpec(
+    "resource_name": ubx.FieldSpec(wire_name="resource_name"),
+    "service": ubx.FieldSpec(wire_name="service"),
+    "permissions": ubx.FieldSpec(
         wire_name="permissions",
         kind="list",
         fields=_AccountLocalUser_PermissionScope_PermissionsFields,
@@ -51,15 +51,15 @@ _AccountLocalUser_PermissionScopeFields = {
 }
 
 _AccountLocalUser_SshAuthorizedKeyFields = {
-    "description": sdk.FieldSpec(wire_name="description"),
-    "key": sdk.FieldSpec(wire_name="key"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "key": ubx.FieldSpec(wire_name="key"),
 }
 
 _AccountLocalUser_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -74,26 +74,26 @@ class AccountLocalUserConfig:
     ssh_authorized_key: Any = None
     timeouts: Any = None
 
-AccountLocalUser = sdk.ResourceBinding(
+AccountLocalUser = ubx.ResourceBinding(
     wire_type="azurerm_storage_account_local_user",
     fields={
-        "home_directory": sdk.FieldSpec(wire_name="home_directory"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "ssh_key_enabled": sdk.FieldSpec(wire_name="ssh_key_enabled"),
-        "ssh_password_enabled": sdk.FieldSpec(wire_name="ssh_password_enabled"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "permission_scope": sdk.FieldSpec(
+        "home_directory": ubx.FieldSpec(wire_name="home_directory"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "ssh_key_enabled": ubx.FieldSpec(wire_name="ssh_key_enabled"),
+        "ssh_password_enabled": ubx.FieldSpec(wire_name="ssh_password_enabled"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "permission_scope": ubx.FieldSpec(
             wire_name="permission_scope",
             kind="list",
             fields=_AccountLocalUser_PermissionScopeFields,
         ),
-        "ssh_authorized_key": sdk.FieldSpec(
+        "ssh_authorized_key": ubx.FieldSpec(
             wire_name="ssh_authorized_key",
             kind="list",
             fields=_AccountLocalUser_SshAuthorizedKeyFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AccountLocalUser_TimeoutsFields,

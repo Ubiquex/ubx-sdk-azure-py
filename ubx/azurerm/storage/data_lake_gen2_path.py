@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DataLakeGen2Path_Ace:
@@ -21,17 +21,17 @@ class DataLakeGen2Path_Timeouts:
     update: Any = None
 
 _DataLakeGen2Path_AceFields = {
-    "id": sdk.FieldSpec(wire_name="id"),
-    "permissions": sdk.FieldSpec(wire_name="permissions"),
-    "scope": sdk.FieldSpec(wire_name="scope"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "permissions": ubx.FieldSpec(wire_name="permissions"),
+    "scope": ubx.FieldSpec(wire_name="scope"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _DataLakeGen2Path_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -46,22 +46,22 @@ class DataLakeGen2PathConfig:
     ace: Any = None
     timeouts: Any = None
 
-DataLakeGen2Path = sdk.ResourceBinding(
+DataLakeGen2Path = ubx.ResourceBinding(
     wire_type="azurerm_storage_data_lake_gen2_path",
     fields={
-        "filesystem_name": sdk.FieldSpec(wire_name="filesystem_name"),
-        "group": sdk.FieldSpec(wire_name="group"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "owner": sdk.FieldSpec(wire_name="owner"),
-        "path": sdk.FieldSpec(wire_name="path"),
-        "resource": sdk.FieldSpec(wire_name="resource"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "ace": sdk.FieldSpec(
+        "filesystem_name": ubx.FieldSpec(wire_name="filesystem_name"),
+        "group": ubx.FieldSpec(wire_name="group"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "owner": ubx.FieldSpec(wire_name="owner"),
+        "path": ubx.FieldSpec(wire_name="path"),
+        "resource": ubx.FieldSpec(wire_name="resource"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "ace": ubx.FieldSpec(
             wire_name="ace",
             kind="set",
             fields=_DataLakeGen2Path_AceFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DataLakeGen2Path_TimeoutsFields,

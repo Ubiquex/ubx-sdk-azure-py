@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Application_Timeouts:
@@ -14,10 +14,10 @@ class Application_Timeouts:
     update: Any = None
 
 _Application_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class ApplicationConfig:
     resource_group_name: Any = None
     timeouts: Any = None
 
-Application = sdk.ResourceBinding(
+Application = ubx.ResourceBinding(
     wire_type="azurerm_batch_application",
     fields={
-        "account_name": sdk.FieldSpec(wire_name="account_name"),
-        "allow_updates": sdk.FieldSpec(wire_name="allow_updates"),
-        "default_version": sdk.FieldSpec(wire_name="default_version"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "timeouts": sdk.FieldSpec(
+        "account_name": ubx.FieldSpec(wire_name="account_name"),
+        "allow_updates": ubx.FieldSpec(wire_name="allow_updates"),
+        "default_version": ubx.FieldSpec(wire_name="default_version"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Application_TimeoutsFields,

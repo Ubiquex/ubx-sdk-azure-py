@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DeploymentScriptAzurePowerShell_Container:
@@ -34,30 +34,30 @@ class DeploymentScriptAzurePowerShell_Timeouts:
     update: Any = None
 
 _DeploymentScriptAzurePowerShell_ContainerFields = {
-    "container_group_name": sdk.FieldSpec(wire_name="container_group_name"),
+    "container_group_name": ubx.FieldSpec(wire_name="container_group_name"),
 }
 
 _DeploymentScriptAzurePowerShell_EnvironmentVariableFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "secure_value": sdk.FieldSpec(wire_name="secure_value"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "secure_value": ubx.FieldSpec(wire_name="secure_value"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _DeploymentScriptAzurePowerShell_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _DeploymentScriptAzurePowerShell_StorageAccountFields = {
-    "key": sdk.FieldSpec(wire_name="key"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "key": ubx.FieldSpec(wire_name="key"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _DeploymentScriptAzurePowerShell_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -82,44 +82,44 @@ class DeploymentScriptAzurePowerShellConfig:
     storage_account: Any = None
     timeouts: Any = None
 
-DeploymentScriptAzurePowerShell = sdk.ResourceBinding(
+DeploymentScriptAzurePowerShell = ubx.ResourceBinding(
     wire_type="azurerm_resource_deployment_script_azure_power_shell",
     fields={
-        "cleanup_preference": sdk.FieldSpec(wire_name="cleanup_preference"),
-        "command_line": sdk.FieldSpec(wire_name="command_line"),
-        "force_update_tag": sdk.FieldSpec(wire_name="force_update_tag"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "primary_script_uri": sdk.FieldSpec(wire_name="primary_script_uri"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "retention_interval": sdk.FieldSpec(wire_name="retention_interval"),
-        "script_content": sdk.FieldSpec(wire_name="script_content"),
-        "supporting_script_uris": sdk.FieldSpec(wire_name="supporting_script_uris"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeout": sdk.FieldSpec(wire_name="timeout"),
-        "version": sdk.FieldSpec(wire_name="version"),
-        "container": sdk.FieldSpec(
+        "cleanup_preference": ubx.FieldSpec(wire_name="cleanup_preference"),
+        "command_line": ubx.FieldSpec(wire_name="command_line"),
+        "force_update_tag": ubx.FieldSpec(wire_name="force_update_tag"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "primary_script_uri": ubx.FieldSpec(wire_name="primary_script_uri"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "retention_interval": ubx.FieldSpec(wire_name="retention_interval"),
+        "script_content": ubx.FieldSpec(wire_name="script_content"),
+        "supporting_script_uris": ubx.FieldSpec(wire_name="supporting_script_uris"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeout": ubx.FieldSpec(wire_name="timeout"),
+        "version": ubx.FieldSpec(wire_name="version"),
+        "container": ubx.FieldSpec(
             wire_name="container",
             kind="list",
             fields=_DeploymentScriptAzurePowerShell_ContainerFields,
         ),
-        "environment_variable": sdk.FieldSpec(
+        "environment_variable": ubx.FieldSpec(
             wire_name="environment_variable",
             kind="set",
             fields=_DeploymentScriptAzurePowerShell_EnvironmentVariableFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_DeploymentScriptAzurePowerShell_IdentityFields,
         ),
-        "storage_account": sdk.FieldSpec(
+        "storage_account": ubx.FieldSpec(
             wire_name="storage_account",
             kind="list",
             fields=_DeploymentScriptAzurePowerShell_StorageAccountFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DeploymentScriptAzurePowerShell_TimeoutsFields,

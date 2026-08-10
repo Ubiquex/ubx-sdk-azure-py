@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MoverJobDefinition_Timeouts:
@@ -14,10 +14,10 @@ class MoverJobDefinition_Timeouts:
     update: Any = None
 
 _MoverJobDefinition_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -34,20 +34,20 @@ class MoverJobDefinitionConfig:
     target_sub_path: Any = None
     timeouts: Any = None
 
-MoverJobDefinition = sdk.ResourceBinding(
+MoverJobDefinition = ubx.ResourceBinding(
     wire_type="azurerm_storage_mover_job_definition",
     fields={
-        "agent_name": sdk.FieldSpec(wire_name="agent_name"),
-        "copy_mode": sdk.FieldSpec(wire_name="copy_mode"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "source_name": sdk.FieldSpec(wire_name="source_name"),
-        "source_sub_path": sdk.FieldSpec(wire_name="source_sub_path"),
-        "storage_mover_project_id": sdk.FieldSpec(wire_name="storage_mover_project_id"),
-        "target_name": sdk.FieldSpec(wire_name="target_name"),
-        "target_sub_path": sdk.FieldSpec(wire_name="target_sub_path"),
-        "timeouts": sdk.FieldSpec(
+        "agent_name": ubx.FieldSpec(wire_name="agent_name"),
+        "copy_mode": ubx.FieldSpec(wire_name="copy_mode"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "source_name": ubx.FieldSpec(wire_name="source_name"),
+        "source_sub_path": ubx.FieldSpec(wire_name="source_sub_path"),
+        "storage_mover_project_id": ubx.FieldSpec(wire_name="storage_mover_project_id"),
+        "target_name": ubx.FieldSpec(wire_name="target_name"),
+        "target_sub_path": ubx.FieldSpec(wire_name="target_sub_path"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_MoverJobDefinition_TimeoutsFields,

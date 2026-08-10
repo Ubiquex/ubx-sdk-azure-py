@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementScheduledAction_Timeouts:
@@ -14,10 +14,10 @@ class ManagementScheduledAction_Timeouts:
     update: Any = None
 
 _ManagementScheduledAction_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -39,25 +39,25 @@ class ManagementScheduledActionConfig:
     weeks_of_month: Any = None
     timeouts: Any = None
 
-ManagementScheduledAction = sdk.ResourceBinding(
+ManagementScheduledAction = ubx.ResourceBinding(
     wire_type="azurerm_cost_management_scheduled_action",
     fields={
-        "day_of_month": sdk.FieldSpec(wire_name="day_of_month"),
-        "days_of_week": sdk.FieldSpec(wire_name="days_of_week"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "email_address_sender": sdk.FieldSpec(wire_name="email_address_sender"),
-        "email_addresses": sdk.FieldSpec(wire_name="email_addresses"),
-        "email_subject": sdk.FieldSpec(wire_name="email_subject"),
-        "end_date": sdk.FieldSpec(wire_name="end_date"),
-        "frequency": sdk.FieldSpec(wire_name="frequency"),
-        "hour_of_day": sdk.FieldSpec(wire_name="hour_of_day"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "message": sdk.FieldSpec(wire_name="message"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "start_date": sdk.FieldSpec(wire_name="start_date"),
-        "view_id": sdk.FieldSpec(wire_name="view_id"),
-        "weeks_of_month": sdk.FieldSpec(wire_name="weeks_of_month"),
-        "timeouts": sdk.FieldSpec(
+        "day_of_month": ubx.FieldSpec(wire_name="day_of_month"),
+        "days_of_week": ubx.FieldSpec(wire_name="days_of_week"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "email_address_sender": ubx.FieldSpec(wire_name="email_address_sender"),
+        "email_addresses": ubx.FieldSpec(wire_name="email_addresses"),
+        "email_subject": ubx.FieldSpec(wire_name="email_subject"),
+        "end_date": ubx.FieldSpec(wire_name="end_date"),
+        "frequency": ubx.FieldSpec(wire_name="frequency"),
+        "hour_of_day": ubx.FieldSpec(wire_name="hour_of_day"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "message": ubx.FieldSpec(wire_name="message"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "start_date": ubx.FieldSpec(wire_name="start_date"),
+        "view_id": ubx.FieldSpec(wire_name="view_id"),
+        "weeks_of_month": ubx.FieldSpec(wire_name="weeks_of_month"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementScheduledAction_TimeoutsFields,

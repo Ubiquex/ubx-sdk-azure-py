@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudApiPortal_Sso:
@@ -21,17 +21,17 @@ class CloudApiPortal_Timeouts:
     update: Any = None
 
 _CloudApiPortal_SsoFields = {
-    "client_id": sdk.FieldSpec(wire_name="client_id"),
-    "client_secret": sdk.FieldSpec(wire_name="client_secret"),
-    "issuer_uri": sdk.FieldSpec(wire_name="issuer_uri"),
-    "scope": sdk.FieldSpec(wire_name="scope"),
+    "client_id": ubx.FieldSpec(wire_name="client_id"),
+    "client_secret": ubx.FieldSpec(wire_name="client_secret"),
+    "issuer_uri": ubx.FieldSpec(wire_name="issuer_uri"),
+    "scope": ubx.FieldSpec(wire_name="scope"),
 }
 
 _CloudApiPortal_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -47,23 +47,23 @@ class CloudApiPortalConfig:
     sso: Any = None
     timeouts: Any = None
 
-CloudApiPortal = sdk.ResourceBinding(
+CloudApiPortal = ubx.ResourceBinding(
     wire_type="azurerm_spring_cloud_api_portal",
     fields={
-        "api_try_out_enabled": sdk.FieldSpec(wire_name="api_try_out_enabled"),
-        "gateway_ids": sdk.FieldSpec(wire_name="gateway_ids"),
-        "https_only_enabled": sdk.FieldSpec(wire_name="https_only_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "instance_count": sdk.FieldSpec(wire_name="instance_count"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "spring_cloud_service_id": sdk.FieldSpec(wire_name="spring_cloud_service_id"),
-        "sso": sdk.FieldSpec(
+        "api_try_out_enabled": ubx.FieldSpec(wire_name="api_try_out_enabled"),
+        "gateway_ids": ubx.FieldSpec(wire_name="gateway_ids"),
+        "https_only_enabled": ubx.FieldSpec(wire_name="https_only_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "instance_count": ubx.FieldSpec(wire_name="instance_count"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "spring_cloud_service_id": ubx.FieldSpec(wire_name="spring_cloud_service_id"),
+        "sso": ubx.FieldSpec(
             wire_name="sso",
             kind="list",
             fields=_CloudApiPortal_SsoFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CloudApiPortal_TimeoutsFields,

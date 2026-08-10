@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HubConnection_Routing_PropagatedRouteTable:
@@ -35,28 +35,28 @@ class HubConnection_Timeouts:
     update: Any = None
 
 _HubConnection_Routing_PropagatedRouteTableFields = {
-    "labels": sdk.FieldSpec(wire_name="labels"),
-    "route_table_ids": sdk.FieldSpec(wire_name="route_table_ids"),
+    "labels": ubx.FieldSpec(wire_name="labels"),
+    "route_table_ids": ubx.FieldSpec(wire_name="route_table_ids"),
 }
 
 _HubConnection_Routing_StaticVnetRouteFields = {
-    "address_prefixes": sdk.FieldSpec(wire_name="address_prefixes"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "next_hop_ip_address": sdk.FieldSpec(wire_name="next_hop_ip_address"),
+    "address_prefixes": ubx.FieldSpec(wire_name="address_prefixes"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "next_hop_ip_address": ubx.FieldSpec(wire_name="next_hop_ip_address"),
 }
 
 _HubConnection_RoutingFields = {
-    "associated_route_table_id": sdk.FieldSpec(wire_name="associated_route_table_id"),
-    "inbound_route_map_id": sdk.FieldSpec(wire_name="inbound_route_map_id"),
-    "outbound_route_map_id": sdk.FieldSpec(wire_name="outbound_route_map_id"),
-    "static_vnet_local_route_override_criteria": sdk.FieldSpec(wire_name="static_vnet_local_route_override_criteria"),
-    "static_vnet_propagate_static_routes_enabled": sdk.FieldSpec(wire_name="static_vnet_propagate_static_routes_enabled"),
-    "propagated_route_table": sdk.FieldSpec(
+    "associated_route_table_id": ubx.FieldSpec(wire_name="associated_route_table_id"),
+    "inbound_route_map_id": ubx.FieldSpec(wire_name="inbound_route_map_id"),
+    "outbound_route_map_id": ubx.FieldSpec(wire_name="outbound_route_map_id"),
+    "static_vnet_local_route_override_criteria": ubx.FieldSpec(wire_name="static_vnet_local_route_override_criteria"),
+    "static_vnet_propagate_static_routes_enabled": ubx.FieldSpec(wire_name="static_vnet_propagate_static_routes_enabled"),
+    "propagated_route_table": ubx.FieldSpec(
         wire_name="propagated_route_table",
         kind="list",
         fields=_HubConnection_Routing_PropagatedRouteTableFields,
     ),
-    "static_vnet_route": sdk.FieldSpec(
+    "static_vnet_route": ubx.FieldSpec(
         wire_name="static_vnet_route",
         kind="list",
         fields=_HubConnection_Routing_StaticVnetRouteFields,
@@ -64,10 +64,10 @@ _HubConnection_RoutingFields = {
 }
 
 _HubConnection_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -80,20 +80,20 @@ class HubConnectionConfig:
     routing: Any = None
     timeouts: Any = None
 
-HubConnection = sdk.ResourceBinding(
+HubConnection = ubx.ResourceBinding(
     wire_type="azurerm_virtual_hub_connection",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "internet_security_enabled": sdk.FieldSpec(wire_name="internet_security_enabled"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "remote_virtual_network_id": sdk.FieldSpec(wire_name="remote_virtual_network_id"),
-        "virtual_hub_id": sdk.FieldSpec(wire_name="virtual_hub_id"),
-        "routing": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "internet_security_enabled": ubx.FieldSpec(wire_name="internet_security_enabled"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "remote_virtual_network_id": ubx.FieldSpec(wire_name="remote_virtual_network_id"),
+        "virtual_hub_id": ubx.FieldSpec(wire_name="virtual_hub_id"),
+        "routing": ubx.FieldSpec(
             wire_name="routing",
             kind="list",
             fields=_HubConnection_RoutingFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_HubConnection_TimeoutsFields,

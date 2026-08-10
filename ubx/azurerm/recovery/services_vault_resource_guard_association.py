@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServicesVaultResourceGuardAssociation_Timeouts:
@@ -13,9 +13,9 @@ class ServicesVaultResourceGuardAssociation_Timeouts:
     read: Any = None
 
 _ServicesVaultResourceGuardAssociation_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -25,13 +25,13 @@ class ServicesVaultResourceGuardAssociationConfig:
     vault_id: Any = None
     timeouts: Any = None
 
-ServicesVaultResourceGuardAssociation = sdk.ResourceBinding(
+ServicesVaultResourceGuardAssociation = ubx.ResourceBinding(
     wire_type="azurerm_recovery_services_vault_resource_guard_association",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "resource_guard_id": sdk.FieldSpec(wire_name="resource_guard_id"),
-        "vault_id": sdk.FieldSpec(wire_name="vault_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "resource_guard_id": ubx.FieldSpec(wire_name="resource_guard_id"),
+        "vault_id": ubx.FieldSpec(wire_name="vault_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ServicesVaultResourceGuardAssociation_TimeoutsFields,

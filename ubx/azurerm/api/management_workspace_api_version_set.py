@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementWorkspaceApiVersionSet_Timeouts:
@@ -14,10 +14,10 @@ class ManagementWorkspaceApiVersionSet_Timeouts:
     update: Any = None
 
 _ManagementWorkspaceApiVersionSet_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -32,18 +32,18 @@ class ManagementWorkspaceApiVersionSetConfig:
     versioning_scheme: Any = None
     timeouts: Any = None
 
-ManagementWorkspaceApiVersionSet = sdk.ResourceBinding(
+ManagementWorkspaceApiVersionSet = ubx.ResourceBinding(
     wire_type="azurerm_api_management_workspace_api_version_set",
     fields={
-        "api_management_workspace_id": sdk.FieldSpec(wire_name="api_management_workspace_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "version_header_name": sdk.FieldSpec(wire_name="version_header_name"),
-        "version_query_name": sdk.FieldSpec(wire_name="version_query_name"),
-        "versioning_scheme": sdk.FieldSpec(wire_name="versioning_scheme"),
-        "timeouts": sdk.FieldSpec(
+        "api_management_workspace_id": ubx.FieldSpec(wire_name="api_management_workspace_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "version_header_name": ubx.FieldSpec(wire_name="version_header_name"),
+        "version_query_name": ubx.FieldSpec(wire_name="version_query_name"),
+        "versioning_scheme": ubx.FieldSpec(wire_name="versioning_scheme"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementWorkspaceApiVersionSet_TimeoutsFields,

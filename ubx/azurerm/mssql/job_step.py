@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class JobStep_OutputTarget:
@@ -21,17 +21,17 @@ class JobStep_Timeouts:
     update: Any = None
 
 _JobStep_OutputTargetFields = {
-    "job_credential_id": sdk.FieldSpec(wire_name="job_credential_id"),
-    "mssql_database_id": sdk.FieldSpec(wire_name="mssql_database_id"),
-    "schema_name": sdk.FieldSpec(wire_name="schema_name"),
-    "table_name": sdk.FieldSpec(wire_name="table_name"),
+    "job_credential_id": ubx.FieldSpec(wire_name="job_credential_id"),
+    "mssql_database_id": ubx.FieldSpec(wire_name="mssql_database_id"),
+    "schema_name": ubx.FieldSpec(wire_name="schema_name"),
+    "table_name": ubx.FieldSpec(wire_name="table_name"),
 }
 
 _JobStep_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -51,27 +51,27 @@ class JobStepConfig:
     output_target: Any = None
     timeouts: Any = None
 
-JobStep = sdk.ResourceBinding(
+JobStep = ubx.ResourceBinding(
     wire_type="azurerm_mssql_job_step",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "initial_retry_interval_seconds": sdk.FieldSpec(wire_name="initial_retry_interval_seconds"),
-        "job_credential_id": sdk.FieldSpec(wire_name="job_credential_id"),
-        "job_id": sdk.FieldSpec(wire_name="job_id"),
-        "job_step_index": sdk.FieldSpec(wire_name="job_step_index"),
-        "job_target_group_id": sdk.FieldSpec(wire_name="job_target_group_id"),
-        "maximum_retry_interval_seconds": sdk.FieldSpec(wire_name="maximum_retry_interval_seconds"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "retry_attempts": sdk.FieldSpec(wire_name="retry_attempts"),
-        "retry_interval_backoff_multiplier": sdk.FieldSpec(wire_name="retry_interval_backoff_multiplier"),
-        "sql_script": sdk.FieldSpec(wire_name="sql_script"),
-        "timeout_seconds": sdk.FieldSpec(wire_name="timeout_seconds"),
-        "output_target": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "initial_retry_interval_seconds": ubx.FieldSpec(wire_name="initial_retry_interval_seconds"),
+        "job_credential_id": ubx.FieldSpec(wire_name="job_credential_id"),
+        "job_id": ubx.FieldSpec(wire_name="job_id"),
+        "job_step_index": ubx.FieldSpec(wire_name="job_step_index"),
+        "job_target_group_id": ubx.FieldSpec(wire_name="job_target_group_id"),
+        "maximum_retry_interval_seconds": ubx.FieldSpec(wire_name="maximum_retry_interval_seconds"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "retry_attempts": ubx.FieldSpec(wire_name="retry_attempts"),
+        "retry_interval_backoff_multiplier": ubx.FieldSpec(wire_name="retry_interval_backoff_multiplier"),
+        "sql_script": ubx.FieldSpec(wire_name="sql_script"),
+        "timeout_seconds": ubx.FieldSpec(wire_name="timeout_seconds"),
+        "output_target": ubx.FieldSpec(
             wire_name="output_target",
             kind="list",
             fields=_JobStep_OutputTargetFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_JobStep_TimeoutsFields,

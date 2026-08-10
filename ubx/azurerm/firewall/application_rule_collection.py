@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ApplicationRuleCollection_Rule_Protocol:
@@ -29,18 +29,18 @@ class ApplicationRuleCollection_Timeouts:
     update: Any = None
 
 _ApplicationRuleCollection_Rule_ProtocolFields = {
-    "port": sdk.FieldSpec(wire_name="port"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "port": ubx.FieldSpec(wire_name="port"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _ApplicationRuleCollection_RuleFields = {
-    "description": sdk.FieldSpec(wire_name="description"),
-    "fqdn_tags": sdk.FieldSpec(wire_name="fqdn_tags"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "source_addresses": sdk.FieldSpec(wire_name="source_addresses"),
-    "source_ip_groups": sdk.FieldSpec(wire_name="source_ip_groups"),
-    "target_fqdns": sdk.FieldSpec(wire_name="target_fqdns"),
-    "protocol": sdk.FieldSpec(
+    "description": ubx.FieldSpec(wire_name="description"),
+    "fqdn_tags": ubx.FieldSpec(wire_name="fqdn_tags"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "source_addresses": ubx.FieldSpec(wire_name="source_addresses"),
+    "source_ip_groups": ubx.FieldSpec(wire_name="source_ip_groups"),
+    "target_fqdns": ubx.FieldSpec(wire_name="target_fqdns"),
+    "protocol": ubx.FieldSpec(
         wire_name="protocol",
         kind="list",
         fields=_ApplicationRuleCollection_Rule_ProtocolFields,
@@ -48,10 +48,10 @@ _ApplicationRuleCollection_RuleFields = {
 }
 
 _ApplicationRuleCollection_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -65,21 +65,21 @@ class ApplicationRuleCollectionConfig:
     rule: Any = None
     timeouts: Any = None
 
-ApplicationRuleCollection = sdk.ResourceBinding(
+ApplicationRuleCollection = ubx.ResourceBinding(
     wire_type="azurerm_firewall_application_rule_collection",
     fields={
-        "action": sdk.FieldSpec(wire_name="action"),
-        "azure_firewall_name": sdk.FieldSpec(wire_name="azure_firewall_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "priority": sdk.FieldSpec(wire_name="priority"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "rule": sdk.FieldSpec(
+        "action": ubx.FieldSpec(wire_name="action"),
+        "azure_firewall_name": ubx.FieldSpec(wire_name="azure_firewall_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "priority": ubx.FieldSpec(wire_name="priority"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "rule": ubx.FieldSpec(
             wire_name="rule",
             kind="list",
             fields=_ApplicationRuleCollection_RuleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ApplicationRuleCollection_TimeoutsFields,

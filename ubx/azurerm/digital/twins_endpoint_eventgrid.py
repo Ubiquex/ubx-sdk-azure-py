@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TwinsEndpointEventgrid_Timeouts:
@@ -14,10 +14,10 @@ class TwinsEndpointEventgrid_Timeouts:
     update: Any = None
 
 _TwinsEndpointEventgrid_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class TwinsEndpointEventgridConfig:
     name: Any = None
     timeouts: Any = None
 
-TwinsEndpointEventgrid = sdk.ResourceBinding(
+TwinsEndpointEventgrid = ubx.ResourceBinding(
     wire_type="azurerm_digital_twins_endpoint_eventgrid",
     fields={
-        "dead_letter_storage_secret": sdk.FieldSpec(wire_name="dead_letter_storage_secret"),
-        "digital_twins_id": sdk.FieldSpec(wire_name="digital_twins_id"),
-        "eventgrid_topic_endpoint": sdk.FieldSpec(wire_name="eventgrid_topic_endpoint"),
-        "eventgrid_topic_primary_access_key": sdk.FieldSpec(wire_name="eventgrid_topic_primary_access_key"),
-        "eventgrid_topic_secondary_access_key": sdk.FieldSpec(wire_name="eventgrid_topic_secondary_access_key"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "timeouts": sdk.FieldSpec(
+        "dead_letter_storage_secret": ubx.FieldSpec(wire_name="dead_letter_storage_secret"),
+        "digital_twins_id": ubx.FieldSpec(wire_name="digital_twins_id"),
+        "eventgrid_topic_endpoint": ubx.FieldSpec(wire_name="eventgrid_topic_endpoint"),
+        "eventgrid_topic_primary_access_key": ubx.FieldSpec(wire_name="eventgrid_topic_primary_access_key"),
+        "eventgrid_topic_secondary_access_key": ubx.FieldSpec(wire_name="eventgrid_topic_secondary_access_key"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_TwinsEndpointEventgrid_TimeoutsFields,

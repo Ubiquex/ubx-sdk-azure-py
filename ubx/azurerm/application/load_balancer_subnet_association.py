@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LoadBalancerSubnetAssociation_Timeouts:
@@ -14,10 +14,10 @@ class LoadBalancerSubnetAssociation_Timeouts:
     update: Any = None
 
 _LoadBalancerSubnetAssociation_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class LoadBalancerSubnetAssociationConfig:
     tags: Any = None
     timeouts: Any = None
 
-LoadBalancerSubnetAssociation = sdk.ResourceBinding(
+LoadBalancerSubnetAssociation = ubx.ResourceBinding(
     wire_type="azurerm_application_load_balancer_subnet_association",
     fields={
-        "application_load_balancer_id": sdk.FieldSpec(wire_name="application_load_balancer_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "application_load_balancer_id": ubx.FieldSpec(wire_name="application_load_balancer_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_LoadBalancerSubnetAssociation_TimeoutsFields,

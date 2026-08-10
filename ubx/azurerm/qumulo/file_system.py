@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FileSystem_Timeouts:
@@ -14,10 +14,10 @@ class FileSystem_Timeouts:
     update: Any = None
 
 _FileSystem_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -37,23 +37,23 @@ class FileSystemConfig:
     zone: Any = None
     timeouts: Any = None
 
-FileSystem = sdk.ResourceBinding(
+FileSystem = ubx.ResourceBinding(
     wire_type="azurerm_qumulo_file_system",
     fields={
-        "admin_password": sdk.FieldSpec(wire_name="admin_password"),
-        "email": sdk.FieldSpec(wire_name="email"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "offer_id": sdk.FieldSpec(wire_name="offer_id"),
-        "plan_id": sdk.FieldSpec(wire_name="plan_id"),
-        "publisher_id": sdk.FieldSpec(wire_name="publisher_id"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "storage_sku": sdk.FieldSpec(wire_name="storage_sku"),
-        "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "zone": sdk.FieldSpec(wire_name="zone"),
-        "timeouts": sdk.FieldSpec(
+        "admin_password": ubx.FieldSpec(wire_name="admin_password"),
+        "email": ubx.FieldSpec(wire_name="email"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "offer_id": ubx.FieldSpec(wire_name="offer_id"),
+        "plan_id": ubx.FieldSpec(wire_name="plan_id"),
+        "publisher_id": ubx.FieldSpec(wire_name="publisher_id"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "storage_sku": ubx.FieldSpec(wire_name="storage_sku"),
+        "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "zone": ubx.FieldSpec(wire_name="zone"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FileSystem_TimeoutsFields,

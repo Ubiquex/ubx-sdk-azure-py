@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AttachedDatabaseConfiguration_Sharing:
@@ -25,21 +25,21 @@ class AttachedDatabaseConfiguration_Timeouts:
     update: Any = None
 
 _AttachedDatabaseConfiguration_SharingFields = {
-    "external_tables_to_exclude": sdk.FieldSpec(wire_name="external_tables_to_exclude"),
-    "external_tables_to_include": sdk.FieldSpec(wire_name="external_tables_to_include"),
-    "functions_to_exclude": sdk.FieldSpec(wire_name="functions_to_exclude"),
-    "functions_to_include": sdk.FieldSpec(wire_name="functions_to_include"),
-    "materialized_views_to_exclude": sdk.FieldSpec(wire_name="materialized_views_to_exclude"),
-    "materialized_views_to_include": sdk.FieldSpec(wire_name="materialized_views_to_include"),
-    "tables_to_exclude": sdk.FieldSpec(wire_name="tables_to_exclude"),
-    "tables_to_include": sdk.FieldSpec(wire_name="tables_to_include"),
+    "external_tables_to_exclude": ubx.FieldSpec(wire_name="external_tables_to_exclude"),
+    "external_tables_to_include": ubx.FieldSpec(wire_name="external_tables_to_include"),
+    "functions_to_exclude": ubx.FieldSpec(wire_name="functions_to_exclude"),
+    "functions_to_include": ubx.FieldSpec(wire_name="functions_to_include"),
+    "materialized_views_to_exclude": ubx.FieldSpec(wire_name="materialized_views_to_exclude"),
+    "materialized_views_to_include": ubx.FieldSpec(wire_name="materialized_views_to_include"),
+    "tables_to_exclude": ubx.FieldSpec(wire_name="tables_to_exclude"),
+    "tables_to_include": ubx.FieldSpec(wire_name="tables_to_include"),
 }
 
 _AttachedDatabaseConfiguration_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -57,25 +57,25 @@ class AttachedDatabaseConfigurationConfig:
     sharing: Any = None
     timeouts: Any = None
 
-AttachedDatabaseConfiguration = sdk.ResourceBinding(
+AttachedDatabaseConfiguration = ubx.ResourceBinding(
     wire_type="azurerm_kusto_attached_database_configuration",
     fields={
-        "cluster_id": sdk.FieldSpec(wire_name="cluster_id"),
-        "cluster_name": sdk.FieldSpec(wire_name="cluster_name"),
-        "database_name": sdk.FieldSpec(wire_name="database_name"),
-        "database_name_override": sdk.FieldSpec(wire_name="database_name_override"),
-        "database_name_prefix": sdk.FieldSpec(wire_name="database_name_prefix"),
-        "default_principal_modification_kind": sdk.FieldSpec(wire_name="default_principal_modification_kind"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sharing": sdk.FieldSpec(
+        "cluster_id": ubx.FieldSpec(wire_name="cluster_id"),
+        "cluster_name": ubx.FieldSpec(wire_name="cluster_name"),
+        "database_name": ubx.FieldSpec(wire_name="database_name"),
+        "database_name_override": ubx.FieldSpec(wire_name="database_name_override"),
+        "database_name_prefix": ubx.FieldSpec(wire_name="database_name_prefix"),
+        "default_principal_modification_kind": ubx.FieldSpec(wire_name="default_principal_modification_kind"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sharing": ubx.FieldSpec(
             wire_name="sharing",
             kind="list",
             fields=_AttachedDatabaseConfiguration_SharingFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AttachedDatabaseConfiguration_TimeoutsFields,

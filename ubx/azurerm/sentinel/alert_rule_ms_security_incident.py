@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AlertRuleMsSecurityIncident_Timeouts:
@@ -14,10 +14,10 @@ class AlertRuleMsSecurityIncident_Timeouts:
     update: Any = None
 
 _AlertRuleMsSecurityIncident_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -35,21 +35,21 @@ class AlertRuleMsSecurityIncidentConfig:
     severity_filter: Any = None
     timeouts: Any = None
 
-AlertRuleMsSecurityIncident = sdk.ResourceBinding(
+AlertRuleMsSecurityIncident = ubx.ResourceBinding(
     wire_type="azurerm_sentinel_alert_rule_ms_security_incident",
     fields={
-        "alert_rule_template_guid": sdk.FieldSpec(wire_name="alert_rule_template_guid"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "display_name_exclude_filter": sdk.FieldSpec(wire_name="display_name_exclude_filter"),
-        "display_name_filter": sdk.FieldSpec(wire_name="display_name_filter"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "log_analytics_workspace_id": sdk.FieldSpec(wire_name="log_analytics_workspace_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "product_filter": sdk.FieldSpec(wire_name="product_filter"),
-        "severity_filter": sdk.FieldSpec(wire_name="severity_filter"),
-        "timeouts": sdk.FieldSpec(
+        "alert_rule_template_guid": ubx.FieldSpec(wire_name="alert_rule_template_guid"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "display_name_exclude_filter": ubx.FieldSpec(wire_name="display_name_exclude_filter"),
+        "display_name_filter": ubx.FieldSpec(wire_name="display_name_filter"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "log_analytics_workspace_id": ubx.FieldSpec(wire_name="log_analytics_workspace_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "product_filter": ubx.FieldSpec(wire_name="product_filter"),
+        "severity_filter": ubx.FieldSpec(wire_name="severity_filter"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AlertRuleMsSecurityIncident_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Lb_FrontendIpConfiguration:
@@ -30,26 +30,26 @@ class Lb_Timeouts:
     update: Any = None
 
 _Lb_FrontendIpConfigurationFields = {
-    "gateway_load_balancer_frontend_ip_configuration_id": sdk.FieldSpec(wire_name="gateway_load_balancer_frontend_ip_configuration_id"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "inbound_nat_rules": sdk.FieldSpec(wire_name="inbound_nat_rules"),
-    "load_balancer_rules": sdk.FieldSpec(wire_name="load_balancer_rules"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "outbound_rules": sdk.FieldSpec(wire_name="outbound_rules"),
-    "private_ip_address": sdk.FieldSpec(wire_name="private_ip_address"),
-    "private_ip_address_allocation": sdk.FieldSpec(wire_name="private_ip_address_allocation"),
-    "private_ip_address_version": sdk.FieldSpec(wire_name="private_ip_address_version"),
-    "public_ip_address_id": sdk.FieldSpec(wire_name="public_ip_address_id"),
-    "public_ip_prefix_id": sdk.FieldSpec(wire_name="public_ip_prefix_id"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-    "zones": sdk.FieldSpec(wire_name="zones"),
+    "gateway_load_balancer_frontend_ip_configuration_id": ubx.FieldSpec(wire_name="gateway_load_balancer_frontend_ip_configuration_id"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "inbound_nat_rules": ubx.FieldSpec(wire_name="inbound_nat_rules"),
+    "load_balancer_rules": ubx.FieldSpec(wire_name="load_balancer_rules"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "outbound_rules": ubx.FieldSpec(wire_name="outbound_rules"),
+    "private_ip_address": ubx.FieldSpec(wire_name="private_ip_address"),
+    "private_ip_address_allocation": ubx.FieldSpec(wire_name="private_ip_address_allocation"),
+    "private_ip_address_version": ubx.FieldSpec(wire_name="private_ip_address_version"),
+    "public_ip_address_id": ubx.FieldSpec(wire_name="public_ip_address_id"),
+    "public_ip_prefix_id": ubx.FieldSpec(wire_name="public_ip_prefix_id"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+    "zones": ubx.FieldSpec(wire_name="zones"),
 }
 
 _Lb_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -65,23 +65,23 @@ class LbConfig:
     frontend_ip_configuration: Any = None
     timeouts: Any = None
 
-Lb = sdk.ResourceBinding(
+Lb = ubx.ResourceBinding(
     wire_type="azurerm_lb",
     fields={
-        "edge_zone": sdk.FieldSpec(wire_name="edge_zone"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "sku_tier": sdk.FieldSpec(wire_name="sku_tier"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "frontend_ip_configuration": sdk.FieldSpec(
+        "edge_zone": ubx.FieldSpec(wire_name="edge_zone"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "sku_tier": ubx.FieldSpec(wire_name="sku_tier"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "frontend_ip_configuration": ubx.FieldSpec(
             wire_name="frontend_ip_configuration",
             kind="list",
             fields=_Lb_FrontendIpConfigurationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Lb_TimeoutsFields,

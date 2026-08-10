@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FirewallPolicy_CustomRule_MatchCondition:
@@ -60,23 +60,23 @@ class FirewallPolicy_Timeouts:
     update: Any = None
 
 _FirewallPolicy_CustomRule_MatchConditionFields = {
-    "match_values": sdk.FieldSpec(wire_name="match_values"),
-    "match_variable": sdk.FieldSpec(wire_name="match_variable"),
-    "negation_condition": sdk.FieldSpec(wire_name="negation_condition"),
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "selector": sdk.FieldSpec(wire_name="selector"),
-    "transforms": sdk.FieldSpec(wire_name="transforms"),
+    "match_values": ubx.FieldSpec(wire_name="match_values"),
+    "match_variable": ubx.FieldSpec(wire_name="match_variable"),
+    "negation_condition": ubx.FieldSpec(wire_name="negation_condition"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "selector": ubx.FieldSpec(wire_name="selector"),
+    "transforms": ubx.FieldSpec(wire_name="transforms"),
 }
 
 _FirewallPolicy_CustomRuleFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "priority": sdk.FieldSpec(wire_name="priority"),
-    "rate_limit_duration_in_minutes": sdk.FieldSpec(wire_name="rate_limit_duration_in_minutes"),
-    "rate_limit_threshold": sdk.FieldSpec(wire_name="rate_limit_threshold"),
-    "type": sdk.FieldSpec(wire_name="type"),
-    "match_condition": sdk.FieldSpec(
+    "action": ubx.FieldSpec(wire_name="action"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "priority": ubx.FieldSpec(wire_name="priority"),
+    "rate_limit_duration_in_minutes": ubx.FieldSpec(wire_name="rate_limit_duration_in_minutes"),
+    "rate_limit_threshold": ubx.FieldSpec(wire_name="rate_limit_threshold"),
+    "type": ubx.FieldSpec(wire_name="type"),
+    "match_condition": ubx.FieldSpec(
         wire_name="match_condition",
         kind="list",
         fields=_FirewallPolicy_CustomRule_MatchConditionFields,
@@ -84,16 +84,16 @@ _FirewallPolicy_CustomRuleFields = {
 }
 
 _FirewallPolicy_ManagedRule_ExclusionFields = {
-    "match_variable": sdk.FieldSpec(wire_name="match_variable"),
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "selector": sdk.FieldSpec(wire_name="selector"),
+    "match_variable": ubx.FieldSpec(wire_name="match_variable"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "selector": ubx.FieldSpec(wire_name="selector"),
 }
 
 _FirewallPolicy_ManagedRule_Override_RuleFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "rule_id": sdk.FieldSpec(wire_name="rule_id"),
-    "exclusion": sdk.FieldSpec(
+    "action": ubx.FieldSpec(wire_name="action"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "rule_id": ubx.FieldSpec(wire_name="rule_id"),
+    "exclusion": ubx.FieldSpec(
         wire_name="exclusion",
         kind="list",
         fields=_FirewallPolicy_ManagedRule_ExclusionFields,
@@ -101,13 +101,13 @@ _FirewallPolicy_ManagedRule_Override_RuleFields = {
 }
 
 _FirewallPolicy_ManagedRule_OverrideFields = {
-    "rule_group_name": sdk.FieldSpec(wire_name="rule_group_name"),
-    "exclusion": sdk.FieldSpec(
+    "rule_group_name": ubx.FieldSpec(wire_name="rule_group_name"),
+    "exclusion": ubx.FieldSpec(
         wire_name="exclusion",
         kind="list",
         fields=_FirewallPolicy_ManagedRule_ExclusionFields,
     ),
-    "rule": sdk.FieldSpec(
+    "rule": ubx.FieldSpec(
         wire_name="rule",
         kind="list",
         fields=_FirewallPolicy_ManagedRule_Override_RuleFields,
@@ -115,14 +115,14 @@ _FirewallPolicy_ManagedRule_OverrideFields = {
 }
 
 _FirewallPolicy_ManagedRuleFields = {
-    "type": sdk.FieldSpec(wire_name="type"),
-    "version": sdk.FieldSpec(wire_name="version"),
-    "exclusion": sdk.FieldSpec(
+    "type": ubx.FieldSpec(wire_name="type"),
+    "version": ubx.FieldSpec(wire_name="version"),
+    "exclusion": ubx.FieldSpec(
         wire_name="exclusion",
         kind="list",
         fields=_FirewallPolicy_ManagedRule_ExclusionFields,
     ),
-    "override": sdk.FieldSpec(
+    "override": ubx.FieldSpec(
         wire_name="override",
         kind="list",
         fields=_FirewallPolicy_ManagedRule_OverrideFields,
@@ -130,10 +130,10 @@ _FirewallPolicy_ManagedRuleFields = {
 }
 
 _FirewallPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -151,29 +151,29 @@ class FirewallPolicyConfig:
     managed_rule: Any = None
     timeouts: Any = None
 
-FirewallPolicy = sdk.ResourceBinding(
+FirewallPolicy = ubx.ResourceBinding(
     wire_type="azurerm_frontdoor_firewall_policy",
     fields={
-        "custom_block_response_body": sdk.FieldSpec(wire_name="custom_block_response_body"),
-        "custom_block_response_status_code": sdk.FieldSpec(wire_name="custom_block_response_status_code"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "mode": sdk.FieldSpec(wire_name="mode"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "redirect_url": sdk.FieldSpec(wire_name="redirect_url"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "custom_rule": sdk.FieldSpec(
+        "custom_block_response_body": ubx.FieldSpec(wire_name="custom_block_response_body"),
+        "custom_block_response_status_code": ubx.FieldSpec(wire_name="custom_block_response_status_code"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "mode": ubx.FieldSpec(wire_name="mode"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "redirect_url": ubx.FieldSpec(wire_name="redirect_url"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "custom_rule": ubx.FieldSpec(
             wire_name="custom_rule",
             kind="list",
             fields=_FirewallPolicy_CustomRuleFields,
         ),
-        "managed_rule": sdk.FieldSpec(
+        "managed_rule": ubx.FieldSpec(
             wire_name="managed_rule",
             kind="list",
             fields=_FirewallPolicy_ManagedRuleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FirewallPolicy_TimeoutsFields,

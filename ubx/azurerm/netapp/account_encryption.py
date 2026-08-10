@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AccountEncryption_Timeouts:
@@ -14,10 +14,10 @@ class AccountEncryption_Timeouts:
     update: Any = None
 
 _AccountEncryption_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class AccountEncryptionConfig:
     user_assigned_identity_id: Any = None
     timeouts: Any = None
 
-AccountEncryption = sdk.ResourceBinding(
+AccountEncryption = ubx.ResourceBinding(
     wire_type="azurerm_netapp_account_encryption",
     fields={
-        "cross_tenant_key_vault_resource_id": sdk.FieldSpec(wire_name="cross_tenant_key_vault_resource_id"),
-        "encryption_key": sdk.FieldSpec(wire_name="encryption_key"),
-        "federated_client_id": sdk.FieldSpec(wire_name="federated_client_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "netapp_account_id": sdk.FieldSpec(wire_name="netapp_account_id"),
-        "system_assigned_identity_principal_id": sdk.FieldSpec(wire_name="system_assigned_identity_principal_id"),
-        "user_assigned_identity_id": sdk.FieldSpec(wire_name="user_assigned_identity_id"),
-        "timeouts": sdk.FieldSpec(
+        "cross_tenant_key_vault_resource_id": ubx.FieldSpec(wire_name="cross_tenant_key_vault_resource_id"),
+        "encryption_key": ubx.FieldSpec(wire_name="encryption_key"),
+        "federated_client_id": ubx.FieldSpec(wire_name="federated_client_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "netapp_account_id": ubx.FieldSpec(wire_name="netapp_account_id"),
+        "system_assigned_identity_principal_id": ubx.FieldSpec(wire_name="system_assigned_identity_principal_id"),
+        "user_assigned_identity_id": ubx.FieldSpec(wire_name="user_assigned_identity_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AccountEncryption_TimeoutsFields,

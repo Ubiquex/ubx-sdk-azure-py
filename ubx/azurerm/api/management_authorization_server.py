@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementAuthorizationServer_Timeouts:
@@ -19,15 +19,15 @@ class ManagementAuthorizationServer_TokenBodyParameter:
     value: Any = None
 
 _ManagementAuthorizationServer_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _ManagementAuthorizationServer_TokenBodyParameterFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 @dataclasses.dataclass
@@ -54,34 +54,34 @@ class ManagementAuthorizationServerConfig:
     timeouts: Any = None
     token_body_parameter: Any = None
 
-ManagementAuthorizationServer = sdk.ResourceBinding(
+ManagementAuthorizationServer = ubx.ResourceBinding(
     wire_type="azurerm_api_management_authorization_server",
     fields={
-        "api_management_name": sdk.FieldSpec(wire_name="api_management_name"),
-        "authorization_endpoint": sdk.FieldSpec(wire_name="authorization_endpoint"),
-        "authorization_methods": sdk.FieldSpec(wire_name="authorization_methods"),
-        "bearer_token_sending_methods": sdk.FieldSpec(wire_name="bearer_token_sending_methods"),
-        "client_authentication_method": sdk.FieldSpec(wire_name="client_authentication_method"),
-        "client_id": sdk.FieldSpec(wire_name="client_id"),
-        "client_registration_endpoint": sdk.FieldSpec(wire_name="client_registration_endpoint"),
-        "client_secret": sdk.FieldSpec(wire_name="client_secret"),
-        "default_scope": sdk.FieldSpec(wire_name="default_scope"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "grant_types": sdk.FieldSpec(wire_name="grant_types"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "resource_owner_password": sdk.FieldSpec(wire_name="resource_owner_password"),
-        "resource_owner_username": sdk.FieldSpec(wire_name="resource_owner_username"),
-        "support_state": sdk.FieldSpec(wire_name="support_state"),
-        "token_endpoint": sdk.FieldSpec(wire_name="token_endpoint"),
-        "timeouts": sdk.FieldSpec(
+        "api_management_name": ubx.FieldSpec(wire_name="api_management_name"),
+        "authorization_endpoint": ubx.FieldSpec(wire_name="authorization_endpoint"),
+        "authorization_methods": ubx.FieldSpec(wire_name="authorization_methods"),
+        "bearer_token_sending_methods": ubx.FieldSpec(wire_name="bearer_token_sending_methods"),
+        "client_authentication_method": ubx.FieldSpec(wire_name="client_authentication_method"),
+        "client_id": ubx.FieldSpec(wire_name="client_id"),
+        "client_registration_endpoint": ubx.FieldSpec(wire_name="client_registration_endpoint"),
+        "client_secret": ubx.FieldSpec(wire_name="client_secret"),
+        "default_scope": ubx.FieldSpec(wire_name="default_scope"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "grant_types": ubx.FieldSpec(wire_name="grant_types"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "resource_owner_password": ubx.FieldSpec(wire_name="resource_owner_password"),
+        "resource_owner_username": ubx.FieldSpec(wire_name="resource_owner_username"),
+        "support_state": ubx.FieldSpec(wire_name="support_state"),
+        "token_endpoint": ubx.FieldSpec(wire_name="token_endpoint"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementAuthorizationServer_TimeoutsFields,
         ),
-        "token_body_parameter": sdk.FieldSpec(
+        "token_body_parameter": ubx.FieldSpec(
             wire_name="token_body_parameter",
             kind="list",
             fields=_ManagementAuthorizationServer_TokenBodyParameterFields,

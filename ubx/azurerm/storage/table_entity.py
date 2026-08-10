@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TableEntity_Timeouts:
@@ -14,10 +14,10 @@ class TableEntity_Timeouts:
     update: Any = None
 
 _TableEntity_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class TableEntityConfig:
     storage_table_id: Any = None
     timeouts: Any = None
 
-TableEntity = sdk.ResourceBinding(
+TableEntity = ubx.ResourceBinding(
     wire_type="azurerm_storage_table_entity",
     fields={
-        "entity": sdk.FieldSpec(wire_name="entity"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "partition_key": sdk.FieldSpec(wire_name="partition_key"),
-        "row_key": sdk.FieldSpec(wire_name="row_key"),
-        "storage_table_id": sdk.FieldSpec(wire_name="storage_table_id"),
-        "timeouts": sdk.FieldSpec(
+        "entity": ubx.FieldSpec(wire_name="entity"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "partition_key": ubx.FieldSpec(wire_name="partition_key"),
+        "row_key": ubx.FieldSpec(wire_name="row_key"),
+        "storage_table_id": ubx.FieldSpec(wire_name="storage_table_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_TableEntity_TimeoutsFields,

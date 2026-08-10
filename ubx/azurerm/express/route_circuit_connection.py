@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RouteCircuitConnection_Timeouts:
@@ -14,10 +14,10 @@ class RouteCircuitConnection_Timeouts:
     update: Any = None
 
 _RouteCircuitConnection_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class RouteCircuitConnectionConfig:
     peering_id: Any = None
     timeouts: Any = None
 
-RouteCircuitConnection = sdk.ResourceBinding(
+RouteCircuitConnection = ubx.ResourceBinding(
     wire_type="azurerm_express_route_circuit_connection",
     fields={
-        "address_prefix_ipv4": sdk.FieldSpec(wire_name="address_prefix_ipv4"),
-        "address_prefix_ipv6": sdk.FieldSpec(wire_name="address_prefix_ipv6"),
-        "authorization_key": sdk.FieldSpec(wire_name="authorization_key"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "peer_peering_id": sdk.FieldSpec(wire_name="peer_peering_id"),
-        "peering_id": sdk.FieldSpec(wire_name="peering_id"),
-        "timeouts": sdk.FieldSpec(
+        "address_prefix_ipv4": ubx.FieldSpec(wire_name="address_prefix_ipv4"),
+        "address_prefix_ipv6": ubx.FieldSpec(wire_name="address_prefix_ipv6"),
+        "authorization_key": ubx.FieldSpec(wire_name="authorization_key"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "peer_peering_id": ubx.FieldSpec(wire_name="peer_peering_id"),
+        "peering_id": ubx.FieldSpec(wire_name="peering_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RouteCircuitConnection_TimeoutsFields,

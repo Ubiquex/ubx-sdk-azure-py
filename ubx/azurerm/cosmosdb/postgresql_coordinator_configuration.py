@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PostgresqlCoordinatorConfiguration_Timeouts:
@@ -14,10 +14,10 @@ class PostgresqlCoordinatorConfiguration_Timeouts:
     update: Any = None
 
 _PostgresqlCoordinatorConfiguration_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -28,14 +28,14 @@ class PostgresqlCoordinatorConfigurationConfig:
     value: Any = None
     timeouts: Any = None
 
-PostgresqlCoordinatorConfiguration = sdk.ResourceBinding(
+PostgresqlCoordinatorConfiguration = ubx.ResourceBinding(
     wire_type="azurerm_cosmosdb_postgresql_coordinator_configuration",
     fields={
-        "cluster_id": sdk.FieldSpec(wire_name="cluster_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "value": sdk.FieldSpec(wire_name="value"),
-        "timeouts": sdk.FieldSpec(
+        "cluster_id": ubx.FieldSpec(wire_name="cluster_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "value": ubx.FieldSpec(wire_name="value"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_PostgresqlCoordinatorConfiguration_TimeoutsFields,

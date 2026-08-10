@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryDatasetAzureBlob_SchemaColumn:
@@ -20,16 +20,16 @@ class FactoryDatasetAzureBlob_Timeouts:
     update: Any = None
 
 _FactoryDatasetAzureBlob_SchemaColumnFields = {
-    "description": sdk.FieldSpec(wire_name="description"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _FactoryDatasetAzureBlob_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -50,28 +50,28 @@ class FactoryDatasetAzureBlobConfig:
     schema_column: Any = None
     timeouts: Any = None
 
-FactoryDatasetAzureBlob = sdk.ResourceBinding(
+FactoryDatasetAzureBlob = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_dataset_azure_blob",
     fields={
-        "additional_properties": sdk.FieldSpec(wire_name="additional_properties"),
-        "annotations": sdk.FieldSpec(wire_name="annotations"),
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "dynamic_filename_enabled": sdk.FieldSpec(wire_name="dynamic_filename_enabled"),
-        "dynamic_path_enabled": sdk.FieldSpec(wire_name="dynamic_path_enabled"),
-        "filename": sdk.FieldSpec(wire_name="filename"),
-        "folder": sdk.FieldSpec(wire_name="folder"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "linked_service_name": sdk.FieldSpec(wire_name="linked_service_name"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parameters": sdk.FieldSpec(wire_name="parameters"),
-        "path": sdk.FieldSpec(wire_name="path"),
-        "schema_column": sdk.FieldSpec(
+        "additional_properties": ubx.FieldSpec(wire_name="additional_properties"),
+        "annotations": ubx.FieldSpec(wire_name="annotations"),
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "dynamic_filename_enabled": ubx.FieldSpec(wire_name="dynamic_filename_enabled"),
+        "dynamic_path_enabled": ubx.FieldSpec(wire_name="dynamic_path_enabled"),
+        "filename": ubx.FieldSpec(wire_name="filename"),
+        "folder": ubx.FieldSpec(wire_name="folder"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "linked_service_name": ubx.FieldSpec(wire_name="linked_service_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parameters": ubx.FieldSpec(wire_name="parameters"),
+        "path": ubx.FieldSpec(wire_name="path"),
+        "schema_column": ubx.FieldSpec(
             wire_name="schema_column",
             kind="list",
             fields=_FactoryDatasetAzureBlob_SchemaColumnFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryDatasetAzureBlob_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MachineGalleryApplicationAssignment_Timeouts:
@@ -14,10 +14,10 @@ class MachineGalleryApplicationAssignment_Timeouts:
     update: Any = None
 
 _MachineGalleryApplicationAssignment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class MachineGalleryApplicationAssignmentConfig:
     virtual_machine_id: Any = None
     timeouts: Any = None
 
-MachineGalleryApplicationAssignment = sdk.ResourceBinding(
+MachineGalleryApplicationAssignment = ubx.ResourceBinding(
     wire_type="azurerm_virtual_machine_gallery_application_assignment",
     fields={
-        "configuration_blob_uri": sdk.FieldSpec(wire_name="configuration_blob_uri"),
-        "gallery_application_version_id": sdk.FieldSpec(wire_name="gallery_application_version_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "order": sdk.FieldSpec(wire_name="order"),
-        "tag": sdk.FieldSpec(wire_name="tag"),
-        "virtual_machine_id": sdk.FieldSpec(wire_name="virtual_machine_id"),
-        "timeouts": sdk.FieldSpec(
+        "configuration_blob_uri": ubx.FieldSpec(wire_name="configuration_blob_uri"),
+        "gallery_application_version_id": ubx.FieldSpec(wire_name="gallery_application_version_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "order": ubx.FieldSpec(wire_name="order"),
+        "tag": ubx.FieldSpec(wire_name="tag"),
+        "virtual_machine_id": ubx.FieldSpec(wire_name="virtual_machine_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_MachineGalleryApplicationAssignment_TimeoutsFields,

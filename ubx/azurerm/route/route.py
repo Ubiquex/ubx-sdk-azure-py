@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Route_Timeouts:
@@ -14,10 +14,10 @@ class Route_Timeouts:
     update: Any = None
 
 _Route_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class RouteConfig:
     route_table_name: Any = None
     timeouts: Any = None
 
-Route = sdk.ResourceBinding(
+Route = ubx.ResourceBinding(
     wire_type="azurerm_route",
     fields={
-        "address_prefix": sdk.FieldSpec(wire_name="address_prefix"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "next_hop_in_ip_address": sdk.FieldSpec(wire_name="next_hop_in_ip_address"),
-        "next_hop_type": sdk.FieldSpec(wire_name="next_hop_type"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "route_table_name": sdk.FieldSpec(wire_name="route_table_name"),
-        "timeouts": sdk.FieldSpec(
+        "address_prefix": ubx.FieldSpec(wire_name="address_prefix"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "next_hop_in_ip_address": ubx.FieldSpec(wire_name="next_hop_in_ip_address"),
+        "next_hop_type": ubx.FieldSpec(wire_name="next_hop_type"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "route_table_name": ubx.FieldSpec(wire_name="route_table_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Route_TimeoutsFields,

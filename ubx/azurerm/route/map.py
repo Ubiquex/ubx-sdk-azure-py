@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Map_Rule_Action_Parameter:
@@ -39,14 +39,14 @@ class Map_Timeouts:
     update: Any = None
 
 _Map_Rule_Action_ParameterFields = {
-    "as_path": sdk.FieldSpec(wire_name="as_path"),
-    "community": sdk.FieldSpec(wire_name="community"),
-    "route_prefix": sdk.FieldSpec(wire_name="route_prefix"),
+    "as_path": ubx.FieldSpec(wire_name="as_path"),
+    "community": ubx.FieldSpec(wire_name="community"),
+    "route_prefix": ubx.FieldSpec(wire_name="route_prefix"),
 }
 
 _Map_Rule_ActionFields = {
-    "type": sdk.FieldSpec(wire_name="type"),
-    "parameter": sdk.FieldSpec(
+    "type": ubx.FieldSpec(wire_name="type"),
+    "parameter": ubx.FieldSpec(
         wire_name="parameter",
         kind="list",
         fields=_Map_Rule_Action_ParameterFields,
@@ -54,21 +54,21 @@ _Map_Rule_ActionFields = {
 }
 
 _Map_Rule_MatchCriterionFields = {
-    "as_path": sdk.FieldSpec(wire_name="as_path"),
-    "community": sdk.FieldSpec(wire_name="community"),
-    "match_condition": sdk.FieldSpec(wire_name="match_condition"),
-    "route_prefix": sdk.FieldSpec(wire_name="route_prefix"),
+    "as_path": ubx.FieldSpec(wire_name="as_path"),
+    "community": ubx.FieldSpec(wire_name="community"),
+    "match_condition": ubx.FieldSpec(wire_name="match_condition"),
+    "route_prefix": ubx.FieldSpec(wire_name="route_prefix"),
 }
 
 _Map_RuleFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "next_step_if_matched": sdk.FieldSpec(wire_name="next_step_if_matched"),
-    "action": sdk.FieldSpec(
+    "name": ubx.FieldSpec(wire_name="name"),
+    "next_step_if_matched": ubx.FieldSpec(wire_name="next_step_if_matched"),
+    "action": ubx.FieldSpec(
         wire_name="action",
         kind="list",
         fields=_Map_Rule_ActionFields,
     ),
-    "match_criterion": sdk.FieldSpec(
+    "match_criterion": ubx.FieldSpec(
         wire_name="match_criterion",
         kind="list",
         fields=_Map_Rule_MatchCriterionFields,
@@ -76,10 +76,10 @@ _Map_RuleFields = {
 }
 
 _Map_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -90,18 +90,18 @@ class MapConfig:
     rule: Any = None
     timeouts: Any = None
 
-Map = sdk.ResourceBinding(
+Map = ubx.ResourceBinding(
     wire_type="azurerm_route_map",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "virtual_hub_id": sdk.FieldSpec(wire_name="virtual_hub_id"),
-        "rule": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "virtual_hub_id": ubx.FieldSpec(wire_name="virtual_hub_id"),
+        "rule": ubx.FieldSpec(
             wire_name="rule",
             kind="list",
             fields=_Map_RuleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Map_TimeoutsFields,

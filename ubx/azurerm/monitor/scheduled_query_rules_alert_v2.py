@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ScheduledQueryRulesAlertV2_Action:
@@ -49,35 +49,35 @@ class ScheduledQueryRulesAlertV2_Timeouts:
     update: Any = None
 
 _ScheduledQueryRulesAlertV2_ActionFields = {
-    "action_groups": sdk.FieldSpec(wire_name="action_groups"),
-    "custom_properties": sdk.FieldSpec(wire_name="custom_properties"),
-    "email_subject": sdk.FieldSpec(wire_name="email_subject"),
+    "action_groups": ubx.FieldSpec(wire_name="action_groups"),
+    "custom_properties": ubx.FieldSpec(wire_name="custom_properties"),
+    "email_subject": ubx.FieldSpec(wire_name="email_subject"),
 }
 
 _ScheduledQueryRulesAlertV2_Criteria_DimensionFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "values": sdk.FieldSpec(wire_name="values"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "values": ubx.FieldSpec(wire_name="values"),
 }
 
 _ScheduledQueryRulesAlertV2_Criteria_FailingPeriodsFields = {
-    "minimum_failing_periods_to_trigger_alert": sdk.FieldSpec(wire_name="minimum_failing_periods_to_trigger_alert"),
-    "number_of_evaluation_periods": sdk.FieldSpec(wire_name="number_of_evaluation_periods"),
+    "minimum_failing_periods_to_trigger_alert": ubx.FieldSpec(wire_name="minimum_failing_periods_to_trigger_alert"),
+    "number_of_evaluation_periods": ubx.FieldSpec(wire_name="number_of_evaluation_periods"),
 }
 
 _ScheduledQueryRulesAlertV2_CriteriaFields = {
-    "metric_measure_column": sdk.FieldSpec(wire_name="metric_measure_column"),
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "query": sdk.FieldSpec(wire_name="query"),
-    "resource_id_column": sdk.FieldSpec(wire_name="resource_id_column"),
-    "threshold": sdk.FieldSpec(wire_name="threshold"),
-    "time_aggregation_method": sdk.FieldSpec(wire_name="time_aggregation_method"),
-    "dimension": sdk.FieldSpec(
+    "metric_measure_column": ubx.FieldSpec(wire_name="metric_measure_column"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "query": ubx.FieldSpec(wire_name="query"),
+    "resource_id_column": ubx.FieldSpec(wire_name="resource_id_column"),
+    "threshold": ubx.FieldSpec(wire_name="threshold"),
+    "time_aggregation_method": ubx.FieldSpec(wire_name="time_aggregation_method"),
+    "dimension": ubx.FieldSpec(
         wire_name="dimension",
         kind="list",
         fields=_ScheduledQueryRulesAlertV2_Criteria_DimensionFields,
     ),
-    "failing_periods": sdk.FieldSpec(
+    "failing_periods": ubx.FieldSpec(
         wire_name="failing_periods",
         kind="list",
         fields=_ScheduledQueryRulesAlertV2_Criteria_FailingPeriodsFields,
@@ -85,17 +85,17 @@ _ScheduledQueryRulesAlertV2_CriteriaFields = {
 }
 
 _ScheduledQueryRulesAlertV2_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _ScheduledQueryRulesAlertV2_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -123,43 +123,43 @@ class ScheduledQueryRulesAlertV2Config:
     identity: Any = None
     timeouts: Any = None
 
-ScheduledQueryRulesAlertV2 = sdk.ResourceBinding(
+ScheduledQueryRulesAlertV2 = ubx.ResourceBinding(
     wire_type="azurerm_monitor_scheduled_query_rules_alert_v2",
     fields={
-        "auto_mitigation_enabled": sdk.FieldSpec(wire_name="auto_mitigation_enabled"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "evaluation_frequency": sdk.FieldSpec(wire_name="evaluation_frequency"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "mute_actions_after_alert_duration": sdk.FieldSpec(wire_name="mute_actions_after_alert_duration"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "query_time_range_override": sdk.FieldSpec(wire_name="query_time_range_override"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "scopes": sdk.FieldSpec(wire_name="scopes"),
-        "severity": sdk.FieldSpec(wire_name="severity"),
-        "skip_query_validation": sdk.FieldSpec(wire_name="skip_query_validation"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "target_resource_types": sdk.FieldSpec(wire_name="target_resource_types"),
-        "window_duration": sdk.FieldSpec(wire_name="window_duration"),
-        "workspace_alerts_storage_enabled": sdk.FieldSpec(wire_name="workspace_alerts_storage_enabled"),
-        "action": sdk.FieldSpec(
+        "auto_mitigation_enabled": ubx.FieldSpec(wire_name="auto_mitigation_enabled"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "evaluation_frequency": ubx.FieldSpec(wire_name="evaluation_frequency"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "mute_actions_after_alert_duration": ubx.FieldSpec(wire_name="mute_actions_after_alert_duration"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "query_time_range_override": ubx.FieldSpec(wire_name="query_time_range_override"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "scopes": ubx.FieldSpec(wire_name="scopes"),
+        "severity": ubx.FieldSpec(wire_name="severity"),
+        "skip_query_validation": ubx.FieldSpec(wire_name="skip_query_validation"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "target_resource_types": ubx.FieldSpec(wire_name="target_resource_types"),
+        "window_duration": ubx.FieldSpec(wire_name="window_duration"),
+        "workspace_alerts_storage_enabled": ubx.FieldSpec(wire_name="workspace_alerts_storage_enabled"),
+        "action": ubx.FieldSpec(
             wire_name="action",
             kind="list",
             fields=_ScheduledQueryRulesAlertV2_ActionFields,
         ),
-        "criteria": sdk.FieldSpec(
+        "criteria": ubx.FieldSpec(
             wire_name="criteria",
             kind="list",
             fields=_ScheduledQueryRulesAlertV2_CriteriaFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_ScheduledQueryRulesAlertV2_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ScheduledQueryRulesAlertV2_TimeoutsFields,

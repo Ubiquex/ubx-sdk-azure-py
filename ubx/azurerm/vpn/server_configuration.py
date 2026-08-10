@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServerConfiguration_AzureActiveDirectoryAuthentication:
@@ -53,50 +53,50 @@ class ServerConfiguration_Timeouts:
     update: Any = None
 
 _ServerConfiguration_AzureActiveDirectoryAuthenticationFields = {
-    "audience": sdk.FieldSpec(wire_name="audience"),
-    "issuer": sdk.FieldSpec(wire_name="issuer"),
-    "tenant": sdk.FieldSpec(wire_name="tenant"),
+    "audience": ubx.FieldSpec(wire_name="audience"),
+    "issuer": ubx.FieldSpec(wire_name="issuer"),
+    "tenant": ubx.FieldSpec(wire_name="tenant"),
 }
 
 _ServerConfiguration_ClientRevokedCertificateFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "thumbprint": sdk.FieldSpec(wire_name="thumbprint"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "thumbprint": ubx.FieldSpec(wire_name="thumbprint"),
 }
 
 _ServerConfiguration_ClientRootCertificateFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "public_cert_data": sdk.FieldSpec(wire_name="public_cert_data"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "public_cert_data": ubx.FieldSpec(wire_name="public_cert_data"),
 }
 
 _ServerConfiguration_IpsecPolicyFields = {
-    "dh_group": sdk.FieldSpec(wire_name="dh_group"),
-    "ike_encryption": sdk.FieldSpec(wire_name="ike_encryption"),
-    "ike_integrity": sdk.FieldSpec(wire_name="ike_integrity"),
-    "ipsec_encryption": sdk.FieldSpec(wire_name="ipsec_encryption"),
-    "ipsec_integrity": sdk.FieldSpec(wire_name="ipsec_integrity"),
-    "pfs_group": sdk.FieldSpec(wire_name="pfs_group"),
-    "sa_data_size_kilobytes": sdk.FieldSpec(wire_name="sa_data_size_kilobytes"),
-    "sa_lifetime_seconds": sdk.FieldSpec(wire_name="sa_lifetime_seconds"),
+    "dh_group": ubx.FieldSpec(wire_name="dh_group"),
+    "ike_encryption": ubx.FieldSpec(wire_name="ike_encryption"),
+    "ike_integrity": ubx.FieldSpec(wire_name="ike_integrity"),
+    "ipsec_encryption": ubx.FieldSpec(wire_name="ipsec_encryption"),
+    "ipsec_integrity": ubx.FieldSpec(wire_name="ipsec_integrity"),
+    "pfs_group": ubx.FieldSpec(wire_name="pfs_group"),
+    "sa_data_size_kilobytes": ubx.FieldSpec(wire_name="sa_data_size_kilobytes"),
+    "sa_lifetime_seconds": ubx.FieldSpec(wire_name="sa_lifetime_seconds"),
 }
 
 _ServerConfiguration_Radius_ServerFields = {
-    "address": sdk.FieldSpec(wire_name="address"),
-    "score": sdk.FieldSpec(wire_name="score"),
-    "secret": sdk.FieldSpec(wire_name="secret"),
+    "address": ubx.FieldSpec(wire_name="address"),
+    "score": ubx.FieldSpec(wire_name="score"),
+    "secret": ubx.FieldSpec(wire_name="secret"),
 }
 
 _ServerConfiguration_RadiusFields = {
-    "client_root_certificate": sdk.FieldSpec(
+    "client_root_certificate": ubx.FieldSpec(
         wire_name="client_root_certificate",
         kind="set",
         fields=_ServerConfiguration_ClientRevokedCertificateFields,
     ),
-    "server": sdk.FieldSpec(
+    "server": ubx.FieldSpec(
         wire_name="server",
         kind="list",
         fields=_ServerConfiguration_Radius_ServerFields,
     ),
-    "server_root_certificate": sdk.FieldSpec(
+    "server_root_certificate": ubx.FieldSpec(
         wire_name="server_root_certificate",
         kind="set",
         fields=_ServerConfiguration_ClientRootCertificateFields,
@@ -104,10 +104,10 @@ _ServerConfiguration_RadiusFields = {
 }
 
 _ServerConfiguration_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -126,42 +126,42 @@ class ServerConfigurationConfig:
     radius: Any = None
     timeouts: Any = None
 
-ServerConfiguration = sdk.ResourceBinding(
+ServerConfiguration = ubx.ResourceBinding(
     wire_type="azurerm_vpn_server_configuration",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "vpn_authentication_types": sdk.FieldSpec(wire_name="vpn_authentication_types"),
-        "vpn_protocols": sdk.FieldSpec(wire_name="vpn_protocols"),
-        "azure_active_directory_authentication": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "vpn_authentication_types": ubx.FieldSpec(wire_name="vpn_authentication_types"),
+        "vpn_protocols": ubx.FieldSpec(wire_name="vpn_protocols"),
+        "azure_active_directory_authentication": ubx.FieldSpec(
             wire_name="azure_active_directory_authentication",
             kind="list",
             fields=_ServerConfiguration_AzureActiveDirectoryAuthenticationFields,
         ),
-        "client_revoked_certificate": sdk.FieldSpec(
+        "client_revoked_certificate": ubx.FieldSpec(
             wire_name="client_revoked_certificate",
             kind="set",
             fields=_ServerConfiguration_ClientRevokedCertificateFields,
         ),
-        "client_root_certificate": sdk.FieldSpec(
+        "client_root_certificate": ubx.FieldSpec(
             wire_name="client_root_certificate",
             kind="set",
             fields=_ServerConfiguration_ClientRootCertificateFields,
         ),
-        "ipsec_policy": sdk.FieldSpec(
+        "ipsec_policy": ubx.FieldSpec(
             wire_name="ipsec_policy",
             kind="list",
             fields=_ServerConfiguration_IpsecPolicyFields,
         ),
-        "radius": sdk.FieldSpec(
+        "radius": ubx.FieldSpec(
             wire_name="radius",
             kind="list",
             fields=_ServerConfiguration_RadiusFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ServerConfiguration_TimeoutsFields,

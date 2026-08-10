@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServiceEndpointStoragePolicy_Definition:
@@ -21,17 +21,17 @@ class ServiceEndpointStoragePolicy_Timeouts:
     update: Any = None
 
 _ServiceEndpointStoragePolicy_DefinitionFields = {
-    "description": sdk.FieldSpec(wire_name="description"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "service": sdk.FieldSpec(wire_name="service"),
-    "service_resources": sdk.FieldSpec(wire_name="service_resources"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "service": ubx.FieldSpec(wire_name="service"),
+    "service_resources": ubx.FieldSpec(wire_name="service_resources"),
 }
 
 _ServiceEndpointStoragePolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -44,20 +44,20 @@ class ServiceEndpointStoragePolicyConfig:
     definition: Any = None
     timeouts: Any = None
 
-ServiceEndpointStoragePolicy = sdk.ResourceBinding(
+ServiceEndpointStoragePolicy = ubx.ResourceBinding(
     wire_type="azurerm_subnet_service_endpoint_storage_policy",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "definition": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "definition": ubx.FieldSpec(
             wire_name="definition",
             kind="list",
             fields=_ServiceEndpointStoragePolicy_DefinitionFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ServiceEndpointStoragePolicy_TimeoutsFields,

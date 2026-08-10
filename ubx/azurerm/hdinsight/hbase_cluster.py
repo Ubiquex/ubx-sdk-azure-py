@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HbaseCluster_ComponentVersion:
@@ -145,50 +145,50 @@ class HbaseCluster_Timeouts:
     update: Any = None
 
 _HbaseCluster_ComponentVersionFields = {
-    "hbase": sdk.FieldSpec(wire_name="hbase"),
+    "hbase": ubx.FieldSpec(wire_name="hbase"),
 }
 
 _HbaseCluster_ComputeIsolationFields = {
-    "compute_isolation_enabled": sdk.FieldSpec(wire_name="compute_isolation_enabled"),
-    "host_sku": sdk.FieldSpec(wire_name="host_sku"),
+    "compute_isolation_enabled": ubx.FieldSpec(wire_name="compute_isolation_enabled"),
+    "host_sku": ubx.FieldSpec(wire_name="host_sku"),
 }
 
 _HbaseCluster_DiskEncryptionFields = {
-    "encryption_algorithm": sdk.FieldSpec(wire_name="encryption_algorithm"),
-    "encryption_at_host_enabled": sdk.FieldSpec(wire_name="encryption_at_host_enabled"),
-    "key_vault_key_id": sdk.FieldSpec(wire_name="key_vault_key_id"),
-    "key_vault_managed_identity_id": sdk.FieldSpec(wire_name="key_vault_managed_identity_id"),
+    "encryption_algorithm": ubx.FieldSpec(wire_name="encryption_algorithm"),
+    "encryption_at_host_enabled": ubx.FieldSpec(wire_name="encryption_at_host_enabled"),
+    "key_vault_key_id": ubx.FieldSpec(wire_name="key_vault_key_id"),
+    "key_vault_managed_identity_id": ubx.FieldSpec(wire_name="key_vault_managed_identity_id"),
 }
 
 _HbaseCluster_ExtensionFields = {
-    "log_analytics_workspace_id": sdk.FieldSpec(wire_name="log_analytics_workspace_id"),
-    "primary_key": sdk.FieldSpec(wire_name="primary_key"),
+    "log_analytics_workspace_id": ubx.FieldSpec(wire_name="log_analytics_workspace_id"),
+    "primary_key": ubx.FieldSpec(wire_name="primary_key"),
 }
 
 _HbaseCluster_GatewayFields = {
-    "password": sdk.FieldSpec(wire_name="password"),
-    "username": sdk.FieldSpec(wire_name="username"),
+    "password": ubx.FieldSpec(wire_name="password"),
+    "username": ubx.FieldSpec(wire_name="username"),
 }
 
 _HbaseCluster_Metastores_AmbariFields = {
-    "database_name": sdk.FieldSpec(wire_name="database_name"),
-    "password": sdk.FieldSpec(wire_name="password"),
-    "server": sdk.FieldSpec(wire_name="server"),
-    "username": sdk.FieldSpec(wire_name="username"),
+    "database_name": ubx.FieldSpec(wire_name="database_name"),
+    "password": ubx.FieldSpec(wire_name="password"),
+    "server": ubx.FieldSpec(wire_name="server"),
+    "username": ubx.FieldSpec(wire_name="username"),
 }
 
 _HbaseCluster_MetastoresFields = {
-    "ambari": sdk.FieldSpec(
+    "ambari": ubx.FieldSpec(
         wire_name="ambari",
         kind="list",
         fields=_HbaseCluster_Metastores_AmbariFields,
     ),
-    "hive": sdk.FieldSpec(
+    "hive": ubx.FieldSpec(
         wire_name="hive",
         kind="list",
         fields=_HbaseCluster_Metastores_AmbariFields,
     ),
-    "oozie": sdk.FieldSpec(
+    "oozie": ubx.FieldSpec(
         wire_name="oozie",
         kind="list",
         fields=_HbaseCluster_Metastores_AmbariFields,
@@ -196,22 +196,22 @@ _HbaseCluster_MetastoresFields = {
 }
 
 _HbaseCluster_NetworkFields = {
-    "connection_direction": sdk.FieldSpec(wire_name="connection_direction"),
-    "private_link_enabled": sdk.FieldSpec(wire_name="private_link_enabled"),
+    "connection_direction": ubx.FieldSpec(wire_name="connection_direction"),
+    "private_link_enabled": ubx.FieldSpec(wire_name="private_link_enabled"),
 }
 
 _HbaseCluster_PrivateLinkConfiguration_IpConfigurationFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "primary": sdk.FieldSpec(wire_name="primary"),
-    "private_ip_address": sdk.FieldSpec(wire_name="private_ip_address"),
-    "private_ip_allocation_method": sdk.FieldSpec(wire_name="private_ip_allocation_method"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "primary": ubx.FieldSpec(wire_name="primary"),
+    "private_ip_address": ubx.FieldSpec(wire_name="private_ip_address"),
+    "private_ip_allocation_method": ubx.FieldSpec(wire_name="private_ip_allocation_method"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _HbaseCluster_PrivateLinkConfigurationFields = {
-    "group_id": sdk.FieldSpec(wire_name="group_id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "ip_configuration": sdk.FieldSpec(
+    "group_id": ubx.FieldSpec(wire_name="group_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "ip_configuration": ubx.FieldSpec(
         wire_name="ip_configuration",
         kind="list",
         fields=_HbaseCluster_PrivateLinkConfiguration_IpConfigurationFields,
@@ -219,19 +219,19 @@ _HbaseCluster_PrivateLinkConfigurationFields = {
 }
 
 _HbaseCluster_Roles_HeadNode_ScriptActionsFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "parameters": sdk.FieldSpec(wire_name="parameters"),
-    "uri": sdk.FieldSpec(wire_name="uri"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "parameters": ubx.FieldSpec(wire_name="parameters"),
+    "uri": ubx.FieldSpec(wire_name="uri"),
 }
 
 _HbaseCluster_Roles_HeadNodeFields = {
-    "password": sdk.FieldSpec(wire_name="password"),
-    "ssh_keys": sdk.FieldSpec(wire_name="ssh_keys"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-    "username": sdk.FieldSpec(wire_name="username"),
-    "virtual_network_id": sdk.FieldSpec(wire_name="virtual_network_id"),
-    "vm_size": sdk.FieldSpec(wire_name="vm_size"),
-    "script_actions": sdk.FieldSpec(
+    "password": ubx.FieldSpec(wire_name="password"),
+    "ssh_keys": ubx.FieldSpec(wire_name="ssh_keys"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+    "username": ubx.FieldSpec(wire_name="username"),
+    "virtual_network_id": ubx.FieldSpec(wire_name="virtual_network_id"),
+    "vm_size": ubx.FieldSpec(wire_name="vm_size"),
+    "script_actions": ubx.FieldSpec(
         wire_name="script_actions",
         kind="list",
         fields=_HbaseCluster_Roles_HeadNode_ScriptActionsFields,
@@ -239,14 +239,14 @@ _HbaseCluster_Roles_HeadNodeFields = {
 }
 
 _HbaseCluster_Roles_WorkerNode_Autoscale_Recurrence_ScheduleFields = {
-    "days": sdk.FieldSpec(wire_name="days"),
-    "target_instance_count": sdk.FieldSpec(wire_name="target_instance_count"),
-    "time": sdk.FieldSpec(wire_name="time"),
+    "days": ubx.FieldSpec(wire_name="days"),
+    "target_instance_count": ubx.FieldSpec(wire_name="target_instance_count"),
+    "time": ubx.FieldSpec(wire_name="time"),
 }
 
 _HbaseCluster_Roles_WorkerNode_Autoscale_RecurrenceFields = {
-    "timezone": sdk.FieldSpec(wire_name="timezone"),
-    "schedule": sdk.FieldSpec(
+    "timezone": ubx.FieldSpec(wire_name="timezone"),
+    "schedule": ubx.FieldSpec(
         wire_name="schedule",
         kind="list",
         fields=_HbaseCluster_Roles_WorkerNode_Autoscale_Recurrence_ScheduleFields,
@@ -254,7 +254,7 @@ _HbaseCluster_Roles_WorkerNode_Autoscale_RecurrenceFields = {
 }
 
 _HbaseCluster_Roles_WorkerNode_AutoscaleFields = {
-    "recurrence": sdk.FieldSpec(
+    "recurrence": ubx.FieldSpec(
         wire_name="recurrence",
         kind="list",
         fields=_HbaseCluster_Roles_WorkerNode_Autoscale_RecurrenceFields,
@@ -262,19 +262,19 @@ _HbaseCluster_Roles_WorkerNode_AutoscaleFields = {
 }
 
 _HbaseCluster_Roles_WorkerNodeFields = {
-    "password": sdk.FieldSpec(wire_name="password"),
-    "ssh_keys": sdk.FieldSpec(wire_name="ssh_keys"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-    "target_instance_count": sdk.FieldSpec(wire_name="target_instance_count"),
-    "username": sdk.FieldSpec(wire_name="username"),
-    "virtual_network_id": sdk.FieldSpec(wire_name="virtual_network_id"),
-    "vm_size": sdk.FieldSpec(wire_name="vm_size"),
-    "autoscale": sdk.FieldSpec(
+    "password": ubx.FieldSpec(wire_name="password"),
+    "ssh_keys": ubx.FieldSpec(wire_name="ssh_keys"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+    "target_instance_count": ubx.FieldSpec(wire_name="target_instance_count"),
+    "username": ubx.FieldSpec(wire_name="username"),
+    "virtual_network_id": ubx.FieldSpec(wire_name="virtual_network_id"),
+    "vm_size": ubx.FieldSpec(wire_name="vm_size"),
+    "autoscale": ubx.FieldSpec(
         wire_name="autoscale",
         kind="list",
         fields=_HbaseCluster_Roles_WorkerNode_AutoscaleFields,
     ),
-    "script_actions": sdk.FieldSpec(
+    "script_actions": ubx.FieldSpec(
         wire_name="script_actions",
         kind="list",
         fields=_HbaseCluster_Roles_HeadNode_ScriptActionsFields,
@@ -282,17 +282,17 @@ _HbaseCluster_Roles_WorkerNodeFields = {
 }
 
 _HbaseCluster_RolesFields = {
-    "head_node": sdk.FieldSpec(
+    "head_node": ubx.FieldSpec(
         wire_name="head_node",
         kind="list",
         fields=_HbaseCluster_Roles_HeadNodeFields,
     ),
-    "worker_node": sdk.FieldSpec(
+    "worker_node": ubx.FieldSpec(
         wire_name="worker_node",
         kind="list",
         fields=_HbaseCluster_Roles_WorkerNodeFields,
     ),
-    "zookeeper_node": sdk.FieldSpec(
+    "zookeeper_node": ubx.FieldSpec(
         wire_name="zookeeper_node",
         kind="list",
         fields=_HbaseCluster_Roles_HeadNodeFields,
@@ -300,34 +300,34 @@ _HbaseCluster_RolesFields = {
 }
 
 _HbaseCluster_SecurityProfileFields = {
-    "aadds_resource_id": sdk.FieldSpec(wire_name="aadds_resource_id"),
-    "cluster_users_group_dns": sdk.FieldSpec(wire_name="cluster_users_group_dns"),
-    "domain_name": sdk.FieldSpec(wire_name="domain_name"),
-    "domain_user_password": sdk.FieldSpec(wire_name="domain_user_password"),
-    "domain_username": sdk.FieldSpec(wire_name="domain_username"),
-    "ldaps_urls": sdk.FieldSpec(wire_name="ldaps_urls"),
-    "msi_resource_id": sdk.FieldSpec(wire_name="msi_resource_id"),
+    "aadds_resource_id": ubx.FieldSpec(wire_name="aadds_resource_id"),
+    "cluster_users_group_dns": ubx.FieldSpec(wire_name="cluster_users_group_dns"),
+    "domain_name": ubx.FieldSpec(wire_name="domain_name"),
+    "domain_user_password": ubx.FieldSpec(wire_name="domain_user_password"),
+    "domain_username": ubx.FieldSpec(wire_name="domain_username"),
+    "ldaps_urls": ubx.FieldSpec(wire_name="ldaps_urls"),
+    "msi_resource_id": ubx.FieldSpec(wire_name="msi_resource_id"),
 }
 
 _HbaseCluster_StorageAccountFields = {
-    "is_default": sdk.FieldSpec(wire_name="is_default"),
-    "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-    "storage_account_key": sdk.FieldSpec(wire_name="storage_account_key"),
-    "storage_container_url": sdk.FieldSpec(wire_name="storage_container_url"),
+    "is_default": ubx.FieldSpec(wire_name="is_default"),
+    "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+    "storage_account_key": ubx.FieldSpec(wire_name="storage_account_key"),
+    "storage_container_url": ubx.FieldSpec(wire_name="storage_container_url"),
 }
 
 _HbaseCluster_StorageAccountGen2Fields = {
-    "filesystem_id": sdk.FieldSpec(wire_name="filesystem_id"),
-    "is_default": sdk.FieldSpec(wire_name="is_default"),
-    "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-    "user_assigned_identity_id": sdk.FieldSpec(wire_name="user_assigned_identity_id"),
+    "filesystem_id": ubx.FieldSpec(wire_name="filesystem_id"),
+    "is_default": ubx.FieldSpec(wire_name="is_default"),
+    "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+    "user_assigned_identity_id": ubx.FieldSpec(wire_name="user_assigned_identity_id"),
 }
 
 _HbaseCluster_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -355,83 +355,83 @@ class HbaseClusterConfig:
     storage_account_gen2: Any = None
     timeouts: Any = None
 
-HbaseCluster = sdk.ResourceBinding(
+HbaseCluster = ubx.ResourceBinding(
     wire_type="azurerm_hdinsight_hbase_cluster",
     fields={
-        "cluster_version": sdk.FieldSpec(wire_name="cluster_version"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "tier": sdk.FieldSpec(wire_name="tier"),
-        "tls_min_version": sdk.FieldSpec(wire_name="tls_min_version"),
-        "component_version": sdk.FieldSpec(
+        "cluster_version": ubx.FieldSpec(wire_name="cluster_version"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "tier": ubx.FieldSpec(wire_name="tier"),
+        "tls_min_version": ubx.FieldSpec(wire_name="tls_min_version"),
+        "component_version": ubx.FieldSpec(
             wire_name="component_version",
             kind="list",
             fields=_HbaseCluster_ComponentVersionFields,
         ),
-        "compute_isolation": sdk.FieldSpec(
+        "compute_isolation": ubx.FieldSpec(
             wire_name="compute_isolation",
             kind="list",
             fields=_HbaseCluster_ComputeIsolationFields,
         ),
-        "disk_encryption": sdk.FieldSpec(
+        "disk_encryption": ubx.FieldSpec(
             wire_name="disk_encryption",
             kind="list",
             fields=_HbaseCluster_DiskEncryptionFields,
         ),
-        "extension": sdk.FieldSpec(
+        "extension": ubx.FieldSpec(
             wire_name="extension",
             kind="list",
             fields=_HbaseCluster_ExtensionFields,
         ),
-        "gateway": sdk.FieldSpec(
+        "gateway": ubx.FieldSpec(
             wire_name="gateway",
             kind="list",
             fields=_HbaseCluster_GatewayFields,
         ),
-        "metastores": sdk.FieldSpec(
+        "metastores": ubx.FieldSpec(
             wire_name="metastores",
             kind="list",
             fields=_HbaseCluster_MetastoresFields,
         ),
-        "monitor": sdk.FieldSpec(
+        "monitor": ubx.FieldSpec(
             wire_name="monitor",
             kind="list",
             fields=_HbaseCluster_ExtensionFields,
         ),
-        "network": sdk.FieldSpec(
+        "network": ubx.FieldSpec(
             wire_name="network",
             kind="list",
             fields=_HbaseCluster_NetworkFields,
         ),
-        "private_link_configuration": sdk.FieldSpec(
+        "private_link_configuration": ubx.FieldSpec(
             wire_name="private_link_configuration",
             kind="list",
             fields=_HbaseCluster_PrivateLinkConfigurationFields,
         ),
-        "roles": sdk.FieldSpec(
+        "roles": ubx.FieldSpec(
             wire_name="roles",
             kind="list",
             fields=_HbaseCluster_RolesFields,
         ),
-        "security_profile": sdk.FieldSpec(
+        "security_profile": ubx.FieldSpec(
             wire_name="security_profile",
             kind="list",
             fields=_HbaseCluster_SecurityProfileFields,
         ),
-        "storage_account": sdk.FieldSpec(
+        "storage_account": ubx.FieldSpec(
             wire_name="storage_account",
             kind="list",
             fields=_HbaseCluster_StorageAccountFields,
         ),
-        "storage_account_gen2": sdk.FieldSpec(
+        "storage_account_gen2": ubx.FieldSpec(
             wire_name="storage_account_gen2",
             kind="list",
             fields=_HbaseCluster_StorageAccountGen2Fields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_HbaseCluster_TimeoutsFields,

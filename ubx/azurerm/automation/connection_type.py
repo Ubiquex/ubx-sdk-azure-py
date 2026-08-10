@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConnectionType_Field:
@@ -20,16 +20,16 @@ class ConnectionType_Timeouts:
     read: Any = None
 
 _ConnectionType_FieldFields = {
-    "is_encrypted": sdk.FieldSpec(wire_name="is_encrypted"),
-    "is_optional": sdk.FieldSpec(wire_name="is_optional"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "is_encrypted": ubx.FieldSpec(wire_name="is_encrypted"),
+    "is_optional": ubx.FieldSpec(wire_name="is_optional"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _ConnectionType_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -42,20 +42,20 @@ class ConnectionTypeConfig:
     field: Any = None
     timeouts: Any = None
 
-ConnectionType = sdk.ResourceBinding(
+ConnectionType = ubx.ResourceBinding(
     wire_type="azurerm_automation_connection_type",
     fields={
-        "automation_account_name": sdk.FieldSpec(wire_name="automation_account_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "is_global": sdk.FieldSpec(wire_name="is_global"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "field": sdk.FieldSpec(
+        "automation_account_name": ubx.FieldSpec(wire_name="automation_account_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "is_global": ubx.FieldSpec(wire_name="is_global"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "field": ubx.FieldSpec(
             wire_name="field",
             kind="list",
             fields=_ConnectionType_FieldFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ConnectionType_TimeoutsFields,

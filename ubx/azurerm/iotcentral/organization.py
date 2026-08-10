@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Organization_Timeouts:
@@ -14,10 +14,10 @@ class Organization_Timeouts:
     update: Any = None
 
 _Organization_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class OrganizationConfig:
     parent_organization_id: Any = None
     timeouts: Any = None
 
-Organization = sdk.ResourceBinding(
+Organization = ubx.ResourceBinding(
     wire_type="azurerm_iotcentral_organization",
     fields={
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "iotcentral_application_id": sdk.FieldSpec(wire_name="iotcentral_application_id"),
-        "organization_id": sdk.FieldSpec(wire_name="organization_id"),
-        "parent_organization_id": sdk.FieldSpec(wire_name="parent_organization_id"),
-        "timeouts": sdk.FieldSpec(
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "iotcentral_application_id": ubx.FieldSpec(wire_name="iotcentral_application_id"),
+        "organization_id": ubx.FieldSpec(wire_name="organization_id"),
+        "parent_organization_id": ubx.FieldSpec(wire_name="parent_organization_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Organization_TimeoutsFields,

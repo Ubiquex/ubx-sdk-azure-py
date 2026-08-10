@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Disk_EncryptionSettings_DiskEncryptionKey:
@@ -29,22 +29,22 @@ class Disk_Timeouts:
     update: Any = None
 
 _Disk_EncryptionSettings_DiskEncryptionKeyFields = {
-    "secret_url": sdk.FieldSpec(wire_name="secret_url"),
-    "source_vault_id": sdk.FieldSpec(wire_name="source_vault_id"),
+    "secret_url": ubx.FieldSpec(wire_name="secret_url"),
+    "source_vault_id": ubx.FieldSpec(wire_name="source_vault_id"),
 }
 
 _Disk_EncryptionSettings_KeyEncryptionKeyFields = {
-    "key_url": sdk.FieldSpec(wire_name="key_url"),
-    "source_vault_id": sdk.FieldSpec(wire_name="source_vault_id"),
+    "key_url": ubx.FieldSpec(wire_name="key_url"),
+    "source_vault_id": ubx.FieldSpec(wire_name="source_vault_id"),
 }
 
 _Disk_EncryptionSettingsFields = {
-    "disk_encryption_key": sdk.FieldSpec(
+    "disk_encryption_key": ubx.FieldSpec(
         wire_name="disk_encryption_key",
         kind="list",
         fields=_Disk_EncryptionSettings_DiskEncryptionKeyFields,
     ),
-    "key_encryption_key": sdk.FieldSpec(
+    "key_encryption_key": ubx.FieldSpec(
         wire_name="key_encryption_key",
         kind="list",
         fields=_Disk_EncryptionSettings_KeyEncryptionKeyFields,
@@ -52,10 +52,10 @@ _Disk_EncryptionSettingsFields = {
 }
 
 _Disk_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -98,50 +98,50 @@ class DiskConfig:
     encryption_settings: Any = None
     timeouts: Any = None
 
-Disk = sdk.ResourceBinding(
+Disk = ubx.ResourceBinding(
     wire_type="azurerm_managed_disk",
     fields={
-        "create_option": sdk.FieldSpec(wire_name="create_option"),
-        "disk_access_id": sdk.FieldSpec(wire_name="disk_access_id"),
-        "disk_encryption_set_id": sdk.FieldSpec(wire_name="disk_encryption_set_id"),
-        "disk_iops_read_only": sdk.FieldSpec(wire_name="disk_iops_read_only"),
-        "disk_iops_read_write": sdk.FieldSpec(wire_name="disk_iops_read_write"),
-        "disk_mbps_read_only": sdk.FieldSpec(wire_name="disk_mbps_read_only"),
-        "disk_mbps_read_write": sdk.FieldSpec(wire_name="disk_mbps_read_write"),
-        "disk_size_gb": sdk.FieldSpec(wire_name="disk_size_gb"),
-        "edge_zone": sdk.FieldSpec(wire_name="edge_zone"),
-        "gallery_image_reference_id": sdk.FieldSpec(wire_name="gallery_image_reference_id"),
-        "hyper_v_generation": sdk.FieldSpec(wire_name="hyper_v_generation"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "image_reference_id": sdk.FieldSpec(wire_name="image_reference_id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "logical_sector_size": sdk.FieldSpec(wire_name="logical_sector_size"),
-        "max_shares": sdk.FieldSpec(wire_name="max_shares"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "network_access_policy": sdk.FieldSpec(wire_name="network_access_policy"),
-        "on_demand_bursting_enabled": sdk.FieldSpec(wire_name="on_demand_bursting_enabled"),
-        "optimized_frequent_attach_enabled": sdk.FieldSpec(wire_name="optimized_frequent_attach_enabled"),
-        "os_type": sdk.FieldSpec(wire_name="os_type"),
-        "performance_plus_enabled": sdk.FieldSpec(wire_name="performance_plus_enabled"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "secure_vm_disk_encryption_set_id": sdk.FieldSpec(wire_name="secure_vm_disk_encryption_set_id"),
-        "security_type": sdk.FieldSpec(wire_name="security_type"),
-        "source_resource_id": sdk.FieldSpec(wire_name="source_resource_id"),
-        "source_uri": sdk.FieldSpec(wire_name="source_uri"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "storage_account_type": sdk.FieldSpec(wire_name="storage_account_type"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "tier": sdk.FieldSpec(wire_name="tier"),
-        "trusted_launch_enabled": sdk.FieldSpec(wire_name="trusted_launch_enabled"),
-        "upload_size_bytes": sdk.FieldSpec(wire_name="upload_size_bytes"),
-        "zone": sdk.FieldSpec(wire_name="zone"),
-        "encryption_settings": sdk.FieldSpec(
+        "create_option": ubx.FieldSpec(wire_name="create_option"),
+        "disk_access_id": ubx.FieldSpec(wire_name="disk_access_id"),
+        "disk_encryption_set_id": ubx.FieldSpec(wire_name="disk_encryption_set_id"),
+        "disk_iops_read_only": ubx.FieldSpec(wire_name="disk_iops_read_only"),
+        "disk_iops_read_write": ubx.FieldSpec(wire_name="disk_iops_read_write"),
+        "disk_mbps_read_only": ubx.FieldSpec(wire_name="disk_mbps_read_only"),
+        "disk_mbps_read_write": ubx.FieldSpec(wire_name="disk_mbps_read_write"),
+        "disk_size_gb": ubx.FieldSpec(wire_name="disk_size_gb"),
+        "edge_zone": ubx.FieldSpec(wire_name="edge_zone"),
+        "gallery_image_reference_id": ubx.FieldSpec(wire_name="gallery_image_reference_id"),
+        "hyper_v_generation": ubx.FieldSpec(wire_name="hyper_v_generation"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "image_reference_id": ubx.FieldSpec(wire_name="image_reference_id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "logical_sector_size": ubx.FieldSpec(wire_name="logical_sector_size"),
+        "max_shares": ubx.FieldSpec(wire_name="max_shares"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network_access_policy": ubx.FieldSpec(wire_name="network_access_policy"),
+        "on_demand_bursting_enabled": ubx.FieldSpec(wire_name="on_demand_bursting_enabled"),
+        "optimized_frequent_attach_enabled": ubx.FieldSpec(wire_name="optimized_frequent_attach_enabled"),
+        "os_type": ubx.FieldSpec(wire_name="os_type"),
+        "performance_plus_enabled": ubx.FieldSpec(wire_name="performance_plus_enabled"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "secure_vm_disk_encryption_set_id": ubx.FieldSpec(wire_name="secure_vm_disk_encryption_set_id"),
+        "security_type": ubx.FieldSpec(wire_name="security_type"),
+        "source_resource_id": ubx.FieldSpec(wire_name="source_resource_id"),
+        "source_uri": ubx.FieldSpec(wire_name="source_uri"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "storage_account_type": ubx.FieldSpec(wire_name="storage_account_type"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "tier": ubx.FieldSpec(wire_name="tier"),
+        "trusted_launch_enabled": ubx.FieldSpec(wire_name="trusted_launch_enabled"),
+        "upload_size_bytes": ubx.FieldSpec(wire_name="upload_size_bytes"),
+        "zone": ubx.FieldSpec(wire_name="zone"),
+        "encryption_settings": ubx.FieldSpec(
             wire_name="encryption_settings",
             kind="list",
             fields=_Disk_EncryptionSettingsFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Disk_TimeoutsFields,

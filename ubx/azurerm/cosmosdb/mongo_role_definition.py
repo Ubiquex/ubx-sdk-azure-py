@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MongoRoleDefinition_Privilege_Resource:
@@ -24,13 +24,13 @@ class MongoRoleDefinition_Timeouts:
     update: Any = None
 
 _MongoRoleDefinition_Privilege_ResourceFields = {
-    "collection_name": sdk.FieldSpec(wire_name="collection_name"),
-    "db_name": sdk.FieldSpec(wire_name="db_name"),
+    "collection_name": ubx.FieldSpec(wire_name="collection_name"),
+    "db_name": ubx.FieldSpec(wire_name="db_name"),
 }
 
 _MongoRoleDefinition_PrivilegeFields = {
-    "actions": sdk.FieldSpec(wire_name="actions"),
-    "resource": sdk.FieldSpec(
+    "actions": ubx.FieldSpec(wire_name="actions"),
+    "resource": ubx.FieldSpec(
         wire_name="resource",
         kind="list",
         fields=_MongoRoleDefinition_Privilege_ResourceFields,
@@ -38,10 +38,10 @@ _MongoRoleDefinition_PrivilegeFields = {
 }
 
 _MongoRoleDefinition_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -53,19 +53,19 @@ class MongoRoleDefinitionConfig:
     privilege: Any = None
     timeouts: Any = None
 
-MongoRoleDefinition = sdk.ResourceBinding(
+MongoRoleDefinition = ubx.ResourceBinding(
     wire_type="azurerm_cosmosdb_mongo_role_definition",
     fields={
-        "cosmos_mongo_database_id": sdk.FieldSpec(wire_name="cosmos_mongo_database_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "inherited_role_names": sdk.FieldSpec(wire_name="inherited_role_names"),
-        "role_name": sdk.FieldSpec(wire_name="role_name"),
-        "privilege": sdk.FieldSpec(
+        "cosmos_mongo_database_id": ubx.FieldSpec(wire_name="cosmos_mongo_database_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "inherited_role_names": ubx.FieldSpec(wire_name="inherited_role_names"),
+        "role_name": ubx.FieldSpec(wire_name="role_name"),
+        "privilege": ubx.FieldSpec(
             wire_name="privilege",
             kind="list",
             fields=_MongoRoleDefinition_PrivilegeFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_MongoRoleDefinition_TimeoutsFields,

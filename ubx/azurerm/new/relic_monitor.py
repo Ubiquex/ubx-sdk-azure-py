@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RelicMonitor_Identity:
@@ -33,29 +33,29 @@ class RelicMonitor_User:
     phone_number: Any = None
 
 _RelicMonitor_IdentityFields = {
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _RelicMonitor_PlanFields = {
-    "billing_cycle": sdk.FieldSpec(wire_name="billing_cycle"),
-    "effective_date": sdk.FieldSpec(wire_name="effective_date"),
-    "plan_id": sdk.FieldSpec(wire_name="plan_id"),
-    "usage_type": sdk.FieldSpec(wire_name="usage_type"),
+    "billing_cycle": ubx.FieldSpec(wire_name="billing_cycle"),
+    "effective_date": ubx.FieldSpec(wire_name="effective_date"),
+    "plan_id": ubx.FieldSpec(wire_name="plan_id"),
+    "usage_type": ubx.FieldSpec(wire_name="usage_type"),
 }
 
 _RelicMonitor_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 _RelicMonitor_UserFields = {
-    "email": sdk.FieldSpec(wire_name="email"),
-    "first_name": sdk.FieldSpec(wire_name="first_name"),
-    "last_name": sdk.FieldSpec(wire_name="last_name"),
-    "phone_number": sdk.FieldSpec(wire_name="phone_number"),
+    "email": ubx.FieldSpec(wire_name="email"),
+    "first_name": ubx.FieldSpec(wire_name="first_name"),
+    "last_name": ubx.FieldSpec(wire_name="last_name"),
+    "phone_number": ubx.FieldSpec(wire_name="phone_number"),
 }
 
 @dataclasses.dataclass
@@ -75,35 +75,35 @@ class RelicMonitorConfig:
     timeouts: Any = None
     user: Any = None
 
-RelicMonitor = sdk.ResourceBinding(
+RelicMonitor = ubx.ResourceBinding(
     wire_type="azurerm_new_relic_monitor",
     fields={
-        "account_creation_source": sdk.FieldSpec(wire_name="account_creation_source"),
-        "account_id": sdk.FieldSpec(wire_name="account_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "ingestion_key": sdk.FieldSpec(wire_name="ingestion_key"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "org_creation_source": sdk.FieldSpec(wire_name="org_creation_source"),
-        "organization_id": sdk.FieldSpec(wire_name="organization_id"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "user_id": sdk.FieldSpec(wire_name="user_id"),
-        "identity": sdk.FieldSpec(
+        "account_creation_source": ubx.FieldSpec(wire_name="account_creation_source"),
+        "account_id": ubx.FieldSpec(wire_name="account_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "ingestion_key": ubx.FieldSpec(wire_name="ingestion_key"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "org_creation_source": ubx.FieldSpec(wire_name="org_creation_source"),
+        "organization_id": ubx.FieldSpec(wire_name="organization_id"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "user_id": ubx.FieldSpec(wire_name="user_id"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_RelicMonitor_IdentityFields,
         ),
-        "plan": sdk.FieldSpec(
+        "plan": ubx.FieldSpec(
             wire_name="plan",
             kind="list",
             fields=_RelicMonitor_PlanFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RelicMonitor_TimeoutsFields,
         ),
-        "user": sdk.FieldSpec(
+        "user": ubx.FieldSpec(
             wire_name="user",
             kind="list",
             fields=_RelicMonitor_UserFields,

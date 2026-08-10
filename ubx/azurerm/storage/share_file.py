@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ShareFile_Timeouts:
@@ -14,10 +14,10 @@ class ShareFile_Timeouts:
     update: Any = None
 
 _ShareFile_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -35,21 +35,21 @@ class ShareFileConfig:
     storage_share_url: Any = None
     timeouts: Any = None
 
-ShareFile = sdk.ResourceBinding(
+ShareFile = ubx.ResourceBinding(
     wire_type="azurerm_storage_share_file",
     fields={
-        "content_disposition": sdk.FieldSpec(wire_name="content_disposition"),
-        "content_encoding": sdk.FieldSpec(wire_name="content_encoding"),
-        "content_md5": sdk.FieldSpec(wire_name="content_md5"),
-        "content_type": sdk.FieldSpec(wire_name="content_type"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "metadata": sdk.FieldSpec(wire_name="metadata"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "path": sdk.FieldSpec(wire_name="path"),
-        "source": sdk.FieldSpec(wire_name="source"),
-        "source_content": sdk.FieldSpec(wire_name="source_content"),
-        "storage_share_url": sdk.FieldSpec(wire_name="storage_share_url"),
-        "timeouts": sdk.FieldSpec(
+        "content_disposition": ubx.FieldSpec(wire_name="content_disposition"),
+        "content_encoding": ubx.FieldSpec(wire_name="content_encoding"),
+        "content_md5": ubx.FieldSpec(wire_name="content_md5"),
+        "content_type": ubx.FieldSpec(wire_name="content_type"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "metadata": ubx.FieldSpec(wire_name="metadata"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "path": ubx.FieldSpec(wire_name="path"),
+        "source": ubx.FieldSpec(wire_name="source"),
+        "source_content": ubx.FieldSpec(wire_name="source_content"),
+        "storage_share_url": ubx.FieldSpec(wire_name="storage_share_url"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ShareFile_TimeoutsFields,

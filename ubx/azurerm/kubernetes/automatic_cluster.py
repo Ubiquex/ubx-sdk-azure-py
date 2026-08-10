@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AutomaticCluster_ApiServerAccess:
@@ -65,41 +65,41 @@ class AutomaticCluster_WebAppRoutingIngress:
     web_app_routing_identity: Any = None
 
 _AutomaticCluster_ApiServerAccessFields = {
-    "authorized_ip_ranges": sdk.FieldSpec(wire_name="authorized_ip_ranges"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "authorized_ip_ranges": ubx.FieldSpec(wire_name="authorized_ip_ranges"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _AutomaticCluster_HostedSystemFields = {
-    "node_subnet_id": sdk.FieldSpec(wire_name="node_subnet_id"),
-    "system_node_subnet_id": sdk.FieldSpec(wire_name="system_node_subnet_id"),
+    "node_subnet_id": ubx.FieldSpec(wire_name="node_subnet_id"),
+    "system_node_subnet_id": ubx.FieldSpec(wire_name="system_node_subnet_id"),
 }
 
 _AutomaticCluster_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _AutomaticCluster_PrivateClusterFields = {
-    "private_dns_zone_id": sdk.FieldSpec(wire_name="private_dns_zone_id"),
-    "public_fully_qualified_domain_name_enabled": sdk.FieldSpec(wire_name="public_fully_qualified_domain_name_enabled"),
+    "private_dns_zone_id": ubx.FieldSpec(wire_name="private_dns_zone_id"),
+    "public_fully_qualified_domain_name_enabled": ubx.FieldSpec(wire_name="public_fully_qualified_domain_name_enabled"),
 }
 
 _AutomaticCluster_ServiceMesh_CertificateAuthorityFields = {
-    "certificate_chain_object_name": sdk.FieldSpec(wire_name="certificate_chain_object_name"),
-    "certificate_object_name": sdk.FieldSpec(wire_name="certificate_object_name"),
-    "key_object_name": sdk.FieldSpec(wire_name="key_object_name"),
-    "key_vault_id": sdk.FieldSpec(wire_name="key_vault_id"),
-    "root_certificate_object_name": sdk.FieldSpec(wire_name="root_certificate_object_name"),
+    "certificate_chain_object_name": ubx.FieldSpec(wire_name="certificate_chain_object_name"),
+    "certificate_object_name": ubx.FieldSpec(wire_name="certificate_object_name"),
+    "key_object_name": ubx.FieldSpec(wire_name="key_object_name"),
+    "key_vault_id": ubx.FieldSpec(wire_name="key_vault_id"),
+    "root_certificate_object_name": ubx.FieldSpec(wire_name="root_certificate_object_name"),
 }
 
 _AutomaticCluster_ServiceMeshFields = {
-    "external_ingress_gateway_enabled": sdk.FieldSpec(wire_name="external_ingress_gateway_enabled"),
-    "internal_ingress_gateway_enabled": sdk.FieldSpec(wire_name="internal_ingress_gateway_enabled"),
-    "proxy_redirect_mechanism": sdk.FieldSpec(wire_name="proxy_redirect_mechanism"),
-    "revisions": sdk.FieldSpec(wire_name="revisions"),
-    "certificate_authority": sdk.FieldSpec(
+    "external_ingress_gateway_enabled": ubx.FieldSpec(wire_name="external_ingress_gateway_enabled"),
+    "internal_ingress_gateway_enabled": ubx.FieldSpec(wire_name="internal_ingress_gateway_enabled"),
+    "proxy_redirect_mechanism": ubx.FieldSpec(wire_name="proxy_redirect_mechanism"),
+    "revisions": ubx.FieldSpec(wire_name="revisions"),
+    "certificate_authority": ubx.FieldSpec(
         wire_name="certificate_authority",
         kind="list",
         fields=_AutomaticCluster_ServiceMesh_CertificateAuthorityFields,
@@ -107,23 +107,23 @@ _AutomaticCluster_ServiceMeshFields = {
 }
 
 _AutomaticCluster_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _AutomaticCluster_WebAppRoutingIngress_WebAppRoutingIdentityFields = {
-    "client_id": sdk.FieldSpec(wire_name="client_id"),
-    "object_id": sdk.FieldSpec(wire_name="object_id"),
-    "user_assigned_identity_id": sdk.FieldSpec(wire_name="user_assigned_identity_id"),
+    "client_id": ubx.FieldSpec(wire_name="client_id"),
+    "object_id": ubx.FieldSpec(wire_name="object_id"),
+    "user_assigned_identity_id": ubx.FieldSpec(wire_name="user_assigned_identity_id"),
 }
 
 _AutomaticCluster_WebAppRoutingIngressFields = {
-    "default_nginx_controller": sdk.FieldSpec(wire_name="default_nginx_controller"),
-    "dns_zone_ids": sdk.FieldSpec(wire_name="dns_zone_ids"),
-    "istio_enabled": sdk.FieldSpec(wire_name="istio_enabled"),
-    "web_app_routing_identity": sdk.FieldSpec(
+    "default_nginx_controller": ubx.FieldSpec(wire_name="default_nginx_controller"),
+    "dns_zone_ids": ubx.FieldSpec(wire_name="dns_zone_ids"),
+    "istio_enabled": ubx.FieldSpec(wire_name="istio_enabled"),
+    "web_app_routing_identity": ubx.FieldSpec(
         wire_name="web_app_routing_identity",
         kind="list",
         fields=_AutomaticCluster_WebAppRoutingIngress_WebAppRoutingIdentityFields,
@@ -145,45 +145,45 @@ class AutomaticClusterConfig:
     timeouts: Any = None
     web_app_routing_ingress: Any = None
 
-AutomaticCluster = sdk.ResourceBinding(
+AutomaticCluster = ubx.ResourceBinding(
     wire_type="azurerm_kubernetes_automatic_cluster",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "api_server_access": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "api_server_access": ubx.FieldSpec(
             wire_name="api_server_access",
             kind="list",
             fields=_AutomaticCluster_ApiServerAccessFields,
         ),
-        "hosted_system": sdk.FieldSpec(
+        "hosted_system": ubx.FieldSpec(
             wire_name="hosted_system",
             kind="list",
             fields=_AutomaticCluster_HostedSystemFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_AutomaticCluster_IdentityFields,
         ),
-        "private_cluster": sdk.FieldSpec(
+        "private_cluster": ubx.FieldSpec(
             wire_name="private_cluster",
             kind="list",
             fields=_AutomaticCluster_PrivateClusterFields,
         ),
-        "service_mesh": sdk.FieldSpec(
+        "service_mesh": ubx.FieldSpec(
             wire_name="service_mesh",
             kind="list",
             fields=_AutomaticCluster_ServiceMeshFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AutomaticCluster_TimeoutsFields,
         ),
-        "web_app_routing_ingress": sdk.FieldSpec(
+        "web_app_routing_ingress": ubx.FieldSpec(
             wire_name="web_app_routing_ingress",
             kind="list",
             fields=_AutomaticCluster_WebAppRoutingIngressFields,

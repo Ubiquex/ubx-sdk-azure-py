@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CenterAssessmentPolicy_Timeouts:
@@ -14,10 +14,10 @@ class CenterAssessmentPolicy_Timeouts:
     update: Any = None
 
 _CenterAssessmentPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -33,19 +33,19 @@ class CenterAssessmentPolicyConfig:
     user_impact: Any = None
     timeouts: Any = None
 
-CenterAssessmentPolicy = sdk.ResourceBinding(
+CenterAssessmentPolicy = ubx.ResourceBinding(
     wire_type="azurerm_security_center_assessment_policy",
     fields={
-        "categories": sdk.FieldSpec(wire_name="categories"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "implementation_effort": sdk.FieldSpec(wire_name="implementation_effort"),
-        "remediation_description": sdk.FieldSpec(wire_name="remediation_description"),
-        "severity": sdk.FieldSpec(wire_name="severity"),
-        "threats": sdk.FieldSpec(wire_name="threats"),
-        "user_impact": sdk.FieldSpec(wire_name="user_impact"),
-        "timeouts": sdk.FieldSpec(
+        "categories": ubx.FieldSpec(wire_name="categories"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "implementation_effort": ubx.FieldSpec(wire_name="implementation_effort"),
+        "remediation_description": ubx.FieldSpec(wire_name="remediation_description"),
+        "severity": ubx.FieldSpec(wire_name="severity"),
+        "threats": ubx.FieldSpec(wire_name="threats"),
+        "user_impact": ubx.FieldSpec(wire_name="user_impact"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CenterAssessmentPolicy_TimeoutsFields,

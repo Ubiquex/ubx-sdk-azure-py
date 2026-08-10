@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Test_Encryption_Identity:
@@ -31,13 +31,13 @@ class Test_Timeouts:
     update: Any = None
 
 _Test_Encryption_IdentityFields = {
-    "identity_id": sdk.FieldSpec(wire_name="identity_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_id": ubx.FieldSpec(wire_name="identity_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Test_EncryptionFields = {
-    "key_url": sdk.FieldSpec(wire_name="key_url"),
-    "identity": sdk.FieldSpec(
+    "key_url": ubx.FieldSpec(wire_name="key_url"),
+    "identity": ubx.FieldSpec(
         wire_name="identity",
         kind="list",
         fields=_Test_Encryption_IdentityFields,
@@ -45,17 +45,17 @@ _Test_EncryptionFields = {
 }
 
 _Test_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Test_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -70,26 +70,26 @@ class TestConfig:
     identity: Any = None
     timeouts: Any = None
 
-Test = sdk.ResourceBinding(
+Test = ubx.ResourceBinding(
     wire_type="azurerm_load_test",
     fields={
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "encryption": sdk.FieldSpec(
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "encryption": ubx.FieldSpec(
             wire_name="encryption",
             kind="list",
             fields=_Test_EncryptionFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Test_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Test_TimeoutsFields,

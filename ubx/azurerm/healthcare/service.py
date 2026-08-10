@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Service_AuthenticationConfiguration:
@@ -34,30 +34,30 @@ class Service_Timeouts:
     update: Any = None
 
 _Service_AuthenticationConfigurationFields = {
-    "audience": sdk.FieldSpec(wire_name="audience"),
-    "authority": sdk.FieldSpec(wire_name="authority"),
-    "smart_proxy_enabled": sdk.FieldSpec(wire_name="smart_proxy_enabled"),
+    "audience": ubx.FieldSpec(wire_name="audience"),
+    "authority": ubx.FieldSpec(wire_name="authority"),
+    "smart_proxy_enabled": ubx.FieldSpec(wire_name="smart_proxy_enabled"),
 }
 
 _Service_CorsConfigurationFields = {
-    "allow_credentials": sdk.FieldSpec(wire_name="allow_credentials"),
-    "allowed_headers": sdk.FieldSpec(wire_name="allowed_headers"),
-    "allowed_methods": sdk.FieldSpec(wire_name="allowed_methods"),
-    "allowed_origins": sdk.FieldSpec(wire_name="allowed_origins"),
-    "max_age_in_seconds": sdk.FieldSpec(wire_name="max_age_in_seconds"),
+    "allow_credentials": ubx.FieldSpec(wire_name="allow_credentials"),
+    "allowed_headers": ubx.FieldSpec(wire_name="allowed_headers"),
+    "allowed_methods": ubx.FieldSpec(wire_name="allowed_methods"),
+    "allowed_origins": ubx.FieldSpec(wire_name="allowed_origins"),
+    "max_age_in_seconds": ubx.FieldSpec(wire_name="max_age_in_seconds"),
 }
 
 _Service_IdentityFields = {
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Service_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -78,36 +78,36 @@ class ServiceConfig:
     identity: Any = None
     timeouts: Any = None
 
-Service = sdk.ResourceBinding(
+Service = ubx.ResourceBinding(
     wire_type="azurerm_healthcare_service",
     fields={
-        "access_policy_object_ids": sdk.FieldSpec(wire_name="access_policy_object_ids"),
-        "configuration_export_storage_account_name": sdk.FieldSpec(wire_name="configuration_export_storage_account_name"),
-        "cosmosdb_key_vault_key_versionless_id": sdk.FieldSpec(wire_name="cosmosdb_key_vault_key_versionless_id"),
-        "cosmosdb_throughput": sdk.FieldSpec(wire_name="cosmosdb_throughput"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "kind": sdk.FieldSpec(wire_name="kind"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "authentication_configuration": sdk.FieldSpec(
+        "access_policy_object_ids": ubx.FieldSpec(wire_name="access_policy_object_ids"),
+        "configuration_export_storage_account_name": ubx.FieldSpec(wire_name="configuration_export_storage_account_name"),
+        "cosmosdb_key_vault_key_versionless_id": ubx.FieldSpec(wire_name="cosmosdb_key_vault_key_versionless_id"),
+        "cosmosdb_throughput": ubx.FieldSpec(wire_name="cosmosdb_throughput"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "kind": ubx.FieldSpec(wire_name="kind"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "authentication_configuration": ubx.FieldSpec(
             wire_name="authentication_configuration",
             kind="list",
             fields=_Service_AuthenticationConfigurationFields,
         ),
-        "cors_configuration": sdk.FieldSpec(
+        "cors_configuration": ubx.FieldSpec(
             wire_name="cors_configuration",
             kind="list",
             fields=_Service_CorsConfigurationFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Service_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Service_TimeoutsFields,

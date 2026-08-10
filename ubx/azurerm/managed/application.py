@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Application_Plan:
@@ -22,18 +22,18 @@ class Application_Timeouts:
     update: Any = None
 
 _Application_PlanFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "product": sdk.FieldSpec(wire_name="product"),
-    "promotion_code": sdk.FieldSpec(wire_name="promotion_code"),
-    "publisher": sdk.FieldSpec(wire_name="publisher"),
-    "version": sdk.FieldSpec(wire_name="version"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "product": ubx.FieldSpec(wire_name="product"),
+    "promotion_code": ubx.FieldSpec(wire_name="promotion_code"),
+    "publisher": ubx.FieldSpec(wire_name="publisher"),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _Application_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -50,24 +50,24 @@ class ApplicationConfig:
     plan: Any = None
     timeouts: Any = None
 
-Application = sdk.ResourceBinding(
+Application = ubx.ResourceBinding(
     wire_type="azurerm_managed_application",
     fields={
-        "application_definition_id": sdk.FieldSpec(wire_name="application_definition_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "kind": sdk.FieldSpec(wire_name="kind"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "managed_resource_group_name": sdk.FieldSpec(wire_name="managed_resource_group_name"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parameter_values": sdk.FieldSpec(wire_name="parameter_values"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "plan": sdk.FieldSpec(
+        "application_definition_id": ubx.FieldSpec(wire_name="application_definition_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "kind": ubx.FieldSpec(wire_name="kind"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "managed_resource_group_name": ubx.FieldSpec(wire_name="managed_resource_group_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parameter_values": ubx.FieldSpec(wire_name="parameter_values"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "plan": ubx.FieldSpec(
             wire_name="plan",
             kind="list",
             fields=_Application_PlanFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Application_TimeoutsFields,

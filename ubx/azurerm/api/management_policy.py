@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementPolicy_Timeouts:
@@ -14,10 +14,10 @@ class ManagementPolicy_Timeouts:
     update: Any = None
 
 _ManagementPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -28,14 +28,14 @@ class ManagementPolicyConfig:
     xml_link: Any = None
     timeouts: Any = None
 
-ManagementPolicy = sdk.ResourceBinding(
+ManagementPolicy = ubx.ResourceBinding(
     wire_type="azurerm_api_management_policy",
     fields={
-        "api_management_id": sdk.FieldSpec(wire_name="api_management_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "xml_content": sdk.FieldSpec(wire_name="xml_content"),
-        "xml_link": sdk.FieldSpec(wire_name="xml_link"),
-        "timeouts": sdk.FieldSpec(
+        "api_management_id": ubx.FieldSpec(wire_name="api_management_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "xml_content": ubx.FieldSpec(wire_name="xml_content"),
+        "xml_link": ubx.FieldSpec(wire_name="xml_link"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementPolicy_TimeoutsFields,

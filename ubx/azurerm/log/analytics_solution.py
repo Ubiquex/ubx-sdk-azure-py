@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnalyticsSolution_Plan:
@@ -21,17 +21,17 @@ class AnalyticsSolution_Timeouts:
     update: Any = None
 
 _AnalyticsSolution_PlanFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "product": sdk.FieldSpec(wire_name="product"),
-    "promotion_code": sdk.FieldSpec(wire_name="promotion_code"),
-    "publisher": sdk.FieldSpec(wire_name="publisher"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "product": ubx.FieldSpec(wire_name="product"),
+    "promotion_code": ubx.FieldSpec(wire_name="promotion_code"),
+    "publisher": ubx.FieldSpec(wire_name="publisher"),
 }
 
 _AnalyticsSolution_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -46,22 +46,22 @@ class AnalyticsSolutionConfig:
     plan: Any = None
     timeouts: Any = None
 
-AnalyticsSolution = sdk.ResourceBinding(
+AnalyticsSolution = ubx.ResourceBinding(
     wire_type="azurerm_log_analytics_solution",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "solution_name": sdk.FieldSpec(wire_name="solution_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "workspace_name": sdk.FieldSpec(wire_name="workspace_name"),
-        "workspace_resource_id": sdk.FieldSpec(wire_name="workspace_resource_id"),
-        "plan": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "solution_name": ubx.FieldSpec(wire_name="solution_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "workspace_name": ubx.FieldSpec(wire_name="workspace_name"),
+        "workspace_resource_id": ubx.FieldSpec(wire_name="workspace_resource_id"),
+        "plan": ubx.FieldSpec(
             wire_name="plan",
             kind="list",
             fields=_AnalyticsSolution_PlanFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AnalyticsSolution_TimeoutsFields,

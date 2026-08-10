@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementUser_Timeouts:
@@ -14,10 +14,10 @@ class ManagementUser_Timeouts:
     update: Any = None
 
 _ManagementUser_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -35,21 +35,21 @@ class ManagementUserConfig:
     user_id: Any = None
     timeouts: Any = None
 
-ManagementUser = sdk.ResourceBinding(
+ManagementUser = ubx.ResourceBinding(
     wire_type="azurerm_api_management_user",
     fields={
-        "api_management_name": sdk.FieldSpec(wire_name="api_management_name"),
-        "confirmation": sdk.FieldSpec(wire_name="confirmation"),
-        "email": sdk.FieldSpec(wire_name="email"),
-        "first_name": sdk.FieldSpec(wire_name="first_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "last_name": sdk.FieldSpec(wire_name="last_name"),
-        "note": sdk.FieldSpec(wire_name="note"),
-        "password": sdk.FieldSpec(wire_name="password"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "state": sdk.FieldSpec(wire_name="state"),
-        "user_id": sdk.FieldSpec(wire_name="user_id"),
-        "timeouts": sdk.FieldSpec(
+        "api_management_name": ubx.FieldSpec(wire_name="api_management_name"),
+        "confirmation": ubx.FieldSpec(wire_name="confirmation"),
+        "email": ubx.FieldSpec(wire_name="email"),
+        "first_name": ubx.FieldSpec(wire_name="first_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "last_name": ubx.FieldSpec(wire_name="last_name"),
+        "note": ubx.FieldSpec(wire_name="note"),
+        "password": ubx.FieldSpec(wire_name="password"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "state": ubx.FieldSpec(wire_name="state"),
+        "user_id": ubx.FieldSpec(wire_name="user_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementUser_TimeoutsFields,

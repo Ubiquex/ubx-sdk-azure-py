@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ProtectionBackupPolicyDisk_RetentionRule_Criteria:
@@ -24,14 +24,14 @@ class ProtectionBackupPolicyDisk_Timeouts:
     read: Any = None
 
 _ProtectionBackupPolicyDisk_RetentionRule_CriteriaFields = {
-    "absolute_criteria": sdk.FieldSpec(wire_name="absolute_criteria"),
+    "absolute_criteria": ubx.FieldSpec(wire_name="absolute_criteria"),
 }
 
 _ProtectionBackupPolicyDisk_RetentionRuleFields = {
-    "duration": sdk.FieldSpec(wire_name="duration"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "priority": sdk.FieldSpec(wire_name="priority"),
-    "criteria": sdk.FieldSpec(
+    "duration": ubx.FieldSpec(wire_name="duration"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "priority": ubx.FieldSpec(wire_name="priority"),
+    "criteria": ubx.FieldSpec(
         wire_name="criteria",
         kind="list",
         fields=_ProtectionBackupPolicyDisk_RetentionRule_CriteriaFields,
@@ -39,9 +39,9 @@ _ProtectionBackupPolicyDisk_RetentionRuleFields = {
 }
 
 _ProtectionBackupPolicyDisk_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -55,21 +55,21 @@ class ProtectionBackupPolicyDiskConfig:
     retention_rule: Any = None
     timeouts: Any = None
 
-ProtectionBackupPolicyDisk = sdk.ResourceBinding(
+ProtectionBackupPolicyDisk = ubx.ResourceBinding(
     wire_type="azurerm_data_protection_backup_policy_disk",
     fields={
-        "backup_repeating_time_intervals": sdk.FieldSpec(wire_name="backup_repeating_time_intervals"),
-        "default_retention_duration": sdk.FieldSpec(wire_name="default_retention_duration"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "time_zone": sdk.FieldSpec(wire_name="time_zone"),
-        "vault_id": sdk.FieldSpec(wire_name="vault_id"),
-        "retention_rule": sdk.FieldSpec(
+        "backup_repeating_time_intervals": ubx.FieldSpec(wire_name="backup_repeating_time_intervals"),
+        "default_retention_duration": ubx.FieldSpec(wire_name="default_retention_duration"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "time_zone": ubx.FieldSpec(wire_name="time_zone"),
+        "vault_id": ubx.FieldSpec(wire_name="vault_id"),
+        "retention_rule": ubx.FieldSpec(
             wire_name="retention_rule",
             kind="list",
             fields=_ProtectionBackupPolicyDisk_RetentionRuleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ProtectionBackupPolicyDisk_TimeoutsFields,

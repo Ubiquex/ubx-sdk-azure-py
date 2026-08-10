@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ChannelEmail_Timeouts:
@@ -14,10 +14,10 @@ class ChannelEmail_Timeouts:
     update: Any = None
 
 _ChannelEmail_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class ChannelEmailConfig:
     resource_group_name: Any = None
     timeouts: Any = None
 
-ChannelEmail = sdk.ResourceBinding(
+ChannelEmail = ubx.ResourceBinding(
     wire_type="azurerm_bot_channel_email",
     fields={
-        "bot_name": sdk.FieldSpec(wire_name="bot_name"),
-        "email_address": sdk.FieldSpec(wire_name="email_address"),
-        "email_password": sdk.FieldSpec(wire_name="email_password"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "magic_code": sdk.FieldSpec(wire_name="magic_code"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "timeouts": sdk.FieldSpec(
+        "bot_name": ubx.FieldSpec(wire_name="bot_name"),
+        "email_address": ubx.FieldSpec(wire_name="email_address"),
+        "email_password": ubx.FieldSpec(wire_name="email_password"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "magic_code": ubx.FieldSpec(wire_name="magic_code"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ChannelEmail_TimeoutsFields,

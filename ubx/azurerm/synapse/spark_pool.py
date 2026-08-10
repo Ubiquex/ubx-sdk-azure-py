@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SparkPool_AutoPause:
@@ -28,24 +28,24 @@ class SparkPool_Timeouts:
     update: Any = None
 
 _SparkPool_AutoPauseFields = {
-    "delay_in_minutes": sdk.FieldSpec(wire_name="delay_in_minutes"),
+    "delay_in_minutes": ubx.FieldSpec(wire_name="delay_in_minutes"),
 }
 
 _SparkPool_AutoScaleFields = {
-    "max_node_count": sdk.FieldSpec(wire_name="max_node_count"),
-    "min_node_count": sdk.FieldSpec(wire_name="min_node_count"),
+    "max_node_count": ubx.FieldSpec(wire_name="max_node_count"),
+    "min_node_count": ubx.FieldSpec(wire_name="min_node_count"),
 }
 
 _SparkPool_LibraryRequirementFields = {
-    "content": sdk.FieldSpec(wire_name="content"),
-    "filename": sdk.FieldSpec(wire_name="filename"),
+    "content": ubx.FieldSpec(wire_name="content"),
+    "filename": ubx.FieldSpec(wire_name="filename"),
 }
 
 _SparkPool_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -72,46 +72,46 @@ class SparkPoolConfig:
     spark_config: Any = None
     timeouts: Any = None
 
-SparkPool = sdk.ResourceBinding(
+SparkPool = ubx.ResourceBinding(
     wire_type="azurerm_synapse_spark_pool",
     fields={
-        "cache_size": sdk.FieldSpec(wire_name="cache_size"),
-        "compute_isolation_enabled": sdk.FieldSpec(wire_name="compute_isolation_enabled"),
-        "dynamic_executor_allocation_enabled": sdk.FieldSpec(wire_name="dynamic_executor_allocation_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "max_executors": sdk.FieldSpec(wire_name="max_executors"),
-        "min_executors": sdk.FieldSpec(wire_name="min_executors"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "node_count": sdk.FieldSpec(wire_name="node_count"),
-        "node_size": sdk.FieldSpec(wire_name="node_size"),
-        "node_size_family": sdk.FieldSpec(wire_name="node_size_family"),
-        "session_level_packages_enabled": sdk.FieldSpec(wire_name="session_level_packages_enabled"),
-        "spark_events_folder": sdk.FieldSpec(wire_name="spark_events_folder"),
-        "spark_log_folder": sdk.FieldSpec(wire_name="spark_log_folder"),
-        "spark_version": sdk.FieldSpec(wire_name="spark_version"),
-        "synapse_workspace_id": sdk.FieldSpec(wire_name="synapse_workspace_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "auto_pause": sdk.FieldSpec(
+        "cache_size": ubx.FieldSpec(wire_name="cache_size"),
+        "compute_isolation_enabled": ubx.FieldSpec(wire_name="compute_isolation_enabled"),
+        "dynamic_executor_allocation_enabled": ubx.FieldSpec(wire_name="dynamic_executor_allocation_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "max_executors": ubx.FieldSpec(wire_name="max_executors"),
+        "min_executors": ubx.FieldSpec(wire_name="min_executors"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "node_count": ubx.FieldSpec(wire_name="node_count"),
+        "node_size": ubx.FieldSpec(wire_name="node_size"),
+        "node_size_family": ubx.FieldSpec(wire_name="node_size_family"),
+        "session_level_packages_enabled": ubx.FieldSpec(wire_name="session_level_packages_enabled"),
+        "spark_events_folder": ubx.FieldSpec(wire_name="spark_events_folder"),
+        "spark_log_folder": ubx.FieldSpec(wire_name="spark_log_folder"),
+        "spark_version": ubx.FieldSpec(wire_name="spark_version"),
+        "synapse_workspace_id": ubx.FieldSpec(wire_name="synapse_workspace_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "auto_pause": ubx.FieldSpec(
             wire_name="auto_pause",
             kind="list",
             fields=_SparkPool_AutoPauseFields,
         ),
-        "auto_scale": sdk.FieldSpec(
+        "auto_scale": ubx.FieldSpec(
             wire_name="auto_scale",
             kind="list",
             fields=_SparkPool_AutoScaleFields,
         ),
-        "library_requirement": sdk.FieldSpec(
+        "library_requirement": ubx.FieldSpec(
             wire_name="library_requirement",
             kind="list",
             fields=_SparkPool_LibraryRequirementFields,
         ),
-        "spark_config": sdk.FieldSpec(
+        "spark_config": ubx.FieldSpec(
             wire_name="spark_config",
             kind="list",
             fields=_SparkPool_LibraryRequirementFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SparkPool_TimeoutsFields,

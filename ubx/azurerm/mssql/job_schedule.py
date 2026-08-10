@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class JobSchedule_Timeouts:
@@ -14,10 +14,10 @@ class JobSchedule_Timeouts:
     update: Any = None
 
 _JobSchedule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class JobScheduleConfig:
     type: Any = None
     timeouts: Any = None
 
-JobSchedule = sdk.ResourceBinding(
+JobSchedule = ubx.ResourceBinding(
     wire_type="azurerm_mssql_job_schedule",
     fields={
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "end_time": sdk.FieldSpec(wire_name="end_time"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "interval": sdk.FieldSpec(wire_name="interval"),
-        "job_id": sdk.FieldSpec(wire_name="job_id"),
-        "start_time": sdk.FieldSpec(wire_name="start_time"),
-        "type": sdk.FieldSpec(wire_name="type"),
-        "timeouts": sdk.FieldSpec(
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "end_time": ubx.FieldSpec(wire_name="end_time"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "interval": ubx.FieldSpec(wire_name="interval"),
+        "job_id": ubx.FieldSpec(wire_name="job_id"),
+        "start_time": ubx.FieldSpec(wire_name="start_time"),
+        "type": ubx.FieldSpec(wire_name="type"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_JobSchedule_TimeoutsFields,

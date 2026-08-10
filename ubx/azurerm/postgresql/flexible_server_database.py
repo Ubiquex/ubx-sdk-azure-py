@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FlexibleServerDatabase_Timeouts:
@@ -13,9 +13,9 @@ class FlexibleServerDatabase_Timeouts:
     read: Any = None
 
 _FlexibleServerDatabase_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -27,15 +27,15 @@ class FlexibleServerDatabaseConfig:
     server_id: Any = None
     timeouts: Any = None
 
-FlexibleServerDatabase = sdk.ResourceBinding(
+FlexibleServerDatabase = ubx.ResourceBinding(
     wire_type="azurerm_postgresql_flexible_server_database",
     fields={
-        "charset": sdk.FieldSpec(wire_name="charset"),
-        "collation": sdk.FieldSpec(wire_name="collation"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "server_id": sdk.FieldSpec(wire_name="server_id"),
-        "timeouts": sdk.FieldSpec(
+        "charset": ubx.FieldSpec(wire_name="charset"),
+        "collation": ubx.FieldSpec(wire_name="collation"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "server_id": ubx.FieldSpec(wire_name="server_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FlexibleServerDatabase_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementWorkspacePolicyFragment_Timeouts:
@@ -14,10 +14,10 @@ class ManagementWorkspacePolicyFragment_Timeouts:
     update: Any = None
 
 _ManagementWorkspacePolicyFragment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class ManagementWorkspacePolicyFragmentConfig:
     xml_format: Any = None
     timeouts: Any = None
 
-ManagementWorkspacePolicyFragment = sdk.ResourceBinding(
+ManagementWorkspacePolicyFragment = ubx.ResourceBinding(
     wire_type="azurerm_api_management_workspace_policy_fragment",
     fields={
-        "api_management_workspace_id": sdk.FieldSpec(wire_name="api_management_workspace_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "xml_content": sdk.FieldSpec(wire_name="xml_content"),
-        "xml_format": sdk.FieldSpec(wire_name="xml_format"),
-        "timeouts": sdk.FieldSpec(
+        "api_management_workspace_id": ubx.FieldSpec(wire_name="api_management_workspace_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "xml_content": ubx.FieldSpec(wire_name="xml_content"),
+        "xml_format": ubx.FieldSpec(wire_name="xml_format"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementWorkspacePolicyFragment_TimeoutsFields,

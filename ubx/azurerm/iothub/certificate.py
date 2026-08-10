@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Certificate_Timeouts:
@@ -14,10 +14,10 @@ class Certificate_Timeouts:
     update: Any = None
 
 _Certificate_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class CertificateConfig:
     resource_group_name: Any = None
     timeouts: Any = None
 
-Certificate = sdk.ResourceBinding(
+Certificate = ubx.ResourceBinding(
     wire_type="azurerm_iothub_certificate",
     fields={
-        "certificate_content": sdk.FieldSpec(wire_name="certificate_content"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "iothub_name": sdk.FieldSpec(wire_name="iothub_name"),
-        "is_verified": sdk.FieldSpec(wire_name="is_verified"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "timeouts": sdk.FieldSpec(
+        "certificate_content": ubx.FieldSpec(wire_name="certificate_content"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "iothub_name": ubx.FieldSpec(wire_name="iothub_name"),
+        "is_verified": ubx.FieldSpec(wire_name="is_verified"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Certificate_TimeoutsFields,

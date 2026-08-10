@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Directory_Timeouts:
@@ -14,10 +14,10 @@ class Directory_Timeouts:
     update: Any = None
 
 _Directory_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -32,18 +32,18 @@ class DirectoryConfig:
     tags: Any = None
     timeouts: Any = None
 
-Directory = sdk.ResourceBinding(
+Directory = ubx.ResourceBinding(
     wire_type="azurerm_aadb2c_directory",
     fields={
-        "country_code": sdk.FieldSpec(wire_name="country_code"),
-        "data_residency_location": sdk.FieldSpec(wire_name="data_residency_location"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "domain_name": sdk.FieldSpec(wire_name="domain_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "country_code": ubx.FieldSpec(wire_name="country_code"),
+        "data_residency_location": ubx.FieldSpec(wire_name="data_residency_location"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "domain_name": ubx.FieldSpec(wire_name="domain_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Directory_TimeoutsFields,

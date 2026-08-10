@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FrontdoorFirewallPolicy_CustomRule_MatchCondition:
@@ -73,23 +73,23 @@ class FrontdoorFirewallPolicy_Timeouts:
     update: Any = None
 
 _FrontdoorFirewallPolicy_CustomRule_MatchConditionFields = {
-    "match_values": sdk.FieldSpec(wire_name="match_values"),
-    "match_variable": sdk.FieldSpec(wire_name="match_variable"),
-    "negation_condition": sdk.FieldSpec(wire_name="negation_condition"),
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "selector": sdk.FieldSpec(wire_name="selector"),
-    "transforms": sdk.FieldSpec(wire_name="transforms"),
+    "match_values": ubx.FieldSpec(wire_name="match_values"),
+    "match_variable": ubx.FieldSpec(wire_name="match_variable"),
+    "negation_condition": ubx.FieldSpec(wire_name="negation_condition"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "selector": ubx.FieldSpec(wire_name="selector"),
+    "transforms": ubx.FieldSpec(wire_name="transforms"),
 }
 
 _FrontdoorFirewallPolicy_CustomRuleFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "priority": sdk.FieldSpec(wire_name="priority"),
-    "rate_limit_duration_in_minutes": sdk.FieldSpec(wire_name="rate_limit_duration_in_minutes"),
-    "rate_limit_threshold": sdk.FieldSpec(wire_name="rate_limit_threshold"),
-    "type": sdk.FieldSpec(wire_name="type"),
-    "match_condition": sdk.FieldSpec(
+    "action": ubx.FieldSpec(wire_name="action"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "priority": ubx.FieldSpec(wire_name="priority"),
+    "rate_limit_duration_in_minutes": ubx.FieldSpec(wire_name="rate_limit_duration_in_minutes"),
+    "rate_limit_threshold": ubx.FieldSpec(wire_name="rate_limit_threshold"),
+    "type": ubx.FieldSpec(wire_name="type"),
+    "match_condition": ubx.FieldSpec(
         wire_name="match_condition",
         kind="list",
         fields=_FrontdoorFirewallPolicy_CustomRule_MatchConditionFields,
@@ -97,15 +97,15 @@ _FrontdoorFirewallPolicy_CustomRuleFields = {
 }
 
 _FrontdoorFirewallPolicy_LogScrubbing_ScrubbingRuleFields = {
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "match_variable": sdk.FieldSpec(wire_name="match_variable"),
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "selector": sdk.FieldSpec(wire_name="selector"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "match_variable": ubx.FieldSpec(wire_name="match_variable"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "selector": ubx.FieldSpec(wire_name="selector"),
 }
 
 _FrontdoorFirewallPolicy_LogScrubbingFields = {
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "scrubbing_rule": sdk.FieldSpec(
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "scrubbing_rule": ubx.FieldSpec(
         wire_name="scrubbing_rule",
         kind="list",
         fields=_FrontdoorFirewallPolicy_LogScrubbing_ScrubbingRuleFields,
@@ -113,16 +113,16 @@ _FrontdoorFirewallPolicy_LogScrubbingFields = {
 }
 
 _FrontdoorFirewallPolicy_ManagedRule_ExclusionFields = {
-    "match_variable": sdk.FieldSpec(wire_name="match_variable"),
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "selector": sdk.FieldSpec(wire_name="selector"),
+    "match_variable": ubx.FieldSpec(wire_name="match_variable"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "selector": ubx.FieldSpec(wire_name="selector"),
 }
 
 _FrontdoorFirewallPolicy_ManagedRule_Override_RuleFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "rule_id": sdk.FieldSpec(wire_name="rule_id"),
-    "exclusion": sdk.FieldSpec(
+    "action": ubx.FieldSpec(wire_name="action"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "rule_id": ubx.FieldSpec(wire_name="rule_id"),
+    "exclusion": ubx.FieldSpec(
         wire_name="exclusion",
         kind="list",
         fields=_FrontdoorFirewallPolicy_ManagedRule_ExclusionFields,
@@ -130,13 +130,13 @@ _FrontdoorFirewallPolicy_ManagedRule_Override_RuleFields = {
 }
 
 _FrontdoorFirewallPolicy_ManagedRule_OverrideFields = {
-    "rule_group_name": sdk.FieldSpec(wire_name="rule_group_name"),
-    "exclusion": sdk.FieldSpec(
+    "rule_group_name": ubx.FieldSpec(wire_name="rule_group_name"),
+    "exclusion": ubx.FieldSpec(
         wire_name="exclusion",
         kind="list",
         fields=_FrontdoorFirewallPolicy_ManagedRule_ExclusionFields,
     ),
-    "rule": sdk.FieldSpec(
+    "rule": ubx.FieldSpec(
         wire_name="rule",
         kind="list",
         fields=_FrontdoorFirewallPolicy_ManagedRule_Override_RuleFields,
@@ -144,15 +144,15 @@ _FrontdoorFirewallPolicy_ManagedRule_OverrideFields = {
 }
 
 _FrontdoorFirewallPolicy_ManagedRuleFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "type": sdk.FieldSpec(wire_name="type"),
-    "version": sdk.FieldSpec(wire_name="version"),
-    "exclusion": sdk.FieldSpec(
+    "action": ubx.FieldSpec(wire_name="action"),
+    "type": ubx.FieldSpec(wire_name="type"),
+    "version": ubx.FieldSpec(wire_name="version"),
+    "exclusion": ubx.FieldSpec(
         wire_name="exclusion",
         kind="list",
         fields=_FrontdoorFirewallPolicy_ManagedRule_ExclusionFields,
     ),
-    "override": sdk.FieldSpec(
+    "override": ubx.FieldSpec(
         wire_name="override",
         kind="list",
         fields=_FrontdoorFirewallPolicy_ManagedRule_OverrideFields,
@@ -160,10 +160,10 @@ _FrontdoorFirewallPolicy_ManagedRuleFields = {
 }
 
 _FrontdoorFirewallPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -186,38 +186,38 @@ class FrontdoorFirewallPolicyConfig:
     managed_rule: Any = None
     timeouts: Any = None
 
-FrontdoorFirewallPolicy = sdk.ResourceBinding(
+FrontdoorFirewallPolicy = ubx.ResourceBinding(
     wire_type="azurerm_cdn_frontdoor_firewall_policy",
     fields={
-        "captcha_cookie_expiration_in_minutes": sdk.FieldSpec(wire_name="captcha_cookie_expiration_in_minutes"),
-        "custom_block_response_body": sdk.FieldSpec(wire_name="custom_block_response_body"),
-        "custom_block_response_status_code": sdk.FieldSpec(wire_name="custom_block_response_status_code"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "js_challenge_cookie_expiration_in_minutes": sdk.FieldSpec(wire_name="js_challenge_cookie_expiration_in_minutes"),
-        "mode": sdk.FieldSpec(wire_name="mode"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "redirect_url": sdk.FieldSpec(wire_name="redirect_url"),
-        "request_body_check_enabled": sdk.FieldSpec(wire_name="request_body_check_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "custom_rule": sdk.FieldSpec(
+        "captcha_cookie_expiration_in_minutes": ubx.FieldSpec(wire_name="captcha_cookie_expiration_in_minutes"),
+        "custom_block_response_body": ubx.FieldSpec(wire_name="custom_block_response_body"),
+        "custom_block_response_status_code": ubx.FieldSpec(wire_name="custom_block_response_status_code"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "js_challenge_cookie_expiration_in_minutes": ubx.FieldSpec(wire_name="js_challenge_cookie_expiration_in_minutes"),
+        "mode": ubx.FieldSpec(wire_name="mode"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "redirect_url": ubx.FieldSpec(wire_name="redirect_url"),
+        "request_body_check_enabled": ubx.FieldSpec(wire_name="request_body_check_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "custom_rule": ubx.FieldSpec(
             wire_name="custom_rule",
             kind="list",
             fields=_FrontdoorFirewallPolicy_CustomRuleFields,
         ),
-        "log_scrubbing": sdk.FieldSpec(
+        "log_scrubbing": ubx.FieldSpec(
             wire_name="log_scrubbing",
             kind="list",
             fields=_FrontdoorFirewallPolicy_LogScrubbingFields,
         ),
-        "managed_rule": sdk.FieldSpec(
+        "managed_rule": ubx.FieldSpec(
             wire_name="managed_rule",
             kind="list",
             fields=_FrontdoorFirewallPolicy_ManagedRuleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FrontdoorFirewallPolicy_TimeoutsFields,

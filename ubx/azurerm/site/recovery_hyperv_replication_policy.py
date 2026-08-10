@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RecoveryHypervReplicationPolicy_Timeouts:
@@ -14,10 +14,10 @@ class RecoveryHypervReplicationPolicy_Timeouts:
     update: Any = None
 
 _RecoveryHypervReplicationPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class RecoveryHypervReplicationPolicyConfig:
     replication_interval_in_seconds: Any = None
     timeouts: Any = None
 
-RecoveryHypervReplicationPolicy = sdk.ResourceBinding(
+RecoveryHypervReplicationPolicy = ubx.ResourceBinding(
     wire_type="azurerm_site_recovery_hyperv_replication_policy",
     fields={
-        "application_consistent_snapshot_frequency_in_hours": sdk.FieldSpec(wire_name="application_consistent_snapshot_frequency_in_hours"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "recovery_point_retention_in_hours": sdk.FieldSpec(wire_name="recovery_point_retention_in_hours"),
-        "recovery_vault_id": sdk.FieldSpec(wire_name="recovery_vault_id"),
-        "replication_interval_in_seconds": sdk.FieldSpec(wire_name="replication_interval_in_seconds"),
-        "timeouts": sdk.FieldSpec(
+        "application_consistent_snapshot_frequency_in_hours": ubx.FieldSpec(wire_name="application_consistent_snapshot_frequency_in_hours"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "recovery_point_retention_in_hours": ubx.FieldSpec(wire_name="recovery_point_retention_in_hours"),
+        "recovery_vault_id": ubx.FieldSpec(wire_name="recovery_vault_id"),
+        "replication_interval_in_seconds": ubx.FieldSpec(wire_name="replication_interval_in_seconds"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RecoveryHypervReplicationPolicy_TimeoutsFields,

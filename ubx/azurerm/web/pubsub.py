@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Pubsub_Identity:
@@ -28,24 +28,24 @@ class Pubsub_Timeouts:
     update: Any = None
 
 _Pubsub_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Pubsub_LiveTraceFields = {
-    "connectivity_logs_enabled": sdk.FieldSpec(wire_name="connectivity_logs_enabled"),
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "http_request_logs_enabled": sdk.FieldSpec(wire_name="http_request_logs_enabled"),
-    "messaging_logs_enabled": sdk.FieldSpec(wire_name="messaging_logs_enabled"),
+    "connectivity_logs_enabled": ubx.FieldSpec(wire_name="connectivity_logs_enabled"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "http_request_logs_enabled": ubx.FieldSpec(wire_name="http_request_logs_enabled"),
+    "messaging_logs_enabled": ubx.FieldSpec(wire_name="messaging_logs_enabled"),
 }
 
 _Pubsub_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -65,31 +65,31 @@ class PubsubConfig:
     live_trace: Any = None
     timeouts: Any = None
 
-Pubsub = sdk.ResourceBinding(
+Pubsub = ubx.ResourceBinding(
     wire_type="azurerm_web_pubsub",
     fields={
-        "aad_auth_enabled": sdk.FieldSpec(wire_name="aad_auth_enabled"),
-        "capacity": sdk.FieldSpec(wire_name="capacity"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "local_auth_enabled": sdk.FieldSpec(wire_name="local_auth_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "tls_client_cert_enabled": sdk.FieldSpec(wire_name="tls_client_cert_enabled"),
-        "identity": sdk.FieldSpec(
+        "aad_auth_enabled": ubx.FieldSpec(wire_name="aad_auth_enabled"),
+        "capacity": ubx.FieldSpec(wire_name="capacity"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "local_auth_enabled": ubx.FieldSpec(wire_name="local_auth_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "tls_client_cert_enabled": ubx.FieldSpec(wire_name="tls_client_cert_enabled"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Pubsub_IdentityFields,
         ),
-        "live_trace": sdk.FieldSpec(
+        "live_trace": ubx.FieldSpec(
             wire_name="live_trace",
             kind="list",
             fields=_Pubsub_LiveTraceFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Pubsub_TimeoutsFields,

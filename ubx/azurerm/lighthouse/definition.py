@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Definition_Authorization:
@@ -46,21 +46,21 @@ class Definition_Timeouts:
     update: Any = None
 
 _Definition_AuthorizationFields = {
-    "delegated_role_definition_ids": sdk.FieldSpec(wire_name="delegated_role_definition_ids"),
-    "principal_display_name": sdk.FieldSpec(wire_name="principal_display_name"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "role_definition_id": sdk.FieldSpec(wire_name="role_definition_id"),
+    "delegated_role_definition_ids": ubx.FieldSpec(wire_name="delegated_role_definition_ids"),
+    "principal_display_name": ubx.FieldSpec(wire_name="principal_display_name"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "role_definition_id": ubx.FieldSpec(wire_name="role_definition_id"),
 }
 
 _Definition_EligibleAuthorization_JustInTimeAccessPolicy_ApproverFields = {
-    "principal_display_name": sdk.FieldSpec(wire_name="principal_display_name"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
+    "principal_display_name": ubx.FieldSpec(wire_name="principal_display_name"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
 }
 
 _Definition_EligibleAuthorization_JustInTimeAccessPolicyFields = {
-    "maximum_activation_duration": sdk.FieldSpec(wire_name="maximum_activation_duration"),
-    "multi_factor_auth_provider": sdk.FieldSpec(wire_name="multi_factor_auth_provider"),
-    "approver": sdk.FieldSpec(
+    "maximum_activation_duration": ubx.FieldSpec(wire_name="maximum_activation_duration"),
+    "multi_factor_auth_provider": ubx.FieldSpec(wire_name="multi_factor_auth_provider"),
+    "approver": ubx.FieldSpec(
         wire_name="approver",
         kind="set",
         fields=_Definition_EligibleAuthorization_JustInTimeAccessPolicy_ApproverFields,
@@ -68,10 +68,10 @@ _Definition_EligibleAuthorization_JustInTimeAccessPolicyFields = {
 }
 
 _Definition_EligibleAuthorizationFields = {
-    "principal_display_name": sdk.FieldSpec(wire_name="principal_display_name"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "role_definition_id": sdk.FieldSpec(wire_name="role_definition_id"),
-    "just_in_time_access_policy": sdk.FieldSpec(
+    "principal_display_name": ubx.FieldSpec(wire_name="principal_display_name"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "role_definition_id": ubx.FieldSpec(wire_name="role_definition_id"),
+    "just_in_time_access_policy": ubx.FieldSpec(
         wire_name="just_in_time_access_policy",
         kind="list",
         fields=_Definition_EligibleAuthorization_JustInTimeAccessPolicyFields,
@@ -79,17 +79,17 @@ _Definition_EligibleAuthorizationFields = {
 }
 
 _Definition_PlanFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "product": sdk.FieldSpec(wire_name="product"),
-    "publisher": sdk.FieldSpec(wire_name="publisher"),
-    "version": sdk.FieldSpec(wire_name="version"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "product": ubx.FieldSpec(wire_name="product"),
+    "publisher": ubx.FieldSpec(wire_name="publisher"),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _Definition_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -105,31 +105,31 @@ class DefinitionConfig:
     plan: Any = None
     timeouts: Any = None
 
-Definition = sdk.ResourceBinding(
+Definition = ubx.ResourceBinding(
     wire_type="azurerm_lighthouse_definition",
     fields={
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "lighthouse_definition_id": sdk.FieldSpec(wire_name="lighthouse_definition_id"),
-        "managing_tenant_id": sdk.FieldSpec(wire_name="managing_tenant_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "scope": sdk.FieldSpec(wire_name="scope"),
-        "authorization": sdk.FieldSpec(
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "lighthouse_definition_id": ubx.FieldSpec(wire_name="lighthouse_definition_id"),
+        "managing_tenant_id": ubx.FieldSpec(wire_name="managing_tenant_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "scope": ubx.FieldSpec(wire_name="scope"),
+        "authorization": ubx.FieldSpec(
             wire_name="authorization",
             kind="set",
             fields=_Definition_AuthorizationFields,
         ),
-        "eligible_authorization": sdk.FieldSpec(
+        "eligible_authorization": ubx.FieldSpec(
             wire_name="eligible_authorization",
             kind="set",
             fields=_Definition_EligibleAuthorizationFields,
         ),
-        "plan": sdk.FieldSpec(
+        "plan": ubx.FieldSpec(
             wire_name="plan",
             kind="list",
             fields=_Definition_PlanFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Definition_TimeoutsFields,

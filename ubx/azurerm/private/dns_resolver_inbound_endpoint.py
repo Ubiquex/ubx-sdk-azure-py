@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DnsResolverInboundEndpoint_IpConfigurations:
@@ -20,16 +20,16 @@ class DnsResolverInboundEndpoint_Timeouts:
     update: Any = None
 
 _DnsResolverInboundEndpoint_IpConfigurationsFields = {
-    "private_ip_address": sdk.FieldSpec(wire_name="private_ip_address"),
-    "private_ip_allocation_method": sdk.FieldSpec(wire_name="private_ip_allocation_method"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "private_ip_address": ubx.FieldSpec(wire_name="private_ip_address"),
+    "private_ip_allocation_method": ubx.FieldSpec(wire_name="private_ip_allocation_method"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _DnsResolverInboundEndpoint_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -42,20 +42,20 @@ class DnsResolverInboundEndpointConfig:
     ip_configurations: Any = None
     timeouts: Any = None
 
-DnsResolverInboundEndpoint = sdk.ResourceBinding(
+DnsResolverInboundEndpoint = ubx.ResourceBinding(
     wire_type="azurerm_private_dns_resolver_inbound_endpoint",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "private_dns_resolver_id": sdk.FieldSpec(wire_name="private_dns_resolver_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "ip_configurations": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "private_dns_resolver_id": ubx.FieldSpec(wire_name="private_dns_resolver_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "ip_configurations": ubx.FieldSpec(
             wire_name="ip_configurations",
             kind="list",
             fields=_DnsResolverInboundEndpoint_IpConfigurationsFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DnsResolverInboundEndpoint_TimeoutsFields,

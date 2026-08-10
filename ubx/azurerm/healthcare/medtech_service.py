@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MedtechService_Identity:
@@ -21,17 +21,17 @@ class MedtechService_Timeouts:
     update: Any = None
 
 _MedtechService_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _MedtechService_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -48,24 +48,24 @@ class MedtechServiceConfig:
     identity: Any = None
     timeouts: Any = None
 
-MedtechService = sdk.ResourceBinding(
+MedtechService = ubx.ResourceBinding(
     wire_type="azurerm_healthcare_medtech_service",
     fields={
-        "device_mapping_json": sdk.FieldSpec(wire_name="device_mapping_json"),
-        "eventhub_consumer_group_name": sdk.FieldSpec(wire_name="eventhub_consumer_group_name"),
-        "eventhub_name": sdk.FieldSpec(wire_name="eventhub_name"),
-        "eventhub_namespace_name": sdk.FieldSpec(wire_name="eventhub_namespace_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "workspace_id": sdk.FieldSpec(wire_name="workspace_id"),
-        "identity": sdk.FieldSpec(
+        "device_mapping_json": ubx.FieldSpec(wire_name="device_mapping_json"),
+        "eventhub_consumer_group_name": ubx.FieldSpec(wire_name="eventhub_consumer_group_name"),
+        "eventhub_name": ubx.FieldSpec(wire_name="eventhub_name"),
+        "eventhub_namespace_name": ubx.FieldSpec(wire_name="eventhub_namespace_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "workspace_id": ubx.FieldSpec(wire_name="workspace_id"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_MedtechService_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_MedtechService_TimeoutsFields,

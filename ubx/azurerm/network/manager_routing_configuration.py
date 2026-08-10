@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagerRoutingConfiguration_Timeouts:
@@ -14,10 +14,10 @@ class ManagerRoutingConfiguration_Timeouts:
     update: Any = None
 
 _ManagerRoutingConfiguration_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class ManagerRoutingConfigurationConfig:
     route_table_usage_mode: Any = None
     timeouts: Any = None
 
-ManagerRoutingConfiguration = sdk.ResourceBinding(
+ManagerRoutingConfiguration = ubx.ResourceBinding(
     wire_type="azurerm_network_manager_routing_configuration",
     fields={
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "network_manager_id": sdk.FieldSpec(wire_name="network_manager_id"),
-        "route_table_usage_mode": sdk.FieldSpec(wire_name="route_table_usage_mode"),
-        "timeouts": sdk.FieldSpec(
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network_manager_id": ubx.FieldSpec(wire_name="network_manager_id"),
+        "route_table_usage_mode": ubx.FieldSpec(wire_name="route_table_usage_mode"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagerRoutingConfiguration_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CenterStorageDefender_Timeouts:
@@ -14,10 +14,10 @@ class CenterStorageDefender_Timeouts:
     update: Any = None
 
 _CenterStorageDefender_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class CenterStorageDefenderConfig:
     storage_account_id: Any = None
     timeouts: Any = None
 
-CenterStorageDefender = sdk.ResourceBinding(
+CenterStorageDefender = ubx.ResourceBinding(
     wire_type="azurerm_security_center_storage_defender",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "malware_scanning_on_upload_cap_gb_per_month": sdk.FieldSpec(wire_name="malware_scanning_on_upload_cap_gb_per_month"),
-        "malware_scanning_on_upload_enabled": sdk.FieldSpec(wire_name="malware_scanning_on_upload_enabled"),
-        "override_subscription_settings_enabled": sdk.FieldSpec(wire_name="override_subscription_settings_enabled"),
-        "scan_results_event_grid_topic_id": sdk.FieldSpec(wire_name="scan_results_event_grid_topic_id"),
-        "sensitive_data_discovery_enabled": sdk.FieldSpec(wire_name="sensitive_data_discovery_enabled"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "malware_scanning_on_upload_cap_gb_per_month": ubx.FieldSpec(wire_name="malware_scanning_on_upload_cap_gb_per_month"),
+        "malware_scanning_on_upload_enabled": ubx.FieldSpec(wire_name="malware_scanning_on_upload_enabled"),
+        "override_subscription_settings_enabled": ubx.FieldSpec(wire_name="override_subscription_settings_enabled"),
+        "scan_results_event_grid_topic_id": ubx.FieldSpec(wire_name="scan_results_event_grid_topic_id"),
+        "sensitive_data_discovery_enabled": ubx.FieldSpec(wire_name="sensitive_data_discovery_enabled"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CenterStorageDefender_TimeoutsFields,

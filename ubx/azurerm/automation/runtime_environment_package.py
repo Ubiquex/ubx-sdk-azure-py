@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RuntimeEnvironmentPackage_Timeouts:
@@ -13,9 +13,9 @@ class RuntimeEnvironmentPackage_Timeouts:
     read: Any = None
 
 _RuntimeEnvironmentPackage_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -29,17 +29,17 @@ class RuntimeEnvironmentPackageConfig:
     name: Any = None
     timeouts: Any = None
 
-RuntimeEnvironmentPackage = sdk.ResourceBinding(
+RuntimeEnvironmentPackage = ubx.ResourceBinding(
     wire_type="azurerm_automation_runtime_environment_package",
     fields={
-        "automation_runtime_environment_id": sdk.FieldSpec(wire_name="automation_runtime_environment_id"),
-        "content_uri": sdk.FieldSpec(wire_name="content_uri"),
-        "content_version": sdk.FieldSpec(wire_name="content_version"),
-        "hash_algorithm": sdk.FieldSpec(wire_name="hash_algorithm"),
-        "hash_value": sdk.FieldSpec(wire_name="hash_value"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "timeouts": sdk.FieldSpec(
+        "automation_runtime_environment_id": ubx.FieldSpec(wire_name="automation_runtime_environment_id"),
+        "content_uri": ubx.FieldSpec(wire_name="content_uri"),
+        "content_version": ubx.FieldSpec(wire_name="content_version"),
+        "hash_algorithm": ubx.FieldSpec(wire_name="hash_algorithm"),
+        "hash_value": ubx.FieldSpec(wire_name="hash_value"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RuntimeEnvironmentPackage_TimeoutsFields,

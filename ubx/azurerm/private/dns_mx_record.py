@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DnsMxRecord_Record:
@@ -19,15 +19,15 @@ class DnsMxRecord_Timeouts:
     update: Any = None
 
 _DnsMxRecord_RecordFields = {
-    "exchange": sdk.FieldSpec(wire_name="exchange"),
-    "preference": sdk.FieldSpec(wire_name="preference"),
+    "exchange": ubx.FieldSpec(wire_name="exchange"),
+    "preference": ubx.FieldSpec(wire_name="preference"),
 }
 
 _DnsMxRecord_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -40,20 +40,20 @@ class DnsMxRecordConfig:
     record: Any = None
     timeouts: Any = None
 
-DnsMxRecord = sdk.ResourceBinding(
+DnsMxRecord = ubx.ResourceBinding(
     wire_type="azurerm_private_dns_mx_record",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "private_dns_zone_id": sdk.FieldSpec(wire_name="private_dns_zone_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "ttl": sdk.FieldSpec(wire_name="ttl"),
-        "record": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "private_dns_zone_id": ubx.FieldSpec(wire_name="private_dns_zone_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "ttl": ubx.FieldSpec(wire_name="ttl"),
+        "record": ubx.FieldSpec(
             wire_name="record",
             kind="set",
             fields=_DnsMxRecord_RecordFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DnsMxRecord_TimeoutsFields,

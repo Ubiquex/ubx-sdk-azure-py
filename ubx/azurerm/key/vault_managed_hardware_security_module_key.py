@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VaultManagedHardwareSecurityModuleKey_Timeouts:
@@ -14,10 +14,10 @@ class VaultManagedHardwareSecurityModuleKey_Timeouts:
     update: Any = None
 
 _VaultManagedHardwareSecurityModuleKey_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -34,20 +34,20 @@ class VaultManagedHardwareSecurityModuleKeyConfig:
     tags: Any = None
     timeouts: Any = None
 
-VaultManagedHardwareSecurityModuleKey = sdk.ResourceBinding(
+VaultManagedHardwareSecurityModuleKey = ubx.ResourceBinding(
     wire_type="azurerm_key_vault_managed_hardware_security_module_key",
     fields={
-        "curve": sdk.FieldSpec(wire_name="curve"),
-        "expiration_date": sdk.FieldSpec(wire_name="expiration_date"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "key_opts": sdk.FieldSpec(wire_name="key_opts"),
-        "key_size": sdk.FieldSpec(wire_name="key_size"),
-        "key_type": sdk.FieldSpec(wire_name="key_type"),
-        "managed_hsm_id": sdk.FieldSpec(wire_name="managed_hsm_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "not_before_date": sdk.FieldSpec(wire_name="not_before_date"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "curve": ubx.FieldSpec(wire_name="curve"),
+        "expiration_date": ubx.FieldSpec(wire_name="expiration_date"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "key_opts": ubx.FieldSpec(wire_name="key_opts"),
+        "key_size": ubx.FieldSpec(wire_name="key_size"),
+        "key_type": ubx.FieldSpec(wire_name="key_type"),
+        "managed_hsm_id": ubx.FieldSpec(wire_name="managed_hsm_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "not_before_date": ubx.FieldSpec(wire_name="not_before_date"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_VaultManagedHardwareSecurityModuleKey_TimeoutsFields,

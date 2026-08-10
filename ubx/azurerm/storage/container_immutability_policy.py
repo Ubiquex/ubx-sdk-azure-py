@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ContainerImmutabilityPolicy_Timeouts:
@@ -14,10 +14,10 @@ class ContainerImmutabilityPolicy_Timeouts:
     update: Any = None
 
 _ContainerImmutabilityPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class ContainerImmutabilityPolicyConfig:
     storage_container_resource_manager_id: Any = None
     timeouts: Any = None
 
-ContainerImmutabilityPolicy = sdk.ResourceBinding(
+ContainerImmutabilityPolicy = ubx.ResourceBinding(
     wire_type="azurerm_storage_container_immutability_policy",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "immutability_period_in_days": sdk.FieldSpec(wire_name="immutability_period_in_days"),
-        "locked": sdk.FieldSpec(wire_name="locked"),
-        "protected_append_writes_all_enabled": sdk.FieldSpec(wire_name="protected_append_writes_all_enabled"),
-        "protected_append_writes_enabled": sdk.FieldSpec(wire_name="protected_append_writes_enabled"),
-        "storage_container_resource_manager_id": sdk.FieldSpec(wire_name="storage_container_resource_manager_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "immutability_period_in_days": ubx.FieldSpec(wire_name="immutability_period_in_days"),
+        "locked": ubx.FieldSpec(wire_name="locked"),
+        "protected_append_writes_all_enabled": ubx.FieldSpec(wire_name="protected_append_writes_all_enabled"),
+        "protected_append_writes_enabled": ubx.FieldSpec(wire_name="protected_append_writes_enabled"),
+        "storage_container_resource_manager_id": ubx.FieldSpec(wire_name="storage_container_resource_manager_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ContainerImmutabilityPolicy_TimeoutsFields,

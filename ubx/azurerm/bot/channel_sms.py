@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ChannelSms_Timeouts:
@@ -14,10 +14,10 @@ class ChannelSms_Timeouts:
     update: Any = None
 
 _ChannelSms_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class ChannelSmsConfig:
     sms_channel_auth_token: Any = None
     timeouts: Any = None
 
-ChannelSms = sdk.ResourceBinding(
+ChannelSms = ubx.ResourceBinding(
     wire_type="azurerm_bot_channel_sms",
     fields={
-        "bot_name": sdk.FieldSpec(wire_name="bot_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "phone_number": sdk.FieldSpec(wire_name="phone_number"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sms_channel_account_security_id": sdk.FieldSpec(wire_name="sms_channel_account_security_id"),
-        "sms_channel_auth_token": sdk.FieldSpec(wire_name="sms_channel_auth_token"),
-        "timeouts": sdk.FieldSpec(
+        "bot_name": ubx.FieldSpec(wire_name="bot_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "phone_number": ubx.FieldSpec(wire_name="phone_number"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sms_channel_account_security_id": ubx.FieldSpec(wire_name="sms_channel_account_security_id"),
+        "sms_channel_auth_token": ubx.FieldSpec(wire_name="sms_channel_auth_token"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ChannelSms_TimeoutsFields,

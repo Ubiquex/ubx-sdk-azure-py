@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PubsubCustomCertificate_Timeouts:
@@ -13,9 +13,9 @@ class PubsubCustomCertificate_Timeouts:
     read: Any = None
 
 _PubsubCustomCertificate_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -26,14 +26,14 @@ class PubsubCustomCertificateConfig:
     web_pubsub_id: Any = None
     timeouts: Any = None
 
-PubsubCustomCertificate = sdk.ResourceBinding(
+PubsubCustomCertificate = ubx.ResourceBinding(
     wire_type="azurerm_web_pubsub_custom_certificate",
     fields={
-        "custom_certificate_id": sdk.FieldSpec(wire_name="custom_certificate_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "web_pubsub_id": sdk.FieldSpec(wire_name="web_pubsub_id"),
-        "timeouts": sdk.FieldSpec(
+        "custom_certificate_id": ubx.FieldSpec(wire_name="custom_certificate_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "web_pubsub_id": ubx.FieldSpec(wire_name="web_pubsub_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_PubsubCustomCertificate_TimeoutsFields,

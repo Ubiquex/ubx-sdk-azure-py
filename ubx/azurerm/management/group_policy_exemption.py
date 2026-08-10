@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GroupPolicyExemption_Timeouts:
@@ -14,10 +14,10 @@ class GroupPolicyExemption_Timeouts:
     update: Any = None
 
 _GroupPolicyExemption_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -34,20 +34,20 @@ class GroupPolicyExemptionConfig:
     policy_definition_reference_ids: Any = None
     timeouts: Any = None
 
-GroupPolicyExemption = sdk.ResourceBinding(
+GroupPolicyExemption = ubx.ResourceBinding(
     wire_type="azurerm_management_group_policy_exemption",
     fields={
-        "description": sdk.FieldSpec(wire_name="description"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "exemption_category": sdk.FieldSpec(wire_name="exemption_category"),
-        "expires_on": sdk.FieldSpec(wire_name="expires_on"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "management_group_id": sdk.FieldSpec(wire_name="management_group_id"),
-        "metadata": sdk.FieldSpec(wire_name="metadata"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "policy_assignment_id": sdk.FieldSpec(wire_name="policy_assignment_id"),
-        "policy_definition_reference_ids": sdk.FieldSpec(wire_name="policy_definition_reference_ids"),
-        "timeouts": sdk.FieldSpec(
+        "description": ubx.FieldSpec(wire_name="description"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "exemption_category": ubx.FieldSpec(wire_name="exemption_category"),
+        "expires_on": ubx.FieldSpec(wire_name="expires_on"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "management_group_id": ubx.FieldSpec(wire_name="management_group_id"),
+        "metadata": ubx.FieldSpec(wire_name="metadata"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "policy_assignment_id": ubx.FieldSpec(wire_name="policy_assignment_id"),
+        "policy_definition_reference_ids": ubx.FieldSpec(wire_name="policy_definition_reference_ids"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_GroupPolicyExemption_TimeoutsFields,

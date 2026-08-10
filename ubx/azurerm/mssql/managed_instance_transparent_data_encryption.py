@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagedInstanceTransparentDataEncryption_Timeouts:
@@ -14,10 +14,10 @@ class ManagedInstanceTransparentDataEncryption_Timeouts:
     update: Any = None
 
 _ManagedInstanceTransparentDataEncryption_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -28,14 +28,14 @@ class ManagedInstanceTransparentDataEncryptionConfig:
     managed_instance_id: Any = None
     timeouts: Any = None
 
-ManagedInstanceTransparentDataEncryption = sdk.ResourceBinding(
+ManagedInstanceTransparentDataEncryption = ubx.ResourceBinding(
     wire_type="azurerm_mssql_managed_instance_transparent_data_encryption",
     fields={
-        "auto_rotation_enabled": sdk.FieldSpec(wire_name="auto_rotation_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "key_vault_key_id": sdk.FieldSpec(wire_name="key_vault_key_id"),
-        "managed_instance_id": sdk.FieldSpec(wire_name="managed_instance_id"),
-        "timeouts": sdk.FieldSpec(
+        "auto_rotation_enabled": ubx.FieldSpec(wire_name="auto_rotation_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "key_vault_key_id": ubx.FieldSpec(wire_name="key_vault_key_id"),
+        "managed_instance_id": ubx.FieldSpec(wire_name="managed_instance_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagedInstanceTransparentDataEncryption_TimeoutsFields,

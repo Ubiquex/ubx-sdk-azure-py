@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class NetworkDnsServers_Timeouts:
@@ -14,10 +14,10 @@ class NetworkDnsServers_Timeouts:
     update: Any = None
 
 _NetworkDnsServers_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -27,13 +27,13 @@ class NetworkDnsServersConfig:
     virtual_network_id: Any = None
     timeouts: Any = None
 
-NetworkDnsServers = sdk.ResourceBinding(
+NetworkDnsServers = ubx.ResourceBinding(
     wire_type="azurerm_virtual_network_dns_servers",
     fields={
-        "dns_servers": sdk.FieldSpec(wire_name="dns_servers"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "virtual_network_id": sdk.FieldSpec(wire_name="virtual_network_id"),
-        "timeouts": sdk.FieldSpec(
+        "dns_servers": ubx.FieldSpec(wire_name="dns_servers"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "virtual_network_id": ubx.FieldSpec(wire_name="virtual_network_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_NetworkDnsServers_TimeoutsFields,

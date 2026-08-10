@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Database_Identity:
@@ -51,47 +51,47 @@ class Database_Timeouts:
     update: Any = None
 
 _Database_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Database_ImportFields = {
-    "administrator_login": sdk.FieldSpec(wire_name="administrator_login"),
-    "administrator_login_password": sdk.FieldSpec(wire_name="administrator_login_password"),
-    "authentication_type": sdk.FieldSpec(wire_name="authentication_type"),
-    "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-    "storage_key": sdk.FieldSpec(wire_name="storage_key"),
-    "storage_key_type": sdk.FieldSpec(wire_name="storage_key_type"),
-    "storage_uri": sdk.FieldSpec(wire_name="storage_uri"),
+    "administrator_login": ubx.FieldSpec(wire_name="administrator_login"),
+    "administrator_login_password": ubx.FieldSpec(wire_name="administrator_login_password"),
+    "authentication_type": ubx.FieldSpec(wire_name="authentication_type"),
+    "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+    "storage_key": ubx.FieldSpec(wire_name="storage_key"),
+    "storage_key_type": ubx.FieldSpec(wire_name="storage_key_type"),
+    "storage_uri": ubx.FieldSpec(wire_name="storage_uri"),
 }
 
 _Database_LongTermRetentionPolicyFields = {
-    "monthly_retention": sdk.FieldSpec(wire_name="monthly_retention"),
-    "week_of_year": sdk.FieldSpec(wire_name="week_of_year"),
-    "weekly_retention": sdk.FieldSpec(wire_name="weekly_retention"),
-    "yearly_retention": sdk.FieldSpec(wire_name="yearly_retention"),
+    "monthly_retention": ubx.FieldSpec(wire_name="monthly_retention"),
+    "week_of_year": ubx.FieldSpec(wire_name="week_of_year"),
+    "weekly_retention": ubx.FieldSpec(wire_name="weekly_retention"),
+    "yearly_retention": ubx.FieldSpec(wire_name="yearly_retention"),
 }
 
 _Database_ShortTermRetentionPolicyFields = {
-    "backup_interval_in_hours": sdk.FieldSpec(wire_name="backup_interval_in_hours"),
-    "retention_days": sdk.FieldSpec(wire_name="retention_days"),
+    "backup_interval_in_hours": ubx.FieldSpec(wire_name="backup_interval_in_hours"),
+    "retention_days": ubx.FieldSpec(wire_name="retention_days"),
 }
 
 _Database_ThreatDetectionPolicyFields = {
-    "disabled_alerts": sdk.FieldSpec(wire_name="disabled_alerts"),
-    "email_account_admins_enabled": sdk.FieldSpec(wire_name="email_account_admins_enabled"),
-    "email_addresses": sdk.FieldSpec(wire_name="email_addresses"),
-    "retention_days": sdk.FieldSpec(wire_name="retention_days"),
-    "state": sdk.FieldSpec(wire_name="state"),
-    "storage_account_access_key": sdk.FieldSpec(wire_name="storage_account_access_key"),
-    "storage_endpoint": sdk.FieldSpec(wire_name="storage_endpoint"),
+    "disabled_alerts": ubx.FieldSpec(wire_name="disabled_alerts"),
+    "email_account_admins_enabled": ubx.FieldSpec(wire_name="email_account_admins_enabled"),
+    "email_addresses": ubx.FieldSpec(wire_name="email_addresses"),
+    "retention_days": ubx.FieldSpec(wire_name="retention_days"),
+    "state": ubx.FieldSpec(wire_name="state"),
+    "storage_account_access_key": ubx.FieldSpec(wire_name="storage_account_access_key"),
+    "storage_endpoint": ubx.FieldSpec(wire_name="storage_endpoint"),
 }
 
 _Database_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -134,66 +134,66 @@ class DatabaseConfig:
     threat_detection_policy: Any = None
     timeouts: Any = None
 
-Database = sdk.ResourceBinding(
+Database = ubx.ResourceBinding(
     wire_type="azurerm_mssql_database",
     fields={
-        "auto_pause_delay_in_minutes": sdk.FieldSpec(wire_name="auto_pause_delay_in_minutes"),
-        "collation": sdk.FieldSpec(wire_name="collation"),
-        "create_mode": sdk.FieldSpec(wire_name="create_mode"),
-        "creation_source_database_id": sdk.FieldSpec(wire_name="creation_source_database_id"),
-        "elastic_pool_id": sdk.FieldSpec(wire_name="elastic_pool_id"),
-        "enclave_type": sdk.FieldSpec(wire_name="enclave_type"),
-        "geo_backup_enabled": sdk.FieldSpec(wire_name="geo_backup_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "ledger_enabled": sdk.FieldSpec(wire_name="ledger_enabled"),
-        "license_type": sdk.FieldSpec(wire_name="license_type"),
-        "maintenance_configuration_name": sdk.FieldSpec(wire_name="maintenance_configuration_name"),
-        "max_size_gb": sdk.FieldSpec(wire_name="max_size_gb"),
-        "min_capacity": sdk.FieldSpec(wire_name="min_capacity"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "read_replica_count": sdk.FieldSpec(wire_name="read_replica_count"),
-        "read_scale": sdk.FieldSpec(wire_name="read_scale"),
-        "recover_database_id": sdk.FieldSpec(wire_name="recover_database_id"),
-        "recovery_point_id": sdk.FieldSpec(wire_name="recovery_point_id"),
-        "restore_dropped_database_id": sdk.FieldSpec(wire_name="restore_dropped_database_id"),
-        "restore_long_term_retention_backup_id": sdk.FieldSpec(wire_name="restore_long_term_retention_backup_id"),
-        "restore_point_in_time": sdk.FieldSpec(wire_name="restore_point_in_time"),
-        "sample_name": sdk.FieldSpec(wire_name="sample_name"),
-        "secondary_type": sdk.FieldSpec(wire_name="secondary_type"),
-        "server_id": sdk.FieldSpec(wire_name="server_id"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "storage_account_type": sdk.FieldSpec(wire_name="storage_account_type"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "transparent_data_encryption_enabled": sdk.FieldSpec(wire_name="transparent_data_encryption_enabled"),
-        "transparent_data_encryption_key_automatic_rotation_enabled": sdk.FieldSpec(wire_name="transparent_data_encryption_key_automatic_rotation_enabled"),
-        "transparent_data_encryption_key_vault_key_id": sdk.FieldSpec(wire_name="transparent_data_encryption_key_vault_key_id"),
-        "zone_redundant": sdk.FieldSpec(wire_name="zone_redundant"),
-        "identity": sdk.FieldSpec(
+        "auto_pause_delay_in_minutes": ubx.FieldSpec(wire_name="auto_pause_delay_in_minutes"),
+        "collation": ubx.FieldSpec(wire_name="collation"),
+        "create_mode": ubx.FieldSpec(wire_name="create_mode"),
+        "creation_source_database_id": ubx.FieldSpec(wire_name="creation_source_database_id"),
+        "elastic_pool_id": ubx.FieldSpec(wire_name="elastic_pool_id"),
+        "enclave_type": ubx.FieldSpec(wire_name="enclave_type"),
+        "geo_backup_enabled": ubx.FieldSpec(wire_name="geo_backup_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "ledger_enabled": ubx.FieldSpec(wire_name="ledger_enabled"),
+        "license_type": ubx.FieldSpec(wire_name="license_type"),
+        "maintenance_configuration_name": ubx.FieldSpec(wire_name="maintenance_configuration_name"),
+        "max_size_gb": ubx.FieldSpec(wire_name="max_size_gb"),
+        "min_capacity": ubx.FieldSpec(wire_name="min_capacity"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "read_replica_count": ubx.FieldSpec(wire_name="read_replica_count"),
+        "read_scale": ubx.FieldSpec(wire_name="read_scale"),
+        "recover_database_id": ubx.FieldSpec(wire_name="recover_database_id"),
+        "recovery_point_id": ubx.FieldSpec(wire_name="recovery_point_id"),
+        "restore_dropped_database_id": ubx.FieldSpec(wire_name="restore_dropped_database_id"),
+        "restore_long_term_retention_backup_id": ubx.FieldSpec(wire_name="restore_long_term_retention_backup_id"),
+        "restore_point_in_time": ubx.FieldSpec(wire_name="restore_point_in_time"),
+        "sample_name": ubx.FieldSpec(wire_name="sample_name"),
+        "secondary_type": ubx.FieldSpec(wire_name="secondary_type"),
+        "server_id": ubx.FieldSpec(wire_name="server_id"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "storage_account_type": ubx.FieldSpec(wire_name="storage_account_type"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "transparent_data_encryption_enabled": ubx.FieldSpec(wire_name="transparent_data_encryption_enabled"),
+        "transparent_data_encryption_key_automatic_rotation_enabled": ubx.FieldSpec(wire_name="transparent_data_encryption_key_automatic_rotation_enabled"),
+        "transparent_data_encryption_key_vault_key_id": ubx.FieldSpec(wire_name="transparent_data_encryption_key_vault_key_id"),
+        "zone_redundant": ubx.FieldSpec(wire_name="zone_redundant"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Database_IdentityFields,
         ),
-        "import_": sdk.FieldSpec(
+        "import_": ubx.FieldSpec(
             wire_name="import",
             kind="list",
             fields=_Database_ImportFields,
         ),
-        "long_term_retention_policy": sdk.FieldSpec(
+        "long_term_retention_policy": ubx.FieldSpec(
             wire_name="long_term_retention_policy",
             kind="list",
             fields=_Database_LongTermRetentionPolicyFields,
         ),
-        "short_term_retention_policy": sdk.FieldSpec(
+        "short_term_retention_policy": ubx.FieldSpec(
             wire_name="short_term_retention_policy",
             kind="list",
             fields=_Database_ShortTermRetentionPolicyFields,
         ),
-        "threat_detection_policy": sdk.FieldSpec(
+        "threat_detection_policy": ubx.FieldSpec(
             wire_name="threat_detection_policy",
             kind="list",
             fields=_Database_ThreatDetectionPolicyFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Database_TimeoutsFields,

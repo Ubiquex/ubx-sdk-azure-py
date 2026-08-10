@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DiagnosticSetting_EnabledLog:
@@ -23,19 +23,19 @@ class DiagnosticSetting_Timeouts:
     update: Any = None
 
 _DiagnosticSetting_EnabledLogFields = {
-    "category": sdk.FieldSpec(wire_name="category"),
-    "category_group": sdk.FieldSpec(wire_name="category_group"),
+    "category": ubx.FieldSpec(wire_name="category"),
+    "category_group": ubx.FieldSpec(wire_name="category_group"),
 }
 
 _DiagnosticSetting_EnabledMetricFields = {
-    "category": sdk.FieldSpec(wire_name="category"),
+    "category": ubx.FieldSpec(wire_name="category"),
 }
 
 _DiagnosticSetting_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -53,29 +53,29 @@ class DiagnosticSettingConfig:
     enabled_metric: Any = None
     timeouts: Any = None
 
-DiagnosticSetting = sdk.ResourceBinding(
+DiagnosticSetting = ubx.ResourceBinding(
     wire_type="azurerm_monitor_diagnostic_setting",
     fields={
-        "eventhub_authorization_rule_id": sdk.FieldSpec(wire_name="eventhub_authorization_rule_id"),
-        "eventhub_name": sdk.FieldSpec(wire_name="eventhub_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "log_analytics_destination_type": sdk.FieldSpec(wire_name="log_analytics_destination_type"),
-        "log_analytics_workspace_id": sdk.FieldSpec(wire_name="log_analytics_workspace_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "partner_solution_id": sdk.FieldSpec(wire_name="partner_solution_id"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "target_resource_id": sdk.FieldSpec(wire_name="target_resource_id"),
-        "enabled_log": sdk.FieldSpec(
+        "eventhub_authorization_rule_id": ubx.FieldSpec(wire_name="eventhub_authorization_rule_id"),
+        "eventhub_name": ubx.FieldSpec(wire_name="eventhub_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "log_analytics_destination_type": ubx.FieldSpec(wire_name="log_analytics_destination_type"),
+        "log_analytics_workspace_id": ubx.FieldSpec(wire_name="log_analytics_workspace_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "partner_solution_id": ubx.FieldSpec(wire_name="partner_solution_id"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "target_resource_id": ubx.FieldSpec(wire_name="target_resource_id"),
+        "enabled_log": ubx.FieldSpec(
             wire_name="enabled_log",
             kind="set",
             fields=_DiagnosticSetting_EnabledLogFields,
         ),
-        "enabled_metric": sdk.FieldSpec(
+        "enabled_metric": ubx.FieldSpec(
             wire_name="enabled_metric",
             kind="set",
             fields=_DiagnosticSetting_EnabledMetricFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DiagnosticSetting_TimeoutsFields,

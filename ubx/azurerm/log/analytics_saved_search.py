@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnalyticsSavedSearch_Timeouts:
@@ -13,9 +13,9 @@ class AnalyticsSavedSearch_Timeouts:
     read: Any = None
 
 _AnalyticsSavedSearch_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -31,19 +31,19 @@ class AnalyticsSavedSearchConfig:
     tags: Any = None
     timeouts: Any = None
 
-AnalyticsSavedSearch = sdk.ResourceBinding(
+AnalyticsSavedSearch = ubx.ResourceBinding(
     wire_type="azurerm_log_analytics_saved_search",
     fields={
-        "category": sdk.FieldSpec(wire_name="category"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "function_alias": sdk.FieldSpec(wire_name="function_alias"),
-        "function_parameters": sdk.FieldSpec(wire_name="function_parameters"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "log_analytics_workspace_id": sdk.FieldSpec(wire_name="log_analytics_workspace_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "query": sdk.FieldSpec(wire_name="query"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "category": ubx.FieldSpec(wire_name="category"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "function_alias": ubx.FieldSpec(wire_name="function_alias"),
+        "function_parameters": ubx.FieldSpec(wire_name="function_parameters"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "log_analytics_workspace_id": ubx.FieldSpec(wire_name="log_analytics_workspace_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "query": ubx.FieldSpec(wire_name="query"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AnalyticsSavedSearch_TimeoutsFields,

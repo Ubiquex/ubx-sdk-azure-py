@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AltoNextGenerationFirewallVirtualNetworkPanorama_DestinationNat_BackendConfig:
@@ -53,24 +53,24 @@ class AltoNextGenerationFirewallVirtualNetworkPanorama_Timeouts:
     update: Any = None
 
 _AltoNextGenerationFirewallVirtualNetworkPanorama_DestinationNat_BackendConfigFields = {
-    "port": sdk.FieldSpec(wire_name="port"),
-    "public_ip_address": sdk.FieldSpec(wire_name="public_ip_address"),
+    "port": ubx.FieldSpec(wire_name="port"),
+    "public_ip_address": ubx.FieldSpec(wire_name="public_ip_address"),
 }
 
 _AltoNextGenerationFirewallVirtualNetworkPanorama_DestinationNat_FrontendConfigFields = {
-    "port": sdk.FieldSpec(wire_name="port"),
-    "public_ip_address_id": sdk.FieldSpec(wire_name="public_ip_address_id"),
+    "port": ubx.FieldSpec(wire_name="port"),
+    "public_ip_address_id": ubx.FieldSpec(wire_name="public_ip_address_id"),
 }
 
 _AltoNextGenerationFirewallVirtualNetworkPanorama_DestinationNatFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "protocol": sdk.FieldSpec(wire_name="protocol"),
-    "backend_config": sdk.FieldSpec(
+    "name": ubx.FieldSpec(wire_name="name"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
+    "backend_config": ubx.FieldSpec(
         wire_name="backend_config",
         kind="list",
         fields=_AltoNextGenerationFirewallVirtualNetworkPanorama_DestinationNat_BackendConfigFields,
     ),
-    "frontend_config": sdk.FieldSpec(
+    "frontend_config": ubx.FieldSpec(
         wire_name="frontend_config",
         kind="list",
         fields=_AltoNextGenerationFirewallVirtualNetworkPanorama_DestinationNat_FrontendConfigFields,
@@ -78,25 +78,25 @@ _AltoNextGenerationFirewallVirtualNetworkPanorama_DestinationNatFields = {
 }
 
 _AltoNextGenerationFirewallVirtualNetworkPanorama_DnsSettingsFields = {
-    "azure_dns_servers": sdk.FieldSpec(wire_name="azure_dns_servers"),
-    "dns_servers": sdk.FieldSpec(wire_name="dns_servers"),
-    "use_azure_dns": sdk.FieldSpec(wire_name="use_azure_dns"),
+    "azure_dns_servers": ubx.FieldSpec(wire_name="azure_dns_servers"),
+    "dns_servers": ubx.FieldSpec(wire_name="dns_servers"),
+    "use_azure_dns": ubx.FieldSpec(wire_name="use_azure_dns"),
 }
 
 _AltoNextGenerationFirewallVirtualNetworkPanorama_NetworkProfile_VnetConfigurationFields = {
-    "ip_of_trust_for_user_defined_routes": sdk.FieldSpec(wire_name="ip_of_trust_for_user_defined_routes"),
-    "trusted_subnet_id": sdk.FieldSpec(wire_name="trusted_subnet_id"),
-    "untrusted_subnet_id": sdk.FieldSpec(wire_name="untrusted_subnet_id"),
-    "virtual_network_id": sdk.FieldSpec(wire_name="virtual_network_id"),
+    "ip_of_trust_for_user_defined_routes": ubx.FieldSpec(wire_name="ip_of_trust_for_user_defined_routes"),
+    "trusted_subnet_id": ubx.FieldSpec(wire_name="trusted_subnet_id"),
+    "untrusted_subnet_id": ubx.FieldSpec(wire_name="untrusted_subnet_id"),
+    "virtual_network_id": ubx.FieldSpec(wire_name="virtual_network_id"),
 }
 
 _AltoNextGenerationFirewallVirtualNetworkPanorama_NetworkProfileFields = {
-    "egress_nat_ip_address_ids": sdk.FieldSpec(wire_name="egress_nat_ip_address_ids"),
-    "egress_nat_ip_addresses": sdk.FieldSpec(wire_name="egress_nat_ip_addresses"),
-    "public_ip_address_ids": sdk.FieldSpec(wire_name="public_ip_address_ids"),
-    "public_ip_addresses": sdk.FieldSpec(wire_name="public_ip_addresses"),
-    "trusted_address_ranges": sdk.FieldSpec(wire_name="trusted_address_ranges"),
-    "vnet_configuration": sdk.FieldSpec(
+    "egress_nat_ip_address_ids": ubx.FieldSpec(wire_name="egress_nat_ip_address_ids"),
+    "egress_nat_ip_addresses": ubx.FieldSpec(wire_name="egress_nat_ip_addresses"),
+    "public_ip_address_ids": ubx.FieldSpec(wire_name="public_ip_address_ids"),
+    "public_ip_addresses": ubx.FieldSpec(wire_name="public_ip_addresses"),
+    "trusted_address_ranges": ubx.FieldSpec(wire_name="trusted_address_ranges"),
+    "vnet_configuration": ubx.FieldSpec(
         wire_name="vnet_configuration",
         kind="list",
         fields=_AltoNextGenerationFirewallVirtualNetworkPanorama_NetworkProfile_VnetConfigurationFields,
@@ -104,10 +104,10 @@ _AltoNextGenerationFirewallVirtualNetworkPanorama_NetworkProfileFields = {
 }
 
 _AltoNextGenerationFirewallVirtualNetworkPanorama_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -125,33 +125,33 @@ class AltoNextGenerationFirewallVirtualNetworkPanoramaConfig:
     network_profile: Any = None
     timeouts: Any = None
 
-AltoNextGenerationFirewallVirtualNetworkPanorama = sdk.ResourceBinding(
+AltoNextGenerationFirewallVirtualNetworkPanorama = ubx.ResourceBinding(
     wire_type="azurerm_palo_alto_next_generation_firewall_virtual_network_panorama",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "marketplace_offer_id": sdk.FieldSpec(wire_name="marketplace_offer_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "panorama_base64_config": sdk.FieldSpec(wire_name="panorama_base64_config"),
-        "plan_id": sdk.FieldSpec(wire_name="plan_id"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "destination_nat": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "marketplace_offer_id": ubx.FieldSpec(wire_name="marketplace_offer_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "panorama_base64_config": ubx.FieldSpec(wire_name="panorama_base64_config"),
+        "plan_id": ubx.FieldSpec(wire_name="plan_id"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "destination_nat": ubx.FieldSpec(
             wire_name="destination_nat",
             kind="list",
             fields=_AltoNextGenerationFirewallVirtualNetworkPanorama_DestinationNatFields,
         ),
-        "dns_settings": sdk.FieldSpec(
+        "dns_settings": ubx.FieldSpec(
             wire_name="dns_settings",
             kind="list",
             fields=_AltoNextGenerationFirewallVirtualNetworkPanorama_DnsSettingsFields,
         ),
-        "network_profile": sdk.FieldSpec(
+        "network_profile": ubx.FieldSpec(
             wire_name="network_profile",
             kind="list",
             fields=_AltoNextGenerationFirewallVirtualNetworkPanorama_NetworkProfileFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AltoNextGenerationFirewallVirtualNetworkPanorama_TimeoutsFields,

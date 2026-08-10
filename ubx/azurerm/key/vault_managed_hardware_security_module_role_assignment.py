@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VaultManagedHardwareSecurityModuleRoleAssignment_Timeouts:
@@ -13,9 +13,9 @@ class VaultManagedHardwareSecurityModuleRoleAssignment_Timeouts:
     read: Any = None
 
 _VaultManagedHardwareSecurityModuleRoleAssignment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -28,16 +28,16 @@ class VaultManagedHardwareSecurityModuleRoleAssignmentConfig:
     scope: Any = None
     timeouts: Any = None
 
-VaultManagedHardwareSecurityModuleRoleAssignment = sdk.ResourceBinding(
+VaultManagedHardwareSecurityModuleRoleAssignment = ubx.ResourceBinding(
     wire_type="azurerm_key_vault_managed_hardware_security_module_role_assignment",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "managed_hsm_id": sdk.FieldSpec(wire_name="managed_hsm_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-        "role_definition_id": sdk.FieldSpec(wire_name="role_definition_id"),
-        "scope": sdk.FieldSpec(wire_name="scope"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "managed_hsm_id": ubx.FieldSpec(wire_name="managed_hsm_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+        "role_definition_id": ubx.FieldSpec(wire_name="role_definition_id"),
+        "scope": ubx.FieldSpec(wire_name="scope"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_VaultManagedHardwareSecurityModuleRoleAssignment_TimeoutsFields,

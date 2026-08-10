@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppWorkflow_AccessControl_Action:
@@ -47,17 +47,17 @@ class AppWorkflow_Timeouts:
     update: Any = None
 
 _AppWorkflow_AccessControl_ActionFields = {
-    "allowed_caller_ip_address_range": sdk.FieldSpec(wire_name="allowed_caller_ip_address_range"),
+    "allowed_caller_ip_address_range": ubx.FieldSpec(wire_name="allowed_caller_ip_address_range"),
 }
 
 _AppWorkflow_AccessControl_Trigger_OpenAuthenticationPolicy_ClaimFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _AppWorkflow_AccessControl_Trigger_OpenAuthenticationPolicyFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "claim": sdk.FieldSpec(
+    "name": ubx.FieldSpec(wire_name="name"),
+    "claim": ubx.FieldSpec(
         wire_name="claim",
         kind="set",
         fields=_AppWorkflow_AccessControl_Trigger_OpenAuthenticationPolicy_ClaimFields,
@@ -65,8 +65,8 @@ _AppWorkflow_AccessControl_Trigger_OpenAuthenticationPolicyFields = {
 }
 
 _AppWorkflow_AccessControl_TriggerFields = {
-    "allowed_caller_ip_address_range": sdk.FieldSpec(wire_name="allowed_caller_ip_address_range"),
-    "open_authentication_policy": sdk.FieldSpec(
+    "allowed_caller_ip_address_range": ubx.FieldSpec(wire_name="allowed_caller_ip_address_range"),
+    "open_authentication_policy": ubx.FieldSpec(
         wire_name="open_authentication_policy",
         kind="set",
         fields=_AppWorkflow_AccessControl_Trigger_OpenAuthenticationPolicyFields,
@@ -74,22 +74,22 @@ _AppWorkflow_AccessControl_TriggerFields = {
 }
 
 _AppWorkflow_AccessControlFields = {
-    "action": sdk.FieldSpec(
+    "action": ubx.FieldSpec(
         wire_name="action",
         kind="list",
         fields=_AppWorkflow_AccessControl_ActionFields,
     ),
-    "content": sdk.FieldSpec(
+    "content": ubx.FieldSpec(
         wire_name="content",
         kind="list",
         fields=_AppWorkflow_AccessControl_ActionFields,
     ),
-    "trigger": sdk.FieldSpec(
+    "trigger": ubx.FieldSpec(
         wire_name="trigger",
         kind="list",
         fields=_AppWorkflow_AccessControl_TriggerFields,
     ),
-    "workflow_management": sdk.FieldSpec(
+    "workflow_management": ubx.FieldSpec(
         wire_name="workflow_management",
         kind="list",
         fields=_AppWorkflow_AccessControl_ActionFields,
@@ -97,17 +97,17 @@ _AppWorkflow_AccessControlFields = {
 }
 
 _AppWorkflow_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _AppWorkflow_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -128,32 +128,32 @@ class AppWorkflowConfig:
     identity: Any = None
     timeouts: Any = None
 
-AppWorkflow = sdk.ResourceBinding(
+AppWorkflow = ubx.ResourceBinding(
     wire_type="azurerm_logic_app_workflow",
     fields={
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "integration_service_environment_id": sdk.FieldSpec(wire_name="integration_service_environment_id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "logic_app_integration_account_id": sdk.FieldSpec(wire_name="logic_app_integration_account_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parameters": sdk.FieldSpec(wire_name="parameters"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "workflow_parameters": sdk.FieldSpec(wire_name="workflow_parameters"),
-        "workflow_schema": sdk.FieldSpec(wire_name="workflow_schema"),
-        "workflow_version": sdk.FieldSpec(wire_name="workflow_version"),
-        "access_control": sdk.FieldSpec(
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "integration_service_environment_id": ubx.FieldSpec(wire_name="integration_service_environment_id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "logic_app_integration_account_id": ubx.FieldSpec(wire_name="logic_app_integration_account_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parameters": ubx.FieldSpec(wire_name="parameters"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "workflow_parameters": ubx.FieldSpec(wire_name="workflow_parameters"),
+        "workflow_schema": ubx.FieldSpec(wire_name="workflow_schema"),
+        "workflow_version": ubx.FieldSpec(wire_name="workflow_version"),
+        "access_control": ubx.FieldSpec(
             wire_name="access_control",
             kind="list",
             fields=_AppWorkflow_AccessControlFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_AppWorkflow_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AppWorkflow_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryLinkedServiceAzureFunction_KeyVaultKey:
@@ -19,15 +19,15 @@ class FactoryLinkedServiceAzureFunction_Timeouts:
     update: Any = None
 
 _FactoryLinkedServiceAzureFunction_KeyVaultKeyFields = {
-    "linked_service_name": sdk.FieldSpec(wire_name="linked_service_name"),
-    "secret_name": sdk.FieldSpec(wire_name="secret_name"),
+    "linked_service_name": ubx.FieldSpec(wire_name="linked_service_name"),
+    "secret_name": ubx.FieldSpec(wire_name="secret_name"),
 }
 
 _FactoryLinkedServiceAzureFunction_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -45,25 +45,25 @@ class FactoryLinkedServiceAzureFunctionConfig:
     key_vault_key: Any = None
     timeouts: Any = None
 
-FactoryLinkedServiceAzureFunction = sdk.ResourceBinding(
+FactoryLinkedServiceAzureFunction = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_linked_service_azure_function",
     fields={
-        "additional_properties": sdk.FieldSpec(wire_name="additional_properties"),
-        "annotations": sdk.FieldSpec(wire_name="annotations"),
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "integration_runtime_name": sdk.FieldSpec(wire_name="integration_runtime_name"),
-        "key": sdk.FieldSpec(wire_name="key"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parameters": sdk.FieldSpec(wire_name="parameters"),
-        "url": sdk.FieldSpec(wire_name="url"),
-        "key_vault_key": sdk.FieldSpec(
+        "additional_properties": ubx.FieldSpec(wire_name="additional_properties"),
+        "annotations": ubx.FieldSpec(wire_name="annotations"),
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "integration_runtime_name": ubx.FieldSpec(wire_name="integration_runtime_name"),
+        "key": ubx.FieldSpec(wire_name="key"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parameters": ubx.FieldSpec(wire_name="parameters"),
+        "url": ubx.FieldSpec(wire_name="url"),
+        "key_vault_key": ubx.FieldSpec(
             wire_name="key_vault_key",
             kind="list",
             fields=_FactoryLinkedServiceAzureFunction_KeyVaultKeyFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryLinkedServiceAzureFunction_TimeoutsFields,

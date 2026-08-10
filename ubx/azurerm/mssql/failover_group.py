@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FailoverGroup_PartnerServer:
@@ -25,21 +25,21 @@ class FailoverGroup_Timeouts:
     update: Any = None
 
 _FailoverGroup_PartnerServerFields = {
-    "id": sdk.FieldSpec(wire_name="id"),
-    "location": sdk.FieldSpec(wire_name="location"),
-    "role": sdk.FieldSpec(wire_name="role"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "location": ubx.FieldSpec(wire_name="location"),
+    "role": ubx.FieldSpec(wire_name="role"),
 }
 
 _FailoverGroup_ReadWriteEndpointFailoverPolicyFields = {
-    "grace_minutes": sdk.FieldSpec(wire_name="grace_minutes"),
-    "mode": sdk.FieldSpec(wire_name="mode"),
+    "grace_minutes": ubx.FieldSpec(wire_name="grace_minutes"),
+    "mode": ubx.FieldSpec(wire_name="mode"),
 }
 
 _FailoverGroup_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -54,26 +54,26 @@ class FailoverGroupConfig:
     read_write_endpoint_failover_policy: Any = None
     timeouts: Any = None
 
-FailoverGroup = sdk.ResourceBinding(
+FailoverGroup = ubx.ResourceBinding(
     wire_type="azurerm_mssql_failover_group",
     fields={
-        "databases": sdk.FieldSpec(wire_name="databases"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "readonly_endpoint_failover_policy_enabled": sdk.FieldSpec(wire_name="readonly_endpoint_failover_policy_enabled"),
-        "server_id": sdk.FieldSpec(wire_name="server_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "partner_server": sdk.FieldSpec(
+        "databases": ubx.FieldSpec(wire_name="databases"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "readonly_endpoint_failover_policy_enabled": ubx.FieldSpec(wire_name="readonly_endpoint_failover_policy_enabled"),
+        "server_id": ubx.FieldSpec(wire_name="server_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "partner_server": ubx.FieldSpec(
             wire_name="partner_server",
             kind="list",
             fields=_FailoverGroup_PartnerServerFields,
         ),
-        "read_write_endpoint_failover_policy": sdk.FieldSpec(
+        "read_write_endpoint_failover_policy": ubx.FieldSpec(
             wire_name="read_write_endpoint_failover_policy",
             kind="list",
             fields=_FailoverGroup_ReadWriteEndpointFailoverPolicyFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FailoverGroup_TimeoutsFields,

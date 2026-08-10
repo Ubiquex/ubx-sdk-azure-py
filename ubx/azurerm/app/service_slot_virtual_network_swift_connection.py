@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServiceSlotVirtualNetworkSwiftConnection_Timeouts:
@@ -14,10 +14,10 @@ class ServiceSlotVirtualNetworkSwiftConnection_Timeouts:
     update: Any = None
 
 _ServiceSlotVirtualNetworkSwiftConnection_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -28,14 +28,14 @@ class ServiceSlotVirtualNetworkSwiftConnectionConfig:
     subnet_id: Any = None
     timeouts: Any = None
 
-ServiceSlotVirtualNetworkSwiftConnection = sdk.ResourceBinding(
+ServiceSlotVirtualNetworkSwiftConnection = ubx.ResourceBinding(
     wire_type="azurerm_app_service_slot_virtual_network_swift_connection",
     fields={
-        "app_service_id": sdk.FieldSpec(wire_name="app_service_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "slot_name": sdk.FieldSpec(wire_name="slot_name"),
-        "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-        "timeouts": sdk.FieldSpec(
+        "app_service_id": ubx.FieldSpec(wire_name="app_service_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "slot_name": ubx.FieldSpec(wire_name="slot_name"),
+        "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ServiceSlotVirtualNetworkSwiftConnection_TimeoutsFields,

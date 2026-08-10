@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VirtualMachineAvailabilityGroupListener_LoadBalancerConfiguration:
@@ -35,31 +35,31 @@ class VirtualMachineAvailabilityGroupListener_Timeouts:
     read: Any = None
 
 _VirtualMachineAvailabilityGroupListener_LoadBalancerConfigurationFields = {
-    "load_balancer_id": sdk.FieldSpec(wire_name="load_balancer_id"),
-    "private_ip_address": sdk.FieldSpec(wire_name="private_ip_address"),
-    "probe_port": sdk.FieldSpec(wire_name="probe_port"),
-    "sql_virtual_machine_ids": sdk.FieldSpec(wire_name="sql_virtual_machine_ids"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "load_balancer_id": ubx.FieldSpec(wire_name="load_balancer_id"),
+    "private_ip_address": ubx.FieldSpec(wire_name="private_ip_address"),
+    "probe_port": ubx.FieldSpec(wire_name="probe_port"),
+    "sql_virtual_machine_ids": ubx.FieldSpec(wire_name="sql_virtual_machine_ids"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _VirtualMachineAvailabilityGroupListener_MultiSubnetIpConfigurationFields = {
-    "private_ip_address": sdk.FieldSpec(wire_name="private_ip_address"),
-    "sql_virtual_machine_id": sdk.FieldSpec(wire_name="sql_virtual_machine_id"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "private_ip_address": ubx.FieldSpec(wire_name="private_ip_address"),
+    "sql_virtual_machine_id": ubx.FieldSpec(wire_name="sql_virtual_machine_id"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _VirtualMachineAvailabilityGroupListener_ReplicaFields = {
-    "commit": sdk.FieldSpec(wire_name="commit"),
-    "failover_mode": sdk.FieldSpec(wire_name="failover_mode"),
-    "readable_secondary": sdk.FieldSpec(wire_name="readable_secondary"),
-    "role": sdk.FieldSpec(wire_name="role"),
-    "sql_virtual_machine_id": sdk.FieldSpec(wire_name="sql_virtual_machine_id"),
+    "commit": ubx.FieldSpec(wire_name="commit"),
+    "failover_mode": ubx.FieldSpec(wire_name="failover_mode"),
+    "readable_secondary": ubx.FieldSpec(wire_name="readable_secondary"),
+    "role": ubx.FieldSpec(wire_name="role"),
+    "sql_virtual_machine_id": ubx.FieldSpec(wire_name="sql_virtual_machine_id"),
 }
 
 _VirtualMachineAvailabilityGroupListener_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -74,30 +74,30 @@ class VirtualMachineAvailabilityGroupListenerConfig:
     replica: Any = None
     timeouts: Any = None
 
-VirtualMachineAvailabilityGroupListener = sdk.ResourceBinding(
+VirtualMachineAvailabilityGroupListener = ubx.ResourceBinding(
     wire_type="azurerm_mssql_virtual_machine_availability_group_listener",
     fields={
-        "availability_group_name": sdk.FieldSpec(wire_name="availability_group_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "port": sdk.FieldSpec(wire_name="port"),
-        "sql_virtual_machine_group_id": sdk.FieldSpec(wire_name="sql_virtual_machine_group_id"),
-        "load_balancer_configuration": sdk.FieldSpec(
+        "availability_group_name": ubx.FieldSpec(wire_name="availability_group_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "port": ubx.FieldSpec(wire_name="port"),
+        "sql_virtual_machine_group_id": ubx.FieldSpec(wire_name="sql_virtual_machine_group_id"),
+        "load_balancer_configuration": ubx.FieldSpec(
             wire_name="load_balancer_configuration",
             kind="list",
             fields=_VirtualMachineAvailabilityGroupListener_LoadBalancerConfigurationFields,
         ),
-        "multi_subnet_ip_configuration": sdk.FieldSpec(
+        "multi_subnet_ip_configuration": ubx.FieldSpec(
             wire_name="multi_subnet_ip_configuration",
             kind="set",
             fields=_VirtualMachineAvailabilityGroupListener_MultiSubnetIpConfigurationFields,
         ),
-        "replica": sdk.FieldSpec(
+        "replica": ubx.FieldSpec(
             wire_name="replica",
             kind="set",
             fields=_VirtualMachineAvailabilityGroupListener_ReplicaFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_VirtualMachineAvailabilityGroupListener_TimeoutsFields,

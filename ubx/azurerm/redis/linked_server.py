@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LinkedServer_Timeouts:
@@ -13,9 +13,9 @@ class LinkedServer_Timeouts:
     read: Any = None
 
 _LinkedServer_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -28,16 +28,16 @@ class LinkedServerConfig:
     target_redis_cache_name: Any = None
     timeouts: Any = None
 
-LinkedServer = sdk.ResourceBinding(
+LinkedServer = ubx.ResourceBinding(
     wire_type="azurerm_redis_linked_server",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "linked_redis_cache_id": sdk.FieldSpec(wire_name="linked_redis_cache_id"),
-        "linked_redis_cache_location": sdk.FieldSpec(wire_name="linked_redis_cache_location"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "server_role": sdk.FieldSpec(wire_name="server_role"),
-        "target_redis_cache_name": sdk.FieldSpec(wire_name="target_redis_cache_name"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "linked_redis_cache_id": ubx.FieldSpec(wire_name="linked_redis_cache_id"),
+        "linked_redis_cache_location": ubx.FieldSpec(wire_name="linked_redis_cache_location"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "server_role": ubx.FieldSpec(wire_name="server_role"),
+        "target_redis_cache_name": ubx.FieldSpec(wire_name="target_redis_cache_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_LinkedServer_TimeoutsFields,

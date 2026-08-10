@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryLinkedCustomService_IntegrationRuntime:
@@ -19,15 +19,15 @@ class FactoryLinkedCustomService_Timeouts:
     update: Any = None
 
 _FactoryLinkedCustomService_IntegrationRuntimeFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "parameters": sdk.FieldSpec(wire_name="parameters"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "parameters": ubx.FieldSpec(wire_name="parameters"),
 }
 
 _FactoryLinkedCustomService_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -44,24 +44,24 @@ class FactoryLinkedCustomServiceConfig:
     integration_runtime: Any = None
     timeouts: Any = None
 
-FactoryLinkedCustomService = sdk.ResourceBinding(
+FactoryLinkedCustomService = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_linked_custom_service",
     fields={
-        "additional_properties": sdk.FieldSpec(wire_name="additional_properties"),
-        "annotations": sdk.FieldSpec(wire_name="annotations"),
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parameters": sdk.FieldSpec(wire_name="parameters"),
-        "type": sdk.FieldSpec(wire_name="type"),
-        "type_properties_json": sdk.FieldSpec(wire_name="type_properties_json"),
-        "integration_runtime": sdk.FieldSpec(
+        "additional_properties": ubx.FieldSpec(wire_name="additional_properties"),
+        "annotations": ubx.FieldSpec(wire_name="annotations"),
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parameters": ubx.FieldSpec(wire_name="parameters"),
+        "type": ubx.FieldSpec(wire_name="type"),
+        "type_properties_json": ubx.FieldSpec(wire_name="type_properties_json"),
+        "integration_runtime": ubx.FieldSpec(
             wire_name="integration_runtime",
             kind="list",
             fields=_FactoryLinkedCustomService_IntegrationRuntimeFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryLinkedCustomService_TimeoutsFields,

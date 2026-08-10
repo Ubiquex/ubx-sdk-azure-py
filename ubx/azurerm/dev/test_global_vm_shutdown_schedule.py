@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TestGlobalVmShutdownSchedule_NotificationSettings:
@@ -21,17 +21,17 @@ class TestGlobalVmShutdownSchedule_Timeouts:
     update: Any = None
 
 _TestGlobalVmShutdownSchedule_NotificationSettingsFields = {
-    "email": sdk.FieldSpec(wire_name="email"),
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "time_in_minutes": sdk.FieldSpec(wire_name="time_in_minutes"),
-    "webhook_url": sdk.FieldSpec(wire_name="webhook_url"),
+    "email": ubx.FieldSpec(wire_name="email"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "time_in_minutes": ubx.FieldSpec(wire_name="time_in_minutes"),
+    "webhook_url": ubx.FieldSpec(wire_name="webhook_url"),
 }
 
 _TestGlobalVmShutdownSchedule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -46,22 +46,22 @@ class TestGlobalVmShutdownScheduleConfig:
     notification_settings: Any = None
     timeouts: Any = None
 
-TestGlobalVmShutdownSchedule = sdk.ResourceBinding(
+TestGlobalVmShutdownSchedule = ubx.ResourceBinding(
     wire_type="azurerm_dev_test_global_vm_shutdown_schedule",
     fields={
-        "daily_recurrence_time": sdk.FieldSpec(wire_name="daily_recurrence_time"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timezone": sdk.FieldSpec(wire_name="timezone"),
-        "virtual_machine_id": sdk.FieldSpec(wire_name="virtual_machine_id"),
-        "notification_settings": sdk.FieldSpec(
+        "daily_recurrence_time": ubx.FieldSpec(wire_name="daily_recurrence_time"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timezone": ubx.FieldSpec(wire_name="timezone"),
+        "virtual_machine_id": ubx.FieldSpec(wire_name="virtual_machine_id"),
+        "notification_settings": ubx.FieldSpec(
             wire_name="notification_settings",
             kind="list",
             fields=_TestGlobalVmShutdownSchedule_NotificationSettingsFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_TestGlobalVmShutdownSchedule_TimeoutsFields,

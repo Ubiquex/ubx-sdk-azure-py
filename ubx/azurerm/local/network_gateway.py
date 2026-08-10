@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class NetworkGateway_BgpSettings:
@@ -20,16 +20,16 @@ class NetworkGateway_Timeouts:
     update: Any = None
 
 _NetworkGateway_BgpSettingsFields = {
-    "asn": sdk.FieldSpec(wire_name="asn"),
-    "bgp_peering_address": sdk.FieldSpec(wire_name="bgp_peering_address"),
-    "peer_weight": sdk.FieldSpec(wire_name="peer_weight"),
+    "asn": ubx.FieldSpec(wire_name="asn"),
+    "bgp_peering_address": ubx.FieldSpec(wire_name="bgp_peering_address"),
+    "peer_weight": ubx.FieldSpec(wire_name="peer_weight"),
 }
 
 _NetworkGateway_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -45,23 +45,23 @@ class NetworkGatewayConfig:
     bgp_settings: Any = None
     timeouts: Any = None
 
-NetworkGateway = sdk.ResourceBinding(
+NetworkGateway = ubx.ResourceBinding(
     wire_type="azurerm_local_network_gateway",
     fields={
-        "address_space": sdk.FieldSpec(wire_name="address_space"),
-        "gateway_address": sdk.FieldSpec(wire_name="gateway_address"),
-        "gateway_fqdn": sdk.FieldSpec(wire_name="gateway_fqdn"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "bgp_settings": sdk.FieldSpec(
+        "address_space": ubx.FieldSpec(wire_name="address_space"),
+        "gateway_address": ubx.FieldSpec(wire_name="gateway_address"),
+        "gateway_fqdn": ubx.FieldSpec(wire_name="gateway_fqdn"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "bgp_settings": ubx.FieldSpec(
             wire_name="bgp_settings",
             kind="list",
             fields=_NetworkGateway_BgpSettingsFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_NetworkGateway_TimeoutsFields,

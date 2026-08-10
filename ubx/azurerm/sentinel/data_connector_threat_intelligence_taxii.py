@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DataConnectorThreatIntelligenceTaxii_Timeouts:
@@ -14,10 +14,10 @@ class DataConnectorThreatIntelligenceTaxii_Timeouts:
     update: Any = None
 
 _DataConnectorThreatIntelligenceTaxii_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -35,21 +35,21 @@ class DataConnectorThreatIntelligenceTaxiiConfig:
     user_name: Any = None
     timeouts: Any = None
 
-DataConnectorThreatIntelligenceTaxii = sdk.ResourceBinding(
+DataConnectorThreatIntelligenceTaxii = ubx.ResourceBinding(
     wire_type="azurerm_sentinel_data_connector_threat_intelligence_taxii",
     fields={
-        "api_root_url": sdk.FieldSpec(wire_name="api_root_url"),
-        "collection_id": sdk.FieldSpec(wire_name="collection_id"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "log_analytics_workspace_id": sdk.FieldSpec(wire_name="log_analytics_workspace_id"),
-        "lookback_date": sdk.FieldSpec(wire_name="lookback_date"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "password": sdk.FieldSpec(wire_name="password"),
-        "polling_frequency": sdk.FieldSpec(wire_name="polling_frequency"),
-        "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-        "user_name": sdk.FieldSpec(wire_name="user_name"),
-        "timeouts": sdk.FieldSpec(
+        "api_root_url": ubx.FieldSpec(wire_name="api_root_url"),
+        "collection_id": ubx.FieldSpec(wire_name="collection_id"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "log_analytics_workspace_id": ubx.FieldSpec(wire_name="log_analytics_workspace_id"),
+        "lookback_date": ubx.FieldSpec(wire_name="lookback_date"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "password": ubx.FieldSpec(wire_name="password"),
+        "polling_frequency": ubx.FieldSpec(wire_name="polling_frequency"),
+        "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+        "user_name": ubx.FieldSpec(wire_name="user_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DataConnectorThreatIntelligenceTaxii_TimeoutsFields,

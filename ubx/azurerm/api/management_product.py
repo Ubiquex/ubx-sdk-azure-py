@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementProduct_Timeouts:
@@ -14,10 +14,10 @@ class ManagementProduct_Timeouts:
     update: Any = None
 
 _ManagementProduct_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -35,21 +35,21 @@ class ManagementProductConfig:
     terms: Any = None
     timeouts: Any = None
 
-ManagementProduct = sdk.ResourceBinding(
+ManagementProduct = ubx.ResourceBinding(
     wire_type="azurerm_api_management_product",
     fields={
-        "api_management_name": sdk.FieldSpec(wire_name="api_management_name"),
-        "approval_required": sdk.FieldSpec(wire_name="approval_required"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "product_id": sdk.FieldSpec(wire_name="product_id"),
-        "published": sdk.FieldSpec(wire_name="published"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "subscription_required": sdk.FieldSpec(wire_name="subscription_required"),
-        "subscriptions_limit": sdk.FieldSpec(wire_name="subscriptions_limit"),
-        "terms": sdk.FieldSpec(wire_name="terms"),
-        "timeouts": sdk.FieldSpec(
+        "api_management_name": ubx.FieldSpec(wire_name="api_management_name"),
+        "approval_required": ubx.FieldSpec(wire_name="approval_required"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "product_id": ubx.FieldSpec(wire_name="product_id"),
+        "published": ubx.FieldSpec(wire_name="published"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "subscription_required": ubx.FieldSpec(wire_name="subscription_required"),
+        "subscriptions_limit": ubx.FieldSpec(wire_name="subscriptions_limit"),
+        "terms": ubx.FieldSpec(wire_name="terms"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementProduct_TimeoutsFields,

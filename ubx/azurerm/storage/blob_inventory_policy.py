@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BlobInventoryPolicy_Rules_Filter:
@@ -33,22 +33,22 @@ class BlobInventoryPolicy_Timeouts:
     update: Any = None
 
 _BlobInventoryPolicy_Rules_FilterFields = {
-    "blob_types": sdk.FieldSpec(wire_name="blob_types"),
-    "exclude_prefixes": sdk.FieldSpec(wire_name="exclude_prefixes"),
-    "include_blob_versions": sdk.FieldSpec(wire_name="include_blob_versions"),
-    "include_deleted": sdk.FieldSpec(wire_name="include_deleted"),
-    "include_snapshots": sdk.FieldSpec(wire_name="include_snapshots"),
-    "prefix_match": sdk.FieldSpec(wire_name="prefix_match"),
+    "blob_types": ubx.FieldSpec(wire_name="blob_types"),
+    "exclude_prefixes": ubx.FieldSpec(wire_name="exclude_prefixes"),
+    "include_blob_versions": ubx.FieldSpec(wire_name="include_blob_versions"),
+    "include_deleted": ubx.FieldSpec(wire_name="include_deleted"),
+    "include_snapshots": ubx.FieldSpec(wire_name="include_snapshots"),
+    "prefix_match": ubx.FieldSpec(wire_name="prefix_match"),
 }
 
 _BlobInventoryPolicy_RulesFields = {
-    "format": sdk.FieldSpec(wire_name="format"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "schedule": sdk.FieldSpec(wire_name="schedule"),
-    "schema_fields": sdk.FieldSpec(wire_name="schema_fields"),
-    "scope": sdk.FieldSpec(wire_name="scope"),
-    "storage_container_name": sdk.FieldSpec(wire_name="storage_container_name"),
-    "filter": sdk.FieldSpec(
+    "format": ubx.FieldSpec(wire_name="format"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "schedule": ubx.FieldSpec(wire_name="schedule"),
+    "schema_fields": ubx.FieldSpec(wire_name="schema_fields"),
+    "scope": ubx.FieldSpec(wire_name="scope"),
+    "storage_container_name": ubx.FieldSpec(wire_name="storage_container_name"),
+    "filter": ubx.FieldSpec(
         wire_name="filter",
         kind="list",
         fields=_BlobInventoryPolicy_Rules_FilterFields,
@@ -56,10 +56,10 @@ _BlobInventoryPolicy_RulesFields = {
 }
 
 _BlobInventoryPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -69,17 +69,17 @@ class BlobInventoryPolicyConfig:
     rules: Any = None
     timeouts: Any = None
 
-BlobInventoryPolicy = sdk.ResourceBinding(
+BlobInventoryPolicy = ubx.ResourceBinding(
     wire_type="azurerm_storage_blob_inventory_policy",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "rules": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "rules": ubx.FieldSpec(
             wire_name="rules",
             kind="set",
             fields=_BlobInventoryPolicy_RulesFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_BlobInventoryPolicy_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DicomService_Cors:
@@ -34,30 +34,30 @@ class DicomService_Timeouts:
     update: Any = None
 
 _DicomService_CorsFields = {
-    "allow_credentials": sdk.FieldSpec(wire_name="allow_credentials"),
-    "allowed_headers": sdk.FieldSpec(wire_name="allowed_headers"),
-    "allowed_methods": sdk.FieldSpec(wire_name="allowed_methods"),
-    "allowed_origins": sdk.FieldSpec(wire_name="allowed_origins"),
-    "max_age_in_seconds": sdk.FieldSpec(wire_name="max_age_in_seconds"),
+    "allow_credentials": ubx.FieldSpec(wire_name="allow_credentials"),
+    "allowed_headers": ubx.FieldSpec(wire_name="allowed_headers"),
+    "allowed_methods": ubx.FieldSpec(wire_name="allowed_methods"),
+    "allowed_origins": ubx.FieldSpec(wire_name="allowed_origins"),
+    "max_age_in_seconds": ubx.FieldSpec(wire_name="max_age_in_seconds"),
 }
 
 _DicomService_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _DicomService_StorageFields = {
-    "file_system_name": sdk.FieldSpec(wire_name="file_system_name"),
-    "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
+    "file_system_name": ubx.FieldSpec(wire_name="file_system_name"),
+    "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
 }
 
 _DicomService_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -75,33 +75,33 @@ class DicomServiceConfig:
     storage: Any = None
     timeouts: Any = None
 
-DicomService = sdk.ResourceBinding(
+DicomService = ubx.ResourceBinding(
     wire_type="azurerm_healthcare_dicom_service",
     fields={
-        "data_partitions_enabled": sdk.FieldSpec(wire_name="data_partitions_enabled"),
-        "encryption_key_url": sdk.FieldSpec(wire_name="encryption_key_url"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "workspace_id": sdk.FieldSpec(wire_name="workspace_id"),
-        "cors": sdk.FieldSpec(
+        "data_partitions_enabled": ubx.FieldSpec(wire_name="data_partitions_enabled"),
+        "encryption_key_url": ubx.FieldSpec(wire_name="encryption_key_url"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "workspace_id": ubx.FieldSpec(wire_name="workspace_id"),
+        "cors": ubx.FieldSpec(
             wire_name="cors",
             kind="list",
             fields=_DicomService_CorsFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_DicomService_IdentityFields,
         ),
-        "storage": sdk.FieldSpec(
+        "storage": ubx.FieldSpec(
             wire_name="storage",
             kind="list",
             fields=_DicomService_StorageFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DicomService_TimeoutsFields,

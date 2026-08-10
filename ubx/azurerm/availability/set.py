@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Set_Timeouts:
@@ -14,10 +14,10 @@ class Set_Timeouts:
     update: Any = None
 
 _Set_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -33,19 +33,19 @@ class SetConfig:
     tags: Any = None
     timeouts: Any = None
 
-Set = sdk.ResourceBinding(
+Set = ubx.ResourceBinding(
     wire_type="azurerm_availability_set",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "managed": sdk.FieldSpec(wire_name="managed"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "platform_fault_domain_count": sdk.FieldSpec(wire_name="platform_fault_domain_count"),
-        "platform_update_domain_count": sdk.FieldSpec(wire_name="platform_update_domain_count"),
-        "proximity_placement_group_id": sdk.FieldSpec(wire_name="proximity_placement_group_id"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "managed": ubx.FieldSpec(wire_name="managed"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "platform_fault_domain_count": ubx.FieldSpec(wire_name="platform_fault_domain_count"),
+        "platform_update_domain_count": ubx.FieldSpec(wire_name="platform_update_domain_count"),
+        "proximity_placement_group_id": ubx.FieldSpec(wire_name="proximity_placement_group_id"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Set_TimeoutsFields,

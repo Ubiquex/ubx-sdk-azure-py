@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementPolicy_Rule_Actions_BaseBlob:
@@ -72,50 +72,50 @@ class ManagementPolicy_Timeouts:
     update: Any = None
 
 _ManagementPolicy_Rule_Actions_BaseBlobFields = {
-    "auto_tier_to_hot_from_cool_enabled": sdk.FieldSpec(wire_name="auto_tier_to_hot_from_cool_enabled"),
-    "delete_after_days_since_creation_greater_than": sdk.FieldSpec(wire_name="delete_after_days_since_creation_greater_than"),
-    "delete_after_days_since_last_access_time_greater_than": sdk.FieldSpec(wire_name="delete_after_days_since_last_access_time_greater_than"),
-    "delete_after_days_since_modification_greater_than": sdk.FieldSpec(wire_name="delete_after_days_since_modification_greater_than"),
-    "tier_to_archive_after_days_since_creation_greater_than": sdk.FieldSpec(wire_name="tier_to_archive_after_days_since_creation_greater_than"),
-    "tier_to_archive_after_days_since_last_access_time_greater_than": sdk.FieldSpec(wire_name="tier_to_archive_after_days_since_last_access_time_greater_than"),
-    "tier_to_archive_after_days_since_last_tier_change_greater_than": sdk.FieldSpec(wire_name="tier_to_archive_after_days_since_last_tier_change_greater_than"),
-    "tier_to_archive_after_days_since_modification_greater_than": sdk.FieldSpec(wire_name="tier_to_archive_after_days_since_modification_greater_than"),
-    "tier_to_cold_after_days_since_creation_greater_than": sdk.FieldSpec(wire_name="tier_to_cold_after_days_since_creation_greater_than"),
-    "tier_to_cold_after_days_since_last_access_time_greater_than": sdk.FieldSpec(wire_name="tier_to_cold_after_days_since_last_access_time_greater_than"),
-    "tier_to_cold_after_days_since_modification_greater_than": sdk.FieldSpec(wire_name="tier_to_cold_after_days_since_modification_greater_than"),
-    "tier_to_cool_after_days_since_creation_greater_than": sdk.FieldSpec(wire_name="tier_to_cool_after_days_since_creation_greater_than"),
-    "tier_to_cool_after_days_since_last_access_time_greater_than": sdk.FieldSpec(wire_name="tier_to_cool_after_days_since_last_access_time_greater_than"),
-    "tier_to_cool_after_days_since_modification_greater_than": sdk.FieldSpec(wire_name="tier_to_cool_after_days_since_modification_greater_than"),
+    "auto_tier_to_hot_from_cool_enabled": ubx.FieldSpec(wire_name="auto_tier_to_hot_from_cool_enabled"),
+    "delete_after_days_since_creation_greater_than": ubx.FieldSpec(wire_name="delete_after_days_since_creation_greater_than"),
+    "delete_after_days_since_last_access_time_greater_than": ubx.FieldSpec(wire_name="delete_after_days_since_last_access_time_greater_than"),
+    "delete_after_days_since_modification_greater_than": ubx.FieldSpec(wire_name="delete_after_days_since_modification_greater_than"),
+    "tier_to_archive_after_days_since_creation_greater_than": ubx.FieldSpec(wire_name="tier_to_archive_after_days_since_creation_greater_than"),
+    "tier_to_archive_after_days_since_last_access_time_greater_than": ubx.FieldSpec(wire_name="tier_to_archive_after_days_since_last_access_time_greater_than"),
+    "tier_to_archive_after_days_since_last_tier_change_greater_than": ubx.FieldSpec(wire_name="tier_to_archive_after_days_since_last_tier_change_greater_than"),
+    "tier_to_archive_after_days_since_modification_greater_than": ubx.FieldSpec(wire_name="tier_to_archive_after_days_since_modification_greater_than"),
+    "tier_to_cold_after_days_since_creation_greater_than": ubx.FieldSpec(wire_name="tier_to_cold_after_days_since_creation_greater_than"),
+    "tier_to_cold_after_days_since_last_access_time_greater_than": ubx.FieldSpec(wire_name="tier_to_cold_after_days_since_last_access_time_greater_than"),
+    "tier_to_cold_after_days_since_modification_greater_than": ubx.FieldSpec(wire_name="tier_to_cold_after_days_since_modification_greater_than"),
+    "tier_to_cool_after_days_since_creation_greater_than": ubx.FieldSpec(wire_name="tier_to_cool_after_days_since_creation_greater_than"),
+    "tier_to_cool_after_days_since_last_access_time_greater_than": ubx.FieldSpec(wire_name="tier_to_cool_after_days_since_last_access_time_greater_than"),
+    "tier_to_cool_after_days_since_modification_greater_than": ubx.FieldSpec(wire_name="tier_to_cool_after_days_since_modification_greater_than"),
 }
 
 _ManagementPolicy_Rule_Actions_SnapshotFields = {
-    "change_tier_to_archive_after_days_since_creation": sdk.FieldSpec(wire_name="change_tier_to_archive_after_days_since_creation"),
-    "change_tier_to_cool_after_days_since_creation": sdk.FieldSpec(wire_name="change_tier_to_cool_after_days_since_creation"),
-    "delete_after_days_since_creation_greater_than": sdk.FieldSpec(wire_name="delete_after_days_since_creation_greater_than"),
-    "tier_to_archive_after_days_since_last_tier_change_greater_than": sdk.FieldSpec(wire_name="tier_to_archive_after_days_since_last_tier_change_greater_than"),
-    "tier_to_cold_after_days_since_creation_greater_than": sdk.FieldSpec(wire_name="tier_to_cold_after_days_since_creation_greater_than"),
+    "change_tier_to_archive_after_days_since_creation": ubx.FieldSpec(wire_name="change_tier_to_archive_after_days_since_creation"),
+    "change_tier_to_cool_after_days_since_creation": ubx.FieldSpec(wire_name="change_tier_to_cool_after_days_since_creation"),
+    "delete_after_days_since_creation_greater_than": ubx.FieldSpec(wire_name="delete_after_days_since_creation_greater_than"),
+    "tier_to_archive_after_days_since_last_tier_change_greater_than": ubx.FieldSpec(wire_name="tier_to_archive_after_days_since_last_tier_change_greater_than"),
+    "tier_to_cold_after_days_since_creation_greater_than": ubx.FieldSpec(wire_name="tier_to_cold_after_days_since_creation_greater_than"),
 }
 
 _ManagementPolicy_Rule_Actions_VersionFields = {
-    "change_tier_to_archive_after_days_since_creation": sdk.FieldSpec(wire_name="change_tier_to_archive_after_days_since_creation"),
-    "change_tier_to_cool_after_days_since_creation": sdk.FieldSpec(wire_name="change_tier_to_cool_after_days_since_creation"),
-    "delete_after_days_since_creation": sdk.FieldSpec(wire_name="delete_after_days_since_creation"),
-    "tier_to_archive_after_days_since_last_tier_change_greater_than": sdk.FieldSpec(wire_name="tier_to_archive_after_days_since_last_tier_change_greater_than"),
-    "tier_to_cold_after_days_since_creation_greater_than": sdk.FieldSpec(wire_name="tier_to_cold_after_days_since_creation_greater_than"),
+    "change_tier_to_archive_after_days_since_creation": ubx.FieldSpec(wire_name="change_tier_to_archive_after_days_since_creation"),
+    "change_tier_to_cool_after_days_since_creation": ubx.FieldSpec(wire_name="change_tier_to_cool_after_days_since_creation"),
+    "delete_after_days_since_creation": ubx.FieldSpec(wire_name="delete_after_days_since_creation"),
+    "tier_to_archive_after_days_since_last_tier_change_greater_than": ubx.FieldSpec(wire_name="tier_to_archive_after_days_since_last_tier_change_greater_than"),
+    "tier_to_cold_after_days_since_creation_greater_than": ubx.FieldSpec(wire_name="tier_to_cold_after_days_since_creation_greater_than"),
 }
 
 _ManagementPolicy_Rule_ActionsFields = {
-    "base_blob": sdk.FieldSpec(
+    "base_blob": ubx.FieldSpec(
         wire_name="base_blob",
         kind="list",
         fields=_ManagementPolicy_Rule_Actions_BaseBlobFields,
     ),
-    "snapshot": sdk.FieldSpec(
+    "snapshot": ubx.FieldSpec(
         wire_name="snapshot",
         kind="list",
         fields=_ManagementPolicy_Rule_Actions_SnapshotFields,
     ),
-    "version": sdk.FieldSpec(
+    "version": ubx.FieldSpec(
         wire_name="version",
         kind="list",
         fields=_ManagementPolicy_Rule_Actions_VersionFields,
@@ -123,15 +123,15 @@ _ManagementPolicy_Rule_ActionsFields = {
 }
 
 _ManagementPolicy_Rule_Filters_MatchBlobIndexTagFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "operation": sdk.FieldSpec(wire_name="operation"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "operation": ubx.FieldSpec(wire_name="operation"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _ManagementPolicy_Rule_FiltersFields = {
-    "blob_types": sdk.FieldSpec(wire_name="blob_types"),
-    "prefix_match": sdk.FieldSpec(wire_name="prefix_match"),
-    "match_blob_index_tag": sdk.FieldSpec(
+    "blob_types": ubx.FieldSpec(wire_name="blob_types"),
+    "prefix_match": ubx.FieldSpec(wire_name="prefix_match"),
+    "match_blob_index_tag": ubx.FieldSpec(
         wire_name="match_blob_index_tag",
         kind="set",
         fields=_ManagementPolicy_Rule_Filters_MatchBlobIndexTagFields,
@@ -139,14 +139,14 @@ _ManagementPolicy_Rule_FiltersFields = {
 }
 
 _ManagementPolicy_RuleFields = {
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "actions": sdk.FieldSpec(
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "actions": ubx.FieldSpec(
         wire_name="actions",
         kind="list",
         fields=_ManagementPolicy_Rule_ActionsFields,
     ),
-    "filters": sdk.FieldSpec(
+    "filters": ubx.FieldSpec(
         wire_name="filters",
         kind="list",
         fields=_ManagementPolicy_Rule_FiltersFields,
@@ -154,10 +154,10 @@ _ManagementPolicy_RuleFields = {
 }
 
 _ManagementPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -167,17 +167,17 @@ class ManagementPolicyConfig:
     rule: Any = None
     timeouts: Any = None
 
-ManagementPolicy = sdk.ResourceBinding(
+ManagementPolicy = ubx.ResourceBinding(
     wire_type="azurerm_storage_management_policy",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "rule": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "rule": ubx.FieldSpec(
             wire_name="rule",
             kind="list",
             fields=_ManagementPolicy_RuleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementPolicy_TimeoutsFields,

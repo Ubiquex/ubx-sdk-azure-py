@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ChannelMsTeams_Timeouts:
@@ -14,10 +14,10 @@ class ChannelMsTeams_Timeouts:
     update: Any = None
 
 _ChannelMsTeams_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class ChannelMsTeamsConfig:
     resource_group_name: Any = None
     timeouts: Any = None
 
-ChannelMsTeams = sdk.ResourceBinding(
+ChannelMsTeams = ubx.ResourceBinding(
     wire_type="azurerm_bot_channel_ms_teams",
     fields={
-        "bot_name": sdk.FieldSpec(wire_name="bot_name"),
-        "calling_enabled": sdk.FieldSpec(wire_name="calling_enabled"),
-        "calling_web_hook": sdk.FieldSpec(wire_name="calling_web_hook"),
-        "deployment_environment": sdk.FieldSpec(wire_name="deployment_environment"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "timeouts": sdk.FieldSpec(
+        "bot_name": ubx.FieldSpec(wire_name="bot_name"),
+        "calling_enabled": ubx.FieldSpec(wire_name="calling_enabled"),
+        "calling_web_hook": ubx.FieldSpec(wire_name="calling_web_hook"),
+        "deployment_environment": ubx.FieldSpec(wire_name="deployment_environment"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ChannelMsTeams_TimeoutsFields,

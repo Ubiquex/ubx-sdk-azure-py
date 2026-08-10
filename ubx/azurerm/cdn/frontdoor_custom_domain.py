@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FrontdoorCustomDomain_Timeouts:
@@ -31,20 +31,20 @@ class FrontdoorCustomDomain_Tls:
     cipher_suite: Any = None
 
 _FrontdoorCustomDomain_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _FrontdoorCustomDomain_Tls_CipherSuite_CustomCiphersFields = {
-    "tls12": sdk.FieldSpec(wire_name="tls12"),
-    "tls13": sdk.FieldSpec(wire_name="tls13"),
+    "tls12": ubx.FieldSpec(wire_name="tls12"),
+    "tls13": ubx.FieldSpec(wire_name="tls13"),
 }
 
 _FrontdoorCustomDomain_Tls_CipherSuiteFields = {
-    "type": sdk.FieldSpec(wire_name="type"),
-    "custom_ciphers": sdk.FieldSpec(
+    "type": ubx.FieldSpec(wire_name="type"),
+    "custom_ciphers": ubx.FieldSpec(
         wire_name="custom_ciphers",
         kind="list",
         fields=_FrontdoorCustomDomain_Tls_CipherSuite_CustomCiphersFields,
@@ -52,10 +52,10 @@ _FrontdoorCustomDomain_Tls_CipherSuiteFields = {
 }
 
 _FrontdoorCustomDomain_TlsFields = {
-    "cdn_frontdoor_secret_id": sdk.FieldSpec(wire_name="cdn_frontdoor_secret_id"),
-    "certificate_type": sdk.FieldSpec(wire_name="certificate_type"),
-    "minimum_version": sdk.FieldSpec(wire_name="minimum_version"),
-    "cipher_suite": sdk.FieldSpec(
+    "cdn_frontdoor_secret_id": ubx.FieldSpec(wire_name="cdn_frontdoor_secret_id"),
+    "certificate_type": ubx.FieldSpec(wire_name="certificate_type"),
+    "minimum_version": ubx.FieldSpec(wire_name="minimum_version"),
+    "cipher_suite": ubx.FieldSpec(
         wire_name="cipher_suite",
         kind="list",
         fields=_FrontdoorCustomDomain_Tls_CipherSuiteFields,
@@ -72,20 +72,20 @@ class FrontdoorCustomDomainConfig:
     timeouts: Any = None
     tls: Any = None
 
-FrontdoorCustomDomain = sdk.ResourceBinding(
+FrontdoorCustomDomain = ubx.ResourceBinding(
     wire_type="azurerm_cdn_frontdoor_custom_domain",
     fields={
-        "cdn_frontdoor_profile_id": sdk.FieldSpec(wire_name="cdn_frontdoor_profile_id"),
-        "dns_zone_id": sdk.FieldSpec(wire_name="dns_zone_id"),
-        "host_name": sdk.FieldSpec(wire_name="host_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "timeouts": sdk.FieldSpec(
+        "cdn_frontdoor_profile_id": ubx.FieldSpec(wire_name="cdn_frontdoor_profile_id"),
+        "dns_zone_id": ubx.FieldSpec(wire_name="dns_zone_id"),
+        "host_name": ubx.FieldSpec(wire_name="host_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FrontdoorCustomDomain_TimeoutsFields,
         ),
-        "tls": sdk.FieldSpec(
+        "tls": ubx.FieldSpec(
             wire_name="tls",
             kind="list",
             fields=_FrontdoorCustomDomain_TlsFields,

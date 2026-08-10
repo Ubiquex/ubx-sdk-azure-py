@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Service_Cors:
@@ -45,41 +45,41 @@ class Service_UpstreamEndpoint:
     user_assigned_identity_id: Any = None
 
 _Service_CorsFields = {
-    "allowed_origins": sdk.FieldSpec(wire_name="allowed_origins"),
+    "allowed_origins": ubx.FieldSpec(wire_name="allowed_origins"),
 }
 
 _Service_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Service_LiveTraceFields = {
-    "connectivity_logs_enabled": sdk.FieldSpec(wire_name="connectivity_logs_enabled"),
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "http_request_logs_enabled": sdk.FieldSpec(wire_name="http_request_logs_enabled"),
-    "messaging_logs_enabled": sdk.FieldSpec(wire_name="messaging_logs_enabled"),
+    "connectivity_logs_enabled": ubx.FieldSpec(wire_name="connectivity_logs_enabled"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "http_request_logs_enabled": ubx.FieldSpec(wire_name="http_request_logs_enabled"),
+    "messaging_logs_enabled": ubx.FieldSpec(wire_name="messaging_logs_enabled"),
 }
 
 _Service_SkuFields = {
-    "capacity": sdk.FieldSpec(wire_name="capacity"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "capacity": ubx.FieldSpec(wire_name="capacity"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _Service_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _Service_UpstreamEndpointFields = {
-    "category_pattern": sdk.FieldSpec(wire_name="category_pattern"),
-    "event_pattern": sdk.FieldSpec(wire_name="event_pattern"),
-    "hub_pattern": sdk.FieldSpec(wire_name="hub_pattern"),
-    "url_template": sdk.FieldSpec(wire_name="url_template"),
-    "user_assigned_identity_id": sdk.FieldSpec(wire_name="user_assigned_identity_id"),
+    "category_pattern": ubx.FieldSpec(wire_name="category_pattern"),
+    "event_pattern": ubx.FieldSpec(wire_name="event_pattern"),
+    "hub_pattern": ubx.FieldSpec(wire_name="hub_pattern"),
+    "url_template": ubx.FieldSpec(wire_name="url_template"),
+    "user_assigned_identity_id": ubx.FieldSpec(wire_name="user_assigned_identity_id"),
 }
 
 @dataclasses.dataclass
@@ -106,50 +106,50 @@ class ServiceConfig:
     timeouts: Any = None
     upstream_endpoint: Any = None
 
-Service = sdk.ResourceBinding(
+Service = ubx.ResourceBinding(
     wire_type="azurerm_signalr_service",
     fields={
-        "aad_auth_enabled": sdk.FieldSpec(wire_name="aad_auth_enabled"),
-        "connectivity_logs_enabled": sdk.FieldSpec(wire_name="connectivity_logs_enabled"),
-        "http_request_logs_enabled": sdk.FieldSpec(wire_name="http_request_logs_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "live_trace_enabled": sdk.FieldSpec(wire_name="live_trace_enabled"),
-        "local_auth_enabled": sdk.FieldSpec(wire_name="local_auth_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "messaging_logs_enabled": sdk.FieldSpec(wire_name="messaging_logs_enabled"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "serverless_connection_timeout_in_seconds": sdk.FieldSpec(wire_name="serverless_connection_timeout_in_seconds"),
-        "service_mode": sdk.FieldSpec(wire_name="service_mode"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "tls_client_cert_enabled": sdk.FieldSpec(wire_name="tls_client_cert_enabled"),
-        "cors": sdk.FieldSpec(
+        "aad_auth_enabled": ubx.FieldSpec(wire_name="aad_auth_enabled"),
+        "connectivity_logs_enabled": ubx.FieldSpec(wire_name="connectivity_logs_enabled"),
+        "http_request_logs_enabled": ubx.FieldSpec(wire_name="http_request_logs_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "live_trace_enabled": ubx.FieldSpec(wire_name="live_trace_enabled"),
+        "local_auth_enabled": ubx.FieldSpec(wire_name="local_auth_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "messaging_logs_enabled": ubx.FieldSpec(wire_name="messaging_logs_enabled"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "serverless_connection_timeout_in_seconds": ubx.FieldSpec(wire_name="serverless_connection_timeout_in_seconds"),
+        "service_mode": ubx.FieldSpec(wire_name="service_mode"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "tls_client_cert_enabled": ubx.FieldSpec(wire_name="tls_client_cert_enabled"),
+        "cors": ubx.FieldSpec(
             wire_name="cors",
             kind="list",
             fields=_Service_CorsFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Service_IdentityFields,
         ),
-        "live_trace": sdk.FieldSpec(
+        "live_trace": ubx.FieldSpec(
             wire_name="live_trace",
             kind="list",
             fields=_Service_LiveTraceFields,
         ),
-        "sku": sdk.FieldSpec(
+        "sku": ubx.FieldSpec(
             wire_name="sku",
             kind="list",
             fields=_Service_SkuFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Service_TimeoutsFields,
         ),
-        "upstream_endpoint": sdk.FieldSpec(
+        "upstream_endpoint": ubx.FieldSpec(
             wire_name="upstream_endpoint",
             kind="set",
             fields=_Service_UpstreamEndpointFields,

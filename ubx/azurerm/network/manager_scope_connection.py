@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagerScopeConnection_Timeouts:
@@ -14,10 +14,10 @@ class ManagerScopeConnection_Timeouts:
     update: Any = None
 
 _ManagerScopeConnection_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class ManagerScopeConnectionConfig:
     tenant_id: Any = None
     timeouts: Any = None
 
-ManagerScopeConnection = sdk.ResourceBinding(
+ManagerScopeConnection = ubx.ResourceBinding(
     wire_type="azurerm_network_manager_scope_connection",
     fields={
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "network_manager_id": sdk.FieldSpec(wire_name="network_manager_id"),
-        "target_scope_id": sdk.FieldSpec(wire_name="target_scope_id"),
-        "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-        "timeouts": sdk.FieldSpec(
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network_manager_id": ubx.FieldSpec(wire_name="network_manager_id"),
+        "target_scope_id": ubx.FieldSpec(wire_name="target_scope_id"),
+        "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagerScopeConnection_TimeoutsFields,

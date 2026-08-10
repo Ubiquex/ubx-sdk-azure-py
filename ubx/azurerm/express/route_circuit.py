@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RouteCircuit_Sku:
@@ -19,15 +19,15 @@ class RouteCircuit_Timeouts:
     update: Any = None
 
 _RouteCircuit_SkuFields = {
-    "family": sdk.FieldSpec(wire_name="family"),
-    "tier": sdk.FieldSpec(wire_name="tier"),
+    "family": ubx.FieldSpec(wire_name="family"),
+    "tier": ubx.FieldSpec(wire_name="tier"),
 }
 
 _RouteCircuit_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -48,28 +48,28 @@ class RouteCircuitConfig:
     sku: Any = None
     timeouts: Any = None
 
-RouteCircuit = sdk.ResourceBinding(
+RouteCircuit = ubx.ResourceBinding(
     wire_type="azurerm_express_route_circuit",
     fields={
-        "allow_classic_operations": sdk.FieldSpec(wire_name="allow_classic_operations"),
-        "authorization_key": sdk.FieldSpec(wire_name="authorization_key"),
-        "bandwidth_in_gbps": sdk.FieldSpec(wire_name="bandwidth_in_gbps"),
-        "bandwidth_in_mbps": sdk.FieldSpec(wire_name="bandwidth_in_mbps"),
-        "express_route_port_id": sdk.FieldSpec(wire_name="express_route_port_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "peering_location": sdk.FieldSpec(wire_name="peering_location"),
-        "rate_limiting_enabled": sdk.FieldSpec(wire_name="rate_limiting_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "service_provider_name": sdk.FieldSpec(wire_name="service_provider_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "sku": sdk.FieldSpec(
+        "allow_classic_operations": ubx.FieldSpec(wire_name="allow_classic_operations"),
+        "authorization_key": ubx.FieldSpec(wire_name="authorization_key"),
+        "bandwidth_in_gbps": ubx.FieldSpec(wire_name="bandwidth_in_gbps"),
+        "bandwidth_in_mbps": ubx.FieldSpec(wire_name="bandwidth_in_mbps"),
+        "express_route_port_id": ubx.FieldSpec(wire_name="express_route_port_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "peering_location": ubx.FieldSpec(wire_name="peering_location"),
+        "rate_limiting_enabled": ubx.FieldSpec(wire_name="rate_limiting_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "service_provider_name": ubx.FieldSpec(wire_name="service_provider_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "sku": ubx.FieldSpec(
             wire_name="sku",
             kind="list",
             fields=_RouteCircuit_SkuFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RouteCircuit_TimeoutsFields,

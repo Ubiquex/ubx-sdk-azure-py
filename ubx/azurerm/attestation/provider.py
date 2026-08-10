@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Provider_Timeouts:
@@ -14,10 +14,10 @@ class Provider_Timeouts:
     update: Any = None
 
 _Provider_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -34,20 +34,20 @@ class ProviderConfig:
     tpm_policy_base64: Any = None
     timeouts: Any = None
 
-Provider = sdk.ResourceBinding(
+Provider = ubx.ResourceBinding(
     wire_type="azurerm_attestation_provider",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "open_enclave_policy_base64": sdk.FieldSpec(wire_name="open_enclave_policy_base64"),
-        "policy_signing_certificate_data": sdk.FieldSpec(wire_name="policy_signing_certificate_data"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sev_snp_policy_base64": sdk.FieldSpec(wire_name="sev_snp_policy_base64"),
-        "sgx_enclave_policy_base64": sdk.FieldSpec(wire_name="sgx_enclave_policy_base64"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "tpm_policy_base64": sdk.FieldSpec(wire_name="tpm_policy_base64"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "open_enclave_policy_base64": ubx.FieldSpec(wire_name="open_enclave_policy_base64"),
+        "policy_signing_certificate_data": ubx.FieldSpec(wire_name="policy_signing_certificate_data"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sev_snp_policy_base64": ubx.FieldSpec(wire_name="sev_snp_policy_base64"),
+        "sgx_enclave_policy_base64": ubx.FieldSpec(wire_name="sgx_enclave_policy_base64"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "tpm_policy_base64": ubx.FieldSpec(wire_name="tpm_policy_base64"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Provider_TimeoutsFields,

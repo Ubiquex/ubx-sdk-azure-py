@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppActionCustom_Timeouts:
@@ -14,10 +14,10 @@ class AppActionCustom_Timeouts:
     update: Any = None
 
 _AppActionCustom_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -28,14 +28,14 @@ class AppActionCustomConfig:
     name: Any = None
     timeouts: Any = None
 
-AppActionCustom = sdk.ResourceBinding(
+AppActionCustom = ubx.ResourceBinding(
     wire_type="azurerm_logic_app_action_custom",
     fields={
-        "body": sdk.FieldSpec(wire_name="body"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "logic_app_id": sdk.FieldSpec(wire_name="logic_app_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "timeouts": sdk.FieldSpec(
+        "body": ubx.FieldSpec(wire_name="body"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "logic_app_id": ubx.FieldSpec(wire_name="logic_app_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AppActionCustom_TimeoutsFields,

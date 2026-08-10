@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class WebAppCustomDomain_Timeouts:
@@ -13,9 +13,9 @@ class WebAppCustomDomain_Timeouts:
     read: Any = None
 
 _WebAppCustomDomain_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -26,14 +26,14 @@ class WebAppCustomDomainConfig:
     validation_type: Any = None
     timeouts: Any = None
 
-WebAppCustomDomain = sdk.ResourceBinding(
+WebAppCustomDomain = ubx.ResourceBinding(
     wire_type="azurerm_static_web_app_custom_domain",
     fields={
-        "domain_name": sdk.FieldSpec(wire_name="domain_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "static_web_app_id": sdk.FieldSpec(wire_name="static_web_app_id"),
-        "validation_type": sdk.FieldSpec(wire_name="validation_type"),
-        "timeouts": sdk.FieldSpec(
+        "domain_name": ubx.FieldSpec(wire_name="domain_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "static_web_app_id": ubx.FieldSpec(wire_name="static_web_app_id"),
+        "validation_type": ubx.FieldSpec(wire_name="validation_type"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_WebAppCustomDomain_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RegistryCacheRule_Timeouts:
@@ -14,10 +14,10 @@ class RegistryCacheRule_Timeouts:
     update: Any = None
 
 _RegistryCacheRule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class RegistryCacheRuleConfig:
     target_repo: Any = None
     timeouts: Any = None
 
-RegistryCacheRule = sdk.ResourceBinding(
+RegistryCacheRule = ubx.ResourceBinding(
     wire_type="azurerm_container_registry_cache_rule",
     fields={
-        "container_registry_id": sdk.FieldSpec(wire_name="container_registry_id"),
-        "credential_set_id": sdk.FieldSpec(wire_name="credential_set_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "source_repo": sdk.FieldSpec(wire_name="source_repo"),
-        "target_repo": sdk.FieldSpec(wire_name="target_repo"),
-        "timeouts": sdk.FieldSpec(
+        "container_registry_id": ubx.FieldSpec(wire_name="container_registry_id"),
+        "credential_set_id": ubx.FieldSpec(wire_name="credential_set_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "source_repo": ubx.FieldSpec(wire_name="source_repo"),
+        "target_repo": ubx.FieldSpec(wire_name="target_repo"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RegistryCacheRule_TimeoutsFields,

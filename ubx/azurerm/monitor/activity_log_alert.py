@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ActivityLogAlert_Action:
@@ -56,49 +56,49 @@ class ActivityLogAlert_Timeouts:
     update: Any = None
 
 _ActivityLogAlert_ActionFields = {
-    "action_group_id": sdk.FieldSpec(wire_name="action_group_id"),
-    "webhook_properties": sdk.FieldSpec(wire_name="webhook_properties"),
+    "action_group_id": ubx.FieldSpec(wire_name="action_group_id"),
+    "webhook_properties": ubx.FieldSpec(wire_name="webhook_properties"),
 }
 
 _ActivityLogAlert_Criteria_ResourceHealthFields = {
-    "current": sdk.FieldSpec(wire_name="current"),
-    "previous": sdk.FieldSpec(wire_name="previous"),
-    "reason": sdk.FieldSpec(wire_name="reason"),
+    "current": ubx.FieldSpec(wire_name="current"),
+    "previous": ubx.FieldSpec(wire_name="previous"),
+    "reason": ubx.FieldSpec(wire_name="reason"),
 }
 
 _ActivityLogAlert_Criteria_ServiceHealthFields = {
-    "events": sdk.FieldSpec(wire_name="events"),
-    "locations": sdk.FieldSpec(wire_name="locations"),
-    "services": sdk.FieldSpec(wire_name="services"),
+    "events": ubx.FieldSpec(wire_name="events"),
+    "locations": ubx.FieldSpec(wire_name="locations"),
+    "services": ubx.FieldSpec(wire_name="services"),
 }
 
 _ActivityLogAlert_CriteriaFields = {
-    "caller": sdk.FieldSpec(wire_name="caller"),
-    "category": sdk.FieldSpec(wire_name="category"),
-    "level": sdk.FieldSpec(wire_name="level"),
-    "levels": sdk.FieldSpec(wire_name="levels"),
-    "operation_name": sdk.FieldSpec(wire_name="operation_name"),
-    "recommendation_category": sdk.FieldSpec(wire_name="recommendation_category"),
-    "recommendation_impact": sdk.FieldSpec(wire_name="recommendation_impact"),
-    "recommendation_type": sdk.FieldSpec(wire_name="recommendation_type"),
-    "resource_group": sdk.FieldSpec(wire_name="resource_group"),
-    "resource_groups": sdk.FieldSpec(wire_name="resource_groups"),
-    "resource_id": sdk.FieldSpec(wire_name="resource_id"),
-    "resource_ids": sdk.FieldSpec(wire_name="resource_ids"),
-    "resource_provider": sdk.FieldSpec(wire_name="resource_provider"),
-    "resource_providers": sdk.FieldSpec(wire_name="resource_providers"),
-    "resource_type": sdk.FieldSpec(wire_name="resource_type"),
-    "resource_types": sdk.FieldSpec(wire_name="resource_types"),
-    "status": sdk.FieldSpec(wire_name="status"),
-    "statuses": sdk.FieldSpec(wire_name="statuses"),
-    "sub_status": sdk.FieldSpec(wire_name="sub_status"),
-    "sub_statuses": sdk.FieldSpec(wire_name="sub_statuses"),
-    "resource_health": sdk.FieldSpec(
+    "caller": ubx.FieldSpec(wire_name="caller"),
+    "category": ubx.FieldSpec(wire_name="category"),
+    "level": ubx.FieldSpec(wire_name="level"),
+    "levels": ubx.FieldSpec(wire_name="levels"),
+    "operation_name": ubx.FieldSpec(wire_name="operation_name"),
+    "recommendation_category": ubx.FieldSpec(wire_name="recommendation_category"),
+    "recommendation_impact": ubx.FieldSpec(wire_name="recommendation_impact"),
+    "recommendation_type": ubx.FieldSpec(wire_name="recommendation_type"),
+    "resource_group": ubx.FieldSpec(wire_name="resource_group"),
+    "resource_groups": ubx.FieldSpec(wire_name="resource_groups"),
+    "resource_id": ubx.FieldSpec(wire_name="resource_id"),
+    "resource_ids": ubx.FieldSpec(wire_name="resource_ids"),
+    "resource_provider": ubx.FieldSpec(wire_name="resource_provider"),
+    "resource_providers": ubx.FieldSpec(wire_name="resource_providers"),
+    "resource_type": ubx.FieldSpec(wire_name="resource_type"),
+    "resource_types": ubx.FieldSpec(wire_name="resource_types"),
+    "status": ubx.FieldSpec(wire_name="status"),
+    "statuses": ubx.FieldSpec(wire_name="statuses"),
+    "sub_status": ubx.FieldSpec(wire_name="sub_status"),
+    "sub_statuses": ubx.FieldSpec(wire_name="sub_statuses"),
+    "resource_health": ubx.FieldSpec(
         wire_name="resource_health",
         kind="list",
         fields=_ActivityLogAlert_Criteria_ResourceHealthFields,
     ),
-    "service_health": sdk.FieldSpec(
+    "service_health": ubx.FieldSpec(
         wire_name="service_health",
         kind="list",
         fields=_ActivityLogAlert_Criteria_ServiceHealthFields,
@@ -106,10 +106,10 @@ _ActivityLogAlert_CriteriaFields = {
 }
 
 _ActivityLogAlert_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -126,28 +126,28 @@ class ActivityLogAlertConfig:
     criteria: Any = None
     timeouts: Any = None
 
-ActivityLogAlert = sdk.ResourceBinding(
+ActivityLogAlert = ubx.ResourceBinding(
     wire_type="azurerm_monitor_activity_log_alert",
     fields={
-        "description": sdk.FieldSpec(wire_name="description"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "scopes": sdk.FieldSpec(wire_name="scopes"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "action": sdk.FieldSpec(
+        "description": ubx.FieldSpec(wire_name="description"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "scopes": ubx.FieldSpec(wire_name="scopes"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "action": ubx.FieldSpec(
             wire_name="action",
             kind="list",
             fields=_ActivityLogAlert_ActionFields,
         ),
-        "criteria": sdk.FieldSpec(
+        "criteria": ubx.FieldSpec(
             wire_name="criteria",
             kind="list",
             fields=_ActivityLogAlert_CriteriaFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ActivityLogAlert_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServiceCertificateBinding_Timeouts:
@@ -13,9 +13,9 @@ class ServiceCertificateBinding_Timeouts:
     read: Any = None
 
 _ServiceCertificateBinding_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -26,14 +26,14 @@ class ServiceCertificateBindingConfig:
     ssl_state: Any = None
     timeouts: Any = None
 
-ServiceCertificateBinding = sdk.ResourceBinding(
+ServiceCertificateBinding = ubx.ResourceBinding(
     wire_type="azurerm_app_service_certificate_binding",
     fields={
-        "certificate_id": sdk.FieldSpec(wire_name="certificate_id"),
-        "hostname_binding_id": sdk.FieldSpec(wire_name="hostname_binding_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "ssl_state": sdk.FieldSpec(wire_name="ssl_state"),
-        "timeouts": sdk.FieldSpec(
+        "certificate_id": ubx.FieldSpec(wire_name="certificate_id"),
+        "hostname_binding_id": ubx.FieldSpec(wire_name="hostname_binding_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "ssl_state": ubx.FieldSpec(wire_name="ssl_state"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ServiceCertificateBinding_TimeoutsFields,

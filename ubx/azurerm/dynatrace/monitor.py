@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Monitor_EnvironmentProperties_EnvironmentInfo:
@@ -43,11 +43,11 @@ class Monitor_User:
     phone_number: Any = None
 
 _Monitor_EnvironmentProperties_EnvironmentInfoFields = {
-    "environment_id": sdk.FieldSpec(wire_name="environment_id"),
+    "environment_id": ubx.FieldSpec(wire_name="environment_id"),
 }
 
 _Monitor_EnvironmentPropertiesFields = {
-    "environment_info": sdk.FieldSpec(
+    "environment_info": ubx.FieldSpec(
         wire_name="environment_info",
         kind="list",
         fields=_Monitor_EnvironmentProperties_EnvironmentInfoFields,
@@ -55,31 +55,31 @@ _Monitor_EnvironmentPropertiesFields = {
 }
 
 _Monitor_IdentityFields = {
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Monitor_PlanFields = {
-    "billing_cycle": sdk.FieldSpec(wire_name="billing_cycle"),
-    "effective_date": sdk.FieldSpec(wire_name="effective_date"),
-    "plan": sdk.FieldSpec(wire_name="plan"),
-    "usage_type": sdk.FieldSpec(wire_name="usage_type"),
+    "billing_cycle": ubx.FieldSpec(wire_name="billing_cycle"),
+    "effective_date": ubx.FieldSpec(wire_name="effective_date"),
+    "plan": ubx.FieldSpec(wire_name="plan"),
+    "usage_type": ubx.FieldSpec(wire_name="usage_type"),
 }
 
 _Monitor_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _Monitor_UserFields = {
-    "country": sdk.FieldSpec(wire_name="country"),
-    "email": sdk.FieldSpec(wire_name="email"),
-    "first_name": sdk.FieldSpec(wire_name="first_name"),
-    "last_name": sdk.FieldSpec(wire_name="last_name"),
-    "phone_number": sdk.FieldSpec(wire_name="phone_number"),
+    "country": ubx.FieldSpec(wire_name="country"),
+    "email": ubx.FieldSpec(wire_name="email"),
+    "first_name": ubx.FieldSpec(wire_name="first_name"),
+    "last_name": ubx.FieldSpec(wire_name="last_name"),
+    "phone_number": ubx.FieldSpec(wire_name="phone_number"),
 }
 
 @dataclasses.dataclass
@@ -97,37 +97,37 @@ class MonitorConfig:
     timeouts: Any = None
     user: Any = None
 
-Monitor = sdk.ResourceBinding(
+Monitor = ubx.ResourceBinding(
     wire_type="azurerm_dynatrace_monitor",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "marketplace_subscription": sdk.FieldSpec(wire_name="marketplace_subscription"),
-        "monitoring_enabled": sdk.FieldSpec(wire_name="monitoring_enabled"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "environment_properties": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "marketplace_subscription": ubx.FieldSpec(wire_name="marketplace_subscription"),
+        "monitoring_enabled": ubx.FieldSpec(wire_name="monitoring_enabled"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "environment_properties": ubx.FieldSpec(
             wire_name="environment_properties",
             kind="list",
             fields=_Monitor_EnvironmentPropertiesFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Monitor_IdentityFields,
         ),
-        "plan": sdk.FieldSpec(
+        "plan": ubx.FieldSpec(
             wire_name="plan",
             kind="list",
             fields=_Monitor_PlanFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Monitor_TimeoutsFields,
         ),
-        "user": sdk.FieldSpec(
+        "user": ubx.FieldSpec(
             wire_name="user",
             kind="list",
             fields=_Monitor_UserFields,

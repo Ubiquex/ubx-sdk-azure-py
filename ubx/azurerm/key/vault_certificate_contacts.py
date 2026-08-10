@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VaultCertificateContacts_Contact:
@@ -20,16 +20,16 @@ class VaultCertificateContacts_Timeouts:
     update: Any = None
 
 _VaultCertificateContacts_ContactFields = {
-    "email": sdk.FieldSpec(wire_name="email"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "phone": sdk.FieldSpec(wire_name="phone"),
+    "email": ubx.FieldSpec(wire_name="email"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "phone": ubx.FieldSpec(wire_name="phone"),
 }
 
 _VaultCertificateContacts_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -39,17 +39,17 @@ class VaultCertificateContactsConfig:
     contact: Any = None
     timeouts: Any = None
 
-VaultCertificateContacts = sdk.ResourceBinding(
+VaultCertificateContacts = ubx.ResourceBinding(
     wire_type="azurerm_key_vault_certificate_contacts",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "key_vault_id": sdk.FieldSpec(wire_name="key_vault_id"),
-        "contact": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "key_vault_id": ubx.FieldSpec(wire_name="key_vault_id"),
+        "contact": ubx.FieldSpec(
             wire_name="contact",
             kind="set",
             fields=_VaultCertificateContacts_ContactFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_VaultCertificateContacts_TimeoutsFields,

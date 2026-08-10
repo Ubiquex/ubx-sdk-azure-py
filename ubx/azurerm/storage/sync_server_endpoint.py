@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SyncServerEndpoint_Timeouts:
@@ -14,10 +14,10 @@ class SyncServerEndpoint_Timeouts:
     update: Any = None
 
 _SyncServerEndpoint_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -34,20 +34,20 @@ class SyncServerEndpointConfig:
     volume_free_space_percent: Any = None
     timeouts: Any = None
 
-SyncServerEndpoint = sdk.ResourceBinding(
+SyncServerEndpoint = ubx.ResourceBinding(
     wire_type="azurerm_storage_sync_server_endpoint",
     fields={
-        "cloud_tiering_enabled": sdk.FieldSpec(wire_name="cloud_tiering_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "initial_download_policy": sdk.FieldSpec(wire_name="initial_download_policy"),
-        "local_cache_mode": sdk.FieldSpec(wire_name="local_cache_mode"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "registered_server_id": sdk.FieldSpec(wire_name="registered_server_id"),
-        "server_local_path": sdk.FieldSpec(wire_name="server_local_path"),
-        "storage_sync_group_id": sdk.FieldSpec(wire_name="storage_sync_group_id"),
-        "tier_files_older_than_days": sdk.FieldSpec(wire_name="tier_files_older_than_days"),
-        "volume_free_space_percent": sdk.FieldSpec(wire_name="volume_free_space_percent"),
-        "timeouts": sdk.FieldSpec(
+        "cloud_tiering_enabled": ubx.FieldSpec(wire_name="cloud_tiering_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "initial_download_policy": ubx.FieldSpec(wire_name="initial_download_policy"),
+        "local_cache_mode": ubx.FieldSpec(wire_name="local_cache_mode"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "registered_server_id": ubx.FieldSpec(wire_name="registered_server_id"),
+        "server_local_path": ubx.FieldSpec(wire_name="server_local_path"),
+        "storage_sync_group_id": ubx.FieldSpec(wire_name="storage_sync_group_id"),
+        "tier_files_older_than_days": ubx.FieldSpec(wire_name="tier_files_older_than_days"),
+        "volume_free_space_percent": ubx.FieldSpec(wire_name="volume_free_space_percent"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SyncServerEndpoint_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class OpenshiftCluster_ApiServerProfile:
@@ -63,59 +63,59 @@ class OpenshiftCluster_WorkerProfile:
     vm_size: Any = None
 
 _OpenshiftCluster_ApiServerProfileFields = {
-    "ip_address": sdk.FieldSpec(wire_name="ip_address"),
-    "url": sdk.FieldSpec(wire_name="url"),
-    "visibility": sdk.FieldSpec(wire_name="visibility"),
+    "ip_address": ubx.FieldSpec(wire_name="ip_address"),
+    "url": ubx.FieldSpec(wire_name="url"),
+    "visibility": ubx.FieldSpec(wire_name="visibility"),
 }
 
 _OpenshiftCluster_ClusterProfileFields = {
-    "domain": sdk.FieldSpec(wire_name="domain"),
-    "fips_enabled": sdk.FieldSpec(wire_name="fips_enabled"),
-    "managed_resource_group_name": sdk.FieldSpec(wire_name="managed_resource_group_name"),
-    "pull_secret": sdk.FieldSpec(wire_name="pull_secret"),
-    "resource_group_id": sdk.FieldSpec(wire_name="resource_group_id"),
-    "version": sdk.FieldSpec(wire_name="version"),
+    "domain": ubx.FieldSpec(wire_name="domain"),
+    "fips_enabled": ubx.FieldSpec(wire_name="fips_enabled"),
+    "managed_resource_group_name": ubx.FieldSpec(wire_name="managed_resource_group_name"),
+    "pull_secret": ubx.FieldSpec(wire_name="pull_secret"),
+    "resource_group_id": ubx.FieldSpec(wire_name="resource_group_id"),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _OpenshiftCluster_IngressProfileFields = {
-    "ip_address": sdk.FieldSpec(wire_name="ip_address"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "visibility": sdk.FieldSpec(wire_name="visibility"),
+    "ip_address": ubx.FieldSpec(wire_name="ip_address"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "visibility": ubx.FieldSpec(wire_name="visibility"),
 }
 
 _OpenshiftCluster_MainProfileFields = {
-    "disk_encryption_set_id": sdk.FieldSpec(wire_name="disk_encryption_set_id"),
-    "encryption_at_host_enabled": sdk.FieldSpec(wire_name="encryption_at_host_enabled"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-    "vm_size": sdk.FieldSpec(wire_name="vm_size"),
+    "disk_encryption_set_id": ubx.FieldSpec(wire_name="disk_encryption_set_id"),
+    "encryption_at_host_enabled": ubx.FieldSpec(wire_name="encryption_at_host_enabled"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+    "vm_size": ubx.FieldSpec(wire_name="vm_size"),
 }
 
 _OpenshiftCluster_NetworkProfileFields = {
-    "outbound_type": sdk.FieldSpec(wire_name="outbound_type"),
-    "pod_cidr": sdk.FieldSpec(wire_name="pod_cidr"),
-    "preconfigured_network_security_group_enabled": sdk.FieldSpec(wire_name="preconfigured_network_security_group_enabled"),
-    "service_cidr": sdk.FieldSpec(wire_name="service_cidr"),
+    "outbound_type": ubx.FieldSpec(wire_name="outbound_type"),
+    "pod_cidr": ubx.FieldSpec(wire_name="pod_cidr"),
+    "preconfigured_network_security_group_enabled": ubx.FieldSpec(wire_name="preconfigured_network_security_group_enabled"),
+    "service_cidr": ubx.FieldSpec(wire_name="service_cidr"),
 }
 
 _OpenshiftCluster_ServicePrincipalFields = {
-    "client_id": sdk.FieldSpec(wire_name="client_id"),
-    "client_secret": sdk.FieldSpec(wire_name="client_secret"),
+    "client_id": ubx.FieldSpec(wire_name="client_id"),
+    "client_secret": ubx.FieldSpec(wire_name="client_secret"),
 }
 
 _OpenshiftCluster_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _OpenshiftCluster_WorkerProfileFields = {
-    "disk_encryption_set_id": sdk.FieldSpec(wire_name="disk_encryption_set_id"),
-    "disk_size_gb": sdk.FieldSpec(wire_name="disk_size_gb"),
-    "encryption_at_host_enabled": sdk.FieldSpec(wire_name="encryption_at_host_enabled"),
-    "node_count": sdk.FieldSpec(wire_name="node_count"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-    "vm_size": sdk.FieldSpec(wire_name="vm_size"),
+    "disk_encryption_set_id": ubx.FieldSpec(wire_name="disk_encryption_set_id"),
+    "disk_size_gb": ubx.FieldSpec(wire_name="disk_size_gb"),
+    "encryption_at_host_enabled": ubx.FieldSpec(wire_name="encryption_at_host_enabled"),
+    "node_count": ubx.FieldSpec(wire_name="node_count"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+    "vm_size": ubx.FieldSpec(wire_name="vm_size"),
 }
 
 @dataclasses.dataclass
@@ -134,50 +134,50 @@ class OpenshiftClusterConfig:
     timeouts: Any = None
     worker_profile: Any = None
 
-OpenshiftCluster = sdk.ResourceBinding(
+OpenshiftCluster = ubx.ResourceBinding(
     wire_type="azurerm_redhat_openshift_cluster",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "api_server_profile": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "api_server_profile": ubx.FieldSpec(
             wire_name="api_server_profile",
             kind="list",
             fields=_OpenshiftCluster_ApiServerProfileFields,
         ),
-        "cluster_profile": sdk.FieldSpec(
+        "cluster_profile": ubx.FieldSpec(
             wire_name="cluster_profile",
             kind="list",
             fields=_OpenshiftCluster_ClusterProfileFields,
         ),
-        "ingress_profile": sdk.FieldSpec(
+        "ingress_profile": ubx.FieldSpec(
             wire_name="ingress_profile",
             kind="list",
             fields=_OpenshiftCluster_IngressProfileFields,
         ),
-        "main_profile": sdk.FieldSpec(
+        "main_profile": ubx.FieldSpec(
             wire_name="main_profile",
             kind="list",
             fields=_OpenshiftCluster_MainProfileFields,
         ),
-        "network_profile": sdk.FieldSpec(
+        "network_profile": ubx.FieldSpec(
             wire_name="network_profile",
             kind="list",
             fields=_OpenshiftCluster_NetworkProfileFields,
         ),
-        "service_principal": sdk.FieldSpec(
+        "service_principal": ubx.FieldSpec(
             wire_name="service_principal",
             kind="list",
             fields=_OpenshiftCluster_ServicePrincipalFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_OpenshiftCluster_TimeoutsFields,
         ),
-        "worker_profile": sdk.FieldSpec(
+        "worker_profile": ubx.FieldSpec(
             wire_name="worker_profile",
             kind="list",
             fields=_OpenshiftCluster_WorkerProfileFields,

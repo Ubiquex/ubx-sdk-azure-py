@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CassandraCluster_Identity:
@@ -20,16 +20,16 @@ class CassandraCluster_Timeouts:
     update: Any = None
 
 _CassandraCluster_IdentityFields = {
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _CassandraCluster_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -51,29 +51,29 @@ class CassandraClusterConfig:
     identity: Any = None
     timeouts: Any = None
 
-CassandraCluster = sdk.ResourceBinding(
+CassandraCluster = ubx.ResourceBinding(
     wire_type="azurerm_cosmosdb_cassandra_cluster",
     fields={
-        "authentication_method": sdk.FieldSpec(wire_name="authentication_method"),
-        "client_certificate_pems": sdk.FieldSpec(wire_name="client_certificate_pems"),
-        "default_admin_password": sdk.FieldSpec(wire_name="default_admin_password"),
-        "delegated_management_subnet_id": sdk.FieldSpec(wire_name="delegated_management_subnet_id"),
-        "external_gossip_certificate_pems": sdk.FieldSpec(wire_name="external_gossip_certificate_pems"),
-        "external_seed_node_ip_addresses": sdk.FieldSpec(wire_name="external_seed_node_ip_addresses"),
-        "hours_between_backups": sdk.FieldSpec(wire_name="hours_between_backups"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "repair_enabled": sdk.FieldSpec(wire_name="repair_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "version": sdk.FieldSpec(wire_name="version"),
-        "identity": sdk.FieldSpec(
+        "authentication_method": ubx.FieldSpec(wire_name="authentication_method"),
+        "client_certificate_pems": ubx.FieldSpec(wire_name="client_certificate_pems"),
+        "default_admin_password": ubx.FieldSpec(wire_name="default_admin_password"),
+        "delegated_management_subnet_id": ubx.FieldSpec(wire_name="delegated_management_subnet_id"),
+        "external_gossip_certificate_pems": ubx.FieldSpec(wire_name="external_gossip_certificate_pems"),
+        "external_seed_node_ip_addresses": ubx.FieldSpec(wire_name="external_seed_node_ip_addresses"),
+        "hours_between_backups": ubx.FieldSpec(wire_name="hours_between_backups"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "repair_enabled": ubx.FieldSpec(wire_name="repair_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "version": ubx.FieldSpec(wire_name="version"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_CassandraCluster_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CassandraCluster_TimeoutsFields,

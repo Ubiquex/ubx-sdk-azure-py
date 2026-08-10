@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnalyticsStreamInputEventhubV2_Serialization:
@@ -20,16 +20,16 @@ class AnalyticsStreamInputEventhubV2_Timeouts:
     update: Any = None
 
 _AnalyticsStreamInputEventhubV2_SerializationFields = {
-    "encoding": sdk.FieldSpec(wire_name="encoding"),
-    "field_delimiter": sdk.FieldSpec(wire_name="field_delimiter"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "encoding": ubx.FieldSpec(wire_name="encoding"),
+    "field_delimiter": ubx.FieldSpec(wire_name="field_delimiter"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _AnalyticsStreamInputEventhubV2_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -47,25 +47,25 @@ class AnalyticsStreamInputEventhubV2Config:
     serialization: Any = None
     timeouts: Any = None
 
-AnalyticsStreamInputEventhubV2 = sdk.ResourceBinding(
+AnalyticsStreamInputEventhubV2 = ubx.ResourceBinding(
     wire_type="azurerm_stream_analytics_stream_input_eventhub_v2",
     fields={
-        "authentication_mode": sdk.FieldSpec(wire_name="authentication_mode"),
-        "eventhub_consumer_group_name": sdk.FieldSpec(wire_name="eventhub_consumer_group_name"),
-        "eventhub_name": sdk.FieldSpec(wire_name="eventhub_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "partition_key": sdk.FieldSpec(wire_name="partition_key"),
-        "servicebus_namespace": sdk.FieldSpec(wire_name="servicebus_namespace"),
-        "shared_access_policy_key": sdk.FieldSpec(wire_name="shared_access_policy_key"),
-        "shared_access_policy_name": sdk.FieldSpec(wire_name="shared_access_policy_name"),
-        "stream_analytics_job_id": sdk.FieldSpec(wire_name="stream_analytics_job_id"),
-        "serialization": sdk.FieldSpec(
+        "authentication_mode": ubx.FieldSpec(wire_name="authentication_mode"),
+        "eventhub_consumer_group_name": ubx.FieldSpec(wire_name="eventhub_consumer_group_name"),
+        "eventhub_name": ubx.FieldSpec(wire_name="eventhub_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "partition_key": ubx.FieldSpec(wire_name="partition_key"),
+        "servicebus_namespace": ubx.FieldSpec(wire_name="servicebus_namespace"),
+        "shared_access_policy_key": ubx.FieldSpec(wire_name="shared_access_policy_key"),
+        "shared_access_policy_name": ubx.FieldSpec(wire_name="shared_access_policy_name"),
+        "stream_analytics_job_id": ubx.FieldSpec(wire_name="stream_analytics_job_id"),
+        "serialization": ubx.FieldSpec(
             wire_name="serialization",
             kind="list",
             fields=_AnalyticsStreamInputEventhubV2_SerializationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AnalyticsStreamInputEventhubV2_TimeoutsFields,

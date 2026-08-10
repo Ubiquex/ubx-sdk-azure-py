@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RouteConnection_Routing_PropagatedRouteTable:
@@ -26,15 +26,15 @@ class RouteConnection_Timeouts:
     update: Any = None
 
 _RouteConnection_Routing_PropagatedRouteTableFields = {
-    "labels": sdk.FieldSpec(wire_name="labels"),
-    "route_table_ids": sdk.FieldSpec(wire_name="route_table_ids"),
+    "labels": ubx.FieldSpec(wire_name="labels"),
+    "route_table_ids": ubx.FieldSpec(wire_name="route_table_ids"),
 }
 
 _RouteConnection_RoutingFields = {
-    "associated_route_table_id": sdk.FieldSpec(wire_name="associated_route_table_id"),
-    "inbound_route_map_id": sdk.FieldSpec(wire_name="inbound_route_map_id"),
-    "outbound_route_map_id": sdk.FieldSpec(wire_name="outbound_route_map_id"),
-    "propagated_route_table": sdk.FieldSpec(
+    "associated_route_table_id": ubx.FieldSpec(wire_name="associated_route_table_id"),
+    "inbound_route_map_id": ubx.FieldSpec(wire_name="inbound_route_map_id"),
+    "outbound_route_map_id": ubx.FieldSpec(wire_name="outbound_route_map_id"),
+    "propagated_route_table": ubx.FieldSpec(
         wire_name="propagated_route_table",
         kind="list",
         fields=_RouteConnection_Routing_PropagatedRouteTableFields,
@@ -42,10 +42,10 @@ _RouteConnection_RoutingFields = {
 }
 
 _RouteConnection_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -61,23 +61,23 @@ class RouteConnectionConfig:
     routing: Any = None
     timeouts: Any = None
 
-RouteConnection = sdk.ResourceBinding(
+RouteConnection = ubx.ResourceBinding(
     wire_type="azurerm_express_route_connection",
     fields={
-        "authorization_key": sdk.FieldSpec(wire_name="authorization_key"),
-        "express_route_circuit_peering_id": sdk.FieldSpec(wire_name="express_route_circuit_peering_id"),
-        "express_route_gateway_bypass_enabled": sdk.FieldSpec(wire_name="express_route_gateway_bypass_enabled"),
-        "express_route_gateway_id": sdk.FieldSpec(wire_name="express_route_gateway_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "internet_security_enabled": sdk.FieldSpec(wire_name="internet_security_enabled"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "routing_weight": sdk.FieldSpec(wire_name="routing_weight"),
-        "routing": sdk.FieldSpec(
+        "authorization_key": ubx.FieldSpec(wire_name="authorization_key"),
+        "express_route_circuit_peering_id": ubx.FieldSpec(wire_name="express_route_circuit_peering_id"),
+        "express_route_gateway_bypass_enabled": ubx.FieldSpec(wire_name="express_route_gateway_bypass_enabled"),
+        "express_route_gateway_id": ubx.FieldSpec(wire_name="express_route_gateway_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "internet_security_enabled": ubx.FieldSpec(wire_name="internet_security_enabled"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "routing_weight": ubx.FieldSpec(wire_name="routing_weight"),
+        "routing": ubx.FieldSpec(
             wire_name="routing",
             kind="list",
             fields=_RouteConnection_RoutingFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RouteConnection_TimeoutsFields,

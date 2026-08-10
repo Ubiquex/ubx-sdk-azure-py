@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PrivateLinkScopedService_Timeouts:
@@ -13,9 +13,9 @@ class PrivateLinkScopedService_Timeouts:
     read: Any = None
 
 _PrivateLinkScopedService_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -27,15 +27,15 @@ class PrivateLinkScopedServiceConfig:
     scope_name: Any = None
     timeouts: Any = None
 
-PrivateLinkScopedService = sdk.ResourceBinding(
+PrivateLinkScopedService = ubx.ResourceBinding(
     wire_type="azurerm_monitor_private_link_scoped_service",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "linked_resource_id": sdk.FieldSpec(wire_name="linked_resource_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "scope_name": sdk.FieldSpec(wire_name="scope_name"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "linked_resource_id": ubx.FieldSpec(wire_name="linked_resource_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "scope_name": ubx.FieldSpec(wire_name="scope_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_PrivateLinkScopedService_TimeoutsFields,

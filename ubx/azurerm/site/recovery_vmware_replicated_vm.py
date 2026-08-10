@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RecoveryVmwareReplicatedVm_ManagedDisk:
@@ -29,25 +29,25 @@ class RecoveryVmwareReplicatedVm_Timeouts:
     update: Any = None
 
 _RecoveryVmwareReplicatedVm_ManagedDiskFields = {
-    "disk_id": sdk.FieldSpec(wire_name="disk_id"),
-    "log_storage_account_id": sdk.FieldSpec(wire_name="log_storage_account_id"),
-    "target_disk_encryption_set_id": sdk.FieldSpec(wire_name="target_disk_encryption_set_id"),
-    "target_disk_type": sdk.FieldSpec(wire_name="target_disk_type"),
+    "disk_id": ubx.FieldSpec(wire_name="disk_id"),
+    "log_storage_account_id": ubx.FieldSpec(wire_name="log_storage_account_id"),
+    "target_disk_encryption_set_id": ubx.FieldSpec(wire_name="target_disk_encryption_set_id"),
+    "target_disk_type": ubx.FieldSpec(wire_name="target_disk_type"),
 }
 
 _RecoveryVmwareReplicatedVm_NetworkInterfaceFields = {
-    "is_primary": sdk.FieldSpec(wire_name="is_primary"),
-    "source_mac_address": sdk.FieldSpec(wire_name="source_mac_address"),
-    "target_static_ip": sdk.FieldSpec(wire_name="target_static_ip"),
-    "target_subnet_name": sdk.FieldSpec(wire_name="target_subnet_name"),
-    "test_subnet_name": sdk.FieldSpec(wire_name="test_subnet_name"),
+    "is_primary": ubx.FieldSpec(wire_name="is_primary"),
+    "source_mac_address": ubx.FieldSpec(wire_name="source_mac_address"),
+    "target_static_ip": ubx.FieldSpec(wire_name="target_static_ip"),
+    "target_subnet_name": ubx.FieldSpec(wire_name="target_subnet_name"),
+    "test_subnet_name": ubx.FieldSpec(wire_name="test_subnet_name"),
 }
 
 _RecoveryVmwareReplicatedVm_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -77,41 +77,41 @@ class RecoveryVmwareReplicatedVmConfig:
     network_interface: Any = None
     timeouts: Any = None
 
-RecoveryVmwareReplicatedVm = sdk.ResourceBinding(
+RecoveryVmwareReplicatedVm = ubx.ResourceBinding(
     wire_type="azurerm_site_recovery_vmware_replicated_vm",
     fields={
-        "appliance_name": sdk.FieldSpec(wire_name="appliance_name"),
-        "default_log_storage_account_id": sdk.FieldSpec(wire_name="default_log_storage_account_id"),
-        "default_recovery_disk_type": sdk.FieldSpec(wire_name="default_recovery_disk_type"),
-        "default_target_disk_encryption_set_id": sdk.FieldSpec(wire_name="default_target_disk_encryption_set_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "license_type": sdk.FieldSpec(wire_name="license_type"),
-        "multi_vm_group_name": sdk.FieldSpec(wire_name="multi_vm_group_name"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "physical_server_credential_name": sdk.FieldSpec(wire_name="physical_server_credential_name"),
-        "recovery_replication_policy_id": sdk.FieldSpec(wire_name="recovery_replication_policy_id"),
-        "recovery_vault_id": sdk.FieldSpec(wire_name="recovery_vault_id"),
-        "source_vm_name": sdk.FieldSpec(wire_name="source_vm_name"),
-        "target_availability_set_id": sdk.FieldSpec(wire_name="target_availability_set_id"),
-        "target_boot_diagnostics_storage_account_id": sdk.FieldSpec(wire_name="target_boot_diagnostics_storage_account_id"),
-        "target_network_id": sdk.FieldSpec(wire_name="target_network_id"),
-        "target_proximity_placement_group_id": sdk.FieldSpec(wire_name="target_proximity_placement_group_id"),
-        "target_resource_group_id": sdk.FieldSpec(wire_name="target_resource_group_id"),
-        "target_vm_name": sdk.FieldSpec(wire_name="target_vm_name"),
-        "target_vm_size": sdk.FieldSpec(wire_name="target_vm_size"),
-        "target_zone": sdk.FieldSpec(wire_name="target_zone"),
-        "test_network_id": sdk.FieldSpec(wire_name="test_network_id"),
-        "managed_disk": sdk.FieldSpec(
+        "appliance_name": ubx.FieldSpec(wire_name="appliance_name"),
+        "default_log_storage_account_id": ubx.FieldSpec(wire_name="default_log_storage_account_id"),
+        "default_recovery_disk_type": ubx.FieldSpec(wire_name="default_recovery_disk_type"),
+        "default_target_disk_encryption_set_id": ubx.FieldSpec(wire_name="default_target_disk_encryption_set_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "license_type": ubx.FieldSpec(wire_name="license_type"),
+        "multi_vm_group_name": ubx.FieldSpec(wire_name="multi_vm_group_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "physical_server_credential_name": ubx.FieldSpec(wire_name="physical_server_credential_name"),
+        "recovery_replication_policy_id": ubx.FieldSpec(wire_name="recovery_replication_policy_id"),
+        "recovery_vault_id": ubx.FieldSpec(wire_name="recovery_vault_id"),
+        "source_vm_name": ubx.FieldSpec(wire_name="source_vm_name"),
+        "target_availability_set_id": ubx.FieldSpec(wire_name="target_availability_set_id"),
+        "target_boot_diagnostics_storage_account_id": ubx.FieldSpec(wire_name="target_boot_diagnostics_storage_account_id"),
+        "target_network_id": ubx.FieldSpec(wire_name="target_network_id"),
+        "target_proximity_placement_group_id": ubx.FieldSpec(wire_name="target_proximity_placement_group_id"),
+        "target_resource_group_id": ubx.FieldSpec(wire_name="target_resource_group_id"),
+        "target_vm_name": ubx.FieldSpec(wire_name="target_vm_name"),
+        "target_vm_size": ubx.FieldSpec(wire_name="target_vm_size"),
+        "target_zone": ubx.FieldSpec(wire_name="target_zone"),
+        "test_network_id": ubx.FieldSpec(wire_name="test_network_id"),
+        "managed_disk": ubx.FieldSpec(
             wire_name="managed_disk",
             kind="list",
             fields=_RecoveryVmwareReplicatedVm_ManagedDiskFields,
         ),
-        "network_interface": sdk.FieldSpec(
+        "network_interface": ubx.FieldSpec(
             wire_name="network_interface",
             kind="list",
             fields=_RecoveryVmwareReplicatedVm_NetworkInterfaceFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RecoveryVmwareReplicatedVm_TimeoutsFields,

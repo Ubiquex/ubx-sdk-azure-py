@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class StudioCapability_Timeouts:
@@ -13,9 +13,9 @@ class StudioCapability_Timeouts:
     read: Any = None
 
 _StudioCapability_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -25,13 +25,13 @@ class StudioCapabilityConfig:
     id: Any = None
     timeouts: Any = None
 
-StudioCapability = sdk.ResourceBinding(
+StudioCapability = ubx.ResourceBinding(
     wire_type="azurerm_chaos_studio_capability",
     fields={
-        "capability_type": sdk.FieldSpec(wire_name="capability_type"),
-        "chaos_studio_target_id": sdk.FieldSpec(wire_name="chaos_studio_target_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "timeouts": sdk.FieldSpec(
+        "capability_type": ubx.FieldSpec(wire_name="capability_type"),
+        "chaos_studio_target_id": ubx.FieldSpec(wire_name="chaos_studio_target_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_StudioCapability_TimeoutsFields,

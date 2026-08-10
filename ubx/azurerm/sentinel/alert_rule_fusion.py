@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AlertRuleFusion_Source_SubType:
@@ -26,15 +26,15 @@ class AlertRuleFusion_Timeouts:
     update: Any = None
 
 _AlertRuleFusion_Source_SubTypeFields = {
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "severities_allowed": sdk.FieldSpec(wire_name="severities_allowed"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "severities_allowed": ubx.FieldSpec(wire_name="severities_allowed"),
 }
 
 _AlertRuleFusion_SourceFields = {
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "sub_type": sdk.FieldSpec(
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "sub_type": ubx.FieldSpec(
         wire_name="sub_type",
         kind="list",
         fields=_AlertRuleFusion_Source_SubTypeFields,
@@ -42,10 +42,10 @@ _AlertRuleFusion_SourceFields = {
 }
 
 _AlertRuleFusion_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -57,19 +57,19 @@ class AlertRuleFusionConfig:
     source: Any = None
     timeouts: Any = None
 
-AlertRuleFusion = sdk.ResourceBinding(
+AlertRuleFusion = ubx.ResourceBinding(
     wire_type="azurerm_sentinel_alert_rule_fusion",
     fields={
-        "alert_rule_template_guid": sdk.FieldSpec(wire_name="alert_rule_template_guid"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "log_analytics_workspace_id": sdk.FieldSpec(wire_name="log_analytics_workspace_id"),
-        "source": sdk.FieldSpec(
+        "alert_rule_template_guid": ubx.FieldSpec(wire_name="alert_rule_template_guid"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "log_analytics_workspace_id": ubx.FieldSpec(wire_name="log_analytics_workspace_id"),
+        "source": ubx.FieldSpec(
             wire_name="source",
             kind="list",
             fields=_AlertRuleFusion_SourceFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AlertRuleFusion_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Configuration_Antimalware_Exclusions:
@@ -64,18 +64,18 @@ class Configuration_Timeouts:
     update: Any = None
 
 _Configuration_Antimalware_ExclusionsFields = {
-    "extensions": sdk.FieldSpec(wire_name="extensions"),
-    "paths": sdk.FieldSpec(wire_name="paths"),
-    "processes": sdk.FieldSpec(wire_name="processes"),
+    "extensions": ubx.FieldSpec(wire_name="extensions"),
+    "paths": ubx.FieldSpec(wire_name="paths"),
+    "processes": ubx.FieldSpec(wire_name="processes"),
 }
 
 _Configuration_AntimalwareFields = {
-    "real_time_protection_enabled": sdk.FieldSpec(wire_name="real_time_protection_enabled"),
-    "scheduled_scan_day": sdk.FieldSpec(wire_name="scheduled_scan_day"),
-    "scheduled_scan_enabled": sdk.FieldSpec(wire_name="scheduled_scan_enabled"),
-    "scheduled_scan_time_in_minutes": sdk.FieldSpec(wire_name="scheduled_scan_time_in_minutes"),
-    "scheduled_scan_type": sdk.FieldSpec(wire_name="scheduled_scan_type"),
-    "exclusions": sdk.FieldSpec(
+    "real_time_protection_enabled": ubx.FieldSpec(wire_name="real_time_protection_enabled"),
+    "scheduled_scan_day": ubx.FieldSpec(wire_name="scheduled_scan_day"),
+    "scheduled_scan_enabled": ubx.FieldSpec(wire_name="scheduled_scan_enabled"),
+    "scheduled_scan_time_in_minutes": ubx.FieldSpec(wire_name="scheduled_scan_time_in_minutes"),
+    "scheduled_scan_type": ubx.FieldSpec(wire_name="scheduled_scan_type"),
+    "exclusions": ubx.FieldSpec(
         wire_name="exclusions",
         kind="list",
         fields=_Configuration_Antimalware_ExclusionsFields,
@@ -83,17 +83,17 @@ _Configuration_AntimalwareFields = {
 }
 
 _Configuration_AzureSecurityBaselineFields = {
-    "assignment_type": sdk.FieldSpec(wire_name="assignment_type"),
+    "assignment_type": ubx.FieldSpec(wire_name="assignment_type"),
 }
 
 _Configuration_Backup_RetentionPolicy_DailySchedule_RetentionDurationFields = {
-    "count": sdk.FieldSpec(wire_name="count"),
-    "duration_type": sdk.FieldSpec(wire_name="duration_type"),
+    "count": ubx.FieldSpec(wire_name="count"),
+    "duration_type": ubx.FieldSpec(wire_name="duration_type"),
 }
 
 _Configuration_Backup_RetentionPolicy_DailyScheduleFields = {
-    "retention_times": sdk.FieldSpec(wire_name="retention_times"),
-    "retention_duration": sdk.FieldSpec(
+    "retention_times": ubx.FieldSpec(wire_name="retention_times"),
+    "retention_duration": ubx.FieldSpec(
         wire_name="retention_duration",
         kind="list",
         fields=_Configuration_Backup_RetentionPolicy_DailySchedule_RetentionDurationFields,
@@ -101,13 +101,13 @@ _Configuration_Backup_RetentionPolicy_DailyScheduleFields = {
 }
 
 _Configuration_Backup_RetentionPolicyFields = {
-    "retention_policy_type": sdk.FieldSpec(wire_name="retention_policy_type"),
-    "daily_schedule": sdk.FieldSpec(
+    "retention_policy_type": ubx.FieldSpec(wire_name="retention_policy_type"),
+    "daily_schedule": ubx.FieldSpec(
         wire_name="daily_schedule",
         kind="list",
         fields=_Configuration_Backup_RetentionPolicy_DailyScheduleFields,
     ),
-    "weekly_schedule": sdk.FieldSpec(
+    "weekly_schedule": ubx.FieldSpec(
         wire_name="weekly_schedule",
         kind="list",
         fields=_Configuration_Backup_RetentionPolicy_DailyScheduleFields,
@@ -115,22 +115,22 @@ _Configuration_Backup_RetentionPolicyFields = {
 }
 
 _Configuration_Backup_SchedulePolicyFields = {
-    "schedule_policy_type": sdk.FieldSpec(wire_name="schedule_policy_type"),
-    "schedule_run_days": sdk.FieldSpec(wire_name="schedule_run_days"),
-    "schedule_run_frequency": sdk.FieldSpec(wire_name="schedule_run_frequency"),
-    "schedule_run_times": sdk.FieldSpec(wire_name="schedule_run_times"),
+    "schedule_policy_type": ubx.FieldSpec(wire_name="schedule_policy_type"),
+    "schedule_run_days": ubx.FieldSpec(wire_name="schedule_run_days"),
+    "schedule_run_frequency": ubx.FieldSpec(wire_name="schedule_run_frequency"),
+    "schedule_run_times": ubx.FieldSpec(wire_name="schedule_run_times"),
 }
 
 _Configuration_BackupFields = {
-    "instant_rp_retention_range_in_days": sdk.FieldSpec(wire_name="instant_rp_retention_range_in_days"),
-    "policy_name": sdk.FieldSpec(wire_name="policy_name"),
-    "time_zone": sdk.FieldSpec(wire_name="time_zone"),
-    "retention_policy": sdk.FieldSpec(
+    "instant_rp_retention_range_in_days": ubx.FieldSpec(wire_name="instant_rp_retention_range_in_days"),
+    "policy_name": ubx.FieldSpec(wire_name="policy_name"),
+    "time_zone": ubx.FieldSpec(wire_name="time_zone"),
+    "retention_policy": ubx.FieldSpec(
         wire_name="retention_policy",
         kind="list",
         fields=_Configuration_Backup_RetentionPolicyFields,
     ),
-    "schedule_policy": sdk.FieldSpec(
+    "schedule_policy": ubx.FieldSpec(
         wire_name="schedule_policy",
         kind="list",
         fields=_Configuration_Backup_SchedulePolicyFields,
@@ -138,10 +138,10 @@ _Configuration_BackupFields = {
 }
 
 _Configuration_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -162,36 +162,36 @@ class ConfigurationConfig:
     backup: Any = None
     timeouts: Any = None
 
-Configuration = sdk.ResourceBinding(
+Configuration = ubx.ResourceBinding(
     wire_type="azurerm_automanage_configuration",
     fields={
-        "automation_account_enabled": sdk.FieldSpec(wire_name="automation_account_enabled"),
-        "boot_diagnostics_enabled": sdk.FieldSpec(wire_name="boot_diagnostics_enabled"),
-        "defender_for_cloud_enabled": sdk.FieldSpec(wire_name="defender_for_cloud_enabled"),
-        "guest_configuration_enabled": sdk.FieldSpec(wire_name="guest_configuration_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "log_analytics_enabled": sdk.FieldSpec(wire_name="log_analytics_enabled"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "status_change_alert_enabled": sdk.FieldSpec(wire_name="status_change_alert_enabled"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "antimalware": sdk.FieldSpec(
+        "automation_account_enabled": ubx.FieldSpec(wire_name="automation_account_enabled"),
+        "boot_diagnostics_enabled": ubx.FieldSpec(wire_name="boot_diagnostics_enabled"),
+        "defender_for_cloud_enabled": ubx.FieldSpec(wire_name="defender_for_cloud_enabled"),
+        "guest_configuration_enabled": ubx.FieldSpec(wire_name="guest_configuration_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "log_analytics_enabled": ubx.FieldSpec(wire_name="log_analytics_enabled"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "status_change_alert_enabled": ubx.FieldSpec(wire_name="status_change_alert_enabled"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "antimalware": ubx.FieldSpec(
             wire_name="antimalware",
             kind="list",
             fields=_Configuration_AntimalwareFields,
         ),
-        "azure_security_baseline": sdk.FieldSpec(
+        "azure_security_baseline": ubx.FieldSpec(
             wire_name="azure_security_baseline",
             kind="list",
             fields=_Configuration_AzureSecurityBaselineFields,
         ),
-        "backup": sdk.FieldSpec(
+        "backup": ubx.FieldSpec(
             wire_name="backup",
             kind="list",
             fields=_Configuration_BackupFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Configuration_TimeoutsFields,

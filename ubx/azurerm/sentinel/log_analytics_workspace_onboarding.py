@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LogAnalyticsWorkspaceOnboarding_Timeouts:
@@ -13,9 +13,9 @@ class LogAnalyticsWorkspaceOnboarding_Timeouts:
     read: Any = None
 
 _LogAnalyticsWorkspaceOnboarding_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -25,13 +25,13 @@ class LogAnalyticsWorkspaceOnboardingConfig:
     workspace_id: Any = None
     timeouts: Any = None
 
-LogAnalyticsWorkspaceOnboarding = sdk.ResourceBinding(
+LogAnalyticsWorkspaceOnboarding = ubx.ResourceBinding(
     wire_type="azurerm_sentinel_log_analytics_workspace_onboarding",
     fields={
-        "customer_managed_key_enabled": sdk.FieldSpec(wire_name="customer_managed_key_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "workspace_id": sdk.FieldSpec(wire_name="workspace_id"),
-        "timeouts": sdk.FieldSpec(
+        "customer_managed_key_enabled": ubx.FieldSpec(wire_name="customer_managed_key_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "workspace_id": ubx.FieldSpec(wire_name="workspace_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_LogAnalyticsWorkspaceOnboarding_TimeoutsFields,

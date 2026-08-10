@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InsightsAnalyticsItem_Timeouts:
@@ -14,10 +14,10 @@ class InsightsAnalyticsItem_Timeouts:
     update: Any = None
 
 _InsightsAnalyticsItem_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class InsightsAnalyticsItemConfig:
     type: Any = None
     timeouts: Any = None
 
-InsightsAnalyticsItem = sdk.ResourceBinding(
+InsightsAnalyticsItem = ubx.ResourceBinding(
     wire_type="azurerm_application_insights_analytics_item",
     fields={
-        "application_insights_id": sdk.FieldSpec(wire_name="application_insights_id"),
-        "content": sdk.FieldSpec(wire_name="content"),
-        "function_alias": sdk.FieldSpec(wire_name="function_alias"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "scope": sdk.FieldSpec(wire_name="scope"),
-        "type": sdk.FieldSpec(wire_name="type"),
-        "timeouts": sdk.FieldSpec(
+        "application_insights_id": ubx.FieldSpec(wire_name="application_insights_id"),
+        "content": ubx.FieldSpec(wire_name="content"),
+        "function_alias": ubx.FieldSpec(wire_name="function_alias"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "scope": ubx.FieldSpec(wire_name="scope"),
+        "type": ubx.FieldSpec(wire_name="type"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_InsightsAnalyticsItem_TimeoutsFields,

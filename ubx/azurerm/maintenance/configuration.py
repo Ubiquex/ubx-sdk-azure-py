@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Configuration_InstallPatches_Linux:
@@ -40,25 +40,25 @@ class Configuration_Window:
     time_zone: Any = None
 
 _Configuration_InstallPatches_LinuxFields = {
-    "classifications_to_include": sdk.FieldSpec(wire_name="classifications_to_include"),
-    "package_names_mask_to_exclude": sdk.FieldSpec(wire_name="package_names_mask_to_exclude"),
-    "package_names_mask_to_include": sdk.FieldSpec(wire_name="package_names_mask_to_include"),
+    "classifications_to_include": ubx.FieldSpec(wire_name="classifications_to_include"),
+    "package_names_mask_to_exclude": ubx.FieldSpec(wire_name="package_names_mask_to_exclude"),
+    "package_names_mask_to_include": ubx.FieldSpec(wire_name="package_names_mask_to_include"),
 }
 
 _Configuration_InstallPatches_WindowsFields = {
-    "classifications_to_include": sdk.FieldSpec(wire_name="classifications_to_include"),
-    "kb_numbers_to_exclude": sdk.FieldSpec(wire_name="kb_numbers_to_exclude"),
-    "kb_numbers_to_include": sdk.FieldSpec(wire_name="kb_numbers_to_include"),
+    "classifications_to_include": ubx.FieldSpec(wire_name="classifications_to_include"),
+    "kb_numbers_to_exclude": ubx.FieldSpec(wire_name="kb_numbers_to_exclude"),
+    "kb_numbers_to_include": ubx.FieldSpec(wire_name="kb_numbers_to_include"),
 }
 
 _Configuration_InstallPatchesFields = {
-    "reboot": sdk.FieldSpec(wire_name="reboot"),
-    "linux": sdk.FieldSpec(
+    "reboot": ubx.FieldSpec(wire_name="reboot"),
+    "linux": ubx.FieldSpec(
         wire_name="linux",
         kind="list",
         fields=_Configuration_InstallPatches_LinuxFields,
     ),
-    "windows": sdk.FieldSpec(
+    "windows": ubx.FieldSpec(
         wire_name="windows",
         kind="list",
         fields=_Configuration_InstallPatches_WindowsFields,
@@ -66,18 +66,18 @@ _Configuration_InstallPatchesFields = {
 }
 
 _Configuration_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _Configuration_WindowFields = {
-    "duration": sdk.FieldSpec(wire_name="duration"),
-    "expiration_date_time": sdk.FieldSpec(wire_name="expiration_date_time"),
-    "recur_every": sdk.FieldSpec(wire_name="recur_every"),
-    "start_date_time": sdk.FieldSpec(wire_name="start_date_time"),
-    "time_zone": sdk.FieldSpec(wire_name="time_zone"),
+    "duration": ubx.FieldSpec(wire_name="duration"),
+    "expiration_date_time": ubx.FieldSpec(wire_name="expiration_date_time"),
+    "recur_every": ubx.FieldSpec(wire_name="recur_every"),
+    "start_date_time": ubx.FieldSpec(wire_name="start_date_time"),
+    "time_zone": ubx.FieldSpec(wire_name="time_zone"),
 }
 
 @dataclasses.dataclass
@@ -95,29 +95,29 @@ class ConfigurationConfig:
     timeouts: Any = None
     window: Any = None
 
-Configuration = sdk.ResourceBinding(
+Configuration = ubx.ResourceBinding(
     wire_type="azurerm_maintenance_configuration",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "in_guest_user_patch_mode": sdk.FieldSpec(wire_name="in_guest_user_patch_mode"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "properties": sdk.FieldSpec(wire_name="properties"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "scope": sdk.FieldSpec(wire_name="scope"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "visibility": sdk.FieldSpec(wire_name="visibility"),
-        "install_patches": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "in_guest_user_patch_mode": ubx.FieldSpec(wire_name="in_guest_user_patch_mode"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "properties": ubx.FieldSpec(wire_name="properties"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "scope": ubx.FieldSpec(wire_name="scope"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "visibility": ubx.FieldSpec(wire_name="visibility"),
+        "install_patches": ubx.FieldSpec(
             wire_name="install_patches",
             kind="list",
             fields=_Configuration_InstallPatchesFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Configuration_TimeoutsFields,
         ),
-        "window": sdk.FieldSpec(
+        "window": ubx.FieldSpec(
             wire_name="window",
             kind="list",
             fields=_Configuration_WindowFields,

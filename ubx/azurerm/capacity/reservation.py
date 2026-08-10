@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Reservation_Sku:
@@ -19,15 +19,15 @@ class Reservation_Timeouts:
     update: Any = None
 
 _Reservation_SkuFields = {
-    "capacity": sdk.FieldSpec(wire_name="capacity"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "capacity": ubx.FieldSpec(wire_name="capacity"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _Reservation_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -40,20 +40,20 @@ class ReservationConfig:
     sku: Any = None
     timeouts: Any = None
 
-Reservation = sdk.ResourceBinding(
+Reservation = ubx.ResourceBinding(
     wire_type="azurerm_capacity_reservation",
     fields={
-        "capacity_reservation_group_id": sdk.FieldSpec(wire_name="capacity_reservation_group_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "zone": sdk.FieldSpec(wire_name="zone"),
-        "sku": sdk.FieldSpec(
+        "capacity_reservation_group_id": ubx.FieldSpec(wire_name="capacity_reservation_group_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "zone": ubx.FieldSpec(wire_name="zone"),
+        "sku": ubx.FieldSpec(
             wire_name="sku",
             kind="list",
             fields=_Reservation_SkuFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Reservation_TimeoutsFields,

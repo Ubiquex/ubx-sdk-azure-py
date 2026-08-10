@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementGateway_LocationData:
@@ -21,17 +21,17 @@ class ManagementGateway_Timeouts:
     update: Any = None
 
 _ManagementGateway_LocationDataFields = {
-    "city": sdk.FieldSpec(wire_name="city"),
-    "district": sdk.FieldSpec(wire_name="district"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "region": sdk.FieldSpec(wire_name="region"),
+    "city": ubx.FieldSpec(wire_name="city"),
+    "district": ubx.FieldSpec(wire_name="district"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "region": ubx.FieldSpec(wire_name="region"),
 }
 
 _ManagementGateway_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -43,19 +43,19 @@ class ManagementGatewayConfig:
     location_data: Any = None
     timeouts: Any = None
 
-ManagementGateway = sdk.ResourceBinding(
+ManagementGateway = ubx.ResourceBinding(
     wire_type="azurerm_api_management_gateway",
     fields={
-        "api_management_id": sdk.FieldSpec(wire_name="api_management_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "location_data": sdk.FieldSpec(
+        "api_management_id": ubx.FieldSpec(wire_name="api_management_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "location_data": ubx.FieldSpec(
             wire_name="location_data",
             kind="list",
             fields=_ManagementGateway_LocationDataFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementGateway_TimeoutsFields,

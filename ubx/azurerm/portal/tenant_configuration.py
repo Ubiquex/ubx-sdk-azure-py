@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TenantConfiguration_Timeouts:
@@ -14,10 +14,10 @@ class TenantConfiguration_Timeouts:
     update: Any = None
 
 _TenantConfiguration_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -26,12 +26,12 @@ class TenantConfigurationConfig:
     private_markdown_storage_enforced: Any = None
     timeouts: Any = None
 
-TenantConfiguration = sdk.ResourceBinding(
+TenantConfiguration = ubx.ResourceBinding(
     wire_type="azurerm_portal_tenant_configuration",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "private_markdown_storage_enforced": sdk.FieldSpec(wire_name="private_markdown_storage_enforced"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "private_markdown_storage_enforced": ubx.FieldSpec(wire_name="private_markdown_storage_enforced"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_TenantConfiguration_TimeoutsFields,

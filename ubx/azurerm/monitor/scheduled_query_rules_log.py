@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ScheduledQueryRulesLog_Criteria_Dimension:
@@ -25,14 +25,14 @@ class ScheduledQueryRulesLog_Timeouts:
     update: Any = None
 
 _ScheduledQueryRulesLog_Criteria_DimensionFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "values": sdk.FieldSpec(wire_name="values"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "values": ubx.FieldSpec(wire_name="values"),
 }
 
 _ScheduledQueryRulesLog_CriteriaFields = {
-    "metric_name": sdk.FieldSpec(wire_name="metric_name"),
-    "dimension": sdk.FieldSpec(
+    "metric_name": ubx.FieldSpec(wire_name="metric_name"),
+    "dimension": ubx.FieldSpec(
         wire_name="dimension",
         kind="set",
         fields=_ScheduledQueryRulesLog_Criteria_DimensionFields,
@@ -40,10 +40,10 @@ _ScheduledQueryRulesLog_CriteriaFields = {
 }
 
 _ScheduledQueryRulesLog_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -60,24 +60,24 @@ class ScheduledQueryRulesLogConfig:
     criteria: Any = None
     timeouts: Any = None
 
-ScheduledQueryRulesLog = sdk.ResourceBinding(
+ScheduledQueryRulesLog = ubx.ResourceBinding(
     wire_type="azurerm_monitor_scheduled_query_rules_log",
     fields={
-        "authorized_resource_ids": sdk.FieldSpec(wire_name="authorized_resource_ids"),
-        "data_source_id": sdk.FieldSpec(wire_name="data_source_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "criteria": sdk.FieldSpec(
+        "authorized_resource_ids": ubx.FieldSpec(wire_name="authorized_resource_ids"),
+        "data_source_id": ubx.FieldSpec(wire_name="data_source_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "criteria": ubx.FieldSpec(
             wire_name="criteria",
             kind="list",
             fields=_ScheduledQueryRulesLog_CriteriaFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ScheduledQueryRulesLog_TimeoutsFields,

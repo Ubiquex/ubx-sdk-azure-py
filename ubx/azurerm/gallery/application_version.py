@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ApplicationVersion_ManageAction:
@@ -32,28 +32,28 @@ class ApplicationVersion_Timeouts:
     update: Any = None
 
 _ApplicationVersion_ManageActionFields = {
-    "install": sdk.FieldSpec(wire_name="install"),
-    "remove": sdk.FieldSpec(wire_name="remove"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "install": ubx.FieldSpec(wire_name="install"),
+    "remove": ubx.FieldSpec(wire_name="remove"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _ApplicationVersion_SourceFields = {
-    "default_configuration_link": sdk.FieldSpec(wire_name="default_configuration_link"),
-    "media_link": sdk.FieldSpec(wire_name="media_link"),
+    "default_configuration_link": ubx.FieldSpec(wire_name="default_configuration_link"),
+    "media_link": ubx.FieldSpec(wire_name="media_link"),
 }
 
 _ApplicationVersion_TargetRegionFields = {
-    "exclude_from_latest": sdk.FieldSpec(wire_name="exclude_from_latest"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "regional_replica_count": sdk.FieldSpec(wire_name="regional_replica_count"),
-    "storage_account_type": sdk.FieldSpec(wire_name="storage_account_type"),
+    "exclude_from_latest": ubx.FieldSpec(wire_name="exclude_from_latest"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "regional_replica_count": ubx.FieldSpec(wire_name="regional_replica_count"),
+    "storage_account_type": ubx.FieldSpec(wire_name="storage_account_type"),
 }
 
 _ApplicationVersion_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -73,35 +73,35 @@ class ApplicationVersionConfig:
     target_region: Any = None
     timeouts: Any = None
 
-ApplicationVersion = sdk.ResourceBinding(
+ApplicationVersion = ubx.ResourceBinding(
     wire_type="azurerm_gallery_application_version",
     fields={
-        "config_file": sdk.FieldSpec(wire_name="config_file"),
-        "enable_health_check": sdk.FieldSpec(wire_name="enable_health_check"),
-        "end_of_life_date": sdk.FieldSpec(wire_name="end_of_life_date"),
-        "exclude_from_latest": sdk.FieldSpec(wire_name="exclude_from_latest"),
-        "gallery_application_id": sdk.FieldSpec(wire_name="gallery_application_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "package_file": sdk.FieldSpec(wire_name="package_file"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "manage_action": sdk.FieldSpec(
+        "config_file": ubx.FieldSpec(wire_name="config_file"),
+        "enable_health_check": ubx.FieldSpec(wire_name="enable_health_check"),
+        "end_of_life_date": ubx.FieldSpec(wire_name="end_of_life_date"),
+        "exclude_from_latest": ubx.FieldSpec(wire_name="exclude_from_latest"),
+        "gallery_application_id": ubx.FieldSpec(wire_name="gallery_application_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "package_file": ubx.FieldSpec(wire_name="package_file"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "manage_action": ubx.FieldSpec(
             wire_name="manage_action",
             kind="list",
             fields=_ApplicationVersion_ManageActionFields,
         ),
-        "source": sdk.FieldSpec(
+        "source": ubx.FieldSpec(
             wire_name="source",
             kind="list",
             fields=_ApplicationVersion_SourceFields,
         ),
-        "target_region": sdk.FieldSpec(
+        "target_region": ubx.FieldSpec(
             wire_name="target_region",
             kind="list",
             fields=_ApplicationVersion_TargetRegionFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ApplicationVersion_TimeoutsFields,

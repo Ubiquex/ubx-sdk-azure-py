@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudDevToolPortal_Sso:
@@ -21,17 +21,17 @@ class CloudDevToolPortal_Timeouts:
     update: Any = None
 
 _CloudDevToolPortal_SsoFields = {
-    "client_id": sdk.FieldSpec(wire_name="client_id"),
-    "client_secret": sdk.FieldSpec(wire_name="client_secret"),
-    "metadata_url": sdk.FieldSpec(wire_name="metadata_url"),
-    "scope": sdk.FieldSpec(wire_name="scope"),
+    "client_id": ubx.FieldSpec(wire_name="client_id"),
+    "client_secret": ubx.FieldSpec(wire_name="client_secret"),
+    "metadata_url": ubx.FieldSpec(wire_name="metadata_url"),
+    "scope": ubx.FieldSpec(wire_name="scope"),
 }
 
 _CloudDevToolPortal_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -45,21 +45,21 @@ class CloudDevToolPortalConfig:
     sso: Any = None
     timeouts: Any = None
 
-CloudDevToolPortal = sdk.ResourceBinding(
+CloudDevToolPortal = ubx.ResourceBinding(
     wire_type="azurerm_spring_cloud_dev_tool_portal",
     fields={
-        "application_accelerator_enabled": sdk.FieldSpec(wire_name="application_accelerator_enabled"),
-        "application_live_view_enabled": sdk.FieldSpec(wire_name="application_live_view_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "spring_cloud_service_id": sdk.FieldSpec(wire_name="spring_cloud_service_id"),
-        "sso": sdk.FieldSpec(
+        "application_accelerator_enabled": ubx.FieldSpec(wire_name="application_accelerator_enabled"),
+        "application_live_view_enabled": ubx.FieldSpec(wire_name="application_live_view_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "spring_cloud_service_id": ubx.FieldSpec(wire_name="spring_cloud_service_id"),
+        "sso": ubx.FieldSpec(
             wire_name="sso",
             kind="list",
             fields=_CloudDevToolPortal_SsoFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CloudDevToolPortal_TimeoutsFields,

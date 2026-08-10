@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CenterDevBoxDefinition_Timeouts:
@@ -14,10 +14,10 @@ class CenterDevBoxDefinition_Timeouts:
     update: Any = None
 
 _CenterDevBoxDefinition_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -32,18 +32,18 @@ class CenterDevBoxDefinitionConfig:
     tags: Any = None
     timeouts: Any = None
 
-CenterDevBoxDefinition = sdk.ResourceBinding(
+CenterDevBoxDefinition = ubx.ResourceBinding(
     wire_type="azurerm_dev_center_dev_box_definition",
     fields={
-        "dev_center_id": sdk.FieldSpec(wire_name="dev_center_id"),
-        "hibernate_support_enabled": sdk.FieldSpec(wire_name="hibernate_support_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "image_reference_id": sdk.FieldSpec(wire_name="image_reference_id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "dev_center_id": ubx.FieldSpec(wire_name="dev_center_id"),
+        "hibernate_support_enabled": ubx.FieldSpec(wire_name="hibernate_support_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "image_reference_id": ubx.FieldSpec(wire_name="image_reference_id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CenterDevBoxDefinition_TimeoutsFields,

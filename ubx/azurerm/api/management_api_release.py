@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementApiRelease_Timeouts:
@@ -14,10 +14,10 @@ class ManagementApiRelease_Timeouts:
     update: Any = None
 
 _ManagementApiRelease_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -28,14 +28,14 @@ class ManagementApiReleaseConfig:
     notes: Any = None
     timeouts: Any = None
 
-ManagementApiRelease = sdk.ResourceBinding(
+ManagementApiRelease = ubx.ResourceBinding(
     wire_type="azurerm_api_management_api_release",
     fields={
-        "api_id": sdk.FieldSpec(wire_name="api_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "notes": sdk.FieldSpec(wire_name="notes"),
-        "timeouts": sdk.FieldSpec(
+        "api_id": ubx.FieldSpec(wire_name="api_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "notes": ubx.FieldSpec(wire_name="notes"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementApiRelease_TimeoutsFields,

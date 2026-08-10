@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementIdentityProviderFacebook_Timeouts:
@@ -14,10 +14,10 @@ class ManagementIdentityProviderFacebook_Timeouts:
     update: Any = None
 
 _ManagementIdentityProviderFacebook_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class ManagementIdentityProviderFacebookConfig:
     resource_group_name: Any = None
     timeouts: Any = None
 
-ManagementIdentityProviderFacebook = sdk.ResourceBinding(
+ManagementIdentityProviderFacebook = ubx.ResourceBinding(
     wire_type="azurerm_api_management_identity_provider_facebook",
     fields={
-        "api_management_name": sdk.FieldSpec(wire_name="api_management_name"),
-        "app_id": sdk.FieldSpec(wire_name="app_id"),
-        "app_secret": sdk.FieldSpec(wire_name="app_secret"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "timeouts": sdk.FieldSpec(
+        "api_management_name": ubx.FieldSpec(wire_name="api_management_name"),
+        "app_id": ubx.FieldSpec(wire_name="app_id"),
+        "app_secret": ubx.FieldSpec(wire_name="app_secret"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementIdentityProviderFacebook_TimeoutsFields,

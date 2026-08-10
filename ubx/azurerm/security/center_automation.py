@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CenterAutomation_Action:
@@ -37,21 +37,21 @@ class CenterAutomation_Timeouts:
     update: Any = None
 
 _CenterAutomation_ActionFields = {
-    "connection_string": sdk.FieldSpec(wire_name="connection_string"),
-    "resource_id": sdk.FieldSpec(wire_name="resource_id"),
-    "trigger_url": sdk.FieldSpec(wire_name="trigger_url"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "connection_string": ubx.FieldSpec(wire_name="connection_string"),
+    "resource_id": ubx.FieldSpec(wire_name="resource_id"),
+    "trigger_url": ubx.FieldSpec(wire_name="trigger_url"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _CenterAutomation_Source_RuleSet_RuleFields = {
-    "expected_value": sdk.FieldSpec(wire_name="expected_value"),
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "property_path": sdk.FieldSpec(wire_name="property_path"),
-    "property_type": sdk.FieldSpec(wire_name="property_type"),
+    "expected_value": ubx.FieldSpec(wire_name="expected_value"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "property_path": ubx.FieldSpec(wire_name="property_path"),
+    "property_type": ubx.FieldSpec(wire_name="property_type"),
 }
 
 _CenterAutomation_Source_RuleSetFields = {
-    "rule": sdk.FieldSpec(
+    "rule": ubx.FieldSpec(
         wire_name="rule",
         kind="list",
         fields=_CenterAutomation_Source_RuleSet_RuleFields,
@@ -59,8 +59,8 @@ _CenterAutomation_Source_RuleSetFields = {
 }
 
 _CenterAutomation_SourceFields = {
-    "event_source": sdk.FieldSpec(wire_name="event_source"),
-    "rule_set": sdk.FieldSpec(
+    "event_source": ubx.FieldSpec(wire_name="event_source"),
+    "rule_set": ubx.FieldSpec(
         wire_name="rule_set",
         kind="list",
         fields=_CenterAutomation_Source_RuleSetFields,
@@ -68,10 +68,10 @@ _CenterAutomation_SourceFields = {
 }
 
 _CenterAutomation_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -88,28 +88,28 @@ class CenterAutomationConfig:
     source: Any = None
     timeouts: Any = None
 
-CenterAutomation = sdk.ResourceBinding(
+CenterAutomation = ubx.ResourceBinding(
     wire_type="azurerm_security_center_automation",
     fields={
-        "description": sdk.FieldSpec(wire_name="description"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "scopes": sdk.FieldSpec(wire_name="scopes"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "action": sdk.FieldSpec(
+        "description": ubx.FieldSpec(wire_name="description"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "scopes": ubx.FieldSpec(wire_name="scopes"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "action": ubx.FieldSpec(
             wire_name="action",
             kind="list",
             fields=_CenterAutomation_ActionFields,
         ),
-        "source": sdk.FieldSpec(
+        "source": ubx.FieldSpec(
             wire_name="source",
             kind="list",
             fields=_CenterAutomation_SourceFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CenterAutomation_TimeoutsFields,

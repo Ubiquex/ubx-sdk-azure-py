@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CassandraTable_AutoscaleSettings:
@@ -38,35 +38,35 @@ class CassandraTable_Timeouts:
     update: Any = None
 
 _CassandraTable_AutoscaleSettingsFields = {
-    "max_throughput": sdk.FieldSpec(wire_name="max_throughput"),
+    "max_throughput": ubx.FieldSpec(wire_name="max_throughput"),
 }
 
 _CassandraTable_Schema_ClusterKeyFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "order_by": sdk.FieldSpec(wire_name="order_by"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "order_by": ubx.FieldSpec(wire_name="order_by"),
 }
 
 _CassandraTable_Schema_ColumnFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _CassandraTable_Schema_PartitionKeyFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _CassandraTable_SchemaFields = {
-    "cluster_key": sdk.FieldSpec(
+    "cluster_key": ubx.FieldSpec(
         wire_name="cluster_key",
         kind="list",
         fields=_CassandraTable_Schema_ClusterKeyFields,
     ),
-    "column": sdk.FieldSpec(
+    "column": ubx.FieldSpec(
         wire_name="column",
         kind="list",
         fields=_CassandraTable_Schema_ColumnFields,
     ),
-    "partition_key": sdk.FieldSpec(
+    "partition_key": ubx.FieldSpec(
         wire_name="partition_key",
         kind="list",
         fields=_CassandraTable_Schema_PartitionKeyFields,
@@ -74,10 +74,10 @@ _CassandraTable_SchemaFields = {
 }
 
 _CassandraTable_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -92,26 +92,26 @@ class CassandraTableConfig:
     schema: Any = None
     timeouts: Any = None
 
-CassandraTable = sdk.ResourceBinding(
+CassandraTable = ubx.ResourceBinding(
     wire_type="azurerm_cosmosdb_cassandra_table",
     fields={
-        "analytical_storage_ttl": sdk.FieldSpec(wire_name="analytical_storage_ttl"),
-        "cassandra_keyspace_id": sdk.FieldSpec(wire_name="cassandra_keyspace_id"),
-        "default_ttl": sdk.FieldSpec(wire_name="default_ttl"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "throughput": sdk.FieldSpec(wire_name="throughput"),
-        "autoscale_settings": sdk.FieldSpec(
+        "analytical_storage_ttl": ubx.FieldSpec(wire_name="analytical_storage_ttl"),
+        "cassandra_keyspace_id": ubx.FieldSpec(wire_name="cassandra_keyspace_id"),
+        "default_ttl": ubx.FieldSpec(wire_name="default_ttl"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "throughput": ubx.FieldSpec(wire_name="throughput"),
+        "autoscale_settings": ubx.FieldSpec(
             wire_name="autoscale_settings",
             kind="list",
             fields=_CassandraTable_AutoscaleSettingsFields,
         ),
-        "schema": sdk.FieldSpec(
+        "schema": ubx.FieldSpec(
             wire_name="schema",
             kind="list",
             fields=_CassandraTable_SchemaFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CassandraTable_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VirtualNetworkPeering_Timeouts:
@@ -14,10 +14,10 @@ class VirtualNetworkPeering_Timeouts:
     update: Any = None
 
 _VirtualNetworkPeering_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -34,20 +34,20 @@ class VirtualNetworkPeeringConfig:
     workspace_id: Any = None
     timeouts: Any = None
 
-VirtualNetworkPeering = sdk.ResourceBinding(
+VirtualNetworkPeering = ubx.ResourceBinding(
     wire_type="azurerm_databricks_virtual_network_peering",
     fields={
-        "allow_forwarded_traffic": sdk.FieldSpec(wire_name="allow_forwarded_traffic"),
-        "allow_gateway_transit": sdk.FieldSpec(wire_name="allow_gateway_transit"),
-        "allow_virtual_network_access": sdk.FieldSpec(wire_name="allow_virtual_network_access"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "remote_address_space_prefixes": sdk.FieldSpec(wire_name="remote_address_space_prefixes"),
-        "remote_virtual_network_id": sdk.FieldSpec(wire_name="remote_virtual_network_id"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "use_remote_gateways": sdk.FieldSpec(wire_name="use_remote_gateways"),
-        "workspace_id": sdk.FieldSpec(wire_name="workspace_id"),
-        "timeouts": sdk.FieldSpec(
+        "allow_forwarded_traffic": ubx.FieldSpec(wire_name="allow_forwarded_traffic"),
+        "allow_gateway_transit": ubx.FieldSpec(wire_name="allow_gateway_transit"),
+        "allow_virtual_network_access": ubx.FieldSpec(wire_name="allow_virtual_network_access"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "remote_address_space_prefixes": ubx.FieldSpec(wire_name="remote_address_space_prefixes"),
+        "remote_virtual_network_id": ubx.FieldSpec(wire_name="remote_virtual_network_id"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "use_remote_gateways": ubx.FieldSpec(wire_name="use_remote_gateways"),
+        "workspace_id": ubx.FieldSpec(wire_name="workspace_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_VirtualNetworkPeering_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServiceEmailDomainAssociation_Timeouts:
@@ -13,9 +13,9 @@ class ServiceEmailDomainAssociation_Timeouts:
     read: Any = None
 
 _ServiceEmailDomainAssociation_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -25,13 +25,13 @@ class ServiceEmailDomainAssociationConfig:
     id: Any = None
     timeouts: Any = None
 
-ServiceEmailDomainAssociation = sdk.ResourceBinding(
+ServiceEmailDomainAssociation = ubx.ResourceBinding(
     wire_type="azurerm_communication_service_email_domain_association",
     fields={
-        "communication_service_id": sdk.FieldSpec(wire_name="communication_service_id"),
-        "email_service_domain_id": sdk.FieldSpec(wire_name="email_service_domain_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "timeouts": sdk.FieldSpec(
+        "communication_service_id": ubx.FieldSpec(wire_name="communication_service_id"),
+        "email_service_domain_id": ubx.FieldSpec(wire_name="email_service_domain_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ServiceEmailDomainAssociation_TimeoutsFields,

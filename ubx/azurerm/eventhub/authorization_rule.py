@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AuthorizationRule_Timeouts:
@@ -14,10 +14,10 @@ class AuthorizationRule_Timeouts:
     update: Any = None
 
 _AuthorizationRule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -32,18 +32,18 @@ class AuthorizationRuleConfig:
     send: Any = None
     timeouts: Any = None
 
-AuthorizationRule = sdk.ResourceBinding(
+AuthorizationRule = ubx.ResourceBinding(
     wire_type="azurerm_eventhub_authorization_rule",
     fields={
-        "eventhub_name": sdk.FieldSpec(wire_name="eventhub_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "listen": sdk.FieldSpec(wire_name="listen"),
-        "manage": sdk.FieldSpec(wire_name="manage"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "namespace_name": sdk.FieldSpec(wire_name="namespace_name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "send": sdk.FieldSpec(wire_name="send"),
-        "timeouts": sdk.FieldSpec(
+        "eventhub_name": ubx.FieldSpec(wire_name="eventhub_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "listen": ubx.FieldSpec(wire_name="listen"),
+        "manage": ubx.FieldSpec(wire_name="manage"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "namespace_name": ubx.FieldSpec(wire_name="namespace_name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "send": ubx.FieldSpec(wire_name="send"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AuthorizationRule_TimeoutsFields,

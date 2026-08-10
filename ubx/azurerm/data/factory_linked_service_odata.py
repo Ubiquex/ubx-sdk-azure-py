@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryLinkedServiceOdata_BasicAuthentication:
@@ -19,15 +19,15 @@ class FactoryLinkedServiceOdata_Timeouts:
     update: Any = None
 
 _FactoryLinkedServiceOdata_BasicAuthenticationFields = {
-    "password": sdk.FieldSpec(wire_name="password"),
-    "username": sdk.FieldSpec(wire_name="username"),
+    "password": ubx.FieldSpec(wire_name="password"),
+    "username": ubx.FieldSpec(wire_name="username"),
 }
 
 _FactoryLinkedServiceOdata_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -44,24 +44,24 @@ class FactoryLinkedServiceOdataConfig:
     basic_authentication: Any = None
     timeouts: Any = None
 
-FactoryLinkedServiceOdata = sdk.ResourceBinding(
+FactoryLinkedServiceOdata = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_linked_service_odata",
     fields={
-        "additional_properties": sdk.FieldSpec(wire_name="additional_properties"),
-        "annotations": sdk.FieldSpec(wire_name="annotations"),
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "integration_runtime_name": sdk.FieldSpec(wire_name="integration_runtime_name"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parameters": sdk.FieldSpec(wire_name="parameters"),
-        "url": sdk.FieldSpec(wire_name="url"),
-        "basic_authentication": sdk.FieldSpec(
+        "additional_properties": ubx.FieldSpec(wire_name="additional_properties"),
+        "annotations": ubx.FieldSpec(wire_name="annotations"),
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "integration_runtime_name": ubx.FieldSpec(wire_name="integration_runtime_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parameters": ubx.FieldSpec(wire_name="parameters"),
+        "url": ubx.FieldSpec(wire_name="url"),
+        "basic_authentication": ubx.FieldSpec(
             wire_name="basic_authentication",
             kind="list",
             fields=_FactoryLinkedServiceOdata_BasicAuthenticationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryLinkedServiceOdata_TimeoutsFields,

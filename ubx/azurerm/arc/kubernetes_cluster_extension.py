@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class KubernetesClusterExtension_Identity:
@@ -20,16 +20,16 @@ class KubernetesClusterExtension_Timeouts:
     update: Any = None
 
 _KubernetesClusterExtension_IdentityFields = {
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _KubernetesClusterExtension_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -47,25 +47,25 @@ class KubernetesClusterExtensionConfig:
     identity: Any = None
     timeouts: Any = None
 
-KubernetesClusterExtension = sdk.ResourceBinding(
+KubernetesClusterExtension = ubx.ResourceBinding(
     wire_type="azurerm_arc_kubernetes_cluster_extension",
     fields={
-        "cluster_id": sdk.FieldSpec(wire_name="cluster_id"),
-        "configuration_protected_settings": sdk.FieldSpec(wire_name="configuration_protected_settings"),
-        "configuration_settings": sdk.FieldSpec(wire_name="configuration_settings"),
-        "extension_type": sdk.FieldSpec(wire_name="extension_type"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "release_namespace": sdk.FieldSpec(wire_name="release_namespace"),
-        "release_train": sdk.FieldSpec(wire_name="release_train"),
-        "target_namespace": sdk.FieldSpec(wire_name="target_namespace"),
-        "version": sdk.FieldSpec(wire_name="version"),
-        "identity": sdk.FieldSpec(
+        "cluster_id": ubx.FieldSpec(wire_name="cluster_id"),
+        "configuration_protected_settings": ubx.FieldSpec(wire_name="configuration_protected_settings"),
+        "configuration_settings": ubx.FieldSpec(wire_name="configuration_settings"),
+        "extension_type": ubx.FieldSpec(wire_name="extension_type"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "release_namespace": ubx.FieldSpec(wire_name="release_namespace"),
+        "release_train": ubx.FieldSpec(wire_name="release_train"),
+        "target_namespace": ubx.FieldSpec(wire_name="target_namespace"),
+        "version": ubx.FieldSpec(wire_name="version"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_KubernetesClusterExtension_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_KubernetesClusterExtension_TimeoutsFields,

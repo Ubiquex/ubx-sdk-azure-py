@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MongoUserDefinition_Timeouts:
@@ -14,10 +14,10 @@ class MongoUserDefinition_Timeouts:
     update: Any = None
 
 _MongoUserDefinition_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class MongoUserDefinitionConfig:
     username: Any = None
     timeouts: Any = None
 
-MongoUserDefinition = sdk.ResourceBinding(
+MongoUserDefinition = ubx.ResourceBinding(
     wire_type="azurerm_cosmosdb_mongo_user_definition",
     fields={
-        "cosmos_mongo_database_id": sdk.FieldSpec(wire_name="cosmos_mongo_database_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "inherited_role_names": sdk.FieldSpec(wire_name="inherited_role_names"),
-        "password": sdk.FieldSpec(wire_name="password"),
-        "username": sdk.FieldSpec(wire_name="username"),
-        "timeouts": sdk.FieldSpec(
+        "cosmos_mongo_database_id": ubx.FieldSpec(wire_name="cosmos_mongo_database_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "inherited_role_names": ubx.FieldSpec(wire_name="inherited_role_names"),
+        "password": ubx.FieldSpec(wire_name="password"),
+        "username": ubx.FieldSpec(wire_name="username"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_MongoUserDefinition_TimeoutsFields,

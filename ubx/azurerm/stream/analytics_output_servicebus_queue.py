@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnalyticsOutputServicebusQueue_Serialization:
@@ -21,17 +21,17 @@ class AnalyticsOutputServicebusQueue_Timeouts:
     update: Any = None
 
 _AnalyticsOutputServicebusQueue_SerializationFields = {
-    "encoding": sdk.FieldSpec(wire_name="encoding"),
-    "field_delimiter": sdk.FieldSpec(wire_name="field_delimiter"),
-    "format": sdk.FieldSpec(wire_name="format"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "encoding": ubx.FieldSpec(wire_name="encoding"),
+    "field_delimiter": ubx.FieldSpec(wire_name="field_delimiter"),
+    "format": ubx.FieldSpec(wire_name="format"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _AnalyticsOutputServicebusQueue_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -50,26 +50,26 @@ class AnalyticsOutputServicebusQueueConfig:
     serialization: Any = None
     timeouts: Any = None
 
-AnalyticsOutputServicebusQueue = sdk.ResourceBinding(
+AnalyticsOutputServicebusQueue = ubx.ResourceBinding(
     wire_type="azurerm_stream_analytics_output_servicebus_queue",
     fields={
-        "authentication_mode": sdk.FieldSpec(wire_name="authentication_mode"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "property_columns": sdk.FieldSpec(wire_name="property_columns"),
-        "queue_name": sdk.FieldSpec(wire_name="queue_name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "servicebus_namespace": sdk.FieldSpec(wire_name="servicebus_namespace"),
-        "shared_access_policy_key": sdk.FieldSpec(wire_name="shared_access_policy_key"),
-        "shared_access_policy_name": sdk.FieldSpec(wire_name="shared_access_policy_name"),
-        "stream_analytics_job_name": sdk.FieldSpec(wire_name="stream_analytics_job_name"),
-        "system_property_columns": sdk.FieldSpec(wire_name="system_property_columns"),
-        "serialization": sdk.FieldSpec(
+        "authentication_mode": ubx.FieldSpec(wire_name="authentication_mode"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "property_columns": ubx.FieldSpec(wire_name="property_columns"),
+        "queue_name": ubx.FieldSpec(wire_name="queue_name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "servicebus_namespace": ubx.FieldSpec(wire_name="servicebus_namespace"),
+        "shared_access_policy_key": ubx.FieldSpec(wire_name="shared_access_policy_key"),
+        "shared_access_policy_name": ubx.FieldSpec(wire_name="shared_access_policy_name"),
+        "stream_analytics_job_name": ubx.FieldSpec(wire_name="stream_analytics_job_name"),
+        "system_property_columns": ubx.FieldSpec(wire_name="system_property_columns"),
+        "serialization": ubx.FieldSpec(
             wire_name="serialization",
             kind="list",
             fields=_AnalyticsOutputServicebusQueue_SerializationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AnalyticsOutputServicebusQueue_TimeoutsFields,

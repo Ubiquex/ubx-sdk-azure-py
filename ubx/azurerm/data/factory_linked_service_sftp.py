@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryLinkedServiceSftp_KeyVaultPassword:
@@ -19,15 +19,15 @@ class FactoryLinkedServiceSftp_Timeouts:
     update: Any = None
 
 _FactoryLinkedServiceSftp_KeyVaultPasswordFields = {
-    "linked_service_name": sdk.FieldSpec(wire_name="linked_service_name"),
-    "secret_name": sdk.FieldSpec(wire_name="secret_name"),
+    "linked_service_name": ubx.FieldSpec(wire_name="linked_service_name"),
+    "secret_name": ubx.FieldSpec(wire_name="secret_name"),
 }
 
 _FactoryLinkedServiceSftp_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -55,43 +55,43 @@ class FactoryLinkedServiceSftpConfig:
     key_vault_private_key_passphrase: Any = None
     timeouts: Any = None
 
-FactoryLinkedServiceSftp = sdk.ResourceBinding(
+FactoryLinkedServiceSftp = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_linked_service_sftp",
     fields={
-        "additional_properties": sdk.FieldSpec(wire_name="additional_properties"),
-        "annotations": sdk.FieldSpec(wire_name="annotations"),
-        "authentication_type": sdk.FieldSpec(wire_name="authentication_type"),
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "host": sdk.FieldSpec(wire_name="host"),
-        "host_key_fingerprint": sdk.FieldSpec(wire_name="host_key_fingerprint"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "integration_runtime_name": sdk.FieldSpec(wire_name="integration_runtime_name"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parameters": sdk.FieldSpec(wire_name="parameters"),
-        "password": sdk.FieldSpec(wire_name="password"),
-        "port": sdk.FieldSpec(wire_name="port"),
-        "private_key_content_base64": sdk.FieldSpec(wire_name="private_key_content_base64"),
-        "private_key_passphrase": sdk.FieldSpec(wire_name="private_key_passphrase"),
-        "private_key_path": sdk.FieldSpec(wire_name="private_key_path"),
-        "skip_host_key_validation": sdk.FieldSpec(wire_name="skip_host_key_validation"),
-        "username": sdk.FieldSpec(wire_name="username"),
-        "key_vault_password": sdk.FieldSpec(
+        "additional_properties": ubx.FieldSpec(wire_name="additional_properties"),
+        "annotations": ubx.FieldSpec(wire_name="annotations"),
+        "authentication_type": ubx.FieldSpec(wire_name="authentication_type"),
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "host": ubx.FieldSpec(wire_name="host"),
+        "host_key_fingerprint": ubx.FieldSpec(wire_name="host_key_fingerprint"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "integration_runtime_name": ubx.FieldSpec(wire_name="integration_runtime_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parameters": ubx.FieldSpec(wire_name="parameters"),
+        "password": ubx.FieldSpec(wire_name="password"),
+        "port": ubx.FieldSpec(wire_name="port"),
+        "private_key_content_base64": ubx.FieldSpec(wire_name="private_key_content_base64"),
+        "private_key_passphrase": ubx.FieldSpec(wire_name="private_key_passphrase"),
+        "private_key_path": ubx.FieldSpec(wire_name="private_key_path"),
+        "skip_host_key_validation": ubx.FieldSpec(wire_name="skip_host_key_validation"),
+        "username": ubx.FieldSpec(wire_name="username"),
+        "key_vault_password": ubx.FieldSpec(
             wire_name="key_vault_password",
             kind="list",
             fields=_FactoryLinkedServiceSftp_KeyVaultPasswordFields,
         ),
-        "key_vault_private_key_content_base64": sdk.FieldSpec(
+        "key_vault_private_key_content_base64": ubx.FieldSpec(
             wire_name="key_vault_private_key_content_base64",
             kind="list",
             fields=_FactoryLinkedServiceSftp_KeyVaultPasswordFields,
         ),
-        "key_vault_private_key_passphrase": sdk.FieldSpec(
+        "key_vault_private_key_passphrase": ubx.FieldSpec(
             wire_name="key_vault_private_key_passphrase",
             kind="list",
             fields=_FactoryLinkedServiceSftp_KeyVaultPasswordFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryLinkedServiceSftp_TimeoutsFields,

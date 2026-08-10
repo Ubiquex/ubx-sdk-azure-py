@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VirtualMachineConfigurationAssignment_Configuration_Parameter:
@@ -27,16 +27,16 @@ class VirtualMachineConfigurationAssignment_Timeouts:
     update: Any = None
 
 _VirtualMachineConfigurationAssignment_Configuration_ParameterFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _VirtualMachineConfigurationAssignment_ConfigurationFields = {
-    "assignment_type": sdk.FieldSpec(wire_name="assignment_type"),
-    "content_hash": sdk.FieldSpec(wire_name="content_hash"),
-    "content_uri": sdk.FieldSpec(wire_name="content_uri"),
-    "version": sdk.FieldSpec(wire_name="version"),
-    "parameter": sdk.FieldSpec(
+    "assignment_type": ubx.FieldSpec(wire_name="assignment_type"),
+    "content_hash": ubx.FieldSpec(wire_name="content_hash"),
+    "content_uri": ubx.FieldSpec(wire_name="content_uri"),
+    "version": ubx.FieldSpec(wire_name="version"),
+    "parameter": ubx.FieldSpec(
         wire_name="parameter",
         kind="set",
         fields=_VirtualMachineConfigurationAssignment_Configuration_ParameterFields,
@@ -44,10 +44,10 @@ _VirtualMachineConfigurationAssignment_ConfigurationFields = {
 }
 
 _VirtualMachineConfigurationAssignment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -59,19 +59,19 @@ class VirtualMachineConfigurationAssignmentConfig:
     configuration: Any = None
     timeouts: Any = None
 
-VirtualMachineConfigurationAssignment = sdk.ResourceBinding(
+VirtualMachineConfigurationAssignment = ubx.ResourceBinding(
     wire_type="azurerm_policy_virtual_machine_configuration_assignment",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "virtual_machine_id": sdk.FieldSpec(wire_name="virtual_machine_id"),
-        "configuration": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "virtual_machine_id": ubx.FieldSpec(wire_name="virtual_machine_id"),
+        "configuration": ubx.FieldSpec(
             wire_name="configuration",
             kind="list",
             fields=_VirtualMachineConfigurationAssignment_ConfigurationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_VirtualMachineConfigurationAssignment_TimeoutsFields,

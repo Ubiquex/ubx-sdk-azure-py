@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Server_AzureadAdministrator:
@@ -28,24 +28,24 @@ class Server_Timeouts:
     update: Any = None
 
 _Server_AzureadAdministratorFields = {
-    "azuread_authentication_only": sdk.FieldSpec(wire_name="azuread_authentication_only"),
-    "login_username": sdk.FieldSpec(wire_name="login_username"),
-    "object_id": sdk.FieldSpec(wire_name="object_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
+    "azuread_authentication_only": ubx.FieldSpec(wire_name="azuread_authentication_only"),
+    "login_username": ubx.FieldSpec(wire_name="login_username"),
+    "object_id": ubx.FieldSpec(wire_name="object_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
 }
 
 _Server_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Server_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -71,37 +71,37 @@ class ServerConfig:
     identity: Any = None
     timeouts: Any = None
 
-Server = sdk.ResourceBinding(
+Server = ubx.ResourceBinding(
     wire_type="azurerm_mssql_server",
     fields={
-        "administrator_login": sdk.FieldSpec(wire_name="administrator_login"),
-        "administrator_login_password": sdk.FieldSpec(wire_name="administrator_login_password"),
-        "administrator_login_password_wo": sdk.FieldSpec(wire_name="administrator_login_password_wo"),
-        "administrator_login_password_wo_version": sdk.FieldSpec(wire_name="administrator_login_password_wo_version"),
-        "connection_policy": sdk.FieldSpec(wire_name="connection_policy"),
-        "express_vulnerability_assessment_enabled": sdk.FieldSpec(wire_name="express_vulnerability_assessment_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "minimum_tls_version": sdk.FieldSpec(wire_name="minimum_tls_version"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "outbound_network_restriction_enabled": sdk.FieldSpec(wire_name="outbound_network_restriction_enabled"),
-        "primary_user_assigned_identity_id": sdk.FieldSpec(wire_name="primary_user_assigned_identity_id"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "transparent_data_encryption_key_vault_key_id": sdk.FieldSpec(wire_name="transparent_data_encryption_key_vault_key_id"),
-        "version": sdk.FieldSpec(wire_name="version"),
-        "azuread_administrator": sdk.FieldSpec(
+        "administrator_login": ubx.FieldSpec(wire_name="administrator_login"),
+        "administrator_login_password": ubx.FieldSpec(wire_name="administrator_login_password"),
+        "administrator_login_password_wo": ubx.FieldSpec(wire_name="administrator_login_password_wo"),
+        "administrator_login_password_wo_version": ubx.FieldSpec(wire_name="administrator_login_password_wo_version"),
+        "connection_policy": ubx.FieldSpec(wire_name="connection_policy"),
+        "express_vulnerability_assessment_enabled": ubx.FieldSpec(wire_name="express_vulnerability_assessment_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "minimum_tls_version": ubx.FieldSpec(wire_name="minimum_tls_version"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "outbound_network_restriction_enabled": ubx.FieldSpec(wire_name="outbound_network_restriction_enabled"),
+        "primary_user_assigned_identity_id": ubx.FieldSpec(wire_name="primary_user_assigned_identity_id"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "transparent_data_encryption_key_vault_key_id": ubx.FieldSpec(wire_name="transparent_data_encryption_key_vault_key_id"),
+        "version": ubx.FieldSpec(wire_name="version"),
+        "azuread_administrator": ubx.FieldSpec(
             wire_name="azuread_administrator",
             kind="list",
             fields=_Server_AzureadAdministratorFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Server_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Server_TimeoutsFields,

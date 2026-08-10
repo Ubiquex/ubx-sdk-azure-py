@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class App_Dapr:
@@ -202,71 +202,71 @@ class App_Timeouts:
     update: Any = None
 
 _App_DaprFields = {
-    "app_id": sdk.FieldSpec(wire_name="app_id"),
-    "app_port": sdk.FieldSpec(wire_name="app_port"),
-    "app_protocol": sdk.FieldSpec(wire_name="app_protocol"),
+    "app_id": ubx.FieldSpec(wire_name="app_id"),
+    "app_port": ubx.FieldSpec(wire_name="app_port"),
+    "app_protocol": ubx.FieldSpec(wire_name="app_protocol"),
 }
 
 _App_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _App_Ingress_CustomDomainFields = {
-    "certificate_binding_type": sdk.FieldSpec(wire_name="certificate_binding_type"),
-    "certificate_id": sdk.FieldSpec(wire_name="certificate_id"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "certificate_binding_type": ubx.FieldSpec(wire_name="certificate_binding_type"),
+    "certificate_id": ubx.FieldSpec(wire_name="certificate_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _App_Ingress_CorsFields = {
-    "allow_credentials_enabled": sdk.FieldSpec(wire_name="allow_credentials_enabled"),
-    "allowed_headers": sdk.FieldSpec(wire_name="allowed_headers"),
-    "allowed_methods": sdk.FieldSpec(wire_name="allowed_methods"),
-    "allowed_origins": sdk.FieldSpec(wire_name="allowed_origins"),
-    "exposed_headers": sdk.FieldSpec(wire_name="exposed_headers"),
-    "max_age_in_seconds": sdk.FieldSpec(wire_name="max_age_in_seconds"),
+    "allow_credentials_enabled": ubx.FieldSpec(wire_name="allow_credentials_enabled"),
+    "allowed_headers": ubx.FieldSpec(wire_name="allowed_headers"),
+    "allowed_methods": ubx.FieldSpec(wire_name="allowed_methods"),
+    "allowed_origins": ubx.FieldSpec(wire_name="allowed_origins"),
+    "exposed_headers": ubx.FieldSpec(wire_name="exposed_headers"),
+    "max_age_in_seconds": ubx.FieldSpec(wire_name="max_age_in_seconds"),
 }
 
 _App_Ingress_IpSecurityRestrictionFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "description": sdk.FieldSpec(wire_name="description"),
-    "ip_address_range": sdk.FieldSpec(wire_name="ip_address_range"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "action": ubx.FieldSpec(wire_name="action"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "ip_address_range": ubx.FieldSpec(wire_name="ip_address_range"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _App_Ingress_TrafficWeightFields = {
-    "label": sdk.FieldSpec(wire_name="label"),
-    "latest_revision": sdk.FieldSpec(wire_name="latest_revision"),
-    "percentage": sdk.FieldSpec(wire_name="percentage"),
-    "revision_suffix": sdk.FieldSpec(wire_name="revision_suffix"),
+    "label": ubx.FieldSpec(wire_name="label"),
+    "latest_revision": ubx.FieldSpec(wire_name="latest_revision"),
+    "percentage": ubx.FieldSpec(wire_name="percentage"),
+    "revision_suffix": ubx.FieldSpec(wire_name="revision_suffix"),
 }
 
 _App_IngressFields = {
-    "allow_insecure_connections": sdk.FieldSpec(wire_name="allow_insecure_connections"),
-    "client_certificate_mode": sdk.FieldSpec(wire_name="client_certificate_mode"),
-    "custom_domain": sdk.FieldSpec(
+    "allow_insecure_connections": ubx.FieldSpec(wire_name="allow_insecure_connections"),
+    "client_certificate_mode": ubx.FieldSpec(wire_name="client_certificate_mode"),
+    "custom_domain": ubx.FieldSpec(
         wire_name="custom_domain",
         kind="list",
         fields=_App_Ingress_CustomDomainFields,
     ),
-    "exposed_port": sdk.FieldSpec(wire_name="exposed_port"),
-    "external_enabled": sdk.FieldSpec(wire_name="external_enabled"),
-    "fqdn": sdk.FieldSpec(wire_name="fqdn"),
-    "target_port": sdk.FieldSpec(wire_name="target_port"),
-    "transport": sdk.FieldSpec(wire_name="transport"),
-    "cors": sdk.FieldSpec(
+    "exposed_port": ubx.FieldSpec(wire_name="exposed_port"),
+    "external_enabled": ubx.FieldSpec(wire_name="external_enabled"),
+    "fqdn": ubx.FieldSpec(wire_name="fqdn"),
+    "target_port": ubx.FieldSpec(wire_name="target_port"),
+    "transport": ubx.FieldSpec(wire_name="transport"),
+    "cors": ubx.FieldSpec(
         wire_name="cors",
         kind="list",
         fields=_App_Ingress_CorsFields,
     ),
-    "ip_security_restriction": sdk.FieldSpec(
+    "ip_security_restriction": ubx.FieldSpec(
         wire_name="ip_security_restriction",
         kind="list",
         fields=_App_Ingress_IpSecurityRestrictionFields,
     ),
-    "traffic_weight": sdk.FieldSpec(
+    "traffic_weight": ubx.FieldSpec(
         wire_name="traffic_weight",
         kind="list",
         fields=_App_Ingress_TrafficWeightFields,
@@ -274,29 +274,29 @@ _App_IngressFields = {
 }
 
 _App_RegistryFields = {
-    "identity": sdk.FieldSpec(wire_name="identity"),
-    "password_secret_name": sdk.FieldSpec(wire_name="password_secret_name"),
-    "server": sdk.FieldSpec(wire_name="server"),
-    "username": sdk.FieldSpec(wire_name="username"),
+    "identity": ubx.FieldSpec(wire_name="identity"),
+    "password_secret_name": ubx.FieldSpec(wire_name="password_secret_name"),
+    "server": ubx.FieldSpec(wire_name="server"),
+    "username": ubx.FieldSpec(wire_name="username"),
 }
 
 _App_SecretFields = {
-    "identity": sdk.FieldSpec(wire_name="identity"),
-    "key_vault_secret_id": sdk.FieldSpec(wire_name="key_vault_secret_id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "identity": ubx.FieldSpec(wire_name="identity"),
+    "key_vault_secret_id": ubx.FieldSpec(wire_name="key_vault_secret_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _App_Template_AzureQueueScaleRule_AuthenticationFields = {
-    "secret_name": sdk.FieldSpec(wire_name="secret_name"),
-    "trigger_parameter": sdk.FieldSpec(wire_name="trigger_parameter"),
+    "secret_name": ubx.FieldSpec(wire_name="secret_name"),
+    "trigger_parameter": ubx.FieldSpec(wire_name="trigger_parameter"),
 }
 
 _App_Template_AzureQueueScaleRuleFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "queue_length": sdk.FieldSpec(wire_name="queue_length"),
-    "queue_name": sdk.FieldSpec(wire_name="queue_name"),
-    "authentication": sdk.FieldSpec(
+    "name": ubx.FieldSpec(wire_name="name"),
+    "queue_length": ubx.FieldSpec(wire_name="queue_length"),
+    "queue_name": ubx.FieldSpec(wire_name="queue_name"),
+    "authentication": ubx.FieldSpec(
         wire_name="authentication",
         kind="list",
         fields=_App_Template_AzureQueueScaleRule_AuthenticationFields,
@@ -304,26 +304,26 @@ _App_Template_AzureQueueScaleRuleFields = {
 }
 
 _App_Template_Container_EnvFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "secret_name": sdk.FieldSpec(wire_name="secret_name"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "secret_name": ubx.FieldSpec(wire_name="secret_name"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _App_Template_Container_LivenessProbe_HeaderFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _App_Template_Container_LivenessProbeFields = {
-    "failure_count_threshold": sdk.FieldSpec(wire_name="failure_count_threshold"),
-    "host": sdk.FieldSpec(wire_name="host"),
-    "initial_delay": sdk.FieldSpec(wire_name="initial_delay"),
-    "interval_seconds": sdk.FieldSpec(wire_name="interval_seconds"),
-    "path": sdk.FieldSpec(wire_name="path"),
-    "port": sdk.FieldSpec(wire_name="port"),
-    "timeout": sdk.FieldSpec(wire_name="timeout"),
-    "transport": sdk.FieldSpec(wire_name="transport"),
-    "header": sdk.FieldSpec(
+    "failure_count_threshold": ubx.FieldSpec(wire_name="failure_count_threshold"),
+    "host": ubx.FieldSpec(wire_name="host"),
+    "initial_delay": ubx.FieldSpec(wire_name="initial_delay"),
+    "interval_seconds": ubx.FieldSpec(wire_name="interval_seconds"),
+    "path": ubx.FieldSpec(wire_name="path"),
+    "port": ubx.FieldSpec(wire_name="port"),
+    "timeout": ubx.FieldSpec(wire_name="timeout"),
+    "transport": ubx.FieldSpec(wire_name="transport"),
+    "header": ubx.FieldSpec(
         wire_name="header",
         kind="list",
         fields=_App_Template_Container_LivenessProbe_HeaderFields,
@@ -331,16 +331,16 @@ _App_Template_Container_LivenessProbeFields = {
 }
 
 _App_Template_Container_ReadinessProbeFields = {
-    "failure_count_threshold": sdk.FieldSpec(wire_name="failure_count_threshold"),
-    "host": sdk.FieldSpec(wire_name="host"),
-    "initial_delay": sdk.FieldSpec(wire_name="initial_delay"),
-    "interval_seconds": sdk.FieldSpec(wire_name="interval_seconds"),
-    "path": sdk.FieldSpec(wire_name="path"),
-    "port": sdk.FieldSpec(wire_name="port"),
-    "success_count_threshold": sdk.FieldSpec(wire_name="success_count_threshold"),
-    "timeout": sdk.FieldSpec(wire_name="timeout"),
-    "transport": sdk.FieldSpec(wire_name="transport"),
-    "header": sdk.FieldSpec(
+    "failure_count_threshold": ubx.FieldSpec(wire_name="failure_count_threshold"),
+    "host": ubx.FieldSpec(wire_name="host"),
+    "initial_delay": ubx.FieldSpec(wire_name="initial_delay"),
+    "interval_seconds": ubx.FieldSpec(wire_name="interval_seconds"),
+    "path": ubx.FieldSpec(wire_name="path"),
+    "port": ubx.FieldSpec(wire_name="port"),
+    "success_count_threshold": ubx.FieldSpec(wire_name="success_count_threshold"),
+    "timeout": ubx.FieldSpec(wire_name="timeout"),
+    "transport": ubx.FieldSpec(wire_name="transport"),
+    "header": ubx.FieldSpec(
         wire_name="header",
         kind="list",
         fields=_App_Template_Container_LivenessProbe_HeaderFields,
@@ -348,40 +348,40 @@ _App_Template_Container_ReadinessProbeFields = {
 }
 
 _App_Template_Container_VolumeMountsFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "path": sdk.FieldSpec(wire_name="path"),
-    "sub_path": sdk.FieldSpec(wire_name="sub_path"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "path": ubx.FieldSpec(wire_name="path"),
+    "sub_path": ubx.FieldSpec(wire_name="sub_path"),
 }
 
 _App_Template_ContainerFields = {
-    "args": sdk.FieldSpec(wire_name="args"),
-    "command": sdk.FieldSpec(wire_name="command"),
-    "cpu": sdk.FieldSpec(wire_name="cpu"),
-    "ephemeral_storage": sdk.FieldSpec(wire_name="ephemeral_storage"),
-    "image": sdk.FieldSpec(wire_name="image"),
-    "memory": sdk.FieldSpec(wire_name="memory"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "env": sdk.FieldSpec(
+    "args": ubx.FieldSpec(wire_name="args"),
+    "command": ubx.FieldSpec(wire_name="command"),
+    "cpu": ubx.FieldSpec(wire_name="cpu"),
+    "ephemeral_storage": ubx.FieldSpec(wire_name="ephemeral_storage"),
+    "image": ubx.FieldSpec(wire_name="image"),
+    "memory": ubx.FieldSpec(wire_name="memory"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "env": ubx.FieldSpec(
         wire_name="env",
         kind="list",
         fields=_App_Template_Container_EnvFields,
     ),
-    "liveness_probe": sdk.FieldSpec(
+    "liveness_probe": ubx.FieldSpec(
         wire_name="liveness_probe",
         kind="list",
         fields=_App_Template_Container_LivenessProbeFields,
     ),
-    "readiness_probe": sdk.FieldSpec(
+    "readiness_probe": ubx.FieldSpec(
         wire_name="readiness_probe",
         kind="list",
         fields=_App_Template_Container_ReadinessProbeFields,
     ),
-    "startup_probe": sdk.FieldSpec(
+    "startup_probe": ubx.FieldSpec(
         wire_name="startup_probe",
         kind="list",
         fields=_App_Template_Container_LivenessProbeFields,
     ),
-    "volume_mounts": sdk.FieldSpec(
+    "volume_mounts": ubx.FieldSpec(
         wire_name="volume_mounts",
         kind="list",
         fields=_App_Template_Container_VolumeMountsFields,
@@ -389,11 +389,11 @@ _App_Template_ContainerFields = {
 }
 
 _App_Template_CustomScaleRuleFields = {
-    "custom_rule_type": sdk.FieldSpec(wire_name="custom_rule_type"),
-    "identity_id": sdk.FieldSpec(wire_name="identity_id"),
-    "metadata": sdk.FieldSpec(wire_name="metadata"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "authentication": sdk.FieldSpec(
+    "custom_rule_type": ubx.FieldSpec(wire_name="custom_rule_type"),
+    "identity_id": ubx.FieldSpec(wire_name="identity_id"),
+    "metadata": ubx.FieldSpec(wire_name="metadata"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "authentication": ubx.FieldSpec(
         wire_name="authentication",
         kind="list",
         fields=_App_Template_AzureQueueScaleRule_AuthenticationFields,
@@ -401,9 +401,9 @@ _App_Template_CustomScaleRuleFields = {
 }
 
 _App_Template_HttpScaleRuleFields = {
-    "concurrent_requests": sdk.FieldSpec(wire_name="concurrent_requests"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "authentication": sdk.FieldSpec(
+    "concurrent_requests": ubx.FieldSpec(wire_name="concurrent_requests"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "authentication": ubx.FieldSpec(
         wire_name="authentication",
         kind="list",
         fields=_App_Template_AzureQueueScaleRule_AuthenticationFields,
@@ -411,19 +411,19 @@ _App_Template_HttpScaleRuleFields = {
 }
 
 _App_Template_InitContainerFields = {
-    "args": sdk.FieldSpec(wire_name="args"),
-    "command": sdk.FieldSpec(wire_name="command"),
-    "cpu": sdk.FieldSpec(wire_name="cpu"),
-    "ephemeral_storage": sdk.FieldSpec(wire_name="ephemeral_storage"),
-    "image": sdk.FieldSpec(wire_name="image"),
-    "memory": sdk.FieldSpec(wire_name="memory"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "env": sdk.FieldSpec(
+    "args": ubx.FieldSpec(wire_name="args"),
+    "command": ubx.FieldSpec(wire_name="command"),
+    "cpu": ubx.FieldSpec(wire_name="cpu"),
+    "ephemeral_storage": ubx.FieldSpec(wire_name="ephemeral_storage"),
+    "image": ubx.FieldSpec(wire_name="image"),
+    "memory": ubx.FieldSpec(wire_name="memory"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "env": ubx.FieldSpec(
         wire_name="env",
         kind="list",
         fields=_App_Template_Container_EnvFields,
     ),
-    "volume_mounts": sdk.FieldSpec(
+    "volume_mounts": ubx.FieldSpec(
         wire_name="volume_mounts",
         kind="list",
         fields=_App_Template_Container_VolumeMountsFields,
@@ -431,50 +431,50 @@ _App_Template_InitContainerFields = {
 }
 
 _App_Template_VolumeFields = {
-    "mount_options": sdk.FieldSpec(wire_name="mount_options"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "storage_name": sdk.FieldSpec(wire_name="storage_name"),
-    "storage_type": sdk.FieldSpec(wire_name="storage_type"),
+    "mount_options": ubx.FieldSpec(wire_name="mount_options"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "storage_name": ubx.FieldSpec(wire_name="storage_name"),
+    "storage_type": ubx.FieldSpec(wire_name="storage_type"),
 }
 
 _App_TemplateFields = {
-    "cooldown_period_in_seconds": sdk.FieldSpec(wire_name="cooldown_period_in_seconds"),
-    "max_replicas": sdk.FieldSpec(wire_name="max_replicas"),
-    "min_replicas": sdk.FieldSpec(wire_name="min_replicas"),
-    "polling_interval_in_seconds": sdk.FieldSpec(wire_name="polling_interval_in_seconds"),
-    "revision_suffix": sdk.FieldSpec(wire_name="revision_suffix"),
-    "termination_grace_period_seconds": sdk.FieldSpec(wire_name="termination_grace_period_seconds"),
-    "azure_queue_scale_rule": sdk.FieldSpec(
+    "cooldown_period_in_seconds": ubx.FieldSpec(wire_name="cooldown_period_in_seconds"),
+    "max_replicas": ubx.FieldSpec(wire_name="max_replicas"),
+    "min_replicas": ubx.FieldSpec(wire_name="min_replicas"),
+    "polling_interval_in_seconds": ubx.FieldSpec(wire_name="polling_interval_in_seconds"),
+    "revision_suffix": ubx.FieldSpec(wire_name="revision_suffix"),
+    "termination_grace_period_seconds": ubx.FieldSpec(wire_name="termination_grace_period_seconds"),
+    "azure_queue_scale_rule": ubx.FieldSpec(
         wire_name="azure_queue_scale_rule",
         kind="list",
         fields=_App_Template_AzureQueueScaleRuleFields,
     ),
-    "container": sdk.FieldSpec(
+    "container": ubx.FieldSpec(
         wire_name="container",
         kind="list",
         fields=_App_Template_ContainerFields,
     ),
-    "custom_scale_rule": sdk.FieldSpec(
+    "custom_scale_rule": ubx.FieldSpec(
         wire_name="custom_scale_rule",
         kind="list",
         fields=_App_Template_CustomScaleRuleFields,
     ),
-    "http_scale_rule": sdk.FieldSpec(
+    "http_scale_rule": ubx.FieldSpec(
         wire_name="http_scale_rule",
         kind="list",
         fields=_App_Template_HttpScaleRuleFields,
     ),
-    "init_container": sdk.FieldSpec(
+    "init_container": ubx.FieldSpec(
         wire_name="init_container",
         kind="list",
         fields=_App_Template_InitContainerFields,
     ),
-    "tcp_scale_rule": sdk.FieldSpec(
+    "tcp_scale_rule": ubx.FieldSpec(
         wire_name="tcp_scale_rule",
         kind="list",
         fields=_App_Template_HttpScaleRuleFields,
     ),
-    "volume": sdk.FieldSpec(
+    "volume": ubx.FieldSpec(
         wire_name="volume",
         kind="list",
         fields=_App_Template_VolumeFields,
@@ -482,10 +482,10 @@ _App_TemplateFields = {
 }
 
 _App_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -506,48 +506,48 @@ class AppConfig:
     template: Any = None
     timeouts: Any = None
 
-App = sdk.ResourceBinding(
+App = ubx.ResourceBinding(
     wire_type="azurerm_container_app",
     fields={
-        "container_app_environment_id": sdk.FieldSpec(wire_name="container_app_environment_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "max_inactive_revisions": sdk.FieldSpec(wire_name="max_inactive_revisions"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "revision_mode": sdk.FieldSpec(wire_name="revision_mode"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "workload_profile_name": sdk.FieldSpec(wire_name="workload_profile_name"),
-        "dapr": sdk.FieldSpec(
+        "container_app_environment_id": ubx.FieldSpec(wire_name="container_app_environment_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "max_inactive_revisions": ubx.FieldSpec(wire_name="max_inactive_revisions"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "revision_mode": ubx.FieldSpec(wire_name="revision_mode"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "workload_profile_name": ubx.FieldSpec(wire_name="workload_profile_name"),
+        "dapr": ubx.FieldSpec(
             wire_name="dapr",
             kind="list",
             fields=_App_DaprFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_App_IdentityFields,
         ),
-        "ingress": sdk.FieldSpec(
+        "ingress": ubx.FieldSpec(
             wire_name="ingress",
             kind="list",
             fields=_App_IngressFields,
         ),
-        "registry": sdk.FieldSpec(
+        "registry": ubx.FieldSpec(
             wire_name="registry",
             kind="list",
             fields=_App_RegistryFields,
         ),
-        "secret": sdk.FieldSpec(
+        "secret": ubx.FieldSpec(
             wire_name="secret",
             kind="set",
             fields=_App_SecretFields,
         ),
-        "template": sdk.FieldSpec(
+        "template": ubx.FieldSpec(
             wire_name="template",
             kind="list",
             fields=_App_TemplateFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_App_TimeoutsFields,

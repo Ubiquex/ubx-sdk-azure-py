@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConnectionMonitor_Endpoint_Filter_Item:
@@ -83,13 +83,13 @@ class ConnectionMonitor_Timeouts:
     update: Any = None
 
 _ConnectionMonitor_Endpoint_Filter_ItemFields = {
-    "address": sdk.FieldSpec(wire_name="address"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "address": ubx.FieldSpec(wire_name="address"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _ConnectionMonitor_Endpoint_FilterFields = {
-    "type": sdk.FieldSpec(wire_name="type"),
-    "item": sdk.FieldSpec(
+    "type": ubx.FieldSpec(wire_name="type"),
+    "item": ubx.FieldSpec(
         wire_name="item",
         kind="set",
         fields=_ConnectionMonitor_Endpoint_Filter_ItemFields,
@@ -97,14 +97,14 @@ _ConnectionMonitor_Endpoint_FilterFields = {
 }
 
 _ConnectionMonitor_EndpointFields = {
-    "address": sdk.FieldSpec(wire_name="address"),
-    "coverage_level": sdk.FieldSpec(wire_name="coverage_level"),
-    "excluded_ip_addresses": sdk.FieldSpec(wire_name="excluded_ip_addresses"),
-    "included_ip_addresses": sdk.FieldSpec(wire_name="included_ip_addresses"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "target_resource_id": sdk.FieldSpec(wire_name="target_resource_id"),
-    "target_resource_type": sdk.FieldSpec(wire_name="target_resource_type"),
-    "filter": sdk.FieldSpec(
+    "address": ubx.FieldSpec(wire_name="address"),
+    "coverage_level": ubx.FieldSpec(wire_name="coverage_level"),
+    "excluded_ip_addresses": ubx.FieldSpec(wire_name="excluded_ip_addresses"),
+    "included_ip_addresses": ubx.FieldSpec(wire_name="included_ip_addresses"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "target_resource_id": ubx.FieldSpec(wire_name="target_resource_id"),
+    "target_resource_type": ubx.FieldSpec(wire_name="target_resource_type"),
+    "filter": ubx.FieldSpec(
         wire_name="filter",
         kind="list",
         fields=_ConnectionMonitor_Endpoint_FilterFields,
@@ -112,17 +112,17 @@ _ConnectionMonitor_EndpointFields = {
 }
 
 _ConnectionMonitor_TestConfiguration_HttpConfiguration_RequestHeaderFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _ConnectionMonitor_TestConfiguration_HttpConfigurationFields = {
-    "method": sdk.FieldSpec(wire_name="method"),
-    "path": sdk.FieldSpec(wire_name="path"),
-    "port": sdk.FieldSpec(wire_name="port"),
-    "prefer_https": sdk.FieldSpec(wire_name="prefer_https"),
-    "valid_status_code_ranges": sdk.FieldSpec(wire_name="valid_status_code_ranges"),
-    "request_header": sdk.FieldSpec(
+    "method": ubx.FieldSpec(wire_name="method"),
+    "path": ubx.FieldSpec(wire_name="path"),
+    "port": ubx.FieldSpec(wire_name="port"),
+    "prefer_https": ubx.FieldSpec(wire_name="prefer_https"),
+    "valid_status_code_ranges": ubx.FieldSpec(wire_name="valid_status_code_ranges"),
+    "request_header": ubx.FieldSpec(
         wire_name="request_header",
         kind="set",
         fields=_ConnectionMonitor_TestConfiguration_HttpConfiguration_RequestHeaderFields,
@@ -130,41 +130,41 @@ _ConnectionMonitor_TestConfiguration_HttpConfigurationFields = {
 }
 
 _ConnectionMonitor_TestConfiguration_IcmpConfigurationFields = {
-    "trace_route_enabled": sdk.FieldSpec(wire_name="trace_route_enabled"),
+    "trace_route_enabled": ubx.FieldSpec(wire_name="trace_route_enabled"),
 }
 
 _ConnectionMonitor_TestConfiguration_SuccessThresholdFields = {
-    "checks_failed_percent": sdk.FieldSpec(wire_name="checks_failed_percent"),
-    "round_trip_time_ms": sdk.FieldSpec(wire_name="round_trip_time_ms"),
+    "checks_failed_percent": ubx.FieldSpec(wire_name="checks_failed_percent"),
+    "round_trip_time_ms": ubx.FieldSpec(wire_name="round_trip_time_ms"),
 }
 
 _ConnectionMonitor_TestConfiguration_TcpConfigurationFields = {
-    "destination_port_behavior": sdk.FieldSpec(wire_name="destination_port_behavior"),
-    "port": sdk.FieldSpec(wire_name="port"),
-    "trace_route_enabled": sdk.FieldSpec(wire_name="trace_route_enabled"),
+    "destination_port_behavior": ubx.FieldSpec(wire_name="destination_port_behavior"),
+    "port": ubx.FieldSpec(wire_name="port"),
+    "trace_route_enabled": ubx.FieldSpec(wire_name="trace_route_enabled"),
 }
 
 _ConnectionMonitor_TestConfigurationFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "preferred_ip_version": sdk.FieldSpec(wire_name="preferred_ip_version"),
-    "protocol": sdk.FieldSpec(wire_name="protocol"),
-    "test_frequency_in_seconds": sdk.FieldSpec(wire_name="test_frequency_in_seconds"),
-    "http_configuration": sdk.FieldSpec(
+    "name": ubx.FieldSpec(wire_name="name"),
+    "preferred_ip_version": ubx.FieldSpec(wire_name="preferred_ip_version"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
+    "test_frequency_in_seconds": ubx.FieldSpec(wire_name="test_frequency_in_seconds"),
+    "http_configuration": ubx.FieldSpec(
         wire_name="http_configuration",
         kind="list",
         fields=_ConnectionMonitor_TestConfiguration_HttpConfigurationFields,
     ),
-    "icmp_configuration": sdk.FieldSpec(
+    "icmp_configuration": ubx.FieldSpec(
         wire_name="icmp_configuration",
         kind="list",
         fields=_ConnectionMonitor_TestConfiguration_IcmpConfigurationFields,
     ),
-    "success_threshold": sdk.FieldSpec(
+    "success_threshold": ubx.FieldSpec(
         wire_name="success_threshold",
         kind="list",
         fields=_ConnectionMonitor_TestConfiguration_SuccessThresholdFields,
     ),
-    "tcp_configuration": sdk.FieldSpec(
+    "tcp_configuration": ubx.FieldSpec(
         wire_name="tcp_configuration",
         kind="list",
         fields=_ConnectionMonitor_TestConfiguration_TcpConfigurationFields,
@@ -172,18 +172,18 @@ _ConnectionMonitor_TestConfigurationFields = {
 }
 
 _ConnectionMonitor_TestGroupFields = {
-    "destination_endpoints": sdk.FieldSpec(wire_name="destination_endpoints"),
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "source_endpoints": sdk.FieldSpec(wire_name="source_endpoints"),
-    "test_configuration_names": sdk.FieldSpec(wire_name="test_configuration_names"),
+    "destination_endpoints": ubx.FieldSpec(wire_name="destination_endpoints"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "source_endpoints": ubx.FieldSpec(wire_name="source_endpoints"),
+    "test_configuration_names": ubx.FieldSpec(wire_name="test_configuration_names"),
 }
 
 _ConnectionMonitor_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -200,32 +200,32 @@ class ConnectionMonitorConfig:
     test_group: Any = None
     timeouts: Any = None
 
-ConnectionMonitor = sdk.ResourceBinding(
+ConnectionMonitor = ubx.ResourceBinding(
     wire_type="azurerm_network_connection_monitor",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "network_watcher_id": sdk.FieldSpec(wire_name="network_watcher_id"),
-        "notes": sdk.FieldSpec(wire_name="notes"),
-        "output_workspace_resource_ids": sdk.FieldSpec(wire_name="output_workspace_resource_ids"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "endpoint": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network_watcher_id": ubx.FieldSpec(wire_name="network_watcher_id"),
+        "notes": ubx.FieldSpec(wire_name="notes"),
+        "output_workspace_resource_ids": ubx.FieldSpec(wire_name="output_workspace_resource_ids"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "endpoint": ubx.FieldSpec(
             wire_name="endpoint",
             kind="set",
             fields=_ConnectionMonitor_EndpointFields,
         ),
-        "test_configuration": sdk.FieldSpec(
+        "test_configuration": ubx.FieldSpec(
             wire_name="test_configuration",
             kind="set",
             fields=_ConnectionMonitor_TestConfigurationFields,
         ),
-        "test_group": sdk.FieldSpec(
+        "test_group": ubx.FieldSpec(
             wire_name="test_group",
             kind="set",
             fields=_ConnectionMonitor_TestGroupFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ConnectionMonitor_TimeoutsFields,

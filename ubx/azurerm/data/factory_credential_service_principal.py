@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryCredentialServicePrincipal_ServicePrincipalKey:
@@ -20,16 +20,16 @@ class FactoryCredentialServicePrincipal_Timeouts:
     update: Any = None
 
 _FactoryCredentialServicePrincipal_ServicePrincipalKeyFields = {
-    "linked_service_name": sdk.FieldSpec(wire_name="linked_service_name"),
-    "secret_name": sdk.FieldSpec(wire_name="secret_name"),
-    "secret_version": sdk.FieldSpec(wire_name="secret_version"),
+    "linked_service_name": ubx.FieldSpec(wire_name="linked_service_name"),
+    "secret_name": ubx.FieldSpec(wire_name="secret_name"),
+    "secret_version": ubx.FieldSpec(wire_name="secret_version"),
 }
 
 _FactoryCredentialServicePrincipal_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -44,22 +44,22 @@ class FactoryCredentialServicePrincipalConfig:
     service_principal_key: Any = None
     timeouts: Any = None
 
-FactoryCredentialServicePrincipal = sdk.ResourceBinding(
+FactoryCredentialServicePrincipal = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_credential_service_principal",
     fields={
-        "annotations": sdk.FieldSpec(wire_name="annotations"),
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "service_principal_id": sdk.FieldSpec(wire_name="service_principal_id"),
-        "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-        "service_principal_key": sdk.FieldSpec(
+        "annotations": ubx.FieldSpec(wire_name="annotations"),
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "service_principal_id": ubx.FieldSpec(wire_name="service_principal_id"),
+        "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+        "service_principal_key": ubx.FieldSpec(
             wire_name="service_principal_key",
             kind="list",
             fields=_FactoryCredentialServicePrincipal_ServicePrincipalKeyFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryCredentialServicePrincipal_TimeoutsFields,

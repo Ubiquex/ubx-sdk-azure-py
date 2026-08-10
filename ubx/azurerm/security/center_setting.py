@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CenterSetting_Timeouts:
@@ -14,10 +14,10 @@ class CenterSetting_Timeouts:
     update: Any = None
 
 _CenterSetting_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -27,13 +27,13 @@ class CenterSettingConfig:
     setting_name: Any = None
     timeouts: Any = None
 
-CenterSetting = sdk.ResourceBinding(
+CenterSetting = ubx.ResourceBinding(
     wire_type="azurerm_security_center_setting",
     fields={
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "setting_name": sdk.FieldSpec(wire_name="setting_name"),
-        "timeouts": sdk.FieldSpec(
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "setting_name": ubx.FieldSpec(wire_name="setting_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CenterSetting_TimeoutsFields,

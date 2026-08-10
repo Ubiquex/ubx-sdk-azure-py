@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Account_ActiveDirectory:
@@ -38,34 +38,34 @@ class Account_Timeouts:
     update: Any = None
 
 _Account_ActiveDirectoryFields = {
-    "aes_encryption_enabled": sdk.FieldSpec(wire_name="aes_encryption_enabled"),
-    "dns_servers": sdk.FieldSpec(wire_name="dns_servers"),
-    "domain": sdk.FieldSpec(wire_name="domain"),
-    "kerberos_ad_name": sdk.FieldSpec(wire_name="kerberos_ad_name"),
-    "kerberos_kdc_ip": sdk.FieldSpec(wire_name="kerberos_kdc_ip"),
-    "ldap_over_tls_enabled": sdk.FieldSpec(wire_name="ldap_over_tls_enabled"),
-    "ldap_signing_enabled": sdk.FieldSpec(wire_name="ldap_signing_enabled"),
-    "local_nfs_users_with_ldap_allowed": sdk.FieldSpec(wire_name="local_nfs_users_with_ldap_allowed"),
-    "organizational_unit": sdk.FieldSpec(wire_name="organizational_unit"),
-    "password": sdk.FieldSpec(wire_name="password"),
-    "server_root_ca_certificate": sdk.FieldSpec(wire_name="server_root_ca_certificate"),
-    "site_name": sdk.FieldSpec(wire_name="site_name"),
-    "smb_server_name": sdk.FieldSpec(wire_name="smb_server_name"),
-    "username": sdk.FieldSpec(wire_name="username"),
+    "aes_encryption_enabled": ubx.FieldSpec(wire_name="aes_encryption_enabled"),
+    "dns_servers": ubx.FieldSpec(wire_name="dns_servers"),
+    "domain": ubx.FieldSpec(wire_name="domain"),
+    "kerberos_ad_name": ubx.FieldSpec(wire_name="kerberos_ad_name"),
+    "kerberos_kdc_ip": ubx.FieldSpec(wire_name="kerberos_kdc_ip"),
+    "ldap_over_tls_enabled": ubx.FieldSpec(wire_name="ldap_over_tls_enabled"),
+    "ldap_signing_enabled": ubx.FieldSpec(wire_name="ldap_signing_enabled"),
+    "local_nfs_users_with_ldap_allowed": ubx.FieldSpec(wire_name="local_nfs_users_with_ldap_allowed"),
+    "organizational_unit": ubx.FieldSpec(wire_name="organizational_unit"),
+    "password": ubx.FieldSpec(wire_name="password"),
+    "server_root_ca_certificate": ubx.FieldSpec(wire_name="server_root_ca_certificate"),
+    "site_name": ubx.FieldSpec(wire_name="site_name"),
+    "smb_server_name": ubx.FieldSpec(wire_name="smb_server_name"),
+    "username": ubx.FieldSpec(wire_name="username"),
 }
 
 _Account_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Account_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -79,25 +79,25 @@ class AccountConfig:
     identity: Any = None
     timeouts: Any = None
 
-Account = sdk.ResourceBinding(
+Account = ubx.ResourceBinding(
     wire_type="azurerm_netapp_account",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "active_directory": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "active_directory": ubx.FieldSpec(
             wire_name="active_directory",
             kind="list",
             fields=_Account_ActiveDirectoryFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Account_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Account_TimeoutsFields,

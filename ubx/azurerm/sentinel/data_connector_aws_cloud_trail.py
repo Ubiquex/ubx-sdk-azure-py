@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DataConnectorAwsCloudTrail_Timeouts:
@@ -14,10 +14,10 @@ class DataConnectorAwsCloudTrail_Timeouts:
     update: Any = None
 
 _DataConnectorAwsCloudTrail_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -28,14 +28,14 @@ class DataConnectorAwsCloudTrailConfig:
     name: Any = None
     timeouts: Any = None
 
-DataConnectorAwsCloudTrail = sdk.ResourceBinding(
+DataConnectorAwsCloudTrail = ubx.ResourceBinding(
     wire_type="azurerm_sentinel_data_connector_aws_cloud_trail",
     fields={
-        "aws_role_arn": sdk.FieldSpec(wire_name="aws_role_arn"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "log_analytics_workspace_id": sdk.FieldSpec(wire_name="log_analytics_workspace_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "timeouts": sdk.FieldSpec(
+        "aws_role_arn": ubx.FieldSpec(wire_name="aws_role_arn"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "log_analytics_workspace_id": ubx.FieldSpec(wire_name="log_analytics_workspace_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DataConnectorAwsCloudTrail_TimeoutsFields,

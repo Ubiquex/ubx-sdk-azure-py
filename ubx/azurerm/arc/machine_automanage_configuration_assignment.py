@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MachineAutomanageConfigurationAssignment_Timeouts:
@@ -13,9 +13,9 @@ class MachineAutomanageConfigurationAssignment_Timeouts:
     read: Any = None
 
 _MachineAutomanageConfigurationAssignment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -25,13 +25,13 @@ class MachineAutomanageConfigurationAssignmentConfig:
     id: Any = None
     timeouts: Any = None
 
-MachineAutomanageConfigurationAssignment = sdk.ResourceBinding(
+MachineAutomanageConfigurationAssignment = ubx.ResourceBinding(
     wire_type="azurerm_arc_machine_automanage_configuration_assignment",
     fields={
-        "arc_machine_id": sdk.FieldSpec(wire_name="arc_machine_id"),
-        "configuration_id": sdk.FieldSpec(wire_name="configuration_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "timeouts": sdk.FieldSpec(
+        "arc_machine_id": ubx.FieldSpec(wire_name="arc_machine_id"),
+        "configuration_id": ubx.FieldSpec(wire_name="configuration_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_MachineAutomanageConfigurationAssignment_TimeoutsFields,

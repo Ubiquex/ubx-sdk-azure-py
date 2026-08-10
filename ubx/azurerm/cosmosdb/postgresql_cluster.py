@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PostgresqlCluster_MaintenanceWindow:
@@ -20,16 +20,16 @@ class PostgresqlCluster_Timeouts:
     update: Any = None
 
 _PostgresqlCluster_MaintenanceWindowFields = {
-    "day_of_week": sdk.FieldSpec(wire_name="day_of_week"),
-    "start_hour": sdk.FieldSpec(wire_name="start_hour"),
-    "start_minute": sdk.FieldSpec(wire_name="start_minute"),
+    "day_of_week": ubx.FieldSpec(wire_name="day_of_week"),
+    "start_hour": ubx.FieldSpec(wire_name="start_hour"),
+    "start_minute": ubx.FieldSpec(wire_name="start_minute"),
 }
 
 _PostgresqlCluster_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -60,38 +60,38 @@ class PostgresqlClusterConfig:
     maintenance_window: Any = None
     timeouts: Any = None
 
-PostgresqlCluster = sdk.ResourceBinding(
+PostgresqlCluster = ubx.ResourceBinding(
     wire_type="azurerm_cosmosdb_postgresql_cluster",
     fields={
-        "administrator_login_password": sdk.FieldSpec(wire_name="administrator_login_password"),
-        "citus_version": sdk.FieldSpec(wire_name="citus_version"),
-        "coordinator_public_ip_access_enabled": sdk.FieldSpec(wire_name="coordinator_public_ip_access_enabled"),
-        "coordinator_server_edition": sdk.FieldSpec(wire_name="coordinator_server_edition"),
-        "coordinator_storage_quota_in_mb": sdk.FieldSpec(wire_name="coordinator_storage_quota_in_mb"),
-        "coordinator_vcore_count": sdk.FieldSpec(wire_name="coordinator_vcore_count"),
-        "ha_enabled": sdk.FieldSpec(wire_name="ha_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "node_count": sdk.FieldSpec(wire_name="node_count"),
-        "node_public_ip_access_enabled": sdk.FieldSpec(wire_name="node_public_ip_access_enabled"),
-        "node_server_edition": sdk.FieldSpec(wire_name="node_server_edition"),
-        "node_storage_quota_in_mb": sdk.FieldSpec(wire_name="node_storage_quota_in_mb"),
-        "node_vcores": sdk.FieldSpec(wire_name="node_vcores"),
-        "point_in_time_in_utc": sdk.FieldSpec(wire_name="point_in_time_in_utc"),
-        "preferred_primary_zone": sdk.FieldSpec(wire_name="preferred_primary_zone"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "shards_on_coordinator_enabled": sdk.FieldSpec(wire_name="shards_on_coordinator_enabled"),
-        "source_location": sdk.FieldSpec(wire_name="source_location"),
-        "source_resource_id": sdk.FieldSpec(wire_name="source_resource_id"),
-        "sql_version": sdk.FieldSpec(wire_name="sql_version"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "maintenance_window": sdk.FieldSpec(
+        "administrator_login_password": ubx.FieldSpec(wire_name="administrator_login_password"),
+        "citus_version": ubx.FieldSpec(wire_name="citus_version"),
+        "coordinator_public_ip_access_enabled": ubx.FieldSpec(wire_name="coordinator_public_ip_access_enabled"),
+        "coordinator_server_edition": ubx.FieldSpec(wire_name="coordinator_server_edition"),
+        "coordinator_storage_quota_in_mb": ubx.FieldSpec(wire_name="coordinator_storage_quota_in_mb"),
+        "coordinator_vcore_count": ubx.FieldSpec(wire_name="coordinator_vcore_count"),
+        "ha_enabled": ubx.FieldSpec(wire_name="ha_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "node_count": ubx.FieldSpec(wire_name="node_count"),
+        "node_public_ip_access_enabled": ubx.FieldSpec(wire_name="node_public_ip_access_enabled"),
+        "node_server_edition": ubx.FieldSpec(wire_name="node_server_edition"),
+        "node_storage_quota_in_mb": ubx.FieldSpec(wire_name="node_storage_quota_in_mb"),
+        "node_vcores": ubx.FieldSpec(wire_name="node_vcores"),
+        "point_in_time_in_utc": ubx.FieldSpec(wire_name="point_in_time_in_utc"),
+        "preferred_primary_zone": ubx.FieldSpec(wire_name="preferred_primary_zone"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "shards_on_coordinator_enabled": ubx.FieldSpec(wire_name="shards_on_coordinator_enabled"),
+        "source_location": ubx.FieldSpec(wire_name="source_location"),
+        "source_resource_id": ubx.FieldSpec(wire_name="source_resource_id"),
+        "sql_version": ubx.FieldSpec(wire_name="sql_version"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "maintenance_window": ubx.FieldSpec(
             wire_name="maintenance_window",
             kind="list",
             fields=_PostgresqlCluster_MaintenanceWindowFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_PostgresqlCluster_TimeoutsFields,

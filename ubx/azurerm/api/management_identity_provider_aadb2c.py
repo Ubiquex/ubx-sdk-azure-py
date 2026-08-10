@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementIdentityProviderAadb2c_Timeouts:
@@ -14,10 +14,10 @@ class ManagementIdentityProviderAadb2c_Timeouts:
     update: Any = None
 
 _ManagementIdentityProviderAadb2c_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -37,23 +37,23 @@ class ManagementIdentityProviderAadb2cConfig:
     signup_policy: Any = None
     timeouts: Any = None
 
-ManagementIdentityProviderAadb2c = sdk.ResourceBinding(
+ManagementIdentityProviderAadb2c = ubx.ResourceBinding(
     wire_type="azurerm_api_management_identity_provider_aadb2c",
     fields={
-        "allowed_tenant": sdk.FieldSpec(wire_name="allowed_tenant"),
-        "api_management_name": sdk.FieldSpec(wire_name="api_management_name"),
-        "authority": sdk.FieldSpec(wire_name="authority"),
-        "client_id": sdk.FieldSpec(wire_name="client_id"),
-        "client_library": sdk.FieldSpec(wire_name="client_library"),
-        "client_secret": sdk.FieldSpec(wire_name="client_secret"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "password_reset_policy": sdk.FieldSpec(wire_name="password_reset_policy"),
-        "profile_editing_policy": sdk.FieldSpec(wire_name="profile_editing_policy"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "signin_policy": sdk.FieldSpec(wire_name="signin_policy"),
-        "signin_tenant": sdk.FieldSpec(wire_name="signin_tenant"),
-        "signup_policy": sdk.FieldSpec(wire_name="signup_policy"),
-        "timeouts": sdk.FieldSpec(
+        "allowed_tenant": ubx.FieldSpec(wire_name="allowed_tenant"),
+        "api_management_name": ubx.FieldSpec(wire_name="api_management_name"),
+        "authority": ubx.FieldSpec(wire_name="authority"),
+        "client_id": ubx.FieldSpec(wire_name="client_id"),
+        "client_library": ubx.FieldSpec(wire_name="client_library"),
+        "client_secret": ubx.FieldSpec(wire_name="client_secret"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "password_reset_policy": ubx.FieldSpec(wire_name="password_reset_policy"),
+        "profile_editing_policy": ubx.FieldSpec(wire_name="profile_editing_policy"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "signin_policy": ubx.FieldSpec(wire_name="signin_policy"),
+        "signin_tenant": ubx.FieldSpec(wire_name="signin_tenant"),
+        "signup_policy": ubx.FieldSpec(wire_name="signup_policy"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementIdentityProviderAadb2c_TimeoutsFields,

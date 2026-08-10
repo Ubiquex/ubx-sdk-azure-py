@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagerNestedEndpoint_CustomHeader:
@@ -25,21 +25,21 @@ class ManagerNestedEndpoint_Timeouts:
     update: Any = None
 
 _ManagerNestedEndpoint_CustomHeaderFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _ManagerNestedEndpoint_SubnetFields = {
-    "first": sdk.FieldSpec(wire_name="first"),
-    "last": sdk.FieldSpec(wire_name="last"),
-    "scope": sdk.FieldSpec(wire_name="scope"),
+    "first": ubx.FieldSpec(wire_name="first"),
+    "last": ubx.FieldSpec(wire_name="last"),
+    "scope": ubx.FieldSpec(wire_name="scope"),
 }
 
 _ManagerNestedEndpoint_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -60,32 +60,32 @@ class ManagerNestedEndpointConfig:
     subnet: Any = None
     timeouts: Any = None
 
-ManagerNestedEndpoint = sdk.ResourceBinding(
+ManagerNestedEndpoint = ubx.ResourceBinding(
     wire_type="azurerm_traffic_manager_nested_endpoint",
     fields={
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "endpoint_location": sdk.FieldSpec(wire_name="endpoint_location"),
-        "geo_mappings": sdk.FieldSpec(wire_name="geo_mappings"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "minimum_child_endpoints": sdk.FieldSpec(wire_name="minimum_child_endpoints"),
-        "minimum_required_child_endpoints_ipv4": sdk.FieldSpec(wire_name="minimum_required_child_endpoints_ipv4"),
-        "minimum_required_child_endpoints_ipv6": sdk.FieldSpec(wire_name="minimum_required_child_endpoints_ipv6"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "priority": sdk.FieldSpec(wire_name="priority"),
-        "profile_id": sdk.FieldSpec(wire_name="profile_id"),
-        "target_resource_id": sdk.FieldSpec(wire_name="target_resource_id"),
-        "weight": sdk.FieldSpec(wire_name="weight"),
-        "custom_header": sdk.FieldSpec(
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "endpoint_location": ubx.FieldSpec(wire_name="endpoint_location"),
+        "geo_mappings": ubx.FieldSpec(wire_name="geo_mappings"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "minimum_child_endpoints": ubx.FieldSpec(wire_name="minimum_child_endpoints"),
+        "minimum_required_child_endpoints_ipv4": ubx.FieldSpec(wire_name="minimum_required_child_endpoints_ipv4"),
+        "minimum_required_child_endpoints_ipv6": ubx.FieldSpec(wire_name="minimum_required_child_endpoints_ipv6"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "priority": ubx.FieldSpec(wire_name="priority"),
+        "profile_id": ubx.FieldSpec(wire_name="profile_id"),
+        "target_resource_id": ubx.FieldSpec(wire_name="target_resource_id"),
+        "weight": ubx.FieldSpec(wire_name="weight"),
+        "custom_header": ubx.FieldSpec(
             wire_name="custom_header",
             kind="list",
             fields=_ManagerNestedEndpoint_CustomHeaderFields,
         ),
-        "subnet": sdk.FieldSpec(
+        "subnet": ubx.FieldSpec(
             wire_name="subnet",
             kind="list",
             fields=_ManagerNestedEndpoint_SubnetFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagerNestedEndpoint_TimeoutsFields,

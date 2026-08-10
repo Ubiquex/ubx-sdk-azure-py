@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class OutboundFirewallRule_Timeouts:
@@ -13,9 +13,9 @@ class OutboundFirewallRule_Timeouts:
     read: Any = None
 
 _OutboundFirewallRule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -25,13 +25,13 @@ class OutboundFirewallRuleConfig:
     server_id: Any = None
     timeouts: Any = None
 
-OutboundFirewallRule = sdk.ResourceBinding(
+OutboundFirewallRule = ubx.ResourceBinding(
     wire_type="azurerm_mssql_outbound_firewall_rule",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "server_id": sdk.FieldSpec(wire_name="server_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "server_id": ubx.FieldSpec(wire_name="server_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_OutboundFirewallRule_TimeoutsFields,

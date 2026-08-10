@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryLinkedServiceKusto_Timeouts:
@@ -14,10 +14,10 @@ class FactoryLinkedServiceKusto_Timeouts:
     update: Any = None
 
 _FactoryLinkedServiceKusto_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -38,24 +38,24 @@ class FactoryLinkedServiceKustoConfig:
     use_managed_identity: Any = None
     timeouts: Any = None
 
-FactoryLinkedServiceKusto = sdk.ResourceBinding(
+FactoryLinkedServiceKusto = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_linked_service_kusto",
     fields={
-        "additional_properties": sdk.FieldSpec(wire_name="additional_properties"),
-        "annotations": sdk.FieldSpec(wire_name="annotations"),
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "integration_runtime_name": sdk.FieldSpec(wire_name="integration_runtime_name"),
-        "kusto_database_name": sdk.FieldSpec(wire_name="kusto_database_name"),
-        "kusto_endpoint": sdk.FieldSpec(wire_name="kusto_endpoint"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parameters": sdk.FieldSpec(wire_name="parameters"),
-        "service_principal_id": sdk.FieldSpec(wire_name="service_principal_id"),
-        "service_principal_key": sdk.FieldSpec(wire_name="service_principal_key"),
-        "tenant": sdk.FieldSpec(wire_name="tenant"),
-        "use_managed_identity": sdk.FieldSpec(wire_name="use_managed_identity"),
-        "timeouts": sdk.FieldSpec(
+        "additional_properties": ubx.FieldSpec(wire_name="additional_properties"),
+        "annotations": ubx.FieldSpec(wire_name="annotations"),
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "integration_runtime_name": ubx.FieldSpec(wire_name="integration_runtime_name"),
+        "kusto_database_name": ubx.FieldSpec(wire_name="kusto_database_name"),
+        "kusto_endpoint": ubx.FieldSpec(wire_name="kusto_endpoint"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parameters": ubx.FieldSpec(wire_name="parameters"),
+        "service_principal_id": ubx.FieldSpec(wire_name="service_principal_id"),
+        "service_principal_key": ubx.FieldSpec(wire_name="service_principal_key"),
+        "tenant": ubx.FieldSpec(wire_name="tenant"),
+        "use_managed_identity": ubx.FieldSpec(wire_name="use_managed_identity"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryLinkedServiceKusto_TimeoutsFields,

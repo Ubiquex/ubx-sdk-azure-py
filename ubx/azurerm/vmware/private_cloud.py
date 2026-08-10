@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PrivateCloud_ManagementCluster:
@@ -20,16 +20,16 @@ class PrivateCloud_Timeouts:
     update: Any = None
 
 _PrivateCloud_ManagementClusterFields = {
-    "hosts": sdk.FieldSpec(wire_name="hosts"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "size": sdk.FieldSpec(wire_name="size"),
+    "hosts": ubx.FieldSpec(wire_name="hosts"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "size": ubx.FieldSpec(wire_name="size"),
 }
 
 _PrivateCloud_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -47,25 +47,25 @@ class PrivateCloudConfig:
     management_cluster: Any = None
     timeouts: Any = None
 
-PrivateCloud = sdk.ResourceBinding(
+PrivateCloud = ubx.ResourceBinding(
     wire_type="azurerm_vmware_private_cloud",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "internet_connection_enabled": sdk.FieldSpec(wire_name="internet_connection_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "network_subnet_cidr": sdk.FieldSpec(wire_name="network_subnet_cidr"),
-        "nsxt_password": sdk.FieldSpec(wire_name="nsxt_password"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "vcenter_password": sdk.FieldSpec(wire_name="vcenter_password"),
-        "management_cluster": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "internet_connection_enabled": ubx.FieldSpec(wire_name="internet_connection_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network_subnet_cidr": ubx.FieldSpec(wire_name="network_subnet_cidr"),
+        "nsxt_password": ubx.FieldSpec(wire_name="nsxt_password"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "vcenter_password": ubx.FieldSpec(wire_name="vcenter_password"),
+        "management_cluster": ubx.FieldSpec(
             wire_name="management_cluster",
             kind="list",
             fields=_PrivateCloud_ManagementClusterFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_PrivateCloud_TimeoutsFields,

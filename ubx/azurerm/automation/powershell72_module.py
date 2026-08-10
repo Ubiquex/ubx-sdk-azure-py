@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Powershell72Module_ModuleLink_Hash:
@@ -24,13 +24,13 @@ class Powershell72Module_Timeouts:
     update: Any = None
 
 _Powershell72Module_ModuleLink_HashFields = {
-    "algorithm": sdk.FieldSpec(wire_name="algorithm"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "algorithm": ubx.FieldSpec(wire_name="algorithm"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _Powershell72Module_ModuleLinkFields = {
-    "uri": sdk.FieldSpec(wire_name="uri"),
-    "hash": sdk.FieldSpec(
+    "uri": ubx.FieldSpec(wire_name="uri"),
+    "hash": ubx.FieldSpec(
         wire_name="hash",
         kind="list",
         fields=_Powershell72Module_ModuleLink_HashFields,
@@ -38,10 +38,10 @@ _Powershell72Module_ModuleLinkFields = {
 }
 
 _Powershell72Module_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -53,19 +53,19 @@ class Powershell72ModuleConfig:
     module_link: Any = None
     timeouts: Any = None
 
-Powershell72Module = sdk.ResourceBinding(
+Powershell72Module = ubx.ResourceBinding(
     wire_type="azurerm_automation_powershell72_module",
     fields={
-        "automation_account_id": sdk.FieldSpec(wire_name="automation_account_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "module_link": sdk.FieldSpec(
+        "automation_account_id": ubx.FieldSpec(wire_name="automation_account_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "module_link": ubx.FieldSpec(
             wire_name="module_link",
             kind="list",
             fields=_Powershell72Module_ModuleLinkFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Powershell72Module_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnalyticsJobSchedule_Timeouts:
@@ -14,10 +14,10 @@ class AnalyticsJobSchedule_Timeouts:
     update: Any = None
 
 _AnalyticsJobSchedule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -28,14 +28,14 @@ class AnalyticsJobScheduleConfig:
     stream_analytics_job_id: Any = None
     timeouts: Any = None
 
-AnalyticsJobSchedule = sdk.ResourceBinding(
+AnalyticsJobSchedule = ubx.ResourceBinding(
     wire_type="azurerm_stream_analytics_job_schedule",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "start_mode": sdk.FieldSpec(wire_name="start_mode"),
-        "start_time": sdk.FieldSpec(wire_name="start_time"),
-        "stream_analytics_job_id": sdk.FieldSpec(wire_name="stream_analytics_job_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "start_mode": ubx.FieldSpec(wire_name="start_mode"),
+        "start_time": ubx.FieldSpec(wire_name="start_time"),
+        "stream_analytics_job_id": ubx.FieldSpec(wire_name="stream_analytics_job_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AnalyticsJobSchedule_TimeoutsFields,

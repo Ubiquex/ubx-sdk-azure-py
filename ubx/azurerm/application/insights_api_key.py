@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InsightsApiKey_Timeouts:
@@ -13,9 +13,9 @@ class InsightsApiKey_Timeouts:
     read: Any = None
 
 _InsightsApiKey_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -27,15 +27,15 @@ class InsightsApiKeyConfig:
     write_permissions: Any = None
     timeouts: Any = None
 
-InsightsApiKey = sdk.ResourceBinding(
+InsightsApiKey = ubx.ResourceBinding(
     wire_type="azurerm_application_insights_api_key",
     fields={
-        "application_insights_id": sdk.FieldSpec(wire_name="application_insights_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "read_permissions": sdk.FieldSpec(wire_name="read_permissions"),
-        "write_permissions": sdk.FieldSpec(wire_name="write_permissions"),
-        "timeouts": sdk.FieldSpec(
+        "application_insights_id": ubx.FieldSpec(wire_name="application_insights_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "read_permissions": ubx.FieldSpec(wire_name="read_permissions"),
+        "write_permissions": ubx.FieldSpec(wire_name="write_permissions"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_InsightsApiKey_TimeoutsFields,

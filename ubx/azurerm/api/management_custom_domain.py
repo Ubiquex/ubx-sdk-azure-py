@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementCustomDomain_DeveloperPortal:
@@ -43,39 +43,39 @@ class ManagementCustomDomain_Timeouts:
     update: Any = None
 
 _ManagementCustomDomain_DeveloperPortalFields = {
-    "certificate": sdk.FieldSpec(wire_name="certificate"),
-    "certificate_password": sdk.FieldSpec(wire_name="certificate_password"),
-    "certificate_source": sdk.FieldSpec(wire_name="certificate_source"),
-    "certificate_status": sdk.FieldSpec(wire_name="certificate_status"),
-    "expiry": sdk.FieldSpec(wire_name="expiry"),
-    "host_name": sdk.FieldSpec(wire_name="host_name"),
-    "key_vault_certificate_id": sdk.FieldSpec(wire_name="key_vault_certificate_id"),
-    "negotiate_client_certificate": sdk.FieldSpec(wire_name="negotiate_client_certificate"),
-    "ssl_keyvault_identity_client_id": sdk.FieldSpec(wire_name="ssl_keyvault_identity_client_id"),
-    "subject": sdk.FieldSpec(wire_name="subject"),
-    "thumbprint": sdk.FieldSpec(wire_name="thumbprint"),
+    "certificate": ubx.FieldSpec(wire_name="certificate"),
+    "certificate_password": ubx.FieldSpec(wire_name="certificate_password"),
+    "certificate_source": ubx.FieldSpec(wire_name="certificate_source"),
+    "certificate_status": ubx.FieldSpec(wire_name="certificate_status"),
+    "expiry": ubx.FieldSpec(wire_name="expiry"),
+    "host_name": ubx.FieldSpec(wire_name="host_name"),
+    "key_vault_certificate_id": ubx.FieldSpec(wire_name="key_vault_certificate_id"),
+    "negotiate_client_certificate": ubx.FieldSpec(wire_name="negotiate_client_certificate"),
+    "ssl_keyvault_identity_client_id": ubx.FieldSpec(wire_name="ssl_keyvault_identity_client_id"),
+    "subject": ubx.FieldSpec(wire_name="subject"),
+    "thumbprint": ubx.FieldSpec(wire_name="thumbprint"),
 }
 
 _ManagementCustomDomain_GatewayFields = {
-    "certificate": sdk.FieldSpec(wire_name="certificate"),
-    "certificate_password": sdk.FieldSpec(wire_name="certificate_password"),
-    "certificate_source": sdk.FieldSpec(wire_name="certificate_source"),
-    "certificate_status": sdk.FieldSpec(wire_name="certificate_status"),
-    "default_ssl_binding": sdk.FieldSpec(wire_name="default_ssl_binding"),
-    "expiry": sdk.FieldSpec(wire_name="expiry"),
-    "host_name": sdk.FieldSpec(wire_name="host_name"),
-    "key_vault_certificate_id": sdk.FieldSpec(wire_name="key_vault_certificate_id"),
-    "negotiate_client_certificate": sdk.FieldSpec(wire_name="negotiate_client_certificate"),
-    "ssl_keyvault_identity_client_id": sdk.FieldSpec(wire_name="ssl_keyvault_identity_client_id"),
-    "subject": sdk.FieldSpec(wire_name="subject"),
-    "thumbprint": sdk.FieldSpec(wire_name="thumbprint"),
+    "certificate": ubx.FieldSpec(wire_name="certificate"),
+    "certificate_password": ubx.FieldSpec(wire_name="certificate_password"),
+    "certificate_source": ubx.FieldSpec(wire_name="certificate_source"),
+    "certificate_status": ubx.FieldSpec(wire_name="certificate_status"),
+    "default_ssl_binding": ubx.FieldSpec(wire_name="default_ssl_binding"),
+    "expiry": ubx.FieldSpec(wire_name="expiry"),
+    "host_name": ubx.FieldSpec(wire_name="host_name"),
+    "key_vault_certificate_id": ubx.FieldSpec(wire_name="key_vault_certificate_id"),
+    "negotiate_client_certificate": ubx.FieldSpec(wire_name="negotiate_client_certificate"),
+    "ssl_keyvault_identity_client_id": ubx.FieldSpec(wire_name="ssl_keyvault_identity_client_id"),
+    "subject": ubx.FieldSpec(wire_name="subject"),
+    "thumbprint": ubx.FieldSpec(wire_name="thumbprint"),
 }
 
 _ManagementCustomDomain_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -89,37 +89,37 @@ class ManagementCustomDomainConfig:
     scm: Any = None
     timeouts: Any = None
 
-ManagementCustomDomain = sdk.ResourceBinding(
+ManagementCustomDomain = ubx.ResourceBinding(
     wire_type="azurerm_api_management_custom_domain",
     fields={
-        "api_management_id": sdk.FieldSpec(wire_name="api_management_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "developer_portal": sdk.FieldSpec(
+        "api_management_id": ubx.FieldSpec(wire_name="api_management_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "developer_portal": ubx.FieldSpec(
             wire_name="developer_portal",
             kind="list",
             fields=_ManagementCustomDomain_DeveloperPortalFields,
         ),
-        "gateway": sdk.FieldSpec(
+        "gateway": ubx.FieldSpec(
             wire_name="gateway",
             kind="list",
             fields=_ManagementCustomDomain_GatewayFields,
         ),
-        "management": sdk.FieldSpec(
+        "management": ubx.FieldSpec(
             wire_name="management",
             kind="list",
             fields=_ManagementCustomDomain_DeveloperPortalFields,
         ),
-        "portal": sdk.FieldSpec(
+        "portal": ubx.FieldSpec(
             wire_name="portal",
             kind="list",
             fields=_ManagementCustomDomain_DeveloperPortalFields,
         ),
-        "scm": sdk.FieldSpec(
+        "scm": ubx.FieldSpec(
             wire_name="scm",
             kind="list",
             fields=_ManagementCustomDomain_DeveloperPortalFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementCustomDomain_TimeoutsFields,

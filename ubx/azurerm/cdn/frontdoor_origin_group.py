@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FrontdoorOriginGroup_HealthProbe:
@@ -27,23 +27,23 @@ class FrontdoorOriginGroup_Timeouts:
     update: Any = None
 
 _FrontdoorOriginGroup_HealthProbeFields = {
-    "interval_in_seconds": sdk.FieldSpec(wire_name="interval_in_seconds"),
-    "path": sdk.FieldSpec(wire_name="path"),
-    "protocol": sdk.FieldSpec(wire_name="protocol"),
-    "request_type": sdk.FieldSpec(wire_name="request_type"),
+    "interval_in_seconds": ubx.FieldSpec(wire_name="interval_in_seconds"),
+    "path": ubx.FieldSpec(wire_name="path"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
+    "request_type": ubx.FieldSpec(wire_name="request_type"),
 }
 
 _FrontdoorOriginGroup_LoadBalancingFields = {
-    "additional_latency_in_milliseconds": sdk.FieldSpec(wire_name="additional_latency_in_milliseconds"),
-    "sample_size": sdk.FieldSpec(wire_name="sample_size"),
-    "successful_samples_required": sdk.FieldSpec(wire_name="successful_samples_required"),
+    "additional_latency_in_milliseconds": ubx.FieldSpec(wire_name="additional_latency_in_milliseconds"),
+    "sample_size": ubx.FieldSpec(wire_name="sample_size"),
+    "successful_samples_required": ubx.FieldSpec(wire_name="successful_samples_required"),
 }
 
 _FrontdoorOriginGroup_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -57,25 +57,25 @@ class FrontdoorOriginGroupConfig:
     load_balancing: Any = None
     timeouts: Any = None
 
-FrontdoorOriginGroup = sdk.ResourceBinding(
+FrontdoorOriginGroup = ubx.ResourceBinding(
     wire_type="azurerm_cdn_frontdoor_origin_group",
     fields={
-        "cdn_frontdoor_profile_id": sdk.FieldSpec(wire_name="cdn_frontdoor_profile_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "restore_traffic_time_to_healed_or_new_endpoint_in_minutes": sdk.FieldSpec(wire_name="restore_traffic_time_to_healed_or_new_endpoint_in_minutes"),
-        "session_affinity_enabled": sdk.FieldSpec(wire_name="session_affinity_enabled"),
-        "health_probe": sdk.FieldSpec(
+        "cdn_frontdoor_profile_id": ubx.FieldSpec(wire_name="cdn_frontdoor_profile_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "restore_traffic_time_to_healed_or_new_endpoint_in_minutes": ubx.FieldSpec(wire_name="restore_traffic_time_to_healed_or_new_endpoint_in_minutes"),
+        "session_affinity_enabled": ubx.FieldSpec(wire_name="session_affinity_enabled"),
+        "health_probe": ubx.FieldSpec(
             wire_name="health_probe",
             kind="list",
             fields=_FrontdoorOriginGroup_HealthProbeFields,
         ),
-        "load_balancing": sdk.FieldSpec(
+        "load_balancing": ubx.FieldSpec(
             wire_name="load_balancing",
             kind="list",
             fields=_FrontdoorOriginGroup_LoadBalancingFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FrontdoorOriginGroup_TimeoutsFields,

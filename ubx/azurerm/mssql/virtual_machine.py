@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VirtualMachine_Assessment_Schedule:
@@ -97,16 +97,16 @@ class VirtualMachine_WsfcDomainCredential:
     sql_service_account_password: Any = None
 
 _VirtualMachine_Assessment_ScheduleFields = {
-    "day_of_week": sdk.FieldSpec(wire_name="day_of_week"),
-    "monthly_occurrence": sdk.FieldSpec(wire_name="monthly_occurrence"),
-    "start_time": sdk.FieldSpec(wire_name="start_time"),
-    "weekly_interval": sdk.FieldSpec(wire_name="weekly_interval"),
+    "day_of_week": ubx.FieldSpec(wire_name="day_of_week"),
+    "monthly_occurrence": ubx.FieldSpec(wire_name="monthly_occurrence"),
+    "start_time": ubx.FieldSpec(wire_name="start_time"),
+    "weekly_interval": ubx.FieldSpec(wire_name="weekly_interval"),
 }
 
 _VirtualMachine_AssessmentFields = {
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "run_immediately": sdk.FieldSpec(wire_name="run_immediately"),
-    "schedule": sdk.FieldSpec(
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "run_immediately": ubx.FieldSpec(wire_name="run_immediately"),
+    "schedule": ubx.FieldSpec(
         wire_name="schedule",
         kind="list",
         fields=_VirtualMachine_Assessment_ScheduleFields,
@@ -114,20 +114,20 @@ _VirtualMachine_AssessmentFields = {
 }
 
 _VirtualMachine_AutoBackup_ManualScheduleFields = {
-    "days_of_week": sdk.FieldSpec(wire_name="days_of_week"),
-    "full_backup_frequency": sdk.FieldSpec(wire_name="full_backup_frequency"),
-    "full_backup_start_hour": sdk.FieldSpec(wire_name="full_backup_start_hour"),
-    "full_backup_window_in_hours": sdk.FieldSpec(wire_name="full_backup_window_in_hours"),
-    "log_backup_frequency_in_minutes": sdk.FieldSpec(wire_name="log_backup_frequency_in_minutes"),
+    "days_of_week": ubx.FieldSpec(wire_name="days_of_week"),
+    "full_backup_frequency": ubx.FieldSpec(wire_name="full_backup_frequency"),
+    "full_backup_start_hour": ubx.FieldSpec(wire_name="full_backup_start_hour"),
+    "full_backup_window_in_hours": ubx.FieldSpec(wire_name="full_backup_window_in_hours"),
+    "log_backup_frequency_in_minutes": ubx.FieldSpec(wire_name="log_backup_frequency_in_minutes"),
 }
 
 _VirtualMachine_AutoBackupFields = {
-    "encryption_password": sdk.FieldSpec(wire_name="encryption_password"),
-    "retention_period_in_days": sdk.FieldSpec(wire_name="retention_period_in_days"),
-    "storage_account_access_key": sdk.FieldSpec(wire_name="storage_account_access_key"),
-    "storage_blob_endpoint": sdk.FieldSpec(wire_name="storage_blob_endpoint"),
-    "system_databases_backup_enabled": sdk.FieldSpec(wire_name="system_databases_backup_enabled"),
-    "manual_schedule": sdk.FieldSpec(
+    "encryption_password": ubx.FieldSpec(wire_name="encryption_password"),
+    "retention_period_in_days": ubx.FieldSpec(wire_name="retention_period_in_days"),
+    "storage_account_access_key": ubx.FieldSpec(wire_name="storage_account_access_key"),
+    "storage_blob_endpoint": ubx.FieldSpec(wire_name="storage_blob_endpoint"),
+    "system_databases_backup_enabled": ubx.FieldSpec(wire_name="system_databases_backup_enabled"),
+    "manual_schedule": ubx.FieldSpec(
         wire_name="manual_schedule",
         kind="list",
         fields=_VirtualMachine_AutoBackup_ManualScheduleFields,
@@ -135,58 +135,58 @@ _VirtualMachine_AutoBackupFields = {
 }
 
 _VirtualMachine_AutoPatchingFields = {
-    "day_of_week": sdk.FieldSpec(wire_name="day_of_week"),
-    "maintenance_window_duration_in_minutes": sdk.FieldSpec(wire_name="maintenance_window_duration_in_minutes"),
-    "maintenance_window_starting_hour": sdk.FieldSpec(wire_name="maintenance_window_starting_hour"),
+    "day_of_week": ubx.FieldSpec(wire_name="day_of_week"),
+    "maintenance_window_duration_in_minutes": ubx.FieldSpec(wire_name="maintenance_window_duration_in_minutes"),
+    "maintenance_window_starting_hour": ubx.FieldSpec(wire_name="maintenance_window_starting_hour"),
 }
 
 _VirtualMachine_KeyVaultCredentialFields = {
-    "key_vault_url": sdk.FieldSpec(wire_name="key_vault_url"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "service_principal_name": sdk.FieldSpec(wire_name="service_principal_name"),
-    "service_principal_secret": sdk.FieldSpec(wire_name="service_principal_secret"),
+    "key_vault_url": ubx.FieldSpec(wire_name="key_vault_url"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "service_principal_name": ubx.FieldSpec(wire_name="service_principal_name"),
+    "service_principal_secret": ubx.FieldSpec(wire_name="service_principal_secret"),
 }
 
 _VirtualMachine_SqlInstanceFields = {
-    "adhoc_workloads_optimization_enabled": sdk.FieldSpec(wire_name="adhoc_workloads_optimization_enabled"),
-    "collation": sdk.FieldSpec(wire_name="collation"),
-    "instant_file_initialization_enabled": sdk.FieldSpec(wire_name="instant_file_initialization_enabled"),
-    "lock_pages_in_memory_enabled": sdk.FieldSpec(wire_name="lock_pages_in_memory_enabled"),
-    "max_dop": sdk.FieldSpec(wire_name="max_dop"),
-    "max_server_memory_mb": sdk.FieldSpec(wire_name="max_server_memory_mb"),
-    "min_server_memory_mb": sdk.FieldSpec(wire_name="min_server_memory_mb"),
+    "adhoc_workloads_optimization_enabled": ubx.FieldSpec(wire_name="adhoc_workloads_optimization_enabled"),
+    "collation": ubx.FieldSpec(wire_name="collation"),
+    "instant_file_initialization_enabled": ubx.FieldSpec(wire_name="instant_file_initialization_enabled"),
+    "lock_pages_in_memory_enabled": ubx.FieldSpec(wire_name="lock_pages_in_memory_enabled"),
+    "max_dop": ubx.FieldSpec(wire_name="max_dop"),
+    "max_server_memory_mb": ubx.FieldSpec(wire_name="max_server_memory_mb"),
+    "min_server_memory_mb": ubx.FieldSpec(wire_name="min_server_memory_mb"),
 }
 
 _VirtualMachine_StorageConfiguration_DataSettingsFields = {
-    "default_file_path": sdk.FieldSpec(wire_name="default_file_path"),
-    "luns": sdk.FieldSpec(wire_name="luns"),
+    "default_file_path": ubx.FieldSpec(wire_name="default_file_path"),
+    "luns": ubx.FieldSpec(wire_name="luns"),
 }
 
 _VirtualMachine_StorageConfiguration_TempDbSettingsFields = {
-    "data_file_count": sdk.FieldSpec(wire_name="data_file_count"),
-    "data_file_growth_in_mb": sdk.FieldSpec(wire_name="data_file_growth_in_mb"),
-    "data_file_size_mb": sdk.FieldSpec(wire_name="data_file_size_mb"),
-    "default_file_path": sdk.FieldSpec(wire_name="default_file_path"),
-    "log_file_growth_mb": sdk.FieldSpec(wire_name="log_file_growth_mb"),
-    "log_file_size_mb": sdk.FieldSpec(wire_name="log_file_size_mb"),
-    "luns": sdk.FieldSpec(wire_name="luns"),
+    "data_file_count": ubx.FieldSpec(wire_name="data_file_count"),
+    "data_file_growth_in_mb": ubx.FieldSpec(wire_name="data_file_growth_in_mb"),
+    "data_file_size_mb": ubx.FieldSpec(wire_name="data_file_size_mb"),
+    "default_file_path": ubx.FieldSpec(wire_name="default_file_path"),
+    "log_file_growth_mb": ubx.FieldSpec(wire_name="log_file_growth_mb"),
+    "log_file_size_mb": ubx.FieldSpec(wire_name="log_file_size_mb"),
+    "luns": ubx.FieldSpec(wire_name="luns"),
 }
 
 _VirtualMachine_StorageConfigurationFields = {
-    "disk_type": sdk.FieldSpec(wire_name="disk_type"),
-    "storage_workload_type": sdk.FieldSpec(wire_name="storage_workload_type"),
-    "system_db_on_data_disk_enabled": sdk.FieldSpec(wire_name="system_db_on_data_disk_enabled"),
-    "data_settings": sdk.FieldSpec(
+    "disk_type": ubx.FieldSpec(wire_name="disk_type"),
+    "storage_workload_type": ubx.FieldSpec(wire_name="storage_workload_type"),
+    "system_db_on_data_disk_enabled": ubx.FieldSpec(wire_name="system_db_on_data_disk_enabled"),
+    "data_settings": ubx.FieldSpec(
         wire_name="data_settings",
         kind="list",
         fields=_VirtualMachine_StorageConfiguration_DataSettingsFields,
     ),
-    "log_settings": sdk.FieldSpec(
+    "log_settings": ubx.FieldSpec(
         wire_name="log_settings",
         kind="list",
         fields=_VirtualMachine_StorageConfiguration_DataSettingsFields,
     ),
-    "temp_db_settings": sdk.FieldSpec(
+    "temp_db_settings": ubx.FieldSpec(
         wire_name="temp_db_settings",
         kind="list",
         fields=_VirtualMachine_StorageConfiguration_TempDbSettingsFields,
@@ -194,16 +194,16 @@ _VirtualMachine_StorageConfigurationFields = {
 }
 
 _VirtualMachine_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _VirtualMachine_WsfcDomainCredentialFields = {
-    "cluster_bootstrap_account_password": sdk.FieldSpec(wire_name="cluster_bootstrap_account_password"),
-    "cluster_operator_account_password": sdk.FieldSpec(wire_name="cluster_operator_account_password"),
-    "sql_service_account_password": sdk.FieldSpec(wire_name="sql_service_account_password"),
+    "cluster_bootstrap_account_password": ubx.FieldSpec(wire_name="cluster_bootstrap_account_password"),
+    "cluster_operator_account_password": ubx.FieldSpec(wire_name="cluster_operator_account_password"),
+    "sql_service_account_password": ubx.FieldSpec(wire_name="sql_service_account_password"),
 }
 
 @dataclasses.dataclass
@@ -227,55 +227,55 @@ class VirtualMachineConfig:
     timeouts: Any = None
     wsfc_domain_credential: Any = None
 
-VirtualMachine = sdk.ResourceBinding(
+VirtualMachine = ubx.ResourceBinding(
     wire_type="azurerm_mssql_virtual_machine",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "r_services_enabled": sdk.FieldSpec(wire_name="r_services_enabled"),
-        "sql_connectivity_port": sdk.FieldSpec(wire_name="sql_connectivity_port"),
-        "sql_connectivity_type": sdk.FieldSpec(wire_name="sql_connectivity_type"),
-        "sql_connectivity_update_password": sdk.FieldSpec(wire_name="sql_connectivity_update_password"),
-        "sql_connectivity_update_username": sdk.FieldSpec(wire_name="sql_connectivity_update_username"),
-        "sql_license_type": sdk.FieldSpec(wire_name="sql_license_type"),
-        "sql_virtual_machine_group_id": sdk.FieldSpec(wire_name="sql_virtual_machine_group_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "virtual_machine_id": sdk.FieldSpec(wire_name="virtual_machine_id"),
-        "assessment": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "r_services_enabled": ubx.FieldSpec(wire_name="r_services_enabled"),
+        "sql_connectivity_port": ubx.FieldSpec(wire_name="sql_connectivity_port"),
+        "sql_connectivity_type": ubx.FieldSpec(wire_name="sql_connectivity_type"),
+        "sql_connectivity_update_password": ubx.FieldSpec(wire_name="sql_connectivity_update_password"),
+        "sql_connectivity_update_username": ubx.FieldSpec(wire_name="sql_connectivity_update_username"),
+        "sql_license_type": ubx.FieldSpec(wire_name="sql_license_type"),
+        "sql_virtual_machine_group_id": ubx.FieldSpec(wire_name="sql_virtual_machine_group_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "virtual_machine_id": ubx.FieldSpec(wire_name="virtual_machine_id"),
+        "assessment": ubx.FieldSpec(
             wire_name="assessment",
             kind="list",
             fields=_VirtualMachine_AssessmentFields,
         ),
-        "auto_backup": sdk.FieldSpec(
+        "auto_backup": ubx.FieldSpec(
             wire_name="auto_backup",
             kind="list",
             fields=_VirtualMachine_AutoBackupFields,
         ),
-        "auto_patching": sdk.FieldSpec(
+        "auto_patching": ubx.FieldSpec(
             wire_name="auto_patching",
             kind="list",
             fields=_VirtualMachine_AutoPatchingFields,
         ),
-        "key_vault_credential": sdk.FieldSpec(
+        "key_vault_credential": ubx.FieldSpec(
             wire_name="key_vault_credential",
             kind="list",
             fields=_VirtualMachine_KeyVaultCredentialFields,
         ),
-        "sql_instance": sdk.FieldSpec(
+        "sql_instance": ubx.FieldSpec(
             wire_name="sql_instance",
             kind="list",
             fields=_VirtualMachine_SqlInstanceFields,
         ),
-        "storage_configuration": sdk.FieldSpec(
+        "storage_configuration": ubx.FieldSpec(
             wire_name="storage_configuration",
             kind="list",
             fields=_VirtualMachine_StorageConfigurationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_VirtualMachine_TimeoutsFields,
         ),
-        "wsfc_domain_credential": sdk.FieldSpec(
+        "wsfc_domain_credential": ubx.FieldSpec(
             wire_name="wsfc_domain_credential",
             kind="list",
             fields=_VirtualMachine_WsfcDomainCredentialFields,

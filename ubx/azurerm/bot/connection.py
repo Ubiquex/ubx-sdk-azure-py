@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Connection_Timeouts:
@@ -14,10 +14,10 @@ class Connection_Timeouts:
     update: Any = None
 
 _Connection_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -34,20 +34,20 @@ class ConnectionConfig:
     service_provider_name: Any = None
     timeouts: Any = None
 
-Connection = sdk.ResourceBinding(
+Connection = ubx.ResourceBinding(
     wire_type="azurerm_bot_connection",
     fields={
-        "bot_name": sdk.FieldSpec(wire_name="bot_name"),
-        "client_id": sdk.FieldSpec(wire_name="client_id"),
-        "client_secret": sdk.FieldSpec(wire_name="client_secret"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parameters": sdk.FieldSpec(wire_name="parameters"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "scopes": sdk.FieldSpec(wire_name="scopes"),
-        "service_provider_name": sdk.FieldSpec(wire_name="service_provider_name"),
-        "timeouts": sdk.FieldSpec(
+        "bot_name": ubx.FieldSpec(wire_name="bot_name"),
+        "client_id": ubx.FieldSpec(wire_name="client_id"),
+        "client_secret": ubx.FieldSpec(wire_name="client_secret"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parameters": ubx.FieldSpec(wire_name="parameters"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "scopes": ubx.FieldSpec(wire_name="scopes"),
+        "service_provider_name": ubx.FieldSpec(wire_name="service_provider_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Connection_TimeoutsFields,

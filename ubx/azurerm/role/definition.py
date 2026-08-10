@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Definition_Permissions:
@@ -21,17 +21,17 @@ class Definition_Timeouts:
     update: Any = None
 
 _Definition_PermissionsFields = {
-    "actions": sdk.FieldSpec(wire_name="actions"),
-    "data_actions": sdk.FieldSpec(wire_name="data_actions"),
-    "not_actions": sdk.FieldSpec(wire_name="not_actions"),
-    "not_data_actions": sdk.FieldSpec(wire_name="not_data_actions"),
+    "actions": ubx.FieldSpec(wire_name="actions"),
+    "data_actions": ubx.FieldSpec(wire_name="data_actions"),
+    "not_actions": ubx.FieldSpec(wire_name="not_actions"),
+    "not_data_actions": ubx.FieldSpec(wire_name="not_data_actions"),
 }
 
 _Definition_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -45,21 +45,21 @@ class DefinitionConfig:
     permissions: Any = None
     timeouts: Any = None
 
-Definition = sdk.ResourceBinding(
+Definition = ubx.ResourceBinding(
     wire_type="azurerm_role_definition",
     fields={
-        "assignable_scopes": sdk.FieldSpec(wire_name="assignable_scopes"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "role_definition_id": sdk.FieldSpec(wire_name="role_definition_id"),
-        "scope": sdk.FieldSpec(wire_name="scope"),
-        "permissions": sdk.FieldSpec(
+        "assignable_scopes": ubx.FieldSpec(wire_name="assignable_scopes"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "role_definition_id": ubx.FieldSpec(wire_name="role_definition_id"),
+        "scope": ubx.FieldSpec(wire_name="scope"),
+        "permissions": ubx.FieldSpec(
             wire_name="permissions",
             kind="list",
             fields=_Definition_PermissionsFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Definition_TimeoutsFields,

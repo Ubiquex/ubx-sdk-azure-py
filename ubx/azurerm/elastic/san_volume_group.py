@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SanVolumeGroup_Encryption:
@@ -34,30 +34,30 @@ class SanVolumeGroup_Timeouts:
     update: Any = None
 
 _SanVolumeGroup_EncryptionFields = {
-    "current_versioned_key_expiration_timestamp": sdk.FieldSpec(wire_name="current_versioned_key_expiration_timestamp"),
-    "current_versioned_key_id": sdk.FieldSpec(wire_name="current_versioned_key_id"),
-    "key_vault_key_id": sdk.FieldSpec(wire_name="key_vault_key_id"),
-    "last_key_rotation_timestamp": sdk.FieldSpec(wire_name="last_key_rotation_timestamp"),
-    "user_assigned_identity_id": sdk.FieldSpec(wire_name="user_assigned_identity_id"),
+    "current_versioned_key_expiration_timestamp": ubx.FieldSpec(wire_name="current_versioned_key_expiration_timestamp"),
+    "current_versioned_key_id": ubx.FieldSpec(wire_name="current_versioned_key_id"),
+    "key_vault_key_id": ubx.FieldSpec(wire_name="key_vault_key_id"),
+    "last_key_rotation_timestamp": ubx.FieldSpec(wire_name="last_key_rotation_timestamp"),
+    "user_assigned_identity_id": ubx.FieldSpec(wire_name="user_assigned_identity_id"),
 }
 
 _SanVolumeGroup_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _SanVolumeGroup_NetworkRuleFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "action": ubx.FieldSpec(wire_name="action"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _SanVolumeGroup_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -72,30 +72,30 @@ class SanVolumeGroupConfig:
     network_rule: Any = None
     timeouts: Any = None
 
-SanVolumeGroup = sdk.ResourceBinding(
+SanVolumeGroup = ubx.ResourceBinding(
     wire_type="azurerm_elastic_san_volume_group",
     fields={
-        "elastic_san_id": sdk.FieldSpec(wire_name="elastic_san_id"),
-        "encryption_type": sdk.FieldSpec(wire_name="encryption_type"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "protocol_type": sdk.FieldSpec(wire_name="protocol_type"),
-        "encryption": sdk.FieldSpec(
+        "elastic_san_id": ubx.FieldSpec(wire_name="elastic_san_id"),
+        "encryption_type": ubx.FieldSpec(wire_name="encryption_type"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "protocol_type": ubx.FieldSpec(wire_name="protocol_type"),
+        "encryption": ubx.FieldSpec(
             wire_name="encryption",
             kind="list",
             fields=_SanVolumeGroup_EncryptionFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_SanVolumeGroup_IdentityFields,
         ),
-        "network_rule": sdk.FieldSpec(
+        "network_rule": ubx.FieldSpec(
             wire_name="network_rule",
             kind="list",
             fields=_SanVolumeGroup_NetworkRuleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SanVolumeGroup_TimeoutsFields,

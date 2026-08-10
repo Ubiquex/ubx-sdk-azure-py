@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Subscription_Timeouts:
@@ -14,10 +14,10 @@ class Subscription_Timeouts:
     update: Any = None
 
 _Subscription_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class SubscriptionConfig:
     workload: Any = None
     timeouts: Any = None
 
-Subscription = sdk.ResourceBinding(
+Subscription = ubx.ResourceBinding(
     wire_type="azurerm_subscription",
     fields={
-        "alias": sdk.FieldSpec(wire_name="alias"),
-        "billing_scope_id": sdk.FieldSpec(wire_name="billing_scope_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "subscription_id": sdk.FieldSpec(wire_name="subscription_id"),
-        "subscription_name": sdk.FieldSpec(wire_name="subscription_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "workload": sdk.FieldSpec(wire_name="workload"),
-        "timeouts": sdk.FieldSpec(
+        "alias": ubx.FieldSpec(wire_name="alias"),
+        "billing_scope_id": ubx.FieldSpec(wire_name="billing_scope_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "subscription_id": ubx.FieldSpec(wire_name="subscription_id"),
+        "subscription_name": ubx.FieldSpec(wire_name="subscription_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "workload": ubx.FieldSpec(wire_name="workload"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Subscription_TimeoutsFields,

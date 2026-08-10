@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagerAdminRule_Destination:
@@ -19,15 +19,15 @@ class ManagerAdminRule_Timeouts:
     update: Any = None
 
 _ManagerAdminRule_DestinationFields = {
-    "address_prefix": sdk.FieldSpec(wire_name="address_prefix"),
-    "address_prefix_type": sdk.FieldSpec(wire_name="address_prefix_type"),
+    "address_prefix": ubx.FieldSpec(wire_name="address_prefix"),
+    "address_prefix_type": ubx.FieldSpec(wire_name="address_prefix_type"),
 }
 
 _ManagerAdminRule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -46,30 +46,30 @@ class ManagerAdminRuleConfig:
     source: Any = None
     timeouts: Any = None
 
-ManagerAdminRule = sdk.ResourceBinding(
+ManagerAdminRule = ubx.ResourceBinding(
     wire_type="azurerm_network_manager_admin_rule",
     fields={
-        "action": sdk.FieldSpec(wire_name="action"),
-        "admin_rule_collection_id": sdk.FieldSpec(wire_name="admin_rule_collection_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "destination_port_ranges": sdk.FieldSpec(wire_name="destination_port_ranges"),
-        "direction": sdk.FieldSpec(wire_name="direction"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "priority": sdk.FieldSpec(wire_name="priority"),
-        "protocol": sdk.FieldSpec(wire_name="protocol"),
-        "source_port_ranges": sdk.FieldSpec(wire_name="source_port_ranges"),
-        "destination": sdk.FieldSpec(
+        "action": ubx.FieldSpec(wire_name="action"),
+        "admin_rule_collection_id": ubx.FieldSpec(wire_name="admin_rule_collection_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "destination_port_ranges": ubx.FieldSpec(wire_name="destination_port_ranges"),
+        "direction": ubx.FieldSpec(wire_name="direction"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "priority": ubx.FieldSpec(wire_name="priority"),
+        "protocol": ubx.FieldSpec(wire_name="protocol"),
+        "source_port_ranges": ubx.FieldSpec(wire_name="source_port_ranges"),
+        "destination": ubx.FieldSpec(
             wire_name="destination",
             kind="list",
             fields=_ManagerAdminRule_DestinationFields,
         ),
-        "source": sdk.FieldSpec(
+        "source": ubx.FieldSpec(
             wire_name="source",
             kind="list",
             fields=_ManagerAdminRule_DestinationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagerAdminRule_TimeoutsFields,

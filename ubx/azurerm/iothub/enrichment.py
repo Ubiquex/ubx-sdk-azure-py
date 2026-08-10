@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Enrichment_Timeouts:
@@ -14,10 +14,10 @@ class Enrichment_Timeouts:
     update: Any = None
 
 _Enrichment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class EnrichmentConfig:
     value: Any = None
     timeouts: Any = None
 
-Enrichment = sdk.ResourceBinding(
+Enrichment = ubx.ResourceBinding(
     wire_type="azurerm_iothub_enrichment",
     fields={
-        "endpoint_names": sdk.FieldSpec(wire_name="endpoint_names"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "iothub_name": sdk.FieldSpec(wire_name="iothub_name"),
-        "key": sdk.FieldSpec(wire_name="key"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "value": sdk.FieldSpec(wire_name="value"),
-        "timeouts": sdk.FieldSpec(
+        "endpoint_names": ubx.FieldSpec(wire_name="endpoint_names"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "iothub_name": ubx.FieldSpec(wire_name="iothub_name"),
+        "key": ubx.FieldSpec(wire_name="key"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "value": ubx.FieldSpec(wire_name="value"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Enrichment_TimeoutsFields,

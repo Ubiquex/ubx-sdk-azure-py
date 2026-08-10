@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AssignmentDynamicScope_Filter_Tags:
@@ -28,17 +28,17 @@ class AssignmentDynamicScope_Timeouts:
     update: Any = None
 
 _AssignmentDynamicScope_Filter_TagsFields = {
-    "tag": sdk.FieldSpec(wire_name="tag"),
-    "values": sdk.FieldSpec(wire_name="values"),
+    "tag": ubx.FieldSpec(wire_name="tag"),
+    "values": ubx.FieldSpec(wire_name="values"),
 }
 
 _AssignmentDynamicScope_FilterFields = {
-    "locations": sdk.FieldSpec(wire_name="locations"),
-    "os_types": sdk.FieldSpec(wire_name="os_types"),
-    "resource_groups": sdk.FieldSpec(wire_name="resource_groups"),
-    "resource_types": sdk.FieldSpec(wire_name="resource_types"),
-    "tag_filter": sdk.FieldSpec(wire_name="tag_filter"),
-    "tags": sdk.FieldSpec(
+    "locations": ubx.FieldSpec(wire_name="locations"),
+    "os_types": ubx.FieldSpec(wire_name="os_types"),
+    "resource_groups": ubx.FieldSpec(wire_name="resource_groups"),
+    "resource_types": ubx.FieldSpec(wire_name="resource_types"),
+    "tag_filter": ubx.FieldSpec(wire_name="tag_filter"),
+    "tags": ubx.FieldSpec(
         wire_name="tags",
         kind="list",
         fields=_AssignmentDynamicScope_Filter_TagsFields,
@@ -46,10 +46,10 @@ _AssignmentDynamicScope_FilterFields = {
 }
 
 _AssignmentDynamicScope_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -60,18 +60,18 @@ class AssignmentDynamicScopeConfig:
     filter: Any = None
     timeouts: Any = None
 
-AssignmentDynamicScope = sdk.ResourceBinding(
+AssignmentDynamicScope = ubx.ResourceBinding(
     wire_type="azurerm_maintenance_assignment_dynamic_scope",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "maintenance_configuration_id": sdk.FieldSpec(wire_name="maintenance_configuration_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "filter": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "maintenance_configuration_id": ubx.FieldSpec(wire_name="maintenance_configuration_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "filter": ubx.FieldSpec(
             wire_name="filter",
             kind="list",
             fields=_AssignmentDynamicScope_FilterFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AssignmentDynamicScope_TimeoutsFields,

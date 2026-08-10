@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class NetworkPeering_Timeouts:
@@ -14,10 +14,10 @@ class NetworkPeering_Timeouts:
     update: Any = None
 
 _NetworkPeering_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -38,24 +38,24 @@ class NetworkPeeringConfig:
     virtual_network_name: Any = None
     timeouts: Any = None
 
-NetworkPeering = sdk.ResourceBinding(
+NetworkPeering = ubx.ResourceBinding(
     wire_type="azurerm_virtual_network_peering",
     fields={
-        "allow_forwarded_traffic": sdk.FieldSpec(wire_name="allow_forwarded_traffic"),
-        "allow_gateway_transit": sdk.FieldSpec(wire_name="allow_gateway_transit"),
-        "allow_virtual_network_access": sdk.FieldSpec(wire_name="allow_virtual_network_access"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "local_subnet_names": sdk.FieldSpec(wire_name="local_subnet_names"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "only_ipv6_peering_enabled": sdk.FieldSpec(wire_name="only_ipv6_peering_enabled"),
-        "peer_complete_virtual_networks_enabled": sdk.FieldSpec(wire_name="peer_complete_virtual_networks_enabled"),
-        "remote_subnet_names": sdk.FieldSpec(wire_name="remote_subnet_names"),
-        "remote_virtual_network_id": sdk.FieldSpec(wire_name="remote_virtual_network_id"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "triggers": sdk.FieldSpec(wire_name="triggers"),
-        "use_remote_gateways": sdk.FieldSpec(wire_name="use_remote_gateways"),
-        "virtual_network_name": sdk.FieldSpec(wire_name="virtual_network_name"),
-        "timeouts": sdk.FieldSpec(
+        "allow_forwarded_traffic": ubx.FieldSpec(wire_name="allow_forwarded_traffic"),
+        "allow_gateway_transit": ubx.FieldSpec(wire_name="allow_gateway_transit"),
+        "allow_virtual_network_access": ubx.FieldSpec(wire_name="allow_virtual_network_access"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "local_subnet_names": ubx.FieldSpec(wire_name="local_subnet_names"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "only_ipv6_peering_enabled": ubx.FieldSpec(wire_name="only_ipv6_peering_enabled"),
+        "peer_complete_virtual_networks_enabled": ubx.FieldSpec(wire_name="peer_complete_virtual_networks_enabled"),
+        "remote_subnet_names": ubx.FieldSpec(wire_name="remote_subnet_names"),
+        "remote_virtual_network_id": ubx.FieldSpec(wire_name="remote_virtual_network_id"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "triggers": ubx.FieldSpec(wire_name="triggers"),
+        "use_remote_gateways": ubx.FieldSpec(wire_name="use_remote_gateways"),
+        "virtual_network_name": ubx.FieldSpec(wire_name="virtual_network_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_NetworkPeering_TimeoutsFields,

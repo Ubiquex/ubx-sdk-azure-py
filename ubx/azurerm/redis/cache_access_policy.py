@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CacheAccessPolicy_Timeouts:
@@ -14,10 +14,10 @@ class CacheAccessPolicy_Timeouts:
     update: Any = None
 
 _CacheAccessPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -28,14 +28,14 @@ class CacheAccessPolicyConfig:
     redis_cache_id: Any = None
     timeouts: Any = None
 
-CacheAccessPolicy = sdk.ResourceBinding(
+CacheAccessPolicy = ubx.ResourceBinding(
     wire_type="azurerm_redis_cache_access_policy",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "permissions": sdk.FieldSpec(wire_name="permissions"),
-        "redis_cache_id": sdk.FieldSpec(wire_name="redis_cache_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "permissions": ubx.FieldSpec(wire_name="permissions"),
+        "redis_cache_id": ubx.FieldSpec(wire_name="redis_cache_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CacheAccessPolicy_TimeoutsFields,

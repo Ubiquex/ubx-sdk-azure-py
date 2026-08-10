@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FlexibleServerActiveDirectoryAdministrator_Timeouts:
@@ -14,10 +14,10 @@ class FlexibleServerActiveDirectoryAdministrator_Timeouts:
     update: Any = None
 
 _FlexibleServerActiveDirectoryAdministrator_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class FlexibleServerActiveDirectoryAdministratorConfig:
     tenant_id: Any = None
     timeouts: Any = None
 
-FlexibleServerActiveDirectoryAdministrator = sdk.ResourceBinding(
+FlexibleServerActiveDirectoryAdministrator = ubx.ResourceBinding(
     wire_type="azurerm_mysql_flexible_server_active_directory_administrator",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "identity_id": sdk.FieldSpec(wire_name="identity_id"),
-        "login": sdk.FieldSpec(wire_name="login"),
-        "object_id": sdk.FieldSpec(wire_name="object_id"),
-        "server_id": sdk.FieldSpec(wire_name="server_id"),
-        "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "identity_id": ubx.FieldSpec(wire_name="identity_id"),
+        "login": ubx.FieldSpec(wire_name="login"),
+        "object_id": ubx.FieldSpec(wire_name="object_id"),
+        "server_id": ubx.FieldSpec(wire_name="server_id"),
+        "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FlexibleServerActiveDirectoryAdministrator_TimeoutsFields,

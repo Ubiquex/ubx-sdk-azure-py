@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Cache_Identity:
@@ -47,43 +47,43 @@ class Cache_Timeouts:
     update: Any = None
 
 _Cache_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Cache_PatchScheduleFields = {
-    "day_of_week": sdk.FieldSpec(wire_name="day_of_week"),
-    "maintenance_window": sdk.FieldSpec(wire_name="maintenance_window"),
-    "start_hour_utc": sdk.FieldSpec(wire_name="start_hour_utc"),
+    "day_of_week": ubx.FieldSpec(wire_name="day_of_week"),
+    "maintenance_window": ubx.FieldSpec(wire_name="maintenance_window"),
+    "start_hour_utc": ubx.FieldSpec(wire_name="start_hour_utc"),
 }
 
 _Cache_RedisConfigurationFields = {
-    "active_directory_authentication_enabled": sdk.FieldSpec(wire_name="active_directory_authentication_enabled"),
-    "aof_backup_enabled": sdk.FieldSpec(wire_name="aof_backup_enabled"),
-    "aof_storage_connection_string_0": sdk.FieldSpec(wire_name="aof_storage_connection_string_0"),
-    "aof_storage_connection_string_1": sdk.FieldSpec(wire_name="aof_storage_connection_string_1"),
-    "authentication_enabled": sdk.FieldSpec(wire_name="authentication_enabled"),
-    "data_persistence_authentication_method": sdk.FieldSpec(wire_name="data_persistence_authentication_method"),
-    "maxclients": sdk.FieldSpec(wire_name="maxclients"),
-    "maxfragmentationmemory_reserved": sdk.FieldSpec(wire_name="maxfragmentationmemory_reserved"),
-    "maxmemory_delta": sdk.FieldSpec(wire_name="maxmemory_delta"),
-    "maxmemory_policy": sdk.FieldSpec(wire_name="maxmemory_policy"),
-    "maxmemory_reserved": sdk.FieldSpec(wire_name="maxmemory_reserved"),
-    "notify_keyspace_events": sdk.FieldSpec(wire_name="notify_keyspace_events"),
-    "rdb_backup_enabled": sdk.FieldSpec(wire_name="rdb_backup_enabled"),
-    "rdb_backup_frequency": sdk.FieldSpec(wire_name="rdb_backup_frequency"),
-    "rdb_backup_max_snapshot_count": sdk.FieldSpec(wire_name="rdb_backup_max_snapshot_count"),
-    "rdb_storage_connection_string": sdk.FieldSpec(wire_name="rdb_storage_connection_string"),
-    "storage_account_subscription_id": sdk.FieldSpec(wire_name="storage_account_subscription_id"),
+    "active_directory_authentication_enabled": ubx.FieldSpec(wire_name="active_directory_authentication_enabled"),
+    "aof_backup_enabled": ubx.FieldSpec(wire_name="aof_backup_enabled"),
+    "aof_storage_connection_string_0": ubx.FieldSpec(wire_name="aof_storage_connection_string_0"),
+    "aof_storage_connection_string_1": ubx.FieldSpec(wire_name="aof_storage_connection_string_1"),
+    "authentication_enabled": ubx.FieldSpec(wire_name="authentication_enabled"),
+    "data_persistence_authentication_method": ubx.FieldSpec(wire_name="data_persistence_authentication_method"),
+    "maxclients": ubx.FieldSpec(wire_name="maxclients"),
+    "maxfragmentationmemory_reserved": ubx.FieldSpec(wire_name="maxfragmentationmemory_reserved"),
+    "maxmemory_delta": ubx.FieldSpec(wire_name="maxmemory_delta"),
+    "maxmemory_policy": ubx.FieldSpec(wire_name="maxmemory_policy"),
+    "maxmemory_reserved": ubx.FieldSpec(wire_name="maxmemory_reserved"),
+    "notify_keyspace_events": ubx.FieldSpec(wire_name="notify_keyspace_events"),
+    "rdb_backup_enabled": ubx.FieldSpec(wire_name="rdb_backup_enabled"),
+    "rdb_backup_frequency": ubx.FieldSpec(wire_name="rdb_backup_frequency"),
+    "rdb_backup_max_snapshot_count": ubx.FieldSpec(wire_name="rdb_backup_max_snapshot_count"),
+    "rdb_storage_connection_string": ubx.FieldSpec(wire_name="rdb_storage_connection_string"),
+    "storage_account_subscription_id": ubx.FieldSpec(wire_name="storage_account_subscription_id"),
 }
 
 _Cache_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -113,45 +113,45 @@ class CacheConfig:
     redis_configuration: Any = None
     timeouts: Any = None
 
-Cache = sdk.ResourceBinding(
+Cache = ubx.ResourceBinding(
     wire_type="azurerm_redis_cache",
     fields={
-        "access_keys_authentication_enabled": sdk.FieldSpec(wire_name="access_keys_authentication_enabled"),
-        "capacity": sdk.FieldSpec(wire_name="capacity"),
-        "family": sdk.FieldSpec(wire_name="family"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "minimum_tls_version": sdk.FieldSpec(wire_name="minimum_tls_version"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "non_ssl_port_enabled": sdk.FieldSpec(wire_name="non_ssl_port_enabled"),
-        "private_static_ip_address": sdk.FieldSpec(wire_name="private_static_ip_address"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "redis_version": sdk.FieldSpec(wire_name="redis_version"),
-        "replicas_per_master": sdk.FieldSpec(wire_name="replicas_per_master"),
-        "replicas_per_primary": sdk.FieldSpec(wire_name="replicas_per_primary"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "shard_count": sdk.FieldSpec(wire_name="shard_count"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "tenant_settings": sdk.FieldSpec(wire_name="tenant_settings"),
-        "zones": sdk.FieldSpec(wire_name="zones"),
-        "identity": sdk.FieldSpec(
+        "access_keys_authentication_enabled": ubx.FieldSpec(wire_name="access_keys_authentication_enabled"),
+        "capacity": ubx.FieldSpec(wire_name="capacity"),
+        "family": ubx.FieldSpec(wire_name="family"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "minimum_tls_version": ubx.FieldSpec(wire_name="minimum_tls_version"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "non_ssl_port_enabled": ubx.FieldSpec(wire_name="non_ssl_port_enabled"),
+        "private_static_ip_address": ubx.FieldSpec(wire_name="private_static_ip_address"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "redis_version": ubx.FieldSpec(wire_name="redis_version"),
+        "replicas_per_master": ubx.FieldSpec(wire_name="replicas_per_master"),
+        "replicas_per_primary": ubx.FieldSpec(wire_name="replicas_per_primary"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "shard_count": ubx.FieldSpec(wire_name="shard_count"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "tenant_settings": ubx.FieldSpec(wire_name="tenant_settings"),
+        "zones": ubx.FieldSpec(wire_name="zones"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Cache_IdentityFields,
         ),
-        "patch_schedule": sdk.FieldSpec(
+        "patch_schedule": ubx.FieldSpec(
             wire_name="patch_schedule",
             kind="list",
             fields=_Cache_PatchScheduleFields,
         ),
-        "redis_configuration": sdk.FieldSpec(
+        "redis_configuration": ubx.FieldSpec(
             wire_name="redis_configuration",
             kind="list",
             fields=_Cache_RedisConfigurationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Cache_TimeoutsFields,

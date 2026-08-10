@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ClusterManagedPrivateEndpoint_Timeouts:
@@ -14,10 +14,10 @@ class ClusterManagedPrivateEndpoint_Timeouts:
     update: Any = None
 
 _ClusterManagedPrivateEndpoint_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -32,18 +32,18 @@ class ClusterManagedPrivateEndpointConfig:
     resource_group_name: Any = None
     timeouts: Any = None
 
-ClusterManagedPrivateEndpoint = sdk.ResourceBinding(
+ClusterManagedPrivateEndpoint = ubx.ResourceBinding(
     wire_type="azurerm_kusto_cluster_managed_private_endpoint",
     fields={
-        "cluster_name": sdk.FieldSpec(wire_name="cluster_name"),
-        "group_id": sdk.FieldSpec(wire_name="group_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "private_link_resource_id": sdk.FieldSpec(wire_name="private_link_resource_id"),
-        "private_link_resource_region": sdk.FieldSpec(wire_name="private_link_resource_region"),
-        "request_message": sdk.FieldSpec(wire_name="request_message"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "timeouts": sdk.FieldSpec(
+        "cluster_name": ubx.FieldSpec(wire_name="cluster_name"),
+        "group_id": ubx.FieldSpec(wire_name="group_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "private_link_resource_id": ubx.FieldSpec(wire_name="private_link_resource_id"),
+        "private_link_resource_region": ubx.FieldSpec(wire_name="private_link_resource_region"),
+        "request_message": ubx.FieldSpec(wire_name="request_message"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ClusterManagedPrivateEndpoint_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagerExternalEndpoint_CustomHeader:
@@ -25,21 +25,21 @@ class ManagerExternalEndpoint_Timeouts:
     update: Any = None
 
 _ManagerExternalEndpoint_CustomHeaderFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _ManagerExternalEndpoint_SubnetFields = {
-    "first": sdk.FieldSpec(wire_name="first"),
-    "last": sdk.FieldSpec(wire_name="last"),
-    "scope": sdk.FieldSpec(wire_name="scope"),
+    "first": ubx.FieldSpec(wire_name="first"),
+    "last": ubx.FieldSpec(wire_name="last"),
+    "scope": ubx.FieldSpec(wire_name="scope"),
 }
 
 _ManagerExternalEndpoint_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -58,30 +58,30 @@ class ManagerExternalEndpointConfig:
     subnet: Any = None
     timeouts: Any = None
 
-ManagerExternalEndpoint = sdk.ResourceBinding(
+ManagerExternalEndpoint = ubx.ResourceBinding(
     wire_type="azurerm_traffic_manager_external_endpoint",
     fields={
-        "always_serve_enabled": sdk.FieldSpec(wire_name="always_serve_enabled"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "endpoint_location": sdk.FieldSpec(wire_name="endpoint_location"),
-        "geo_mappings": sdk.FieldSpec(wire_name="geo_mappings"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "priority": sdk.FieldSpec(wire_name="priority"),
-        "profile_id": sdk.FieldSpec(wire_name="profile_id"),
-        "target": sdk.FieldSpec(wire_name="target"),
-        "weight": sdk.FieldSpec(wire_name="weight"),
-        "custom_header": sdk.FieldSpec(
+        "always_serve_enabled": ubx.FieldSpec(wire_name="always_serve_enabled"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "endpoint_location": ubx.FieldSpec(wire_name="endpoint_location"),
+        "geo_mappings": ubx.FieldSpec(wire_name="geo_mappings"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "priority": ubx.FieldSpec(wire_name="priority"),
+        "profile_id": ubx.FieldSpec(wire_name="profile_id"),
+        "target": ubx.FieldSpec(wire_name="target"),
+        "weight": ubx.FieldSpec(wire_name="weight"),
+        "custom_header": ubx.FieldSpec(
             wire_name="custom_header",
             kind="list",
             fields=_ManagerExternalEndpoint_CustomHeaderFields,
         ),
-        "subnet": sdk.FieldSpec(
+        "subnet": ubx.FieldSpec(
             wire_name="subnet",
             kind="list",
             fields=_ManagerExternalEndpoint_SubnetFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagerExternalEndpoint_TimeoutsFields,

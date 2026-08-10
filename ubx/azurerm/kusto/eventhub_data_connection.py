@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EventhubDataConnection_Timeouts:
@@ -14,10 +14,10 @@ class EventhubDataConnection_Timeouts:
     update: Any = None
 
 _EventhubDataConnection_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -40,26 +40,26 @@ class EventhubDataConnectionConfig:
     table_name: Any = None
     timeouts: Any = None
 
-EventhubDataConnection = sdk.ResourceBinding(
+EventhubDataConnection = ubx.ResourceBinding(
     wire_type="azurerm_kusto_eventhub_data_connection",
     fields={
-        "cluster_name": sdk.FieldSpec(wire_name="cluster_name"),
-        "compression": sdk.FieldSpec(wire_name="compression"),
-        "consumer_group": sdk.FieldSpec(wire_name="consumer_group"),
-        "data_format": sdk.FieldSpec(wire_name="data_format"),
-        "database_name": sdk.FieldSpec(wire_name="database_name"),
-        "database_routing_type": sdk.FieldSpec(wire_name="database_routing_type"),
-        "event_system_properties": sdk.FieldSpec(wire_name="event_system_properties"),
-        "eventhub_id": sdk.FieldSpec(wire_name="eventhub_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "identity_id": sdk.FieldSpec(wire_name="identity_id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "mapping_rule_name": sdk.FieldSpec(wire_name="mapping_rule_name"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "retrieval_start_date": sdk.FieldSpec(wire_name="retrieval_start_date"),
-        "table_name": sdk.FieldSpec(wire_name="table_name"),
-        "timeouts": sdk.FieldSpec(
+        "cluster_name": ubx.FieldSpec(wire_name="cluster_name"),
+        "compression": ubx.FieldSpec(wire_name="compression"),
+        "consumer_group": ubx.FieldSpec(wire_name="consumer_group"),
+        "data_format": ubx.FieldSpec(wire_name="data_format"),
+        "database_name": ubx.FieldSpec(wire_name="database_name"),
+        "database_routing_type": ubx.FieldSpec(wire_name="database_routing_type"),
+        "event_system_properties": ubx.FieldSpec(wire_name="event_system_properties"),
+        "eventhub_id": ubx.FieldSpec(wire_name="eventhub_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "identity_id": ubx.FieldSpec(wire_name="identity_id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "mapping_rule_name": ubx.FieldSpec(wire_name="mapping_rule_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "retrieval_start_date": ubx.FieldSpec(wire_name="retrieval_start_date"),
+        "table_name": ubx.FieldSpec(wire_name="table_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_EventhubDataConnection_TimeoutsFields,

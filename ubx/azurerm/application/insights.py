@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Insights_Timeouts:
@@ -14,10 +14,10 @@ class Insights_Timeouts:
     update: Any = None
 
 _Insights_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -40,26 +40,26 @@ class InsightsConfig:
     workspace_id: Any = None
     timeouts: Any = None
 
-Insights = sdk.ResourceBinding(
+Insights = ubx.ResourceBinding(
     wire_type="azurerm_application_insights",
     fields={
-        "application_type": sdk.FieldSpec(wire_name="application_type"),
-        "daily_data_cap_in_gb": sdk.FieldSpec(wire_name="daily_data_cap_in_gb"),
-        "daily_data_cap_notifications_enabled": sdk.FieldSpec(wire_name="daily_data_cap_notifications_enabled"),
-        "force_customer_storage_for_profiler": sdk.FieldSpec(wire_name="force_customer_storage_for_profiler"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "internet_ingestion_enabled": sdk.FieldSpec(wire_name="internet_ingestion_enabled"),
-        "internet_query_enabled": sdk.FieldSpec(wire_name="internet_query_enabled"),
-        "ip_masking_enabled": sdk.FieldSpec(wire_name="ip_masking_enabled"),
-        "local_authentication_enabled": sdk.FieldSpec(wire_name="local_authentication_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "retention_in_days": sdk.FieldSpec(wire_name="retention_in_days"),
-        "sampling_percentage": sdk.FieldSpec(wire_name="sampling_percentage"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "workspace_id": sdk.FieldSpec(wire_name="workspace_id"),
-        "timeouts": sdk.FieldSpec(
+        "application_type": ubx.FieldSpec(wire_name="application_type"),
+        "daily_data_cap_in_gb": ubx.FieldSpec(wire_name="daily_data_cap_in_gb"),
+        "daily_data_cap_notifications_enabled": ubx.FieldSpec(wire_name="daily_data_cap_notifications_enabled"),
+        "force_customer_storage_for_profiler": ubx.FieldSpec(wire_name="force_customer_storage_for_profiler"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "internet_ingestion_enabled": ubx.FieldSpec(wire_name="internet_ingestion_enabled"),
+        "internet_query_enabled": ubx.FieldSpec(wire_name="internet_query_enabled"),
+        "ip_masking_enabled": ubx.FieldSpec(wire_name="ip_masking_enabled"),
+        "local_authentication_enabled": ubx.FieldSpec(wire_name="local_authentication_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "retention_in_days": ubx.FieldSpec(wire_name="retention_in_days"),
+        "sampling_percentage": ubx.FieldSpec(wire_name="sampling_percentage"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "workspace_id": ubx.FieldSpec(wire_name="workspace_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Insights_TimeoutsFields,

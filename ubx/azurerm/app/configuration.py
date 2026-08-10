@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Configuration_Encryption:
@@ -33,29 +33,29 @@ class Configuration_Timeouts:
     update: Any = None
 
 _Configuration_EncryptionFields = {
-    "identity_client_id": sdk.FieldSpec(wire_name="identity_client_id"),
-    "key_vault_key_identifier": sdk.FieldSpec(wire_name="key_vault_key_identifier"),
+    "identity_client_id": ubx.FieldSpec(wire_name="identity_client_id"),
+    "key_vault_key_identifier": ubx.FieldSpec(wire_name="key_vault_key_identifier"),
 }
 
 _Configuration_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Configuration_ReplicaFields = {
-    "endpoint": sdk.FieldSpec(wire_name="endpoint"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "location": sdk.FieldSpec(wire_name="location"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "endpoint": ubx.FieldSpec(wire_name="endpoint"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "location": ubx.FieldSpec(wire_name="location"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _Configuration_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -77,37 +77,37 @@ class ConfigurationConfig:
     replica: Any = None
     timeouts: Any = None
 
-Configuration = sdk.ResourceBinding(
+Configuration = ubx.ResourceBinding(
     wire_type="azurerm_app_configuration",
     fields={
-        "data_plane_proxy_authentication_mode": sdk.FieldSpec(wire_name="data_plane_proxy_authentication_mode"),
-        "data_plane_proxy_private_link_delegation_enabled": sdk.FieldSpec(wire_name="data_plane_proxy_private_link_delegation_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "local_auth_enabled": sdk.FieldSpec(wire_name="local_auth_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_access": sdk.FieldSpec(wire_name="public_network_access"),
-        "purge_protection_enabled": sdk.FieldSpec(wire_name="purge_protection_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "soft_delete_retention_days": sdk.FieldSpec(wire_name="soft_delete_retention_days"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "encryption": sdk.FieldSpec(
+        "data_plane_proxy_authentication_mode": ubx.FieldSpec(wire_name="data_plane_proxy_authentication_mode"),
+        "data_plane_proxy_private_link_delegation_enabled": ubx.FieldSpec(wire_name="data_plane_proxy_private_link_delegation_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "local_auth_enabled": ubx.FieldSpec(wire_name="local_auth_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_access": ubx.FieldSpec(wire_name="public_network_access"),
+        "purge_protection_enabled": ubx.FieldSpec(wire_name="purge_protection_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "soft_delete_retention_days": ubx.FieldSpec(wire_name="soft_delete_retention_days"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "encryption": ubx.FieldSpec(
             wire_name="encryption",
             kind="list",
             fields=_Configuration_EncryptionFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Configuration_IdentityFields,
         ),
-        "replica": sdk.FieldSpec(
+        "replica": ubx.FieldSpec(
             wire_name="replica",
             kind="set",
             fields=_Configuration_ReplicaFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Configuration_TimeoutsFields,

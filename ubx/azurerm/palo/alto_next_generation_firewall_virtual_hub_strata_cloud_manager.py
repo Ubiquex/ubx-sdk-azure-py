@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AltoNextGenerationFirewallVirtualHubStrataCloudManager_DestinationNat_BackendConfig:
@@ -55,24 +55,24 @@ class AltoNextGenerationFirewallVirtualHubStrataCloudManager_Timeouts:
     update: Any = None
 
 _AltoNextGenerationFirewallVirtualHubStrataCloudManager_DestinationNat_BackendConfigFields = {
-    "port": sdk.FieldSpec(wire_name="port"),
-    "public_ip_address": sdk.FieldSpec(wire_name="public_ip_address"),
+    "port": ubx.FieldSpec(wire_name="port"),
+    "public_ip_address": ubx.FieldSpec(wire_name="public_ip_address"),
 }
 
 _AltoNextGenerationFirewallVirtualHubStrataCloudManager_DestinationNat_FrontendConfigFields = {
-    "port": sdk.FieldSpec(wire_name="port"),
-    "public_ip_address_id": sdk.FieldSpec(wire_name="public_ip_address_id"),
+    "port": ubx.FieldSpec(wire_name="port"),
+    "public_ip_address_id": ubx.FieldSpec(wire_name="public_ip_address_id"),
 }
 
 _AltoNextGenerationFirewallVirtualHubStrataCloudManager_DestinationNatFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "protocol": sdk.FieldSpec(wire_name="protocol"),
-    "backend_config": sdk.FieldSpec(
+    "name": ubx.FieldSpec(wire_name="name"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
+    "backend_config": ubx.FieldSpec(
         wire_name="backend_config",
         kind="list",
         fields=_AltoNextGenerationFirewallVirtualHubStrataCloudManager_DestinationNat_BackendConfigFields,
     ),
-    "frontend_config": sdk.FieldSpec(
+    "frontend_config": ubx.FieldSpec(
         wire_name="frontend_config",
         kind="list",
         fields=_AltoNextGenerationFirewallVirtualHubStrataCloudManager_DestinationNat_FrontendConfigFields,
@@ -80,34 +80,34 @@ _AltoNextGenerationFirewallVirtualHubStrataCloudManager_DestinationNatFields = {
 }
 
 _AltoNextGenerationFirewallVirtualHubStrataCloudManager_DnsSettingsFields = {
-    "azure_dns_servers": sdk.FieldSpec(wire_name="azure_dns_servers"),
-    "dns_servers": sdk.FieldSpec(wire_name="dns_servers"),
-    "use_azure_dns": sdk.FieldSpec(wire_name="use_azure_dns"),
+    "azure_dns_servers": ubx.FieldSpec(wire_name="azure_dns_servers"),
+    "dns_servers": ubx.FieldSpec(wire_name="dns_servers"),
+    "use_azure_dns": ubx.FieldSpec(wire_name="use_azure_dns"),
 }
 
 _AltoNextGenerationFirewallVirtualHubStrataCloudManager_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _AltoNextGenerationFirewallVirtualHubStrataCloudManager_NetworkProfileFields = {
-    "egress_nat_ip_address_ids": sdk.FieldSpec(wire_name="egress_nat_ip_address_ids"),
-    "egress_nat_ip_addresses": sdk.FieldSpec(wire_name="egress_nat_ip_addresses"),
-    "ip_of_trust_for_user_defined_routes": sdk.FieldSpec(wire_name="ip_of_trust_for_user_defined_routes"),
-    "network_virtual_appliance_id": sdk.FieldSpec(wire_name="network_virtual_appliance_id"),
-    "public_ip_address_ids": sdk.FieldSpec(wire_name="public_ip_address_ids"),
-    "public_ip_addresses": sdk.FieldSpec(wire_name="public_ip_addresses"),
-    "trusted_address_ranges": sdk.FieldSpec(wire_name="trusted_address_ranges"),
-    "trusted_subnet_id": sdk.FieldSpec(wire_name="trusted_subnet_id"),
-    "untrusted_subnet_id": sdk.FieldSpec(wire_name="untrusted_subnet_id"),
-    "virtual_hub_id": sdk.FieldSpec(wire_name="virtual_hub_id"),
+    "egress_nat_ip_address_ids": ubx.FieldSpec(wire_name="egress_nat_ip_address_ids"),
+    "egress_nat_ip_addresses": ubx.FieldSpec(wire_name="egress_nat_ip_addresses"),
+    "ip_of_trust_for_user_defined_routes": ubx.FieldSpec(wire_name="ip_of_trust_for_user_defined_routes"),
+    "network_virtual_appliance_id": ubx.FieldSpec(wire_name="network_virtual_appliance_id"),
+    "public_ip_address_ids": ubx.FieldSpec(wire_name="public_ip_address_ids"),
+    "public_ip_addresses": ubx.FieldSpec(wire_name="public_ip_addresses"),
+    "trusted_address_ranges": ubx.FieldSpec(wire_name="trusted_address_ranges"),
+    "trusted_subnet_id": ubx.FieldSpec(wire_name="trusted_subnet_id"),
+    "untrusted_subnet_id": ubx.FieldSpec(wire_name="untrusted_subnet_id"),
+    "virtual_hub_id": ubx.FieldSpec(wire_name="virtual_hub_id"),
 }
 
 _AltoNextGenerationFirewallVirtualHubStrataCloudManager_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -126,38 +126,38 @@ class AltoNextGenerationFirewallVirtualHubStrataCloudManagerConfig:
     network_profile: Any = None
     timeouts: Any = None
 
-AltoNextGenerationFirewallVirtualHubStrataCloudManager = sdk.ResourceBinding(
+AltoNextGenerationFirewallVirtualHubStrataCloudManager = ubx.ResourceBinding(
     wire_type="azurerm_palo_alto_next_generation_firewall_virtual_hub_strata_cloud_manager",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "marketplace_offer_id": sdk.FieldSpec(wire_name="marketplace_offer_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "plan_id": sdk.FieldSpec(wire_name="plan_id"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "strata_cloud_manager_tenant_name": sdk.FieldSpec(wire_name="strata_cloud_manager_tenant_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "destination_nat": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "marketplace_offer_id": ubx.FieldSpec(wire_name="marketplace_offer_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "plan_id": ubx.FieldSpec(wire_name="plan_id"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "strata_cloud_manager_tenant_name": ubx.FieldSpec(wire_name="strata_cloud_manager_tenant_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "destination_nat": ubx.FieldSpec(
             wire_name="destination_nat",
             kind="list",
             fields=_AltoNextGenerationFirewallVirtualHubStrataCloudManager_DestinationNatFields,
         ),
-        "dns_settings": sdk.FieldSpec(
+        "dns_settings": ubx.FieldSpec(
             wire_name="dns_settings",
             kind="list",
             fields=_AltoNextGenerationFirewallVirtualHubStrataCloudManager_DnsSettingsFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_AltoNextGenerationFirewallVirtualHubStrataCloudManager_IdentityFields,
         ),
-        "network_profile": sdk.FieldSpec(
+        "network_profile": ubx.FieldSpec(
             wire_name="network_profile",
             kind="list",
             fields=_AltoNextGenerationFirewallVirtualHubStrataCloudManager_NetworkProfileFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AltoNextGenerationFirewallVirtualHubStrataCloudManager_TimeoutsFields,

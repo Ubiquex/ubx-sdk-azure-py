@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ScheduledQueryRulesAlert_Action:
@@ -33,29 +33,29 @@ class ScheduledQueryRulesAlert_Trigger:
     metric_trigger: Any = None
 
 _ScheduledQueryRulesAlert_ActionFields = {
-    "action_group": sdk.FieldSpec(wire_name="action_group"),
-    "custom_webhook_payload": sdk.FieldSpec(wire_name="custom_webhook_payload"),
-    "email_subject": sdk.FieldSpec(wire_name="email_subject"),
+    "action_group": ubx.FieldSpec(wire_name="action_group"),
+    "custom_webhook_payload": ubx.FieldSpec(wire_name="custom_webhook_payload"),
+    "email_subject": ubx.FieldSpec(wire_name="email_subject"),
 }
 
 _ScheduledQueryRulesAlert_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _ScheduledQueryRulesAlert_Trigger_MetricTriggerFields = {
-    "metric_column": sdk.FieldSpec(wire_name="metric_column"),
-    "metric_trigger_type": sdk.FieldSpec(wire_name="metric_trigger_type"),
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "threshold": sdk.FieldSpec(wire_name="threshold"),
+    "metric_column": ubx.FieldSpec(wire_name="metric_column"),
+    "metric_trigger_type": ubx.FieldSpec(wire_name="metric_trigger_type"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "threshold": ubx.FieldSpec(wire_name="threshold"),
 }
 
 _ScheduledQueryRulesAlert_TriggerFields = {
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "threshold": sdk.FieldSpec(wire_name="threshold"),
-    "metric_trigger": sdk.FieldSpec(
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "threshold": ubx.FieldSpec(wire_name="threshold"),
+    "metric_trigger": ubx.FieldSpec(
         wire_name="metric_trigger",
         kind="list",
         fields=_ScheduledQueryRulesAlert_Trigger_MetricTriggerFields,
@@ -84,36 +84,36 @@ class ScheduledQueryRulesAlertConfig:
     timeouts: Any = None
     trigger: Any = None
 
-ScheduledQueryRulesAlert = sdk.ResourceBinding(
+ScheduledQueryRulesAlert = ubx.ResourceBinding(
     wire_type="azurerm_monitor_scheduled_query_rules_alert",
     fields={
-        "authorized_resource_ids": sdk.FieldSpec(wire_name="authorized_resource_ids"),
-        "auto_mitigation_enabled": sdk.FieldSpec(wire_name="auto_mitigation_enabled"),
-        "data_source_id": sdk.FieldSpec(wire_name="data_source_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "frequency": sdk.FieldSpec(wire_name="frequency"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "query": sdk.FieldSpec(wire_name="query"),
-        "query_type": sdk.FieldSpec(wire_name="query_type"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "severity": sdk.FieldSpec(wire_name="severity"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "throttling": sdk.FieldSpec(wire_name="throttling"),
-        "time_window": sdk.FieldSpec(wire_name="time_window"),
-        "action": sdk.FieldSpec(
+        "authorized_resource_ids": ubx.FieldSpec(wire_name="authorized_resource_ids"),
+        "auto_mitigation_enabled": ubx.FieldSpec(wire_name="auto_mitigation_enabled"),
+        "data_source_id": ubx.FieldSpec(wire_name="data_source_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "frequency": ubx.FieldSpec(wire_name="frequency"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "query": ubx.FieldSpec(wire_name="query"),
+        "query_type": ubx.FieldSpec(wire_name="query_type"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "severity": ubx.FieldSpec(wire_name="severity"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "throttling": ubx.FieldSpec(wire_name="throttling"),
+        "time_window": ubx.FieldSpec(wire_name="time_window"),
+        "action": ubx.FieldSpec(
             wire_name="action",
             kind="list",
             fields=_ScheduledQueryRulesAlert_ActionFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ScheduledQueryRulesAlert_TimeoutsFields,
         ),
-        "trigger": sdk.FieldSpec(
+        "trigger": ubx.FieldSpec(
             wire_name="trigger",
             kind="list",
             fields=_ScheduledQueryRulesAlert_TriggerFields,

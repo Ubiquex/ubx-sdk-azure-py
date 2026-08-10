@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryLinkedServiceSqlManagedInstance_KeyVaultConnectionString:
@@ -19,15 +19,15 @@ class FactoryLinkedServiceSqlManagedInstance_Timeouts:
     update: Any = None
 
 _FactoryLinkedServiceSqlManagedInstance_KeyVaultConnectionStringFields = {
-    "linked_service_name": sdk.FieldSpec(wire_name="linked_service_name"),
-    "secret_name": sdk.FieldSpec(wire_name="secret_name"),
+    "linked_service_name": ubx.FieldSpec(wire_name="linked_service_name"),
+    "secret_name": ubx.FieldSpec(wire_name="secret_name"),
 }
 
 _FactoryLinkedServiceSqlManagedInstance_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -47,31 +47,31 @@ class FactoryLinkedServiceSqlManagedInstanceConfig:
     key_vault_password: Any = None
     timeouts: Any = None
 
-FactoryLinkedServiceSqlManagedInstance = sdk.ResourceBinding(
+FactoryLinkedServiceSqlManagedInstance = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_linked_service_sql_managed_instance",
     fields={
-        "annotations": sdk.FieldSpec(wire_name="annotations"),
-        "connection_string": sdk.FieldSpec(wire_name="connection_string"),
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "integration_runtime_name": sdk.FieldSpec(wire_name="integration_runtime_name"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parameters": sdk.FieldSpec(wire_name="parameters"),
-        "service_principal_id": sdk.FieldSpec(wire_name="service_principal_id"),
-        "service_principal_key": sdk.FieldSpec(wire_name="service_principal_key"),
-        "tenant": sdk.FieldSpec(wire_name="tenant"),
-        "key_vault_connection_string": sdk.FieldSpec(
+        "annotations": ubx.FieldSpec(wire_name="annotations"),
+        "connection_string": ubx.FieldSpec(wire_name="connection_string"),
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "integration_runtime_name": ubx.FieldSpec(wire_name="integration_runtime_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parameters": ubx.FieldSpec(wire_name="parameters"),
+        "service_principal_id": ubx.FieldSpec(wire_name="service_principal_id"),
+        "service_principal_key": ubx.FieldSpec(wire_name="service_principal_key"),
+        "tenant": ubx.FieldSpec(wire_name="tenant"),
+        "key_vault_connection_string": ubx.FieldSpec(
             wire_name="key_vault_connection_string",
             kind="list",
             fields=_FactoryLinkedServiceSqlManagedInstance_KeyVaultConnectionStringFields,
         ),
-        "key_vault_password": sdk.FieldSpec(
+        "key_vault_password": ubx.FieldSpec(
             wire_name="key_vault_password",
             kind="list",
             fields=_FactoryLinkedServiceSqlManagedInstance_KeyVaultConnectionStringFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryLinkedServiceSqlManagedInstance_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Frontdoor_BackendPool_Backend:
@@ -95,21 +95,21 @@ class Frontdoor_Timeouts:
     update: Any = None
 
 _Frontdoor_BackendPool_BackendFields = {
-    "address": sdk.FieldSpec(wire_name="address"),
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "host_header": sdk.FieldSpec(wire_name="host_header"),
-    "http_port": sdk.FieldSpec(wire_name="http_port"),
-    "https_port": sdk.FieldSpec(wire_name="https_port"),
-    "priority": sdk.FieldSpec(wire_name="priority"),
-    "weight": sdk.FieldSpec(wire_name="weight"),
+    "address": ubx.FieldSpec(wire_name="address"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "host_header": ubx.FieldSpec(wire_name="host_header"),
+    "http_port": ubx.FieldSpec(wire_name="http_port"),
+    "https_port": ubx.FieldSpec(wire_name="https_port"),
+    "priority": ubx.FieldSpec(wire_name="priority"),
+    "weight": ubx.FieldSpec(wire_name="weight"),
 }
 
 _Frontdoor_BackendPoolFields = {
-    "health_probe_name": sdk.FieldSpec(wire_name="health_probe_name"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "load_balancing_name": sdk.FieldSpec(wire_name="load_balancing_name"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "backend": sdk.FieldSpec(
+    "health_probe_name": ubx.FieldSpec(wire_name="health_probe_name"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "load_balancing_name": ubx.FieldSpec(wire_name="load_balancing_name"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "backend": ubx.FieldSpec(
         wire_name="backend",
         kind="list",
         fields=_Frontdoor_BackendPool_BackendFields,
@@ -117,70 +117,70 @@ _Frontdoor_BackendPoolFields = {
 }
 
 _Frontdoor_BackendPoolHealthProbeFields = {
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "interval_in_seconds": sdk.FieldSpec(wire_name="interval_in_seconds"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "path": sdk.FieldSpec(wire_name="path"),
-    "probe_method": sdk.FieldSpec(wire_name="probe_method"),
-    "protocol": sdk.FieldSpec(wire_name="protocol"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "interval_in_seconds": ubx.FieldSpec(wire_name="interval_in_seconds"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "path": ubx.FieldSpec(wire_name="path"),
+    "probe_method": ubx.FieldSpec(wire_name="probe_method"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
 }
 
 _Frontdoor_BackendPoolLoadBalancingFields = {
-    "additional_latency_milliseconds": sdk.FieldSpec(wire_name="additional_latency_milliseconds"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "sample_size": sdk.FieldSpec(wire_name="sample_size"),
-    "successful_samples_required": sdk.FieldSpec(wire_name="successful_samples_required"),
+    "additional_latency_milliseconds": ubx.FieldSpec(wire_name="additional_latency_milliseconds"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "sample_size": ubx.FieldSpec(wire_name="sample_size"),
+    "successful_samples_required": ubx.FieldSpec(wire_name="successful_samples_required"),
 }
 
 _Frontdoor_BackendPoolSettingsFields = {
-    "backend_pools_send_receive_timeout_seconds": sdk.FieldSpec(wire_name="backend_pools_send_receive_timeout_seconds"),
-    "enforce_backend_pools_certificate_name_check": sdk.FieldSpec(wire_name="enforce_backend_pools_certificate_name_check"),
+    "backend_pools_send_receive_timeout_seconds": ubx.FieldSpec(wire_name="backend_pools_send_receive_timeout_seconds"),
+    "enforce_backend_pools_certificate_name_check": ubx.FieldSpec(wire_name="enforce_backend_pools_certificate_name_check"),
 }
 
 _Frontdoor_FrontendEndpointFields = {
-    "host_name": sdk.FieldSpec(wire_name="host_name"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "session_affinity_enabled": sdk.FieldSpec(wire_name="session_affinity_enabled"),
-    "session_affinity_ttl_seconds": sdk.FieldSpec(wire_name="session_affinity_ttl_seconds"),
-    "web_application_firewall_policy_link_id": sdk.FieldSpec(wire_name="web_application_firewall_policy_link_id"),
+    "host_name": ubx.FieldSpec(wire_name="host_name"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "session_affinity_enabled": ubx.FieldSpec(wire_name="session_affinity_enabled"),
+    "session_affinity_ttl_seconds": ubx.FieldSpec(wire_name="session_affinity_ttl_seconds"),
+    "web_application_firewall_policy_link_id": ubx.FieldSpec(wire_name="web_application_firewall_policy_link_id"),
 }
 
 _Frontdoor_RoutingRule_ForwardingConfigurationFields = {
-    "backend_pool_name": sdk.FieldSpec(wire_name="backend_pool_name"),
-    "cache_duration": sdk.FieldSpec(wire_name="cache_duration"),
-    "cache_enabled": sdk.FieldSpec(wire_name="cache_enabled"),
-    "cache_query_parameter_strip_directive": sdk.FieldSpec(wire_name="cache_query_parameter_strip_directive"),
-    "cache_query_parameters": sdk.FieldSpec(wire_name="cache_query_parameters"),
-    "cache_use_dynamic_compression": sdk.FieldSpec(wire_name="cache_use_dynamic_compression"),
-    "custom_forwarding_path": sdk.FieldSpec(wire_name="custom_forwarding_path"),
-    "forwarding_protocol": sdk.FieldSpec(wire_name="forwarding_protocol"),
+    "backend_pool_name": ubx.FieldSpec(wire_name="backend_pool_name"),
+    "cache_duration": ubx.FieldSpec(wire_name="cache_duration"),
+    "cache_enabled": ubx.FieldSpec(wire_name="cache_enabled"),
+    "cache_query_parameter_strip_directive": ubx.FieldSpec(wire_name="cache_query_parameter_strip_directive"),
+    "cache_query_parameters": ubx.FieldSpec(wire_name="cache_query_parameters"),
+    "cache_use_dynamic_compression": ubx.FieldSpec(wire_name="cache_use_dynamic_compression"),
+    "custom_forwarding_path": ubx.FieldSpec(wire_name="custom_forwarding_path"),
+    "forwarding_protocol": ubx.FieldSpec(wire_name="forwarding_protocol"),
 }
 
 _Frontdoor_RoutingRule_RedirectConfigurationFields = {
-    "custom_fragment": sdk.FieldSpec(wire_name="custom_fragment"),
-    "custom_host": sdk.FieldSpec(wire_name="custom_host"),
-    "custom_path": sdk.FieldSpec(wire_name="custom_path"),
-    "custom_query_string": sdk.FieldSpec(wire_name="custom_query_string"),
-    "redirect_protocol": sdk.FieldSpec(wire_name="redirect_protocol"),
-    "redirect_type": sdk.FieldSpec(wire_name="redirect_type"),
+    "custom_fragment": ubx.FieldSpec(wire_name="custom_fragment"),
+    "custom_host": ubx.FieldSpec(wire_name="custom_host"),
+    "custom_path": ubx.FieldSpec(wire_name="custom_path"),
+    "custom_query_string": ubx.FieldSpec(wire_name="custom_query_string"),
+    "redirect_protocol": ubx.FieldSpec(wire_name="redirect_protocol"),
+    "redirect_type": ubx.FieldSpec(wire_name="redirect_type"),
 }
 
 _Frontdoor_RoutingRuleFields = {
-    "accepted_protocols": sdk.FieldSpec(wire_name="accepted_protocols"),
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "frontend_endpoints": sdk.FieldSpec(wire_name="frontend_endpoints"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "patterns_to_match": sdk.FieldSpec(wire_name="patterns_to_match"),
-    "forwarding_configuration": sdk.FieldSpec(
+    "accepted_protocols": ubx.FieldSpec(wire_name="accepted_protocols"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "frontend_endpoints": ubx.FieldSpec(wire_name="frontend_endpoints"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "patterns_to_match": ubx.FieldSpec(wire_name="patterns_to_match"),
+    "forwarding_configuration": ubx.FieldSpec(
         wire_name="forwarding_configuration",
         kind="list",
         fields=_Frontdoor_RoutingRule_ForwardingConfigurationFields,
     ),
-    "redirect_configuration": sdk.FieldSpec(
+    "redirect_configuration": ubx.FieldSpec(
         wire_name="redirect_configuration",
         kind="list",
         fields=_Frontdoor_RoutingRule_RedirectConfigurationFields,
@@ -188,10 +188,10 @@ _Frontdoor_RoutingRuleFields = {
 }
 
 _Frontdoor_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -210,46 +210,46 @@ class FrontdoorConfig:
     routing_rule: Any = None
     timeouts: Any = None
 
-Frontdoor = sdk.ResourceBinding(
+Frontdoor = ubx.ResourceBinding(
     wire_type="azurerm_frontdoor",
     fields={
-        "friendly_name": sdk.FieldSpec(wire_name="friendly_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "load_balancer_enabled": sdk.FieldSpec(wire_name="load_balancer_enabled"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "backend_pool": sdk.FieldSpec(
+        "friendly_name": ubx.FieldSpec(wire_name="friendly_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "load_balancer_enabled": ubx.FieldSpec(wire_name="load_balancer_enabled"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "backend_pool": ubx.FieldSpec(
             wire_name="backend_pool",
             kind="list",
             fields=_Frontdoor_BackendPoolFields,
         ),
-        "backend_pool_health_probe": sdk.FieldSpec(
+        "backend_pool_health_probe": ubx.FieldSpec(
             wire_name="backend_pool_health_probe",
             kind="list",
             fields=_Frontdoor_BackendPoolHealthProbeFields,
         ),
-        "backend_pool_load_balancing": sdk.FieldSpec(
+        "backend_pool_load_balancing": ubx.FieldSpec(
             wire_name="backend_pool_load_balancing",
             kind="list",
             fields=_Frontdoor_BackendPoolLoadBalancingFields,
         ),
-        "backend_pool_settings": sdk.FieldSpec(
+        "backend_pool_settings": ubx.FieldSpec(
             wire_name="backend_pool_settings",
             kind="list",
             fields=_Frontdoor_BackendPoolSettingsFields,
         ),
-        "frontend_endpoint": sdk.FieldSpec(
+        "frontend_endpoint": ubx.FieldSpec(
             wire_name="frontend_endpoint",
             kind="list",
             fields=_Frontdoor_FrontendEndpointFields,
         ),
-        "routing_rule": sdk.FieldSpec(
+        "routing_rule": ubx.FieldSpec(
             wire_name="routing_rule",
             kind="list",
             fields=_Frontdoor_RoutingRuleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Frontdoor_TimeoutsFields,

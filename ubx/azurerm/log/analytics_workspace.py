@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnalyticsWorkspace_Identity:
@@ -21,17 +21,17 @@ class AnalyticsWorkspace_Timeouts:
     update: Any = None
 
 _AnalyticsWorkspace_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _AnalyticsWorkspace_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -55,31 +55,31 @@ class AnalyticsWorkspaceConfig:
     identity: Any = None
     timeouts: Any = None
 
-AnalyticsWorkspace = sdk.ResourceBinding(
+AnalyticsWorkspace = ubx.ResourceBinding(
     wire_type="azurerm_log_analytics_workspace",
     fields={
-        "allow_resource_only_permissions": sdk.FieldSpec(wire_name="allow_resource_only_permissions"),
-        "cmk_for_query_forced": sdk.FieldSpec(wire_name="cmk_for_query_forced"),
-        "daily_quota_gb": sdk.FieldSpec(wire_name="daily_quota_gb"),
-        "data_collection_rule_id": sdk.FieldSpec(wire_name="data_collection_rule_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "immediate_data_purge_on_30_days_enabled": sdk.FieldSpec(wire_name="immediate_data_purge_on_30_days_enabled"),
-        "internet_ingestion_access_type": sdk.FieldSpec(wire_name="internet_ingestion_access_type"),
-        "internet_query_access_type": sdk.FieldSpec(wire_name="internet_query_access_type"),
-        "local_authentication_enabled": sdk.FieldSpec(wire_name="local_authentication_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "reservation_capacity_in_gb_per_day": sdk.FieldSpec(wire_name="reservation_capacity_in_gb_per_day"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "retention_in_days": sdk.FieldSpec(wire_name="retention_in_days"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "identity": sdk.FieldSpec(
+        "allow_resource_only_permissions": ubx.FieldSpec(wire_name="allow_resource_only_permissions"),
+        "cmk_for_query_forced": ubx.FieldSpec(wire_name="cmk_for_query_forced"),
+        "daily_quota_gb": ubx.FieldSpec(wire_name="daily_quota_gb"),
+        "data_collection_rule_id": ubx.FieldSpec(wire_name="data_collection_rule_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "immediate_data_purge_on_30_days_enabled": ubx.FieldSpec(wire_name="immediate_data_purge_on_30_days_enabled"),
+        "internet_ingestion_access_type": ubx.FieldSpec(wire_name="internet_ingestion_access_type"),
+        "internet_query_access_type": ubx.FieldSpec(wire_name="internet_query_access_type"),
+        "local_authentication_enabled": ubx.FieldSpec(wire_name="local_authentication_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "reservation_capacity_in_gb_per_day": ubx.FieldSpec(wire_name="reservation_capacity_in_gb_per_day"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "retention_in_days": ubx.FieldSpec(wire_name="retention_in_days"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_AnalyticsWorkspace_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AnalyticsWorkspace_TimeoutsFields,

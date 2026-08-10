@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FunctionCollectorPolicy_IpfxEmission:
@@ -22,18 +22,18 @@ class FunctionCollectorPolicy_Timeouts:
     update: Any = None
 
 _FunctionCollectorPolicy_IpfxEmissionFields = {
-    "destination_types": sdk.FieldSpec(wire_name="destination_types"),
+    "destination_types": ubx.FieldSpec(wire_name="destination_types"),
 }
 
 _FunctionCollectorPolicy_IpfxIngestionFields = {
-    "source_resource_ids": sdk.FieldSpec(wire_name="source_resource_ids"),
+    "source_resource_ids": ubx.FieldSpec(wire_name="source_resource_ids"),
 }
 
 _FunctionCollectorPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -47,25 +47,25 @@ class FunctionCollectorPolicyConfig:
     ipfx_ingestion: Any = None
     timeouts: Any = None
 
-FunctionCollectorPolicy = sdk.ResourceBinding(
+FunctionCollectorPolicy = ubx.ResourceBinding(
     wire_type="azurerm_network_function_collector_policy",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "traffic_collector_id": sdk.FieldSpec(wire_name="traffic_collector_id"),
-        "ipfx_emission": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "traffic_collector_id": ubx.FieldSpec(wire_name="traffic_collector_id"),
+        "ipfx_emission": ubx.FieldSpec(
             wire_name="ipfx_emission",
             kind="list",
             fields=_FunctionCollectorPolicy_IpfxEmissionFields,
         ),
-        "ipfx_ingestion": sdk.FieldSpec(
+        "ipfx_ingestion": ubx.FieldSpec(
             wire_name="ipfx_ingestion",
             kind="list",
             fields=_FunctionCollectorPolicy_IpfxIngestionFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FunctionCollectorPolicy_TimeoutsFields,

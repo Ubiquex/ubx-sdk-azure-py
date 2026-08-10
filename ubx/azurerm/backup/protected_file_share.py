@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ProtectedFileShare_Timeouts:
@@ -14,10 +14,10 @@ class ProtectedFileShare_Timeouts:
     update: Any = None
 
 _ProtectedFileShare_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class ProtectedFileShareConfig:
     source_storage_account_id: Any = None
     timeouts: Any = None
 
-ProtectedFileShare = sdk.ResourceBinding(
+ProtectedFileShare = ubx.ResourceBinding(
     wire_type="azurerm_backup_protected_file_share",
     fields={
-        "backup_policy_id": sdk.FieldSpec(wire_name="backup_policy_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "recovery_vault_name": sdk.FieldSpec(wire_name="recovery_vault_name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "source_file_share_name": sdk.FieldSpec(wire_name="source_file_share_name"),
-        "source_storage_account_id": sdk.FieldSpec(wire_name="source_storage_account_id"),
-        "timeouts": sdk.FieldSpec(
+        "backup_policy_id": ubx.FieldSpec(wire_name="backup_policy_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "recovery_vault_name": ubx.FieldSpec(wire_name="recovery_vault_name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "source_file_share_name": ubx.FieldSpec(wire_name="source_file_share_name"),
+        "source_storage_account_id": ubx.FieldSpec(wire_name="source_storage_account_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ProtectedFileShare_TimeoutsFields,

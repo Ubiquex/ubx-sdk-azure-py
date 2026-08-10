@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MetricAlert_Action:
@@ -54,30 +54,30 @@ class MetricAlert_Timeouts:
     update: Any = None
 
 _MetricAlert_ActionFields = {
-    "action_group_id": sdk.FieldSpec(wire_name="action_group_id"),
-    "webhook_properties": sdk.FieldSpec(wire_name="webhook_properties"),
+    "action_group_id": ubx.FieldSpec(wire_name="action_group_id"),
+    "webhook_properties": ubx.FieldSpec(wire_name="webhook_properties"),
 }
 
 _MetricAlert_ApplicationInsightsWebTestLocationAvailabilityCriteriaFields = {
-    "component_id": sdk.FieldSpec(wire_name="component_id"),
-    "failed_location_count": sdk.FieldSpec(wire_name="failed_location_count"),
-    "web_test_id": sdk.FieldSpec(wire_name="web_test_id"),
+    "component_id": ubx.FieldSpec(wire_name="component_id"),
+    "failed_location_count": ubx.FieldSpec(wire_name="failed_location_count"),
+    "web_test_id": ubx.FieldSpec(wire_name="web_test_id"),
 }
 
 _MetricAlert_Criteria_DimensionFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "values": sdk.FieldSpec(wire_name="values"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "values": ubx.FieldSpec(wire_name="values"),
 }
 
 _MetricAlert_CriteriaFields = {
-    "aggregation": sdk.FieldSpec(wire_name="aggregation"),
-    "metric_name": sdk.FieldSpec(wire_name="metric_name"),
-    "metric_namespace": sdk.FieldSpec(wire_name="metric_namespace"),
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "skip_metric_validation": sdk.FieldSpec(wire_name="skip_metric_validation"),
-    "threshold": sdk.FieldSpec(wire_name="threshold"),
-    "dimension": sdk.FieldSpec(
+    "aggregation": ubx.FieldSpec(wire_name="aggregation"),
+    "metric_name": ubx.FieldSpec(wire_name="metric_name"),
+    "metric_namespace": ubx.FieldSpec(wire_name="metric_namespace"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "skip_metric_validation": ubx.FieldSpec(wire_name="skip_metric_validation"),
+    "threshold": ubx.FieldSpec(wire_name="threshold"),
+    "dimension": ubx.FieldSpec(
         wire_name="dimension",
         kind="list",
         fields=_MetricAlert_Criteria_DimensionFields,
@@ -85,16 +85,16 @@ _MetricAlert_CriteriaFields = {
 }
 
 _MetricAlert_DynamicCriteriaFields = {
-    "aggregation": sdk.FieldSpec(wire_name="aggregation"),
-    "alert_sensitivity": sdk.FieldSpec(wire_name="alert_sensitivity"),
-    "evaluation_failure_count": sdk.FieldSpec(wire_name="evaluation_failure_count"),
-    "evaluation_total_count": sdk.FieldSpec(wire_name="evaluation_total_count"),
-    "ignore_data_before": sdk.FieldSpec(wire_name="ignore_data_before"),
-    "metric_name": sdk.FieldSpec(wire_name="metric_name"),
-    "metric_namespace": sdk.FieldSpec(wire_name="metric_namespace"),
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "skip_metric_validation": sdk.FieldSpec(wire_name="skip_metric_validation"),
-    "dimension": sdk.FieldSpec(
+    "aggregation": ubx.FieldSpec(wire_name="aggregation"),
+    "alert_sensitivity": ubx.FieldSpec(wire_name="alert_sensitivity"),
+    "evaluation_failure_count": ubx.FieldSpec(wire_name="evaluation_failure_count"),
+    "evaluation_total_count": ubx.FieldSpec(wire_name="evaluation_total_count"),
+    "ignore_data_before": ubx.FieldSpec(wire_name="ignore_data_before"),
+    "metric_name": ubx.FieldSpec(wire_name="metric_name"),
+    "metric_namespace": ubx.FieldSpec(wire_name="metric_namespace"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "skip_metric_validation": ubx.FieldSpec(wire_name="skip_metric_validation"),
+    "dimension": ubx.FieldSpec(
         wire_name="dimension",
         kind="list",
         fields=_MetricAlert_Criteria_DimensionFields,
@@ -102,10 +102,10 @@ _MetricAlert_DynamicCriteriaFields = {
 }
 
 _MetricAlert_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -129,43 +129,43 @@ class MetricAlertConfig:
     dynamic_criteria: Any = None
     timeouts: Any = None
 
-MetricAlert = sdk.ResourceBinding(
+MetricAlert = ubx.ResourceBinding(
     wire_type="azurerm_monitor_metric_alert",
     fields={
-        "auto_mitigate": sdk.FieldSpec(wire_name="auto_mitigate"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "frequency": sdk.FieldSpec(wire_name="frequency"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "scopes": sdk.FieldSpec(wire_name="scopes"),
-        "severity": sdk.FieldSpec(wire_name="severity"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "target_resource_location": sdk.FieldSpec(wire_name="target_resource_location"),
-        "target_resource_type": sdk.FieldSpec(wire_name="target_resource_type"),
-        "window_size": sdk.FieldSpec(wire_name="window_size"),
-        "action": sdk.FieldSpec(
+        "auto_mitigate": ubx.FieldSpec(wire_name="auto_mitigate"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "frequency": ubx.FieldSpec(wire_name="frequency"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "scopes": ubx.FieldSpec(wire_name="scopes"),
+        "severity": ubx.FieldSpec(wire_name="severity"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "target_resource_location": ubx.FieldSpec(wire_name="target_resource_location"),
+        "target_resource_type": ubx.FieldSpec(wire_name="target_resource_type"),
+        "window_size": ubx.FieldSpec(wire_name="window_size"),
+        "action": ubx.FieldSpec(
             wire_name="action",
             kind="set",
             fields=_MetricAlert_ActionFields,
         ),
-        "application_insights_web_test_location_availability_criteria": sdk.FieldSpec(
+        "application_insights_web_test_location_availability_criteria": ubx.FieldSpec(
             wire_name="application_insights_web_test_location_availability_criteria",
             kind="list",
             fields=_MetricAlert_ApplicationInsightsWebTestLocationAvailabilityCriteriaFields,
         ),
-        "criteria": sdk.FieldSpec(
+        "criteria": ubx.FieldSpec(
             wire_name="criteria",
             kind="list",
             fields=_MetricAlert_CriteriaFields,
         ),
-        "dynamic_criteria": sdk.FieldSpec(
+        "dynamic_criteria": ubx.FieldSpec(
             wire_name="dynamic_criteria",
             kind="list",
             fields=_MetricAlert_DynamicCriteriaFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_MetricAlert_TimeoutsFields,

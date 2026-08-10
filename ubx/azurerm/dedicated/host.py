@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Host_Timeouts:
@@ -14,10 +14,10 @@ class Host_Timeouts:
     update: Any = None
 
 _Host_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -33,19 +33,19 @@ class HostConfig:
     tags: Any = None
     timeouts: Any = None
 
-Host = sdk.ResourceBinding(
+Host = ubx.ResourceBinding(
     wire_type="azurerm_dedicated_host",
     fields={
-        "auto_replace_on_failure": sdk.FieldSpec(wire_name="auto_replace_on_failure"),
-        "dedicated_host_group_id": sdk.FieldSpec(wire_name="dedicated_host_group_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "license_type": sdk.FieldSpec(wire_name="license_type"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "platform_fault_domain": sdk.FieldSpec(wire_name="platform_fault_domain"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "auto_replace_on_failure": ubx.FieldSpec(wire_name="auto_replace_on_failure"),
+        "dedicated_host_group_id": ubx.FieldSpec(wire_name="dedicated_host_group_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "license_type": ubx.FieldSpec(wire_name="license_type"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "platform_fault_domain": ubx.FieldSpec(wire_name="platform_fault_domain"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Host_TimeoutsFields,

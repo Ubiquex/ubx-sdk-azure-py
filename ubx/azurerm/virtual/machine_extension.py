@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MachineExtension_ProtectedSettingsFromKeyVault:
@@ -19,15 +19,15 @@ class MachineExtension_Timeouts:
     update: Any = None
 
 _MachineExtension_ProtectedSettingsFromKeyVaultFields = {
-    "secret_url": sdk.FieldSpec(wire_name="secret_url"),
-    "source_vault_id": sdk.FieldSpec(wire_name="source_vault_id"),
+    "secret_url": ubx.FieldSpec(wire_name="secret_url"),
+    "source_vault_id": ubx.FieldSpec(wire_name="source_vault_id"),
 }
 
 _MachineExtension_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -48,28 +48,28 @@ class MachineExtensionConfig:
     protected_settings_from_key_vault: Any = None
     timeouts: Any = None
 
-MachineExtension = sdk.ResourceBinding(
+MachineExtension = ubx.ResourceBinding(
     wire_type="azurerm_virtual_machine_extension",
     fields={
-        "auto_upgrade_minor_version": sdk.FieldSpec(wire_name="auto_upgrade_minor_version"),
-        "automatic_upgrade_enabled": sdk.FieldSpec(wire_name="automatic_upgrade_enabled"),
-        "failure_suppression_enabled": sdk.FieldSpec(wire_name="failure_suppression_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "protected_settings": sdk.FieldSpec(wire_name="protected_settings"),
-        "provision_after_extensions": sdk.FieldSpec(wire_name="provision_after_extensions"),
-        "publisher": sdk.FieldSpec(wire_name="publisher"),
-        "settings": sdk.FieldSpec(wire_name="settings"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "type": sdk.FieldSpec(wire_name="type"),
-        "type_handler_version": sdk.FieldSpec(wire_name="type_handler_version"),
-        "virtual_machine_id": sdk.FieldSpec(wire_name="virtual_machine_id"),
-        "protected_settings_from_key_vault": sdk.FieldSpec(
+        "auto_upgrade_minor_version": ubx.FieldSpec(wire_name="auto_upgrade_minor_version"),
+        "automatic_upgrade_enabled": ubx.FieldSpec(wire_name="automatic_upgrade_enabled"),
+        "failure_suppression_enabled": ubx.FieldSpec(wire_name="failure_suppression_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "protected_settings": ubx.FieldSpec(wire_name="protected_settings"),
+        "provision_after_extensions": ubx.FieldSpec(wire_name="provision_after_extensions"),
+        "publisher": ubx.FieldSpec(wire_name="publisher"),
+        "settings": ubx.FieldSpec(wire_name="settings"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "type": ubx.FieldSpec(wire_name="type"),
+        "type_handler_version": ubx.FieldSpec(wire_name="type_handler_version"),
+        "virtual_machine_id": ubx.FieldSpec(wire_name="virtual_machine_id"),
+        "protected_settings_from_key_vault": ubx.FieldSpec(
             wire_name="protected_settings_from_key_vault",
             kind="list",
             fields=_MachineExtension_ProtectedSettingsFromKeyVaultFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_MachineExtension_TimeoutsFields,

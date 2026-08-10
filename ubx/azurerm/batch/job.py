@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Job_Timeouts:
@@ -14,10 +14,10 @@ class Job_Timeouts:
     update: Any = None
 
 _Job_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class JobConfig:
     task_retry_maximum: Any = None
     timeouts: Any = None
 
-Job = sdk.ResourceBinding(
+Job = ubx.ResourceBinding(
     wire_type="azurerm_batch_job",
     fields={
-        "batch_pool_id": sdk.FieldSpec(wire_name="batch_pool_id"),
-        "common_environment_properties": sdk.FieldSpec(wire_name="common_environment_properties"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "priority": sdk.FieldSpec(wire_name="priority"),
-        "task_retry_maximum": sdk.FieldSpec(wire_name="task_retry_maximum"),
-        "timeouts": sdk.FieldSpec(
+        "batch_pool_id": ubx.FieldSpec(wire_name="batch_pool_id"),
+        "common_environment_properties": ubx.FieldSpec(wire_name="common_environment_properties"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "priority": ubx.FieldSpec(wire_name="priority"),
+        "task_retry_maximum": ubx.FieldSpec(wire_name="task_retry_maximum"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Job_TimeoutsFields,

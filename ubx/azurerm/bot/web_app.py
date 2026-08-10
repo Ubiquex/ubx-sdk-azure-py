@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class WebApp_Timeouts:
@@ -14,10 +14,10 @@ class WebApp_Timeouts:
     update: Any = None
 
 _WebApp_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -41,27 +41,27 @@ class WebAppConfig:
     tags: Any = None
     timeouts: Any = None
 
-WebApp = sdk.ResourceBinding(
+WebApp = ubx.ResourceBinding(
     wire_type="azurerm_bot_web_app",
     fields={
-        "developer_app_insights_api_key": sdk.FieldSpec(wire_name="developer_app_insights_api_key"),
-        "developer_app_insights_application_id": sdk.FieldSpec(wire_name="developer_app_insights_application_id"),
-        "developer_app_insights_key": sdk.FieldSpec(wire_name="developer_app_insights_key"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "endpoint": sdk.FieldSpec(wire_name="endpoint"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "luis_app_ids": sdk.FieldSpec(wire_name="luis_app_ids"),
-        "luis_key": sdk.FieldSpec(wire_name="luis_key"),
-        "microsoft_app_id": sdk.FieldSpec(wire_name="microsoft_app_id"),
-        "microsoft_app_tenant_id": sdk.FieldSpec(wire_name="microsoft_app_tenant_id"),
-        "microsoft_app_type": sdk.FieldSpec(wire_name="microsoft_app_type"),
-        "microsoft_app_user_assigned_identity_id": sdk.FieldSpec(wire_name="microsoft_app_user_assigned_identity_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "developer_app_insights_api_key": ubx.FieldSpec(wire_name="developer_app_insights_api_key"),
+        "developer_app_insights_application_id": ubx.FieldSpec(wire_name="developer_app_insights_application_id"),
+        "developer_app_insights_key": ubx.FieldSpec(wire_name="developer_app_insights_key"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "endpoint": ubx.FieldSpec(wire_name="endpoint"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "luis_app_ids": ubx.FieldSpec(wire_name="luis_app_ids"),
+        "luis_key": ubx.FieldSpec(wire_name="luis_key"),
+        "microsoft_app_id": ubx.FieldSpec(wire_name="microsoft_app_id"),
+        "microsoft_app_tenant_id": ubx.FieldSpec(wire_name="microsoft_app_tenant_id"),
+        "microsoft_app_type": ubx.FieldSpec(wire_name="microsoft_app_type"),
+        "microsoft_app_user_assigned_identity_id": ubx.FieldSpec(wire_name="microsoft_app_user_assigned_identity_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_WebApp_TimeoutsFields,

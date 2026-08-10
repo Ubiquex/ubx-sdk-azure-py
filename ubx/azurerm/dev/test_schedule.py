@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TestSchedule_DailyRecurrence:
@@ -33,29 +33,29 @@ class TestSchedule_WeeklyRecurrence:
     week_days: Any = None
 
 _TestSchedule_DailyRecurrenceFields = {
-    "time": sdk.FieldSpec(wire_name="time"),
+    "time": ubx.FieldSpec(wire_name="time"),
 }
 
 _TestSchedule_HourlyRecurrenceFields = {
-    "minute": sdk.FieldSpec(wire_name="minute"),
+    "minute": ubx.FieldSpec(wire_name="minute"),
 }
 
 _TestSchedule_NotificationSettingsFields = {
-    "status": sdk.FieldSpec(wire_name="status"),
-    "time_in_minutes": sdk.FieldSpec(wire_name="time_in_minutes"),
-    "webhook_url": sdk.FieldSpec(wire_name="webhook_url"),
+    "status": ubx.FieldSpec(wire_name="status"),
+    "time_in_minutes": ubx.FieldSpec(wire_name="time_in_minutes"),
+    "webhook_url": ubx.FieldSpec(wire_name="webhook_url"),
 }
 
 _TestSchedule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _TestSchedule_WeeklyRecurrenceFields = {
-    "time": sdk.FieldSpec(wire_name="time"),
-    "week_days": sdk.FieldSpec(wire_name="week_days"),
+    "time": ubx.FieldSpec(wire_name="time"),
+    "week_days": ubx.FieldSpec(wire_name="week_days"),
 }
 
 @dataclasses.dataclass
@@ -75,39 +75,39 @@ class TestScheduleConfig:
     timeouts: Any = None
     weekly_recurrence: Any = None
 
-TestSchedule = sdk.ResourceBinding(
+TestSchedule = ubx.ResourceBinding(
     wire_type="azurerm_dev_test_schedule",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "lab_name": sdk.FieldSpec(wire_name="lab_name"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "status": sdk.FieldSpec(wire_name="status"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "task_type": sdk.FieldSpec(wire_name="task_type"),
-        "time_zone_id": sdk.FieldSpec(wire_name="time_zone_id"),
-        "daily_recurrence": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "lab_name": ubx.FieldSpec(wire_name="lab_name"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "status": ubx.FieldSpec(wire_name="status"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "task_type": ubx.FieldSpec(wire_name="task_type"),
+        "time_zone_id": ubx.FieldSpec(wire_name="time_zone_id"),
+        "daily_recurrence": ubx.FieldSpec(
             wire_name="daily_recurrence",
             kind="list",
             fields=_TestSchedule_DailyRecurrenceFields,
         ),
-        "hourly_recurrence": sdk.FieldSpec(
+        "hourly_recurrence": ubx.FieldSpec(
             wire_name="hourly_recurrence",
             kind="list",
             fields=_TestSchedule_HourlyRecurrenceFields,
         ),
-        "notification_settings": sdk.FieldSpec(
+        "notification_settings": ubx.FieldSpec(
             wire_name="notification_settings",
             kind="list",
             fields=_TestSchedule_NotificationSettingsFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_TestSchedule_TimeoutsFields,
         ),
-        "weekly_recurrence": sdk.FieldSpec(
+        "weekly_recurrence": ubx.FieldSpec(
             wire_name="weekly_recurrence",
             kind="list",
             fields=_TestSchedule_WeeklyRecurrenceFields,

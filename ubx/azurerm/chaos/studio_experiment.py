@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class StudioExperiment_Identity:
@@ -44,28 +44,28 @@ class StudioExperiment_Timeouts:
     update: Any = None
 
 _StudioExperiment_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _StudioExperiment_SelectorsFields = {
-    "chaos_studio_target_ids": sdk.FieldSpec(wire_name="chaos_studio_target_ids"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "chaos_studio_target_ids": ubx.FieldSpec(wire_name="chaos_studio_target_ids"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _StudioExperiment_Steps_Branch_ActionsFields = {
-    "action_type": sdk.FieldSpec(wire_name="action_type"),
-    "duration": sdk.FieldSpec(wire_name="duration"),
-    "parameters": sdk.FieldSpec(wire_name="parameters"),
-    "selector_name": sdk.FieldSpec(wire_name="selector_name"),
-    "urn": sdk.FieldSpec(wire_name="urn"),
+    "action_type": ubx.FieldSpec(wire_name="action_type"),
+    "duration": ubx.FieldSpec(wire_name="duration"),
+    "parameters": ubx.FieldSpec(wire_name="parameters"),
+    "selector_name": ubx.FieldSpec(wire_name="selector_name"),
+    "urn": ubx.FieldSpec(wire_name="urn"),
 }
 
 _StudioExperiment_Steps_BranchFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "actions": sdk.FieldSpec(
+    "name": ubx.FieldSpec(wire_name="name"),
+    "actions": ubx.FieldSpec(
         wire_name="actions",
         kind="list",
         fields=_StudioExperiment_Steps_Branch_ActionsFields,
@@ -73,8 +73,8 @@ _StudioExperiment_Steps_BranchFields = {
 }
 
 _StudioExperiment_StepsFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "branch": sdk.FieldSpec(
+    "name": ubx.FieldSpec(wire_name="name"),
+    "branch": ubx.FieldSpec(
         wire_name="branch",
         kind="list",
         fields=_StudioExperiment_Steps_BranchFields,
@@ -82,10 +82,10 @@ _StudioExperiment_StepsFields = {
 }
 
 _StudioExperiment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -99,29 +99,29 @@ class StudioExperimentConfig:
     steps: Any = None
     timeouts: Any = None
 
-StudioExperiment = sdk.ResourceBinding(
+StudioExperiment = ubx.ResourceBinding(
     wire_type="azurerm_chaos_studio_experiment",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "identity": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_StudioExperiment_IdentityFields,
         ),
-        "selectors": sdk.FieldSpec(
+        "selectors": ubx.FieldSpec(
             wire_name="selectors",
             kind="list",
             fields=_StudioExperiment_SelectorsFields,
         ),
-        "steps": sdk.FieldSpec(
+        "steps": ubx.FieldSpec(
             wire_name="steps",
             kind="list",
             fields=_StudioExperiment_StepsFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_StudioExperiment_TimeoutsFields,

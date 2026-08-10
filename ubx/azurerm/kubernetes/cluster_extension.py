@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ClusterExtension_Plan:
@@ -22,18 +22,18 @@ class ClusterExtension_Timeouts:
     update: Any = None
 
 _ClusterExtension_PlanFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "product": sdk.FieldSpec(wire_name="product"),
-    "promotion_code": sdk.FieldSpec(wire_name="promotion_code"),
-    "publisher": sdk.FieldSpec(wire_name="publisher"),
-    "version": sdk.FieldSpec(wire_name="version"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "product": ubx.FieldSpec(wire_name="product"),
+    "promotion_code": ubx.FieldSpec(wire_name="promotion_code"),
+    "publisher": ubx.FieldSpec(wire_name="publisher"),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _ClusterExtension_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -51,25 +51,25 @@ class ClusterExtensionConfig:
     plan: Any = None
     timeouts: Any = None
 
-ClusterExtension = sdk.ResourceBinding(
+ClusterExtension = ubx.ResourceBinding(
     wire_type="azurerm_kubernetes_cluster_extension",
     fields={
-        "cluster_id": sdk.FieldSpec(wire_name="cluster_id"),
-        "configuration_protected_settings": sdk.FieldSpec(wire_name="configuration_protected_settings"),
-        "configuration_settings": sdk.FieldSpec(wire_name="configuration_settings"),
-        "extension_type": sdk.FieldSpec(wire_name="extension_type"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "release_namespace": sdk.FieldSpec(wire_name="release_namespace"),
-        "release_train": sdk.FieldSpec(wire_name="release_train"),
-        "target_namespace": sdk.FieldSpec(wire_name="target_namespace"),
-        "version": sdk.FieldSpec(wire_name="version"),
-        "plan": sdk.FieldSpec(
+        "cluster_id": ubx.FieldSpec(wire_name="cluster_id"),
+        "configuration_protected_settings": ubx.FieldSpec(wire_name="configuration_protected_settings"),
+        "configuration_settings": ubx.FieldSpec(wire_name="configuration_settings"),
+        "extension_type": ubx.FieldSpec(wire_name="extension_type"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "release_namespace": ubx.FieldSpec(wire_name="release_namespace"),
+        "release_train": ubx.FieldSpec(wire_name="release_train"),
+        "target_namespace": ubx.FieldSpec(wire_name="target_namespace"),
+        "version": ubx.FieldSpec(wire_name="version"),
+        "plan": ubx.FieldSpec(
             wire_name="plan",
             kind="list",
             fields=_ClusterExtension_PlanFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ClusterExtension_TimeoutsFields,

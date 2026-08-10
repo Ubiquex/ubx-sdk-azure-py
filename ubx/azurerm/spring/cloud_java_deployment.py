@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudJavaDeployment_Quota:
@@ -19,15 +19,15 @@ class CloudJavaDeployment_Timeouts:
     update: Any = None
 
 _CloudJavaDeployment_QuotaFields = {
-    "cpu": sdk.FieldSpec(wire_name="cpu"),
-    "memory": sdk.FieldSpec(wire_name="memory"),
+    "cpu": ubx.FieldSpec(wire_name="cpu"),
+    "memory": ubx.FieldSpec(wire_name="memory"),
 }
 
 _CloudJavaDeployment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -42,22 +42,22 @@ class CloudJavaDeploymentConfig:
     quota: Any = None
     timeouts: Any = None
 
-CloudJavaDeployment = sdk.ResourceBinding(
+CloudJavaDeployment = ubx.ResourceBinding(
     wire_type="azurerm_spring_cloud_java_deployment",
     fields={
-        "environment_variables": sdk.FieldSpec(wire_name="environment_variables"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "instance_count": sdk.FieldSpec(wire_name="instance_count"),
-        "jvm_options": sdk.FieldSpec(wire_name="jvm_options"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "runtime_version": sdk.FieldSpec(wire_name="runtime_version"),
-        "spring_cloud_app_id": sdk.FieldSpec(wire_name="spring_cloud_app_id"),
-        "quota": sdk.FieldSpec(
+        "environment_variables": ubx.FieldSpec(wire_name="environment_variables"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "instance_count": ubx.FieldSpec(wire_name="instance_count"),
+        "jvm_options": ubx.FieldSpec(wire_name="jvm_options"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "runtime_version": ubx.FieldSpec(wire_name="runtime_version"),
+        "spring_cloud_app_id": ubx.FieldSpec(wire_name="spring_cloud_app_id"),
+        "quota": ubx.FieldSpec(
             wire_name="quota",
             kind="list",
             fields=_CloudJavaDeployment_QuotaFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CloudJavaDeployment_TimeoutsFields,

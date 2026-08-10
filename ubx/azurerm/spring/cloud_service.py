@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudService_ConfigServerGitSetting_HttpBasicAuth:
@@ -77,29 +77,29 @@ class CloudService_Trace:
     sample_rate: Any = None
 
 _CloudService_ConfigServerGitSetting_HttpBasicAuthFields = {
-    "password": sdk.FieldSpec(wire_name="password"),
-    "username": sdk.FieldSpec(wire_name="username"),
+    "password": ubx.FieldSpec(wire_name="password"),
+    "username": ubx.FieldSpec(wire_name="username"),
 }
 
 _CloudService_ConfigServerGitSetting_Repository_SshAuthFields = {
-    "host_key": sdk.FieldSpec(wire_name="host_key"),
-    "host_key_algorithm": sdk.FieldSpec(wire_name="host_key_algorithm"),
-    "private_key": sdk.FieldSpec(wire_name="private_key"),
-    "strict_host_key_checking_enabled": sdk.FieldSpec(wire_name="strict_host_key_checking_enabled"),
+    "host_key": ubx.FieldSpec(wire_name="host_key"),
+    "host_key_algorithm": ubx.FieldSpec(wire_name="host_key_algorithm"),
+    "private_key": ubx.FieldSpec(wire_name="private_key"),
+    "strict_host_key_checking_enabled": ubx.FieldSpec(wire_name="strict_host_key_checking_enabled"),
 }
 
 _CloudService_ConfigServerGitSetting_RepositoryFields = {
-    "label": sdk.FieldSpec(wire_name="label"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "pattern": sdk.FieldSpec(wire_name="pattern"),
-    "search_paths": sdk.FieldSpec(wire_name="search_paths"),
-    "uri": sdk.FieldSpec(wire_name="uri"),
-    "http_basic_auth": sdk.FieldSpec(
+    "label": ubx.FieldSpec(wire_name="label"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "pattern": ubx.FieldSpec(wire_name="pattern"),
+    "search_paths": ubx.FieldSpec(wire_name="search_paths"),
+    "uri": ubx.FieldSpec(wire_name="uri"),
+    "http_basic_auth": ubx.FieldSpec(
         wire_name="http_basic_auth",
         kind="list",
         fields=_CloudService_ConfigServerGitSetting_HttpBasicAuthFields,
     ),
-    "ssh_auth": sdk.FieldSpec(
+    "ssh_auth": ubx.FieldSpec(
         wire_name="ssh_auth",
         kind="list",
         fields=_CloudService_ConfigServerGitSetting_Repository_SshAuthFields,
@@ -107,20 +107,20 @@ _CloudService_ConfigServerGitSetting_RepositoryFields = {
 }
 
 _CloudService_ConfigServerGitSettingFields = {
-    "label": sdk.FieldSpec(wire_name="label"),
-    "search_paths": sdk.FieldSpec(wire_name="search_paths"),
-    "uri": sdk.FieldSpec(wire_name="uri"),
-    "http_basic_auth": sdk.FieldSpec(
+    "label": ubx.FieldSpec(wire_name="label"),
+    "search_paths": ubx.FieldSpec(wire_name="search_paths"),
+    "uri": ubx.FieldSpec(wire_name="uri"),
+    "http_basic_auth": ubx.FieldSpec(
         wire_name="http_basic_auth",
         kind="list",
         fields=_CloudService_ConfigServerGitSetting_HttpBasicAuthFields,
     ),
-    "repository": sdk.FieldSpec(
+    "repository": ubx.FieldSpec(
         wire_name="repository",
         kind="list",
         fields=_CloudService_ConfigServerGitSetting_RepositoryFields,
     ),
-    "ssh_auth": sdk.FieldSpec(
+    "ssh_auth": ubx.FieldSpec(
         wire_name="ssh_auth",
         kind="list",
         fields=_CloudService_ConfigServerGitSetting_Repository_SshAuthFields,
@@ -128,42 +128,42 @@ _CloudService_ConfigServerGitSettingFields = {
 }
 
 _CloudService_ContainerRegistryFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "password": sdk.FieldSpec(wire_name="password"),
-    "server": sdk.FieldSpec(wire_name="server"),
-    "username": sdk.FieldSpec(wire_name="username"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "password": ubx.FieldSpec(wire_name="password"),
+    "server": ubx.FieldSpec(wire_name="server"),
+    "username": ubx.FieldSpec(wire_name="username"),
 }
 
 _CloudService_DefaultBuildServiceFields = {
-    "container_registry_name": sdk.FieldSpec(wire_name="container_registry_name"),
+    "container_registry_name": ubx.FieldSpec(wire_name="container_registry_name"),
 }
 
 _CloudService_MarketplaceFields = {
-    "plan": sdk.FieldSpec(wire_name="plan"),
-    "product": sdk.FieldSpec(wire_name="product"),
-    "publisher": sdk.FieldSpec(wire_name="publisher"),
+    "plan": ubx.FieldSpec(wire_name="plan"),
+    "product": ubx.FieldSpec(wire_name="product"),
+    "publisher": ubx.FieldSpec(wire_name="publisher"),
 }
 
 _CloudService_NetworkFields = {
-    "app_network_resource_group": sdk.FieldSpec(wire_name="app_network_resource_group"),
-    "app_subnet_id": sdk.FieldSpec(wire_name="app_subnet_id"),
-    "cidr_ranges": sdk.FieldSpec(wire_name="cidr_ranges"),
-    "outbound_type": sdk.FieldSpec(wire_name="outbound_type"),
-    "read_timeout_seconds": sdk.FieldSpec(wire_name="read_timeout_seconds"),
-    "service_runtime_network_resource_group": sdk.FieldSpec(wire_name="service_runtime_network_resource_group"),
-    "service_runtime_subnet_id": sdk.FieldSpec(wire_name="service_runtime_subnet_id"),
+    "app_network_resource_group": ubx.FieldSpec(wire_name="app_network_resource_group"),
+    "app_subnet_id": ubx.FieldSpec(wire_name="app_subnet_id"),
+    "cidr_ranges": ubx.FieldSpec(wire_name="cidr_ranges"),
+    "outbound_type": ubx.FieldSpec(wire_name="outbound_type"),
+    "read_timeout_seconds": ubx.FieldSpec(wire_name="read_timeout_seconds"),
+    "service_runtime_network_resource_group": ubx.FieldSpec(wire_name="service_runtime_network_resource_group"),
+    "service_runtime_subnet_id": ubx.FieldSpec(wire_name="service_runtime_subnet_id"),
 }
 
 _CloudService_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _CloudService_TraceFields = {
-    "connection_string": sdk.FieldSpec(wire_name="connection_string"),
-    "sample_rate": sdk.FieldSpec(wire_name="sample_rate"),
+    "connection_string": ubx.FieldSpec(wire_name="connection_string"),
+    "sample_rate": ubx.FieldSpec(wire_name="sample_rate"),
 }
 
 @dataclasses.dataclass
@@ -188,52 +188,52 @@ class CloudServiceConfig:
     timeouts: Any = None
     trace: Any = None
 
-CloudService = sdk.ResourceBinding(
+CloudService = ubx.ResourceBinding(
     wire_type="azurerm_spring_cloud_service",
     fields={
-        "build_agent_pool_size": sdk.FieldSpec(wire_name="build_agent_pool_size"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "log_stream_public_endpoint_enabled": sdk.FieldSpec(wire_name="log_stream_public_endpoint_enabled"),
-        "managed_environment_id": sdk.FieldSpec(wire_name="managed_environment_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "service_registry_enabled": sdk.FieldSpec(wire_name="service_registry_enabled"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "sku_tier": sdk.FieldSpec(wire_name="sku_tier"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "zone_redundant": sdk.FieldSpec(wire_name="zone_redundant"),
-        "config_server_git_setting": sdk.FieldSpec(
+        "build_agent_pool_size": ubx.FieldSpec(wire_name="build_agent_pool_size"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "log_stream_public_endpoint_enabled": ubx.FieldSpec(wire_name="log_stream_public_endpoint_enabled"),
+        "managed_environment_id": ubx.FieldSpec(wire_name="managed_environment_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "service_registry_enabled": ubx.FieldSpec(wire_name="service_registry_enabled"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "sku_tier": ubx.FieldSpec(wire_name="sku_tier"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "zone_redundant": ubx.FieldSpec(wire_name="zone_redundant"),
+        "config_server_git_setting": ubx.FieldSpec(
             wire_name="config_server_git_setting",
             kind="list",
             fields=_CloudService_ConfigServerGitSettingFields,
         ),
-        "container_registry": sdk.FieldSpec(
+        "container_registry": ubx.FieldSpec(
             wire_name="container_registry",
             kind="list",
             fields=_CloudService_ContainerRegistryFields,
         ),
-        "default_build_service": sdk.FieldSpec(
+        "default_build_service": ubx.FieldSpec(
             wire_name="default_build_service",
             kind="list",
             fields=_CloudService_DefaultBuildServiceFields,
         ),
-        "marketplace": sdk.FieldSpec(
+        "marketplace": ubx.FieldSpec(
             wire_name="marketplace",
             kind="list",
             fields=_CloudService_MarketplaceFields,
         ),
-        "network": sdk.FieldSpec(
+        "network": ubx.FieldSpec(
             wire_name="network",
             kind="list",
             fields=_CloudService_NetworkFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CloudService_TimeoutsFields,
         ),
-        "trace": sdk.FieldSpec(
+        "trace": ubx.FieldSpec(
             wire_name="trace",
             kind="list",
             fields=_CloudService_TraceFields,

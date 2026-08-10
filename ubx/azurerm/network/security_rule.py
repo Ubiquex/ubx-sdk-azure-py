@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SecurityRule_Timeouts:
@@ -14,10 +14,10 @@ class SecurityRule_Timeouts:
     update: Any = None
 
 _SecurityRule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -43,29 +43,29 @@ class SecurityRuleConfig:
     source_port_ranges: Any = None
     timeouts: Any = None
 
-SecurityRule = sdk.ResourceBinding(
+SecurityRule = ubx.ResourceBinding(
     wire_type="azurerm_network_security_rule",
     fields={
-        "access": sdk.FieldSpec(wire_name="access"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "destination_address_prefix": sdk.FieldSpec(wire_name="destination_address_prefix"),
-        "destination_address_prefixes": sdk.FieldSpec(wire_name="destination_address_prefixes"),
-        "destination_application_security_group_ids": sdk.FieldSpec(wire_name="destination_application_security_group_ids"),
-        "destination_port_range": sdk.FieldSpec(wire_name="destination_port_range"),
-        "destination_port_ranges": sdk.FieldSpec(wire_name="destination_port_ranges"),
-        "direction": sdk.FieldSpec(wire_name="direction"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "network_security_group_name": sdk.FieldSpec(wire_name="network_security_group_name"),
-        "priority": sdk.FieldSpec(wire_name="priority"),
-        "protocol": sdk.FieldSpec(wire_name="protocol"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "source_address_prefix": sdk.FieldSpec(wire_name="source_address_prefix"),
-        "source_address_prefixes": sdk.FieldSpec(wire_name="source_address_prefixes"),
-        "source_application_security_group_ids": sdk.FieldSpec(wire_name="source_application_security_group_ids"),
-        "source_port_range": sdk.FieldSpec(wire_name="source_port_range"),
-        "source_port_ranges": sdk.FieldSpec(wire_name="source_port_ranges"),
-        "timeouts": sdk.FieldSpec(
+        "access": ubx.FieldSpec(wire_name="access"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "destination_address_prefix": ubx.FieldSpec(wire_name="destination_address_prefix"),
+        "destination_address_prefixes": ubx.FieldSpec(wire_name="destination_address_prefixes"),
+        "destination_application_security_group_ids": ubx.FieldSpec(wire_name="destination_application_security_group_ids"),
+        "destination_port_range": ubx.FieldSpec(wire_name="destination_port_range"),
+        "destination_port_ranges": ubx.FieldSpec(wire_name="destination_port_ranges"),
+        "direction": ubx.FieldSpec(wire_name="direction"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network_security_group_name": ubx.FieldSpec(wire_name="network_security_group_name"),
+        "priority": ubx.FieldSpec(wire_name="priority"),
+        "protocol": ubx.FieldSpec(wire_name="protocol"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "source_address_prefix": ubx.FieldSpec(wire_name="source_address_prefix"),
+        "source_address_prefixes": ubx.FieldSpec(wire_name="source_address_prefixes"),
+        "source_application_security_group_ids": ubx.FieldSpec(wire_name="source_application_security_group_ids"),
+        "source_port_range": ubx.FieldSpec(wire_name="source_port_range"),
+        "source_port_ranges": ubx.FieldSpec(wire_name="source_port_ranges"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SecurityRule_TimeoutsFields,

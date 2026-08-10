@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RouteGateway_Timeouts:
@@ -14,10 +14,10 @@ class RouteGateway_Timeouts:
     update: Any = None
 
 _RouteGateway_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -32,18 +32,18 @@ class RouteGatewayConfig:
     virtual_hub_id: Any = None
     timeouts: Any = None
 
-RouteGateway = sdk.ResourceBinding(
+RouteGateway = ubx.ResourceBinding(
     wire_type="azurerm_express_route_gateway",
     fields={
-        "allow_non_virtual_wan_traffic": sdk.FieldSpec(wire_name="allow_non_virtual_wan_traffic"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "scale_units": sdk.FieldSpec(wire_name="scale_units"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "virtual_hub_id": sdk.FieldSpec(wire_name="virtual_hub_id"),
-        "timeouts": sdk.FieldSpec(
+        "allow_non_virtual_wan_traffic": ubx.FieldSpec(wire_name="allow_non_virtual_wan_traffic"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "scale_units": ubx.FieldSpec(wire_name="scale_units"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "virtual_hub_id": ubx.FieldSpec(wire_name="virtual_hub_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RouteGateway_TimeoutsFields,

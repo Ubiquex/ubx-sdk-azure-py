@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FleetUpdateRun_ManagedClusterUpdate_NodeImageSelection:
@@ -38,21 +38,21 @@ class FleetUpdateRun_Timeouts:
     update: Any = None
 
 _FleetUpdateRun_ManagedClusterUpdate_NodeImageSelectionFields = {
-    "type": sdk.FieldSpec(wire_name="type"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _FleetUpdateRun_ManagedClusterUpdate_UpgradeFields = {
-    "kubernetes_version": sdk.FieldSpec(wire_name="kubernetes_version"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "kubernetes_version": ubx.FieldSpec(wire_name="kubernetes_version"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _FleetUpdateRun_ManagedClusterUpdateFields = {
-    "node_image_selection": sdk.FieldSpec(
+    "node_image_selection": ubx.FieldSpec(
         wire_name="node_image_selection",
         kind="list",
         fields=_FleetUpdateRun_ManagedClusterUpdate_NodeImageSelectionFields,
     ),
-    "upgrade": sdk.FieldSpec(
+    "upgrade": ubx.FieldSpec(
         wire_name="upgrade",
         kind="list",
         fields=_FleetUpdateRun_ManagedClusterUpdate_UpgradeFields,
@@ -60,13 +60,13 @@ _FleetUpdateRun_ManagedClusterUpdateFields = {
 }
 
 _FleetUpdateRun_Stage_GroupFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _FleetUpdateRun_StageFields = {
-    "after_stage_wait_in_seconds": sdk.FieldSpec(wire_name="after_stage_wait_in_seconds"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "group": sdk.FieldSpec(
+    "after_stage_wait_in_seconds": ubx.FieldSpec(wire_name="after_stage_wait_in_seconds"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "group": ubx.FieldSpec(
         wire_name="group",
         kind="list",
         fields=_FleetUpdateRun_Stage_GroupFields,
@@ -74,10 +74,10 @@ _FleetUpdateRun_StageFields = {
 }
 
 _FleetUpdateRun_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -90,24 +90,24 @@ class FleetUpdateRunConfig:
     stage: Any = None
     timeouts: Any = None
 
-FleetUpdateRun = sdk.ResourceBinding(
+FleetUpdateRun = ubx.ResourceBinding(
     wire_type="azurerm_kubernetes_fleet_update_run",
     fields={
-        "fleet_update_strategy_id": sdk.FieldSpec(wire_name="fleet_update_strategy_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "kubernetes_fleet_manager_id": sdk.FieldSpec(wire_name="kubernetes_fleet_manager_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "managed_cluster_update": sdk.FieldSpec(
+        "fleet_update_strategy_id": ubx.FieldSpec(wire_name="fleet_update_strategy_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "kubernetes_fleet_manager_id": ubx.FieldSpec(wire_name="kubernetes_fleet_manager_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "managed_cluster_update": ubx.FieldSpec(
             wire_name="managed_cluster_update",
             kind="list",
             fields=_FleetUpdateRun_ManagedClusterUpdateFields,
         ),
-        "stage": sdk.FieldSpec(
+        "stage": ubx.FieldSpec(
             wire_name="stage",
             kind="list",
             fields=_FleetUpdateRun_StageFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FleetUpdateRun_TimeoutsFields,

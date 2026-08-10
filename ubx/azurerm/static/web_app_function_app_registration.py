@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class WebAppFunctionAppRegistration_Timeouts:
@@ -13,9 +13,9 @@ class WebAppFunctionAppRegistration_Timeouts:
     read: Any = None
 
 _WebAppFunctionAppRegistration_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -25,13 +25,13 @@ class WebAppFunctionAppRegistrationConfig:
     static_web_app_id: Any = None
     timeouts: Any = None
 
-WebAppFunctionAppRegistration = sdk.ResourceBinding(
+WebAppFunctionAppRegistration = ubx.ResourceBinding(
     wire_type="azurerm_static_web_app_function_app_registration",
     fields={
-        "function_app_id": sdk.FieldSpec(wire_name="function_app_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "static_web_app_id": sdk.FieldSpec(wire_name="static_web_app_id"),
-        "timeouts": sdk.FieldSpec(
+        "function_app_id": ubx.FieldSpec(wire_name="function_app_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "static_web_app_id": ubx.FieldSpec(wire_name="static_web_app_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_WebAppFunctionAppRegistration_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ProtectionBackupPolicyDataLakeStorage_RetentionRule:
@@ -23,19 +23,19 @@ class ProtectionBackupPolicyDataLakeStorage_Timeouts:
     read: Any = None
 
 _ProtectionBackupPolicyDataLakeStorage_RetentionRuleFields = {
-    "absolute_criteria": sdk.FieldSpec(wire_name="absolute_criteria"),
-    "days_of_week": sdk.FieldSpec(wire_name="days_of_week"),
-    "duration": sdk.FieldSpec(wire_name="duration"),
-    "months_of_year": sdk.FieldSpec(wire_name="months_of_year"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "scheduled_backup_times": sdk.FieldSpec(wire_name="scheduled_backup_times"),
-    "weeks_of_month": sdk.FieldSpec(wire_name="weeks_of_month"),
+    "absolute_criteria": ubx.FieldSpec(wire_name="absolute_criteria"),
+    "days_of_week": ubx.FieldSpec(wire_name="days_of_week"),
+    "duration": ubx.FieldSpec(wire_name="duration"),
+    "months_of_year": ubx.FieldSpec(wire_name="months_of_year"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "scheduled_backup_times": ubx.FieldSpec(wire_name="scheduled_backup_times"),
+    "weeks_of_month": ubx.FieldSpec(wire_name="weeks_of_month"),
 }
 
 _ProtectionBackupPolicyDataLakeStorage_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -49,21 +49,21 @@ class ProtectionBackupPolicyDataLakeStorageConfig:
     retention_rule: Any = None
     timeouts: Any = None
 
-ProtectionBackupPolicyDataLakeStorage = sdk.ResourceBinding(
+ProtectionBackupPolicyDataLakeStorage = ubx.ResourceBinding(
     wire_type="azurerm_data_protection_backup_policy_data_lake_storage",
     fields={
-        "backup_schedule": sdk.FieldSpec(wire_name="backup_schedule"),
-        "data_protection_backup_vault_id": sdk.FieldSpec(wire_name="data_protection_backup_vault_id"),
-        "default_retention_duration": sdk.FieldSpec(wire_name="default_retention_duration"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "time_zone": sdk.FieldSpec(wire_name="time_zone"),
-        "retention_rule": sdk.FieldSpec(
+        "backup_schedule": ubx.FieldSpec(wire_name="backup_schedule"),
+        "data_protection_backup_vault_id": ubx.FieldSpec(wire_name="data_protection_backup_vault_id"),
+        "default_retention_duration": ubx.FieldSpec(wire_name="default_retention_duration"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "time_zone": ubx.FieldSpec(wire_name="time_zone"),
+        "retention_rule": ubx.FieldSpec(
             wire_name="retention_rule",
             kind="list",
             fields=_ProtectionBackupPolicyDataLakeStorage_RetentionRuleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ProtectionBackupPolicyDataLakeStorage_TimeoutsFields,

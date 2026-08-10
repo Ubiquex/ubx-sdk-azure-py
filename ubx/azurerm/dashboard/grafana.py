@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Grafana_AzureMonitorWorkspaceIntegrations:
@@ -36,32 +36,32 @@ class Grafana_Timeouts:
     update: Any = None
 
 _Grafana_AzureMonitorWorkspaceIntegrationsFields = {
-    "resource_id": sdk.FieldSpec(wire_name="resource_id"),
+    "resource_id": ubx.FieldSpec(wire_name="resource_id"),
 }
 
 _Grafana_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Grafana_SmtpFields = {
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "from_address": sdk.FieldSpec(wire_name="from_address"),
-    "from_name": sdk.FieldSpec(wire_name="from_name"),
-    "host": sdk.FieldSpec(wire_name="host"),
-    "password": sdk.FieldSpec(wire_name="password"),
-    "start_tls_policy": sdk.FieldSpec(wire_name="start_tls_policy"),
-    "user": sdk.FieldSpec(wire_name="user"),
-    "verification_skip_enabled": sdk.FieldSpec(wire_name="verification_skip_enabled"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "from_address": ubx.FieldSpec(wire_name="from_address"),
+    "from_name": ubx.FieldSpec(wire_name="from_name"),
+    "host": ubx.FieldSpec(wire_name="host"),
+    "password": ubx.FieldSpec(wire_name="password"),
+    "start_tls_policy": ubx.FieldSpec(wire_name="start_tls_policy"),
+    "user": ubx.FieldSpec(wire_name="user"),
+    "verification_skip_enabled": ubx.FieldSpec(wire_name="verification_skip_enabled"),
 }
 
 _Grafana_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -84,38 +84,38 @@ class GrafanaConfig:
     smtp: Any = None
     timeouts: Any = None
 
-Grafana = sdk.ResourceBinding(
+Grafana = ubx.ResourceBinding(
     wire_type="azurerm_dashboard_grafana",
     fields={
-        "api_key_enabled": sdk.FieldSpec(wire_name="api_key_enabled"),
-        "auto_generated_domain_name_label_scope": sdk.FieldSpec(wire_name="auto_generated_domain_name_label_scope"),
-        "deterministic_outbound_ip_enabled": sdk.FieldSpec(wire_name="deterministic_outbound_ip_enabled"),
-        "grafana_major_version": sdk.FieldSpec(wire_name="grafana_major_version"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "sku_size": sdk.FieldSpec(wire_name="sku_size"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "zone_redundancy_enabled": sdk.FieldSpec(wire_name="zone_redundancy_enabled"),
-        "azure_monitor_workspace_integrations": sdk.FieldSpec(
+        "api_key_enabled": ubx.FieldSpec(wire_name="api_key_enabled"),
+        "auto_generated_domain_name_label_scope": ubx.FieldSpec(wire_name="auto_generated_domain_name_label_scope"),
+        "deterministic_outbound_ip_enabled": ubx.FieldSpec(wire_name="deterministic_outbound_ip_enabled"),
+        "grafana_major_version": ubx.FieldSpec(wire_name="grafana_major_version"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "sku_size": ubx.FieldSpec(wire_name="sku_size"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "zone_redundancy_enabled": ubx.FieldSpec(wire_name="zone_redundancy_enabled"),
+        "azure_monitor_workspace_integrations": ubx.FieldSpec(
             wire_name="azure_monitor_workspace_integrations",
             kind="list",
             fields=_Grafana_AzureMonitorWorkspaceIntegrationsFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Grafana_IdentityFields,
         ),
-        "smtp": sdk.FieldSpec(
+        "smtp": ubx.FieldSpec(
             wire_name="smtp",
             kind="list",
             fields=_Grafana_SmtpFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Grafana_TimeoutsFields,

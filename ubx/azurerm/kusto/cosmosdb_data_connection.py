@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CosmosdbDataConnection_Timeouts:
@@ -13,9 +13,9 @@ class CosmosdbDataConnection_Timeouts:
     read: Any = None
 
 _CosmosdbDataConnection_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -31,19 +31,19 @@ class CosmosdbDataConnectionConfig:
     table_name: Any = None
     timeouts: Any = None
 
-CosmosdbDataConnection = sdk.ResourceBinding(
+CosmosdbDataConnection = ubx.ResourceBinding(
     wire_type="azurerm_kusto_cosmosdb_data_connection",
     fields={
-        "cosmosdb_container_id": sdk.FieldSpec(wire_name="cosmosdb_container_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "kusto_database_id": sdk.FieldSpec(wire_name="kusto_database_id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "managed_identity_id": sdk.FieldSpec(wire_name="managed_identity_id"),
-        "mapping_rule_name": sdk.FieldSpec(wire_name="mapping_rule_name"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "retrieval_start_date": sdk.FieldSpec(wire_name="retrieval_start_date"),
-        "table_name": sdk.FieldSpec(wire_name="table_name"),
-        "timeouts": sdk.FieldSpec(
+        "cosmosdb_container_id": ubx.FieldSpec(wire_name="cosmosdb_container_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "kusto_database_id": ubx.FieldSpec(wire_name="kusto_database_id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "managed_identity_id": ubx.FieldSpec(wire_name="managed_identity_id"),
+        "mapping_rule_name": ubx.FieldSpec(wire_name="mapping_rule_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "retrieval_start_date": ubx.FieldSpec(wire_name="retrieval_start_date"),
+        "table_name": ubx.FieldSpec(wire_name="table_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CosmosdbDataConnection_TimeoutsFields,

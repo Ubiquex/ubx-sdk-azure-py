@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SourceControl_Security:
@@ -20,16 +20,16 @@ class SourceControl_Timeouts:
     update: Any = None
 
 _SourceControl_SecurityFields = {
-    "refresh_token": sdk.FieldSpec(wire_name="refresh_token"),
-    "token": sdk.FieldSpec(wire_name="token"),
-    "token_type": sdk.FieldSpec(wire_name="token_type"),
+    "refresh_token": ubx.FieldSpec(wire_name="refresh_token"),
+    "token": ubx.FieldSpec(wire_name="token"),
+    "token_type": ubx.FieldSpec(wire_name="token_type"),
 }
 
 _SourceControl_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -47,25 +47,25 @@ class SourceControlConfig:
     security: Any = None
     timeouts: Any = None
 
-SourceControl = sdk.ResourceBinding(
+SourceControl = ubx.ResourceBinding(
     wire_type="azurerm_automation_source_control",
     fields={
-        "automatic_sync": sdk.FieldSpec(wire_name="automatic_sync"),
-        "automation_account_id": sdk.FieldSpec(wire_name="automation_account_id"),
-        "branch": sdk.FieldSpec(wire_name="branch"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "folder_path": sdk.FieldSpec(wire_name="folder_path"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "publish_runbook_enabled": sdk.FieldSpec(wire_name="publish_runbook_enabled"),
-        "repository_url": sdk.FieldSpec(wire_name="repository_url"),
-        "source_control_type": sdk.FieldSpec(wire_name="source_control_type"),
-        "security": sdk.FieldSpec(
+        "automatic_sync": ubx.FieldSpec(wire_name="automatic_sync"),
+        "automation_account_id": ubx.FieldSpec(wire_name="automation_account_id"),
+        "branch": ubx.FieldSpec(wire_name="branch"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "folder_path": ubx.FieldSpec(wire_name="folder_path"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "publish_runbook_enabled": ubx.FieldSpec(wire_name="publish_runbook_enabled"),
+        "repository_url": ubx.FieldSpec(wire_name="repository_url"),
+        "source_control_type": ubx.FieldSpec(wire_name="source_control_type"),
+        "security": ubx.FieldSpec(
             wire_name="security",
             kind="list",
             fields=_SourceControl_SecurityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SourceControl_TimeoutsFields,

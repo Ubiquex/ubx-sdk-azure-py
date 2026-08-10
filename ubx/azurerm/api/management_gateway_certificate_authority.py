@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementGatewayCertificateAuthority_Timeouts:
@@ -14,10 +14,10 @@ class ManagementGatewayCertificateAuthority_Timeouts:
     update: Any = None
 
 _ManagementGatewayCertificateAuthority_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class ManagementGatewayCertificateAuthorityConfig:
     is_trusted: Any = None
     timeouts: Any = None
 
-ManagementGatewayCertificateAuthority = sdk.ResourceBinding(
+ManagementGatewayCertificateAuthority = ubx.ResourceBinding(
     wire_type="azurerm_api_management_gateway_certificate_authority",
     fields={
-        "api_management_id": sdk.FieldSpec(wire_name="api_management_id"),
-        "certificate_name": sdk.FieldSpec(wire_name="certificate_name"),
-        "gateway_name": sdk.FieldSpec(wire_name="gateway_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "is_trusted": sdk.FieldSpec(wire_name="is_trusted"),
-        "timeouts": sdk.FieldSpec(
+        "api_management_id": ubx.FieldSpec(wire_name="api_management_id"),
+        "certificate_name": ubx.FieldSpec(wire_name="certificate_name"),
+        "gateway_name": ubx.FieldSpec(wire_name="gateway_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "is_trusted": ubx.FieldSpec(wire_name="is_trusted"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementGatewayCertificateAuthority_TimeoutsFields,

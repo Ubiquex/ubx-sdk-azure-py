@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ShareDatasetDataLakeGen2_Timeouts:
@@ -13,9 +13,9 @@ class ShareDatasetDataLakeGen2_Timeouts:
     read: Any = None
 
 _ShareDatasetDataLakeGen2_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -29,17 +29,17 @@ class ShareDatasetDataLakeGen2Config:
     storage_account_id: Any = None
     timeouts: Any = None
 
-ShareDatasetDataLakeGen2 = sdk.ResourceBinding(
+ShareDatasetDataLakeGen2 = ubx.ResourceBinding(
     wire_type="azurerm_data_share_dataset_data_lake_gen2",
     fields={
-        "file_path": sdk.FieldSpec(wire_name="file_path"),
-        "file_system_name": sdk.FieldSpec(wire_name="file_system_name"),
-        "folder_path": sdk.FieldSpec(wire_name="folder_path"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "share_id": sdk.FieldSpec(wire_name="share_id"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "timeouts": sdk.FieldSpec(
+        "file_path": ubx.FieldSpec(wire_name="file_path"),
+        "file_system_name": ubx.FieldSpec(wire_name="file_system_name"),
+        "folder_path": ubx.FieldSpec(wire_name="folder_path"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "share_id": ubx.FieldSpec(wire_name="share_id"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ShareDatasetDataLakeGen2_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppIntegrationAccountCertificate_KeyVaultKey:
@@ -20,16 +20,16 @@ class AppIntegrationAccountCertificate_Timeouts:
     update: Any = None
 
 _AppIntegrationAccountCertificate_KeyVaultKeyFields = {
-    "key_name": sdk.FieldSpec(wire_name="key_name"),
-    "key_vault_id": sdk.FieldSpec(wire_name="key_vault_id"),
-    "key_version": sdk.FieldSpec(wire_name="key_version"),
+    "key_name": ubx.FieldSpec(wire_name="key_name"),
+    "key_vault_id": ubx.FieldSpec(wire_name="key_vault_id"),
+    "key_version": ubx.FieldSpec(wire_name="key_version"),
 }
 
 _AppIntegrationAccountCertificate_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -43,21 +43,21 @@ class AppIntegrationAccountCertificateConfig:
     key_vault_key: Any = None
     timeouts: Any = None
 
-AppIntegrationAccountCertificate = sdk.ResourceBinding(
+AppIntegrationAccountCertificate = ubx.ResourceBinding(
     wire_type="azurerm_logic_app_integration_account_certificate",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "integration_account_name": sdk.FieldSpec(wire_name="integration_account_name"),
-        "metadata": sdk.FieldSpec(wire_name="metadata"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_certificate": sdk.FieldSpec(wire_name="public_certificate"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "key_vault_key": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "integration_account_name": ubx.FieldSpec(wire_name="integration_account_name"),
+        "metadata": ubx.FieldSpec(wire_name="metadata"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_certificate": ubx.FieldSpec(wire_name="public_certificate"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "key_vault_key": ubx.FieldSpec(
             wire_name="key_vault_key",
             kind="list",
             fields=_AppIntegrationAccountCertificate_KeyVaultKeyFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AppIntegrationAccountCertificate_TimeoutsFields,

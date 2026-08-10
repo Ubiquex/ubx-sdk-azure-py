@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SecurityDeviceGroup_AllowRule:
@@ -28,24 +28,24 @@ class SecurityDeviceGroup_Timeouts:
     update: Any = None
 
 _SecurityDeviceGroup_AllowRuleFields = {
-    "connection_from_ips_not_allowed": sdk.FieldSpec(wire_name="connection_from_ips_not_allowed"),
-    "connection_to_ips_not_allowed": sdk.FieldSpec(wire_name="connection_to_ips_not_allowed"),
-    "local_users_not_allowed": sdk.FieldSpec(wire_name="local_users_not_allowed"),
-    "processes_not_allowed": sdk.FieldSpec(wire_name="processes_not_allowed"),
+    "connection_from_ips_not_allowed": ubx.FieldSpec(wire_name="connection_from_ips_not_allowed"),
+    "connection_to_ips_not_allowed": ubx.FieldSpec(wire_name="connection_to_ips_not_allowed"),
+    "local_users_not_allowed": ubx.FieldSpec(wire_name="local_users_not_allowed"),
+    "processes_not_allowed": ubx.FieldSpec(wire_name="processes_not_allowed"),
 }
 
 _SecurityDeviceGroup_RangeRuleFields = {
-    "duration": sdk.FieldSpec(wire_name="duration"),
-    "max": sdk.FieldSpec(wire_name="max"),
-    "min": sdk.FieldSpec(wire_name="min"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "duration": ubx.FieldSpec(wire_name="duration"),
+    "max": ubx.FieldSpec(wire_name="max"),
+    "min": ubx.FieldSpec(wire_name="min"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _SecurityDeviceGroup_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -57,23 +57,23 @@ class SecurityDeviceGroupConfig:
     range_rule: Any = None
     timeouts: Any = None
 
-SecurityDeviceGroup = sdk.ResourceBinding(
+SecurityDeviceGroup = ubx.ResourceBinding(
     wire_type="azurerm_iot_security_device_group",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "iothub_id": sdk.FieldSpec(wire_name="iothub_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "allow_rule": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "iothub_id": ubx.FieldSpec(wire_name="iothub_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "allow_rule": ubx.FieldSpec(
             wire_name="allow_rule",
             kind="list",
             fields=_SecurityDeviceGroup_AllowRuleFields,
         ),
-        "range_rule": sdk.FieldSpec(
+        "range_rule": ubx.FieldSpec(
             wire_name="range_rule",
             kind="set",
             fields=_SecurityDeviceGroup_RangeRuleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SecurityDeviceGroup_TimeoutsFields,

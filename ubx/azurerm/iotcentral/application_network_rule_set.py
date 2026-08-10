@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ApplicationNetworkRuleSet_IpRule:
@@ -19,15 +19,15 @@ class ApplicationNetworkRuleSet_Timeouts:
     update: Any = None
 
 _ApplicationNetworkRuleSet_IpRuleFields = {
-    "ip_mask": sdk.FieldSpec(wire_name="ip_mask"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "ip_mask": ubx.FieldSpec(wire_name="ip_mask"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _ApplicationNetworkRuleSet_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -39,19 +39,19 @@ class ApplicationNetworkRuleSetConfig:
     ip_rule: Any = None
     timeouts: Any = None
 
-ApplicationNetworkRuleSet = sdk.ResourceBinding(
+ApplicationNetworkRuleSet = ubx.ResourceBinding(
     wire_type="azurerm_iotcentral_application_network_rule_set",
     fields={
-        "apply_to_device": sdk.FieldSpec(wire_name="apply_to_device"),
-        "default_action": sdk.FieldSpec(wire_name="default_action"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "iotcentral_application_id": sdk.FieldSpec(wire_name="iotcentral_application_id"),
-        "ip_rule": sdk.FieldSpec(
+        "apply_to_device": ubx.FieldSpec(wire_name="apply_to_device"),
+        "default_action": ubx.FieldSpec(wire_name="default_action"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "iotcentral_application_id": ubx.FieldSpec(wire_name="iotcentral_application_id"),
+        "ip_rule": ubx.FieldSpec(
             wire_name="ip_rule",
             kind="list",
             fields=_ApplicationNetworkRuleSet_IpRuleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ApplicationNetworkRuleSet_TimeoutsFields,

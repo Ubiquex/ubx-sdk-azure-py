@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServiceAzureBot_Timeouts:
@@ -14,10 +14,10 @@ class ServiceAzureBot_Timeouts:
     update: Any = None
 
 _ServiceAzureBot_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -46,32 +46,32 @@ class ServiceAzureBotConfig:
     tags: Any = None
     timeouts: Any = None
 
-ServiceAzureBot = sdk.ResourceBinding(
+ServiceAzureBot = ubx.ResourceBinding(
     wire_type="azurerm_bot_service_azure_bot",
     fields={
-        "cmk_key_vault_key_url": sdk.FieldSpec(wire_name="cmk_key_vault_key_url"),
-        "developer_app_insights_api_key": sdk.FieldSpec(wire_name="developer_app_insights_api_key"),
-        "developer_app_insights_application_id": sdk.FieldSpec(wire_name="developer_app_insights_application_id"),
-        "developer_app_insights_key": sdk.FieldSpec(wire_name="developer_app_insights_key"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "endpoint": sdk.FieldSpec(wire_name="endpoint"),
-        "icon_url": sdk.FieldSpec(wire_name="icon_url"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "local_authentication_enabled": sdk.FieldSpec(wire_name="local_authentication_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "luis_app_ids": sdk.FieldSpec(wire_name="luis_app_ids"),
-        "luis_key": sdk.FieldSpec(wire_name="luis_key"),
-        "microsoft_app_id": sdk.FieldSpec(wire_name="microsoft_app_id"),
-        "microsoft_app_msi_id": sdk.FieldSpec(wire_name="microsoft_app_msi_id"),
-        "microsoft_app_tenant_id": sdk.FieldSpec(wire_name="microsoft_app_tenant_id"),
-        "microsoft_app_type": sdk.FieldSpec(wire_name="microsoft_app_type"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "streaming_endpoint_enabled": sdk.FieldSpec(wire_name="streaming_endpoint_enabled"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "cmk_key_vault_key_url": ubx.FieldSpec(wire_name="cmk_key_vault_key_url"),
+        "developer_app_insights_api_key": ubx.FieldSpec(wire_name="developer_app_insights_api_key"),
+        "developer_app_insights_application_id": ubx.FieldSpec(wire_name="developer_app_insights_application_id"),
+        "developer_app_insights_key": ubx.FieldSpec(wire_name="developer_app_insights_key"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "endpoint": ubx.FieldSpec(wire_name="endpoint"),
+        "icon_url": ubx.FieldSpec(wire_name="icon_url"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "local_authentication_enabled": ubx.FieldSpec(wire_name="local_authentication_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "luis_app_ids": ubx.FieldSpec(wire_name="luis_app_ids"),
+        "luis_key": ubx.FieldSpec(wire_name="luis_key"),
+        "microsoft_app_id": ubx.FieldSpec(wire_name="microsoft_app_id"),
+        "microsoft_app_msi_id": ubx.FieldSpec(wire_name="microsoft_app_msi_id"),
+        "microsoft_app_tenant_id": ubx.FieldSpec(wire_name="microsoft_app_tenant_id"),
+        "microsoft_app_type": ubx.FieldSpec(wire_name="microsoft_app_type"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "streaming_endpoint_enabled": ubx.FieldSpec(wire_name="streaming_endpoint_enabled"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ServiceAzureBot_TimeoutsFields,

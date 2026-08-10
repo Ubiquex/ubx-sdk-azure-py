@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnalyticsOutputBlob_Serialization:
@@ -21,17 +21,17 @@ class AnalyticsOutputBlob_Timeouts:
     update: Any = None
 
 _AnalyticsOutputBlob_SerializationFields = {
-    "encoding": sdk.FieldSpec(wire_name="encoding"),
-    "field_delimiter": sdk.FieldSpec(wire_name="field_delimiter"),
-    "format": sdk.FieldSpec(wire_name="format"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "encoding": ubx.FieldSpec(wire_name="encoding"),
+    "field_delimiter": ubx.FieldSpec(wire_name="field_delimiter"),
+    "format": ubx.FieldSpec(wire_name="format"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _AnalyticsOutputBlob_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -53,29 +53,29 @@ class AnalyticsOutputBlobConfig:
     serialization: Any = None
     timeouts: Any = None
 
-AnalyticsOutputBlob = sdk.ResourceBinding(
+AnalyticsOutputBlob = ubx.ResourceBinding(
     wire_type="azurerm_stream_analytics_output_blob",
     fields={
-        "authentication_mode": sdk.FieldSpec(wire_name="authentication_mode"),
-        "batch_max_wait_time": sdk.FieldSpec(wire_name="batch_max_wait_time"),
-        "batch_min_rows": sdk.FieldSpec(wire_name="batch_min_rows"),
-        "blob_write_mode": sdk.FieldSpec(wire_name="blob_write_mode"),
-        "date_format": sdk.FieldSpec(wire_name="date_format"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "path_pattern": sdk.FieldSpec(wire_name="path_pattern"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "storage_account_key": sdk.FieldSpec(wire_name="storage_account_key"),
-        "storage_account_name": sdk.FieldSpec(wire_name="storage_account_name"),
-        "storage_container_name": sdk.FieldSpec(wire_name="storage_container_name"),
-        "stream_analytics_job_name": sdk.FieldSpec(wire_name="stream_analytics_job_name"),
-        "time_format": sdk.FieldSpec(wire_name="time_format"),
-        "serialization": sdk.FieldSpec(
+        "authentication_mode": ubx.FieldSpec(wire_name="authentication_mode"),
+        "batch_max_wait_time": ubx.FieldSpec(wire_name="batch_max_wait_time"),
+        "batch_min_rows": ubx.FieldSpec(wire_name="batch_min_rows"),
+        "blob_write_mode": ubx.FieldSpec(wire_name="blob_write_mode"),
+        "date_format": ubx.FieldSpec(wire_name="date_format"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "path_pattern": ubx.FieldSpec(wire_name="path_pattern"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "storage_account_key": ubx.FieldSpec(wire_name="storage_account_key"),
+        "storage_account_name": ubx.FieldSpec(wire_name="storage_account_name"),
+        "storage_container_name": ubx.FieldSpec(wire_name="storage_container_name"),
+        "stream_analytics_job_name": ubx.FieldSpec(wire_name="stream_analytics_job_name"),
+        "time_format": ubx.FieldSpec(wire_name="time_format"),
+        "serialization": ubx.FieldSpec(
             wire_name="serialization",
             kind="list",
             fields=_AnalyticsOutputBlob_SerializationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AnalyticsOutputBlob_TimeoutsFields,

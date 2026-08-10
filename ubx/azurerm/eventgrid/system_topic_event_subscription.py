@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SystemTopicEventSubscription_AdvancedFilter_BoolEquals:
@@ -115,126 +115,126 @@ class SystemTopicEventSubscription_WebhookEndpoint:
     url: Any = None
 
 _SystemTopicEventSubscription_AdvancedFilter_BoolEqualsFields = {
-    "key": sdk.FieldSpec(wire_name="key"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _SystemTopicEventSubscription_AdvancedFilter_IsNotNullFields = {
-    "key": sdk.FieldSpec(wire_name="key"),
+    "key": ubx.FieldSpec(wire_name="key"),
 }
 
 _SystemTopicEventSubscription_AdvancedFilter_NumberGreaterThanFields = {
-    "key": sdk.FieldSpec(wire_name="key"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _SystemTopicEventSubscription_AdvancedFilter_NumberInFields = {
-    "key": sdk.FieldSpec(wire_name="key"),
-    "values": sdk.FieldSpec(wire_name="values"),
+    "key": ubx.FieldSpec(wire_name="key"),
+    "values": ubx.FieldSpec(wire_name="values"),
 }
 
 _SystemTopicEventSubscription_AdvancedFilter_NumberInRangeFields = {
-    "key": sdk.FieldSpec(wire_name="key"),
-    "values": sdk.FieldSpec(wire_name="values"),
+    "key": ubx.FieldSpec(wire_name="key"),
+    "values": ubx.FieldSpec(wire_name="values"),
 }
 
 _SystemTopicEventSubscription_AdvancedFilter_StringBeginsWithFields = {
-    "key": sdk.FieldSpec(wire_name="key"),
-    "values": sdk.FieldSpec(wire_name="values"),
+    "key": ubx.FieldSpec(wire_name="key"),
+    "values": ubx.FieldSpec(wire_name="values"),
 }
 
 _SystemTopicEventSubscription_AdvancedFilterFields = {
-    "bool_equals": sdk.FieldSpec(
+    "bool_equals": ubx.FieldSpec(
         wire_name="bool_equals",
         kind="list",
         fields=_SystemTopicEventSubscription_AdvancedFilter_BoolEqualsFields,
     ),
-    "is_not_null": sdk.FieldSpec(
+    "is_not_null": ubx.FieldSpec(
         wire_name="is_not_null",
         kind="list",
         fields=_SystemTopicEventSubscription_AdvancedFilter_IsNotNullFields,
     ),
-    "is_null_or_undefined": sdk.FieldSpec(
+    "is_null_or_undefined": ubx.FieldSpec(
         wire_name="is_null_or_undefined",
         kind="list",
         fields=_SystemTopicEventSubscription_AdvancedFilter_IsNotNullFields,
     ),
-    "number_greater_than": sdk.FieldSpec(
+    "number_greater_than": ubx.FieldSpec(
         wire_name="number_greater_than",
         kind="list",
         fields=_SystemTopicEventSubscription_AdvancedFilter_NumberGreaterThanFields,
     ),
-    "number_greater_than_or_equals": sdk.FieldSpec(
+    "number_greater_than_or_equals": ubx.FieldSpec(
         wire_name="number_greater_than_or_equals",
         kind="list",
         fields=_SystemTopicEventSubscription_AdvancedFilter_NumberGreaterThanFields,
     ),
-    "number_in": sdk.FieldSpec(
+    "number_in": ubx.FieldSpec(
         wire_name="number_in",
         kind="list",
         fields=_SystemTopicEventSubscription_AdvancedFilter_NumberInFields,
     ),
-    "number_in_range": sdk.FieldSpec(
+    "number_in_range": ubx.FieldSpec(
         wire_name="number_in_range",
         kind="list",
         fields=_SystemTopicEventSubscription_AdvancedFilter_NumberInRangeFields,
     ),
-    "number_less_than": sdk.FieldSpec(
+    "number_less_than": ubx.FieldSpec(
         wire_name="number_less_than",
         kind="list",
         fields=_SystemTopicEventSubscription_AdvancedFilter_NumberGreaterThanFields,
     ),
-    "number_less_than_or_equals": sdk.FieldSpec(
+    "number_less_than_or_equals": ubx.FieldSpec(
         wire_name="number_less_than_or_equals",
         kind="list",
         fields=_SystemTopicEventSubscription_AdvancedFilter_NumberGreaterThanFields,
     ),
-    "number_not_in": sdk.FieldSpec(
+    "number_not_in": ubx.FieldSpec(
         wire_name="number_not_in",
         kind="list",
         fields=_SystemTopicEventSubscription_AdvancedFilter_NumberInFields,
     ),
-    "number_not_in_range": sdk.FieldSpec(
+    "number_not_in_range": ubx.FieldSpec(
         wire_name="number_not_in_range",
         kind="list",
         fields=_SystemTopicEventSubscription_AdvancedFilter_NumberInRangeFields,
     ),
-    "string_begins_with": sdk.FieldSpec(
+    "string_begins_with": ubx.FieldSpec(
         wire_name="string_begins_with",
         kind="list",
         fields=_SystemTopicEventSubscription_AdvancedFilter_StringBeginsWithFields,
     ),
-    "string_contains": sdk.FieldSpec(
+    "string_contains": ubx.FieldSpec(
         wire_name="string_contains",
         kind="list",
         fields=_SystemTopicEventSubscription_AdvancedFilter_StringBeginsWithFields,
     ),
-    "string_ends_with": sdk.FieldSpec(
+    "string_ends_with": ubx.FieldSpec(
         wire_name="string_ends_with",
         kind="list",
         fields=_SystemTopicEventSubscription_AdvancedFilter_StringBeginsWithFields,
     ),
-    "string_in": sdk.FieldSpec(
+    "string_in": ubx.FieldSpec(
         wire_name="string_in",
         kind="list",
         fields=_SystemTopicEventSubscription_AdvancedFilter_StringBeginsWithFields,
     ),
-    "string_not_begins_with": sdk.FieldSpec(
+    "string_not_begins_with": ubx.FieldSpec(
         wire_name="string_not_begins_with",
         kind="list",
         fields=_SystemTopicEventSubscription_AdvancedFilter_StringBeginsWithFields,
     ),
-    "string_not_contains": sdk.FieldSpec(
+    "string_not_contains": ubx.FieldSpec(
         wire_name="string_not_contains",
         kind="list",
         fields=_SystemTopicEventSubscription_AdvancedFilter_StringBeginsWithFields,
     ),
-    "string_not_ends_with": sdk.FieldSpec(
+    "string_not_ends_with": ubx.FieldSpec(
         wire_name="string_not_ends_with",
         kind="list",
         fields=_SystemTopicEventSubscription_AdvancedFilter_StringBeginsWithFields,
     ),
-    "string_not_in": sdk.FieldSpec(
+    "string_not_in": ubx.FieldSpec(
         wire_name="string_not_in",
         kind="list",
         fields=_SystemTopicEventSubscription_AdvancedFilter_StringBeginsWithFields,
@@ -242,60 +242,60 @@ _SystemTopicEventSubscription_AdvancedFilterFields = {
 }
 
 _SystemTopicEventSubscription_AzureFunctionEndpointFields = {
-    "function_id": sdk.FieldSpec(wire_name="function_id"),
-    "max_events_per_batch": sdk.FieldSpec(wire_name="max_events_per_batch"),
-    "preferred_batch_size_in_kilobytes": sdk.FieldSpec(wire_name="preferred_batch_size_in_kilobytes"),
+    "function_id": ubx.FieldSpec(wire_name="function_id"),
+    "max_events_per_batch": ubx.FieldSpec(wire_name="max_events_per_batch"),
+    "preferred_batch_size_in_kilobytes": ubx.FieldSpec(wire_name="preferred_batch_size_in_kilobytes"),
 }
 
 _SystemTopicEventSubscription_DeadLetterIdentityFields = {
-    "type": sdk.FieldSpec(wire_name="type"),
-    "user_assigned_identity": sdk.FieldSpec(wire_name="user_assigned_identity"),
+    "type": ubx.FieldSpec(wire_name="type"),
+    "user_assigned_identity": ubx.FieldSpec(wire_name="user_assigned_identity"),
 }
 
 _SystemTopicEventSubscription_DeliveryPropertyFields = {
-    "header_name": sdk.FieldSpec(wire_name="header_name"),
-    "secret": sdk.FieldSpec(wire_name="secret"),
-    "source_field": sdk.FieldSpec(wire_name="source_field"),
-    "type": sdk.FieldSpec(wire_name="type"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "header_name": ubx.FieldSpec(wire_name="header_name"),
+    "secret": ubx.FieldSpec(wire_name="secret"),
+    "source_field": ubx.FieldSpec(wire_name="source_field"),
+    "type": ubx.FieldSpec(wire_name="type"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _SystemTopicEventSubscription_RetryPolicyFields = {
-    "event_time_to_live": sdk.FieldSpec(wire_name="event_time_to_live"),
-    "max_delivery_attempts": sdk.FieldSpec(wire_name="max_delivery_attempts"),
+    "event_time_to_live": ubx.FieldSpec(wire_name="event_time_to_live"),
+    "max_delivery_attempts": ubx.FieldSpec(wire_name="max_delivery_attempts"),
 }
 
 _SystemTopicEventSubscription_StorageBlobDeadLetterDestinationFields = {
-    "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-    "storage_blob_container_name": sdk.FieldSpec(wire_name="storage_blob_container_name"),
+    "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+    "storage_blob_container_name": ubx.FieldSpec(wire_name="storage_blob_container_name"),
 }
 
 _SystemTopicEventSubscription_StorageQueueEndpointFields = {
-    "queue_message_time_to_live_in_seconds": sdk.FieldSpec(wire_name="queue_message_time_to_live_in_seconds"),
-    "queue_name": sdk.FieldSpec(wire_name="queue_name"),
-    "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
+    "queue_message_time_to_live_in_seconds": ubx.FieldSpec(wire_name="queue_message_time_to_live_in_seconds"),
+    "queue_name": ubx.FieldSpec(wire_name="queue_name"),
+    "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
 }
 
 _SystemTopicEventSubscription_SubjectFilterFields = {
-    "case_sensitive": sdk.FieldSpec(wire_name="case_sensitive"),
-    "subject_begins_with": sdk.FieldSpec(wire_name="subject_begins_with"),
-    "subject_ends_with": sdk.FieldSpec(wire_name="subject_ends_with"),
+    "case_sensitive": ubx.FieldSpec(wire_name="case_sensitive"),
+    "subject_begins_with": ubx.FieldSpec(wire_name="subject_begins_with"),
+    "subject_ends_with": ubx.FieldSpec(wire_name="subject_ends_with"),
 }
 
 _SystemTopicEventSubscription_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _SystemTopicEventSubscription_WebhookEndpointFields = {
-    "active_directory_app_id_or_uri": sdk.FieldSpec(wire_name="active_directory_app_id_or_uri"),
-    "active_directory_tenant_id": sdk.FieldSpec(wire_name="active_directory_tenant_id"),
-    "base_url": sdk.FieldSpec(wire_name="base_url"),
-    "max_events_per_batch": sdk.FieldSpec(wire_name="max_events_per_batch"),
-    "preferred_batch_size_in_kilobytes": sdk.FieldSpec(wire_name="preferred_batch_size_in_kilobytes"),
-    "url": sdk.FieldSpec(wire_name="url"),
+    "active_directory_app_id_or_uri": ubx.FieldSpec(wire_name="active_directory_app_id_or_uri"),
+    "active_directory_tenant_id": ubx.FieldSpec(wire_name="active_directory_tenant_id"),
+    "base_url": ubx.FieldSpec(wire_name="base_url"),
+    "max_events_per_batch": ubx.FieldSpec(wire_name="max_events_per_batch"),
+    "preferred_batch_size_in_kilobytes": ubx.FieldSpec(wire_name="preferred_batch_size_in_kilobytes"),
+    "url": ubx.FieldSpec(wire_name="url"),
 }
 
 @dataclasses.dataclass
@@ -325,73 +325,73 @@ class SystemTopicEventSubscriptionConfig:
     timeouts: Any = None
     webhook_endpoint: Any = None
 
-SystemTopicEventSubscription = sdk.ResourceBinding(
+SystemTopicEventSubscription = ubx.ResourceBinding(
     wire_type="azurerm_eventgrid_system_topic_event_subscription",
     fields={
-        "advanced_filtering_on_arrays_enabled": sdk.FieldSpec(wire_name="advanced_filtering_on_arrays_enabled"),
-        "event_delivery_schema": sdk.FieldSpec(wire_name="event_delivery_schema"),
-        "eventhub_id": sdk.FieldSpec(wire_name="eventhub_id"),
-        "expiration_time_utc": sdk.FieldSpec(wire_name="expiration_time_utc"),
-        "hybrid_connection_id": sdk.FieldSpec(wire_name="hybrid_connection_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "included_event_types": sdk.FieldSpec(wire_name="included_event_types"),
-        "labels": sdk.FieldSpec(wire_name="labels"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "service_bus_queue_id": sdk.FieldSpec(wire_name="service_bus_queue_id"),
-        "service_bus_topic_id": sdk.FieldSpec(wire_name="service_bus_topic_id"),
-        "system_topic": sdk.FieldSpec(wire_name="system_topic"),
-        "advanced_filter": sdk.FieldSpec(
+        "advanced_filtering_on_arrays_enabled": ubx.FieldSpec(wire_name="advanced_filtering_on_arrays_enabled"),
+        "event_delivery_schema": ubx.FieldSpec(wire_name="event_delivery_schema"),
+        "eventhub_id": ubx.FieldSpec(wire_name="eventhub_id"),
+        "expiration_time_utc": ubx.FieldSpec(wire_name="expiration_time_utc"),
+        "hybrid_connection_id": ubx.FieldSpec(wire_name="hybrid_connection_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "included_event_types": ubx.FieldSpec(wire_name="included_event_types"),
+        "labels": ubx.FieldSpec(wire_name="labels"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "service_bus_queue_id": ubx.FieldSpec(wire_name="service_bus_queue_id"),
+        "service_bus_topic_id": ubx.FieldSpec(wire_name="service_bus_topic_id"),
+        "system_topic": ubx.FieldSpec(wire_name="system_topic"),
+        "advanced_filter": ubx.FieldSpec(
             wire_name="advanced_filter",
             kind="list",
             fields=_SystemTopicEventSubscription_AdvancedFilterFields,
         ),
-        "azure_function_endpoint": sdk.FieldSpec(
+        "azure_function_endpoint": ubx.FieldSpec(
             wire_name="azure_function_endpoint",
             kind="list",
             fields=_SystemTopicEventSubscription_AzureFunctionEndpointFields,
         ),
-        "dead_letter_identity": sdk.FieldSpec(
+        "dead_letter_identity": ubx.FieldSpec(
             wire_name="dead_letter_identity",
             kind="list",
             fields=_SystemTopicEventSubscription_DeadLetterIdentityFields,
         ),
-        "delivery_identity": sdk.FieldSpec(
+        "delivery_identity": ubx.FieldSpec(
             wire_name="delivery_identity",
             kind="list",
             fields=_SystemTopicEventSubscription_DeadLetterIdentityFields,
         ),
-        "delivery_property": sdk.FieldSpec(
+        "delivery_property": ubx.FieldSpec(
             wire_name="delivery_property",
             kind="list",
             fields=_SystemTopicEventSubscription_DeliveryPropertyFields,
         ),
-        "retry_policy": sdk.FieldSpec(
+        "retry_policy": ubx.FieldSpec(
             wire_name="retry_policy",
             kind="list",
             fields=_SystemTopicEventSubscription_RetryPolicyFields,
         ),
-        "storage_blob_dead_letter_destination": sdk.FieldSpec(
+        "storage_blob_dead_letter_destination": ubx.FieldSpec(
             wire_name="storage_blob_dead_letter_destination",
             kind="list",
             fields=_SystemTopicEventSubscription_StorageBlobDeadLetterDestinationFields,
         ),
-        "storage_queue_endpoint": sdk.FieldSpec(
+        "storage_queue_endpoint": ubx.FieldSpec(
             wire_name="storage_queue_endpoint",
             kind="list",
             fields=_SystemTopicEventSubscription_StorageQueueEndpointFields,
         ),
-        "subject_filter": sdk.FieldSpec(
+        "subject_filter": ubx.FieldSpec(
             wire_name="subject_filter",
             kind="list",
             fields=_SystemTopicEventSubscription_SubjectFilterFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SystemTopicEventSubscription_TimeoutsFields,
         ),
-        "webhook_endpoint": sdk.FieldSpec(
+        "webhook_endpoint": ubx.FieldSpec(
             wire_name="webhook_endpoint",
             kind="list",
             fields=_SystemTopicEventSubscription_WebhookEndpointFields,

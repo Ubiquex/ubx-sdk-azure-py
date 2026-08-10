@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FirewallRule_Timeouts:
@@ -14,10 +14,10 @@ class FirewallRule_Timeouts:
     update: Any = None
 
 _FirewallRule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class FirewallRuleConfig:
     start_ip_address: Any = None
     timeouts: Any = None
 
-FirewallRule = sdk.ResourceBinding(
+FirewallRule = ubx.ResourceBinding(
     wire_type="azurerm_mssql_firewall_rule",
     fields={
-        "end_ip_address": sdk.FieldSpec(wire_name="end_ip_address"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "server_id": sdk.FieldSpec(wire_name="server_id"),
-        "start_ip_address": sdk.FieldSpec(wire_name="start_ip_address"),
-        "timeouts": sdk.FieldSpec(
+        "end_ip_address": ubx.FieldSpec(wire_name="end_ip_address"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "server_id": ubx.FieldSpec(wire_name="server_id"),
+        "start_ip_address": ubx.FieldSpec(wire_name="start_ip_address"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FirewallRule_TimeoutsFields,

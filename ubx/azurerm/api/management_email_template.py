@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementEmailTemplate_Timeouts:
@@ -14,10 +14,10 @@ class ManagementEmailTemplate_Timeouts:
     update: Any = None
 
 _ManagementEmailTemplate_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class ManagementEmailTemplateConfig:
     template_name: Any = None
     timeouts: Any = None
 
-ManagementEmailTemplate = sdk.ResourceBinding(
+ManagementEmailTemplate = ubx.ResourceBinding(
     wire_type="azurerm_api_management_email_template",
     fields={
-        "api_management_name": sdk.FieldSpec(wire_name="api_management_name"),
-        "body": sdk.FieldSpec(wire_name="body"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "subject": sdk.FieldSpec(wire_name="subject"),
-        "template_name": sdk.FieldSpec(wire_name="template_name"),
-        "timeouts": sdk.FieldSpec(
+        "api_management_name": ubx.FieldSpec(wire_name="api_management_name"),
+        "body": ubx.FieldSpec(wire_name="body"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "subject": ubx.FieldSpec(wire_name="subject"),
+        "template_name": ubx.FieldSpec(wire_name="template_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementEmailTemplate_TimeoutsFields,

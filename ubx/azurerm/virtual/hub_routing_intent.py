@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HubRoutingIntent_RoutingPolicy:
@@ -20,16 +20,16 @@ class HubRoutingIntent_Timeouts:
     update: Any = None
 
 _HubRoutingIntent_RoutingPolicyFields = {
-    "destinations": sdk.FieldSpec(wire_name="destinations"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "next_hop": sdk.FieldSpec(wire_name="next_hop"),
+    "destinations": ubx.FieldSpec(wire_name="destinations"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "next_hop": ubx.FieldSpec(wire_name="next_hop"),
 }
 
 _HubRoutingIntent_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -40,18 +40,18 @@ class HubRoutingIntentConfig:
     routing_policy: Any = None
     timeouts: Any = None
 
-HubRoutingIntent = sdk.ResourceBinding(
+HubRoutingIntent = ubx.ResourceBinding(
     wire_type="azurerm_virtual_hub_routing_intent",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "virtual_hub_id": sdk.FieldSpec(wire_name="virtual_hub_id"),
-        "routing_policy": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "virtual_hub_id": ubx.FieldSpec(wire_name="virtual_hub_id"),
+        "routing_policy": ubx.FieldSpec(
             wire_name="routing_policy",
             kind="list",
             fields=_HubRoutingIntent_RoutingPolicyFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_HubRoutingIntent_TimeoutsFields,

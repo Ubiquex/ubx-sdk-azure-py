@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Database_Timeouts:
@@ -14,10 +14,10 @@ class Database_Timeouts:
     update: Any = None
 
 _Database_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class DatabaseConfig:
     soft_delete_period: Any = None
     timeouts: Any = None
 
-Database = sdk.ResourceBinding(
+Database = ubx.ResourceBinding(
     wire_type="azurerm_kusto_database",
     fields={
-        "cluster_name": sdk.FieldSpec(wire_name="cluster_name"),
-        "hot_cache_period": sdk.FieldSpec(wire_name="hot_cache_period"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "soft_delete_period": sdk.FieldSpec(wire_name="soft_delete_period"),
-        "timeouts": sdk.FieldSpec(
+        "cluster_name": ubx.FieldSpec(wire_name="cluster_name"),
+        "hot_cache_period": ubx.FieldSpec(wire_name="hot_cache_period"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "soft_delete_period": ubx.FieldSpec(wire_name="soft_delete_period"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Database_TimeoutsFields,

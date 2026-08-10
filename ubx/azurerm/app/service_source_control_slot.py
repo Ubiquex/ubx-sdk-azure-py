@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServiceSourceControlSlot_GithubActionConfiguration_CodeConfiguration:
@@ -32,26 +32,26 @@ class ServiceSourceControlSlot_Timeouts:
     read: Any = None
 
 _ServiceSourceControlSlot_GithubActionConfiguration_CodeConfigurationFields = {
-    "runtime_stack": sdk.FieldSpec(wire_name="runtime_stack"),
-    "runtime_version": sdk.FieldSpec(wire_name="runtime_version"),
+    "runtime_stack": ubx.FieldSpec(wire_name="runtime_stack"),
+    "runtime_version": ubx.FieldSpec(wire_name="runtime_version"),
 }
 
 _ServiceSourceControlSlot_GithubActionConfiguration_ContainerConfigurationFields = {
-    "image_name": sdk.FieldSpec(wire_name="image_name"),
-    "registry_password": sdk.FieldSpec(wire_name="registry_password"),
-    "registry_url": sdk.FieldSpec(wire_name="registry_url"),
-    "registry_username": sdk.FieldSpec(wire_name="registry_username"),
+    "image_name": ubx.FieldSpec(wire_name="image_name"),
+    "registry_password": ubx.FieldSpec(wire_name="registry_password"),
+    "registry_url": ubx.FieldSpec(wire_name="registry_url"),
+    "registry_username": ubx.FieldSpec(wire_name="registry_username"),
 }
 
 _ServiceSourceControlSlot_GithubActionConfigurationFields = {
-    "generate_workflow_file": sdk.FieldSpec(wire_name="generate_workflow_file"),
-    "linux_action": sdk.FieldSpec(wire_name="linux_action"),
-    "code_configuration": sdk.FieldSpec(
+    "generate_workflow_file": ubx.FieldSpec(wire_name="generate_workflow_file"),
+    "linux_action": ubx.FieldSpec(wire_name="linux_action"),
+    "code_configuration": ubx.FieldSpec(
         wire_name="code_configuration",
         kind="list",
         fields=_ServiceSourceControlSlot_GithubActionConfiguration_CodeConfigurationFields,
     ),
-    "container_configuration": sdk.FieldSpec(
+    "container_configuration": ubx.FieldSpec(
         wire_name="container_configuration",
         kind="list",
         fields=_ServiceSourceControlSlot_GithubActionConfiguration_ContainerConfigurationFields,
@@ -59,9 +59,9 @@ _ServiceSourceControlSlot_GithubActionConfigurationFields = {
 }
 
 _ServiceSourceControlSlot_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -77,23 +77,23 @@ class ServiceSourceControlSlotConfig:
     github_action_configuration: Any = None
     timeouts: Any = None
 
-ServiceSourceControlSlot = sdk.ResourceBinding(
+ServiceSourceControlSlot = ubx.ResourceBinding(
     wire_type="azurerm_app_service_source_control_slot",
     fields={
-        "branch": sdk.FieldSpec(wire_name="branch"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "repo_url": sdk.FieldSpec(wire_name="repo_url"),
-        "rollback_enabled": sdk.FieldSpec(wire_name="rollback_enabled"),
-        "slot_id": sdk.FieldSpec(wire_name="slot_id"),
-        "use_local_git": sdk.FieldSpec(wire_name="use_local_git"),
-        "use_manual_integration": sdk.FieldSpec(wire_name="use_manual_integration"),
-        "use_mercurial": sdk.FieldSpec(wire_name="use_mercurial"),
-        "github_action_configuration": sdk.FieldSpec(
+        "branch": ubx.FieldSpec(wire_name="branch"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "repo_url": ubx.FieldSpec(wire_name="repo_url"),
+        "rollback_enabled": ubx.FieldSpec(wire_name="rollback_enabled"),
+        "slot_id": ubx.FieldSpec(wire_name="slot_id"),
+        "use_local_git": ubx.FieldSpec(wire_name="use_local_git"),
+        "use_manual_integration": ubx.FieldSpec(wire_name="use_manual_integration"),
+        "use_mercurial": ubx.FieldSpec(wire_name="use_mercurial"),
+        "github_action_configuration": ubx.FieldSpec(
             wire_name="github_action_configuration",
             kind="list",
             fields=_ServiceSourceControlSlot_GithubActionConfigurationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ServiceSourceControlSlot_TimeoutsFields,

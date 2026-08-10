@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudCertificate_Timeouts:
@@ -13,9 +13,9 @@ class CloudCertificate_Timeouts:
     read: Any = None
 
 _CloudCertificate_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -29,17 +29,17 @@ class CloudCertificateConfig:
     service_name: Any = None
     timeouts: Any = None
 
-CloudCertificate = sdk.ResourceBinding(
+CloudCertificate = ubx.ResourceBinding(
     wire_type="azurerm_spring_cloud_certificate",
     fields={
-        "certificate_content": sdk.FieldSpec(wire_name="certificate_content"),
-        "exclude_private_key": sdk.FieldSpec(wire_name="exclude_private_key"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "key_vault_certificate_id": sdk.FieldSpec(wire_name="key_vault_certificate_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "service_name": sdk.FieldSpec(wire_name="service_name"),
-        "timeouts": sdk.FieldSpec(
+        "certificate_content": ubx.FieldSpec(wire_name="certificate_content"),
+        "exclude_private_key": ubx.FieldSpec(wire_name="exclude_private_key"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "key_vault_certificate_id": ubx.FieldSpec(wire_name="key_vault_certificate_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "service_name": ubx.FieldSpec(wire_name="service_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CloudCertificate_TimeoutsFields,

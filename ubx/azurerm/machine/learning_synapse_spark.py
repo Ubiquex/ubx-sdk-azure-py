@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LearningSynapseSpark_Identity:
@@ -20,16 +20,16 @@ class LearningSynapseSpark_Timeouts:
     read: Any = None
 
 _LearningSynapseSpark_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _LearningSynapseSpark_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -45,23 +45,23 @@ class LearningSynapseSparkConfig:
     identity: Any = None
     timeouts: Any = None
 
-LearningSynapseSpark = sdk.ResourceBinding(
+LearningSynapseSpark = ubx.ResourceBinding(
     wire_type="azurerm_machine_learning_synapse_spark",
     fields={
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "local_auth_enabled": sdk.FieldSpec(wire_name="local_auth_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "machine_learning_workspace_id": sdk.FieldSpec(wire_name="machine_learning_workspace_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "synapse_spark_pool_id": sdk.FieldSpec(wire_name="synapse_spark_pool_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "identity": sdk.FieldSpec(
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "local_auth_enabled": ubx.FieldSpec(wire_name="local_auth_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "machine_learning_workspace_id": ubx.FieldSpec(wire_name="machine_learning_workspace_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "synapse_spark_pool_id": ubx.FieldSpec(wire_name="synapse_spark_pool_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_LearningSynapseSpark_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_LearningSynapseSpark_TimeoutsFields,

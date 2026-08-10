@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Eventhub_CaptureDescription_Destination:
@@ -38,21 +38,21 @@ class Eventhub_Timeouts:
     update: Any = None
 
 _Eventhub_CaptureDescription_DestinationFields = {
-    "archive_name_format": sdk.FieldSpec(wire_name="archive_name_format"),
-    "blob_container_name": sdk.FieldSpec(wire_name="blob_container_name"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-    "storage_authentication_id": sdk.FieldSpec(wire_name="storage_authentication_id"),
-    "storage_authentication_type": sdk.FieldSpec(wire_name="storage_authentication_type"),
+    "archive_name_format": ubx.FieldSpec(wire_name="archive_name_format"),
+    "blob_container_name": ubx.FieldSpec(wire_name="blob_container_name"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+    "storage_authentication_id": ubx.FieldSpec(wire_name="storage_authentication_id"),
+    "storage_authentication_type": ubx.FieldSpec(wire_name="storage_authentication_type"),
 }
 
 _Eventhub_CaptureDescriptionFields = {
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "encoding": sdk.FieldSpec(wire_name="encoding"),
-    "interval_in_seconds": sdk.FieldSpec(wire_name="interval_in_seconds"),
-    "size_limit_in_bytes": sdk.FieldSpec(wire_name="size_limit_in_bytes"),
-    "skip_empty_archives": sdk.FieldSpec(wire_name="skip_empty_archives"),
-    "destination": sdk.FieldSpec(
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "encoding": ubx.FieldSpec(wire_name="encoding"),
+    "interval_in_seconds": ubx.FieldSpec(wire_name="interval_in_seconds"),
+    "size_limit_in_bytes": ubx.FieldSpec(wire_name="size_limit_in_bytes"),
+    "skip_empty_archives": ubx.FieldSpec(wire_name="skip_empty_archives"),
+    "destination": ubx.FieldSpec(
         wire_name="destination",
         kind="list",
         fields=_Eventhub_CaptureDescription_DestinationFields,
@@ -60,16 +60,16 @@ _Eventhub_CaptureDescriptionFields = {
 }
 
 _Eventhub_RetentionDescriptionFields = {
-    "cleanup_policy": sdk.FieldSpec(wire_name="cleanup_policy"),
-    "retention_time_in_hours": sdk.FieldSpec(wire_name="retention_time_in_hours"),
-    "tombstone_retention_time_in_hours": sdk.FieldSpec(wire_name="tombstone_retention_time_in_hours"),
+    "cleanup_policy": ubx.FieldSpec(wire_name="cleanup_policy"),
+    "retention_time_in_hours": ubx.FieldSpec(wire_name="retention_time_in_hours"),
+    "tombstone_retention_time_in_hours": ubx.FieldSpec(wire_name="tombstone_retention_time_in_hours"),
 }
 
 _Eventhub_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -84,26 +84,26 @@ class EventhubConfig:
     retention_description: Any = None
     timeouts: Any = None
 
-Eventhub = sdk.ResourceBinding(
+Eventhub = ubx.ResourceBinding(
     wire_type="azurerm_eventhub",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "message_retention": sdk.FieldSpec(wire_name="message_retention"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "namespace_id": sdk.FieldSpec(wire_name="namespace_id"),
-        "partition_count": sdk.FieldSpec(wire_name="partition_count"),
-        "status": sdk.FieldSpec(wire_name="status"),
-        "capture_description": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "message_retention": ubx.FieldSpec(wire_name="message_retention"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "namespace_id": ubx.FieldSpec(wire_name="namespace_id"),
+        "partition_count": ubx.FieldSpec(wire_name="partition_count"),
+        "status": ubx.FieldSpec(wire_name="status"),
+        "capture_description": ubx.FieldSpec(
             wire_name="capture_description",
             kind="list",
             fields=_Eventhub_CaptureDescriptionFields,
         ),
-        "retention_description": sdk.FieldSpec(
+        "retention_description": ubx.FieldSpec(
             wire_name="retention_description",
             kind="list",
             fields=_Eventhub_RetentionDescriptionFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Eventhub_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FhirService_Authentication:
@@ -41,37 +41,37 @@ class FhirService_Timeouts:
     update: Any = None
 
 _FhirService_AuthenticationFields = {
-    "audience": sdk.FieldSpec(wire_name="audience"),
-    "authority": sdk.FieldSpec(wire_name="authority"),
-    "smart_proxy_enabled": sdk.FieldSpec(wire_name="smart_proxy_enabled"),
+    "audience": ubx.FieldSpec(wire_name="audience"),
+    "authority": ubx.FieldSpec(wire_name="authority"),
+    "smart_proxy_enabled": ubx.FieldSpec(wire_name="smart_proxy_enabled"),
 }
 
 _FhirService_CorsFields = {
-    "allowed_headers": sdk.FieldSpec(wire_name="allowed_headers"),
-    "allowed_methods": sdk.FieldSpec(wire_name="allowed_methods"),
-    "allowed_origins": sdk.FieldSpec(wire_name="allowed_origins"),
-    "credentials_allowed": sdk.FieldSpec(wire_name="credentials_allowed"),
-    "max_age_in_seconds": sdk.FieldSpec(wire_name="max_age_in_seconds"),
+    "allowed_headers": ubx.FieldSpec(wire_name="allowed_headers"),
+    "allowed_methods": ubx.FieldSpec(wire_name="allowed_methods"),
+    "allowed_origins": ubx.FieldSpec(wire_name="allowed_origins"),
+    "credentials_allowed": ubx.FieldSpec(wire_name="credentials_allowed"),
+    "max_age_in_seconds": ubx.FieldSpec(wire_name="max_age_in_seconds"),
 }
 
 _FhirService_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _FhirService_OciArtifactFields = {
-    "digest": sdk.FieldSpec(wire_name="digest"),
-    "image_name": sdk.FieldSpec(wire_name="image_name"),
-    "login_server": sdk.FieldSpec(wire_name="login_server"),
+    "digest": ubx.FieldSpec(wire_name="digest"),
+    "image_name": ubx.FieldSpec(wire_name="image_name"),
+    "login_server": ubx.FieldSpec(wire_name="login_server"),
 }
 
 _FhirService_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -92,40 +92,40 @@ class FhirServiceConfig:
     oci_artifact: Any = None
     timeouts: Any = None
 
-FhirService = sdk.ResourceBinding(
+FhirService = ubx.ResourceBinding(
     wire_type="azurerm_healthcare_fhir_service",
     fields={
-        "access_policy_object_ids": sdk.FieldSpec(wire_name="access_policy_object_ids"),
-        "configuration_export_storage_account_name": sdk.FieldSpec(wire_name="configuration_export_storage_account_name"),
-        "container_registry_login_server_url": sdk.FieldSpec(wire_name="container_registry_login_server_url"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "kind": sdk.FieldSpec(wire_name="kind"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "workspace_id": sdk.FieldSpec(wire_name="workspace_id"),
-        "authentication": sdk.FieldSpec(
+        "access_policy_object_ids": ubx.FieldSpec(wire_name="access_policy_object_ids"),
+        "configuration_export_storage_account_name": ubx.FieldSpec(wire_name="configuration_export_storage_account_name"),
+        "container_registry_login_server_url": ubx.FieldSpec(wire_name="container_registry_login_server_url"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "kind": ubx.FieldSpec(wire_name="kind"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "workspace_id": ubx.FieldSpec(wire_name="workspace_id"),
+        "authentication": ubx.FieldSpec(
             wire_name="authentication",
             kind="list",
             fields=_FhirService_AuthenticationFields,
         ),
-        "cors": sdk.FieldSpec(
+        "cors": ubx.FieldSpec(
             wire_name="cors",
             kind="list",
             fields=_FhirService_CorsFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_FhirService_IdentityFields,
         ),
-        "oci_artifact": sdk.FieldSpec(
+        "oci_artifact": ubx.FieldSpec(
             wire_name="oci_artifact",
             kind="list",
             fields=_FhirService_OciArtifactFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FhirService_TimeoutsFields,

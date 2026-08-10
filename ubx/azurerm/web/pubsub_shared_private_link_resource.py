@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PubsubSharedPrivateLinkResource_Timeouts:
@@ -14,10 +14,10 @@ class PubsubSharedPrivateLinkResource_Timeouts:
     update: Any = None
 
 _PubsubSharedPrivateLinkResource_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class PubsubSharedPrivateLinkResourceConfig:
     web_pubsub_id: Any = None
     timeouts: Any = None
 
-PubsubSharedPrivateLinkResource = sdk.ResourceBinding(
+PubsubSharedPrivateLinkResource = ubx.ResourceBinding(
     wire_type="azurerm_web_pubsub_shared_private_link_resource",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "request_message": sdk.FieldSpec(wire_name="request_message"),
-        "subresource_name": sdk.FieldSpec(wire_name="subresource_name"),
-        "target_resource_id": sdk.FieldSpec(wire_name="target_resource_id"),
-        "web_pubsub_id": sdk.FieldSpec(wire_name="web_pubsub_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "request_message": ubx.FieldSpec(wire_name="request_message"),
+        "subresource_name": ubx.FieldSpec(wire_name="subresource_name"),
+        "target_resource_id": ubx.FieldSpec(wire_name="target_resource_id"),
+        "web_pubsub_id": ubx.FieldSpec(wire_name="web_pubsub_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_PubsubSharedPrivateLinkResource_TimeoutsFields,

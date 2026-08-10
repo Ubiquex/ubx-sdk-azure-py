@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Service_Identity:
@@ -21,17 +21,17 @@ class Service_Timeouts:
     update: Any = None
 
 _Service_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Service_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -55,31 +55,31 @@ class ServiceConfig:
     identity: Any = None
     timeouts: Any = None
 
-Service = sdk.ResourceBinding(
+Service = ubx.ResourceBinding(
     wire_type="azurerm_search_service",
     fields={
-        "allowed_ips": sdk.FieldSpec(wire_name="allowed_ips"),
-        "authentication_failure_mode": sdk.FieldSpec(wire_name="authentication_failure_mode"),
-        "customer_managed_key_enforcement_enabled": sdk.FieldSpec(wire_name="customer_managed_key_enforcement_enabled"),
-        "hosting_mode": sdk.FieldSpec(wire_name="hosting_mode"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "local_authentication_enabled": sdk.FieldSpec(wire_name="local_authentication_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "network_rule_bypass_option": sdk.FieldSpec(wire_name="network_rule_bypass_option"),
-        "partition_count": sdk.FieldSpec(wire_name="partition_count"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "replica_count": sdk.FieldSpec(wire_name="replica_count"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "semantic_search_sku": sdk.FieldSpec(wire_name="semantic_search_sku"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "identity": sdk.FieldSpec(
+        "allowed_ips": ubx.FieldSpec(wire_name="allowed_ips"),
+        "authentication_failure_mode": ubx.FieldSpec(wire_name="authentication_failure_mode"),
+        "customer_managed_key_enforcement_enabled": ubx.FieldSpec(wire_name="customer_managed_key_enforcement_enabled"),
+        "hosting_mode": ubx.FieldSpec(wire_name="hosting_mode"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "local_authentication_enabled": ubx.FieldSpec(wire_name="local_authentication_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network_rule_bypass_option": ubx.FieldSpec(wire_name="network_rule_bypass_option"),
+        "partition_count": ubx.FieldSpec(wire_name="partition_count"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "replica_count": ubx.FieldSpec(wire_name="replica_count"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "semantic_search_sku": ubx.FieldSpec(wire_name="semantic_search_sku"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Service_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Service_TimeoutsFields,

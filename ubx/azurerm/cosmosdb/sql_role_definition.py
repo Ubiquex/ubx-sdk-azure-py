@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SqlRoleDefinition_Permissions:
@@ -18,14 +18,14 @@ class SqlRoleDefinition_Timeouts:
     update: Any = None
 
 _SqlRoleDefinition_PermissionsFields = {
-    "data_actions": sdk.FieldSpec(wire_name="data_actions"),
+    "data_actions": ubx.FieldSpec(wire_name="data_actions"),
 }
 
 _SqlRoleDefinition_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -40,22 +40,22 @@ class SqlRoleDefinitionConfig:
     permissions: Any = None
     timeouts: Any = None
 
-SqlRoleDefinition = sdk.ResourceBinding(
+SqlRoleDefinition = ubx.ResourceBinding(
     wire_type="azurerm_cosmosdb_sql_role_definition",
     fields={
-        "account_name": sdk.FieldSpec(wire_name="account_name"),
-        "assignable_scopes": sdk.FieldSpec(wire_name="assignable_scopes"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "role_definition_id": sdk.FieldSpec(wire_name="role_definition_id"),
-        "type": sdk.FieldSpec(wire_name="type"),
-        "permissions": sdk.FieldSpec(
+        "account_name": ubx.FieldSpec(wire_name="account_name"),
+        "assignable_scopes": ubx.FieldSpec(wire_name="assignable_scopes"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "role_definition_id": ubx.FieldSpec(wire_name="role_definition_id"),
+        "type": ubx.FieldSpec(wire_name="type"),
+        "permissions": ubx.FieldSpec(
             wire_name="permissions",
             kind="set",
             fields=_SqlRoleDefinition_PermissionsFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SqlRoleDefinition_TimeoutsFields,

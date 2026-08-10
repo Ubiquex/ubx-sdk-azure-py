@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Image_Identifier:
@@ -26,22 +26,22 @@ class Image_Timeouts:
     update: Any = None
 
 _Image_IdentifierFields = {
-    "offer": sdk.FieldSpec(wire_name="offer"),
-    "publisher": sdk.FieldSpec(wire_name="publisher"),
-    "sku": sdk.FieldSpec(wire_name="sku"),
+    "offer": ubx.FieldSpec(wire_name="offer"),
+    "publisher": ubx.FieldSpec(wire_name="publisher"),
+    "sku": ubx.FieldSpec(wire_name="sku"),
 }
 
 _Image_PurchasePlanFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "product": sdk.FieldSpec(wire_name="product"),
-    "publisher": sdk.FieldSpec(wire_name="publisher"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "product": ubx.FieldSpec(wire_name="product"),
+    "publisher": ubx.FieldSpec(wire_name="publisher"),
 }
 
 _Image_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -77,47 +77,47 @@ class ImageConfig:
     purchase_plan: Any = None
     timeouts: Any = None
 
-Image = sdk.ResourceBinding(
+Image = ubx.ResourceBinding(
     wire_type="azurerm_shared_image",
     fields={
-        "accelerated_network_support_enabled": sdk.FieldSpec(wire_name="accelerated_network_support_enabled"),
-        "architecture": sdk.FieldSpec(wire_name="architecture"),
-        "confidential_vm_enabled": sdk.FieldSpec(wire_name="confidential_vm_enabled"),
-        "confidential_vm_supported": sdk.FieldSpec(wire_name="confidential_vm_supported"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "disk_controller_type_nvme_enabled": sdk.FieldSpec(wire_name="disk_controller_type_nvme_enabled"),
-        "disk_types_not_allowed": sdk.FieldSpec(wire_name="disk_types_not_allowed"),
-        "end_of_life_date": sdk.FieldSpec(wire_name="end_of_life_date"),
-        "eula": sdk.FieldSpec(wire_name="eula"),
-        "gallery_name": sdk.FieldSpec(wire_name="gallery_name"),
-        "hibernation_enabled": sdk.FieldSpec(wire_name="hibernation_enabled"),
-        "hyper_v_generation": sdk.FieldSpec(wire_name="hyper_v_generation"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "max_recommended_memory_in_gb": sdk.FieldSpec(wire_name="max_recommended_memory_in_gb"),
-        "max_recommended_vcpu_count": sdk.FieldSpec(wire_name="max_recommended_vcpu_count"),
-        "min_recommended_memory_in_gb": sdk.FieldSpec(wire_name="min_recommended_memory_in_gb"),
-        "min_recommended_vcpu_count": sdk.FieldSpec(wire_name="min_recommended_vcpu_count"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "os_type": sdk.FieldSpec(wire_name="os_type"),
-        "privacy_statement_uri": sdk.FieldSpec(wire_name="privacy_statement_uri"),
-        "release_note_uri": sdk.FieldSpec(wire_name="release_note_uri"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "specialized": sdk.FieldSpec(wire_name="specialized"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "trusted_launch_enabled": sdk.FieldSpec(wire_name="trusted_launch_enabled"),
-        "trusted_launch_supported": sdk.FieldSpec(wire_name="trusted_launch_supported"),
-        "identifier": sdk.FieldSpec(
+        "accelerated_network_support_enabled": ubx.FieldSpec(wire_name="accelerated_network_support_enabled"),
+        "architecture": ubx.FieldSpec(wire_name="architecture"),
+        "confidential_vm_enabled": ubx.FieldSpec(wire_name="confidential_vm_enabled"),
+        "confidential_vm_supported": ubx.FieldSpec(wire_name="confidential_vm_supported"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "disk_controller_type_nvme_enabled": ubx.FieldSpec(wire_name="disk_controller_type_nvme_enabled"),
+        "disk_types_not_allowed": ubx.FieldSpec(wire_name="disk_types_not_allowed"),
+        "end_of_life_date": ubx.FieldSpec(wire_name="end_of_life_date"),
+        "eula": ubx.FieldSpec(wire_name="eula"),
+        "gallery_name": ubx.FieldSpec(wire_name="gallery_name"),
+        "hibernation_enabled": ubx.FieldSpec(wire_name="hibernation_enabled"),
+        "hyper_v_generation": ubx.FieldSpec(wire_name="hyper_v_generation"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "max_recommended_memory_in_gb": ubx.FieldSpec(wire_name="max_recommended_memory_in_gb"),
+        "max_recommended_vcpu_count": ubx.FieldSpec(wire_name="max_recommended_vcpu_count"),
+        "min_recommended_memory_in_gb": ubx.FieldSpec(wire_name="min_recommended_memory_in_gb"),
+        "min_recommended_vcpu_count": ubx.FieldSpec(wire_name="min_recommended_vcpu_count"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "os_type": ubx.FieldSpec(wire_name="os_type"),
+        "privacy_statement_uri": ubx.FieldSpec(wire_name="privacy_statement_uri"),
+        "release_note_uri": ubx.FieldSpec(wire_name="release_note_uri"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "specialized": ubx.FieldSpec(wire_name="specialized"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "trusted_launch_enabled": ubx.FieldSpec(wire_name="trusted_launch_enabled"),
+        "trusted_launch_supported": ubx.FieldSpec(wire_name="trusted_launch_supported"),
+        "identifier": ubx.FieldSpec(
             wire_name="identifier",
             kind="list",
             fields=_Image_IdentifierFields,
         ),
-        "purchase_plan": sdk.FieldSpec(
+        "purchase_plan": ubx.FieldSpec(
             wire_name="purchase_plan",
             kind="list",
             fields=_Image_PurchasePlanFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Image_TimeoutsFields,

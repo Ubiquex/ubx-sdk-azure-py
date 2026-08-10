@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CenterVirtualMachineManagerVirtualMachineTemplate_Timeouts:
@@ -14,10 +14,10 @@ class CenterVirtualMachineManagerVirtualMachineTemplate_Timeouts:
     update: Any = None
 
 _CenterVirtualMachineManagerVirtualMachineTemplate_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class CenterVirtualMachineManagerVirtualMachineTemplateConfig:
     tags: Any = None
     timeouts: Any = None
 
-CenterVirtualMachineManagerVirtualMachineTemplate = sdk.ResourceBinding(
+CenterVirtualMachineManagerVirtualMachineTemplate = ubx.ResourceBinding(
     wire_type="azurerm_system_center_virtual_machine_manager_virtual_machine_template",
     fields={
-        "custom_location_id": sdk.FieldSpec(wire_name="custom_location_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "system_center_virtual_machine_manager_server_inventory_item_id": sdk.FieldSpec(wire_name="system_center_virtual_machine_manager_server_inventory_item_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "custom_location_id": ubx.FieldSpec(wire_name="custom_location_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "system_center_virtual_machine_manager_server_inventory_item_id": ubx.FieldSpec(wire_name="system_center_virtual_machine_manager_server_inventory_item_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CenterVirtualMachineManagerVirtualMachineTemplate_TimeoutsFields,

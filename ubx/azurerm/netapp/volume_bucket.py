@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VolumeBucket_FileSystemNfsUser:
@@ -26,22 +26,22 @@ class VolumeBucket_Timeouts:
     update: Any = None
 
 _VolumeBucket_FileSystemNfsUserFields = {
-    "group_id": sdk.FieldSpec(wire_name="group_id"),
-    "user_id": sdk.FieldSpec(wire_name="user_id"),
+    "group_id": ubx.FieldSpec(wire_name="group_id"),
+    "user_id": ubx.FieldSpec(wire_name="user_id"),
 }
 
 _VolumeBucket_KeyVaultFields = {
-    "certificate_key_vault_uri": sdk.FieldSpec(wire_name="certificate_key_vault_uri"),
-    "certificate_name": sdk.FieldSpec(wire_name="certificate_name"),
-    "credentials_key_vault_uri": sdk.FieldSpec(wire_name="credentials_key_vault_uri"),
-    "credentials_secret_name": sdk.FieldSpec(wire_name="credentials_secret_name"),
+    "certificate_key_vault_uri": ubx.FieldSpec(wire_name="certificate_key_vault_uri"),
+    "certificate_name": ubx.FieldSpec(wire_name="certificate_name"),
+    "credentials_key_vault_uri": ubx.FieldSpec(wire_name="credentials_key_vault_uri"),
+    "credentials_secret_name": ubx.FieldSpec(wire_name="credentials_secret_name"),
 }
 
 _VolumeBucket_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -56,26 +56,26 @@ class VolumeBucketConfig:
     key_vault: Any = None
     timeouts: Any = None
 
-VolumeBucket = sdk.ResourceBinding(
+VolumeBucket = ubx.ResourceBinding(
     wire_type="azurerm_netapp_volume_bucket",
     fields={
-        "file_system_cifs_username": sdk.FieldSpec(wire_name="file_system_cifs_username"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "path": sdk.FieldSpec(wire_name="path"),
-        "permissions": sdk.FieldSpec(wire_name="permissions"),
-        "volume_id": sdk.FieldSpec(wire_name="volume_id"),
-        "file_system_nfs_user": sdk.FieldSpec(
+        "file_system_cifs_username": ubx.FieldSpec(wire_name="file_system_cifs_username"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "path": ubx.FieldSpec(wire_name="path"),
+        "permissions": ubx.FieldSpec(wire_name="permissions"),
+        "volume_id": ubx.FieldSpec(wire_name="volume_id"),
+        "file_system_nfs_user": ubx.FieldSpec(
             wire_name="file_system_nfs_user",
             kind="list",
             fields=_VolumeBucket_FileSystemNfsUserFields,
         ),
-        "key_vault": sdk.FieldSpec(
+        "key_vault": ubx.FieldSpec(
             wire_name="key_vault",
             kind="list",
             fields=_VolumeBucket_KeyVaultFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_VolumeBucket_TimeoutsFields,

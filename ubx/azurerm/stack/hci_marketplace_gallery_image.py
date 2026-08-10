@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HciMarketplaceGalleryImage_Identifier:
@@ -20,16 +20,16 @@ class HciMarketplaceGalleryImage_Timeouts:
     update: Any = None
 
 _HciMarketplaceGalleryImage_IdentifierFields = {
-    "offer": sdk.FieldSpec(wire_name="offer"),
-    "publisher": sdk.FieldSpec(wire_name="publisher"),
-    "sku": sdk.FieldSpec(wire_name="sku"),
+    "offer": ubx.FieldSpec(wire_name="offer"),
+    "publisher": ubx.FieldSpec(wire_name="publisher"),
+    "sku": ubx.FieldSpec(wire_name="sku"),
 }
 
 _HciMarketplaceGalleryImage_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -47,25 +47,25 @@ class HciMarketplaceGalleryImageConfig:
     identifier: Any = None
     timeouts: Any = None
 
-HciMarketplaceGalleryImage = sdk.ResourceBinding(
+HciMarketplaceGalleryImage = ubx.ResourceBinding(
     wire_type="azurerm_stack_hci_marketplace_gallery_image",
     fields={
-        "custom_location_id": sdk.FieldSpec(wire_name="custom_location_id"),
-        "hyperv_generation": sdk.FieldSpec(wire_name="hyperv_generation"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "os_type": sdk.FieldSpec(wire_name="os_type"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "storage_path_id": sdk.FieldSpec(wire_name="storage_path_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "version": sdk.FieldSpec(wire_name="version"),
-        "identifier": sdk.FieldSpec(
+        "custom_location_id": ubx.FieldSpec(wire_name="custom_location_id"),
+        "hyperv_generation": ubx.FieldSpec(wire_name="hyperv_generation"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "os_type": ubx.FieldSpec(wire_name="os_type"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "storage_path_id": ubx.FieldSpec(wire_name="storage_path_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "version": ubx.FieldSpec(wire_name="version"),
+        "identifier": ubx.FieldSpec(
             wire_name="identifier",
             kind="list",
             fields=_HciMarketplaceGalleryImage_IdentifierFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_HciMarketplaceGalleryImage_TimeoutsFields,

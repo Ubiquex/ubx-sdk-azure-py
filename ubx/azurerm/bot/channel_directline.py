@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ChannelDirectline_Site:
@@ -29,25 +29,25 @@ class ChannelDirectline_Timeouts:
     update: Any = None
 
 _ChannelDirectline_SiteFields = {
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "endpoint_parameters_enabled": sdk.FieldSpec(wire_name="endpoint_parameters_enabled"),
-    "enhanced_authentication_enabled": sdk.FieldSpec(wire_name="enhanced_authentication_enabled"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "key": sdk.FieldSpec(wire_name="key"),
-    "key2": sdk.FieldSpec(wire_name="key2"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "storage_enabled": sdk.FieldSpec(wire_name="storage_enabled"),
-    "trusted_origins": sdk.FieldSpec(wire_name="trusted_origins"),
-    "user_upload_enabled": sdk.FieldSpec(wire_name="user_upload_enabled"),
-    "v1_allowed": sdk.FieldSpec(wire_name="v1_allowed"),
-    "v3_allowed": sdk.FieldSpec(wire_name="v3_allowed"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "endpoint_parameters_enabled": ubx.FieldSpec(wire_name="endpoint_parameters_enabled"),
+    "enhanced_authentication_enabled": ubx.FieldSpec(wire_name="enhanced_authentication_enabled"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "key": ubx.FieldSpec(wire_name="key"),
+    "key2": ubx.FieldSpec(wire_name="key2"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "storage_enabled": ubx.FieldSpec(wire_name="storage_enabled"),
+    "trusted_origins": ubx.FieldSpec(wire_name="trusted_origins"),
+    "user_upload_enabled": ubx.FieldSpec(wire_name="user_upload_enabled"),
+    "v1_allowed": ubx.FieldSpec(wire_name="v1_allowed"),
+    "v3_allowed": ubx.FieldSpec(wire_name="v3_allowed"),
 }
 
 _ChannelDirectline_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -59,19 +59,19 @@ class ChannelDirectlineConfig:
     site: Any = None
     timeouts: Any = None
 
-ChannelDirectline = sdk.ResourceBinding(
+ChannelDirectline = ubx.ResourceBinding(
     wire_type="azurerm_bot_channel_directline",
     fields={
-        "bot_name": sdk.FieldSpec(wire_name="bot_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "site": sdk.FieldSpec(
+        "bot_name": ubx.FieldSpec(wire_name="bot_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "site": ubx.FieldSpec(
             wire_name="site",
             kind="set",
             fields=_ChannelDirectline_SiteFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ChannelDirectline_TimeoutsFields,

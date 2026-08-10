@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AssignmentVirtualMachine_Timeouts:
@@ -13,9 +13,9 @@ class AssignmentVirtualMachine_Timeouts:
     read: Any = None
 
 _AssignmentVirtualMachine_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -26,14 +26,14 @@ class AssignmentVirtualMachineConfig:
     virtual_machine_id: Any = None
     timeouts: Any = None
 
-AssignmentVirtualMachine = sdk.ResourceBinding(
+AssignmentVirtualMachine = ubx.ResourceBinding(
     wire_type="azurerm_maintenance_assignment_virtual_machine",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "maintenance_configuration_id": sdk.FieldSpec(wire_name="maintenance_configuration_id"),
-        "virtual_machine_id": sdk.FieldSpec(wire_name="virtual_machine_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "maintenance_configuration_id": ubx.FieldSpec(wire_name="maintenance_configuration_id"),
+        "virtual_machine_id": ubx.FieldSpec(wire_name="virtual_machine_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AssignmentVirtualMachine_TimeoutsFields,

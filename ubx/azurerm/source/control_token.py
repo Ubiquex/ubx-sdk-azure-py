@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ControlToken_Timeouts:
@@ -14,10 +14,10 @@ class ControlToken_Timeouts:
     update: Any = None
 
 _ControlToken_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -28,14 +28,14 @@ class ControlTokenConfig:
     type: Any = None
     timeouts: Any = None
 
-ControlToken = sdk.ResourceBinding(
+ControlToken = ubx.ResourceBinding(
     wire_type="azurerm_source_control_token",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "token": sdk.FieldSpec(wire_name="token"),
-        "token_secret": sdk.FieldSpec(wire_name="token_secret"),
-        "type": sdk.FieldSpec(wire_name="type"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "token": ubx.FieldSpec(wire_name="token"),
+        "token_secret": ubx.FieldSpec(wire_name="token_secret"),
+        "type": ubx.FieldSpec(wire_name="type"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ControlToken_TimeoutsFields,

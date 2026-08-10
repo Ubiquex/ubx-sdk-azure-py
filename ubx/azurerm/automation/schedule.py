@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Schedule_MonthlyOccurrence:
@@ -19,15 +19,15 @@ class Schedule_Timeouts:
     update: Any = None
 
 _Schedule_MonthlyOccurrenceFields = {
-    "day": sdk.FieldSpec(wire_name="day"),
-    "occurrence": sdk.FieldSpec(wire_name="occurrence"),
+    "day": ubx.FieldSpec(wire_name="day"),
+    "occurrence": ubx.FieldSpec(wire_name="occurrence"),
 }
 
 _Schedule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -47,27 +47,27 @@ class ScheduleConfig:
     monthly_occurrence: Any = None
     timeouts: Any = None
 
-Schedule = sdk.ResourceBinding(
+Schedule = ubx.ResourceBinding(
     wire_type="azurerm_automation_schedule",
     fields={
-        "automation_account_name": sdk.FieldSpec(wire_name="automation_account_name"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "expiry_time": sdk.FieldSpec(wire_name="expiry_time"),
-        "frequency": sdk.FieldSpec(wire_name="frequency"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "interval": sdk.FieldSpec(wire_name="interval"),
-        "month_days": sdk.FieldSpec(wire_name="month_days"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "start_time": sdk.FieldSpec(wire_name="start_time"),
-        "timezone": sdk.FieldSpec(wire_name="timezone"),
-        "week_days": sdk.FieldSpec(wire_name="week_days"),
-        "monthly_occurrence": sdk.FieldSpec(
+        "automation_account_name": ubx.FieldSpec(wire_name="automation_account_name"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "expiry_time": ubx.FieldSpec(wire_name="expiry_time"),
+        "frequency": ubx.FieldSpec(wire_name="frequency"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "interval": ubx.FieldSpec(wire_name="interval"),
+        "month_days": ubx.FieldSpec(wire_name="month_days"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "start_time": ubx.FieldSpec(wire_name="start_time"),
+        "timezone": ubx.FieldSpec(wire_name="timezone"),
+        "week_days": ubx.FieldSpec(wire_name="week_days"),
+        "monthly_occurrence": ubx.FieldSpec(
             wire_name="monthly_occurrence",
             kind="list",
             fields=_Schedule_MonthlyOccurrenceFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Schedule_TimeoutsFields,

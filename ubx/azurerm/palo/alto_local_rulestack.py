@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AltoLocalRulestack_Timeouts:
@@ -14,10 +14,10 @@ class AltoLocalRulestack_Timeouts:
     update: Any = None
 
 _AltoLocalRulestack_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -35,21 +35,21 @@ class AltoLocalRulestackConfig:
     vulnerability_profile: Any = None
     timeouts: Any = None
 
-AltoLocalRulestack = sdk.ResourceBinding(
+AltoLocalRulestack = ubx.ResourceBinding(
     wire_type="azurerm_palo_alto_local_rulestack",
     fields={
-        "anti_spyware_profile": sdk.FieldSpec(wire_name="anti_spyware_profile"),
-        "anti_virus_profile": sdk.FieldSpec(wire_name="anti_virus_profile"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "dns_subscription": sdk.FieldSpec(wire_name="dns_subscription"),
-        "file_blocking_profile": sdk.FieldSpec(wire_name="file_blocking_profile"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "url_filtering_profile": sdk.FieldSpec(wire_name="url_filtering_profile"),
-        "vulnerability_profile": sdk.FieldSpec(wire_name="vulnerability_profile"),
-        "timeouts": sdk.FieldSpec(
+        "anti_spyware_profile": ubx.FieldSpec(wire_name="anti_spyware_profile"),
+        "anti_virus_profile": ubx.FieldSpec(wire_name="anti_virus_profile"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "dns_subscription": ubx.FieldSpec(wire_name="dns_subscription"),
+        "file_blocking_profile": ubx.FieldSpec(wire_name="file_blocking_profile"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "url_filtering_profile": ubx.FieldSpec(wire_name="url_filtering_profile"),
+        "vulnerability_profile": ubx.FieldSpec(wire_name="vulnerability_profile"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AltoLocalRulestack_TimeoutsFields,

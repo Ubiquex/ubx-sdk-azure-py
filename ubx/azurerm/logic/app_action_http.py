@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppActionHttp_RunAfter:
@@ -19,15 +19,15 @@ class AppActionHttp_Timeouts:
     update: Any = None
 
 _AppActionHttp_RunAfterFields = {
-    "action_name": sdk.FieldSpec(wire_name="action_name"),
-    "action_result": sdk.FieldSpec(wire_name="action_result"),
+    "action_name": ubx.FieldSpec(wire_name="action_name"),
+    "action_result": ubx.FieldSpec(wire_name="action_result"),
 }
 
 _AppActionHttp_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -43,23 +43,23 @@ class AppActionHttpConfig:
     run_after: Any = None
     timeouts: Any = None
 
-AppActionHttp = sdk.ResourceBinding(
+AppActionHttp = ubx.ResourceBinding(
     wire_type="azurerm_logic_app_action_http",
     fields={
-        "body": sdk.FieldSpec(wire_name="body"),
-        "headers": sdk.FieldSpec(wire_name="headers"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "logic_app_id": sdk.FieldSpec(wire_name="logic_app_id"),
-        "method": sdk.FieldSpec(wire_name="method"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "queries": sdk.FieldSpec(wire_name="queries"),
-        "uri": sdk.FieldSpec(wire_name="uri"),
-        "run_after": sdk.FieldSpec(
+        "body": ubx.FieldSpec(wire_name="body"),
+        "headers": ubx.FieldSpec(wire_name="headers"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "logic_app_id": ubx.FieldSpec(wire_name="logic_app_id"),
+        "method": ubx.FieldSpec(wire_name="method"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "queries": ubx.FieldSpec(wire_name="queries"),
+        "uri": ubx.FieldSpec(wire_name="uri"),
+        "run_after": ubx.FieldSpec(
             wire_name="run_after",
             kind="set",
             fields=_AppActionHttp_RunAfterFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AppActionHttp_TimeoutsFields,

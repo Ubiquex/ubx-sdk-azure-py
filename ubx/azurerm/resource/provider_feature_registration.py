@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ProviderFeatureRegistration_Timeouts:
@@ -13,9 +13,9 @@ class ProviderFeatureRegistration_Timeouts:
     read: Any = None
 
 _ProviderFeatureRegistration_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -25,13 +25,13 @@ class ProviderFeatureRegistrationConfig:
     provider_name: Any = None
     timeouts: Any = None
 
-ProviderFeatureRegistration = sdk.ResourceBinding(
+ProviderFeatureRegistration = ubx.ResourceBinding(
     wire_type="azurerm_resource_provider_feature_registration",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "provider_name": sdk.FieldSpec(wire_name="provider_name"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "provider_name": ubx.FieldSpec(wire_name="provider_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ProviderFeatureRegistration_TimeoutsFields,

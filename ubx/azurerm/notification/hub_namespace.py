@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HubNamespace_Timeouts:
@@ -14,10 +14,10 @@ class HubNamespace_Timeouts:
     update: Any = None
 
 _HubNamespace_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -34,20 +34,20 @@ class HubNamespaceConfig:
     zone_redundancy_enabled: Any = None
     timeouts: Any = None
 
-HubNamespace = sdk.ResourceBinding(
+HubNamespace = ubx.ResourceBinding(
     wire_type="azurerm_notification_hub_namespace",
     fields={
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "namespace_type": sdk.FieldSpec(wire_name="namespace_type"),
-        "replication_region": sdk.FieldSpec(wire_name="replication_region"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "zone_redundancy_enabled": sdk.FieldSpec(wire_name="zone_redundancy_enabled"),
-        "timeouts": sdk.FieldSpec(
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "namespace_type": ubx.FieldSpec(wire_name="namespace_type"),
+        "replication_region": ubx.FieldSpec(wire_name="replication_region"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "zone_redundancy_enabled": ubx.FieldSpec(wire_name="zone_redundancy_enabled"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_HubNamespace_TimeoutsFields,

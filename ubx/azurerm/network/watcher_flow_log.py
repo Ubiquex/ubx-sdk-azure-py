@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class WatcherFlowLog_RetentionPolicy:
@@ -27,23 +27,23 @@ class WatcherFlowLog_TrafficAnalytics:
     workspace_resource_id: Any = None
 
 _WatcherFlowLog_RetentionPolicyFields = {
-    "days": sdk.FieldSpec(wire_name="days"),
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
+    "days": ubx.FieldSpec(wire_name="days"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
 }
 
 _WatcherFlowLog_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _WatcherFlowLog_TrafficAnalyticsFields = {
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "interval_in_minutes": sdk.FieldSpec(wire_name="interval_in_minutes"),
-    "workspace_id": sdk.FieldSpec(wire_name="workspace_id"),
-    "workspace_region": sdk.FieldSpec(wire_name="workspace_region"),
-    "workspace_resource_id": sdk.FieldSpec(wire_name="workspace_resource_id"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "interval_in_minutes": ubx.FieldSpec(wire_name="interval_in_minutes"),
+    "workspace_id": ubx.FieldSpec(wire_name="workspace_id"),
+    "workspace_region": ubx.FieldSpec(wire_name="workspace_region"),
+    "workspace_resource_id": ubx.FieldSpec(wire_name="workspace_resource_id"),
 }
 
 @dataclasses.dataclass
@@ -62,30 +62,30 @@ class WatcherFlowLogConfig:
     timeouts: Any = None
     traffic_analytics: Any = None
 
-WatcherFlowLog = sdk.ResourceBinding(
+WatcherFlowLog = ubx.ResourceBinding(
     wire_type="azurerm_network_watcher_flow_log",
     fields={
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "network_watcher_name": sdk.FieldSpec(wire_name="network_watcher_name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "target_resource_id": sdk.FieldSpec(wire_name="target_resource_id"),
-        "version": sdk.FieldSpec(wire_name="version"),
-        "retention_policy": sdk.FieldSpec(
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network_watcher_name": ubx.FieldSpec(wire_name="network_watcher_name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "target_resource_id": ubx.FieldSpec(wire_name="target_resource_id"),
+        "version": ubx.FieldSpec(wire_name="version"),
+        "retention_policy": ubx.FieldSpec(
             wire_name="retention_policy",
             kind="list",
             fields=_WatcherFlowLog_RetentionPolicyFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_WatcherFlowLog_TimeoutsFields,
         ),
-        "traffic_analytics": sdk.FieldSpec(
+        "traffic_analytics": ubx.FieldSpec(
             wire_name="traffic_analytics",
             kind="list",
             fields=_WatcherFlowLog_TrafficAnalyticsFields,

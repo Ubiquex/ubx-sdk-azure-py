@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagedInstanceStartStopSchedule_Schedule:
@@ -21,17 +21,17 @@ class ManagedInstanceStartStopSchedule_Timeouts:
     update: Any = None
 
 _ManagedInstanceStartStopSchedule_ScheduleFields = {
-    "start_day": sdk.FieldSpec(wire_name="start_day"),
-    "start_time": sdk.FieldSpec(wire_name="start_time"),
-    "stop_day": sdk.FieldSpec(wire_name="stop_day"),
-    "stop_time": sdk.FieldSpec(wire_name="stop_time"),
+    "start_day": ubx.FieldSpec(wire_name="start_day"),
+    "start_time": ubx.FieldSpec(wire_name="start_time"),
+    "stop_day": ubx.FieldSpec(wire_name="stop_day"),
+    "stop_time": ubx.FieldSpec(wire_name="stop_time"),
 }
 
 _ManagedInstanceStartStopSchedule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -43,19 +43,19 @@ class ManagedInstanceStartStopScheduleConfig:
     schedule: Any = None
     timeouts: Any = None
 
-ManagedInstanceStartStopSchedule = sdk.ResourceBinding(
+ManagedInstanceStartStopSchedule = ubx.ResourceBinding(
     wire_type="azurerm_mssql_managed_instance_start_stop_schedule",
     fields={
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "managed_instance_id": sdk.FieldSpec(wire_name="managed_instance_id"),
-        "timezone_id": sdk.FieldSpec(wire_name="timezone_id"),
-        "schedule": sdk.FieldSpec(
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "managed_instance_id": ubx.FieldSpec(wire_name="managed_instance_id"),
+        "timezone_id": ubx.FieldSpec(wire_name="timezone_id"),
+        "schedule": ubx.FieldSpec(
             wire_name="schedule",
             kind="list",
             fields=_ManagedInstanceStartStopSchedule_ScheduleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagedInstanceStartStopSchedule_TimeoutsFields,

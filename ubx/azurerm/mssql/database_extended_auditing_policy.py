@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DatabaseExtendedAuditingPolicy_Timeouts:
@@ -14,10 +14,10 @@ class DatabaseExtendedAuditingPolicy_Timeouts:
     update: Any = None
 
 _DatabaseExtendedAuditingPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -32,18 +32,18 @@ class DatabaseExtendedAuditingPolicyConfig:
     storage_account_access_key_is_secondary: Any = None
     timeouts: Any = None
 
-DatabaseExtendedAuditingPolicy = sdk.ResourceBinding(
+DatabaseExtendedAuditingPolicy = ubx.ResourceBinding(
     wire_type="azurerm_mssql_database_extended_auditing_policy",
     fields={
-        "blob_storage_endpoint": sdk.FieldSpec(wire_name="blob_storage_endpoint"),
-        "database_id": sdk.FieldSpec(wire_name="database_id"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "log_monitoring_enabled": sdk.FieldSpec(wire_name="log_monitoring_enabled"),
-        "retention_in_days": sdk.FieldSpec(wire_name="retention_in_days"),
-        "storage_account_access_key": sdk.FieldSpec(wire_name="storage_account_access_key"),
-        "storage_account_access_key_is_secondary": sdk.FieldSpec(wire_name="storage_account_access_key_is_secondary"),
-        "timeouts": sdk.FieldSpec(
+        "blob_storage_endpoint": ubx.FieldSpec(wire_name="blob_storage_endpoint"),
+        "database_id": ubx.FieldSpec(wire_name="database_id"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "log_monitoring_enabled": ubx.FieldSpec(wire_name="log_monitoring_enabled"),
+        "retention_in_days": ubx.FieldSpec(wire_name="retention_in_days"),
+        "storage_account_access_key": ubx.FieldSpec(wire_name="storage_account_access_key"),
+        "storage_account_access_key_is_secondary": ubx.FieldSpec(wire_name="storage_account_access_key_is_secondary"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DatabaseExtendedAuditingPolicy_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnalyticsJob_Identity:
@@ -27,23 +27,23 @@ class AnalyticsJob_Timeouts:
     update: Any = None
 
 _AnalyticsJob_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _AnalyticsJob_JobStorageAccountFields = {
-    "account_key": sdk.FieldSpec(wire_name="account_key"),
-    "account_name": sdk.FieldSpec(wire_name="account_name"),
-    "authentication_mode": sdk.FieldSpec(wire_name="authentication_mode"),
+    "account_key": ubx.FieldSpec(wire_name="account_key"),
+    "account_name": ubx.FieldSpec(wire_name="account_name"),
+    "authentication_mode": ubx.FieldSpec(wire_name="authentication_mode"),
 }
 
 _AnalyticsJob_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -69,37 +69,37 @@ class AnalyticsJobConfig:
     job_storage_account: Any = None
     timeouts: Any = None
 
-AnalyticsJob = sdk.ResourceBinding(
+AnalyticsJob = ubx.ResourceBinding(
     wire_type="azurerm_stream_analytics_job",
     fields={
-        "compatibility_level": sdk.FieldSpec(wire_name="compatibility_level"),
-        "content_storage_policy": sdk.FieldSpec(wire_name="content_storage_policy"),
-        "data_locale": sdk.FieldSpec(wire_name="data_locale"),
-        "events_late_arrival_max_delay_in_seconds": sdk.FieldSpec(wire_name="events_late_arrival_max_delay_in_seconds"),
-        "events_out_of_order_max_delay_in_seconds": sdk.FieldSpec(wire_name="events_out_of_order_max_delay_in_seconds"),
-        "events_out_of_order_policy": sdk.FieldSpec(wire_name="events_out_of_order_policy"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "output_error_policy": sdk.FieldSpec(wire_name="output_error_policy"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "stream_analytics_cluster_id": sdk.FieldSpec(wire_name="stream_analytics_cluster_id"),
-        "streaming_units": sdk.FieldSpec(wire_name="streaming_units"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "transformation_query": sdk.FieldSpec(wire_name="transformation_query"),
-        "type": sdk.FieldSpec(wire_name="type"),
-        "identity": sdk.FieldSpec(
+        "compatibility_level": ubx.FieldSpec(wire_name="compatibility_level"),
+        "content_storage_policy": ubx.FieldSpec(wire_name="content_storage_policy"),
+        "data_locale": ubx.FieldSpec(wire_name="data_locale"),
+        "events_late_arrival_max_delay_in_seconds": ubx.FieldSpec(wire_name="events_late_arrival_max_delay_in_seconds"),
+        "events_out_of_order_max_delay_in_seconds": ubx.FieldSpec(wire_name="events_out_of_order_max_delay_in_seconds"),
+        "events_out_of_order_policy": ubx.FieldSpec(wire_name="events_out_of_order_policy"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "output_error_policy": ubx.FieldSpec(wire_name="output_error_policy"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "stream_analytics_cluster_id": ubx.FieldSpec(wire_name="stream_analytics_cluster_id"),
+        "streaming_units": ubx.FieldSpec(wire_name="streaming_units"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "transformation_query": ubx.FieldSpec(wire_name="transformation_query"),
+        "type": ubx.FieldSpec(wire_name="type"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_AnalyticsJob_IdentityFields,
         ),
-        "job_storage_account": sdk.FieldSpec(
+        "job_storage_account": ubx.FieldSpec(
             wire_name="job_storage_account",
             kind="list",
             fields=_AnalyticsJob_JobStorageAccountFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AnalyticsJob_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DpsSharedAccessPolicy_Timeouts:
@@ -14,10 +14,10 @@ class DpsSharedAccessPolicy_Timeouts:
     update: Any = None
 
 _DpsSharedAccessPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -33,19 +33,19 @@ class DpsSharedAccessPolicyConfig:
     service_config: Any = None
     timeouts: Any = None
 
-DpsSharedAccessPolicy = sdk.ResourceBinding(
+DpsSharedAccessPolicy = ubx.ResourceBinding(
     wire_type="azurerm_iothub_dps_shared_access_policy",
     fields={
-        "enrollment_read": sdk.FieldSpec(wire_name="enrollment_read"),
-        "enrollment_write": sdk.FieldSpec(wire_name="enrollment_write"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "iothub_dps_name": sdk.FieldSpec(wire_name="iothub_dps_name"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "registration_read": sdk.FieldSpec(wire_name="registration_read"),
-        "registration_write": sdk.FieldSpec(wire_name="registration_write"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "service_config": sdk.FieldSpec(wire_name="service_config"),
-        "timeouts": sdk.FieldSpec(
+        "enrollment_read": ubx.FieldSpec(wire_name="enrollment_read"),
+        "enrollment_write": ubx.FieldSpec(wire_name="enrollment_write"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "iothub_dps_name": ubx.FieldSpec(wire_name="iothub_dps_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "registration_read": ubx.FieldSpec(wire_name="registration_read"),
+        "registration_write": ubx.FieldSpec(wire_name="registration_write"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "service_config": ubx.FieldSpec(wire_name="service_config"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DpsSharedAccessPolicy_TimeoutsFields,

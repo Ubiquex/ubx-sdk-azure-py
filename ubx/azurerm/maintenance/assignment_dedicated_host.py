@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AssignmentDedicatedHost_Timeouts:
@@ -13,9 +13,9 @@ class AssignmentDedicatedHost_Timeouts:
     read: Any = None
 
 _AssignmentDedicatedHost_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -26,14 +26,14 @@ class AssignmentDedicatedHostConfig:
     maintenance_configuration_id: Any = None
     timeouts: Any = None
 
-AssignmentDedicatedHost = sdk.ResourceBinding(
+AssignmentDedicatedHost = ubx.ResourceBinding(
     wire_type="azurerm_maintenance_assignment_dedicated_host",
     fields={
-        "dedicated_host_id": sdk.FieldSpec(wire_name="dedicated_host_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "maintenance_configuration_id": sdk.FieldSpec(wire_name="maintenance_configuration_id"),
-        "timeouts": sdk.FieldSpec(
+        "dedicated_host_id": ubx.FieldSpec(wire_name="dedicated_host_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "maintenance_configuration_id": ubx.FieldSpec(wire_name="maintenance_configuration_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AssignmentDedicatedHost_TimeoutsFields,

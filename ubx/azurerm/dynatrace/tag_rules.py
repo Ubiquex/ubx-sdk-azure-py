@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TagRules_LogRule_FilteringTag:
@@ -32,16 +32,16 @@ class TagRules_Timeouts:
     update: Any = None
 
 _TagRules_LogRule_FilteringTagFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "action": ubx.FieldSpec(wire_name="action"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _TagRules_LogRuleFields = {
-    "send_activity_logs_enabled": sdk.FieldSpec(wire_name="send_activity_logs_enabled"),
-    "send_azure_active_directory_logs_enabled": sdk.FieldSpec(wire_name="send_azure_active_directory_logs_enabled"),
-    "send_subscription_logs_enabled": sdk.FieldSpec(wire_name="send_subscription_logs_enabled"),
-    "filtering_tag": sdk.FieldSpec(
+    "send_activity_logs_enabled": ubx.FieldSpec(wire_name="send_activity_logs_enabled"),
+    "send_azure_active_directory_logs_enabled": ubx.FieldSpec(wire_name="send_azure_active_directory_logs_enabled"),
+    "send_subscription_logs_enabled": ubx.FieldSpec(wire_name="send_subscription_logs_enabled"),
+    "filtering_tag": ubx.FieldSpec(
         wire_name="filtering_tag",
         kind="list",
         fields=_TagRules_LogRule_FilteringTagFields,
@@ -49,8 +49,8 @@ _TagRules_LogRuleFields = {
 }
 
 _TagRules_MetricRuleFields = {
-    "sending_metrics_enabled": sdk.FieldSpec(wire_name="sending_metrics_enabled"),
-    "filtering_tag": sdk.FieldSpec(
+    "sending_metrics_enabled": ubx.FieldSpec(wire_name="sending_metrics_enabled"),
+    "filtering_tag": ubx.FieldSpec(
         wire_name="filtering_tag",
         kind="list",
         fields=_TagRules_LogRule_FilteringTagFields,
@@ -58,10 +58,10 @@ _TagRules_MetricRuleFields = {
 }
 
 _TagRules_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -73,23 +73,23 @@ class TagRulesConfig:
     metric_rule: Any = None
     timeouts: Any = None
 
-TagRules = sdk.ResourceBinding(
+TagRules = ubx.ResourceBinding(
     wire_type="azurerm_dynatrace_tag_rules",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "monitor_id": sdk.FieldSpec(wire_name="monitor_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "log_rule": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "monitor_id": ubx.FieldSpec(wire_name="monitor_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "log_rule": ubx.FieldSpec(
             wire_name="log_rule",
             kind="list",
             fields=_TagRules_LogRuleFields,
         ),
-        "metric_rule": sdk.FieldSpec(
+        "metric_rule": ubx.FieldSpec(
             wire_name="metric_rule",
             kind="list",
             fields=_TagRules_MetricRuleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_TagRules_TimeoutsFields,

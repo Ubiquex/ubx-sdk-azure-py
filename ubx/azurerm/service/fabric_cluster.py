@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FabricCluster_AzureActiveDirectory:
@@ -104,25 +104,25 @@ class FabricCluster_UpgradePolicy:
     health_policy: Any = None
 
 _FabricCluster_AzureActiveDirectoryFields = {
-    "client_application_id": sdk.FieldSpec(wire_name="client_application_id"),
-    "cluster_application_id": sdk.FieldSpec(wire_name="cluster_application_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
+    "client_application_id": ubx.FieldSpec(wire_name="client_application_id"),
+    "cluster_application_id": ubx.FieldSpec(wire_name="cluster_application_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
 }
 
 _FabricCluster_CertificateFields = {
-    "thumbprint": sdk.FieldSpec(wire_name="thumbprint"),
-    "thumbprint_secondary": sdk.FieldSpec(wire_name="thumbprint_secondary"),
-    "x509_store_name": sdk.FieldSpec(wire_name="x509_store_name"),
+    "thumbprint": ubx.FieldSpec(wire_name="thumbprint"),
+    "thumbprint_secondary": ubx.FieldSpec(wire_name="thumbprint_secondary"),
+    "x509_store_name": ubx.FieldSpec(wire_name="x509_store_name"),
 }
 
 _FabricCluster_CertificateCommonNames_CommonNamesFields = {
-    "certificate_common_name": sdk.FieldSpec(wire_name="certificate_common_name"),
-    "certificate_issuer_thumbprint": sdk.FieldSpec(wire_name="certificate_issuer_thumbprint"),
+    "certificate_common_name": ubx.FieldSpec(wire_name="certificate_common_name"),
+    "certificate_issuer_thumbprint": ubx.FieldSpec(wire_name="certificate_issuer_thumbprint"),
 }
 
 _FabricCluster_CertificateCommonNamesFields = {
-    "x509_store_name": sdk.FieldSpec(wire_name="x509_store_name"),
-    "common_names": sdk.FieldSpec(
+    "x509_store_name": ubx.FieldSpec(wire_name="x509_store_name"),
+    "common_names": ubx.FieldSpec(
         wire_name="common_names",
         kind="set",
         fields=_FabricCluster_CertificateCommonNames_CommonNamesFields,
@@ -130,52 +130,52 @@ _FabricCluster_CertificateCommonNamesFields = {
 }
 
 _FabricCluster_ClientCertificateCommonNameFields = {
-    "common_name": sdk.FieldSpec(wire_name="common_name"),
-    "is_admin": sdk.FieldSpec(wire_name="is_admin"),
-    "issuer_thumbprint": sdk.FieldSpec(wire_name="issuer_thumbprint"),
+    "common_name": ubx.FieldSpec(wire_name="common_name"),
+    "is_admin": ubx.FieldSpec(wire_name="is_admin"),
+    "issuer_thumbprint": ubx.FieldSpec(wire_name="issuer_thumbprint"),
 }
 
 _FabricCluster_ClientCertificateThumbprintFields = {
-    "is_admin": sdk.FieldSpec(wire_name="is_admin"),
-    "thumbprint": sdk.FieldSpec(wire_name="thumbprint"),
+    "is_admin": ubx.FieldSpec(wire_name="is_admin"),
+    "thumbprint": ubx.FieldSpec(wire_name="thumbprint"),
 }
 
 _FabricCluster_DiagnosticsConfigFields = {
-    "blob_endpoint": sdk.FieldSpec(wire_name="blob_endpoint"),
-    "protected_account_key_name": sdk.FieldSpec(wire_name="protected_account_key_name"),
-    "queue_endpoint": sdk.FieldSpec(wire_name="queue_endpoint"),
-    "storage_account_name": sdk.FieldSpec(wire_name="storage_account_name"),
-    "table_endpoint": sdk.FieldSpec(wire_name="table_endpoint"),
+    "blob_endpoint": ubx.FieldSpec(wire_name="blob_endpoint"),
+    "protected_account_key_name": ubx.FieldSpec(wire_name="protected_account_key_name"),
+    "queue_endpoint": ubx.FieldSpec(wire_name="queue_endpoint"),
+    "storage_account_name": ubx.FieldSpec(wire_name="storage_account_name"),
+    "table_endpoint": ubx.FieldSpec(wire_name="table_endpoint"),
 }
 
 _FabricCluster_FabricSettingsFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "parameters": sdk.FieldSpec(wire_name="parameters"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "parameters": ubx.FieldSpec(wire_name="parameters"),
 }
 
 _FabricCluster_NodeType_ApplicationPortsFields = {
-    "end_port": sdk.FieldSpec(wire_name="end_port"),
-    "start_port": sdk.FieldSpec(wire_name="start_port"),
+    "end_port": ubx.FieldSpec(wire_name="end_port"),
+    "start_port": ubx.FieldSpec(wire_name="start_port"),
 }
 
 _FabricCluster_NodeTypeFields = {
-    "capacities": sdk.FieldSpec(wire_name="capacities"),
-    "client_endpoint_port": sdk.FieldSpec(wire_name="client_endpoint_port"),
-    "durability_level": sdk.FieldSpec(wire_name="durability_level"),
-    "http_endpoint_port": sdk.FieldSpec(wire_name="http_endpoint_port"),
-    "instance_count": sdk.FieldSpec(wire_name="instance_count"),
-    "is_primary": sdk.FieldSpec(wire_name="is_primary"),
-    "is_stateless": sdk.FieldSpec(wire_name="is_stateless"),
-    "multiple_availability_zones": sdk.FieldSpec(wire_name="multiple_availability_zones"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "placement_properties": sdk.FieldSpec(wire_name="placement_properties"),
-    "reverse_proxy_endpoint_port": sdk.FieldSpec(wire_name="reverse_proxy_endpoint_port"),
-    "application_ports": sdk.FieldSpec(
+    "capacities": ubx.FieldSpec(wire_name="capacities"),
+    "client_endpoint_port": ubx.FieldSpec(wire_name="client_endpoint_port"),
+    "durability_level": ubx.FieldSpec(wire_name="durability_level"),
+    "http_endpoint_port": ubx.FieldSpec(wire_name="http_endpoint_port"),
+    "instance_count": ubx.FieldSpec(wire_name="instance_count"),
+    "is_primary": ubx.FieldSpec(wire_name="is_primary"),
+    "is_stateless": ubx.FieldSpec(wire_name="is_stateless"),
+    "multiple_availability_zones": ubx.FieldSpec(wire_name="multiple_availability_zones"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "placement_properties": ubx.FieldSpec(wire_name="placement_properties"),
+    "reverse_proxy_endpoint_port": ubx.FieldSpec(wire_name="reverse_proxy_endpoint_port"),
+    "application_ports": ubx.FieldSpec(
         wire_name="application_ports",
         kind="list",
         fields=_FabricCluster_NodeType_ApplicationPortsFields,
     ),
-    "ephemeral_ports": sdk.FieldSpec(
+    "ephemeral_ports": ubx.FieldSpec(
         wire_name="ephemeral_ports",
         kind="list",
         fields=_FabricCluster_NodeType_ApplicationPortsFields,
@@ -183,37 +183,37 @@ _FabricCluster_NodeTypeFields = {
 }
 
 _FabricCluster_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _FabricCluster_UpgradePolicy_DeltaHealthPolicyFields = {
-    "max_delta_unhealthy_applications_percent": sdk.FieldSpec(wire_name="max_delta_unhealthy_applications_percent"),
-    "max_delta_unhealthy_nodes_percent": sdk.FieldSpec(wire_name="max_delta_unhealthy_nodes_percent"),
-    "max_upgrade_domain_delta_unhealthy_nodes_percent": sdk.FieldSpec(wire_name="max_upgrade_domain_delta_unhealthy_nodes_percent"),
+    "max_delta_unhealthy_applications_percent": ubx.FieldSpec(wire_name="max_delta_unhealthy_applications_percent"),
+    "max_delta_unhealthy_nodes_percent": ubx.FieldSpec(wire_name="max_delta_unhealthy_nodes_percent"),
+    "max_upgrade_domain_delta_unhealthy_nodes_percent": ubx.FieldSpec(wire_name="max_upgrade_domain_delta_unhealthy_nodes_percent"),
 }
 
 _FabricCluster_UpgradePolicy_HealthPolicyFields = {
-    "max_unhealthy_applications_percent": sdk.FieldSpec(wire_name="max_unhealthy_applications_percent"),
-    "max_unhealthy_nodes_percent": sdk.FieldSpec(wire_name="max_unhealthy_nodes_percent"),
+    "max_unhealthy_applications_percent": ubx.FieldSpec(wire_name="max_unhealthy_applications_percent"),
+    "max_unhealthy_nodes_percent": ubx.FieldSpec(wire_name="max_unhealthy_nodes_percent"),
 }
 
 _FabricCluster_UpgradePolicyFields = {
-    "force_restart_enabled": sdk.FieldSpec(wire_name="force_restart_enabled"),
-    "health_check_retry_timeout": sdk.FieldSpec(wire_name="health_check_retry_timeout"),
-    "health_check_stable_duration": sdk.FieldSpec(wire_name="health_check_stable_duration"),
-    "health_check_wait_duration": sdk.FieldSpec(wire_name="health_check_wait_duration"),
-    "upgrade_domain_timeout": sdk.FieldSpec(wire_name="upgrade_domain_timeout"),
-    "upgrade_replica_set_check_timeout": sdk.FieldSpec(wire_name="upgrade_replica_set_check_timeout"),
-    "upgrade_timeout": sdk.FieldSpec(wire_name="upgrade_timeout"),
-    "delta_health_policy": sdk.FieldSpec(
+    "force_restart_enabled": ubx.FieldSpec(wire_name="force_restart_enabled"),
+    "health_check_retry_timeout": ubx.FieldSpec(wire_name="health_check_retry_timeout"),
+    "health_check_stable_duration": ubx.FieldSpec(wire_name="health_check_stable_duration"),
+    "health_check_wait_duration": ubx.FieldSpec(wire_name="health_check_wait_duration"),
+    "upgrade_domain_timeout": ubx.FieldSpec(wire_name="upgrade_domain_timeout"),
+    "upgrade_replica_set_check_timeout": ubx.FieldSpec(wire_name="upgrade_replica_set_check_timeout"),
+    "upgrade_timeout": ubx.FieldSpec(wire_name="upgrade_timeout"),
+    "delta_health_policy": ubx.FieldSpec(
         wire_name="delta_health_policy",
         kind="list",
         fields=_FabricCluster_UpgradePolicy_DeltaHealthPolicyFields,
     ),
-    "health_policy": sdk.FieldSpec(
+    "health_policy": ubx.FieldSpec(
         wire_name="health_policy",
         kind="list",
         fields=_FabricCluster_UpgradePolicy_HealthPolicyFields,
@@ -248,78 +248,78 @@ class FabricClusterConfig:
     timeouts: Any = None
     upgrade_policy: Any = None
 
-FabricCluster = sdk.ResourceBinding(
+FabricCluster = ubx.ResourceBinding(
     wire_type="azurerm_service_fabric_cluster",
     fields={
-        "add_on_features": sdk.FieldSpec(wire_name="add_on_features"),
-        "cluster_code_version": sdk.FieldSpec(wire_name="cluster_code_version"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "management_endpoint": sdk.FieldSpec(wire_name="management_endpoint"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "reliability_level": sdk.FieldSpec(wire_name="reliability_level"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "service_fabric_zonal_upgrade_mode": sdk.FieldSpec(wire_name="service_fabric_zonal_upgrade_mode"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "upgrade_mode": sdk.FieldSpec(wire_name="upgrade_mode"),
-        "vm_image": sdk.FieldSpec(wire_name="vm_image"),
-        "vmss_zonal_upgrade_mode": sdk.FieldSpec(wire_name="vmss_zonal_upgrade_mode"),
-        "azure_active_directory": sdk.FieldSpec(
+        "add_on_features": ubx.FieldSpec(wire_name="add_on_features"),
+        "cluster_code_version": ubx.FieldSpec(wire_name="cluster_code_version"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "management_endpoint": ubx.FieldSpec(wire_name="management_endpoint"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "reliability_level": ubx.FieldSpec(wire_name="reliability_level"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "service_fabric_zonal_upgrade_mode": ubx.FieldSpec(wire_name="service_fabric_zonal_upgrade_mode"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "upgrade_mode": ubx.FieldSpec(wire_name="upgrade_mode"),
+        "vm_image": ubx.FieldSpec(wire_name="vm_image"),
+        "vmss_zonal_upgrade_mode": ubx.FieldSpec(wire_name="vmss_zonal_upgrade_mode"),
+        "azure_active_directory": ubx.FieldSpec(
             wire_name="azure_active_directory",
             kind="list",
             fields=_FabricCluster_AzureActiveDirectoryFields,
         ),
-        "certificate": sdk.FieldSpec(
+        "certificate": ubx.FieldSpec(
             wire_name="certificate",
             kind="list",
             fields=_FabricCluster_CertificateFields,
         ),
-        "certificate_common_names": sdk.FieldSpec(
+        "certificate_common_names": ubx.FieldSpec(
             wire_name="certificate_common_names",
             kind="list",
             fields=_FabricCluster_CertificateCommonNamesFields,
         ),
-        "client_certificate_common_name": sdk.FieldSpec(
+        "client_certificate_common_name": ubx.FieldSpec(
             wire_name="client_certificate_common_name",
             kind="list",
             fields=_FabricCluster_ClientCertificateCommonNameFields,
         ),
-        "client_certificate_thumbprint": sdk.FieldSpec(
+        "client_certificate_thumbprint": ubx.FieldSpec(
             wire_name="client_certificate_thumbprint",
             kind="list",
             fields=_FabricCluster_ClientCertificateThumbprintFields,
         ),
-        "diagnostics_config": sdk.FieldSpec(
+        "diagnostics_config": ubx.FieldSpec(
             wire_name="diagnostics_config",
             kind="list",
             fields=_FabricCluster_DiagnosticsConfigFields,
         ),
-        "fabric_settings": sdk.FieldSpec(
+        "fabric_settings": ubx.FieldSpec(
             wire_name="fabric_settings",
             kind="list",
             fields=_FabricCluster_FabricSettingsFields,
         ),
-        "node_type": sdk.FieldSpec(
+        "node_type": ubx.FieldSpec(
             wire_name="node_type",
             kind="list",
             fields=_FabricCluster_NodeTypeFields,
         ),
-        "reverse_proxy_certificate": sdk.FieldSpec(
+        "reverse_proxy_certificate": ubx.FieldSpec(
             wire_name="reverse_proxy_certificate",
             kind="list",
             fields=_FabricCluster_CertificateFields,
         ),
-        "reverse_proxy_certificate_common_names": sdk.FieldSpec(
+        "reverse_proxy_certificate_common_names": ubx.FieldSpec(
             wire_name="reverse_proxy_certificate_common_names",
             kind="list",
             fields=_FabricCluster_CertificateCommonNamesFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FabricCluster_TimeoutsFields,
         ),
-        "upgrade_policy": sdk.FieldSpec(
+        "upgrade_policy": ubx.FieldSpec(
             wire_name="upgrade_policy",
             kind="list",
             fields=_FabricCluster_UpgradePolicyFields,

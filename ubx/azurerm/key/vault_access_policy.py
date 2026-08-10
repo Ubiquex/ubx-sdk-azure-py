@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VaultAccessPolicy_Timeouts:
@@ -14,10 +14,10 @@ class VaultAccessPolicy_Timeouts:
     update: Any = None
 
 _VaultAccessPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -33,19 +33,19 @@ class VaultAccessPolicyConfig:
     tenant_id: Any = None
     timeouts: Any = None
 
-VaultAccessPolicy = sdk.ResourceBinding(
+VaultAccessPolicy = ubx.ResourceBinding(
     wire_type="azurerm_key_vault_access_policy",
     fields={
-        "application_id": sdk.FieldSpec(wire_name="application_id"),
-        "certificate_permissions": sdk.FieldSpec(wire_name="certificate_permissions"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "key_permissions": sdk.FieldSpec(wire_name="key_permissions"),
-        "key_vault_id": sdk.FieldSpec(wire_name="key_vault_id"),
-        "object_id": sdk.FieldSpec(wire_name="object_id"),
-        "secret_permissions": sdk.FieldSpec(wire_name="secret_permissions"),
-        "storage_permissions": sdk.FieldSpec(wire_name="storage_permissions"),
-        "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-        "timeouts": sdk.FieldSpec(
+        "application_id": ubx.FieldSpec(wire_name="application_id"),
+        "certificate_permissions": ubx.FieldSpec(wire_name="certificate_permissions"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "key_permissions": ubx.FieldSpec(wire_name="key_permissions"),
+        "key_vault_id": ubx.FieldSpec(wire_name="key_vault_id"),
+        "object_id": ubx.FieldSpec(wire_name="object_id"),
+        "secret_permissions": ubx.FieldSpec(wire_name="secret_permissions"),
+        "storage_permissions": ubx.FieldSpec(wire_name="storage_permissions"),
+        "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_VaultAccessPolicy_TimeoutsFields,

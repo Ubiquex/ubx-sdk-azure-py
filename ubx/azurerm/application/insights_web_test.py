@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InsightsWebTest_Timeouts:
@@ -14,10 +14,10 @@ class InsightsWebTest_Timeouts:
     update: Any = None
 
 _InsightsWebTest_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -38,24 +38,24 @@ class InsightsWebTestConfig:
     timeout: Any = None
     timeouts: Any = None
 
-InsightsWebTest = sdk.ResourceBinding(
+InsightsWebTest = ubx.ResourceBinding(
     wire_type="azurerm_application_insights_web_test",
     fields={
-        "application_insights_id": sdk.FieldSpec(wire_name="application_insights_id"),
-        "configuration": sdk.FieldSpec(wire_name="configuration"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "frequency": sdk.FieldSpec(wire_name="frequency"),
-        "geo_locations": sdk.FieldSpec(wire_name="geo_locations"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "kind": sdk.FieldSpec(wire_name="kind"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "retry_enabled": sdk.FieldSpec(wire_name="retry_enabled"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeout": sdk.FieldSpec(wire_name="timeout"),
-        "timeouts": sdk.FieldSpec(
+        "application_insights_id": ubx.FieldSpec(wire_name="application_insights_id"),
+        "configuration": ubx.FieldSpec(wire_name="configuration"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "frequency": ubx.FieldSpec(wire_name="frequency"),
+        "geo_locations": ubx.FieldSpec(wire_name="geo_locations"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "kind": ubx.FieldSpec(wire_name="kind"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "retry_enabled": ubx.FieldSpec(wire_name="retry_enabled"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeout": ubx.FieldSpec(wire_name="timeout"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_InsightsWebTest_TimeoutsFields,

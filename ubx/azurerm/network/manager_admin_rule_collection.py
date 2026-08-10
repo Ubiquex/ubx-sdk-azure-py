@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagerAdminRuleCollection_Timeouts:
@@ -14,10 +14,10 @@ class ManagerAdminRuleCollection_Timeouts:
     update: Any = None
 
 _ManagerAdminRuleCollection_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class ManagerAdminRuleCollectionConfig:
     security_admin_configuration_id: Any = None
     timeouts: Any = None
 
-ManagerAdminRuleCollection = sdk.ResourceBinding(
+ManagerAdminRuleCollection = ubx.ResourceBinding(
     wire_type="azurerm_network_manager_admin_rule_collection",
     fields={
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "network_group_ids": sdk.FieldSpec(wire_name="network_group_ids"),
-        "security_admin_configuration_id": sdk.FieldSpec(wire_name="security_admin_configuration_id"),
-        "timeouts": sdk.FieldSpec(
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network_group_ids": ubx.FieldSpec(wire_name="network_group_ids"),
+        "security_admin_configuration_id": ubx.FieldSpec(wire_name="security_admin_configuration_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagerAdminRuleCollection_TimeoutsFields,

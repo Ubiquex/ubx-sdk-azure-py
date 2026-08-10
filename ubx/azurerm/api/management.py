@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Management_AdditionalLocation_VirtualNetworkConfiguration:
@@ -136,19 +136,19 @@ class Management_Timeouts:
     update: Any = None
 
 _Management_AdditionalLocation_VirtualNetworkConfigurationFields = {
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _Management_AdditionalLocationFields = {
-    "capacity": sdk.FieldSpec(wire_name="capacity"),
-    "gateway_disabled": sdk.FieldSpec(wire_name="gateway_disabled"),
-    "gateway_regional_url": sdk.FieldSpec(wire_name="gateway_regional_url"),
-    "location": sdk.FieldSpec(wire_name="location"),
-    "private_ip_addresses": sdk.FieldSpec(wire_name="private_ip_addresses"),
-    "public_ip_address_id": sdk.FieldSpec(wire_name="public_ip_address_id"),
-    "public_ip_addresses": sdk.FieldSpec(wire_name="public_ip_addresses"),
-    "zones": sdk.FieldSpec(wire_name="zones"),
-    "virtual_network_configuration": sdk.FieldSpec(
+    "capacity": ubx.FieldSpec(wire_name="capacity"),
+    "gateway_disabled": ubx.FieldSpec(wire_name="gateway_disabled"),
+    "gateway_regional_url": ubx.FieldSpec(wire_name="gateway_regional_url"),
+    "location": ubx.FieldSpec(wire_name="location"),
+    "private_ip_addresses": ubx.FieldSpec(wire_name="private_ip_addresses"),
+    "public_ip_address_id": ubx.FieldSpec(wire_name="public_ip_address_id"),
+    "public_ip_addresses": ubx.FieldSpec(wire_name="public_ip_addresses"),
+    "zones": ubx.FieldSpec(wire_name="zones"),
+    "virtual_network_configuration": ubx.FieldSpec(
         wire_name="virtual_network_configuration",
         kind="list",
         fields=_Management_AdditionalLocation_VirtualNetworkConfigurationFields,
@@ -156,72 +156,72 @@ _Management_AdditionalLocationFields = {
 }
 
 _Management_CertificateFields = {
-    "certificate_password": sdk.FieldSpec(wire_name="certificate_password"),
-    "encoded_certificate": sdk.FieldSpec(wire_name="encoded_certificate"),
-    "expiry": sdk.FieldSpec(wire_name="expiry"),
-    "store_name": sdk.FieldSpec(wire_name="store_name"),
-    "subject": sdk.FieldSpec(wire_name="subject"),
-    "thumbprint": sdk.FieldSpec(wire_name="thumbprint"),
+    "certificate_password": ubx.FieldSpec(wire_name="certificate_password"),
+    "encoded_certificate": ubx.FieldSpec(wire_name="encoded_certificate"),
+    "expiry": ubx.FieldSpec(wire_name="expiry"),
+    "store_name": ubx.FieldSpec(wire_name="store_name"),
+    "subject": ubx.FieldSpec(wire_name="subject"),
+    "thumbprint": ubx.FieldSpec(wire_name="thumbprint"),
 }
 
 _Management_DelegationFields = {
-    "subscriptions_enabled": sdk.FieldSpec(wire_name="subscriptions_enabled"),
-    "url": sdk.FieldSpec(wire_name="url"),
-    "user_registration_enabled": sdk.FieldSpec(wire_name="user_registration_enabled"),
-    "validation_key": sdk.FieldSpec(wire_name="validation_key"),
+    "subscriptions_enabled": ubx.FieldSpec(wire_name="subscriptions_enabled"),
+    "url": ubx.FieldSpec(wire_name="url"),
+    "user_registration_enabled": ubx.FieldSpec(wire_name="user_registration_enabled"),
+    "validation_key": ubx.FieldSpec(wire_name="validation_key"),
 }
 
 _Management_HostnameConfiguration_DeveloperPortalFields = {
-    "certificate": sdk.FieldSpec(wire_name="certificate"),
-    "certificate_password": sdk.FieldSpec(wire_name="certificate_password"),
-    "certificate_source": sdk.FieldSpec(wire_name="certificate_source"),
-    "certificate_status": sdk.FieldSpec(wire_name="certificate_status"),
-    "expiry": sdk.FieldSpec(wire_name="expiry"),
-    "host_name": sdk.FieldSpec(wire_name="host_name"),
-    "key_vault_certificate_id": sdk.FieldSpec(wire_name="key_vault_certificate_id"),
-    "negotiate_client_certificate": sdk.FieldSpec(wire_name="negotiate_client_certificate"),
-    "ssl_keyvault_identity_client_id": sdk.FieldSpec(wire_name="ssl_keyvault_identity_client_id"),
-    "subject": sdk.FieldSpec(wire_name="subject"),
-    "thumbprint": sdk.FieldSpec(wire_name="thumbprint"),
+    "certificate": ubx.FieldSpec(wire_name="certificate"),
+    "certificate_password": ubx.FieldSpec(wire_name="certificate_password"),
+    "certificate_source": ubx.FieldSpec(wire_name="certificate_source"),
+    "certificate_status": ubx.FieldSpec(wire_name="certificate_status"),
+    "expiry": ubx.FieldSpec(wire_name="expiry"),
+    "host_name": ubx.FieldSpec(wire_name="host_name"),
+    "key_vault_certificate_id": ubx.FieldSpec(wire_name="key_vault_certificate_id"),
+    "negotiate_client_certificate": ubx.FieldSpec(wire_name="negotiate_client_certificate"),
+    "ssl_keyvault_identity_client_id": ubx.FieldSpec(wire_name="ssl_keyvault_identity_client_id"),
+    "subject": ubx.FieldSpec(wire_name="subject"),
+    "thumbprint": ubx.FieldSpec(wire_name="thumbprint"),
 }
 
 _Management_HostnameConfiguration_ProxyFields = {
-    "certificate": sdk.FieldSpec(wire_name="certificate"),
-    "certificate_password": sdk.FieldSpec(wire_name="certificate_password"),
-    "certificate_source": sdk.FieldSpec(wire_name="certificate_source"),
-    "certificate_status": sdk.FieldSpec(wire_name="certificate_status"),
-    "default_ssl_binding": sdk.FieldSpec(wire_name="default_ssl_binding"),
-    "expiry": sdk.FieldSpec(wire_name="expiry"),
-    "host_name": sdk.FieldSpec(wire_name="host_name"),
-    "key_vault_certificate_id": sdk.FieldSpec(wire_name="key_vault_certificate_id"),
-    "negotiate_client_certificate": sdk.FieldSpec(wire_name="negotiate_client_certificate"),
-    "ssl_keyvault_identity_client_id": sdk.FieldSpec(wire_name="ssl_keyvault_identity_client_id"),
-    "subject": sdk.FieldSpec(wire_name="subject"),
-    "thumbprint": sdk.FieldSpec(wire_name="thumbprint"),
+    "certificate": ubx.FieldSpec(wire_name="certificate"),
+    "certificate_password": ubx.FieldSpec(wire_name="certificate_password"),
+    "certificate_source": ubx.FieldSpec(wire_name="certificate_source"),
+    "certificate_status": ubx.FieldSpec(wire_name="certificate_status"),
+    "default_ssl_binding": ubx.FieldSpec(wire_name="default_ssl_binding"),
+    "expiry": ubx.FieldSpec(wire_name="expiry"),
+    "host_name": ubx.FieldSpec(wire_name="host_name"),
+    "key_vault_certificate_id": ubx.FieldSpec(wire_name="key_vault_certificate_id"),
+    "negotiate_client_certificate": ubx.FieldSpec(wire_name="negotiate_client_certificate"),
+    "ssl_keyvault_identity_client_id": ubx.FieldSpec(wire_name="ssl_keyvault_identity_client_id"),
+    "subject": ubx.FieldSpec(wire_name="subject"),
+    "thumbprint": ubx.FieldSpec(wire_name="thumbprint"),
 }
 
 _Management_HostnameConfigurationFields = {
-    "developer_portal": sdk.FieldSpec(
+    "developer_portal": ubx.FieldSpec(
         wire_name="developer_portal",
         kind="list",
         fields=_Management_HostnameConfiguration_DeveloperPortalFields,
     ),
-    "management": sdk.FieldSpec(
+    "management": ubx.FieldSpec(
         wire_name="management",
         kind="list",
         fields=_Management_HostnameConfiguration_DeveloperPortalFields,
     ),
-    "portal": sdk.FieldSpec(
+    "portal": ubx.FieldSpec(
         wire_name="portal",
         kind="list",
         fields=_Management_HostnameConfiguration_DeveloperPortalFields,
     ),
-    "proxy": sdk.FieldSpec(
+    "proxy": ubx.FieldSpec(
         wire_name="proxy",
         kind="list",
         fields=_Management_HostnameConfiguration_ProxyFields,
     ),
-    "scm": sdk.FieldSpec(
+    "scm": ubx.FieldSpec(
         wire_name="scm",
         kind="list",
         fields=_Management_HostnameConfiguration_DeveloperPortalFields,
@@ -229,49 +229,49 @@ _Management_HostnameConfigurationFields = {
 }
 
 _Management_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Management_ProtocolsFields = {
-    "http2_enabled": sdk.FieldSpec(wire_name="http2_enabled"),
+    "http2_enabled": ubx.FieldSpec(wire_name="http2_enabled"),
 }
 
 _Management_SecurityFields = {
-    "backend_ssl30_enabled": sdk.FieldSpec(wire_name="backend_ssl30_enabled"),
-    "backend_tls10_enabled": sdk.FieldSpec(wire_name="backend_tls10_enabled"),
-    "backend_tls11_enabled": sdk.FieldSpec(wire_name="backend_tls11_enabled"),
-    "frontend_ssl30_enabled": sdk.FieldSpec(wire_name="frontend_ssl30_enabled"),
-    "frontend_tls10_enabled": sdk.FieldSpec(wire_name="frontend_tls10_enabled"),
-    "frontend_tls11_enabled": sdk.FieldSpec(wire_name="frontend_tls11_enabled"),
-    "tls_ecdhe_ecdsa_with_aes128_cbc_sha_ciphers_enabled": sdk.FieldSpec(wire_name="tls_ecdhe_ecdsa_with_aes128_cbc_sha_ciphers_enabled"),
-    "tls_ecdhe_ecdsa_with_aes256_cbc_sha_ciphers_enabled": sdk.FieldSpec(wire_name="tls_ecdhe_ecdsa_with_aes256_cbc_sha_ciphers_enabled"),
-    "tls_ecdhe_rsa_with_aes128_cbc_sha_ciphers_enabled": sdk.FieldSpec(wire_name="tls_ecdhe_rsa_with_aes128_cbc_sha_ciphers_enabled"),
-    "tls_ecdhe_rsa_with_aes256_cbc_sha_ciphers_enabled": sdk.FieldSpec(wire_name="tls_ecdhe_rsa_with_aes256_cbc_sha_ciphers_enabled"),
-    "tls_rsa_with_aes128_cbc_sha256_ciphers_enabled": sdk.FieldSpec(wire_name="tls_rsa_with_aes128_cbc_sha256_ciphers_enabled"),
-    "tls_rsa_with_aes128_cbc_sha_ciphers_enabled": sdk.FieldSpec(wire_name="tls_rsa_with_aes128_cbc_sha_ciphers_enabled"),
-    "tls_rsa_with_aes128_gcm_sha256_ciphers_enabled": sdk.FieldSpec(wire_name="tls_rsa_with_aes128_gcm_sha256_ciphers_enabled"),
-    "tls_rsa_with_aes256_cbc_sha256_ciphers_enabled": sdk.FieldSpec(wire_name="tls_rsa_with_aes256_cbc_sha256_ciphers_enabled"),
-    "tls_rsa_with_aes256_cbc_sha_ciphers_enabled": sdk.FieldSpec(wire_name="tls_rsa_with_aes256_cbc_sha_ciphers_enabled"),
-    "tls_rsa_with_aes256_gcm_sha384_ciphers_enabled": sdk.FieldSpec(wire_name="tls_rsa_with_aes256_gcm_sha384_ciphers_enabled"),
-    "triple_des_ciphers_enabled": sdk.FieldSpec(wire_name="triple_des_ciphers_enabled"),
+    "backend_ssl30_enabled": ubx.FieldSpec(wire_name="backend_ssl30_enabled"),
+    "backend_tls10_enabled": ubx.FieldSpec(wire_name="backend_tls10_enabled"),
+    "backend_tls11_enabled": ubx.FieldSpec(wire_name="backend_tls11_enabled"),
+    "frontend_ssl30_enabled": ubx.FieldSpec(wire_name="frontend_ssl30_enabled"),
+    "frontend_tls10_enabled": ubx.FieldSpec(wire_name="frontend_tls10_enabled"),
+    "frontend_tls11_enabled": ubx.FieldSpec(wire_name="frontend_tls11_enabled"),
+    "tls_ecdhe_ecdsa_with_aes128_cbc_sha_ciphers_enabled": ubx.FieldSpec(wire_name="tls_ecdhe_ecdsa_with_aes128_cbc_sha_ciphers_enabled"),
+    "tls_ecdhe_ecdsa_with_aes256_cbc_sha_ciphers_enabled": ubx.FieldSpec(wire_name="tls_ecdhe_ecdsa_with_aes256_cbc_sha_ciphers_enabled"),
+    "tls_ecdhe_rsa_with_aes128_cbc_sha_ciphers_enabled": ubx.FieldSpec(wire_name="tls_ecdhe_rsa_with_aes128_cbc_sha_ciphers_enabled"),
+    "tls_ecdhe_rsa_with_aes256_cbc_sha_ciphers_enabled": ubx.FieldSpec(wire_name="tls_ecdhe_rsa_with_aes256_cbc_sha_ciphers_enabled"),
+    "tls_rsa_with_aes128_cbc_sha256_ciphers_enabled": ubx.FieldSpec(wire_name="tls_rsa_with_aes128_cbc_sha256_ciphers_enabled"),
+    "tls_rsa_with_aes128_cbc_sha_ciphers_enabled": ubx.FieldSpec(wire_name="tls_rsa_with_aes128_cbc_sha_ciphers_enabled"),
+    "tls_rsa_with_aes128_gcm_sha256_ciphers_enabled": ubx.FieldSpec(wire_name="tls_rsa_with_aes128_gcm_sha256_ciphers_enabled"),
+    "tls_rsa_with_aes256_cbc_sha256_ciphers_enabled": ubx.FieldSpec(wire_name="tls_rsa_with_aes256_cbc_sha256_ciphers_enabled"),
+    "tls_rsa_with_aes256_cbc_sha_ciphers_enabled": ubx.FieldSpec(wire_name="tls_rsa_with_aes256_cbc_sha_ciphers_enabled"),
+    "tls_rsa_with_aes256_gcm_sha384_ciphers_enabled": ubx.FieldSpec(wire_name="tls_rsa_with_aes256_gcm_sha384_ciphers_enabled"),
+    "triple_des_ciphers_enabled": ubx.FieldSpec(wire_name="triple_des_ciphers_enabled"),
 }
 
 _Management_SignInFields = {
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
 }
 
 _Management_SignUp_TermsOfServiceFields = {
-    "consent_required": sdk.FieldSpec(wire_name="consent_required"),
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "text": sdk.FieldSpec(wire_name="text"),
+    "consent_required": ubx.FieldSpec(wire_name="consent_required"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "text": ubx.FieldSpec(wire_name="text"),
 }
 
 _Management_SignUpFields = {
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "terms_of_service": sdk.FieldSpec(
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "terms_of_service": ubx.FieldSpec(
         wire_name="terms_of_service",
         kind="list",
         fields=_Management_SignUp_TermsOfServiceFields,
@@ -279,17 +279,17 @@ _Management_SignUpFields = {
 }
 
 _Management_TenantAccessFields = {
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "primary_key": sdk.FieldSpec(wire_name="primary_key"),
-    "secondary_key": sdk.FieldSpec(wire_name="secondary_key"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "primary_key": ubx.FieldSpec(wire_name="primary_key"),
+    "secondary_key": ubx.FieldSpec(wire_name="secondary_key"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
 }
 
 _Management_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -323,81 +323,81 @@ class ManagementConfig:
     timeouts: Any = None
     virtual_network_configuration: Any = None
 
-Management = sdk.ResourceBinding(
+Management = ubx.ResourceBinding(
     wire_type="azurerm_api_management",
     fields={
-        "client_certificate_enabled": sdk.FieldSpec(wire_name="client_certificate_enabled"),
-        "gateway_disabled": sdk.FieldSpec(wire_name="gateway_disabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "min_api_version": sdk.FieldSpec(wire_name="min_api_version"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "notification_sender_email": sdk.FieldSpec(wire_name="notification_sender_email"),
-        "public_ip_address_id": sdk.FieldSpec(wire_name="public_ip_address_id"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "publisher_email": sdk.FieldSpec(wire_name="publisher_email"),
-        "publisher_name": sdk.FieldSpec(wire_name="publisher_name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "virtual_network_type": sdk.FieldSpec(wire_name="virtual_network_type"),
-        "zones": sdk.FieldSpec(wire_name="zones"),
-        "additional_location": sdk.FieldSpec(
+        "client_certificate_enabled": ubx.FieldSpec(wire_name="client_certificate_enabled"),
+        "gateway_disabled": ubx.FieldSpec(wire_name="gateway_disabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "min_api_version": ubx.FieldSpec(wire_name="min_api_version"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "notification_sender_email": ubx.FieldSpec(wire_name="notification_sender_email"),
+        "public_ip_address_id": ubx.FieldSpec(wire_name="public_ip_address_id"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "publisher_email": ubx.FieldSpec(wire_name="publisher_email"),
+        "publisher_name": ubx.FieldSpec(wire_name="publisher_name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "virtual_network_type": ubx.FieldSpec(wire_name="virtual_network_type"),
+        "zones": ubx.FieldSpec(wire_name="zones"),
+        "additional_location": ubx.FieldSpec(
             wire_name="additional_location",
             kind="list",
             fields=_Management_AdditionalLocationFields,
         ),
-        "certificate": sdk.FieldSpec(
+        "certificate": ubx.FieldSpec(
             wire_name="certificate",
             kind="list",
             fields=_Management_CertificateFields,
         ),
-        "delegation": sdk.FieldSpec(
+        "delegation": ubx.FieldSpec(
             wire_name="delegation",
             kind="list",
             fields=_Management_DelegationFields,
         ),
-        "hostname_configuration": sdk.FieldSpec(
+        "hostname_configuration": ubx.FieldSpec(
             wire_name="hostname_configuration",
             kind="list",
             fields=_Management_HostnameConfigurationFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Management_IdentityFields,
         ),
-        "protocols": sdk.FieldSpec(
+        "protocols": ubx.FieldSpec(
             wire_name="protocols",
             kind="list",
             fields=_Management_ProtocolsFields,
         ),
-        "security": sdk.FieldSpec(
+        "security": ubx.FieldSpec(
             wire_name="security",
             kind="list",
             fields=_Management_SecurityFields,
         ),
-        "sign_in": sdk.FieldSpec(
+        "sign_in": ubx.FieldSpec(
             wire_name="sign_in",
             kind="list",
             fields=_Management_SignInFields,
         ),
-        "sign_up": sdk.FieldSpec(
+        "sign_up": ubx.FieldSpec(
             wire_name="sign_up",
             kind="list",
             fields=_Management_SignUpFields,
         ),
-        "tenant_access": sdk.FieldSpec(
+        "tenant_access": ubx.FieldSpec(
             wire_name="tenant_access",
             kind="list",
             fields=_Management_TenantAccessFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Management_TimeoutsFields,
         ),
-        "virtual_network_configuration": sdk.FieldSpec(
+        "virtual_network_configuration": ubx.FieldSpec(
             wire_name="virtual_network_configuration",
             kind="list",
             fields=_Management_AdditionalLocation_VirtualNetworkConfigurationFields,

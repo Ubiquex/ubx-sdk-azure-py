@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ChannelDirectLineSpeech_Timeouts:
@@ -14,10 +14,10 @@ class ChannelDirectLineSpeech_Timeouts:
     update: Any = None
 
 _ChannelDirectLineSpeech_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -33,19 +33,19 @@ class ChannelDirectLineSpeechConfig:
     resource_group_name: Any = None
     timeouts: Any = None
 
-ChannelDirectLineSpeech = sdk.ResourceBinding(
+ChannelDirectLineSpeech = ubx.ResourceBinding(
     wire_type="azurerm_bot_channel_direct_line_speech",
     fields={
-        "bot_name": sdk.FieldSpec(wire_name="bot_name"),
-        "cognitive_account_id": sdk.FieldSpec(wire_name="cognitive_account_id"),
-        "cognitive_service_access_key": sdk.FieldSpec(wire_name="cognitive_service_access_key"),
-        "cognitive_service_location": sdk.FieldSpec(wire_name="cognitive_service_location"),
-        "custom_speech_model_id": sdk.FieldSpec(wire_name="custom_speech_model_id"),
-        "custom_voice_deployment_id": sdk.FieldSpec(wire_name="custom_voice_deployment_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "timeouts": sdk.FieldSpec(
+        "bot_name": ubx.FieldSpec(wire_name="bot_name"),
+        "cognitive_account_id": ubx.FieldSpec(wire_name="cognitive_account_id"),
+        "cognitive_service_access_key": ubx.FieldSpec(wire_name="cognitive_service_access_key"),
+        "cognitive_service_location": ubx.FieldSpec(wire_name="cognitive_service_location"),
+        "custom_speech_model_id": ubx.FieldSpec(wire_name="custom_speech_model_id"),
+        "custom_voice_deployment_id": ubx.FieldSpec(wire_name="custom_voice_deployment_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ChannelDirectLineSpeech_TimeoutsFields,

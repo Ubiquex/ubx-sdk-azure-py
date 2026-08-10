@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VirtualNetworkRule_Timeouts:
@@ -14,10 +14,10 @@ class VirtualNetworkRule_Timeouts:
     update: Any = None
 
 _VirtualNetworkRule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class VirtualNetworkRuleConfig:
     subnet_id: Any = None
     timeouts: Any = None
 
-VirtualNetworkRule = sdk.ResourceBinding(
+VirtualNetworkRule = ubx.ResourceBinding(
     wire_type="azurerm_mssql_virtual_network_rule",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "ignore_missing_vnet_service_endpoint": sdk.FieldSpec(wire_name="ignore_missing_vnet_service_endpoint"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "server_id": sdk.FieldSpec(wire_name="server_id"),
-        "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "ignore_missing_vnet_service_endpoint": ubx.FieldSpec(wire_name="ignore_missing_vnet_service_endpoint"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "server_id": ubx.FieldSpec(wire_name="server_id"),
+        "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_VirtualNetworkRule_TimeoutsFields,

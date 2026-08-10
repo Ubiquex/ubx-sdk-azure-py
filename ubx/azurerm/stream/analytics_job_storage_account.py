@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnalyticsJobStorageAccount_Timeouts:
@@ -14,10 +14,10 @@ class AnalyticsJobStorageAccount_Timeouts:
     update: Any = None
 
 _AnalyticsJobStorageAccount_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class AnalyticsJobStorageAccountConfig:
     stream_analytics_job_id: Any = None
     timeouts: Any = None
 
-AnalyticsJobStorageAccount = sdk.ResourceBinding(
+AnalyticsJobStorageAccount = ubx.ResourceBinding(
     wire_type="azurerm_stream_analytics_job_storage_account",
     fields={
-        "authentication_mode": sdk.FieldSpec(wire_name="authentication_mode"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "storage_account_key": sdk.FieldSpec(wire_name="storage_account_key"),
-        "storage_account_name": sdk.FieldSpec(wire_name="storage_account_name"),
-        "stream_analytics_job_id": sdk.FieldSpec(wire_name="stream_analytics_job_id"),
-        "timeouts": sdk.FieldSpec(
+        "authentication_mode": ubx.FieldSpec(wire_name="authentication_mode"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "storage_account_key": ubx.FieldSpec(wire_name="storage_account_key"),
+        "storage_account_name": ubx.FieldSpec(wire_name="storage_account_name"),
+        "stream_analytics_job_id": ubx.FieldSpec(wire_name="stream_analytics_job_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AnalyticsJobStorageAccount_TimeoutsFields,

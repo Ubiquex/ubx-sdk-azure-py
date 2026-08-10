@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HciCluster_Identity:
@@ -20,16 +20,16 @@ class HciCluster_Timeouts:
     update: Any = None
 
 _HciCluster_IdentityFields = {
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _HciCluster_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -45,23 +45,23 @@ class HciClusterConfig:
     identity: Any = None
     timeouts: Any = None
 
-HciCluster = sdk.ResourceBinding(
+HciCluster = ubx.ResourceBinding(
     wire_type="azurerm_stack_hci_cluster",
     fields={
-        "automanage_configuration_id": sdk.FieldSpec(wire_name="automanage_configuration_id"),
-        "client_id": sdk.FieldSpec(wire_name="client_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-        "identity": sdk.FieldSpec(
+        "automanage_configuration_id": ubx.FieldSpec(wire_name="automanage_configuration_id"),
+        "client_id": ubx.FieldSpec(wire_name="client_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_HciCluster_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_HciCluster_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Snapshot_EncryptionSettings_DiskEncryptionKey:
@@ -29,22 +29,22 @@ class Snapshot_Timeouts:
     update: Any = None
 
 _Snapshot_EncryptionSettings_DiskEncryptionKeyFields = {
-    "secret_url": sdk.FieldSpec(wire_name="secret_url"),
-    "source_vault_id": sdk.FieldSpec(wire_name="source_vault_id"),
+    "secret_url": ubx.FieldSpec(wire_name="secret_url"),
+    "source_vault_id": ubx.FieldSpec(wire_name="source_vault_id"),
 }
 
 _Snapshot_EncryptionSettings_KeyEncryptionKeyFields = {
-    "key_url": sdk.FieldSpec(wire_name="key_url"),
-    "source_vault_id": sdk.FieldSpec(wire_name="source_vault_id"),
+    "key_url": ubx.FieldSpec(wire_name="key_url"),
+    "source_vault_id": ubx.FieldSpec(wire_name="source_vault_id"),
 }
 
 _Snapshot_EncryptionSettingsFields = {
-    "disk_encryption_key": sdk.FieldSpec(
+    "disk_encryption_key": ubx.FieldSpec(
         wire_name="disk_encryption_key",
         kind="list",
         fields=_Snapshot_EncryptionSettings_DiskEncryptionKeyFields,
     ),
-    "key_encryption_key": sdk.FieldSpec(
+    "key_encryption_key": ubx.FieldSpec(
         wire_name="key_encryption_key",
         kind="list",
         fields=_Snapshot_EncryptionSettings_KeyEncryptionKeyFields,
@@ -52,10 +52,10 @@ _Snapshot_EncryptionSettingsFields = {
 }
 
 _Snapshot_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -77,29 +77,29 @@ class SnapshotConfig:
     encryption_settings: Any = None
     timeouts: Any = None
 
-Snapshot = sdk.ResourceBinding(
+Snapshot = ubx.ResourceBinding(
     wire_type="azurerm_snapshot",
     fields={
-        "create_option": sdk.FieldSpec(wire_name="create_option"),
-        "disk_access_id": sdk.FieldSpec(wire_name="disk_access_id"),
-        "disk_size_gb": sdk.FieldSpec(wire_name="disk_size_gb"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "incremental_enabled": sdk.FieldSpec(wire_name="incremental_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "network_access_policy": sdk.FieldSpec(wire_name="network_access_policy"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "source_resource_id": sdk.FieldSpec(wire_name="source_resource_id"),
-        "source_uri": sdk.FieldSpec(wire_name="source_uri"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "encryption_settings": sdk.FieldSpec(
+        "create_option": ubx.FieldSpec(wire_name="create_option"),
+        "disk_access_id": ubx.FieldSpec(wire_name="disk_access_id"),
+        "disk_size_gb": ubx.FieldSpec(wire_name="disk_size_gb"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "incremental_enabled": ubx.FieldSpec(wire_name="incremental_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network_access_policy": ubx.FieldSpec(wire_name="network_access_policy"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "source_resource_id": ubx.FieldSpec(wire_name="source_resource_id"),
+        "source_uri": ubx.FieldSpec(wire_name="source_uri"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "encryption_settings": ubx.FieldSpec(
             wire_name="encryption_settings",
             kind="list",
             fields=_Snapshot_EncryptionSettingsFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Snapshot_TimeoutsFields,

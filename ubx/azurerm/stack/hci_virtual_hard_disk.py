@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HciVirtualHardDisk_Timeouts:
@@ -14,10 +14,10 @@ class HciVirtualHardDisk_Timeouts:
     update: Any = None
 
 _HciVirtualHardDisk_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -38,24 +38,24 @@ class HciVirtualHardDiskConfig:
     tags: Any = None
     timeouts: Any = None
 
-HciVirtualHardDisk = sdk.ResourceBinding(
+HciVirtualHardDisk = ubx.ResourceBinding(
     wire_type="azurerm_stack_hci_virtual_hard_disk",
     fields={
-        "block_size_in_bytes": sdk.FieldSpec(wire_name="block_size_in_bytes"),
-        "custom_location_id": sdk.FieldSpec(wire_name="custom_location_id"),
-        "disk_file_format": sdk.FieldSpec(wire_name="disk_file_format"),
-        "disk_size_in_gb": sdk.FieldSpec(wire_name="disk_size_in_gb"),
-        "dynamic_enabled": sdk.FieldSpec(wire_name="dynamic_enabled"),
-        "hyperv_generation": sdk.FieldSpec(wire_name="hyperv_generation"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "logical_sector_in_bytes": sdk.FieldSpec(wire_name="logical_sector_in_bytes"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "physical_sector_in_bytes": sdk.FieldSpec(wire_name="physical_sector_in_bytes"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "storage_path_id": sdk.FieldSpec(wire_name="storage_path_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "block_size_in_bytes": ubx.FieldSpec(wire_name="block_size_in_bytes"),
+        "custom_location_id": ubx.FieldSpec(wire_name="custom_location_id"),
+        "disk_file_format": ubx.FieldSpec(wire_name="disk_file_format"),
+        "disk_size_in_gb": ubx.FieldSpec(wire_name="disk_size_in_gb"),
+        "dynamic_enabled": ubx.FieldSpec(wire_name="dynamic_enabled"),
+        "hyperv_generation": ubx.FieldSpec(wire_name="hyperv_generation"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "logical_sector_in_bytes": ubx.FieldSpec(wire_name="logical_sector_in_bytes"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "physical_sector_in_bytes": ubx.FieldSpec(wire_name="physical_sector_in_bytes"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "storage_path_id": ubx.FieldSpec(wire_name="storage_path_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_HciVirtualHardDisk_TimeoutsFields,

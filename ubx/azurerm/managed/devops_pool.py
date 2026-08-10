@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DevopsPool_AzureDevopsOrganization_Organization:
@@ -108,19 +108,19 @@ class DevopsPool_VirtualMachineScaleSetFabric:
     storage: Any = None
 
 _DevopsPool_AzureDevopsOrganization_OrganizationFields = {
-    "parallelism": sdk.FieldSpec(wire_name="parallelism"),
-    "projects": sdk.FieldSpec(wire_name="projects"),
-    "url": sdk.FieldSpec(wire_name="url"),
+    "parallelism": ubx.FieldSpec(wire_name="parallelism"),
+    "projects": ubx.FieldSpec(wire_name="projects"),
+    "url": ubx.FieldSpec(wire_name="url"),
 }
 
 _DevopsPool_AzureDevopsOrganization_Permission_AdministratorAccountFields = {
-    "groups": sdk.FieldSpec(wire_name="groups"),
-    "users": sdk.FieldSpec(wire_name="users"),
+    "groups": ubx.FieldSpec(wire_name="groups"),
+    "users": ubx.FieldSpec(wire_name="users"),
 }
 
 _DevopsPool_AzureDevopsOrganization_PermissionFields = {
-    "kind": sdk.FieldSpec(wire_name="kind"),
-    "administrator_account": sdk.FieldSpec(
+    "kind": ubx.FieldSpec(wire_name="kind"),
+    "administrator_account": ubx.FieldSpec(
         wire_name="administrator_account",
         kind="list",
         fields=_DevopsPool_AzureDevopsOrganization_Permission_AdministratorAccountFields,
@@ -128,12 +128,12 @@ _DevopsPool_AzureDevopsOrganization_PermissionFields = {
 }
 
 _DevopsPool_AzureDevopsOrganizationFields = {
-    "organization": sdk.FieldSpec(
+    "organization": ubx.FieldSpec(
         wire_name="organization",
         kind="list",
         fields=_DevopsPool_AzureDevopsOrganization_OrganizationFields,
     ),
-    "permission": sdk.FieldSpec(
+    "permission": ubx.FieldSpec(
         wire_name="permission",
         kind="list",
         fields=_DevopsPool_AzureDevopsOrganization_PermissionFields,
@@ -141,53 +141,53 @@ _DevopsPool_AzureDevopsOrganizationFields = {
 }
 
 _DevopsPool_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _DevopsPool_StatefulAgent_AutomaticResourcePredictionFields = {
-    "prediction_preference": sdk.FieldSpec(wire_name="prediction_preference"),
+    "prediction_preference": ubx.FieldSpec(wire_name="prediction_preference"),
 }
 
 _DevopsPool_StatefulAgent_ManualResourcePrediction_FridayScheduleFields = {
-    "count": sdk.FieldSpec(wire_name="count"),
-    "time": sdk.FieldSpec(wire_name="time"),
+    "count": ubx.FieldSpec(wire_name="count"),
+    "time": ubx.FieldSpec(wire_name="time"),
 }
 
 _DevopsPool_StatefulAgent_ManualResourcePredictionFields = {
-    "all_week_schedule": sdk.FieldSpec(wire_name="all_week_schedule"),
-    "time_zone_name": sdk.FieldSpec(wire_name="time_zone_name"),
-    "friday_schedule": sdk.FieldSpec(
+    "all_week_schedule": ubx.FieldSpec(wire_name="all_week_schedule"),
+    "time_zone_name": ubx.FieldSpec(wire_name="time_zone_name"),
+    "friday_schedule": ubx.FieldSpec(
         wire_name="friday_schedule",
         kind="set",
         fields=_DevopsPool_StatefulAgent_ManualResourcePrediction_FridayScheduleFields,
     ),
-    "monday_schedule": sdk.FieldSpec(
+    "monday_schedule": ubx.FieldSpec(
         wire_name="monday_schedule",
         kind="set",
         fields=_DevopsPool_StatefulAgent_ManualResourcePrediction_FridayScheduleFields,
     ),
-    "saturday_schedule": sdk.FieldSpec(
+    "saturday_schedule": ubx.FieldSpec(
         wire_name="saturday_schedule",
         kind="set",
         fields=_DevopsPool_StatefulAgent_ManualResourcePrediction_FridayScheduleFields,
     ),
-    "sunday_schedule": sdk.FieldSpec(
+    "sunday_schedule": ubx.FieldSpec(
         wire_name="sunday_schedule",
         kind="set",
         fields=_DevopsPool_StatefulAgent_ManualResourcePrediction_FridayScheduleFields,
     ),
-    "thursday_schedule": sdk.FieldSpec(
+    "thursday_schedule": ubx.FieldSpec(
         wire_name="thursday_schedule",
         kind="set",
         fields=_DevopsPool_StatefulAgent_ManualResourcePrediction_FridayScheduleFields,
     ),
-    "tuesday_schedule": sdk.FieldSpec(
+    "tuesday_schedule": ubx.FieldSpec(
         wire_name="tuesday_schedule",
         kind="set",
         fields=_DevopsPool_StatefulAgent_ManualResourcePrediction_FridayScheduleFields,
     ),
-    "wednesday_schedule": sdk.FieldSpec(
+    "wednesday_schedule": ubx.FieldSpec(
         wire_name="wednesday_schedule",
         kind="set",
         fields=_DevopsPool_StatefulAgent_ManualResourcePrediction_FridayScheduleFields,
@@ -195,14 +195,14 @@ _DevopsPool_StatefulAgent_ManualResourcePredictionFields = {
 }
 
 _DevopsPool_StatefulAgentFields = {
-    "grace_period_time_span": sdk.FieldSpec(wire_name="grace_period_time_span"),
-    "maximum_agent_lifetime": sdk.FieldSpec(wire_name="maximum_agent_lifetime"),
-    "automatic_resource_prediction": sdk.FieldSpec(
+    "grace_period_time_span": ubx.FieldSpec(wire_name="grace_period_time_span"),
+    "maximum_agent_lifetime": ubx.FieldSpec(wire_name="maximum_agent_lifetime"),
+    "automatic_resource_prediction": ubx.FieldSpec(
         wire_name="automatic_resource_prediction",
         kind="list",
         fields=_DevopsPool_StatefulAgent_AutomaticResourcePredictionFields,
     ),
-    "manual_resource_prediction": sdk.FieldSpec(
+    "manual_resource_prediction": ubx.FieldSpec(
         wire_name="manual_resource_prediction",
         kind="list",
         fields=_DevopsPool_StatefulAgent_ManualResourcePredictionFields,
@@ -210,12 +210,12 @@ _DevopsPool_StatefulAgentFields = {
 }
 
 _DevopsPool_StatelessAgentFields = {
-    "automatic_resource_prediction": sdk.FieldSpec(
+    "automatic_resource_prediction": ubx.FieldSpec(
         wire_name="automatic_resource_prediction",
         kind="list",
         fields=_DevopsPool_StatefulAgent_AutomaticResourcePredictionFields,
     ),
-    "manual_resource_prediction": sdk.FieldSpec(
+    "manual_resource_prediction": ubx.FieldSpec(
         wire_name="manual_resource_prediction",
         kind="list",
         fields=_DevopsPool_StatefulAgent_ManualResourcePredictionFields,
@@ -223,29 +223,29 @@ _DevopsPool_StatelessAgentFields = {
 }
 
 _DevopsPool_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _DevopsPool_VirtualMachineScaleSetFabric_ImageFields = {
-    "aliases": sdk.FieldSpec(wire_name="aliases"),
-    "buffer": sdk.FieldSpec(wire_name="buffer"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "well_known_image_name": sdk.FieldSpec(wire_name="well_known_image_name"),
+    "aliases": ubx.FieldSpec(wire_name="aliases"),
+    "buffer": ubx.FieldSpec(wire_name="buffer"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "well_known_image_name": ubx.FieldSpec(wire_name="well_known_image_name"),
 }
 
 _DevopsPool_VirtualMachineScaleSetFabric_Security_KeyVaultManagementFields = {
-    "certificate_store_location": sdk.FieldSpec(wire_name="certificate_store_location"),
-    "certificate_store_name": sdk.FieldSpec(wire_name="certificate_store_name"),
-    "key_export_enabled": sdk.FieldSpec(wire_name="key_export_enabled"),
-    "key_vault_certificate_ids": sdk.FieldSpec(wire_name="key_vault_certificate_ids"),
+    "certificate_store_location": ubx.FieldSpec(wire_name="certificate_store_location"),
+    "certificate_store_name": ubx.FieldSpec(wire_name="certificate_store_name"),
+    "key_export_enabled": ubx.FieldSpec(wire_name="key_export_enabled"),
+    "key_vault_certificate_ids": ubx.FieldSpec(wire_name="key_vault_certificate_ids"),
 }
 
 _DevopsPool_VirtualMachineScaleSetFabric_SecurityFields = {
-    "interactive_logon_enabled": sdk.FieldSpec(wire_name="interactive_logon_enabled"),
-    "key_vault_management": sdk.FieldSpec(
+    "interactive_logon_enabled": ubx.FieldSpec(wire_name="interactive_logon_enabled"),
+    "key_vault_management": ubx.FieldSpec(
         wire_name="key_vault_management",
         kind="list",
         fields=_DevopsPool_VirtualMachineScaleSetFabric_Security_KeyVaultManagementFields,
@@ -253,27 +253,27 @@ _DevopsPool_VirtualMachineScaleSetFabric_SecurityFields = {
 }
 
 _DevopsPool_VirtualMachineScaleSetFabric_StorageFields = {
-    "caching": sdk.FieldSpec(wire_name="caching"),
-    "disk_size_in_gb": sdk.FieldSpec(wire_name="disk_size_in_gb"),
-    "drive_letter": sdk.FieldSpec(wire_name="drive_letter"),
-    "storage_account_type": sdk.FieldSpec(wire_name="storage_account_type"),
+    "caching": ubx.FieldSpec(wire_name="caching"),
+    "disk_size_in_gb": ubx.FieldSpec(wire_name="disk_size_in_gb"),
+    "drive_letter": ubx.FieldSpec(wire_name="drive_letter"),
+    "storage_account_type": ubx.FieldSpec(wire_name="storage_account_type"),
 }
 
 _DevopsPool_VirtualMachineScaleSetFabricFields = {
-    "os_disk_storage_account_type": sdk.FieldSpec(wire_name="os_disk_storage_account_type"),
-    "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-    "image": sdk.FieldSpec(
+    "os_disk_storage_account_type": ubx.FieldSpec(wire_name="os_disk_storage_account_type"),
+    "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+    "image": ubx.FieldSpec(
         wire_name="image",
         kind="list",
         fields=_DevopsPool_VirtualMachineScaleSetFabric_ImageFields,
     ),
-    "security": sdk.FieldSpec(
+    "security": ubx.FieldSpec(
         wire_name="security",
         kind="list",
         fields=_DevopsPool_VirtualMachineScaleSetFabric_SecurityFields,
     ),
-    "storage": sdk.FieldSpec(
+    "storage": ubx.FieldSpec(
         wire_name="storage",
         kind="list",
         fields=_DevopsPool_VirtualMachineScaleSetFabric_StorageFields,
@@ -297,43 +297,43 @@ class DevopsPoolConfig:
     timeouts: Any = None
     virtual_machine_scale_set_fabric: Any = None
 
-DevopsPool = sdk.ResourceBinding(
+DevopsPool = ubx.ResourceBinding(
     wire_type="azurerm_managed_devops_pool",
     fields={
-        "dev_center_project_id": sdk.FieldSpec(wire_name="dev_center_project_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "maximum_concurrency": sdk.FieldSpec(wire_name="maximum_concurrency"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "work_folder": sdk.FieldSpec(wire_name="work_folder"),
-        "azure_devops_organization": sdk.FieldSpec(
+        "dev_center_project_id": ubx.FieldSpec(wire_name="dev_center_project_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "maximum_concurrency": ubx.FieldSpec(wire_name="maximum_concurrency"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "work_folder": ubx.FieldSpec(wire_name="work_folder"),
+        "azure_devops_organization": ubx.FieldSpec(
             wire_name="azure_devops_organization",
             kind="list",
             fields=_DevopsPool_AzureDevopsOrganizationFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_DevopsPool_IdentityFields,
         ),
-        "stateful_agent": sdk.FieldSpec(
+        "stateful_agent": ubx.FieldSpec(
             wire_name="stateful_agent",
             kind="list",
             fields=_DevopsPool_StatefulAgentFields,
         ),
-        "stateless_agent": sdk.FieldSpec(
+        "stateless_agent": ubx.FieldSpec(
             wire_name="stateless_agent",
             kind="list",
             fields=_DevopsPool_StatelessAgentFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DevopsPool_TimeoutsFields,
         ),
-        "virtual_machine_scale_set_fabric": sdk.FieldSpec(
+        "virtual_machine_scale_set_fabric": ubx.FieldSpec(
             wire_name="virtual_machine_scale_set_fabric",
             kind="list",
             fields=_DevopsPool_VirtualMachineScaleSetFabricFields,

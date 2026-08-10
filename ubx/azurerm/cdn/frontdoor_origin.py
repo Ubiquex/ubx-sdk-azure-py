@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FrontdoorOrigin_PrivateLink:
@@ -21,17 +21,17 @@ class FrontdoorOrigin_Timeouts:
     update: Any = None
 
 _FrontdoorOrigin_PrivateLinkFields = {
-    "location": sdk.FieldSpec(wire_name="location"),
-    "private_link_target_id": sdk.FieldSpec(wire_name="private_link_target_id"),
-    "request_message": sdk.FieldSpec(wire_name="request_message"),
-    "target_type": sdk.FieldSpec(wire_name="target_type"),
+    "location": ubx.FieldSpec(wire_name="location"),
+    "private_link_target_id": ubx.FieldSpec(wire_name="private_link_target_id"),
+    "request_message": ubx.FieldSpec(wire_name="request_message"),
+    "target_type": ubx.FieldSpec(wire_name="target_type"),
 }
 
 _FrontdoorOrigin_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -50,26 +50,26 @@ class FrontdoorOriginConfig:
     private_link: Any = None
     timeouts: Any = None
 
-FrontdoorOrigin = sdk.ResourceBinding(
+FrontdoorOrigin = ubx.ResourceBinding(
     wire_type="azurerm_cdn_frontdoor_origin",
     fields={
-        "cdn_frontdoor_origin_group_id": sdk.FieldSpec(wire_name="cdn_frontdoor_origin_group_id"),
-        "certificate_name_check_enabled": sdk.FieldSpec(wire_name="certificate_name_check_enabled"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "host_name": sdk.FieldSpec(wire_name="host_name"),
-        "http_port": sdk.FieldSpec(wire_name="http_port"),
-        "https_port": sdk.FieldSpec(wire_name="https_port"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "origin_host_header": sdk.FieldSpec(wire_name="origin_host_header"),
-        "priority": sdk.FieldSpec(wire_name="priority"),
-        "weight": sdk.FieldSpec(wire_name="weight"),
-        "private_link": sdk.FieldSpec(
+        "cdn_frontdoor_origin_group_id": ubx.FieldSpec(wire_name="cdn_frontdoor_origin_group_id"),
+        "certificate_name_check_enabled": ubx.FieldSpec(wire_name="certificate_name_check_enabled"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "host_name": ubx.FieldSpec(wire_name="host_name"),
+        "http_port": ubx.FieldSpec(wire_name="http_port"),
+        "https_port": ubx.FieldSpec(wire_name="https_port"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "origin_host_header": ubx.FieldSpec(wire_name="origin_host_header"),
+        "priority": ubx.FieldSpec(wire_name="priority"),
+        "weight": ubx.FieldSpec(wire_name="weight"),
+        "private_link": ubx.FieldSpec(
             wire_name="private_link",
             kind="list",
             fields=_FrontdoorOrigin_PrivateLinkFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FrontdoorOrigin_TimeoutsFields,

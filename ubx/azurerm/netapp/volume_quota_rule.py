@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VolumeQuotaRule_Timeouts:
@@ -14,10 +14,10 @@ class VolumeQuotaRule_Timeouts:
     update: Any = None
 
 _VolumeQuotaRule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class VolumeQuotaRuleConfig:
     volume_id: Any = None
     timeouts: Any = None
 
-VolumeQuotaRule = sdk.ResourceBinding(
+VolumeQuotaRule = ubx.ResourceBinding(
     wire_type="azurerm_netapp_volume_quota_rule",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "quota_size_in_kib": sdk.FieldSpec(wire_name="quota_size_in_kib"),
-        "quota_target": sdk.FieldSpec(wire_name="quota_target"),
-        "quota_type": sdk.FieldSpec(wire_name="quota_type"),
-        "volume_id": sdk.FieldSpec(wire_name="volume_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "quota_size_in_kib": ubx.FieldSpec(wire_name="quota_size_in_kib"),
+        "quota_target": ubx.FieldSpec(wire_name="quota_target"),
+        "quota_type": ubx.FieldSpec(wire_name="quota_type"),
+        "volume_id": ubx.FieldSpec(wire_name="volume_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_VolumeQuotaRule_TimeoutsFields,

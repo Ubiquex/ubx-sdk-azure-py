@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Metadata_Author:
@@ -38,34 +38,34 @@ class Metadata_Timeouts:
     update: Any = None
 
 _Metadata_AuthorFields = {
-    "email": sdk.FieldSpec(wire_name="email"),
-    "link": sdk.FieldSpec(wire_name="link"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "email": ubx.FieldSpec(wire_name="email"),
+    "link": ubx.FieldSpec(wire_name="link"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _Metadata_CategoryFields = {
-    "domains": sdk.FieldSpec(wire_name="domains"),
-    "verticals": sdk.FieldSpec(wire_name="verticals"),
+    "domains": ubx.FieldSpec(wire_name="domains"),
+    "verticals": ubx.FieldSpec(wire_name="verticals"),
 }
 
 _Metadata_SourceFields = {
-    "id": sdk.FieldSpec(wire_name="id"),
-    "kind": sdk.FieldSpec(wire_name="kind"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "kind": ubx.FieldSpec(wire_name="kind"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _Metadata_SupportFields = {
-    "email": sdk.FieldSpec(wire_name="email"),
-    "link": sdk.FieldSpec(wire_name="link"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "tier": sdk.FieldSpec(wire_name="tier"),
+    "email": ubx.FieldSpec(wire_name="email"),
+    "link": ubx.FieldSpec(wire_name="link"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "tier": ubx.FieldSpec(wire_name="tier"),
 }
 
 _Metadata_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -94,48 +94,48 @@ class MetadataConfig:
     support: Any = None
     timeouts: Any = None
 
-Metadata = sdk.ResourceBinding(
+Metadata = ubx.ResourceBinding(
     wire_type="azurerm_sentinel_metadata",
     fields={
-        "content_id": sdk.FieldSpec(wire_name="content_id"),
-        "content_schema_version": sdk.FieldSpec(wire_name="content_schema_version"),
-        "custom_version": sdk.FieldSpec(wire_name="custom_version"),
-        "dependency": sdk.FieldSpec(wire_name="dependency"),
-        "first_publish_date": sdk.FieldSpec(wire_name="first_publish_date"),
-        "icon_id": sdk.FieldSpec(wire_name="icon_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "kind": sdk.FieldSpec(wire_name="kind"),
-        "last_publish_date": sdk.FieldSpec(wire_name="last_publish_date"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parent_id": sdk.FieldSpec(wire_name="parent_id"),
-        "preview_images": sdk.FieldSpec(wire_name="preview_images"),
-        "preview_images_dark": sdk.FieldSpec(wire_name="preview_images_dark"),
-        "providers": sdk.FieldSpec(wire_name="providers"),
-        "threat_analysis_tactics": sdk.FieldSpec(wire_name="threat_analysis_tactics"),
-        "threat_analysis_techniques": sdk.FieldSpec(wire_name="threat_analysis_techniques"),
-        "version": sdk.FieldSpec(wire_name="version"),
-        "workspace_id": sdk.FieldSpec(wire_name="workspace_id"),
-        "author": sdk.FieldSpec(
+        "content_id": ubx.FieldSpec(wire_name="content_id"),
+        "content_schema_version": ubx.FieldSpec(wire_name="content_schema_version"),
+        "custom_version": ubx.FieldSpec(wire_name="custom_version"),
+        "dependency": ubx.FieldSpec(wire_name="dependency"),
+        "first_publish_date": ubx.FieldSpec(wire_name="first_publish_date"),
+        "icon_id": ubx.FieldSpec(wire_name="icon_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "kind": ubx.FieldSpec(wire_name="kind"),
+        "last_publish_date": ubx.FieldSpec(wire_name="last_publish_date"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parent_id": ubx.FieldSpec(wire_name="parent_id"),
+        "preview_images": ubx.FieldSpec(wire_name="preview_images"),
+        "preview_images_dark": ubx.FieldSpec(wire_name="preview_images_dark"),
+        "providers": ubx.FieldSpec(wire_name="providers"),
+        "threat_analysis_tactics": ubx.FieldSpec(wire_name="threat_analysis_tactics"),
+        "threat_analysis_techniques": ubx.FieldSpec(wire_name="threat_analysis_techniques"),
+        "version": ubx.FieldSpec(wire_name="version"),
+        "workspace_id": ubx.FieldSpec(wire_name="workspace_id"),
+        "author": ubx.FieldSpec(
             wire_name="author",
             kind="list",
             fields=_Metadata_AuthorFields,
         ),
-        "category": sdk.FieldSpec(
+        "category": ubx.FieldSpec(
             wire_name="category",
             kind="list",
             fields=_Metadata_CategoryFields,
         ),
-        "source": sdk.FieldSpec(
+        "source": ubx.FieldSpec(
             wire_name="source",
             kind="list",
             fields=_Metadata_SourceFields,
         ),
-        "support": sdk.FieldSpec(
+        "support": ubx.FieldSpec(
             wire_name="support",
             kind="list",
             fields=_Metadata_SupportFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Metadata_TimeoutsFields,

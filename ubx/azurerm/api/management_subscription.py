@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementSubscription_Timeouts:
@@ -14,10 +14,10 @@ class ManagementSubscription_Timeouts:
     update: Any = None
 
 _ManagementSubscription_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -36,22 +36,22 @@ class ManagementSubscriptionConfig:
     user_id: Any = None
     timeouts: Any = None
 
-ManagementSubscription = sdk.ResourceBinding(
+ManagementSubscription = ubx.ResourceBinding(
     wire_type="azurerm_api_management_subscription",
     fields={
-        "allow_tracing": sdk.FieldSpec(wire_name="allow_tracing"),
-        "api_id": sdk.FieldSpec(wire_name="api_id"),
-        "api_management_name": sdk.FieldSpec(wire_name="api_management_name"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "primary_key": sdk.FieldSpec(wire_name="primary_key"),
-        "product_id": sdk.FieldSpec(wire_name="product_id"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "secondary_key": sdk.FieldSpec(wire_name="secondary_key"),
-        "state": sdk.FieldSpec(wire_name="state"),
-        "subscription_id": sdk.FieldSpec(wire_name="subscription_id"),
-        "user_id": sdk.FieldSpec(wire_name="user_id"),
-        "timeouts": sdk.FieldSpec(
+        "allow_tracing": ubx.FieldSpec(wire_name="allow_tracing"),
+        "api_id": ubx.FieldSpec(wire_name="api_id"),
+        "api_management_name": ubx.FieldSpec(wire_name="api_management_name"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "primary_key": ubx.FieldSpec(wire_name="primary_key"),
+        "product_id": ubx.FieldSpec(wire_name="product_id"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "secondary_key": ubx.FieldSpec(wire_name="secondary_key"),
+        "state": ubx.FieldSpec(wire_name="state"),
+        "subscription_id": ubx.FieldSpec(wire_name="subscription_id"),
+        "user_id": ubx.FieldSpec(wire_name="user_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementSubscription_TimeoutsFields,

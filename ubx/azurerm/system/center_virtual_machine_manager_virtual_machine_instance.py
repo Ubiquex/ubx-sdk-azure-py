@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CenterVirtualMachineManagerVirtualMachineInstance_Hardware:
@@ -54,50 +54,50 @@ class CenterVirtualMachineManagerVirtualMachineInstance_Timeouts:
     update: Any = None
 
 _CenterVirtualMachineManagerVirtualMachineInstance_HardwareFields = {
-    "cpu_count": sdk.FieldSpec(wire_name="cpu_count"),
-    "dynamic_memory_max_in_mb": sdk.FieldSpec(wire_name="dynamic_memory_max_in_mb"),
-    "dynamic_memory_min_in_mb": sdk.FieldSpec(wire_name="dynamic_memory_min_in_mb"),
-    "limit_cpu_for_migration_enabled": sdk.FieldSpec(wire_name="limit_cpu_for_migration_enabled"),
-    "memory_in_mb": sdk.FieldSpec(wire_name="memory_in_mb"),
+    "cpu_count": ubx.FieldSpec(wire_name="cpu_count"),
+    "dynamic_memory_max_in_mb": ubx.FieldSpec(wire_name="dynamic_memory_max_in_mb"),
+    "dynamic_memory_min_in_mb": ubx.FieldSpec(wire_name="dynamic_memory_min_in_mb"),
+    "limit_cpu_for_migration_enabled": ubx.FieldSpec(wire_name="limit_cpu_for_migration_enabled"),
+    "memory_in_mb": ubx.FieldSpec(wire_name="memory_in_mb"),
 }
 
 _CenterVirtualMachineManagerVirtualMachineInstance_InfrastructureFields = {
-    "checkpoint_type": sdk.FieldSpec(wire_name="checkpoint_type"),
-    "system_center_virtual_machine_manager_cloud_id": sdk.FieldSpec(wire_name="system_center_virtual_machine_manager_cloud_id"),
-    "system_center_virtual_machine_manager_inventory_item_id": sdk.FieldSpec(wire_name="system_center_virtual_machine_manager_inventory_item_id"),
-    "system_center_virtual_machine_manager_template_id": sdk.FieldSpec(wire_name="system_center_virtual_machine_manager_template_id"),
-    "system_center_virtual_machine_manager_virtual_machine_server_id": sdk.FieldSpec(wire_name="system_center_virtual_machine_manager_virtual_machine_server_id"),
+    "checkpoint_type": ubx.FieldSpec(wire_name="checkpoint_type"),
+    "system_center_virtual_machine_manager_cloud_id": ubx.FieldSpec(wire_name="system_center_virtual_machine_manager_cloud_id"),
+    "system_center_virtual_machine_manager_inventory_item_id": ubx.FieldSpec(wire_name="system_center_virtual_machine_manager_inventory_item_id"),
+    "system_center_virtual_machine_manager_template_id": ubx.FieldSpec(wire_name="system_center_virtual_machine_manager_template_id"),
+    "system_center_virtual_machine_manager_virtual_machine_server_id": ubx.FieldSpec(wire_name="system_center_virtual_machine_manager_virtual_machine_server_id"),
 }
 
 _CenterVirtualMachineManagerVirtualMachineInstance_NetworkInterfaceFields = {
-    "ipv4_address_type": sdk.FieldSpec(wire_name="ipv4_address_type"),
-    "ipv6_address_type": sdk.FieldSpec(wire_name="ipv6_address_type"),
-    "mac_address_type": sdk.FieldSpec(wire_name="mac_address_type"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "virtual_network_id": sdk.FieldSpec(wire_name="virtual_network_id"),
+    "ipv4_address_type": ubx.FieldSpec(wire_name="ipv4_address_type"),
+    "ipv6_address_type": ubx.FieldSpec(wire_name="ipv6_address_type"),
+    "mac_address_type": ubx.FieldSpec(wire_name="mac_address_type"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "virtual_network_id": ubx.FieldSpec(wire_name="virtual_network_id"),
 }
 
 _CenterVirtualMachineManagerVirtualMachineInstance_OperatingSystemFields = {
-    "admin_password": sdk.FieldSpec(wire_name="admin_password"),
-    "computer_name": sdk.FieldSpec(wire_name="computer_name"),
+    "admin_password": ubx.FieldSpec(wire_name="admin_password"),
+    "computer_name": ubx.FieldSpec(wire_name="computer_name"),
 }
 
 _CenterVirtualMachineManagerVirtualMachineInstance_StorageDiskFields = {
-    "bus": sdk.FieldSpec(wire_name="bus"),
-    "bus_type": sdk.FieldSpec(wire_name="bus_type"),
-    "disk_size_gb": sdk.FieldSpec(wire_name="disk_size_gb"),
-    "lun": sdk.FieldSpec(wire_name="lun"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "storage_qos_policy_name": sdk.FieldSpec(wire_name="storage_qos_policy_name"),
-    "template_disk_id": sdk.FieldSpec(wire_name="template_disk_id"),
-    "vhd_type": sdk.FieldSpec(wire_name="vhd_type"),
+    "bus": ubx.FieldSpec(wire_name="bus"),
+    "bus_type": ubx.FieldSpec(wire_name="bus_type"),
+    "disk_size_gb": ubx.FieldSpec(wire_name="disk_size_gb"),
+    "lun": ubx.FieldSpec(wire_name="lun"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "storage_qos_policy_name": ubx.FieldSpec(wire_name="storage_qos_policy_name"),
+    "template_disk_id": ubx.FieldSpec(wire_name="template_disk_id"),
+    "vhd_type": ubx.FieldSpec(wire_name="vhd_type"),
 }
 
 _CenterVirtualMachineManagerVirtualMachineInstance_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -113,39 +113,39 @@ class CenterVirtualMachineManagerVirtualMachineInstanceConfig:
     storage_disk: Any = None
     timeouts: Any = None
 
-CenterVirtualMachineManagerVirtualMachineInstance = sdk.ResourceBinding(
+CenterVirtualMachineManagerVirtualMachineInstance = ubx.ResourceBinding(
     wire_type="azurerm_system_center_virtual_machine_manager_virtual_machine_instance",
     fields={
-        "custom_location_id": sdk.FieldSpec(wire_name="custom_location_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "scoped_resource_id": sdk.FieldSpec(wire_name="scoped_resource_id"),
-        "system_center_virtual_machine_manager_availability_set_ids": sdk.FieldSpec(wire_name="system_center_virtual_machine_manager_availability_set_ids"),
-        "hardware": sdk.FieldSpec(
+        "custom_location_id": ubx.FieldSpec(wire_name="custom_location_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "scoped_resource_id": ubx.FieldSpec(wire_name="scoped_resource_id"),
+        "system_center_virtual_machine_manager_availability_set_ids": ubx.FieldSpec(wire_name="system_center_virtual_machine_manager_availability_set_ids"),
+        "hardware": ubx.FieldSpec(
             wire_name="hardware",
             kind="list",
             fields=_CenterVirtualMachineManagerVirtualMachineInstance_HardwareFields,
         ),
-        "infrastructure": sdk.FieldSpec(
+        "infrastructure": ubx.FieldSpec(
             wire_name="infrastructure",
             kind="list",
             fields=_CenterVirtualMachineManagerVirtualMachineInstance_InfrastructureFields,
         ),
-        "network_interface": sdk.FieldSpec(
+        "network_interface": ubx.FieldSpec(
             wire_name="network_interface",
             kind="list",
             fields=_CenterVirtualMachineManagerVirtualMachineInstance_NetworkInterfaceFields,
         ),
-        "operating_system": sdk.FieldSpec(
+        "operating_system": ubx.FieldSpec(
             wire_name="operating_system",
             kind="list",
             fields=_CenterVirtualMachineManagerVirtualMachineInstance_OperatingSystemFields,
         ),
-        "storage_disk": sdk.FieldSpec(
+        "storage_disk": ubx.FieldSpec(
             wire_name="storage_disk",
             kind="list",
             fields=_CenterVirtualMachineManagerVirtualMachineInstance_StorageDiskFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CenterVirtualMachineManagerVirtualMachineInstance_TimeoutsFields,

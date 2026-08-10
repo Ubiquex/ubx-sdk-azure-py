@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MonitorTagRule_Log_Filter:
@@ -31,16 +31,16 @@ class MonitorTagRule_Timeouts:
     update: Any = None
 
 _MonitorTagRule_Log_FilterFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "action": ubx.FieldSpec(wire_name="action"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _MonitorTagRule_LogFields = {
-    "aad_log_enabled": sdk.FieldSpec(wire_name="aad_log_enabled"),
-    "resource_log_enabled": sdk.FieldSpec(wire_name="resource_log_enabled"),
-    "subscription_log_enabled": sdk.FieldSpec(wire_name="subscription_log_enabled"),
-    "filter": sdk.FieldSpec(
+    "aad_log_enabled": ubx.FieldSpec(wire_name="aad_log_enabled"),
+    "resource_log_enabled": ubx.FieldSpec(wire_name="resource_log_enabled"),
+    "subscription_log_enabled": ubx.FieldSpec(wire_name="subscription_log_enabled"),
+    "filter": ubx.FieldSpec(
         wire_name="filter",
         kind="list",
         fields=_MonitorTagRule_Log_FilterFields,
@@ -48,7 +48,7 @@ _MonitorTagRule_LogFields = {
 }
 
 _MonitorTagRule_MetricFields = {
-    "filter": sdk.FieldSpec(
+    "filter": ubx.FieldSpec(
         wire_name="filter",
         kind="list",
         fields=_MonitorTagRule_Log_FilterFields,
@@ -56,10 +56,10 @@ _MonitorTagRule_MetricFields = {
 }
 
 _MonitorTagRule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -71,23 +71,23 @@ class MonitorTagRuleConfig:
     metric: Any = None
     timeouts: Any = None
 
-MonitorTagRule = sdk.ResourceBinding(
+MonitorTagRule = ubx.ResourceBinding(
     wire_type="azurerm_datadog_monitor_tag_rule",
     fields={
-        "datadog_monitor_id": sdk.FieldSpec(wire_name="datadog_monitor_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "log": sdk.FieldSpec(
+        "datadog_monitor_id": ubx.FieldSpec(wire_name="datadog_monitor_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "log": ubx.FieldSpec(
             wire_name="log",
             kind="list",
             fields=_MonitorTagRule_LogFields,
         ),
-        "metric": sdk.FieldSpec(
+        "metric": ubx.FieldSpec(
             wire_name="metric",
             kind="list",
             fields=_MonitorTagRule_MetricFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_MonitorTagRule_TimeoutsFields,

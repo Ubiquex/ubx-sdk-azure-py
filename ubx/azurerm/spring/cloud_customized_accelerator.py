@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudCustomizedAccelerator_GitRepository_BasicAuth:
@@ -37,30 +37,30 @@ class CloudCustomizedAccelerator_Timeouts:
     update: Any = None
 
 _CloudCustomizedAccelerator_GitRepository_BasicAuthFields = {
-    "password": sdk.FieldSpec(wire_name="password"),
-    "username": sdk.FieldSpec(wire_name="username"),
+    "password": ubx.FieldSpec(wire_name="password"),
+    "username": ubx.FieldSpec(wire_name="username"),
 }
 
 _CloudCustomizedAccelerator_GitRepository_SshAuthFields = {
-    "host_key": sdk.FieldSpec(wire_name="host_key"),
-    "host_key_algorithm": sdk.FieldSpec(wire_name="host_key_algorithm"),
-    "private_key": sdk.FieldSpec(wire_name="private_key"),
+    "host_key": ubx.FieldSpec(wire_name="host_key"),
+    "host_key_algorithm": ubx.FieldSpec(wire_name="host_key_algorithm"),
+    "private_key": ubx.FieldSpec(wire_name="private_key"),
 }
 
 _CloudCustomizedAccelerator_GitRepositoryFields = {
-    "branch": sdk.FieldSpec(wire_name="branch"),
-    "ca_certificate_id": sdk.FieldSpec(wire_name="ca_certificate_id"),
-    "commit": sdk.FieldSpec(wire_name="commit"),
-    "git_tag": sdk.FieldSpec(wire_name="git_tag"),
-    "interval_in_seconds": sdk.FieldSpec(wire_name="interval_in_seconds"),
-    "path": sdk.FieldSpec(wire_name="path"),
-    "url": sdk.FieldSpec(wire_name="url"),
-    "basic_auth": sdk.FieldSpec(
+    "branch": ubx.FieldSpec(wire_name="branch"),
+    "ca_certificate_id": ubx.FieldSpec(wire_name="ca_certificate_id"),
+    "commit": ubx.FieldSpec(wire_name="commit"),
+    "git_tag": ubx.FieldSpec(wire_name="git_tag"),
+    "interval_in_seconds": ubx.FieldSpec(wire_name="interval_in_seconds"),
+    "path": ubx.FieldSpec(wire_name="path"),
+    "url": ubx.FieldSpec(wire_name="url"),
+    "basic_auth": ubx.FieldSpec(
         wire_name="basic_auth",
         kind="list",
         fields=_CloudCustomizedAccelerator_GitRepository_BasicAuthFields,
     ),
-    "ssh_auth": sdk.FieldSpec(
+    "ssh_auth": ubx.FieldSpec(
         wire_name="ssh_auth",
         kind="list",
         fields=_CloudCustomizedAccelerator_GitRepository_SshAuthFields,
@@ -68,10 +68,10 @@ _CloudCustomizedAccelerator_GitRepositoryFields = {
 }
 
 _CloudCustomizedAccelerator_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -87,23 +87,23 @@ class CloudCustomizedAcceleratorConfig:
     git_repository: Any = None
     timeouts: Any = None
 
-CloudCustomizedAccelerator = sdk.ResourceBinding(
+CloudCustomizedAccelerator = ubx.ResourceBinding(
     wire_type="azurerm_spring_cloud_customized_accelerator",
     fields={
-        "accelerator_tags": sdk.FieldSpec(wire_name="accelerator_tags"),
-        "accelerator_type": sdk.FieldSpec(wire_name="accelerator_type"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "icon_url": sdk.FieldSpec(wire_name="icon_url"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "spring_cloud_accelerator_id": sdk.FieldSpec(wire_name="spring_cloud_accelerator_id"),
-        "git_repository": sdk.FieldSpec(
+        "accelerator_tags": ubx.FieldSpec(wire_name="accelerator_tags"),
+        "accelerator_type": ubx.FieldSpec(wire_name="accelerator_type"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "icon_url": ubx.FieldSpec(wire_name="icon_url"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "spring_cloud_accelerator_id": ubx.FieldSpec(wire_name="spring_cloud_accelerator_id"),
+        "git_repository": ubx.FieldSpec(
             wire_name="git_repository",
             kind="list",
             fields=_CloudCustomizedAccelerator_GitRepositoryFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CloudCustomizedAccelerator_TimeoutsFields,

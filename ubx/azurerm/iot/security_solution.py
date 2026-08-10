@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SecuritySolution_AdditionalWorkspace:
@@ -38,34 +38,34 @@ class SecuritySolution_Timeouts:
     update: Any = None
 
 _SecuritySolution_AdditionalWorkspaceFields = {
-    "data_types": sdk.FieldSpec(wire_name="data_types"),
-    "workspace_id": sdk.FieldSpec(wire_name="workspace_id"),
+    "data_types": ubx.FieldSpec(wire_name="data_types"),
+    "workspace_id": ubx.FieldSpec(wire_name="workspace_id"),
 }
 
 _SecuritySolution_RecommendationsFields = {
-    "acr_authentication": sdk.FieldSpec(wire_name="acr_authentication"),
-    "agent_send_unutilized_msg": sdk.FieldSpec(wire_name="agent_send_unutilized_msg"),
-    "baseline": sdk.FieldSpec(wire_name="baseline"),
-    "edge_hub_mem_optimize": sdk.FieldSpec(wire_name="edge_hub_mem_optimize"),
-    "edge_logging_option": sdk.FieldSpec(wire_name="edge_logging_option"),
-    "inconsistent_module_settings": sdk.FieldSpec(wire_name="inconsistent_module_settings"),
-    "install_agent": sdk.FieldSpec(wire_name="install_agent"),
-    "ip_filter_deny_all": sdk.FieldSpec(wire_name="ip_filter_deny_all"),
-    "ip_filter_permissive_rule": sdk.FieldSpec(wire_name="ip_filter_permissive_rule"),
-    "open_ports": sdk.FieldSpec(wire_name="open_ports"),
-    "permissive_firewall_policy": sdk.FieldSpec(wire_name="permissive_firewall_policy"),
-    "permissive_input_firewall_rules": sdk.FieldSpec(wire_name="permissive_input_firewall_rules"),
-    "permissive_output_firewall_rules": sdk.FieldSpec(wire_name="permissive_output_firewall_rules"),
-    "privileged_docker_options": sdk.FieldSpec(wire_name="privileged_docker_options"),
-    "shared_credentials": sdk.FieldSpec(wire_name="shared_credentials"),
-    "vulnerable_tls_cipher_suite": sdk.FieldSpec(wire_name="vulnerable_tls_cipher_suite"),
+    "acr_authentication": ubx.FieldSpec(wire_name="acr_authentication"),
+    "agent_send_unutilized_msg": ubx.FieldSpec(wire_name="agent_send_unutilized_msg"),
+    "baseline": ubx.FieldSpec(wire_name="baseline"),
+    "edge_hub_mem_optimize": ubx.FieldSpec(wire_name="edge_hub_mem_optimize"),
+    "edge_logging_option": ubx.FieldSpec(wire_name="edge_logging_option"),
+    "inconsistent_module_settings": ubx.FieldSpec(wire_name="inconsistent_module_settings"),
+    "install_agent": ubx.FieldSpec(wire_name="install_agent"),
+    "ip_filter_deny_all": ubx.FieldSpec(wire_name="ip_filter_deny_all"),
+    "ip_filter_permissive_rule": ubx.FieldSpec(wire_name="ip_filter_permissive_rule"),
+    "open_ports": ubx.FieldSpec(wire_name="open_ports"),
+    "permissive_firewall_policy": ubx.FieldSpec(wire_name="permissive_firewall_policy"),
+    "permissive_input_firewall_rules": ubx.FieldSpec(wire_name="permissive_input_firewall_rules"),
+    "permissive_output_firewall_rules": ubx.FieldSpec(wire_name="permissive_output_firewall_rules"),
+    "privileged_docker_options": ubx.FieldSpec(wire_name="privileged_docker_options"),
+    "shared_credentials": ubx.FieldSpec(wire_name="shared_credentials"),
+    "vulnerable_tls_cipher_suite": ubx.FieldSpec(wire_name="vulnerable_tls_cipher_suite"),
 }
 
 _SecuritySolution_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -88,34 +88,34 @@ class SecuritySolutionConfig:
     recommendations: Any = None
     timeouts: Any = None
 
-SecuritySolution = sdk.ResourceBinding(
+SecuritySolution = ubx.ResourceBinding(
     wire_type="azurerm_iot_security_solution",
     fields={
-        "disabled_data_sources": sdk.FieldSpec(wire_name="disabled_data_sources"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "events_to_export": sdk.FieldSpec(wire_name="events_to_export"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "iothub_ids": sdk.FieldSpec(wire_name="iothub_ids"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "log_analytics_workspace_id": sdk.FieldSpec(wire_name="log_analytics_workspace_id"),
-        "log_unmasked_ips_enabled": sdk.FieldSpec(wire_name="log_unmasked_ips_enabled"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "query_for_resources": sdk.FieldSpec(wire_name="query_for_resources"),
-        "query_subscription_ids": sdk.FieldSpec(wire_name="query_subscription_ids"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "additional_workspace": sdk.FieldSpec(
+        "disabled_data_sources": ubx.FieldSpec(wire_name="disabled_data_sources"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "events_to_export": ubx.FieldSpec(wire_name="events_to_export"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "iothub_ids": ubx.FieldSpec(wire_name="iothub_ids"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "log_analytics_workspace_id": ubx.FieldSpec(wire_name="log_analytics_workspace_id"),
+        "log_unmasked_ips_enabled": ubx.FieldSpec(wire_name="log_unmasked_ips_enabled"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "query_for_resources": ubx.FieldSpec(wire_name="query_for_resources"),
+        "query_subscription_ids": ubx.FieldSpec(wire_name="query_subscription_ids"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "additional_workspace": ubx.FieldSpec(
             wire_name="additional_workspace",
             kind="set",
             fields=_SecuritySolution_AdditionalWorkspaceFields,
         ),
-        "recommendations": sdk.FieldSpec(
+        "recommendations": ubx.FieldSpec(
             wire_name="recommendations",
             kind="list",
             fields=_SecuritySolution_RecommendationsFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SecuritySolution_TimeoutsFields,

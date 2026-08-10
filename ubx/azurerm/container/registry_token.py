@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RegistryToken_Timeouts:
@@ -14,10 +14,10 @@ class RegistryToken_Timeouts:
     update: Any = None
 
 _RegistryToken_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class RegistryTokenConfig:
     scope_map_id: Any = None
     timeouts: Any = None
 
-RegistryToken = sdk.ResourceBinding(
+RegistryToken = ubx.ResourceBinding(
     wire_type="azurerm_container_registry_token",
     fields={
-        "container_registry_name": sdk.FieldSpec(wire_name="container_registry_name"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "scope_map_id": sdk.FieldSpec(wire_name="scope_map_id"),
-        "timeouts": sdk.FieldSpec(
+        "container_registry_name": ubx.FieldSpec(wire_name="container_registry_name"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "scope_map_id": ubx.FieldSpec(wire_name="scope_map_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RegistryToken_TimeoutsFields,

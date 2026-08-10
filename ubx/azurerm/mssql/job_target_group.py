@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class JobTargetGroup_JobTarget:
@@ -23,19 +23,19 @@ class JobTargetGroup_Timeouts:
     update: Any = None
 
 _JobTargetGroup_JobTargetFields = {
-    "database_name": sdk.FieldSpec(wire_name="database_name"),
-    "elastic_pool_name": sdk.FieldSpec(wire_name="elastic_pool_name"),
-    "job_credential_id": sdk.FieldSpec(wire_name="job_credential_id"),
-    "membership_type": sdk.FieldSpec(wire_name="membership_type"),
-    "server_name": sdk.FieldSpec(wire_name="server_name"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "database_name": ubx.FieldSpec(wire_name="database_name"),
+    "elastic_pool_name": ubx.FieldSpec(wire_name="elastic_pool_name"),
+    "job_credential_id": ubx.FieldSpec(wire_name="job_credential_id"),
+    "membership_type": ubx.FieldSpec(wire_name="membership_type"),
+    "server_name": ubx.FieldSpec(wire_name="server_name"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _JobTargetGroup_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -46,18 +46,18 @@ class JobTargetGroupConfig:
     job_target: Any = None
     timeouts: Any = None
 
-JobTargetGroup = sdk.ResourceBinding(
+JobTargetGroup = ubx.ResourceBinding(
     wire_type="azurerm_mssql_job_target_group",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "job_agent_id": sdk.FieldSpec(wire_name="job_agent_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "job_target": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "job_agent_id": ubx.FieldSpec(wire_name="job_agent_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "job_target": ubx.FieldSpec(
             wire_name="job_target",
             kind="set",
             fields=_JobTargetGroup_JobTargetFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_JobTargetGroup_TimeoutsFields,

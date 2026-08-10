@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Dps_IpFilterRule:
@@ -34,30 +34,30 @@ class Dps_Timeouts:
     update: Any = None
 
 _Dps_IpFilterRuleFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "ip_mask": sdk.FieldSpec(wire_name="ip_mask"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "target": sdk.FieldSpec(wire_name="target"),
+    "action": ubx.FieldSpec(wire_name="action"),
+    "ip_mask": ubx.FieldSpec(wire_name="ip_mask"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "target": ubx.FieldSpec(wire_name="target"),
 }
 
 _Dps_LinkedHubFields = {
-    "allocation_weight": sdk.FieldSpec(wire_name="allocation_weight"),
-    "apply_allocation_policy": sdk.FieldSpec(wire_name="apply_allocation_policy"),
-    "connection_string": sdk.FieldSpec(wire_name="connection_string"),
-    "hostname": sdk.FieldSpec(wire_name="hostname"),
-    "location": sdk.FieldSpec(wire_name="location"),
+    "allocation_weight": ubx.FieldSpec(wire_name="allocation_weight"),
+    "apply_allocation_policy": ubx.FieldSpec(wire_name="apply_allocation_policy"),
+    "connection_string": ubx.FieldSpec(wire_name="connection_string"),
+    "hostname": ubx.FieldSpec(wire_name="hostname"),
+    "location": ubx.FieldSpec(wire_name="location"),
 }
 
 _Dps_SkuFields = {
-    "capacity": sdk.FieldSpec(wire_name="capacity"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "capacity": ubx.FieldSpec(wire_name="capacity"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _Dps_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -75,33 +75,33 @@ class DpsConfig:
     sku: Any = None
     timeouts: Any = None
 
-Dps = sdk.ResourceBinding(
+Dps = ubx.ResourceBinding(
     wire_type="azurerm_iothub_dps",
     fields={
-        "allocation_policy": sdk.FieldSpec(wire_name="allocation_policy"),
-        "data_residency_enabled": sdk.FieldSpec(wire_name="data_residency_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "ip_filter_rule": sdk.FieldSpec(
+        "allocation_policy": ubx.FieldSpec(wire_name="allocation_policy"),
+        "data_residency_enabled": ubx.FieldSpec(wire_name="data_residency_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "ip_filter_rule": ubx.FieldSpec(
             wire_name="ip_filter_rule",
             kind="list",
             fields=_Dps_IpFilterRuleFields,
         ),
-        "linked_hub": sdk.FieldSpec(
+        "linked_hub": ubx.FieldSpec(
             wire_name="linked_hub",
             kind="list",
             fields=_Dps_LinkedHubFields,
         ),
-        "sku": sdk.FieldSpec(
+        "sku": ubx.FieldSpec(
             wire_name="sku",
             kind="list",
             fields=_Dps_SkuFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Dps_TimeoutsFields,

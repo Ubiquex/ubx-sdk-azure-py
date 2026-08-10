@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MonitorSsoConfiguration_Timeouts:
@@ -14,10 +14,10 @@ class MonitorSsoConfiguration_Timeouts:
     update: Any = None
 
 _MonitorSsoConfiguration_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class MonitorSsoConfigurationConfig:
     single_sign_on: Any = None
     timeouts: Any = None
 
-MonitorSsoConfiguration = sdk.ResourceBinding(
+MonitorSsoConfiguration = ubx.ResourceBinding(
     wire_type="azurerm_datadog_monitor_sso_configuration",
     fields={
-        "datadog_monitor_id": sdk.FieldSpec(wire_name="datadog_monitor_id"),
-        "enterprise_application_id": sdk.FieldSpec(wire_name="enterprise_application_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "single_sign_on": sdk.FieldSpec(wire_name="single_sign_on"),
-        "timeouts": sdk.FieldSpec(
+        "datadog_monitor_id": ubx.FieldSpec(wire_name="datadog_monitor_id"),
+        "enterprise_application_id": ubx.FieldSpec(wire_name="enterprise_application_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "single_sign_on": ubx.FieldSpec(wire_name="single_sign_on"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_MonitorSsoConfiguration_TimeoutsFields,

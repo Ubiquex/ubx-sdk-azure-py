@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Blob_Timeouts:
@@ -14,10 +14,10 @@ class Blob_Timeouts:
     update: Any = None
 
 _Blob_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -39,25 +39,25 @@ class BlobConfig:
     type: Any = None
     timeouts: Any = None
 
-Blob = sdk.ResourceBinding(
+Blob = ubx.ResourceBinding(
     wire_type="azurerm_storage_blob",
     fields={
-        "access_tier": sdk.FieldSpec(wire_name="access_tier"),
-        "cache_control": sdk.FieldSpec(wire_name="cache_control"),
-        "content_md5": sdk.FieldSpec(wire_name="content_md5"),
-        "content_type": sdk.FieldSpec(wire_name="content_type"),
-        "encryption_scope": sdk.FieldSpec(wire_name="encryption_scope"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "metadata": sdk.FieldSpec(wire_name="metadata"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parallelism": sdk.FieldSpec(wire_name="parallelism"),
-        "size": sdk.FieldSpec(wire_name="size"),
-        "source": sdk.FieldSpec(wire_name="source"),
-        "source_content": sdk.FieldSpec(wire_name="source_content"),
-        "source_uri": sdk.FieldSpec(wire_name="source_uri"),
-        "storage_container_id": sdk.FieldSpec(wire_name="storage_container_id"),
-        "type": sdk.FieldSpec(wire_name="type"),
-        "timeouts": sdk.FieldSpec(
+        "access_tier": ubx.FieldSpec(wire_name="access_tier"),
+        "cache_control": ubx.FieldSpec(wire_name="cache_control"),
+        "content_md5": ubx.FieldSpec(wire_name="content_md5"),
+        "content_type": ubx.FieldSpec(wire_name="content_type"),
+        "encryption_scope": ubx.FieldSpec(wire_name="encryption_scope"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "metadata": ubx.FieldSpec(wire_name="metadata"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parallelism": ubx.FieldSpec(wire_name="parallelism"),
+        "size": ubx.FieldSpec(wire_name="size"),
+        "source": ubx.FieldSpec(wire_name="source"),
+        "source_content": ubx.FieldSpec(wire_name="source_content"),
+        "source_uri": ubx.FieldSpec(wire_name="source_uri"),
+        "storage_container_id": ubx.FieldSpec(wire_name="storage_container_id"),
+        "type": ubx.FieldSpec(wire_name="type"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Blob_TimeoutsFields,

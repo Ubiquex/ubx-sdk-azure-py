@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class NetworkGateway_BgpSettings_PeeringAddresses:
@@ -100,16 +100,16 @@ class NetworkGateway_VpnClientConfiguration:
     virtual_network_gateway_client_connection: Any = None
 
 _NetworkGateway_BgpSettings_PeeringAddressesFields = {
-    "apipa_addresses": sdk.FieldSpec(wire_name="apipa_addresses"),
-    "default_addresses": sdk.FieldSpec(wire_name="default_addresses"),
-    "ip_configuration_name": sdk.FieldSpec(wire_name="ip_configuration_name"),
-    "tunnel_ip_addresses": sdk.FieldSpec(wire_name="tunnel_ip_addresses"),
+    "apipa_addresses": ubx.FieldSpec(wire_name="apipa_addresses"),
+    "default_addresses": ubx.FieldSpec(wire_name="default_addresses"),
+    "ip_configuration_name": ubx.FieldSpec(wire_name="ip_configuration_name"),
+    "tunnel_ip_addresses": ubx.FieldSpec(wire_name="tunnel_ip_addresses"),
 }
 
 _NetworkGateway_BgpSettingsFields = {
-    "asn": sdk.FieldSpec(wire_name="asn"),
-    "peer_weight": sdk.FieldSpec(wire_name="peer_weight"),
-    "peering_addresses": sdk.FieldSpec(
+    "asn": ubx.FieldSpec(wire_name="asn"),
+    "peer_weight": ubx.FieldSpec(wire_name="peer_weight"),
+    "peering_addresses": ubx.FieldSpec(
         wire_name="peering_addresses",
         kind="list",
         fields=_NetworkGateway_BgpSettings_PeeringAddressesFields,
@@ -117,27 +117,27 @@ _NetworkGateway_BgpSettingsFields = {
 }
 
 _NetworkGateway_CustomRouteFields = {
-    "address_prefixes": sdk.FieldSpec(wire_name="address_prefixes"),
+    "address_prefixes": ubx.FieldSpec(wire_name="address_prefixes"),
 }
 
 _NetworkGateway_IpConfigurationFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "private_ip_address_allocation": sdk.FieldSpec(wire_name="private_ip_address_allocation"),
-    "public_ip_address_id": sdk.FieldSpec(wire_name="public_ip_address_id"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "private_ip_address_allocation": ubx.FieldSpec(wire_name="private_ip_address_allocation"),
+    "public_ip_address_id": ubx.FieldSpec(wire_name="public_ip_address_id"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _NetworkGateway_PolicyGroup_PolicyMemberFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "type": sdk.FieldSpec(wire_name="type"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "type": ubx.FieldSpec(wire_name="type"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _NetworkGateway_PolicyGroupFields = {
-    "is_default": sdk.FieldSpec(wire_name="is_default"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "priority": sdk.FieldSpec(wire_name="priority"),
-    "policy_member": sdk.FieldSpec(
+    "is_default": ubx.FieldSpec(wire_name="is_default"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "priority": ubx.FieldSpec(wire_name="priority"),
+    "policy_member": ubx.FieldSpec(
         wire_name="policy_member",
         kind="list",
         fields=_NetworkGateway_PolicyGroup_PolicyMemberFields,
@@ -145,75 +145,75 @@ _NetworkGateway_PolicyGroupFields = {
 }
 
 _NetworkGateway_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _NetworkGateway_VpnClientConfiguration_IpsecPolicyFields = {
-    "dh_group": sdk.FieldSpec(wire_name="dh_group"),
-    "ike_encryption": sdk.FieldSpec(wire_name="ike_encryption"),
-    "ike_integrity": sdk.FieldSpec(wire_name="ike_integrity"),
-    "ipsec_encryption": sdk.FieldSpec(wire_name="ipsec_encryption"),
-    "ipsec_integrity": sdk.FieldSpec(wire_name="ipsec_integrity"),
-    "pfs_group": sdk.FieldSpec(wire_name="pfs_group"),
-    "sa_data_size_in_kilobytes": sdk.FieldSpec(wire_name="sa_data_size_in_kilobytes"),
-    "sa_lifetime_in_seconds": sdk.FieldSpec(wire_name="sa_lifetime_in_seconds"),
+    "dh_group": ubx.FieldSpec(wire_name="dh_group"),
+    "ike_encryption": ubx.FieldSpec(wire_name="ike_encryption"),
+    "ike_integrity": ubx.FieldSpec(wire_name="ike_integrity"),
+    "ipsec_encryption": ubx.FieldSpec(wire_name="ipsec_encryption"),
+    "ipsec_integrity": ubx.FieldSpec(wire_name="ipsec_integrity"),
+    "pfs_group": ubx.FieldSpec(wire_name="pfs_group"),
+    "sa_data_size_in_kilobytes": ubx.FieldSpec(wire_name="sa_data_size_in_kilobytes"),
+    "sa_lifetime_in_seconds": ubx.FieldSpec(wire_name="sa_lifetime_in_seconds"),
 }
 
 _NetworkGateway_VpnClientConfiguration_RadiusServerFields = {
-    "address": sdk.FieldSpec(wire_name="address"),
-    "score": sdk.FieldSpec(wire_name="score"),
-    "secret": sdk.FieldSpec(wire_name="secret"),
+    "address": ubx.FieldSpec(wire_name="address"),
+    "score": ubx.FieldSpec(wire_name="score"),
+    "secret": ubx.FieldSpec(wire_name="secret"),
 }
 
 _NetworkGateway_VpnClientConfiguration_RevokedCertificateFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "thumbprint": sdk.FieldSpec(wire_name="thumbprint"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "thumbprint": ubx.FieldSpec(wire_name="thumbprint"),
 }
 
 _NetworkGateway_VpnClientConfiguration_RootCertificateFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "public_cert_data": sdk.FieldSpec(wire_name="public_cert_data"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "public_cert_data": ubx.FieldSpec(wire_name="public_cert_data"),
 }
 
 _NetworkGateway_VpnClientConfiguration_VirtualNetworkGatewayClientConnectionFields = {
-    "address_prefixes": sdk.FieldSpec(wire_name="address_prefixes"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "policy_group_names": sdk.FieldSpec(wire_name="policy_group_names"),
+    "address_prefixes": ubx.FieldSpec(wire_name="address_prefixes"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "policy_group_names": ubx.FieldSpec(wire_name="policy_group_names"),
 }
 
 _NetworkGateway_VpnClientConfigurationFields = {
-    "aad_audience": sdk.FieldSpec(wire_name="aad_audience"),
-    "aad_issuer": sdk.FieldSpec(wire_name="aad_issuer"),
-    "aad_tenant": sdk.FieldSpec(wire_name="aad_tenant"),
-    "address_space": sdk.FieldSpec(wire_name="address_space"),
-    "radius_server_address": sdk.FieldSpec(wire_name="radius_server_address"),
-    "radius_server_secret": sdk.FieldSpec(wire_name="radius_server_secret"),
-    "vpn_auth_types": sdk.FieldSpec(wire_name="vpn_auth_types"),
-    "vpn_client_protocols": sdk.FieldSpec(wire_name="vpn_client_protocols"),
-    "ipsec_policy": sdk.FieldSpec(
+    "aad_audience": ubx.FieldSpec(wire_name="aad_audience"),
+    "aad_issuer": ubx.FieldSpec(wire_name="aad_issuer"),
+    "aad_tenant": ubx.FieldSpec(wire_name="aad_tenant"),
+    "address_space": ubx.FieldSpec(wire_name="address_space"),
+    "radius_server_address": ubx.FieldSpec(wire_name="radius_server_address"),
+    "radius_server_secret": ubx.FieldSpec(wire_name="radius_server_secret"),
+    "vpn_auth_types": ubx.FieldSpec(wire_name="vpn_auth_types"),
+    "vpn_client_protocols": ubx.FieldSpec(wire_name="vpn_client_protocols"),
+    "ipsec_policy": ubx.FieldSpec(
         wire_name="ipsec_policy",
         kind="list",
         fields=_NetworkGateway_VpnClientConfiguration_IpsecPolicyFields,
     ),
-    "radius_server": sdk.FieldSpec(
+    "radius_server": ubx.FieldSpec(
         wire_name="radius_server",
         kind="list",
         fields=_NetworkGateway_VpnClientConfiguration_RadiusServerFields,
     ),
-    "revoked_certificate": sdk.FieldSpec(
+    "revoked_certificate": ubx.FieldSpec(
         wire_name="revoked_certificate",
         kind="set",
         fields=_NetworkGateway_VpnClientConfiguration_RevokedCertificateFields,
     ),
-    "root_certificate": sdk.FieldSpec(
+    "root_certificate": ubx.FieldSpec(
         wire_name="root_certificate",
         kind="set",
         fields=_NetworkGateway_VpnClientConfiguration_RootCertificateFields,
     ),
-    "virtual_network_gateway_client_connection": sdk.FieldSpec(
+    "virtual_network_gateway_client_connection": ubx.FieldSpec(
         wire_name="virtual_network_gateway_client_connection",
         kind="list",
         fields=_NetworkGateway_VpnClientConfiguration_VirtualNetworkGatewayClientConnectionFields,
@@ -250,56 +250,56 @@ class NetworkGatewayConfig:
     timeouts: Any = None
     vpn_client_configuration: Any = None
 
-NetworkGateway = sdk.ResourceBinding(
+NetworkGateway = ubx.ResourceBinding(
     wire_type="azurerm_virtual_network_gateway",
     fields={
-        "active_active": sdk.FieldSpec(wire_name="active_active"),
-        "bgp_enabled": sdk.FieldSpec(wire_name="bgp_enabled"),
-        "bgp_route_translation_for_nat_enabled": sdk.FieldSpec(wire_name="bgp_route_translation_for_nat_enabled"),
-        "default_local_network_gateway_id": sdk.FieldSpec(wire_name="default_local_network_gateway_id"),
-        "dns_forwarding_enabled": sdk.FieldSpec(wire_name="dns_forwarding_enabled"),
-        "edge_zone": sdk.FieldSpec(wire_name="edge_zone"),
-        "generation": sdk.FieldSpec(wire_name="generation"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "ip_sec_replay_protection_enabled": sdk.FieldSpec(wire_name="ip_sec_replay_protection_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "maximum_scale_unit": sdk.FieldSpec(wire_name="maximum_scale_unit"),
-        "minimum_scale_unit": sdk.FieldSpec(wire_name="minimum_scale_unit"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "private_ip_address_enabled": sdk.FieldSpec(wire_name="private_ip_address_enabled"),
-        "remote_vnet_traffic_enabled": sdk.FieldSpec(wire_name="remote_vnet_traffic_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "type": sdk.FieldSpec(wire_name="type"),
-        "virtual_wan_traffic_enabled": sdk.FieldSpec(wire_name="virtual_wan_traffic_enabled"),
-        "vpn_type": sdk.FieldSpec(wire_name="vpn_type"),
-        "bgp_settings": sdk.FieldSpec(
+        "active_active": ubx.FieldSpec(wire_name="active_active"),
+        "bgp_enabled": ubx.FieldSpec(wire_name="bgp_enabled"),
+        "bgp_route_translation_for_nat_enabled": ubx.FieldSpec(wire_name="bgp_route_translation_for_nat_enabled"),
+        "default_local_network_gateway_id": ubx.FieldSpec(wire_name="default_local_network_gateway_id"),
+        "dns_forwarding_enabled": ubx.FieldSpec(wire_name="dns_forwarding_enabled"),
+        "edge_zone": ubx.FieldSpec(wire_name="edge_zone"),
+        "generation": ubx.FieldSpec(wire_name="generation"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "ip_sec_replay_protection_enabled": ubx.FieldSpec(wire_name="ip_sec_replay_protection_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "maximum_scale_unit": ubx.FieldSpec(wire_name="maximum_scale_unit"),
+        "minimum_scale_unit": ubx.FieldSpec(wire_name="minimum_scale_unit"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "private_ip_address_enabled": ubx.FieldSpec(wire_name="private_ip_address_enabled"),
+        "remote_vnet_traffic_enabled": ubx.FieldSpec(wire_name="remote_vnet_traffic_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "type": ubx.FieldSpec(wire_name="type"),
+        "virtual_wan_traffic_enabled": ubx.FieldSpec(wire_name="virtual_wan_traffic_enabled"),
+        "vpn_type": ubx.FieldSpec(wire_name="vpn_type"),
+        "bgp_settings": ubx.FieldSpec(
             wire_name="bgp_settings",
             kind="list",
             fields=_NetworkGateway_BgpSettingsFields,
         ),
-        "custom_route": sdk.FieldSpec(
+        "custom_route": ubx.FieldSpec(
             wire_name="custom_route",
             kind="list",
             fields=_NetworkGateway_CustomRouteFields,
         ),
-        "ip_configuration": sdk.FieldSpec(
+        "ip_configuration": ubx.FieldSpec(
             wire_name="ip_configuration",
             kind="list",
             fields=_NetworkGateway_IpConfigurationFields,
         ),
-        "policy_group": sdk.FieldSpec(
+        "policy_group": ubx.FieldSpec(
             wire_name="policy_group",
             kind="list",
             fields=_NetworkGateway_PolicyGroupFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_NetworkGateway_TimeoutsFields,
         ),
-        "vpn_client_configuration": sdk.FieldSpec(
+        "vpn_client_configuration": ubx.FieldSpec(
             wire_name="vpn_client_configuration",
             kind="list",
             fields=_NetworkGateway_VpnClientConfigurationFields,

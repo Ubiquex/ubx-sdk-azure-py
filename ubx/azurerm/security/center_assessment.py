@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CenterAssessment_Status:
@@ -20,16 +20,16 @@ class CenterAssessment_Timeouts:
     update: Any = None
 
 _CenterAssessment_StatusFields = {
-    "cause": sdk.FieldSpec(wire_name="cause"),
-    "code": sdk.FieldSpec(wire_name="code"),
-    "description": sdk.FieldSpec(wire_name="description"),
+    "cause": ubx.FieldSpec(wire_name="cause"),
+    "code": ubx.FieldSpec(wire_name="code"),
+    "description": ubx.FieldSpec(wire_name="description"),
 }
 
 _CenterAssessment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -41,19 +41,19 @@ class CenterAssessmentConfig:
     status: Any = None
     timeouts: Any = None
 
-CenterAssessment = sdk.ResourceBinding(
+CenterAssessment = ubx.ResourceBinding(
     wire_type="azurerm_security_center_assessment",
     fields={
-        "additional_data": sdk.FieldSpec(wire_name="additional_data"),
-        "assessment_policy_id": sdk.FieldSpec(wire_name="assessment_policy_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "target_resource_id": sdk.FieldSpec(wire_name="target_resource_id"),
-        "status": sdk.FieldSpec(
+        "additional_data": ubx.FieldSpec(wire_name="additional_data"),
+        "assessment_policy_id": ubx.FieldSpec(wire_name="assessment_policy_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "target_resource_id": ubx.FieldSpec(wire_name="target_resource_id"),
+        "status": ubx.FieldSpec(
             wire_name="status",
             kind="list",
             fields=_CenterAssessment_StatusFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CenterAssessment_TimeoutsFields,

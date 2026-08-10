@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ShareDatasetKustoDatabase_Timeouts:
@@ -13,9 +13,9 @@ class ShareDatasetKustoDatabase_Timeouts:
     read: Any = None
 
 _ShareDatasetKustoDatabase_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -26,14 +26,14 @@ class ShareDatasetKustoDatabaseConfig:
     share_id: Any = None
     timeouts: Any = None
 
-ShareDatasetKustoDatabase = sdk.ResourceBinding(
+ShareDatasetKustoDatabase = ubx.ResourceBinding(
     wire_type="azurerm_data_share_dataset_kusto_database",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "kusto_database_id": sdk.FieldSpec(wire_name="kusto_database_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "share_id": sdk.FieldSpec(wire_name="share_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "kusto_database_id": ubx.FieldSpec(wire_name="kusto_database_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "share_id": ubx.FieldSpec(wire_name="share_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ShareDatasetKustoDatabase_TimeoutsFields,

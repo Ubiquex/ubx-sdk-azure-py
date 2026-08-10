@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GroupTemplateDeployment_Timeouts:
@@ -14,10 +14,10 @@ class GroupTemplateDeployment_Timeouts:
     update: Any = None
 
 _GroupTemplateDeployment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -33,19 +33,19 @@ class GroupTemplateDeploymentConfig:
     template_spec_version_id: Any = None
     timeouts: Any = None
 
-GroupTemplateDeployment = sdk.ResourceBinding(
+GroupTemplateDeployment = ubx.ResourceBinding(
     wire_type="azurerm_resource_group_template_deployment",
     fields={
-        "debug_level": sdk.FieldSpec(wire_name="debug_level"),
-        "deployment_mode": sdk.FieldSpec(wire_name="deployment_mode"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parameters_content": sdk.FieldSpec(wire_name="parameters_content"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "template_content": sdk.FieldSpec(wire_name="template_content"),
-        "template_spec_version_id": sdk.FieldSpec(wire_name="template_spec_version_id"),
-        "timeouts": sdk.FieldSpec(
+        "debug_level": ubx.FieldSpec(wire_name="debug_level"),
+        "deployment_mode": ubx.FieldSpec(wire_name="deployment_mode"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parameters_content": ubx.FieldSpec(wire_name="parameters_content"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "template_content": ubx.FieldSpec(wire_name="template_content"),
+        "template_spec_version_id": ubx.FieldSpec(wire_name="template_spec_version_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_GroupTemplateDeployment_TimeoutsFields,

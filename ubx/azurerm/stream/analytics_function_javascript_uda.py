@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnalyticsFunctionJavascriptUda_Input:
@@ -23,19 +23,19 @@ class AnalyticsFunctionJavascriptUda_Timeouts:
     update: Any = None
 
 _AnalyticsFunctionJavascriptUda_InputFields = {
-    "configuration_parameter": sdk.FieldSpec(wire_name="configuration_parameter"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "configuration_parameter": ubx.FieldSpec(wire_name="configuration_parameter"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _AnalyticsFunctionJavascriptUda_OutputFields = {
-    "type": sdk.FieldSpec(wire_name="type"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _AnalyticsFunctionJavascriptUda_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -48,24 +48,24 @@ class AnalyticsFunctionJavascriptUdaConfig:
     output: Any = None
     timeouts: Any = None
 
-AnalyticsFunctionJavascriptUda = sdk.ResourceBinding(
+AnalyticsFunctionJavascriptUda = ubx.ResourceBinding(
     wire_type="azurerm_stream_analytics_function_javascript_uda",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "script": sdk.FieldSpec(wire_name="script"),
-        "stream_analytics_job_id": sdk.FieldSpec(wire_name="stream_analytics_job_id"),
-        "input": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "script": ubx.FieldSpec(wire_name="script"),
+        "stream_analytics_job_id": ubx.FieldSpec(wire_name="stream_analytics_job_id"),
+        "input": ubx.FieldSpec(
             wire_name="input",
             kind="list",
             fields=_AnalyticsFunctionJavascriptUda_InputFields,
         ),
-        "output": sdk.FieldSpec(
+        "output": ubx.FieldSpec(
             wire_name="output",
             kind="list",
             fields=_AnalyticsFunctionJavascriptUda_OutputFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AnalyticsFunctionJavascriptUda_TimeoutsFields,

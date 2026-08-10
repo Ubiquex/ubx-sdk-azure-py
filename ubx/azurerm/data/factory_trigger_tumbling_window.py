@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryTriggerTumblingWindow_Pipeline:
@@ -30,26 +30,26 @@ class FactoryTriggerTumblingWindow_TriggerDependency:
     trigger_name: Any = None
 
 _FactoryTriggerTumblingWindow_PipelineFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "parameters": sdk.FieldSpec(wire_name="parameters"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "parameters": ubx.FieldSpec(wire_name="parameters"),
 }
 
 _FactoryTriggerTumblingWindow_RetryFields = {
-    "count": sdk.FieldSpec(wire_name="count"),
-    "interval": sdk.FieldSpec(wire_name="interval"),
+    "count": ubx.FieldSpec(wire_name="count"),
+    "interval": ubx.FieldSpec(wire_name="interval"),
 }
 
 _FactoryTriggerTumblingWindow_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _FactoryTriggerTumblingWindow_TriggerDependencyFields = {
-    "offset": sdk.FieldSpec(wire_name="offset"),
-    "size": sdk.FieldSpec(wire_name="size"),
-    "trigger_name": sdk.FieldSpec(wire_name="trigger_name"),
+    "offset": ubx.FieldSpec(wire_name="offset"),
+    "size": ubx.FieldSpec(wire_name="size"),
+    "trigger_name": ubx.FieldSpec(wire_name="trigger_name"),
 }
 
 @dataclasses.dataclass
@@ -72,38 +72,38 @@ class FactoryTriggerTumblingWindowConfig:
     timeouts: Any = None
     trigger_dependency: Any = None
 
-FactoryTriggerTumblingWindow = sdk.ResourceBinding(
+FactoryTriggerTumblingWindow = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_trigger_tumbling_window",
     fields={
-        "activated": sdk.FieldSpec(wire_name="activated"),
-        "additional_properties": sdk.FieldSpec(wire_name="additional_properties"),
-        "annotations": sdk.FieldSpec(wire_name="annotations"),
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "delay": sdk.FieldSpec(wire_name="delay"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "end_time": sdk.FieldSpec(wire_name="end_time"),
-        "frequency": sdk.FieldSpec(wire_name="frequency"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "interval": sdk.FieldSpec(wire_name="interval"),
-        "max_concurrency": sdk.FieldSpec(wire_name="max_concurrency"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "start_time": sdk.FieldSpec(wire_name="start_time"),
-        "pipeline": sdk.FieldSpec(
+        "activated": ubx.FieldSpec(wire_name="activated"),
+        "additional_properties": ubx.FieldSpec(wire_name="additional_properties"),
+        "annotations": ubx.FieldSpec(wire_name="annotations"),
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "delay": ubx.FieldSpec(wire_name="delay"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "end_time": ubx.FieldSpec(wire_name="end_time"),
+        "frequency": ubx.FieldSpec(wire_name="frequency"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "interval": ubx.FieldSpec(wire_name="interval"),
+        "max_concurrency": ubx.FieldSpec(wire_name="max_concurrency"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "start_time": ubx.FieldSpec(wire_name="start_time"),
+        "pipeline": ubx.FieldSpec(
             wire_name="pipeline",
             kind="list",
             fields=_FactoryTriggerTumblingWindow_PipelineFields,
         ),
-        "retry": sdk.FieldSpec(
+        "retry": ubx.FieldSpec(
             wire_name="retry",
             kind="list",
             fields=_FactoryTriggerTumblingWindow_RetryFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryTriggerTumblingWindow_TimeoutsFields,
         ),
-        "trigger_dependency": sdk.FieldSpec(
+        "trigger_dependency": ubx.FieldSpec(
             wire_name="trigger_dependency",
             kind="set",
             fields=_FactoryTriggerTumblingWindow_TriggerDependencyFields,

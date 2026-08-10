@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BackupPolicy_Timeouts:
@@ -14,10 +14,10 @@ class BackupPolicy_Timeouts:
     update: Any = None
 
 _BackupPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -34,20 +34,20 @@ class BackupPolicyConfig:
     weekly_backups_to_keep: Any = None
     timeouts: Any = None
 
-BackupPolicy = sdk.ResourceBinding(
+BackupPolicy = ubx.ResourceBinding(
     wire_type="azurerm_netapp_backup_policy",
     fields={
-        "account_name": sdk.FieldSpec(wire_name="account_name"),
-        "daily_backups_to_keep": sdk.FieldSpec(wire_name="daily_backups_to_keep"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "monthly_backups_to_keep": sdk.FieldSpec(wire_name="monthly_backups_to_keep"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "weekly_backups_to_keep": sdk.FieldSpec(wire_name="weekly_backups_to_keep"),
-        "timeouts": sdk.FieldSpec(
+        "account_name": ubx.FieldSpec(wire_name="account_name"),
+        "daily_backups_to_keep": ubx.FieldSpec(wire_name="daily_backups_to_keep"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "monthly_backups_to_keep": ubx.FieldSpec(wire_name="monthly_backups_to_keep"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "weekly_backups_to_keep": ubx.FieldSpec(wire_name="weekly_backups_to_keep"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_BackupPolicy_TimeoutsFields,

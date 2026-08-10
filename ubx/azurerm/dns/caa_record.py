@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CaaRecord_Record:
@@ -20,16 +20,16 @@ class CaaRecord_Timeouts:
     update: Any = None
 
 _CaaRecord_RecordFields = {
-    "flags": sdk.FieldSpec(wire_name="flags"),
-    "tag": sdk.FieldSpec(wire_name="tag"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "flags": ubx.FieldSpec(wire_name="flags"),
+    "tag": ubx.FieldSpec(wire_name="tag"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _CaaRecord_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -43,21 +43,21 @@ class CaaRecordConfig:
     record: Any = None
     timeouts: Any = None
 
-CaaRecord = sdk.ResourceBinding(
+CaaRecord = ubx.ResourceBinding(
     wire_type="azurerm_dns_caa_record",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "ttl": sdk.FieldSpec(wire_name="ttl"),
-        "zone_name": sdk.FieldSpec(wire_name="zone_name"),
-        "record": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "ttl": ubx.FieldSpec(wire_name="ttl"),
+        "zone_name": ubx.FieldSpec(wire_name="zone_name"),
+        "record": ubx.FieldSpec(
             wire_name="record",
             kind="set",
             fields=_CaaRecord_RecordFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CaaRecord_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ChannelFacebook_Page:
@@ -19,15 +19,15 @@ class ChannelFacebook_Timeouts:
     update: Any = None
 
 _ChannelFacebook_PageFields = {
-    "access_token": sdk.FieldSpec(wire_name="access_token"),
-    "id": sdk.FieldSpec(wire_name="id"),
+    "access_token": ubx.FieldSpec(wire_name="access_token"),
+    "id": ubx.FieldSpec(wire_name="id"),
 }
 
 _ChannelFacebook_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -41,21 +41,21 @@ class ChannelFacebookConfig:
     page: Any = None
     timeouts: Any = None
 
-ChannelFacebook = sdk.ResourceBinding(
+ChannelFacebook = ubx.ResourceBinding(
     wire_type="azurerm_bot_channel_facebook",
     fields={
-        "bot_name": sdk.FieldSpec(wire_name="bot_name"),
-        "facebook_application_id": sdk.FieldSpec(wire_name="facebook_application_id"),
-        "facebook_application_secret": sdk.FieldSpec(wire_name="facebook_application_secret"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "page": sdk.FieldSpec(
+        "bot_name": ubx.FieldSpec(wire_name="bot_name"),
+        "facebook_application_id": ubx.FieldSpec(wire_name="facebook_application_id"),
+        "facebook_application_secret": ubx.FieldSpec(wire_name="facebook_application_secret"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "page": ubx.FieldSpec(
             wire_name="page",
             kind="set",
             fields=_ChannelFacebook_PageFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ChannelFacebook_TimeoutsFields,

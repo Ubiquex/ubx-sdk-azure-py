@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Deployment_Model:
@@ -28,24 +28,24 @@ class Deployment_Timeouts:
     update: Any = None
 
 _Deployment_ModelFields = {
-    "format": sdk.FieldSpec(wire_name="format"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "version": sdk.FieldSpec(wire_name="version"),
+    "format": ubx.FieldSpec(wire_name="format"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _Deployment_SkuFields = {
-    "capacity": sdk.FieldSpec(wire_name="capacity"),
-    "family": sdk.FieldSpec(wire_name="family"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "size": sdk.FieldSpec(wire_name="size"),
-    "tier": sdk.FieldSpec(wire_name="tier"),
+    "capacity": ubx.FieldSpec(wire_name="capacity"),
+    "family": ubx.FieldSpec(wire_name="family"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "size": ubx.FieldSpec(wire_name="size"),
+    "tier": ubx.FieldSpec(wire_name="tier"),
 }
 
 _Deployment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -60,26 +60,26 @@ class DeploymentConfig:
     sku: Any = None
     timeouts: Any = None
 
-Deployment = sdk.ResourceBinding(
+Deployment = ubx.ResourceBinding(
     wire_type="azurerm_cognitive_deployment",
     fields={
-        "cognitive_account_id": sdk.FieldSpec(wire_name="cognitive_account_id"),
-        "dynamic_throttling_enabled": sdk.FieldSpec(wire_name="dynamic_throttling_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "rai_policy_name": sdk.FieldSpec(wire_name="rai_policy_name"),
-        "version_upgrade_option": sdk.FieldSpec(wire_name="version_upgrade_option"),
-        "model": sdk.FieldSpec(
+        "cognitive_account_id": ubx.FieldSpec(wire_name="cognitive_account_id"),
+        "dynamic_throttling_enabled": ubx.FieldSpec(wire_name="dynamic_throttling_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "rai_policy_name": ubx.FieldSpec(wire_name="rai_policy_name"),
+        "version_upgrade_option": ubx.FieldSpec(wire_name="version_upgrade_option"),
+        "model": ubx.FieldSpec(
             wire_name="model",
             kind="list",
             fields=_Deployment_ModelFields,
         ),
-        "sku": sdk.FieldSpec(
+        "sku": ubx.FieldSpec(
             wire_name="sku",
             kind="list",
             fields=_Deployment_SkuFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Deployment_TimeoutsFields,

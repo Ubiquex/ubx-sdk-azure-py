@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnalyticsOutputMssql_Timeouts:
@@ -14,10 +14,10 @@ class AnalyticsOutputMssql_Timeouts:
     update: Any = None
 
 _AnalyticsOutputMssql_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -36,22 +36,22 @@ class AnalyticsOutputMssqlConfig:
     user: Any = None
     timeouts: Any = None
 
-AnalyticsOutputMssql = sdk.ResourceBinding(
+AnalyticsOutputMssql = ubx.ResourceBinding(
     wire_type="azurerm_stream_analytics_output_mssql",
     fields={
-        "authentication_mode": sdk.FieldSpec(wire_name="authentication_mode"),
-        "database": sdk.FieldSpec(wire_name="database"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "max_batch_count": sdk.FieldSpec(wire_name="max_batch_count"),
-        "max_writer_count": sdk.FieldSpec(wire_name="max_writer_count"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "password": sdk.FieldSpec(wire_name="password"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "server": sdk.FieldSpec(wire_name="server"),
-        "stream_analytics_job_name": sdk.FieldSpec(wire_name="stream_analytics_job_name"),
-        "table": sdk.FieldSpec(wire_name="table"),
-        "user": sdk.FieldSpec(wire_name="user"),
-        "timeouts": sdk.FieldSpec(
+        "authentication_mode": ubx.FieldSpec(wire_name="authentication_mode"),
+        "database": ubx.FieldSpec(wire_name="database"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "max_batch_count": ubx.FieldSpec(wire_name="max_batch_count"),
+        "max_writer_count": ubx.FieldSpec(wire_name="max_writer_count"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "password": ubx.FieldSpec(wire_name="password"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "server": ubx.FieldSpec(wire_name="server"),
+        "stream_analytics_job_name": ubx.FieldSpec(wire_name="stream_analytics_job_name"),
+        "table": ubx.FieldSpec(wire_name="table"),
+        "user": ubx.FieldSpec(wire_name="user"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AnalyticsOutputMssql_TimeoutsFields,

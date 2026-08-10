@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class KubernetesFluxConfiguration_BlobStorage_ServicePrincipal:
@@ -69,22 +69,22 @@ class KubernetesFluxConfiguration_Timeouts:
     update: Any = None
 
 _KubernetesFluxConfiguration_BlobStorage_ServicePrincipalFields = {
-    "client_certificate_base64": sdk.FieldSpec(wire_name="client_certificate_base64"),
-    "client_certificate_password": sdk.FieldSpec(wire_name="client_certificate_password"),
-    "client_certificate_send_chain": sdk.FieldSpec(wire_name="client_certificate_send_chain"),
-    "client_id": sdk.FieldSpec(wire_name="client_id"),
-    "client_secret": sdk.FieldSpec(wire_name="client_secret"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
+    "client_certificate_base64": ubx.FieldSpec(wire_name="client_certificate_base64"),
+    "client_certificate_password": ubx.FieldSpec(wire_name="client_certificate_password"),
+    "client_certificate_send_chain": ubx.FieldSpec(wire_name="client_certificate_send_chain"),
+    "client_id": ubx.FieldSpec(wire_name="client_id"),
+    "client_secret": ubx.FieldSpec(wire_name="client_secret"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
 }
 
 _KubernetesFluxConfiguration_BlobStorageFields = {
-    "account_key": sdk.FieldSpec(wire_name="account_key"),
-    "container_id": sdk.FieldSpec(wire_name="container_id"),
-    "local_auth_reference": sdk.FieldSpec(wire_name="local_auth_reference"),
-    "sas_token": sdk.FieldSpec(wire_name="sas_token"),
-    "sync_interval_in_seconds": sdk.FieldSpec(wire_name="sync_interval_in_seconds"),
-    "timeout_in_seconds": sdk.FieldSpec(wire_name="timeout_in_seconds"),
-    "service_principal": sdk.FieldSpec(
+    "account_key": ubx.FieldSpec(wire_name="account_key"),
+    "container_id": ubx.FieldSpec(wire_name="container_id"),
+    "local_auth_reference": ubx.FieldSpec(wire_name="local_auth_reference"),
+    "sas_token": ubx.FieldSpec(wire_name="sas_token"),
+    "sync_interval_in_seconds": ubx.FieldSpec(wire_name="sync_interval_in_seconds"),
+    "timeout_in_seconds": ubx.FieldSpec(wire_name="timeout_in_seconds"),
+    "service_principal": ubx.FieldSpec(
         wire_name="service_principal",
         kind="list",
         fields=_KubernetesFluxConfiguration_BlobStorage_ServicePrincipalFields,
@@ -92,46 +92,46 @@ _KubernetesFluxConfiguration_BlobStorageFields = {
 }
 
 _KubernetesFluxConfiguration_BucketFields = {
-    "access_key": sdk.FieldSpec(wire_name="access_key"),
-    "bucket_name": sdk.FieldSpec(wire_name="bucket_name"),
-    "local_auth_reference": sdk.FieldSpec(wire_name="local_auth_reference"),
-    "secret_key_base64": sdk.FieldSpec(wire_name="secret_key_base64"),
-    "sync_interval_in_seconds": sdk.FieldSpec(wire_name="sync_interval_in_seconds"),
-    "timeout_in_seconds": sdk.FieldSpec(wire_name="timeout_in_seconds"),
-    "tls_enabled": sdk.FieldSpec(wire_name="tls_enabled"),
-    "url": sdk.FieldSpec(wire_name="url"),
+    "access_key": ubx.FieldSpec(wire_name="access_key"),
+    "bucket_name": ubx.FieldSpec(wire_name="bucket_name"),
+    "local_auth_reference": ubx.FieldSpec(wire_name="local_auth_reference"),
+    "secret_key_base64": ubx.FieldSpec(wire_name="secret_key_base64"),
+    "sync_interval_in_seconds": ubx.FieldSpec(wire_name="sync_interval_in_seconds"),
+    "timeout_in_seconds": ubx.FieldSpec(wire_name="timeout_in_seconds"),
+    "tls_enabled": ubx.FieldSpec(wire_name="tls_enabled"),
+    "url": ubx.FieldSpec(wire_name="url"),
 }
 
 _KubernetesFluxConfiguration_GitRepositoryFields = {
-    "https_ca_cert_base64": sdk.FieldSpec(wire_name="https_ca_cert_base64"),
-    "https_key_base64": sdk.FieldSpec(wire_name="https_key_base64"),
-    "https_user": sdk.FieldSpec(wire_name="https_user"),
-    "local_auth_reference": sdk.FieldSpec(wire_name="local_auth_reference"),
-    "reference_type": sdk.FieldSpec(wire_name="reference_type"),
-    "reference_value": sdk.FieldSpec(wire_name="reference_value"),
-    "ssh_known_hosts_base64": sdk.FieldSpec(wire_name="ssh_known_hosts_base64"),
-    "ssh_private_key_base64": sdk.FieldSpec(wire_name="ssh_private_key_base64"),
-    "sync_interval_in_seconds": sdk.FieldSpec(wire_name="sync_interval_in_seconds"),
-    "timeout_in_seconds": sdk.FieldSpec(wire_name="timeout_in_seconds"),
-    "url": sdk.FieldSpec(wire_name="url"),
+    "https_ca_cert_base64": ubx.FieldSpec(wire_name="https_ca_cert_base64"),
+    "https_key_base64": ubx.FieldSpec(wire_name="https_key_base64"),
+    "https_user": ubx.FieldSpec(wire_name="https_user"),
+    "local_auth_reference": ubx.FieldSpec(wire_name="local_auth_reference"),
+    "reference_type": ubx.FieldSpec(wire_name="reference_type"),
+    "reference_value": ubx.FieldSpec(wire_name="reference_value"),
+    "ssh_known_hosts_base64": ubx.FieldSpec(wire_name="ssh_known_hosts_base64"),
+    "ssh_private_key_base64": ubx.FieldSpec(wire_name="ssh_private_key_base64"),
+    "sync_interval_in_seconds": ubx.FieldSpec(wire_name="sync_interval_in_seconds"),
+    "timeout_in_seconds": ubx.FieldSpec(wire_name="timeout_in_seconds"),
+    "url": ubx.FieldSpec(wire_name="url"),
 }
 
 _KubernetesFluxConfiguration_KustomizationsFields = {
-    "depends_on": sdk.FieldSpec(wire_name="depends_on"),
-    "garbage_collection_enabled": sdk.FieldSpec(wire_name="garbage_collection_enabled"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "path": sdk.FieldSpec(wire_name="path"),
-    "recreating_enabled": sdk.FieldSpec(wire_name="recreating_enabled"),
-    "retry_interval_in_seconds": sdk.FieldSpec(wire_name="retry_interval_in_seconds"),
-    "sync_interval_in_seconds": sdk.FieldSpec(wire_name="sync_interval_in_seconds"),
-    "timeout_in_seconds": sdk.FieldSpec(wire_name="timeout_in_seconds"),
+    "depends_on": ubx.FieldSpec(wire_name="depends_on"),
+    "garbage_collection_enabled": ubx.FieldSpec(wire_name="garbage_collection_enabled"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "path": ubx.FieldSpec(wire_name="path"),
+    "recreating_enabled": ubx.FieldSpec(wire_name="recreating_enabled"),
+    "retry_interval_in_seconds": ubx.FieldSpec(wire_name="retry_interval_in_seconds"),
+    "sync_interval_in_seconds": ubx.FieldSpec(wire_name="sync_interval_in_seconds"),
+    "timeout_in_seconds": ubx.FieldSpec(wire_name="timeout_in_seconds"),
 }
 
 _KubernetesFluxConfiguration_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -148,36 +148,36 @@ class KubernetesFluxConfigurationConfig:
     kustomizations: Any = None
     timeouts: Any = None
 
-KubernetesFluxConfiguration = sdk.ResourceBinding(
+KubernetesFluxConfiguration = ubx.ResourceBinding(
     wire_type="azurerm_arc_kubernetes_flux_configuration",
     fields={
-        "cluster_id": sdk.FieldSpec(wire_name="cluster_id"),
-        "continuous_reconciliation_enabled": sdk.FieldSpec(wire_name="continuous_reconciliation_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "namespace": sdk.FieldSpec(wire_name="namespace"),
-        "scope": sdk.FieldSpec(wire_name="scope"),
-        "blob_storage": sdk.FieldSpec(
+        "cluster_id": ubx.FieldSpec(wire_name="cluster_id"),
+        "continuous_reconciliation_enabled": ubx.FieldSpec(wire_name="continuous_reconciliation_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "namespace": ubx.FieldSpec(wire_name="namespace"),
+        "scope": ubx.FieldSpec(wire_name="scope"),
+        "blob_storage": ubx.FieldSpec(
             wire_name="blob_storage",
             kind="list",
             fields=_KubernetesFluxConfiguration_BlobStorageFields,
         ),
-        "bucket": sdk.FieldSpec(
+        "bucket": ubx.FieldSpec(
             wire_name="bucket",
             kind="list",
             fields=_KubernetesFluxConfiguration_BucketFields,
         ),
-        "git_repository": sdk.FieldSpec(
+        "git_repository": ubx.FieldSpec(
             wire_name="git_repository",
             kind="list",
             fields=_KubernetesFluxConfiguration_GitRepositoryFields,
         ),
-        "kustomizations": sdk.FieldSpec(
+        "kustomizations": ubx.FieldSpec(
             wire_name="kustomizations",
             kind="set",
             fields=_KubernetesFluxConfiguration_KustomizationsFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_KubernetesFluxConfiguration_TimeoutsFields,

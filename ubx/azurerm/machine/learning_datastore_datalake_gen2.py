@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LearningDatastoreDatalakeGen2_Timeouts:
@@ -14,10 +14,10 @@ class LearningDatastoreDatalakeGen2_Timeouts:
     update: Any = None
 
 _LearningDatastoreDatalakeGen2_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -35,21 +35,21 @@ class LearningDatastoreDatalakeGen2Config:
     workspace_id: Any = None
     timeouts: Any = None
 
-LearningDatastoreDatalakeGen2 = sdk.ResourceBinding(
+LearningDatastoreDatalakeGen2 = ubx.ResourceBinding(
     wire_type="azurerm_machine_learning_datastore_datalake_gen2",
     fields={
-        "authority_url": sdk.FieldSpec(wire_name="authority_url"),
-        "client_id": sdk.FieldSpec(wire_name="client_id"),
-        "client_secret": sdk.FieldSpec(wire_name="client_secret"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "service_data_identity": sdk.FieldSpec(wire_name="service_data_identity"),
-        "storage_container_id": sdk.FieldSpec(wire_name="storage_container_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-        "workspace_id": sdk.FieldSpec(wire_name="workspace_id"),
-        "timeouts": sdk.FieldSpec(
+        "authority_url": ubx.FieldSpec(wire_name="authority_url"),
+        "client_id": ubx.FieldSpec(wire_name="client_id"),
+        "client_secret": ubx.FieldSpec(wire_name="client_secret"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "service_data_identity": ubx.FieldSpec(wire_name="service_data_identity"),
+        "storage_container_id": ubx.FieldSpec(wire_name="storage_container_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+        "workspace_id": ubx.FieldSpec(wire_name="workspace_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_LearningDatastoreDatalakeGen2_TimeoutsFields,

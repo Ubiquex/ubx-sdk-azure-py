@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Manager_Scope:
@@ -19,15 +19,15 @@ class Manager_Timeouts:
     update: Any = None
 
 _Manager_ScopeFields = {
-    "management_group_ids": sdk.FieldSpec(wire_name="management_group_ids"),
-    "subscription_ids": sdk.FieldSpec(wire_name="subscription_ids"),
+    "management_group_ids": ubx.FieldSpec(wire_name="management_group_ids"),
+    "subscription_ids": ubx.FieldSpec(wire_name="subscription_ids"),
 }
 
 _Manager_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -42,22 +42,22 @@ class ManagerConfig:
     scope: Any = None
     timeouts: Any = None
 
-Manager = sdk.ResourceBinding(
+Manager = ubx.ResourceBinding(
     wire_type="azurerm_network_manager",
     fields={
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "scope_accesses": sdk.FieldSpec(wire_name="scope_accesses"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "scope": sdk.FieldSpec(
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "scope_accesses": ubx.FieldSpec(wire_name="scope_accesses"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "scope": ubx.FieldSpec(
             wire_name="scope",
             kind="list",
             fields=_Manager_ScopeFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Manager_TimeoutsFields,

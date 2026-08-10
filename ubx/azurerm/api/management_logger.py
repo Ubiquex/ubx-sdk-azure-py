@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementLogger_ApplicationInsights:
@@ -27,23 +27,23 @@ class ManagementLogger_Timeouts:
     update: Any = None
 
 _ManagementLogger_ApplicationInsightsFields = {
-    "connection_string": sdk.FieldSpec(wire_name="connection_string"),
-    "identity_client_id": sdk.FieldSpec(wire_name="identity_client_id"),
-    "instrumentation_key": sdk.FieldSpec(wire_name="instrumentation_key"),
+    "connection_string": ubx.FieldSpec(wire_name="connection_string"),
+    "identity_client_id": ubx.FieldSpec(wire_name="identity_client_id"),
+    "instrumentation_key": ubx.FieldSpec(wire_name="instrumentation_key"),
 }
 
 _ManagementLogger_EventhubFields = {
-    "connection_string": sdk.FieldSpec(wire_name="connection_string"),
-    "endpoint_uri": sdk.FieldSpec(wire_name="endpoint_uri"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "user_assigned_identity_client_id": sdk.FieldSpec(wire_name="user_assigned_identity_client_id"),
+    "connection_string": ubx.FieldSpec(wire_name="connection_string"),
+    "endpoint_uri": ubx.FieldSpec(wire_name="endpoint_uri"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "user_assigned_identity_client_id": ubx.FieldSpec(wire_name="user_assigned_identity_client_id"),
 }
 
 _ManagementLogger_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -59,27 +59,27 @@ class ManagementLoggerConfig:
     eventhub: Any = None
     timeouts: Any = None
 
-ManagementLogger = sdk.ResourceBinding(
+ManagementLogger = ubx.ResourceBinding(
     wire_type="azurerm_api_management_logger",
     fields={
-        "api_management_name": sdk.FieldSpec(wire_name="api_management_name"),
-        "buffered": sdk.FieldSpec(wire_name="buffered"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "resource_id": sdk.FieldSpec(wire_name="resource_id"),
-        "application_insights": sdk.FieldSpec(
+        "api_management_name": ubx.FieldSpec(wire_name="api_management_name"),
+        "buffered": ubx.FieldSpec(wire_name="buffered"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "resource_id": ubx.FieldSpec(wire_name="resource_id"),
+        "application_insights": ubx.FieldSpec(
             wire_name="application_insights",
             kind="list",
             fields=_ManagementLogger_ApplicationInsightsFields,
         ),
-        "eventhub": sdk.FieldSpec(
+        "eventhub": ubx.FieldSpec(
             wire_name="eventhub",
             kind="list",
             fields=_ManagementLogger_EventhubFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementLogger_TimeoutsFields,

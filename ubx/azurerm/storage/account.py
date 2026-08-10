@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Account_AzureFilesAuthentication_ActiveDirectory:
@@ -119,18 +119,18 @@ class Account_Timeouts:
     update: Any = None
 
 _Account_AzureFilesAuthentication_ActiveDirectoryFields = {
-    "domain_guid": sdk.FieldSpec(wire_name="domain_guid"),
-    "domain_name": sdk.FieldSpec(wire_name="domain_name"),
-    "domain_sid": sdk.FieldSpec(wire_name="domain_sid"),
-    "forest_name": sdk.FieldSpec(wire_name="forest_name"),
-    "netbios_domain_name": sdk.FieldSpec(wire_name="netbios_domain_name"),
-    "storage_sid": sdk.FieldSpec(wire_name="storage_sid"),
+    "domain_guid": ubx.FieldSpec(wire_name="domain_guid"),
+    "domain_name": ubx.FieldSpec(wire_name="domain_name"),
+    "domain_sid": ubx.FieldSpec(wire_name="domain_sid"),
+    "forest_name": ubx.FieldSpec(wire_name="forest_name"),
+    "netbios_domain_name": ubx.FieldSpec(wire_name="netbios_domain_name"),
+    "storage_sid": ubx.FieldSpec(wire_name="storage_sid"),
 }
 
 _Account_AzureFilesAuthenticationFields = {
-    "default_share_level_permission": sdk.FieldSpec(wire_name="default_share_level_permission"),
-    "directory_type": sdk.FieldSpec(wire_name="directory_type"),
-    "active_directory": sdk.FieldSpec(
+    "default_share_level_permission": ubx.FieldSpec(wire_name="default_share_level_permission"),
+    "directory_type": ubx.FieldSpec(wire_name="directory_type"),
+    "active_directory": ubx.FieldSpec(
         wire_name="active_directory",
         kind="list",
         fields=_Account_AzureFilesAuthentication_ActiveDirectoryFields,
@@ -138,44 +138,44 @@ _Account_AzureFilesAuthenticationFields = {
 }
 
 _Account_BlobProperties_ContainerDeleteRetentionPolicyFields = {
-    "days": sdk.FieldSpec(wire_name="days"),
+    "days": ubx.FieldSpec(wire_name="days"),
 }
 
 _Account_BlobProperties_CorsRuleFields = {
-    "allowed_headers": sdk.FieldSpec(wire_name="allowed_headers"),
-    "allowed_methods": sdk.FieldSpec(wire_name="allowed_methods"),
-    "allowed_origins": sdk.FieldSpec(wire_name="allowed_origins"),
-    "exposed_headers": sdk.FieldSpec(wire_name="exposed_headers"),
-    "max_age_in_seconds": sdk.FieldSpec(wire_name="max_age_in_seconds"),
+    "allowed_headers": ubx.FieldSpec(wire_name="allowed_headers"),
+    "allowed_methods": ubx.FieldSpec(wire_name="allowed_methods"),
+    "allowed_origins": ubx.FieldSpec(wire_name="allowed_origins"),
+    "exposed_headers": ubx.FieldSpec(wire_name="exposed_headers"),
+    "max_age_in_seconds": ubx.FieldSpec(wire_name="max_age_in_seconds"),
 }
 
 _Account_BlobProperties_DeleteRetentionPolicyFields = {
-    "days": sdk.FieldSpec(wire_name="days"),
-    "permanent_delete_enabled": sdk.FieldSpec(wire_name="permanent_delete_enabled"),
+    "days": ubx.FieldSpec(wire_name="days"),
+    "permanent_delete_enabled": ubx.FieldSpec(wire_name="permanent_delete_enabled"),
 }
 
 _Account_BlobPropertiesFields = {
-    "change_feed_enabled": sdk.FieldSpec(wire_name="change_feed_enabled"),
-    "change_feed_retention_in_days": sdk.FieldSpec(wire_name="change_feed_retention_in_days"),
-    "default_service_version": sdk.FieldSpec(wire_name="default_service_version"),
-    "last_access_time_enabled": sdk.FieldSpec(wire_name="last_access_time_enabled"),
-    "versioning_enabled": sdk.FieldSpec(wire_name="versioning_enabled"),
-    "container_delete_retention_policy": sdk.FieldSpec(
+    "change_feed_enabled": ubx.FieldSpec(wire_name="change_feed_enabled"),
+    "change_feed_retention_in_days": ubx.FieldSpec(wire_name="change_feed_retention_in_days"),
+    "default_service_version": ubx.FieldSpec(wire_name="default_service_version"),
+    "last_access_time_enabled": ubx.FieldSpec(wire_name="last_access_time_enabled"),
+    "versioning_enabled": ubx.FieldSpec(wire_name="versioning_enabled"),
+    "container_delete_retention_policy": ubx.FieldSpec(
         wire_name="container_delete_retention_policy",
         kind="list",
         fields=_Account_BlobProperties_ContainerDeleteRetentionPolicyFields,
     ),
-    "cors_rule": sdk.FieldSpec(
+    "cors_rule": ubx.FieldSpec(
         wire_name="cors_rule",
         kind="list",
         fields=_Account_BlobProperties_CorsRuleFields,
     ),
-    "delete_retention_policy": sdk.FieldSpec(
+    "delete_retention_policy": ubx.FieldSpec(
         wire_name="delete_retention_policy",
         kind="list",
         fields=_Account_BlobProperties_DeleteRetentionPolicyFields,
     ),
-    "restore_policy": sdk.FieldSpec(
+    "restore_policy": ubx.FieldSpec(
         wire_name="restore_policy",
         kind="list",
         fields=_Account_BlobProperties_ContainerDeleteRetentionPolicyFields,
@@ -183,39 +183,39 @@ _Account_BlobPropertiesFields = {
 }
 
 _Account_CustomDomainFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "use_subdomain": sdk.FieldSpec(wire_name="use_subdomain"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "use_subdomain": ubx.FieldSpec(wire_name="use_subdomain"),
 }
 
 _Account_CustomerManagedKeyFields = {
-    "key_vault_key_id": sdk.FieldSpec(wire_name="key_vault_key_id"),
-    "user_assigned_identity_id": sdk.FieldSpec(wire_name="user_assigned_identity_id"),
+    "key_vault_key_id": ubx.FieldSpec(wire_name="key_vault_key_id"),
+    "user_assigned_identity_id": ubx.FieldSpec(wire_name="user_assigned_identity_id"),
 }
 
 _Account_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Account_ImmutabilityPolicyFields = {
-    "allow_protected_append_writes": sdk.FieldSpec(wire_name="allow_protected_append_writes"),
-    "period_since_creation_in_days": sdk.FieldSpec(wire_name="period_since_creation_in_days"),
-    "state": sdk.FieldSpec(wire_name="state"),
+    "allow_protected_append_writes": ubx.FieldSpec(wire_name="allow_protected_append_writes"),
+    "period_since_creation_in_days": ubx.FieldSpec(wire_name="period_since_creation_in_days"),
+    "state": ubx.FieldSpec(wire_name="state"),
 }
 
 _Account_NetworkRules_PrivateLinkAccessFields = {
-    "endpoint_resource_id": sdk.FieldSpec(wire_name="endpoint_resource_id"),
-    "endpoint_tenant_id": sdk.FieldSpec(wire_name="endpoint_tenant_id"),
+    "endpoint_resource_id": ubx.FieldSpec(wire_name="endpoint_resource_id"),
+    "endpoint_tenant_id": ubx.FieldSpec(wire_name="endpoint_tenant_id"),
 }
 
 _Account_NetworkRulesFields = {
-    "bypass": sdk.FieldSpec(wire_name="bypass"),
-    "default_action": sdk.FieldSpec(wire_name="default_action"),
-    "ip_rules": sdk.FieldSpec(wire_name="ip_rules"),
-    "virtual_network_subnet_ids": sdk.FieldSpec(wire_name="virtual_network_subnet_ids"),
-    "private_link_access": sdk.FieldSpec(
+    "bypass": ubx.FieldSpec(wire_name="bypass"),
+    "default_action": ubx.FieldSpec(wire_name="default_action"),
+    "ip_rules": ubx.FieldSpec(wire_name="ip_rules"),
+    "virtual_network_subnet_ids": ubx.FieldSpec(wire_name="virtual_network_subnet_ids"),
+    "private_link_access": ubx.FieldSpec(
         wire_name="private_link_access",
         kind="list",
         fields=_Account_NetworkRules_PrivateLinkAccessFields,
@@ -223,36 +223,36 @@ _Account_NetworkRulesFields = {
 }
 
 _Account_RoutingFields = {
-    "choice": sdk.FieldSpec(wire_name="choice"),
-    "publish_internet_endpoints": sdk.FieldSpec(wire_name="publish_internet_endpoints"),
-    "publish_microsoft_endpoints": sdk.FieldSpec(wire_name="publish_microsoft_endpoints"),
+    "choice": ubx.FieldSpec(wire_name="choice"),
+    "publish_internet_endpoints": ubx.FieldSpec(wire_name="publish_internet_endpoints"),
+    "publish_microsoft_endpoints": ubx.FieldSpec(wire_name="publish_microsoft_endpoints"),
 }
 
 _Account_SasPolicyFields = {
-    "expiration_action": sdk.FieldSpec(wire_name="expiration_action"),
-    "expiration_period": sdk.FieldSpec(wire_name="expiration_period"),
+    "expiration_action": ubx.FieldSpec(wire_name="expiration_action"),
+    "expiration_period": ubx.FieldSpec(wire_name="expiration_period"),
 }
 
 _Account_ShareProperties_SmbFields = {
-    "authentication_types": sdk.FieldSpec(wire_name="authentication_types"),
-    "channel_encryption_type": sdk.FieldSpec(wire_name="channel_encryption_type"),
-    "kerberos_ticket_encryption_type": sdk.FieldSpec(wire_name="kerberos_ticket_encryption_type"),
-    "multichannel_enabled": sdk.FieldSpec(wire_name="multichannel_enabled"),
-    "versions": sdk.FieldSpec(wire_name="versions"),
+    "authentication_types": ubx.FieldSpec(wire_name="authentication_types"),
+    "channel_encryption_type": ubx.FieldSpec(wire_name="channel_encryption_type"),
+    "kerberos_ticket_encryption_type": ubx.FieldSpec(wire_name="kerberos_ticket_encryption_type"),
+    "multichannel_enabled": ubx.FieldSpec(wire_name="multichannel_enabled"),
+    "versions": ubx.FieldSpec(wire_name="versions"),
 }
 
 _Account_SharePropertiesFields = {
-    "cors_rule": sdk.FieldSpec(
+    "cors_rule": ubx.FieldSpec(
         wire_name="cors_rule",
         kind="list",
         fields=_Account_BlobProperties_CorsRuleFields,
     ),
-    "retention_policy": sdk.FieldSpec(
+    "retention_policy": ubx.FieldSpec(
         wire_name="retention_policy",
         kind="list",
         fields=_Account_BlobProperties_ContainerDeleteRetentionPolicyFields,
     ),
-    "smb": sdk.FieldSpec(
+    "smb": ubx.FieldSpec(
         wire_name="smb",
         kind="list",
         fields=_Account_ShareProperties_SmbFields,
@@ -260,10 +260,10 @@ _Account_SharePropertiesFields = {
 }
 
 _Account_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -308,88 +308,88 @@ class AccountConfig:
     share_properties: Any = None
     timeouts: Any = None
 
-Account = sdk.ResourceBinding(
+Account = ubx.ResourceBinding(
     wire_type="azurerm_storage_account",
     fields={
-        "access_tier": sdk.FieldSpec(wire_name="access_tier"),
-        "account_kind": sdk.FieldSpec(wire_name="account_kind"),
-        "account_replication_type": sdk.FieldSpec(wire_name="account_replication_type"),
-        "account_tier": sdk.FieldSpec(wire_name="account_tier"),
-        "allow_nested_items_to_be_public": sdk.FieldSpec(wire_name="allow_nested_items_to_be_public"),
-        "allowed_copy_scope": sdk.FieldSpec(wire_name="allowed_copy_scope"),
-        "cross_tenant_replication_enabled": sdk.FieldSpec(wire_name="cross_tenant_replication_enabled"),
-        "default_to_oauth_authentication": sdk.FieldSpec(wire_name="default_to_oauth_authentication"),
-        "dns_endpoint_type": sdk.FieldSpec(wire_name="dns_endpoint_type"),
-        "edge_zone": sdk.FieldSpec(wire_name="edge_zone"),
-        "https_traffic_only_enabled": sdk.FieldSpec(wire_name="https_traffic_only_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "infrastructure_encryption_enabled": sdk.FieldSpec(wire_name="infrastructure_encryption_enabled"),
-        "is_hns_enabled": sdk.FieldSpec(wire_name="is_hns_enabled"),
-        "large_file_share_enabled": sdk.FieldSpec(wire_name="large_file_share_enabled"),
-        "local_user_enabled": sdk.FieldSpec(wire_name="local_user_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "min_tls_version": sdk.FieldSpec(wire_name="min_tls_version"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "nfsv3_enabled": sdk.FieldSpec(wire_name="nfsv3_enabled"),
-        "provisioned_billing_model_version": sdk.FieldSpec(wire_name="provisioned_billing_model_version"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "queue_encryption_key_type": sdk.FieldSpec(wire_name="queue_encryption_key_type"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sftp_enabled": sdk.FieldSpec(wire_name="sftp_enabled"),
-        "shared_access_key_enabled": sdk.FieldSpec(wire_name="shared_access_key_enabled"),
-        "table_encryption_key_type": sdk.FieldSpec(wire_name="table_encryption_key_type"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "azure_files_authentication": sdk.FieldSpec(
+        "access_tier": ubx.FieldSpec(wire_name="access_tier"),
+        "account_kind": ubx.FieldSpec(wire_name="account_kind"),
+        "account_replication_type": ubx.FieldSpec(wire_name="account_replication_type"),
+        "account_tier": ubx.FieldSpec(wire_name="account_tier"),
+        "allow_nested_items_to_be_public": ubx.FieldSpec(wire_name="allow_nested_items_to_be_public"),
+        "allowed_copy_scope": ubx.FieldSpec(wire_name="allowed_copy_scope"),
+        "cross_tenant_replication_enabled": ubx.FieldSpec(wire_name="cross_tenant_replication_enabled"),
+        "default_to_oauth_authentication": ubx.FieldSpec(wire_name="default_to_oauth_authentication"),
+        "dns_endpoint_type": ubx.FieldSpec(wire_name="dns_endpoint_type"),
+        "edge_zone": ubx.FieldSpec(wire_name="edge_zone"),
+        "https_traffic_only_enabled": ubx.FieldSpec(wire_name="https_traffic_only_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "infrastructure_encryption_enabled": ubx.FieldSpec(wire_name="infrastructure_encryption_enabled"),
+        "is_hns_enabled": ubx.FieldSpec(wire_name="is_hns_enabled"),
+        "large_file_share_enabled": ubx.FieldSpec(wire_name="large_file_share_enabled"),
+        "local_user_enabled": ubx.FieldSpec(wire_name="local_user_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "min_tls_version": ubx.FieldSpec(wire_name="min_tls_version"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "nfsv3_enabled": ubx.FieldSpec(wire_name="nfsv3_enabled"),
+        "provisioned_billing_model_version": ubx.FieldSpec(wire_name="provisioned_billing_model_version"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "queue_encryption_key_type": ubx.FieldSpec(wire_name="queue_encryption_key_type"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sftp_enabled": ubx.FieldSpec(wire_name="sftp_enabled"),
+        "shared_access_key_enabled": ubx.FieldSpec(wire_name="shared_access_key_enabled"),
+        "table_encryption_key_type": ubx.FieldSpec(wire_name="table_encryption_key_type"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "azure_files_authentication": ubx.FieldSpec(
             wire_name="azure_files_authentication",
             kind="list",
             fields=_Account_AzureFilesAuthenticationFields,
         ),
-        "blob_properties": sdk.FieldSpec(
+        "blob_properties": ubx.FieldSpec(
             wire_name="blob_properties",
             kind="list",
             fields=_Account_BlobPropertiesFields,
         ),
-        "custom_domain": sdk.FieldSpec(
+        "custom_domain": ubx.FieldSpec(
             wire_name="custom_domain",
             kind="list",
             fields=_Account_CustomDomainFields,
         ),
-        "customer_managed_key": sdk.FieldSpec(
+        "customer_managed_key": ubx.FieldSpec(
             wire_name="customer_managed_key",
             kind="list",
             fields=_Account_CustomerManagedKeyFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Account_IdentityFields,
         ),
-        "immutability_policy": sdk.FieldSpec(
+        "immutability_policy": ubx.FieldSpec(
             wire_name="immutability_policy",
             kind="list",
             fields=_Account_ImmutabilityPolicyFields,
         ),
-        "network_rules": sdk.FieldSpec(
+        "network_rules": ubx.FieldSpec(
             wire_name="network_rules",
             kind="list",
             fields=_Account_NetworkRulesFields,
         ),
-        "routing": sdk.FieldSpec(
+        "routing": ubx.FieldSpec(
             wire_name="routing",
             kind="list",
             fields=_Account_RoutingFields,
         ),
-        "sas_policy": sdk.FieldSpec(
+        "sas_policy": ubx.FieldSpec(
             wire_name="sas_policy",
             kind="list",
             fields=_Account_SasPolicyFields,
         ),
-        "share_properties": sdk.FieldSpec(
+        "share_properties": ubx.FieldSpec(
             wire_name="share_properties",
             kind="list",
             fields=_Account_SharePropertiesFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Account_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CenterNetworkConnection_Timeouts:
@@ -14,10 +14,10 @@ class CenterNetworkConnection_Timeouts:
     update: Any = None
 
 _CenterNetworkConnection_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -35,21 +35,21 @@ class CenterNetworkConnectionConfig:
     tags: Any = None
     timeouts: Any = None
 
-CenterNetworkConnection = sdk.ResourceBinding(
+CenterNetworkConnection = ubx.ResourceBinding(
     wire_type="azurerm_dev_center_network_connection",
     fields={
-        "domain_join_type": sdk.FieldSpec(wire_name="domain_join_type"),
-        "domain_name": sdk.FieldSpec(wire_name="domain_name"),
-        "domain_password": sdk.FieldSpec(wire_name="domain_password"),
-        "domain_username": sdk.FieldSpec(wire_name="domain_username"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "organization_unit": sdk.FieldSpec(wire_name="organization_unit"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "domain_join_type": ubx.FieldSpec(wire_name="domain_join_type"),
+        "domain_name": ubx.FieldSpec(wire_name="domain_name"),
+        "domain_password": ubx.FieldSpec(wire_name="domain_password"),
+        "domain_username": ubx.FieldSpec(wire_name="domain_username"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "organization_unit": ubx.FieldSpec(wire_name="organization_unit"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CenterNetworkConnection_TimeoutsFields,

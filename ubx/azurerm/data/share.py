@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Share_SnapshotSchedule:
@@ -20,16 +20,16 @@ class Share_Timeouts:
     update: Any = None
 
 _Share_SnapshotScheduleFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "recurrence": sdk.FieldSpec(wire_name="recurrence"),
-    "start_time": sdk.FieldSpec(wire_name="start_time"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "recurrence": ubx.FieldSpec(wire_name="recurrence"),
+    "start_time": ubx.FieldSpec(wire_name="start_time"),
 }
 
 _Share_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -43,21 +43,21 @@ class ShareConfig:
     snapshot_schedule: Any = None
     timeouts: Any = None
 
-Share = sdk.ResourceBinding(
+Share = ubx.ResourceBinding(
     wire_type="azurerm_data_share",
     fields={
-        "account_id": sdk.FieldSpec(wire_name="account_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "kind": sdk.FieldSpec(wire_name="kind"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "terms": sdk.FieldSpec(wire_name="terms"),
-        "snapshot_schedule": sdk.FieldSpec(
+        "account_id": ubx.FieldSpec(wire_name="account_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "kind": ubx.FieldSpec(wire_name="kind"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "terms": ubx.FieldSpec(wire_name="terms"),
+        "snapshot_schedule": ubx.FieldSpec(
             wire_name="snapshot_schedule",
             kind="list",
             fields=_Share_SnapshotScheduleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Share_TimeoutsFields,

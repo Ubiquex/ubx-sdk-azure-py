@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Ledger_AzureadBasedServicePrincipal:
@@ -25,21 +25,21 @@ class Ledger_Timeouts:
     update: Any = None
 
 _Ledger_AzureadBasedServicePrincipalFields = {
-    "ledger_role_name": sdk.FieldSpec(wire_name="ledger_role_name"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
+    "ledger_role_name": ubx.FieldSpec(wire_name="ledger_role_name"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
 }
 
 _Ledger_CertificateBasedSecurityPrincipalFields = {
-    "ledger_role_name": sdk.FieldSpec(wire_name="ledger_role_name"),
-    "pem_public_key": sdk.FieldSpec(wire_name="pem_public_key"),
+    "ledger_role_name": ubx.FieldSpec(wire_name="ledger_role_name"),
+    "pem_public_key": ubx.FieldSpec(wire_name="pem_public_key"),
 }
 
 _Ledger_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -54,26 +54,26 @@ class LedgerConfig:
     certificate_based_security_principal: Any = None
     timeouts: Any = None
 
-Ledger = sdk.ResourceBinding(
+Ledger = ubx.ResourceBinding(
     wire_type="azurerm_confidential_ledger",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "ledger_type": sdk.FieldSpec(wire_name="ledger_type"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "azuread_based_service_principal": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "ledger_type": ubx.FieldSpec(wire_name="ledger_type"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "azuread_based_service_principal": ubx.FieldSpec(
             wire_name="azuread_based_service_principal",
             kind="list",
             fields=_Ledger_AzureadBasedServicePrincipalFields,
         ),
-        "certificate_based_security_principal": sdk.FieldSpec(
+        "certificate_based_security_principal": ubx.FieldSpec(
             wire_name="certificate_based_security_principal",
             kind="list",
             fields=_Ledger_CertificateBasedSecurityPrincipalFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Ledger_TimeoutsFields,

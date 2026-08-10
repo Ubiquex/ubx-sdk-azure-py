@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PubsubSocketio_Identity:
@@ -26,22 +26,22 @@ class PubsubSocketio_Timeouts:
     update: Any = None
 
 _PubsubSocketio_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _PubsubSocketio_SkuFields = {
-    "capacity": sdk.FieldSpec(wire_name="capacity"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "capacity": ubx.FieldSpec(wire_name="capacity"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _PubsubSocketio_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -64,34 +64,34 @@ class PubsubSocketioConfig:
     sku: Any = None
     timeouts: Any = None
 
-PubsubSocketio = sdk.ResourceBinding(
+PubsubSocketio = ubx.ResourceBinding(
     wire_type="azurerm_web_pubsub_socketio",
     fields={
-        "aad_auth_enabled": sdk.FieldSpec(wire_name="aad_auth_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "live_trace_connectivity_logs_enabled": sdk.FieldSpec(wire_name="live_trace_connectivity_logs_enabled"),
-        "live_trace_enabled": sdk.FieldSpec(wire_name="live_trace_enabled"),
-        "live_trace_http_request_logs_enabled": sdk.FieldSpec(wire_name="live_trace_http_request_logs_enabled"),
-        "live_trace_messaging_logs_enabled": sdk.FieldSpec(wire_name="live_trace_messaging_logs_enabled"),
-        "local_auth_enabled": sdk.FieldSpec(wire_name="local_auth_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_access": sdk.FieldSpec(wire_name="public_network_access"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "service_mode": sdk.FieldSpec(wire_name="service_mode"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "tls_client_cert_enabled": sdk.FieldSpec(wire_name="tls_client_cert_enabled"),
-        "identity": sdk.FieldSpec(
+        "aad_auth_enabled": ubx.FieldSpec(wire_name="aad_auth_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "live_trace_connectivity_logs_enabled": ubx.FieldSpec(wire_name="live_trace_connectivity_logs_enabled"),
+        "live_trace_enabled": ubx.FieldSpec(wire_name="live_trace_enabled"),
+        "live_trace_http_request_logs_enabled": ubx.FieldSpec(wire_name="live_trace_http_request_logs_enabled"),
+        "live_trace_messaging_logs_enabled": ubx.FieldSpec(wire_name="live_trace_messaging_logs_enabled"),
+        "local_auth_enabled": ubx.FieldSpec(wire_name="local_auth_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_access": ubx.FieldSpec(wire_name="public_network_access"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "service_mode": ubx.FieldSpec(wire_name="service_mode"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "tls_client_cert_enabled": ubx.FieldSpec(wire_name="tls_client_cert_enabled"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_PubsubSocketio_IdentityFields,
         ),
-        "sku": sdk.FieldSpec(
+        "sku": ubx.FieldSpec(
             wire_name="sku",
             kind="list",
             fields=_PubsubSocketio_SkuFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_PubsubSocketio_TimeoutsFields,

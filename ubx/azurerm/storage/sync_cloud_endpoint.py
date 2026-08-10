@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SyncCloudEndpoint_Timeouts:
@@ -13,9 +13,9 @@ class SyncCloudEndpoint_Timeouts:
     read: Any = None
 
 _SyncCloudEndpoint_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -28,16 +28,16 @@ class SyncCloudEndpointConfig:
     storage_sync_group_id: Any = None
     timeouts: Any = None
 
-SyncCloudEndpoint = sdk.ResourceBinding(
+SyncCloudEndpoint = ubx.ResourceBinding(
     wire_type="azurerm_storage_sync_cloud_endpoint",
     fields={
-        "file_share_name": sdk.FieldSpec(wire_name="file_share_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "storage_account_tenant_id": sdk.FieldSpec(wire_name="storage_account_tenant_id"),
-        "storage_sync_group_id": sdk.FieldSpec(wire_name="storage_sync_group_id"),
-        "timeouts": sdk.FieldSpec(
+        "file_share_name": ubx.FieldSpec(wire_name="file_share_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "storage_account_tenant_id": ubx.FieldSpec(wire_name="storage_account_tenant_id"),
+        "storage_sync_group_id": ubx.FieldSpec(wire_name="storage_sync_group_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SyncCloudEndpoint_TimeoutsFields,

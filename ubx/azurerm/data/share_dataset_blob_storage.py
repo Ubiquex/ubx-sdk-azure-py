@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ShareDatasetBlobStorage_StorageAccount:
@@ -19,15 +19,15 @@ class ShareDatasetBlobStorage_Timeouts:
     read: Any = None
 
 _ShareDatasetBlobStorage_StorageAccountFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-    "subscription_id": sdk.FieldSpec(wire_name="subscription_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+    "subscription_id": ubx.FieldSpec(wire_name="subscription_id"),
 }
 
 _ShareDatasetBlobStorage_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -41,21 +41,21 @@ class ShareDatasetBlobStorageConfig:
     storage_account: Any = None
     timeouts: Any = None
 
-ShareDatasetBlobStorage = sdk.ResourceBinding(
+ShareDatasetBlobStorage = ubx.ResourceBinding(
     wire_type="azurerm_data_share_dataset_blob_storage",
     fields={
-        "container_name": sdk.FieldSpec(wire_name="container_name"),
-        "data_share_id": sdk.FieldSpec(wire_name="data_share_id"),
-        "file_path": sdk.FieldSpec(wire_name="file_path"),
-        "folder_path": sdk.FieldSpec(wire_name="folder_path"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "storage_account": sdk.FieldSpec(
+        "container_name": ubx.FieldSpec(wire_name="container_name"),
+        "data_share_id": ubx.FieldSpec(wire_name="data_share_id"),
+        "file_path": ubx.FieldSpec(wire_name="file_path"),
+        "folder_path": ubx.FieldSpec(wire_name="folder_path"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "storage_account": ubx.FieldSpec(
             wire_name="storage_account",
             kind="list",
             fields=_ShareDatasetBlobStorage_StorageAccountFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ShareDatasetBlobStorage_TimeoutsFields,

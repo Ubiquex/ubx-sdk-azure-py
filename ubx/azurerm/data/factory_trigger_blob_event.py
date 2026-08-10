@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryTriggerBlobEvent_Pipeline:
@@ -19,15 +19,15 @@ class FactoryTriggerBlobEvent_Timeouts:
     update: Any = None
 
 _FactoryTriggerBlobEvent_PipelineFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "parameters": sdk.FieldSpec(wire_name="parameters"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "parameters": ubx.FieldSpec(wire_name="parameters"),
 }
 
 _FactoryTriggerBlobEvent_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -47,27 +47,27 @@ class FactoryTriggerBlobEventConfig:
     pipeline: Any = None
     timeouts: Any = None
 
-FactoryTriggerBlobEvent = sdk.ResourceBinding(
+FactoryTriggerBlobEvent = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_trigger_blob_event",
     fields={
-        "activated": sdk.FieldSpec(wire_name="activated"),
-        "additional_properties": sdk.FieldSpec(wire_name="additional_properties"),
-        "annotations": sdk.FieldSpec(wire_name="annotations"),
-        "blob_path_begins_with": sdk.FieldSpec(wire_name="blob_path_begins_with"),
-        "blob_path_ends_with": sdk.FieldSpec(wire_name="blob_path_ends_with"),
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "events": sdk.FieldSpec(wire_name="events"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "ignore_empty_blobs": sdk.FieldSpec(wire_name="ignore_empty_blobs"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "pipeline": sdk.FieldSpec(
+        "activated": ubx.FieldSpec(wire_name="activated"),
+        "additional_properties": ubx.FieldSpec(wire_name="additional_properties"),
+        "annotations": ubx.FieldSpec(wire_name="annotations"),
+        "blob_path_begins_with": ubx.FieldSpec(wire_name="blob_path_begins_with"),
+        "blob_path_ends_with": ubx.FieldSpec(wire_name="blob_path_ends_with"),
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "events": ubx.FieldSpec(wire_name="events"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "ignore_empty_blobs": ubx.FieldSpec(wire_name="ignore_empty_blobs"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "pipeline": ubx.FieldSpec(
             wire_name="pipeline",
             kind="set",
             fields=_FactoryTriggerBlobEvent_PipelineFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryTriggerBlobEvent_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SmartDetectorAlertRule_ActionGroup:
@@ -20,16 +20,16 @@ class SmartDetectorAlertRule_Timeouts:
     update: Any = None
 
 _SmartDetectorAlertRule_ActionGroupFields = {
-    "email_subject": sdk.FieldSpec(wire_name="email_subject"),
-    "ids": sdk.FieldSpec(wire_name="ids"),
-    "webhook_payload": sdk.FieldSpec(wire_name="webhook_payload"),
+    "email_subject": ubx.FieldSpec(wire_name="email_subject"),
+    "ids": ubx.FieldSpec(wire_name="ids"),
+    "webhook_payload": ubx.FieldSpec(wire_name="webhook_payload"),
 }
 
 _SmartDetectorAlertRule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -48,26 +48,26 @@ class SmartDetectorAlertRuleConfig:
     action_group: Any = None
     timeouts: Any = None
 
-SmartDetectorAlertRule = sdk.ResourceBinding(
+SmartDetectorAlertRule = ubx.ResourceBinding(
     wire_type="azurerm_monitor_smart_detector_alert_rule",
     fields={
-        "description": sdk.FieldSpec(wire_name="description"),
-        "detector_type": sdk.FieldSpec(wire_name="detector_type"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "frequency": sdk.FieldSpec(wire_name="frequency"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "scope_resource_ids": sdk.FieldSpec(wire_name="scope_resource_ids"),
-        "severity": sdk.FieldSpec(wire_name="severity"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "throttling_duration": sdk.FieldSpec(wire_name="throttling_duration"),
-        "action_group": sdk.FieldSpec(
+        "description": ubx.FieldSpec(wire_name="description"),
+        "detector_type": ubx.FieldSpec(wire_name="detector_type"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "frequency": ubx.FieldSpec(wire_name="frequency"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "scope_resource_ids": ubx.FieldSpec(wire_name="scope_resource_ids"),
+        "severity": ubx.FieldSpec(wire_name="severity"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "throttling_duration": ubx.FieldSpec(wire_name="throttling_duration"),
+        "action_group": ubx.FieldSpec(
             wire_name="action_group",
             kind="list",
             fields=_SmartDetectorAlertRule_ActionGroupFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SmartDetectorAlertRule_TimeoutsFields,

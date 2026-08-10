@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Site_Link_Bgp:
@@ -39,18 +39,18 @@ class Site_Timeouts:
     update: Any = None
 
 _Site_Link_BgpFields = {
-    "asn": sdk.FieldSpec(wire_name="asn"),
-    "peering_address": sdk.FieldSpec(wire_name="peering_address"),
+    "asn": ubx.FieldSpec(wire_name="asn"),
+    "peering_address": ubx.FieldSpec(wire_name="peering_address"),
 }
 
 _Site_LinkFields = {
-    "fqdn": sdk.FieldSpec(wire_name="fqdn"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "ip_address": sdk.FieldSpec(wire_name="ip_address"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "provider_name": sdk.FieldSpec(wire_name="provider_name"),
-    "speed_in_mbps": sdk.FieldSpec(wire_name="speed_in_mbps"),
-    "bgp": sdk.FieldSpec(
+    "fqdn": ubx.FieldSpec(wire_name="fqdn"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "ip_address": ubx.FieldSpec(wire_name="ip_address"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "provider_name": ubx.FieldSpec(wire_name="provider_name"),
+    "speed_in_mbps": ubx.FieldSpec(wire_name="speed_in_mbps"),
+    "bgp": ubx.FieldSpec(
         wire_name="bgp",
         kind="list",
         fields=_Site_Link_BgpFields,
@@ -58,13 +58,13 @@ _Site_LinkFields = {
 }
 
 _Site_O365Policy_TrafficCategoryFields = {
-    "allow_endpoint_enabled": sdk.FieldSpec(wire_name="allow_endpoint_enabled"),
-    "default_endpoint_enabled": sdk.FieldSpec(wire_name="default_endpoint_enabled"),
-    "optimize_endpoint_enabled": sdk.FieldSpec(wire_name="optimize_endpoint_enabled"),
+    "allow_endpoint_enabled": ubx.FieldSpec(wire_name="allow_endpoint_enabled"),
+    "default_endpoint_enabled": ubx.FieldSpec(wire_name="default_endpoint_enabled"),
+    "optimize_endpoint_enabled": ubx.FieldSpec(wire_name="optimize_endpoint_enabled"),
 }
 
 _Site_O365PolicyFields = {
-    "traffic_category": sdk.FieldSpec(
+    "traffic_category": ubx.FieldSpec(
         wire_name="traffic_category",
         kind="list",
         fields=_Site_O365Policy_TrafficCategoryFields,
@@ -72,10 +72,10 @@ _Site_O365PolicyFields = {
 }
 
 _Site_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -93,29 +93,29 @@ class SiteConfig:
     o365_policy: Any = None
     timeouts: Any = None
 
-Site = sdk.ResourceBinding(
+Site = ubx.ResourceBinding(
     wire_type="azurerm_vpn_site",
     fields={
-        "address_cidrs": sdk.FieldSpec(wire_name="address_cidrs"),
-        "device_model": sdk.FieldSpec(wire_name="device_model"),
-        "device_vendor": sdk.FieldSpec(wire_name="device_vendor"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "virtual_wan_id": sdk.FieldSpec(wire_name="virtual_wan_id"),
-        "link": sdk.FieldSpec(
+        "address_cidrs": ubx.FieldSpec(wire_name="address_cidrs"),
+        "device_model": ubx.FieldSpec(wire_name="device_model"),
+        "device_vendor": ubx.FieldSpec(wire_name="device_vendor"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "virtual_wan_id": ubx.FieldSpec(wire_name="virtual_wan_id"),
+        "link": ubx.FieldSpec(
             wire_name="link",
             kind="list",
             fields=_Site_LinkFields,
         ),
-        "o365_policy": sdk.FieldSpec(
+        "o365_policy": ubx.FieldSpec(
             wire_name="o365_policy",
             kind="list",
             fields=_Site_O365PolicyFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Site_TimeoutsFields,

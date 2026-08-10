@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FleetManager_HubProfile:
@@ -20,16 +20,16 @@ class FleetManager_Timeouts:
     update: Any = None
 
 _FleetManager_HubProfileFields = {
-    "dns_prefix": sdk.FieldSpec(wire_name="dns_prefix"),
-    "fqdn": sdk.FieldSpec(wire_name="fqdn"),
-    "kubernetes_version": sdk.FieldSpec(wire_name="kubernetes_version"),
+    "dns_prefix": ubx.FieldSpec(wire_name="dns_prefix"),
+    "fqdn": ubx.FieldSpec(wire_name="fqdn"),
+    "kubernetes_version": ubx.FieldSpec(wire_name="kubernetes_version"),
 }
 
 _FleetManager_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -42,20 +42,20 @@ class FleetManagerConfig:
     hub_profile: Any = None
     timeouts: Any = None
 
-FleetManager = sdk.ResourceBinding(
+FleetManager = ubx.ResourceBinding(
     wire_type="azurerm_kubernetes_fleet_manager",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "hub_profile": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "hub_profile": ubx.FieldSpec(
             wire_name="hub_profile",
             kind="list",
             fields=_FleetManager_HubProfileFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FleetManager_TimeoutsFields,

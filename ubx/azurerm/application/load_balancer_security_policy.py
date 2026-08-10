@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LoadBalancerSecurityPolicy_Timeouts:
@@ -14,10 +14,10 @@ class LoadBalancerSecurityPolicy_Timeouts:
     update: Any = None
 
 _LoadBalancerSecurityPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class LoadBalancerSecurityPolicyConfig:
     web_application_firewall_policy_id: Any = None
     timeouts: Any = None
 
-LoadBalancerSecurityPolicy = sdk.ResourceBinding(
+LoadBalancerSecurityPolicy = ubx.ResourceBinding(
     wire_type="azurerm_application_load_balancer_security_policy",
     fields={
-        "application_load_balancer_id": sdk.FieldSpec(wire_name="application_load_balancer_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "web_application_firewall_policy_id": sdk.FieldSpec(wire_name="web_application_firewall_policy_id"),
-        "timeouts": sdk.FieldSpec(
+        "application_load_balancer_id": ubx.FieldSpec(wire_name="application_load_balancer_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "web_application_firewall_policy_id": ubx.FieldSpec(wire_name="web_application_firewall_policy_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_LoadBalancerSecurityPolicy_TimeoutsFields,

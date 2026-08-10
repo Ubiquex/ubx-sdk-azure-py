@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class WebAppSlot_AuthSettings_ActiveDirectory:
@@ -377,68 +377,68 @@ class WebAppSlot_Timeouts:
     update: Any = None
 
 _WebAppSlot_AuthSettings_ActiveDirectoryFields = {
-    "allowed_audiences": sdk.FieldSpec(wire_name="allowed_audiences"),
-    "client_id": sdk.FieldSpec(wire_name="client_id"),
-    "client_secret": sdk.FieldSpec(wire_name="client_secret"),
-    "client_secret_setting_name": sdk.FieldSpec(wire_name="client_secret_setting_name"),
+    "allowed_audiences": ubx.FieldSpec(wire_name="allowed_audiences"),
+    "client_id": ubx.FieldSpec(wire_name="client_id"),
+    "client_secret": ubx.FieldSpec(wire_name="client_secret"),
+    "client_secret_setting_name": ubx.FieldSpec(wire_name="client_secret_setting_name"),
 }
 
 _WebAppSlot_AuthSettings_FacebookFields = {
-    "app_id": sdk.FieldSpec(wire_name="app_id"),
-    "app_secret": sdk.FieldSpec(wire_name="app_secret"),
-    "app_secret_setting_name": sdk.FieldSpec(wire_name="app_secret_setting_name"),
-    "oauth_scopes": sdk.FieldSpec(wire_name="oauth_scopes"),
+    "app_id": ubx.FieldSpec(wire_name="app_id"),
+    "app_secret": ubx.FieldSpec(wire_name="app_secret"),
+    "app_secret_setting_name": ubx.FieldSpec(wire_name="app_secret_setting_name"),
+    "oauth_scopes": ubx.FieldSpec(wire_name="oauth_scopes"),
 }
 
 _WebAppSlot_AuthSettings_GithubFields = {
-    "client_id": sdk.FieldSpec(wire_name="client_id"),
-    "client_secret": sdk.FieldSpec(wire_name="client_secret"),
-    "client_secret_setting_name": sdk.FieldSpec(wire_name="client_secret_setting_name"),
-    "oauth_scopes": sdk.FieldSpec(wire_name="oauth_scopes"),
+    "client_id": ubx.FieldSpec(wire_name="client_id"),
+    "client_secret": ubx.FieldSpec(wire_name="client_secret"),
+    "client_secret_setting_name": ubx.FieldSpec(wire_name="client_secret_setting_name"),
+    "oauth_scopes": ubx.FieldSpec(wire_name="oauth_scopes"),
 }
 
 _WebAppSlot_AuthSettings_TwitterFields = {
-    "consumer_key": sdk.FieldSpec(wire_name="consumer_key"),
-    "consumer_secret": sdk.FieldSpec(wire_name="consumer_secret"),
-    "consumer_secret_setting_name": sdk.FieldSpec(wire_name="consumer_secret_setting_name"),
+    "consumer_key": ubx.FieldSpec(wire_name="consumer_key"),
+    "consumer_secret": ubx.FieldSpec(wire_name="consumer_secret"),
+    "consumer_secret_setting_name": ubx.FieldSpec(wire_name="consumer_secret_setting_name"),
 }
 
 _WebAppSlot_AuthSettingsFields = {
-    "additional_login_parameters": sdk.FieldSpec(wire_name="additional_login_parameters"),
-    "allowed_external_redirect_urls": sdk.FieldSpec(wire_name="allowed_external_redirect_urls"),
-    "default_provider": sdk.FieldSpec(wire_name="default_provider"),
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "issuer": sdk.FieldSpec(wire_name="issuer"),
-    "runtime_version": sdk.FieldSpec(wire_name="runtime_version"),
-    "token_refresh_extension_hours": sdk.FieldSpec(wire_name="token_refresh_extension_hours"),
-    "token_store_enabled": sdk.FieldSpec(wire_name="token_store_enabled"),
-    "unauthenticated_client_action": sdk.FieldSpec(wire_name="unauthenticated_client_action"),
-    "active_directory": sdk.FieldSpec(
+    "additional_login_parameters": ubx.FieldSpec(wire_name="additional_login_parameters"),
+    "allowed_external_redirect_urls": ubx.FieldSpec(wire_name="allowed_external_redirect_urls"),
+    "default_provider": ubx.FieldSpec(wire_name="default_provider"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "issuer": ubx.FieldSpec(wire_name="issuer"),
+    "runtime_version": ubx.FieldSpec(wire_name="runtime_version"),
+    "token_refresh_extension_hours": ubx.FieldSpec(wire_name="token_refresh_extension_hours"),
+    "token_store_enabled": ubx.FieldSpec(wire_name="token_store_enabled"),
+    "unauthenticated_client_action": ubx.FieldSpec(wire_name="unauthenticated_client_action"),
+    "active_directory": ubx.FieldSpec(
         wire_name="active_directory",
         kind="list",
         fields=_WebAppSlot_AuthSettings_ActiveDirectoryFields,
     ),
-    "facebook": sdk.FieldSpec(
+    "facebook": ubx.FieldSpec(
         wire_name="facebook",
         kind="list",
         fields=_WebAppSlot_AuthSettings_FacebookFields,
     ),
-    "github": sdk.FieldSpec(
+    "github": ubx.FieldSpec(
         wire_name="github",
         kind="list",
         fields=_WebAppSlot_AuthSettings_GithubFields,
     ),
-    "google": sdk.FieldSpec(
+    "google": ubx.FieldSpec(
         wire_name="google",
         kind="list",
         fields=_WebAppSlot_AuthSettings_GithubFields,
     ),
-    "microsoft": sdk.FieldSpec(
+    "microsoft": ubx.FieldSpec(
         wire_name="microsoft",
         kind="list",
         fields=_WebAppSlot_AuthSettings_GithubFields,
     ),
-    "twitter": sdk.FieldSpec(
+    "twitter": ubx.FieldSpec(
         wire_name="twitter",
         kind="list",
         fields=_WebAppSlot_AuthSettings_TwitterFields,
@@ -446,136 +446,136 @@ _WebAppSlot_AuthSettingsFields = {
 }
 
 _WebAppSlot_AuthSettingsV2_ActiveDirectoryV2Fields = {
-    "allowed_applications": sdk.FieldSpec(wire_name="allowed_applications"),
-    "allowed_audiences": sdk.FieldSpec(wire_name="allowed_audiences"),
-    "allowed_groups": sdk.FieldSpec(wire_name="allowed_groups"),
-    "allowed_identities": sdk.FieldSpec(wire_name="allowed_identities"),
-    "client_id": sdk.FieldSpec(wire_name="client_id"),
-    "client_secret_certificate_thumbprint": sdk.FieldSpec(wire_name="client_secret_certificate_thumbprint"),
-    "client_secret_setting_name": sdk.FieldSpec(wire_name="client_secret_setting_name"),
-    "jwt_allowed_client_applications": sdk.FieldSpec(wire_name="jwt_allowed_client_applications"),
-    "jwt_allowed_groups": sdk.FieldSpec(wire_name="jwt_allowed_groups"),
-    "login_parameters": sdk.FieldSpec(wire_name="login_parameters"),
-    "tenant_auth_endpoint": sdk.FieldSpec(wire_name="tenant_auth_endpoint"),
-    "www_authentication_disabled": sdk.FieldSpec(wire_name="www_authentication_disabled"),
+    "allowed_applications": ubx.FieldSpec(wire_name="allowed_applications"),
+    "allowed_audiences": ubx.FieldSpec(wire_name="allowed_audiences"),
+    "allowed_groups": ubx.FieldSpec(wire_name="allowed_groups"),
+    "allowed_identities": ubx.FieldSpec(wire_name="allowed_identities"),
+    "client_id": ubx.FieldSpec(wire_name="client_id"),
+    "client_secret_certificate_thumbprint": ubx.FieldSpec(wire_name="client_secret_certificate_thumbprint"),
+    "client_secret_setting_name": ubx.FieldSpec(wire_name="client_secret_setting_name"),
+    "jwt_allowed_client_applications": ubx.FieldSpec(wire_name="jwt_allowed_client_applications"),
+    "jwt_allowed_groups": ubx.FieldSpec(wire_name="jwt_allowed_groups"),
+    "login_parameters": ubx.FieldSpec(wire_name="login_parameters"),
+    "tenant_auth_endpoint": ubx.FieldSpec(wire_name="tenant_auth_endpoint"),
+    "www_authentication_disabled": ubx.FieldSpec(wire_name="www_authentication_disabled"),
 }
 
 _WebAppSlot_AuthSettingsV2_AppleV2Fields = {
-    "client_id": sdk.FieldSpec(wire_name="client_id"),
-    "client_secret_setting_name": sdk.FieldSpec(wire_name="client_secret_setting_name"),
-    "login_scopes": sdk.FieldSpec(wire_name="login_scopes"),
+    "client_id": ubx.FieldSpec(wire_name="client_id"),
+    "client_secret_setting_name": ubx.FieldSpec(wire_name="client_secret_setting_name"),
+    "login_scopes": ubx.FieldSpec(wire_name="login_scopes"),
 }
 
 _WebAppSlot_AuthSettingsV2_AzureStaticWebAppV2Fields = {
-    "client_id": sdk.FieldSpec(wire_name="client_id"),
+    "client_id": ubx.FieldSpec(wire_name="client_id"),
 }
 
 _WebAppSlot_AuthSettingsV2_CustomOidcV2Fields = {
-    "authorisation_endpoint": sdk.FieldSpec(wire_name="authorisation_endpoint"),
-    "certification_uri": sdk.FieldSpec(wire_name="certification_uri"),
-    "client_credential_method": sdk.FieldSpec(wire_name="client_credential_method"),
-    "client_id": sdk.FieldSpec(wire_name="client_id"),
-    "client_secret_setting_name": sdk.FieldSpec(wire_name="client_secret_setting_name"),
-    "issuer_endpoint": sdk.FieldSpec(wire_name="issuer_endpoint"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "name_claim_type": sdk.FieldSpec(wire_name="name_claim_type"),
-    "openid_configuration_endpoint": sdk.FieldSpec(wire_name="openid_configuration_endpoint"),
-    "scopes": sdk.FieldSpec(wire_name="scopes"),
-    "token_endpoint": sdk.FieldSpec(wire_name="token_endpoint"),
+    "authorisation_endpoint": ubx.FieldSpec(wire_name="authorisation_endpoint"),
+    "certification_uri": ubx.FieldSpec(wire_name="certification_uri"),
+    "client_credential_method": ubx.FieldSpec(wire_name="client_credential_method"),
+    "client_id": ubx.FieldSpec(wire_name="client_id"),
+    "client_secret_setting_name": ubx.FieldSpec(wire_name="client_secret_setting_name"),
+    "issuer_endpoint": ubx.FieldSpec(wire_name="issuer_endpoint"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "name_claim_type": ubx.FieldSpec(wire_name="name_claim_type"),
+    "openid_configuration_endpoint": ubx.FieldSpec(wire_name="openid_configuration_endpoint"),
+    "scopes": ubx.FieldSpec(wire_name="scopes"),
+    "token_endpoint": ubx.FieldSpec(wire_name="token_endpoint"),
 }
 
 _WebAppSlot_AuthSettingsV2_FacebookV2Fields = {
-    "app_id": sdk.FieldSpec(wire_name="app_id"),
-    "app_secret_setting_name": sdk.FieldSpec(wire_name="app_secret_setting_name"),
-    "graph_api_version": sdk.FieldSpec(wire_name="graph_api_version"),
-    "login_scopes": sdk.FieldSpec(wire_name="login_scopes"),
+    "app_id": ubx.FieldSpec(wire_name="app_id"),
+    "app_secret_setting_name": ubx.FieldSpec(wire_name="app_secret_setting_name"),
+    "graph_api_version": ubx.FieldSpec(wire_name="graph_api_version"),
+    "login_scopes": ubx.FieldSpec(wire_name="login_scopes"),
 }
 
 _WebAppSlot_AuthSettingsV2_GoogleV2Fields = {
-    "allowed_audiences": sdk.FieldSpec(wire_name="allowed_audiences"),
-    "client_id": sdk.FieldSpec(wire_name="client_id"),
-    "client_secret_setting_name": sdk.FieldSpec(wire_name="client_secret_setting_name"),
-    "login_scopes": sdk.FieldSpec(wire_name="login_scopes"),
+    "allowed_audiences": ubx.FieldSpec(wire_name="allowed_audiences"),
+    "client_id": ubx.FieldSpec(wire_name="client_id"),
+    "client_secret_setting_name": ubx.FieldSpec(wire_name="client_secret_setting_name"),
+    "login_scopes": ubx.FieldSpec(wire_name="login_scopes"),
 }
 
 _WebAppSlot_AuthSettingsV2_LoginFields = {
-    "allowed_external_redirect_urls": sdk.FieldSpec(wire_name="allowed_external_redirect_urls"),
-    "cookie_expiration_convention": sdk.FieldSpec(wire_name="cookie_expiration_convention"),
-    "cookie_expiration_time": sdk.FieldSpec(wire_name="cookie_expiration_time"),
-    "logout_endpoint": sdk.FieldSpec(wire_name="logout_endpoint"),
-    "nonce_expiration_time": sdk.FieldSpec(wire_name="nonce_expiration_time"),
-    "preserve_url_fragments_for_logins": sdk.FieldSpec(wire_name="preserve_url_fragments_for_logins"),
-    "token_refresh_extension_time": sdk.FieldSpec(wire_name="token_refresh_extension_time"),
-    "token_store_enabled": sdk.FieldSpec(wire_name="token_store_enabled"),
-    "token_store_path": sdk.FieldSpec(wire_name="token_store_path"),
-    "token_store_sas_setting_name": sdk.FieldSpec(wire_name="token_store_sas_setting_name"),
-    "validate_nonce": sdk.FieldSpec(wire_name="validate_nonce"),
+    "allowed_external_redirect_urls": ubx.FieldSpec(wire_name="allowed_external_redirect_urls"),
+    "cookie_expiration_convention": ubx.FieldSpec(wire_name="cookie_expiration_convention"),
+    "cookie_expiration_time": ubx.FieldSpec(wire_name="cookie_expiration_time"),
+    "logout_endpoint": ubx.FieldSpec(wire_name="logout_endpoint"),
+    "nonce_expiration_time": ubx.FieldSpec(wire_name="nonce_expiration_time"),
+    "preserve_url_fragments_for_logins": ubx.FieldSpec(wire_name="preserve_url_fragments_for_logins"),
+    "token_refresh_extension_time": ubx.FieldSpec(wire_name="token_refresh_extension_time"),
+    "token_store_enabled": ubx.FieldSpec(wire_name="token_store_enabled"),
+    "token_store_path": ubx.FieldSpec(wire_name="token_store_path"),
+    "token_store_sas_setting_name": ubx.FieldSpec(wire_name="token_store_sas_setting_name"),
+    "validate_nonce": ubx.FieldSpec(wire_name="validate_nonce"),
 }
 
 _WebAppSlot_AuthSettingsV2_TwitterV2Fields = {
-    "consumer_key": sdk.FieldSpec(wire_name="consumer_key"),
-    "consumer_secret_setting_name": sdk.FieldSpec(wire_name="consumer_secret_setting_name"),
+    "consumer_key": ubx.FieldSpec(wire_name="consumer_key"),
+    "consumer_secret_setting_name": ubx.FieldSpec(wire_name="consumer_secret_setting_name"),
 }
 
 _WebAppSlot_AuthSettingsV2Fields = {
-    "auth_enabled": sdk.FieldSpec(wire_name="auth_enabled"),
-    "config_file_path": sdk.FieldSpec(wire_name="config_file_path"),
-    "default_provider": sdk.FieldSpec(wire_name="default_provider"),
-    "excluded_paths": sdk.FieldSpec(wire_name="excluded_paths"),
-    "forward_proxy_convention": sdk.FieldSpec(wire_name="forward_proxy_convention"),
-    "forward_proxy_custom_host_header_name": sdk.FieldSpec(wire_name="forward_proxy_custom_host_header_name"),
-    "forward_proxy_custom_scheme_header_name": sdk.FieldSpec(wire_name="forward_proxy_custom_scheme_header_name"),
-    "http_route_api_prefix": sdk.FieldSpec(wire_name="http_route_api_prefix"),
-    "require_authentication": sdk.FieldSpec(wire_name="require_authentication"),
-    "require_https": sdk.FieldSpec(wire_name="require_https"),
-    "runtime_version": sdk.FieldSpec(wire_name="runtime_version"),
-    "unauthenticated_action": sdk.FieldSpec(wire_name="unauthenticated_action"),
-    "active_directory_v2": sdk.FieldSpec(
+    "auth_enabled": ubx.FieldSpec(wire_name="auth_enabled"),
+    "config_file_path": ubx.FieldSpec(wire_name="config_file_path"),
+    "default_provider": ubx.FieldSpec(wire_name="default_provider"),
+    "excluded_paths": ubx.FieldSpec(wire_name="excluded_paths"),
+    "forward_proxy_convention": ubx.FieldSpec(wire_name="forward_proxy_convention"),
+    "forward_proxy_custom_host_header_name": ubx.FieldSpec(wire_name="forward_proxy_custom_host_header_name"),
+    "forward_proxy_custom_scheme_header_name": ubx.FieldSpec(wire_name="forward_proxy_custom_scheme_header_name"),
+    "http_route_api_prefix": ubx.FieldSpec(wire_name="http_route_api_prefix"),
+    "require_authentication": ubx.FieldSpec(wire_name="require_authentication"),
+    "require_https": ubx.FieldSpec(wire_name="require_https"),
+    "runtime_version": ubx.FieldSpec(wire_name="runtime_version"),
+    "unauthenticated_action": ubx.FieldSpec(wire_name="unauthenticated_action"),
+    "active_directory_v2": ubx.FieldSpec(
         wire_name="active_directory_v2",
         kind="list",
         fields=_WebAppSlot_AuthSettingsV2_ActiveDirectoryV2Fields,
     ),
-    "apple_v2": sdk.FieldSpec(
+    "apple_v2": ubx.FieldSpec(
         wire_name="apple_v2",
         kind="list",
         fields=_WebAppSlot_AuthSettingsV2_AppleV2Fields,
     ),
-    "azure_static_web_app_v2": sdk.FieldSpec(
+    "azure_static_web_app_v2": ubx.FieldSpec(
         wire_name="azure_static_web_app_v2",
         kind="list",
         fields=_WebAppSlot_AuthSettingsV2_AzureStaticWebAppV2Fields,
     ),
-    "custom_oidc_v2": sdk.FieldSpec(
+    "custom_oidc_v2": ubx.FieldSpec(
         wire_name="custom_oidc_v2",
         kind="list",
         fields=_WebAppSlot_AuthSettingsV2_CustomOidcV2Fields,
     ),
-    "facebook_v2": sdk.FieldSpec(
+    "facebook_v2": ubx.FieldSpec(
         wire_name="facebook_v2",
         kind="list",
         fields=_WebAppSlot_AuthSettingsV2_FacebookV2Fields,
     ),
-    "github_v2": sdk.FieldSpec(
+    "github_v2": ubx.FieldSpec(
         wire_name="github_v2",
         kind="list",
         fields=_WebAppSlot_AuthSettingsV2_AppleV2Fields,
     ),
-    "google_v2": sdk.FieldSpec(
+    "google_v2": ubx.FieldSpec(
         wire_name="google_v2",
         kind="list",
         fields=_WebAppSlot_AuthSettingsV2_GoogleV2Fields,
     ),
-    "login": sdk.FieldSpec(
+    "login": ubx.FieldSpec(
         wire_name="login",
         kind="list",
         fields=_WebAppSlot_AuthSettingsV2_LoginFields,
     ),
-    "microsoft_v2": sdk.FieldSpec(
+    "microsoft_v2": ubx.FieldSpec(
         wire_name="microsoft_v2",
         kind="list",
         fields=_WebAppSlot_AuthSettingsV2_GoogleV2Fields,
     ),
-    "twitter_v2": sdk.FieldSpec(
+    "twitter_v2": ubx.FieldSpec(
         wire_name="twitter_v2",
         kind="list",
         fields=_WebAppSlot_AuthSettingsV2_TwitterV2Fields,
@@ -583,19 +583,19 @@ _WebAppSlot_AuthSettingsV2Fields = {
 }
 
 _WebAppSlot_Backup_ScheduleFields = {
-    "frequency_interval": sdk.FieldSpec(wire_name="frequency_interval"),
-    "frequency_unit": sdk.FieldSpec(wire_name="frequency_unit"),
-    "keep_at_least_one_backup": sdk.FieldSpec(wire_name="keep_at_least_one_backup"),
-    "last_execution_time": sdk.FieldSpec(wire_name="last_execution_time"),
-    "retention_period_days": sdk.FieldSpec(wire_name="retention_period_days"),
-    "start_time": sdk.FieldSpec(wire_name="start_time"),
+    "frequency_interval": ubx.FieldSpec(wire_name="frequency_interval"),
+    "frequency_unit": ubx.FieldSpec(wire_name="frequency_unit"),
+    "keep_at_least_one_backup": ubx.FieldSpec(wire_name="keep_at_least_one_backup"),
+    "last_execution_time": ubx.FieldSpec(wire_name="last_execution_time"),
+    "retention_period_days": ubx.FieldSpec(wire_name="retention_period_days"),
+    "start_time": ubx.FieldSpec(wire_name="start_time"),
 }
 
 _WebAppSlot_BackupFields = {
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "storage_account_url": sdk.FieldSpec(wire_name="storage_account_url"),
-    "schedule": sdk.FieldSpec(
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "storage_account_url": ubx.FieldSpec(wire_name="storage_account_url"),
+    "schedule": ubx.FieldSpec(
         wire_name="schedule",
         kind="list",
         fields=_WebAppSlot_Backup_ScheduleFields,
@@ -603,27 +603,27 @@ _WebAppSlot_BackupFields = {
 }
 
 _WebAppSlot_ConnectionStringFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "type": sdk.FieldSpec(wire_name="type"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "type": ubx.FieldSpec(wire_name="type"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _WebAppSlot_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _WebAppSlot_Logs_ApplicationLogs_AzureBlobStorageFields = {
-    "level": sdk.FieldSpec(wire_name="level"),
-    "retention_in_days": sdk.FieldSpec(wire_name="retention_in_days"),
-    "sas_url": sdk.FieldSpec(wire_name="sas_url"),
+    "level": ubx.FieldSpec(wire_name="level"),
+    "retention_in_days": ubx.FieldSpec(wire_name="retention_in_days"),
+    "sas_url": ubx.FieldSpec(wire_name="sas_url"),
 }
 
 _WebAppSlot_Logs_ApplicationLogsFields = {
-    "file_system_level": sdk.FieldSpec(wire_name="file_system_level"),
-    "azure_blob_storage": sdk.FieldSpec(
+    "file_system_level": ubx.FieldSpec(wire_name="file_system_level"),
+    "azure_blob_storage": ubx.FieldSpec(
         wire_name="azure_blob_storage",
         kind="list",
         fields=_WebAppSlot_Logs_ApplicationLogs_AzureBlobStorageFields,
@@ -631,22 +631,22 @@ _WebAppSlot_Logs_ApplicationLogsFields = {
 }
 
 _WebAppSlot_Logs_HttpLogs_AzureBlobStorageFields = {
-    "retention_in_days": sdk.FieldSpec(wire_name="retention_in_days"),
-    "sas_url": sdk.FieldSpec(wire_name="sas_url"),
+    "retention_in_days": ubx.FieldSpec(wire_name="retention_in_days"),
+    "sas_url": ubx.FieldSpec(wire_name="sas_url"),
 }
 
 _WebAppSlot_Logs_HttpLogs_FileSystemFields = {
-    "retention_in_days": sdk.FieldSpec(wire_name="retention_in_days"),
-    "retention_in_mb": sdk.FieldSpec(wire_name="retention_in_mb"),
+    "retention_in_days": ubx.FieldSpec(wire_name="retention_in_days"),
+    "retention_in_mb": ubx.FieldSpec(wire_name="retention_in_mb"),
 }
 
 _WebAppSlot_Logs_HttpLogsFields = {
-    "azure_blob_storage": sdk.FieldSpec(
+    "azure_blob_storage": ubx.FieldSpec(
         wire_name="azure_blob_storage",
         kind="list",
         fields=_WebAppSlot_Logs_HttpLogs_AzureBlobStorageFields,
     ),
-    "file_system": sdk.FieldSpec(
+    "file_system": ubx.FieldSpec(
         wire_name="file_system",
         kind="list",
         fields=_WebAppSlot_Logs_HttpLogs_FileSystemFields,
@@ -654,14 +654,14 @@ _WebAppSlot_Logs_HttpLogsFields = {
 }
 
 _WebAppSlot_LogsFields = {
-    "detailed_error_messages": sdk.FieldSpec(wire_name="detailed_error_messages"),
-    "failed_request_tracing": sdk.FieldSpec(wire_name="failed_request_tracing"),
-    "application_logs": sdk.FieldSpec(
+    "detailed_error_messages": ubx.FieldSpec(wire_name="detailed_error_messages"),
+    "failed_request_tracing": ubx.FieldSpec(wire_name="failed_request_tracing"),
+    "application_logs": ubx.FieldSpec(
         wire_name="application_logs",
         kind="list",
         fields=_WebAppSlot_Logs_ApplicationLogsFields,
     ),
-    "http_logs": sdk.FieldSpec(
+    "http_logs": ubx.FieldSpec(
         wire_name="http_logs",
         kind="list",
         fields=_WebAppSlot_Logs_HttpLogsFields,
@@ -669,32 +669,32 @@ _WebAppSlot_LogsFields = {
 }
 
 _WebAppSlot_SiteConfig_ApplicationStackFields = {
-    "current_stack": sdk.FieldSpec(wire_name="current_stack"),
-    "docker_image_name": sdk.FieldSpec(wire_name="docker_image_name"),
-    "docker_registry_password": sdk.FieldSpec(wire_name="docker_registry_password"),
-    "docker_registry_url": sdk.FieldSpec(wire_name="docker_registry_url"),
-    "docker_registry_username": sdk.FieldSpec(wire_name="docker_registry_username"),
-    "dotnet_core_version": sdk.FieldSpec(wire_name="dotnet_core_version"),
-    "dotnet_version": sdk.FieldSpec(wire_name="dotnet_version"),
-    "java_container": sdk.FieldSpec(wire_name="java_container"),
-    "java_container_version": sdk.FieldSpec(wire_name="java_container_version"),
-    "java_embedded_server_enabled": sdk.FieldSpec(wire_name="java_embedded_server_enabled"),
-    "java_version": sdk.FieldSpec(wire_name="java_version"),
-    "node_version": sdk.FieldSpec(wire_name="node_version"),
-    "php_version": sdk.FieldSpec(wire_name="php_version"),
-    "python": sdk.FieldSpec(wire_name="python"),
-    "tomcat_version": sdk.FieldSpec(wire_name="tomcat_version"),
+    "current_stack": ubx.FieldSpec(wire_name="current_stack"),
+    "docker_image_name": ubx.FieldSpec(wire_name="docker_image_name"),
+    "docker_registry_password": ubx.FieldSpec(wire_name="docker_registry_password"),
+    "docker_registry_url": ubx.FieldSpec(wire_name="docker_registry_url"),
+    "docker_registry_username": ubx.FieldSpec(wire_name="docker_registry_username"),
+    "dotnet_core_version": ubx.FieldSpec(wire_name="dotnet_core_version"),
+    "dotnet_version": ubx.FieldSpec(wire_name="dotnet_version"),
+    "java_container": ubx.FieldSpec(wire_name="java_container"),
+    "java_container_version": ubx.FieldSpec(wire_name="java_container_version"),
+    "java_embedded_server_enabled": ubx.FieldSpec(wire_name="java_embedded_server_enabled"),
+    "java_version": ubx.FieldSpec(wire_name="java_version"),
+    "node_version": ubx.FieldSpec(wire_name="node_version"),
+    "php_version": ubx.FieldSpec(wire_name="php_version"),
+    "python": ubx.FieldSpec(wire_name="python"),
+    "tomcat_version": ubx.FieldSpec(wire_name="tomcat_version"),
 }
 
 _WebAppSlot_SiteConfig_AutoHealSetting_Action_CustomActionFields = {
-    "executable": sdk.FieldSpec(wire_name="executable"),
-    "parameters": sdk.FieldSpec(wire_name="parameters"),
+    "executable": ubx.FieldSpec(wire_name="executable"),
+    "parameters": ubx.FieldSpec(wire_name="parameters"),
 }
 
 _WebAppSlot_SiteConfig_AutoHealSetting_ActionFields = {
-    "action_type": sdk.FieldSpec(wire_name="action_type"),
-    "minimum_process_execution_time": sdk.FieldSpec(wire_name="minimum_process_execution_time"),
-    "custom_action": sdk.FieldSpec(
+    "action_type": ubx.FieldSpec(wire_name="action_type"),
+    "minimum_process_execution_time": ubx.FieldSpec(wire_name="minimum_process_execution_time"),
+    "custom_action": ubx.FieldSpec(
         wire_name="custom_action",
         kind="list",
         fields=_WebAppSlot_SiteConfig_AutoHealSetting_Action_CustomActionFields,
@@ -702,50 +702,50 @@ _WebAppSlot_SiteConfig_AutoHealSetting_ActionFields = {
 }
 
 _WebAppSlot_SiteConfig_AutoHealSetting_Trigger_RequestsFields = {
-    "count": sdk.FieldSpec(wire_name="count"),
-    "interval": sdk.FieldSpec(wire_name="interval"),
+    "count": ubx.FieldSpec(wire_name="count"),
+    "interval": ubx.FieldSpec(wire_name="interval"),
 }
 
 _WebAppSlot_SiteConfig_AutoHealSetting_Trigger_SlowRequestFields = {
-    "count": sdk.FieldSpec(wire_name="count"),
-    "interval": sdk.FieldSpec(wire_name="interval"),
-    "time_taken": sdk.FieldSpec(wire_name="time_taken"),
+    "count": ubx.FieldSpec(wire_name="count"),
+    "interval": ubx.FieldSpec(wire_name="interval"),
+    "time_taken": ubx.FieldSpec(wire_name="time_taken"),
 }
 
 _WebAppSlot_SiteConfig_AutoHealSetting_Trigger_SlowRequestWithPathFields = {
-    "count": sdk.FieldSpec(wire_name="count"),
-    "interval": sdk.FieldSpec(wire_name="interval"),
-    "path": sdk.FieldSpec(wire_name="path"),
-    "time_taken": sdk.FieldSpec(wire_name="time_taken"),
+    "count": ubx.FieldSpec(wire_name="count"),
+    "interval": ubx.FieldSpec(wire_name="interval"),
+    "path": ubx.FieldSpec(wire_name="path"),
+    "time_taken": ubx.FieldSpec(wire_name="time_taken"),
 }
 
 _WebAppSlot_SiteConfig_AutoHealSetting_Trigger_StatusCodeFields = {
-    "count": sdk.FieldSpec(wire_name="count"),
-    "interval": sdk.FieldSpec(wire_name="interval"),
-    "path": sdk.FieldSpec(wire_name="path"),
-    "status_code_range": sdk.FieldSpec(wire_name="status_code_range"),
-    "sub_status": sdk.FieldSpec(wire_name="sub_status"),
-    "win32_status_code": sdk.FieldSpec(wire_name="win32_status_code"),
+    "count": ubx.FieldSpec(wire_name="count"),
+    "interval": ubx.FieldSpec(wire_name="interval"),
+    "path": ubx.FieldSpec(wire_name="path"),
+    "status_code_range": ubx.FieldSpec(wire_name="status_code_range"),
+    "sub_status": ubx.FieldSpec(wire_name="sub_status"),
+    "win32_status_code": ubx.FieldSpec(wire_name="win32_status_code"),
 }
 
 _WebAppSlot_SiteConfig_AutoHealSetting_TriggerFields = {
-    "private_memory_kb": sdk.FieldSpec(wire_name="private_memory_kb"),
-    "requests": sdk.FieldSpec(
+    "private_memory_kb": ubx.FieldSpec(wire_name="private_memory_kb"),
+    "requests": ubx.FieldSpec(
         wire_name="requests",
         kind="list",
         fields=_WebAppSlot_SiteConfig_AutoHealSetting_Trigger_RequestsFields,
     ),
-    "slow_request": sdk.FieldSpec(
+    "slow_request": ubx.FieldSpec(
         wire_name="slow_request",
         kind="list",
         fields=_WebAppSlot_SiteConfig_AutoHealSetting_Trigger_SlowRequestFields,
     ),
-    "slow_request_with_path": sdk.FieldSpec(
+    "slow_request_with_path": ubx.FieldSpec(
         wire_name="slow_request_with_path",
         kind="list",
         fields=_WebAppSlot_SiteConfig_AutoHealSetting_Trigger_SlowRequestWithPathFields,
     ),
-    "status_code": sdk.FieldSpec(
+    "status_code": ubx.FieldSpec(
         wire_name="status_code",
         kind="set",
         fields=_WebAppSlot_SiteConfig_AutoHealSetting_Trigger_StatusCodeFields,
@@ -753,12 +753,12 @@ _WebAppSlot_SiteConfig_AutoHealSetting_TriggerFields = {
 }
 
 _WebAppSlot_SiteConfig_AutoHealSettingFields = {
-    "action": sdk.FieldSpec(
+    "action": ubx.FieldSpec(
         wire_name="action",
         kind="list",
         fields=_WebAppSlot_SiteConfig_AutoHealSetting_ActionFields,
     ),
-    "trigger": sdk.FieldSpec(
+    "trigger": ubx.FieldSpec(
         wire_name="trigger",
         kind="list",
         fields=_WebAppSlot_SiteConfig_AutoHealSetting_TriggerFields,
@@ -766,48 +766,48 @@ _WebAppSlot_SiteConfig_AutoHealSettingFields = {
 }
 
 _WebAppSlot_SiteConfig_CorsFields = {
-    "allowed_origins": sdk.FieldSpec(wire_name="allowed_origins"),
-    "support_credentials": sdk.FieldSpec(wire_name="support_credentials"),
+    "allowed_origins": ubx.FieldSpec(wire_name="allowed_origins"),
+    "support_credentials": ubx.FieldSpec(wire_name="support_credentials"),
 }
 
 _WebAppSlot_SiteConfig_HandlerMappingFields = {
-    "arguments": sdk.FieldSpec(wire_name="arguments"),
-    "extension": sdk.FieldSpec(wire_name="extension"),
-    "script_processor_path": sdk.FieldSpec(wire_name="script_processor_path"),
+    "arguments": ubx.FieldSpec(wire_name="arguments"),
+    "extension": ubx.FieldSpec(wire_name="extension"),
+    "script_processor_path": ubx.FieldSpec(wire_name="script_processor_path"),
 }
 
 _WebAppSlot_SiteConfig_IpRestriction_HeadersFields = {
-    "x_azure_fdid": sdk.FieldSpec(wire_name="x_azure_fdid"),
-    "x_fd_health_probe": sdk.FieldSpec(wire_name="x_fd_health_probe"),
-    "x_forwarded_for": sdk.FieldSpec(wire_name="x_forwarded_for"),
-    "x_forwarded_host": sdk.FieldSpec(wire_name="x_forwarded_host"),
+    "x_azure_fdid": ubx.FieldSpec(wire_name="x_azure_fdid"),
+    "x_fd_health_probe": ubx.FieldSpec(wire_name="x_fd_health_probe"),
+    "x_forwarded_for": ubx.FieldSpec(wire_name="x_forwarded_for"),
+    "x_forwarded_host": ubx.FieldSpec(wire_name="x_forwarded_host"),
 }
 
 _WebAppSlot_SiteConfig_IpRestrictionFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "description": sdk.FieldSpec(wire_name="description"),
-    "headers": sdk.FieldSpec(
+    "action": ubx.FieldSpec(wire_name="action"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "headers": ubx.FieldSpec(
         wire_name="headers",
         kind="list",
         fields=_WebAppSlot_SiteConfig_IpRestriction_HeadersFields,
     ),
-    "ip_address": sdk.FieldSpec(wire_name="ip_address"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "priority": sdk.FieldSpec(wire_name="priority"),
-    "service_tag": sdk.FieldSpec(wire_name="service_tag"),
-    "virtual_network_subnet_id": sdk.FieldSpec(wire_name="virtual_network_subnet_id"),
+    "ip_address": ubx.FieldSpec(wire_name="ip_address"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "priority": ubx.FieldSpec(wire_name="priority"),
+    "service_tag": ubx.FieldSpec(wire_name="service_tag"),
+    "virtual_network_subnet_id": ubx.FieldSpec(wire_name="virtual_network_subnet_id"),
 }
 
 _WebAppSlot_SiteConfig_VirtualApplication_VirtualDirectoryFields = {
-    "physical_path": sdk.FieldSpec(wire_name="physical_path"),
-    "virtual_path": sdk.FieldSpec(wire_name="virtual_path"),
+    "physical_path": ubx.FieldSpec(wire_name="physical_path"),
+    "virtual_path": ubx.FieldSpec(wire_name="virtual_path"),
 }
 
 _WebAppSlot_SiteConfig_VirtualApplicationFields = {
-    "physical_path": sdk.FieldSpec(wire_name="physical_path"),
-    "preload": sdk.FieldSpec(wire_name="preload"),
-    "virtual_path": sdk.FieldSpec(wire_name="virtual_path"),
-    "virtual_directory": sdk.FieldSpec(
+    "physical_path": ubx.FieldSpec(wire_name="physical_path"),
+    "preload": ubx.FieldSpec(wire_name="preload"),
+    "virtual_path": ubx.FieldSpec(wire_name="virtual_path"),
+    "virtual_directory": ubx.FieldSpec(
         wire_name="virtual_directory",
         kind="set",
         fields=_WebAppSlot_SiteConfig_VirtualApplication_VirtualDirectoryFields,
@@ -815,67 +815,67 @@ _WebAppSlot_SiteConfig_VirtualApplicationFields = {
 }
 
 _WebAppSlot_SiteConfigFields = {
-    "always_on": sdk.FieldSpec(wire_name="always_on"),
-    "api_definition_url": sdk.FieldSpec(wire_name="api_definition_url"),
-    "api_management_api_id": sdk.FieldSpec(wire_name="api_management_api_id"),
-    "app_command_line": sdk.FieldSpec(wire_name="app_command_line"),
-    "auto_swap_slot_name": sdk.FieldSpec(wire_name="auto_swap_slot_name"),
-    "container_registry_managed_identity_client_id": sdk.FieldSpec(wire_name="container_registry_managed_identity_client_id"),
-    "container_registry_use_managed_identity": sdk.FieldSpec(wire_name="container_registry_use_managed_identity"),
-    "default_documents": sdk.FieldSpec(wire_name="default_documents"),
-    "detailed_error_logging_enabled": sdk.FieldSpec(wire_name="detailed_error_logging_enabled"),
-    "ftps_state": sdk.FieldSpec(wire_name="ftps_state"),
-    "health_check_eviction_time_in_min": sdk.FieldSpec(wire_name="health_check_eviction_time_in_min"),
-    "health_check_path": sdk.FieldSpec(wire_name="health_check_path"),
-    "http2_enabled": sdk.FieldSpec(wire_name="http2_enabled"),
-    "ip_restriction_default_action": sdk.FieldSpec(wire_name="ip_restriction_default_action"),
-    "load_balancing_mode": sdk.FieldSpec(wire_name="load_balancing_mode"),
-    "local_mysql_enabled": sdk.FieldSpec(wire_name="local_mysql_enabled"),
-    "managed_pipeline_mode": sdk.FieldSpec(wire_name="managed_pipeline_mode"),
-    "minimum_tls_cipher_suite": sdk.FieldSpec(wire_name="minimum_tls_cipher_suite"),
-    "minimum_tls_version": sdk.FieldSpec(wire_name="minimum_tls_version"),
-    "remote_debugging_enabled": sdk.FieldSpec(wire_name="remote_debugging_enabled"),
-    "remote_debugging_version": sdk.FieldSpec(wire_name="remote_debugging_version"),
-    "scm_ip_restriction_default_action": sdk.FieldSpec(wire_name="scm_ip_restriction_default_action"),
-    "scm_minimum_tls_version": sdk.FieldSpec(wire_name="scm_minimum_tls_version"),
-    "scm_type": sdk.FieldSpec(wire_name="scm_type"),
-    "scm_use_main_ip_restriction": sdk.FieldSpec(wire_name="scm_use_main_ip_restriction"),
-    "use_32_bit_worker": sdk.FieldSpec(wire_name="use_32_bit_worker"),
-    "vnet_route_all_enabled": sdk.FieldSpec(wire_name="vnet_route_all_enabled"),
-    "websockets_enabled": sdk.FieldSpec(wire_name="websockets_enabled"),
-    "windows_fx_version": sdk.FieldSpec(wire_name="windows_fx_version"),
-    "worker_count": sdk.FieldSpec(wire_name="worker_count"),
-    "application_stack": sdk.FieldSpec(
+    "always_on": ubx.FieldSpec(wire_name="always_on"),
+    "api_definition_url": ubx.FieldSpec(wire_name="api_definition_url"),
+    "api_management_api_id": ubx.FieldSpec(wire_name="api_management_api_id"),
+    "app_command_line": ubx.FieldSpec(wire_name="app_command_line"),
+    "auto_swap_slot_name": ubx.FieldSpec(wire_name="auto_swap_slot_name"),
+    "container_registry_managed_identity_client_id": ubx.FieldSpec(wire_name="container_registry_managed_identity_client_id"),
+    "container_registry_use_managed_identity": ubx.FieldSpec(wire_name="container_registry_use_managed_identity"),
+    "default_documents": ubx.FieldSpec(wire_name="default_documents"),
+    "detailed_error_logging_enabled": ubx.FieldSpec(wire_name="detailed_error_logging_enabled"),
+    "ftps_state": ubx.FieldSpec(wire_name="ftps_state"),
+    "health_check_eviction_time_in_min": ubx.FieldSpec(wire_name="health_check_eviction_time_in_min"),
+    "health_check_path": ubx.FieldSpec(wire_name="health_check_path"),
+    "http2_enabled": ubx.FieldSpec(wire_name="http2_enabled"),
+    "ip_restriction_default_action": ubx.FieldSpec(wire_name="ip_restriction_default_action"),
+    "load_balancing_mode": ubx.FieldSpec(wire_name="load_balancing_mode"),
+    "local_mysql_enabled": ubx.FieldSpec(wire_name="local_mysql_enabled"),
+    "managed_pipeline_mode": ubx.FieldSpec(wire_name="managed_pipeline_mode"),
+    "minimum_tls_cipher_suite": ubx.FieldSpec(wire_name="minimum_tls_cipher_suite"),
+    "minimum_tls_version": ubx.FieldSpec(wire_name="minimum_tls_version"),
+    "remote_debugging_enabled": ubx.FieldSpec(wire_name="remote_debugging_enabled"),
+    "remote_debugging_version": ubx.FieldSpec(wire_name="remote_debugging_version"),
+    "scm_ip_restriction_default_action": ubx.FieldSpec(wire_name="scm_ip_restriction_default_action"),
+    "scm_minimum_tls_version": ubx.FieldSpec(wire_name="scm_minimum_tls_version"),
+    "scm_type": ubx.FieldSpec(wire_name="scm_type"),
+    "scm_use_main_ip_restriction": ubx.FieldSpec(wire_name="scm_use_main_ip_restriction"),
+    "use_32_bit_worker": ubx.FieldSpec(wire_name="use_32_bit_worker"),
+    "vnet_route_all_enabled": ubx.FieldSpec(wire_name="vnet_route_all_enabled"),
+    "websockets_enabled": ubx.FieldSpec(wire_name="websockets_enabled"),
+    "windows_fx_version": ubx.FieldSpec(wire_name="windows_fx_version"),
+    "worker_count": ubx.FieldSpec(wire_name="worker_count"),
+    "application_stack": ubx.FieldSpec(
         wire_name="application_stack",
         kind="list",
         fields=_WebAppSlot_SiteConfig_ApplicationStackFields,
     ),
-    "auto_heal_setting": sdk.FieldSpec(
+    "auto_heal_setting": ubx.FieldSpec(
         wire_name="auto_heal_setting",
         kind="list",
         fields=_WebAppSlot_SiteConfig_AutoHealSettingFields,
     ),
-    "cors": sdk.FieldSpec(
+    "cors": ubx.FieldSpec(
         wire_name="cors",
         kind="list",
         fields=_WebAppSlot_SiteConfig_CorsFields,
     ),
-    "handler_mapping": sdk.FieldSpec(
+    "handler_mapping": ubx.FieldSpec(
         wire_name="handler_mapping",
         kind="set",
         fields=_WebAppSlot_SiteConfig_HandlerMappingFields,
     ),
-    "ip_restriction": sdk.FieldSpec(
+    "ip_restriction": ubx.FieldSpec(
         wire_name="ip_restriction",
         kind="list",
         fields=_WebAppSlot_SiteConfig_IpRestrictionFields,
     ),
-    "scm_ip_restriction": sdk.FieldSpec(
+    "scm_ip_restriction": ubx.FieldSpec(
         wire_name="scm_ip_restriction",
         kind="list",
         fields=_WebAppSlot_SiteConfig_IpRestrictionFields,
     ),
-    "virtual_application": sdk.FieldSpec(
+    "virtual_application": ubx.FieldSpec(
         wire_name="virtual_application",
         kind="set",
         fields=_WebAppSlot_SiteConfig_VirtualApplicationFields,
@@ -883,19 +883,19 @@ _WebAppSlot_SiteConfigFields = {
 }
 
 _WebAppSlot_StorageAccountFields = {
-    "access_key": sdk.FieldSpec(wire_name="access_key"),
-    "account_name": sdk.FieldSpec(wire_name="account_name"),
-    "mount_path": sdk.FieldSpec(wire_name="mount_path"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "share_name": sdk.FieldSpec(wire_name="share_name"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "access_key": ubx.FieldSpec(wire_name="access_key"),
+    "account_name": ubx.FieldSpec(wire_name="account_name"),
+    "mount_path": ubx.FieldSpec(wire_name="mount_path"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "share_name": ubx.FieldSpec(wire_name="share_name"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _WebAppSlot_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -930,70 +930,70 @@ class WebAppSlotConfig:
     storage_account: Any = None
     timeouts: Any = None
 
-WebAppSlot = sdk.ResourceBinding(
+WebAppSlot = ubx.ResourceBinding(
     wire_type="azurerm_windows_web_app_slot",
     fields={
-        "app_service_id": sdk.FieldSpec(wire_name="app_service_id"),
-        "app_settings": sdk.FieldSpec(wire_name="app_settings"),
-        "client_affinity_enabled": sdk.FieldSpec(wire_name="client_affinity_enabled"),
-        "client_certificate_enabled": sdk.FieldSpec(wire_name="client_certificate_enabled"),
-        "client_certificate_exclusion_paths": sdk.FieldSpec(wire_name="client_certificate_exclusion_paths"),
-        "client_certificate_mode": sdk.FieldSpec(wire_name="client_certificate_mode"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "ftp_publish_basic_authentication_enabled": sdk.FieldSpec(wire_name="ftp_publish_basic_authentication_enabled"),
-        "https_only": sdk.FieldSpec(wire_name="https_only"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "key_vault_reference_identity_id": sdk.FieldSpec(wire_name="key_vault_reference_identity_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "service_plan_id": sdk.FieldSpec(wire_name="service_plan_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "virtual_network_backup_restore_enabled": sdk.FieldSpec(wire_name="virtual_network_backup_restore_enabled"),
-        "virtual_network_image_pull_enabled": sdk.FieldSpec(wire_name="virtual_network_image_pull_enabled"),
-        "virtual_network_subnet_id": sdk.FieldSpec(wire_name="virtual_network_subnet_id"),
-        "webdeploy_publish_basic_authentication_enabled": sdk.FieldSpec(wire_name="webdeploy_publish_basic_authentication_enabled"),
-        "zip_deploy_file": sdk.FieldSpec(wire_name="zip_deploy_file"),
-        "auth_settings": sdk.FieldSpec(
+        "app_service_id": ubx.FieldSpec(wire_name="app_service_id"),
+        "app_settings": ubx.FieldSpec(wire_name="app_settings"),
+        "client_affinity_enabled": ubx.FieldSpec(wire_name="client_affinity_enabled"),
+        "client_certificate_enabled": ubx.FieldSpec(wire_name="client_certificate_enabled"),
+        "client_certificate_exclusion_paths": ubx.FieldSpec(wire_name="client_certificate_exclusion_paths"),
+        "client_certificate_mode": ubx.FieldSpec(wire_name="client_certificate_mode"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "ftp_publish_basic_authentication_enabled": ubx.FieldSpec(wire_name="ftp_publish_basic_authentication_enabled"),
+        "https_only": ubx.FieldSpec(wire_name="https_only"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "key_vault_reference_identity_id": ubx.FieldSpec(wire_name="key_vault_reference_identity_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "service_plan_id": ubx.FieldSpec(wire_name="service_plan_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "virtual_network_backup_restore_enabled": ubx.FieldSpec(wire_name="virtual_network_backup_restore_enabled"),
+        "virtual_network_image_pull_enabled": ubx.FieldSpec(wire_name="virtual_network_image_pull_enabled"),
+        "virtual_network_subnet_id": ubx.FieldSpec(wire_name="virtual_network_subnet_id"),
+        "webdeploy_publish_basic_authentication_enabled": ubx.FieldSpec(wire_name="webdeploy_publish_basic_authentication_enabled"),
+        "zip_deploy_file": ubx.FieldSpec(wire_name="zip_deploy_file"),
+        "auth_settings": ubx.FieldSpec(
             wire_name="auth_settings",
             kind="list",
             fields=_WebAppSlot_AuthSettingsFields,
         ),
-        "auth_settings_v2": sdk.FieldSpec(
+        "auth_settings_v2": ubx.FieldSpec(
             wire_name="auth_settings_v2",
             kind="list",
             fields=_WebAppSlot_AuthSettingsV2Fields,
         ),
-        "backup": sdk.FieldSpec(
+        "backup": ubx.FieldSpec(
             wire_name="backup",
             kind="list",
             fields=_WebAppSlot_BackupFields,
         ),
-        "connection_string": sdk.FieldSpec(
+        "connection_string": ubx.FieldSpec(
             wire_name="connection_string",
             kind="set",
             fields=_WebAppSlot_ConnectionStringFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_WebAppSlot_IdentityFields,
         ),
-        "logs": sdk.FieldSpec(
+        "logs": ubx.FieldSpec(
             wire_name="logs",
             kind="list",
             fields=_WebAppSlot_LogsFields,
         ),
-        "site_config": sdk.FieldSpec(
+        "site_config": ubx.FieldSpec(
             wire_name="site_config",
             kind="list",
             fields=_WebAppSlot_SiteConfigFields,
         ),
-        "storage_account": sdk.FieldSpec(
+        "storage_account": ubx.FieldSpec(
             wire_name="storage_account",
             kind="set",
             fields=_WebAppSlot_StorageAccountFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_WebAppSlot_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ThreatIntelligenceIndicator_ExternalReference:
@@ -32,28 +32,28 @@ class ThreatIntelligenceIndicator_Timeouts:
     update: Any = None
 
 _ThreatIntelligenceIndicator_ExternalReferenceFields = {
-    "description": sdk.FieldSpec(wire_name="description"),
-    "hashes": sdk.FieldSpec(wire_name="hashes"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "source_name": sdk.FieldSpec(wire_name="source_name"),
-    "url": sdk.FieldSpec(wire_name="url"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "hashes": ubx.FieldSpec(wire_name="hashes"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "source_name": ubx.FieldSpec(wire_name="source_name"),
+    "url": ubx.FieldSpec(wire_name="url"),
 }
 
 _ThreatIntelligenceIndicator_GranularMarkingFields = {
-    "language": sdk.FieldSpec(wire_name="language"),
-    "marking_ref": sdk.FieldSpec(wire_name="marking_ref"),
-    "selectors": sdk.FieldSpec(wire_name="selectors"),
+    "language": ubx.FieldSpec(wire_name="language"),
+    "marking_ref": ubx.FieldSpec(wire_name="marking_ref"),
+    "selectors": ubx.FieldSpec(wire_name="selectors"),
 }
 
 _ThreatIntelligenceIndicator_KillChainPhaseFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _ThreatIntelligenceIndicator_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -81,43 +81,43 @@ class ThreatIntelligenceIndicatorConfig:
     kill_chain_phase: Any = None
     timeouts: Any = None
 
-ThreatIntelligenceIndicator = sdk.ResourceBinding(
+ThreatIntelligenceIndicator = ubx.ResourceBinding(
     wire_type="azurerm_sentinel_threat_intelligence_indicator",
     fields={
-        "confidence": sdk.FieldSpec(wire_name="confidence"),
-        "created_by": sdk.FieldSpec(wire_name="created_by"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "extension": sdk.FieldSpec(wire_name="extension"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "language": sdk.FieldSpec(wire_name="language"),
-        "object_marking_refs": sdk.FieldSpec(wire_name="object_marking_refs"),
-        "pattern": sdk.FieldSpec(wire_name="pattern"),
-        "pattern_type": sdk.FieldSpec(wire_name="pattern_type"),
-        "pattern_version": sdk.FieldSpec(wire_name="pattern_version"),
-        "revoked": sdk.FieldSpec(wire_name="revoked"),
-        "source": sdk.FieldSpec(wire_name="source"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "threat_types": sdk.FieldSpec(wire_name="threat_types"),
-        "validate_from_utc": sdk.FieldSpec(wire_name="validate_from_utc"),
-        "validate_until_utc": sdk.FieldSpec(wire_name="validate_until_utc"),
-        "workspace_id": sdk.FieldSpec(wire_name="workspace_id"),
-        "external_reference": sdk.FieldSpec(
+        "confidence": ubx.FieldSpec(wire_name="confidence"),
+        "created_by": ubx.FieldSpec(wire_name="created_by"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "extension": ubx.FieldSpec(wire_name="extension"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "language": ubx.FieldSpec(wire_name="language"),
+        "object_marking_refs": ubx.FieldSpec(wire_name="object_marking_refs"),
+        "pattern": ubx.FieldSpec(wire_name="pattern"),
+        "pattern_type": ubx.FieldSpec(wire_name="pattern_type"),
+        "pattern_version": ubx.FieldSpec(wire_name="pattern_version"),
+        "revoked": ubx.FieldSpec(wire_name="revoked"),
+        "source": ubx.FieldSpec(wire_name="source"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "threat_types": ubx.FieldSpec(wire_name="threat_types"),
+        "validate_from_utc": ubx.FieldSpec(wire_name="validate_from_utc"),
+        "validate_until_utc": ubx.FieldSpec(wire_name="validate_until_utc"),
+        "workspace_id": ubx.FieldSpec(wire_name="workspace_id"),
+        "external_reference": ubx.FieldSpec(
             wire_name="external_reference",
             kind="list",
             fields=_ThreatIntelligenceIndicator_ExternalReferenceFields,
         ),
-        "granular_marking": sdk.FieldSpec(
+        "granular_marking": ubx.FieldSpec(
             wire_name="granular_marking",
             kind="list",
             fields=_ThreatIntelligenceIndicator_GranularMarkingFields,
         ),
-        "kill_chain_phase": sdk.FieldSpec(
+        "kill_chain_phase": ubx.FieldSpec(
             wire_name="kill_chain_phase",
             kind="list",
             fields=_ThreatIntelligenceIndicator_KillChainPhaseFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ThreatIntelligenceIndicator_TimeoutsFields,

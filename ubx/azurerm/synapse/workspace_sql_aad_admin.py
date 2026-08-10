@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class WorkspaceSqlAadAdmin_Timeouts:
@@ -14,10 +14,10 @@ class WorkspaceSqlAadAdmin_Timeouts:
     update: Any = None
 
 _WorkspaceSqlAadAdmin_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class WorkspaceSqlAadAdminConfig:
     tenant_id: Any = None
     timeouts: Any = None
 
-WorkspaceSqlAadAdmin = sdk.ResourceBinding(
+WorkspaceSqlAadAdmin = ubx.ResourceBinding(
     wire_type="azurerm_synapse_workspace_sql_aad_admin",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "login": sdk.FieldSpec(wire_name="login"),
-        "object_id": sdk.FieldSpec(wire_name="object_id"),
-        "synapse_workspace_id": sdk.FieldSpec(wire_name="synapse_workspace_id"),
-        "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "login": ubx.FieldSpec(wire_name="login"),
+        "object_id": ubx.FieldSpec(wire_name="object_id"),
+        "synapse_workspace_id": ubx.FieldSpec(wire_name="synapse_workspace_id"),
+        "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_WorkspaceSqlAadAdmin_TimeoutsFields,

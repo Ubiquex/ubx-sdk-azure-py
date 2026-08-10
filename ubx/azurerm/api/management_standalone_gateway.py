@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementStandaloneGateway_Sku:
@@ -19,15 +19,15 @@ class ManagementStandaloneGateway_Timeouts:
     update: Any = None
 
 _ManagementStandaloneGateway_SkuFields = {
-    "capacity": sdk.FieldSpec(wire_name="capacity"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "capacity": ubx.FieldSpec(wire_name="capacity"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _ManagementStandaloneGateway_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -42,22 +42,22 @@ class ManagementStandaloneGatewayConfig:
     sku: Any = None
     timeouts: Any = None
 
-ManagementStandaloneGateway = sdk.ResourceBinding(
+ManagementStandaloneGateway = ubx.ResourceBinding(
     wire_type="azurerm_api_management_standalone_gateway",
     fields={
-        "backend_subnet_id": sdk.FieldSpec(wire_name="backend_subnet_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "virtual_network_type": sdk.FieldSpec(wire_name="virtual_network_type"),
-        "sku": sdk.FieldSpec(
+        "backend_subnet_id": ubx.FieldSpec(wire_name="backend_subnet_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "virtual_network_type": ubx.FieldSpec(wire_name="virtual_network_type"),
+        "sku": ubx.FieldSpec(
             wire_name="sku",
             kind="list",
             fields=_ManagementStandaloneGateway_SkuFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementStandaloneGateway_TimeoutsFields,

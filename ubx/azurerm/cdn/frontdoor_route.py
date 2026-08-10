@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FrontdoorRoute_Cache:
@@ -21,17 +21,17 @@ class FrontdoorRoute_Timeouts:
     update: Any = None
 
 _FrontdoorRoute_CacheFields = {
-    "compression_enabled": sdk.FieldSpec(wire_name="compression_enabled"),
-    "content_types_to_compress": sdk.FieldSpec(wire_name="content_types_to_compress"),
-    "query_string_caching_behavior": sdk.FieldSpec(wire_name="query_string_caching_behavior"),
-    "query_strings": sdk.FieldSpec(wire_name="query_strings"),
+    "compression_enabled": ubx.FieldSpec(wire_name="compression_enabled"),
+    "content_types_to_compress": ubx.FieldSpec(wire_name="content_types_to_compress"),
+    "query_string_caching_behavior": ubx.FieldSpec(wire_name="query_string_caching_behavior"),
+    "query_strings": ubx.FieldSpec(wire_name="query_strings"),
 }
 
 _FrontdoorRoute_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -53,29 +53,29 @@ class FrontdoorRouteConfig:
     cache: Any = None
     timeouts: Any = None
 
-FrontdoorRoute = sdk.ResourceBinding(
+FrontdoorRoute = ubx.ResourceBinding(
     wire_type="azurerm_cdn_frontdoor_route",
     fields={
-        "cdn_frontdoor_custom_domain_ids": sdk.FieldSpec(wire_name="cdn_frontdoor_custom_domain_ids"),
-        "cdn_frontdoor_endpoint_id": sdk.FieldSpec(wire_name="cdn_frontdoor_endpoint_id"),
-        "cdn_frontdoor_origin_group_id": sdk.FieldSpec(wire_name="cdn_frontdoor_origin_group_id"),
-        "cdn_frontdoor_origin_ids": sdk.FieldSpec(wire_name="cdn_frontdoor_origin_ids"),
-        "cdn_frontdoor_origin_path": sdk.FieldSpec(wire_name="cdn_frontdoor_origin_path"),
-        "cdn_frontdoor_rule_set_ids": sdk.FieldSpec(wire_name="cdn_frontdoor_rule_set_ids"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "forwarding_protocol": sdk.FieldSpec(wire_name="forwarding_protocol"),
-        "https_redirect_enabled": sdk.FieldSpec(wire_name="https_redirect_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "link_to_default_domain": sdk.FieldSpec(wire_name="link_to_default_domain"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "patterns_to_match": sdk.FieldSpec(wire_name="patterns_to_match"),
-        "supported_protocols": sdk.FieldSpec(wire_name="supported_protocols"),
-        "cache": sdk.FieldSpec(
+        "cdn_frontdoor_custom_domain_ids": ubx.FieldSpec(wire_name="cdn_frontdoor_custom_domain_ids"),
+        "cdn_frontdoor_endpoint_id": ubx.FieldSpec(wire_name="cdn_frontdoor_endpoint_id"),
+        "cdn_frontdoor_origin_group_id": ubx.FieldSpec(wire_name="cdn_frontdoor_origin_group_id"),
+        "cdn_frontdoor_origin_ids": ubx.FieldSpec(wire_name="cdn_frontdoor_origin_ids"),
+        "cdn_frontdoor_origin_path": ubx.FieldSpec(wire_name="cdn_frontdoor_origin_path"),
+        "cdn_frontdoor_rule_set_ids": ubx.FieldSpec(wire_name="cdn_frontdoor_rule_set_ids"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "forwarding_protocol": ubx.FieldSpec(wire_name="forwarding_protocol"),
+        "https_redirect_enabled": ubx.FieldSpec(wire_name="https_redirect_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "link_to_default_domain": ubx.FieldSpec(wire_name="link_to_default_domain"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "patterns_to_match": ubx.FieldSpec(wire_name="patterns_to_match"),
+        "supported_protocols": ubx.FieldSpec(wire_name="supported_protocols"),
+        "cache": ubx.FieldSpec(
             wire_name="cache",
             kind="list",
             fields=_FrontdoorRoute_CacheFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FrontdoorRoute_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ResourceBridgeAppliance_Identity:
@@ -20,16 +20,16 @@ class ResourceBridgeAppliance_Timeouts:
     update: Any = None
 
 _ResourceBridgeAppliance_IdentityFields = {
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _ResourceBridgeAppliance_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -45,23 +45,23 @@ class ResourceBridgeApplianceConfig:
     identity: Any = None
     timeouts: Any = None
 
-ResourceBridgeAppliance = sdk.ResourceBinding(
+ResourceBridgeAppliance = ubx.ResourceBinding(
     wire_type="azurerm_arc_resource_bridge_appliance",
     fields={
-        "distro": sdk.FieldSpec(wire_name="distro"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "infrastructure_provider": sdk.FieldSpec(wire_name="infrastructure_provider"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_key_base64": sdk.FieldSpec(wire_name="public_key_base64"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "identity": sdk.FieldSpec(
+        "distro": ubx.FieldSpec(wire_name="distro"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "infrastructure_provider": ubx.FieldSpec(wire_name="infrastructure_provider"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_key_base64": ubx.FieldSpec(wire_name="public_key_base64"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_ResourceBridgeAppliance_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ResourceBridgeAppliance_TimeoutsFields,

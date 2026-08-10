@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RegistryCredentialSet_AuthenticationCredentials:
@@ -25,21 +25,21 @@ class RegistryCredentialSet_Timeouts:
     update: Any = None
 
 _RegistryCredentialSet_AuthenticationCredentialsFields = {
-    "password_secret_id": sdk.FieldSpec(wire_name="password_secret_id"),
-    "username_secret_id": sdk.FieldSpec(wire_name="username_secret_id"),
+    "password_secret_id": ubx.FieldSpec(wire_name="password_secret_id"),
+    "username_secret_id": ubx.FieldSpec(wire_name="username_secret_id"),
 }
 
 _RegistryCredentialSet_IdentityFields = {
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _RegistryCredentialSet_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -52,24 +52,24 @@ class RegistryCredentialSetConfig:
     identity: Any = None
     timeouts: Any = None
 
-RegistryCredentialSet = sdk.ResourceBinding(
+RegistryCredentialSet = ubx.ResourceBinding(
     wire_type="azurerm_container_registry_credential_set",
     fields={
-        "container_registry_id": sdk.FieldSpec(wire_name="container_registry_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "login_server": sdk.FieldSpec(wire_name="login_server"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "authentication_credentials": sdk.FieldSpec(
+        "container_registry_id": ubx.FieldSpec(wire_name="container_registry_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "login_server": ubx.FieldSpec(wire_name="login_server"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "authentication_credentials": ubx.FieldSpec(
             wire_name="authentication_credentials",
             kind="list",
             fields=_RegistryCredentialSet_AuthenticationCredentialsFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_RegistryCredentialSet_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RegistryCredentialSet_TimeoutsFields,

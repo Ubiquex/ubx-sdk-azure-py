@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ApiKey_Timeouts:
@@ -14,10 +14,10 @@ class ApiKey_Timeouts:
     update: Any = None
 
 _ApiKey_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class ApiKeyConfig:
     secret_text: Any = None
     timeouts: Any = None
 
-ApiKey = sdk.ResourceBinding(
+ApiKey = ubx.ResourceBinding(
     wire_type="azurerm_nginx_api_key",
     fields={
-        "end_date_time": sdk.FieldSpec(wire_name="end_date_time"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "nginx_deployment_id": sdk.FieldSpec(wire_name="nginx_deployment_id"),
-        "secret_text": sdk.FieldSpec(wire_name="secret_text"),
-        "timeouts": sdk.FieldSpec(
+        "end_date_time": ubx.FieldSpec(wire_name="end_date_time"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "nginx_deployment_id": ubx.FieldSpec(wire_name="nginx_deployment_id"),
+        "secret_text": ubx.FieldSpec(wire_name="secret_text"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ApiKey_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Topic_Timeouts:
@@ -14,10 +14,10 @@ class Topic_Timeouts:
     update: Any = None
 
 _Topic_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -38,24 +38,24 @@ class TopicConfig:
     support_ordering: Any = None
     timeouts: Any = None
 
-Topic = sdk.ResourceBinding(
+Topic = ubx.ResourceBinding(
     wire_type="azurerm_servicebus_topic",
     fields={
-        "auto_delete_on_idle": sdk.FieldSpec(wire_name="auto_delete_on_idle"),
-        "batched_operations_enabled": sdk.FieldSpec(wire_name="batched_operations_enabled"),
-        "default_message_ttl": sdk.FieldSpec(wire_name="default_message_ttl"),
-        "duplicate_detection_history_time_window": sdk.FieldSpec(wire_name="duplicate_detection_history_time_window"),
-        "express_enabled": sdk.FieldSpec(wire_name="express_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "max_message_size_in_kilobytes": sdk.FieldSpec(wire_name="max_message_size_in_kilobytes"),
-        "max_size_in_megabytes": sdk.FieldSpec(wire_name="max_size_in_megabytes"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "namespace_id": sdk.FieldSpec(wire_name="namespace_id"),
-        "partitioning_enabled": sdk.FieldSpec(wire_name="partitioning_enabled"),
-        "requires_duplicate_detection": sdk.FieldSpec(wire_name="requires_duplicate_detection"),
-        "status": sdk.FieldSpec(wire_name="status"),
-        "support_ordering": sdk.FieldSpec(wire_name="support_ordering"),
-        "timeouts": sdk.FieldSpec(
+        "auto_delete_on_idle": ubx.FieldSpec(wire_name="auto_delete_on_idle"),
+        "batched_operations_enabled": ubx.FieldSpec(wire_name="batched_operations_enabled"),
+        "default_message_ttl": ubx.FieldSpec(wire_name="default_message_ttl"),
+        "duplicate_detection_history_time_window": ubx.FieldSpec(wire_name="duplicate_detection_history_time_window"),
+        "express_enabled": ubx.FieldSpec(wire_name="express_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "max_message_size_in_kilobytes": ubx.FieldSpec(wire_name="max_message_size_in_kilobytes"),
+        "max_size_in_megabytes": ubx.FieldSpec(wire_name="max_size_in_megabytes"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "namespace_id": ubx.FieldSpec(wire_name="namespace_id"),
+        "partitioning_enabled": ubx.FieldSpec(wire_name="partitioning_enabled"),
+        "requires_duplicate_detection": ubx.FieldSpec(wire_name="requires_duplicate_detection"),
+        "status": ubx.FieldSpec(wire_name="status"),
+        "support_ordering": ubx.FieldSpec(wire_name="support_ordering"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Topic_TimeoutsFields,

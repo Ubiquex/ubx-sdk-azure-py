@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudGateway_ApiMetadata:
@@ -54,50 +54,50 @@ class CloudGateway_Timeouts:
     update: Any = None
 
 _CloudGateway_ApiMetadataFields = {
-    "description": sdk.FieldSpec(wire_name="description"),
-    "documentation_url": sdk.FieldSpec(wire_name="documentation_url"),
-    "server_url": sdk.FieldSpec(wire_name="server_url"),
-    "title": sdk.FieldSpec(wire_name="title"),
-    "version": sdk.FieldSpec(wire_name="version"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "documentation_url": ubx.FieldSpec(wire_name="documentation_url"),
+    "server_url": ubx.FieldSpec(wire_name="server_url"),
+    "title": ubx.FieldSpec(wire_name="title"),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _CloudGateway_ClientAuthorizationFields = {
-    "certificate_ids": sdk.FieldSpec(wire_name="certificate_ids"),
-    "verification_enabled": sdk.FieldSpec(wire_name="verification_enabled"),
+    "certificate_ids": ubx.FieldSpec(wire_name="certificate_ids"),
+    "verification_enabled": ubx.FieldSpec(wire_name="verification_enabled"),
 }
 
 _CloudGateway_CorsFields = {
-    "allowed_headers": sdk.FieldSpec(wire_name="allowed_headers"),
-    "allowed_methods": sdk.FieldSpec(wire_name="allowed_methods"),
-    "allowed_origin_patterns": sdk.FieldSpec(wire_name="allowed_origin_patterns"),
-    "allowed_origins": sdk.FieldSpec(wire_name="allowed_origins"),
-    "credentials_allowed": sdk.FieldSpec(wire_name="credentials_allowed"),
-    "exposed_headers": sdk.FieldSpec(wire_name="exposed_headers"),
-    "max_age_seconds": sdk.FieldSpec(wire_name="max_age_seconds"),
+    "allowed_headers": ubx.FieldSpec(wire_name="allowed_headers"),
+    "allowed_methods": ubx.FieldSpec(wire_name="allowed_methods"),
+    "allowed_origin_patterns": ubx.FieldSpec(wire_name="allowed_origin_patterns"),
+    "allowed_origins": ubx.FieldSpec(wire_name="allowed_origins"),
+    "credentials_allowed": ubx.FieldSpec(wire_name="credentials_allowed"),
+    "exposed_headers": ubx.FieldSpec(wire_name="exposed_headers"),
+    "max_age_seconds": ubx.FieldSpec(wire_name="max_age_seconds"),
 }
 
 _CloudGateway_LocalResponseCachePerInstanceFields = {
-    "size": sdk.FieldSpec(wire_name="size"),
-    "time_to_live": sdk.FieldSpec(wire_name="time_to_live"),
+    "size": ubx.FieldSpec(wire_name="size"),
+    "time_to_live": ubx.FieldSpec(wire_name="time_to_live"),
 }
 
 _CloudGateway_QuotaFields = {
-    "cpu": sdk.FieldSpec(wire_name="cpu"),
-    "memory": sdk.FieldSpec(wire_name="memory"),
+    "cpu": ubx.FieldSpec(wire_name="cpu"),
+    "memory": ubx.FieldSpec(wire_name="memory"),
 }
 
 _CloudGateway_SsoFields = {
-    "client_id": sdk.FieldSpec(wire_name="client_id"),
-    "client_secret": sdk.FieldSpec(wire_name="client_secret"),
-    "issuer_uri": sdk.FieldSpec(wire_name="issuer_uri"),
-    "scope": sdk.FieldSpec(wire_name="scope"),
+    "client_id": ubx.FieldSpec(wire_name="client_id"),
+    "client_secret": ubx.FieldSpec(wire_name="client_secret"),
+    "issuer_uri": ubx.FieldSpec(wire_name="issuer_uri"),
+    "scope": ubx.FieldSpec(wire_name="scope"),
 }
 
 _CloudGateway_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -121,55 +121,55 @@ class CloudGatewayConfig:
     sso: Any = None
     timeouts: Any = None
 
-CloudGateway = sdk.ResourceBinding(
+CloudGateway = ubx.ResourceBinding(
     wire_type="azurerm_spring_cloud_gateway",
     fields={
-        "application_performance_monitoring_ids": sdk.FieldSpec(wire_name="application_performance_monitoring_ids"),
-        "application_performance_monitoring_types": sdk.FieldSpec(wire_name="application_performance_monitoring_types"),
-        "environment_variables": sdk.FieldSpec(wire_name="environment_variables"),
-        "https_only": sdk.FieldSpec(wire_name="https_only"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "instance_count": sdk.FieldSpec(wire_name="instance_count"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "sensitive_environment_variables": sdk.FieldSpec(wire_name="sensitive_environment_variables"),
-        "spring_cloud_service_id": sdk.FieldSpec(wire_name="spring_cloud_service_id"),
-        "api_metadata": sdk.FieldSpec(
+        "application_performance_monitoring_ids": ubx.FieldSpec(wire_name="application_performance_monitoring_ids"),
+        "application_performance_monitoring_types": ubx.FieldSpec(wire_name="application_performance_monitoring_types"),
+        "environment_variables": ubx.FieldSpec(wire_name="environment_variables"),
+        "https_only": ubx.FieldSpec(wire_name="https_only"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "instance_count": ubx.FieldSpec(wire_name="instance_count"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "sensitive_environment_variables": ubx.FieldSpec(wire_name="sensitive_environment_variables"),
+        "spring_cloud_service_id": ubx.FieldSpec(wire_name="spring_cloud_service_id"),
+        "api_metadata": ubx.FieldSpec(
             wire_name="api_metadata",
             kind="list",
             fields=_CloudGateway_ApiMetadataFields,
         ),
-        "client_authorization": sdk.FieldSpec(
+        "client_authorization": ubx.FieldSpec(
             wire_name="client_authorization",
             kind="list",
             fields=_CloudGateway_ClientAuthorizationFields,
         ),
-        "cors": sdk.FieldSpec(
+        "cors": ubx.FieldSpec(
             wire_name="cors",
             kind="list",
             fields=_CloudGateway_CorsFields,
         ),
-        "local_response_cache_per_instance": sdk.FieldSpec(
+        "local_response_cache_per_instance": ubx.FieldSpec(
             wire_name="local_response_cache_per_instance",
             kind="list",
             fields=_CloudGateway_LocalResponseCachePerInstanceFields,
         ),
-        "local_response_cache_per_route": sdk.FieldSpec(
+        "local_response_cache_per_route": ubx.FieldSpec(
             wire_name="local_response_cache_per_route",
             kind="list",
             fields=_CloudGateway_LocalResponseCachePerInstanceFields,
         ),
-        "quota": sdk.FieldSpec(
+        "quota": ubx.FieldSpec(
             wire_name="quota",
             kind="list",
             fields=_CloudGateway_QuotaFields,
         ),
-        "sso": sdk.FieldSpec(
+        "sso": ubx.FieldSpec(
             wire_name="sso",
             kind="list",
             fields=_CloudGateway_SsoFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CloudGateway_TimeoutsFields,

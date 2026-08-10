@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudAppMysqlAssociation_Timeouts:
@@ -14,10 +14,10 @@ class CloudAppMysqlAssociation_Timeouts:
     update: Any = None
 
 _CloudAppMysqlAssociation_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class CloudAppMysqlAssociationConfig:
     username: Any = None
     timeouts: Any = None
 
-CloudAppMysqlAssociation = sdk.ResourceBinding(
+CloudAppMysqlAssociation = ubx.ResourceBinding(
     wire_type="azurerm_spring_cloud_app_mysql_association",
     fields={
-        "database_name": sdk.FieldSpec(wire_name="database_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "mysql_server_id": sdk.FieldSpec(wire_name="mysql_server_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "password": sdk.FieldSpec(wire_name="password"),
-        "spring_cloud_app_id": sdk.FieldSpec(wire_name="spring_cloud_app_id"),
-        "username": sdk.FieldSpec(wire_name="username"),
-        "timeouts": sdk.FieldSpec(
+        "database_name": ubx.FieldSpec(wire_name="database_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "mysql_server_id": ubx.FieldSpec(wire_name="mysql_server_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "password": ubx.FieldSpec(wire_name="password"),
+        "spring_cloud_app_id": ubx.FieldSpec(wire_name="spring_cloud_app_id"),
+        "username": ubx.FieldSpec(wire_name="username"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CloudAppMysqlAssociation_TimeoutsFields,

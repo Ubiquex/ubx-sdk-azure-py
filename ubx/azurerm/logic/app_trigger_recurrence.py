@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppTriggerRecurrence_Schedule:
@@ -20,16 +20,16 @@ class AppTriggerRecurrence_Timeouts:
     update: Any = None
 
 _AppTriggerRecurrence_ScheduleFields = {
-    "at_these_hours": sdk.FieldSpec(wire_name="at_these_hours"),
-    "at_these_minutes": sdk.FieldSpec(wire_name="at_these_minutes"),
-    "on_these_days": sdk.FieldSpec(wire_name="on_these_days"),
+    "at_these_hours": ubx.FieldSpec(wire_name="at_these_hours"),
+    "at_these_minutes": ubx.FieldSpec(wire_name="at_these_minutes"),
+    "on_these_days": ubx.FieldSpec(wire_name="on_these_days"),
 }
 
 _AppTriggerRecurrence_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -44,22 +44,22 @@ class AppTriggerRecurrenceConfig:
     schedule: Any = None
     timeouts: Any = None
 
-AppTriggerRecurrence = sdk.ResourceBinding(
+AppTriggerRecurrence = ubx.ResourceBinding(
     wire_type="azurerm_logic_app_trigger_recurrence",
     fields={
-        "frequency": sdk.FieldSpec(wire_name="frequency"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "interval": sdk.FieldSpec(wire_name="interval"),
-        "logic_app_id": sdk.FieldSpec(wire_name="logic_app_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "start_time": sdk.FieldSpec(wire_name="start_time"),
-        "time_zone": sdk.FieldSpec(wire_name="time_zone"),
-        "schedule": sdk.FieldSpec(
+        "frequency": ubx.FieldSpec(wire_name="frequency"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "interval": ubx.FieldSpec(wire_name="interval"),
+        "logic_app_id": ubx.FieldSpec(wire_name="logic_app_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "start_time": ubx.FieldSpec(wire_name="start_time"),
+        "time_zone": ubx.FieldSpec(wire_name="time_zone"),
+        "schedule": ubx.FieldSpec(
             wire_name="schedule",
             kind="list",
             fields=_AppTriggerRecurrence_ScheduleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AppTriggerRecurrence_TimeoutsFields,

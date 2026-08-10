@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PubsubHub_EventHandler_Auth:
@@ -32,14 +32,14 @@ class PubsubHub_Timeouts:
     update: Any = None
 
 _PubsubHub_EventHandler_AuthFields = {
-    "managed_identity_id": sdk.FieldSpec(wire_name="managed_identity_id"),
+    "managed_identity_id": ubx.FieldSpec(wire_name="managed_identity_id"),
 }
 
 _PubsubHub_EventHandlerFields = {
-    "system_events": sdk.FieldSpec(wire_name="system_events"),
-    "url_template": sdk.FieldSpec(wire_name="url_template"),
-    "user_event_pattern": sdk.FieldSpec(wire_name="user_event_pattern"),
-    "auth": sdk.FieldSpec(
+    "system_events": ubx.FieldSpec(wire_name="system_events"),
+    "url_template": ubx.FieldSpec(wire_name="url_template"),
+    "user_event_pattern": ubx.FieldSpec(wire_name="user_event_pattern"),
+    "auth": ubx.FieldSpec(
         wire_name="auth",
         kind="list",
         fields=_PubsubHub_EventHandler_AuthFields,
@@ -47,17 +47,17 @@ _PubsubHub_EventHandlerFields = {
 }
 
 _PubsubHub_EventListenerFields = {
-    "eventhub_name": sdk.FieldSpec(wire_name="eventhub_name"),
-    "eventhub_namespace_name": sdk.FieldSpec(wire_name="eventhub_namespace_name"),
-    "system_event_name_filter": sdk.FieldSpec(wire_name="system_event_name_filter"),
-    "user_event_name_filter": sdk.FieldSpec(wire_name="user_event_name_filter"),
+    "eventhub_name": ubx.FieldSpec(wire_name="eventhub_name"),
+    "eventhub_namespace_name": ubx.FieldSpec(wire_name="eventhub_namespace_name"),
+    "system_event_name_filter": ubx.FieldSpec(wire_name="system_event_name_filter"),
+    "user_event_name_filter": ubx.FieldSpec(wire_name="user_event_name_filter"),
 }
 
 _PubsubHub_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -70,24 +70,24 @@ class PubsubHubConfig:
     event_listener: Any = None
     timeouts: Any = None
 
-PubsubHub = sdk.ResourceBinding(
+PubsubHub = ubx.ResourceBinding(
     wire_type="azurerm_web_pubsub_hub",
     fields={
-        "anonymous_connections_enabled": sdk.FieldSpec(wire_name="anonymous_connections_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "web_pubsub_id": sdk.FieldSpec(wire_name="web_pubsub_id"),
-        "event_handler": sdk.FieldSpec(
+        "anonymous_connections_enabled": ubx.FieldSpec(wire_name="anonymous_connections_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "web_pubsub_id": ubx.FieldSpec(wire_name="web_pubsub_id"),
+        "event_handler": ubx.FieldSpec(
             wire_name="event_handler",
             kind="list",
             fields=_PubsubHub_EventHandlerFields,
         ),
-        "event_listener": sdk.FieldSpec(
+        "event_listener": ubx.FieldSpec(
             wire_name="event_listener",
             kind="list",
             fields=_PubsubHub_EventListenerFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_PubsubHub_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ObjectReplication_Rules:
@@ -22,18 +22,18 @@ class ObjectReplication_Timeouts:
     update: Any = None
 
 _ObjectReplication_RulesFields = {
-    "copy_blobs_created_after": sdk.FieldSpec(wire_name="copy_blobs_created_after"),
-    "destination_container_name": sdk.FieldSpec(wire_name="destination_container_name"),
-    "filter_out_blobs_with_prefix": sdk.FieldSpec(wire_name="filter_out_blobs_with_prefix"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "source_container_name": sdk.FieldSpec(wire_name="source_container_name"),
+    "copy_blobs_created_after": ubx.FieldSpec(wire_name="copy_blobs_created_after"),
+    "destination_container_name": ubx.FieldSpec(wire_name="destination_container_name"),
+    "filter_out_blobs_with_prefix": ubx.FieldSpec(wire_name="filter_out_blobs_with_prefix"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "source_container_name": ubx.FieldSpec(wire_name="source_container_name"),
 }
 
 _ObjectReplication_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -45,19 +45,19 @@ class ObjectReplicationConfig:
     rules: Any = None
     timeouts: Any = None
 
-ObjectReplication = sdk.ResourceBinding(
+ObjectReplication = ubx.ResourceBinding(
     wire_type="azurerm_storage_object_replication",
     fields={
-        "destination_storage_account_id": sdk.FieldSpec(wire_name="destination_storage_account_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "metrics_enabled": sdk.FieldSpec(wire_name="metrics_enabled"),
-        "source_storage_account_id": sdk.FieldSpec(wire_name="source_storage_account_id"),
-        "rules": sdk.FieldSpec(
+        "destination_storage_account_id": ubx.FieldSpec(wire_name="destination_storage_account_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "metrics_enabled": ubx.FieldSpec(wire_name="metrics_enabled"),
+        "source_storage_account_id": ubx.FieldSpec(wire_name="source_storage_account_id"),
+        "rules": ubx.FieldSpec(
             wire_name="rules",
             kind="set",
             fields=_ObjectReplication_RulesFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ObjectReplication_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MachineDataDiskAttachment_Timeouts:
@@ -14,10 +14,10 @@ class MachineDataDiskAttachment_Timeouts:
     update: Any = None
 
 _MachineDataDiskAttachment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class MachineDataDiskAttachmentConfig:
     write_accelerator_enabled: Any = None
     timeouts: Any = None
 
-MachineDataDiskAttachment = sdk.ResourceBinding(
+MachineDataDiskAttachment = ubx.ResourceBinding(
     wire_type="azurerm_virtual_machine_data_disk_attachment",
     fields={
-        "caching": sdk.FieldSpec(wire_name="caching"),
-        "create_option": sdk.FieldSpec(wire_name="create_option"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "lun": sdk.FieldSpec(wire_name="lun"),
-        "managed_disk_id": sdk.FieldSpec(wire_name="managed_disk_id"),
-        "virtual_machine_id": sdk.FieldSpec(wire_name="virtual_machine_id"),
-        "write_accelerator_enabled": sdk.FieldSpec(wire_name="write_accelerator_enabled"),
-        "timeouts": sdk.FieldSpec(
+        "caching": ubx.FieldSpec(wire_name="caching"),
+        "create_option": ubx.FieldSpec(wire_name="create_option"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "lun": ubx.FieldSpec(wire_name="lun"),
+        "managed_disk_id": ubx.FieldSpec(wire_name="managed_disk_id"),
+        "virtual_machine_id": ubx.FieldSpec(wire_name="virtual_machine_id"),
+        "write_accelerator_enabled": ubx.FieldSpec(wire_name="write_accelerator_enabled"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_MachineDataDiskAttachment_TimeoutsFields,

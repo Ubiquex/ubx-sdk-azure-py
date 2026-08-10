@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LearningDatastoreBlobstorage_Timeouts:
@@ -14,10 +14,10 @@ class LearningDatastoreBlobstorage_Timeouts:
     update: Any = None
 
 _LearningDatastoreBlobstorage_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -34,20 +34,20 @@ class LearningDatastoreBlobstorageConfig:
     workspace_id: Any = None
     timeouts: Any = None
 
-LearningDatastoreBlobstorage = sdk.ResourceBinding(
+LearningDatastoreBlobstorage = ubx.ResourceBinding(
     wire_type="azurerm_machine_learning_datastore_blobstorage",
     fields={
-        "account_key": sdk.FieldSpec(wire_name="account_key"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "is_default": sdk.FieldSpec(wire_name="is_default"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "service_data_auth_identity": sdk.FieldSpec(wire_name="service_data_auth_identity"),
-        "shared_access_signature": sdk.FieldSpec(wire_name="shared_access_signature"),
-        "storage_container_id": sdk.FieldSpec(wire_name="storage_container_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "workspace_id": sdk.FieldSpec(wire_name="workspace_id"),
-        "timeouts": sdk.FieldSpec(
+        "account_key": ubx.FieldSpec(wire_name="account_key"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "is_default": ubx.FieldSpec(wire_name="is_default"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "service_data_auth_identity": ubx.FieldSpec(wire_name="service_data_auth_identity"),
+        "shared_access_signature": ubx.FieldSpec(wire_name="shared_access_signature"),
+        "storage_container_id": ubx.FieldSpec(wire_name="storage_container_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "workspace_id": ubx.FieldSpec(wire_name="workspace_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_LearningDatastoreBlobstorage_TimeoutsFields,

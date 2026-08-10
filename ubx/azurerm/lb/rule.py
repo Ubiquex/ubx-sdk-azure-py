@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Rule_Timeouts:
@@ -14,10 +14,10 @@ class Rule_Timeouts:
     update: Any = None
 
 _Rule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -38,24 +38,24 @@ class RuleConfig:
     tcp_reset_enabled: Any = None
     timeouts: Any = None
 
-Rule = sdk.ResourceBinding(
+Rule = ubx.ResourceBinding(
     wire_type="azurerm_lb_rule",
     fields={
-        "backend_address_pool_ids": sdk.FieldSpec(wire_name="backend_address_pool_ids"),
-        "backend_port": sdk.FieldSpec(wire_name="backend_port"),
-        "disable_outbound_snat": sdk.FieldSpec(wire_name="disable_outbound_snat"),
-        "floating_ip_enabled": sdk.FieldSpec(wire_name="floating_ip_enabled"),
-        "frontend_ip_configuration_name": sdk.FieldSpec(wire_name="frontend_ip_configuration_name"),
-        "frontend_port": sdk.FieldSpec(wire_name="frontend_port"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "idle_timeout_in_minutes": sdk.FieldSpec(wire_name="idle_timeout_in_minutes"),
-        "load_distribution": sdk.FieldSpec(wire_name="load_distribution"),
-        "loadbalancer_id": sdk.FieldSpec(wire_name="loadbalancer_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "probe_id": sdk.FieldSpec(wire_name="probe_id"),
-        "protocol": sdk.FieldSpec(wire_name="protocol"),
-        "tcp_reset_enabled": sdk.FieldSpec(wire_name="tcp_reset_enabled"),
-        "timeouts": sdk.FieldSpec(
+        "backend_address_pool_ids": ubx.FieldSpec(wire_name="backend_address_pool_ids"),
+        "backend_port": ubx.FieldSpec(wire_name="backend_port"),
+        "disable_outbound_snat": ubx.FieldSpec(wire_name="disable_outbound_snat"),
+        "floating_ip_enabled": ubx.FieldSpec(wire_name="floating_ip_enabled"),
+        "frontend_ip_configuration_name": ubx.FieldSpec(wire_name="frontend_ip_configuration_name"),
+        "frontend_port": ubx.FieldSpec(wire_name="frontend_port"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "idle_timeout_in_minutes": ubx.FieldSpec(wire_name="idle_timeout_in_minutes"),
+        "load_distribution": ubx.FieldSpec(wire_name="load_distribution"),
+        "loadbalancer_id": ubx.FieldSpec(wire_name="loadbalancer_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "probe_id": ubx.FieldSpec(wire_name="probe_id"),
+        "protocol": ubx.FieldSpec(wire_name="protocol"),
+        "tcp_reset_enabled": ubx.FieldSpec(wire_name="tcp_reset_enabled"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Rule_TimeoutsFields,

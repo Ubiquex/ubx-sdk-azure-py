@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FrontdoorEndpoint_Timeouts:
@@ -14,10 +14,10 @@ class FrontdoorEndpoint_Timeouts:
     update: Any = None
 
 _FrontdoorEndpoint_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class FrontdoorEndpointConfig:
     tags: Any = None
     timeouts: Any = None
 
-FrontdoorEndpoint = sdk.ResourceBinding(
+FrontdoorEndpoint = ubx.ResourceBinding(
     wire_type="azurerm_cdn_frontdoor_endpoint",
     fields={
-        "cdn_frontdoor_profile_id": sdk.FieldSpec(wire_name="cdn_frontdoor_profile_id"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "cdn_frontdoor_profile_id": ubx.FieldSpec(wire_name="cdn_frontdoor_profile_id"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FrontdoorEndpoint_TimeoutsFields,

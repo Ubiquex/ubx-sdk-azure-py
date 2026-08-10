@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class IpPrefix_Timeouts:
@@ -14,10 +14,10 @@ class IpPrefix_Timeouts:
     update: Any = None
 
 _IpPrefix_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -35,21 +35,21 @@ class IpPrefixConfig:
     zones: Any = None
     timeouts: Any = None
 
-IpPrefix = sdk.ResourceBinding(
+IpPrefix = ubx.ResourceBinding(
     wire_type="azurerm_public_ip_prefix",
     fields={
-        "custom_ip_prefix_id": sdk.FieldSpec(wire_name="custom_ip_prefix_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "ip_version": sdk.FieldSpec(wire_name="ip_version"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "prefix_length": sdk.FieldSpec(wire_name="prefix_length"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "sku_tier": sdk.FieldSpec(wire_name="sku_tier"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "zones": sdk.FieldSpec(wire_name="zones"),
-        "timeouts": sdk.FieldSpec(
+        "custom_ip_prefix_id": ubx.FieldSpec(wire_name="custom_ip_prefix_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "ip_version": ubx.FieldSpec(wire_name="ip_version"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "prefix_length": ubx.FieldSpec(wire_name="prefix_length"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "sku_tier": ubx.FieldSpec(wire_name="sku_tier"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "zones": ubx.FieldSpec(wire_name="zones"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_IpPrefix_TimeoutsFields,

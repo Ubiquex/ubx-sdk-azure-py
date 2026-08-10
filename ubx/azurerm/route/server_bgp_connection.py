@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServerBgpConnection_Timeouts:
@@ -13,9 +13,9 @@ class ServerBgpConnection_Timeouts:
     read: Any = None
 
 _ServerBgpConnection_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -27,15 +27,15 @@ class ServerBgpConnectionConfig:
     route_server_id: Any = None
     timeouts: Any = None
 
-ServerBgpConnection = sdk.ResourceBinding(
+ServerBgpConnection = ubx.ResourceBinding(
     wire_type="azurerm_route_server_bgp_connection",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "peer_asn": sdk.FieldSpec(wire_name="peer_asn"),
-        "peer_ip": sdk.FieldSpec(wire_name="peer_ip"),
-        "route_server_id": sdk.FieldSpec(wire_name="route_server_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "peer_asn": ubx.FieldSpec(wire_name="peer_asn"),
+        "peer_ip": ubx.FieldSpec(wire_name="peer_ip"),
+        "route_server_id": ubx.FieldSpec(wire_name="route_server_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ServerBgpConnection_TimeoutsFields,

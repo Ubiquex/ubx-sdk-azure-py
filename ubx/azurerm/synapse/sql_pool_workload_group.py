@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SqlPoolWorkloadGroup_Timeouts:
@@ -14,10 +14,10 @@ class SqlPoolWorkloadGroup_Timeouts:
     update: Any = None
 
 _SqlPoolWorkloadGroup_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -33,19 +33,19 @@ class SqlPoolWorkloadGroupConfig:
     sql_pool_id: Any = None
     timeouts: Any = None
 
-SqlPoolWorkloadGroup = sdk.ResourceBinding(
+SqlPoolWorkloadGroup = ubx.ResourceBinding(
     wire_type="azurerm_synapse_sql_pool_workload_group",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "importance": sdk.FieldSpec(wire_name="importance"),
-        "max_resource_percent": sdk.FieldSpec(wire_name="max_resource_percent"),
-        "max_resource_percent_per_request": sdk.FieldSpec(wire_name="max_resource_percent_per_request"),
-        "min_resource_percent": sdk.FieldSpec(wire_name="min_resource_percent"),
-        "min_resource_percent_per_request": sdk.FieldSpec(wire_name="min_resource_percent_per_request"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "query_execution_timeout_in_seconds": sdk.FieldSpec(wire_name="query_execution_timeout_in_seconds"),
-        "sql_pool_id": sdk.FieldSpec(wire_name="sql_pool_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "importance": ubx.FieldSpec(wire_name="importance"),
+        "max_resource_percent": ubx.FieldSpec(wire_name="max_resource_percent"),
+        "max_resource_percent_per_request": ubx.FieldSpec(wire_name="max_resource_percent_per_request"),
+        "min_resource_percent": ubx.FieldSpec(wire_name="min_resource_percent"),
+        "min_resource_percent_per_request": ubx.FieldSpec(wire_name="min_resource_percent_per_request"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "query_execution_timeout_in_seconds": ubx.FieldSpec(wire_name="query_execution_timeout_in_seconds"),
+        "sql_pool_id": ubx.FieldSpec(wire_name="sql_pool_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SqlPoolWorkloadGroup_TimeoutsFields,

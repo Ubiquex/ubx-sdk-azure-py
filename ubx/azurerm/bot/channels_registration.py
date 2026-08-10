@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ChannelsRegistration_Timeouts:
@@ -14,10 +14,10 @@ class ChannelsRegistration_Timeouts:
     update: Any = None
 
 _ChannelsRegistration_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -44,30 +44,30 @@ class ChannelsRegistrationConfig:
     tags: Any = None
     timeouts: Any = None
 
-ChannelsRegistration = sdk.ResourceBinding(
+ChannelsRegistration = ubx.ResourceBinding(
     wire_type="azurerm_bot_channels_registration",
     fields={
-        "cmk_key_vault_url": sdk.FieldSpec(wire_name="cmk_key_vault_url"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "developer_app_insights_api_key": sdk.FieldSpec(wire_name="developer_app_insights_api_key"),
-        "developer_app_insights_application_id": sdk.FieldSpec(wire_name="developer_app_insights_application_id"),
-        "developer_app_insights_key": sdk.FieldSpec(wire_name="developer_app_insights_key"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "endpoint": sdk.FieldSpec(wire_name="endpoint"),
-        "icon_url": sdk.FieldSpec(wire_name="icon_url"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "microsoft_app_id": sdk.FieldSpec(wire_name="microsoft_app_id"),
-        "microsoft_app_tenant_id": sdk.FieldSpec(wire_name="microsoft_app_tenant_id"),
-        "microsoft_app_type": sdk.FieldSpec(wire_name="microsoft_app_type"),
-        "microsoft_app_user_assigned_identity_id": sdk.FieldSpec(wire_name="microsoft_app_user_assigned_identity_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "streaming_endpoint_enabled": sdk.FieldSpec(wire_name="streaming_endpoint_enabled"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "cmk_key_vault_url": ubx.FieldSpec(wire_name="cmk_key_vault_url"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "developer_app_insights_api_key": ubx.FieldSpec(wire_name="developer_app_insights_api_key"),
+        "developer_app_insights_application_id": ubx.FieldSpec(wire_name="developer_app_insights_application_id"),
+        "developer_app_insights_key": ubx.FieldSpec(wire_name="developer_app_insights_key"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "endpoint": ubx.FieldSpec(wire_name="endpoint"),
+        "icon_url": ubx.FieldSpec(wire_name="icon_url"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "microsoft_app_id": ubx.FieldSpec(wire_name="microsoft_app_id"),
+        "microsoft_app_tenant_id": ubx.FieldSpec(wire_name="microsoft_app_tenant_id"),
+        "microsoft_app_type": ubx.FieldSpec(wire_name="microsoft_app_type"),
+        "microsoft_app_user_assigned_identity_id": ubx.FieldSpec(wire_name="microsoft_app_user_assigned_identity_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "streaming_endpoint_enabled": ubx.FieldSpec(wire_name="streaming_endpoint_enabled"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ChannelsRegistration_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SecurityGroup_SecurityRule:
@@ -33,29 +33,29 @@ class SecurityGroup_Timeouts:
     update: Any = None
 
 _SecurityGroup_SecurityRuleFields = {
-    "access": sdk.FieldSpec(wire_name="access"),
-    "description": sdk.FieldSpec(wire_name="description"),
-    "destination_address_prefix": sdk.FieldSpec(wire_name="destination_address_prefix"),
-    "destination_address_prefixes": sdk.FieldSpec(wire_name="destination_address_prefixes"),
-    "destination_application_security_group_ids": sdk.FieldSpec(wire_name="destination_application_security_group_ids"),
-    "destination_port_range": sdk.FieldSpec(wire_name="destination_port_range"),
-    "destination_port_ranges": sdk.FieldSpec(wire_name="destination_port_ranges"),
-    "direction": sdk.FieldSpec(wire_name="direction"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "priority": sdk.FieldSpec(wire_name="priority"),
-    "protocol": sdk.FieldSpec(wire_name="protocol"),
-    "source_address_prefix": sdk.FieldSpec(wire_name="source_address_prefix"),
-    "source_address_prefixes": sdk.FieldSpec(wire_name="source_address_prefixes"),
-    "source_application_security_group_ids": sdk.FieldSpec(wire_name="source_application_security_group_ids"),
-    "source_port_range": sdk.FieldSpec(wire_name="source_port_range"),
-    "source_port_ranges": sdk.FieldSpec(wire_name="source_port_ranges"),
+    "access": ubx.FieldSpec(wire_name="access"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "destination_address_prefix": ubx.FieldSpec(wire_name="destination_address_prefix"),
+    "destination_address_prefixes": ubx.FieldSpec(wire_name="destination_address_prefixes"),
+    "destination_application_security_group_ids": ubx.FieldSpec(wire_name="destination_application_security_group_ids"),
+    "destination_port_range": ubx.FieldSpec(wire_name="destination_port_range"),
+    "destination_port_ranges": ubx.FieldSpec(wire_name="destination_port_ranges"),
+    "direction": ubx.FieldSpec(wire_name="direction"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "priority": ubx.FieldSpec(wire_name="priority"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
+    "source_address_prefix": ubx.FieldSpec(wire_name="source_address_prefix"),
+    "source_address_prefixes": ubx.FieldSpec(wire_name="source_address_prefixes"),
+    "source_application_security_group_ids": ubx.FieldSpec(wire_name="source_application_security_group_ids"),
+    "source_port_range": ubx.FieldSpec(wire_name="source_port_range"),
+    "source_port_ranges": ubx.FieldSpec(wire_name="source_port_ranges"),
 }
 
 _SecurityGroup_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -68,20 +68,20 @@ class SecurityGroupConfig:
     tags: Any = None
     timeouts: Any = None
 
-SecurityGroup = sdk.ResourceBinding(
+SecurityGroup = ubx.ResourceBinding(
     wire_type="azurerm_network_security_group",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "security_rule": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "security_rule": ubx.FieldSpec(
             wire_name="security_rule",
             kind="set",
             fields=_SecurityGroup_SecurityRuleFields,
         ),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SecurityGroup_TimeoutsFields,

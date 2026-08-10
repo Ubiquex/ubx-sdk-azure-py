@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FrontdoorCustomDomainAssociation_Timeouts:
@@ -14,10 +14,10 @@ class FrontdoorCustomDomainAssociation_Timeouts:
     update: Any = None
 
 _FrontdoorCustomDomainAssociation_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -27,13 +27,13 @@ class FrontdoorCustomDomainAssociationConfig:
     id: Any = None
     timeouts: Any = None
 
-FrontdoorCustomDomainAssociation = sdk.ResourceBinding(
+FrontdoorCustomDomainAssociation = ubx.ResourceBinding(
     wire_type="azurerm_cdn_frontdoor_custom_domain_association",
     fields={
-        "cdn_frontdoor_custom_domain_id": sdk.FieldSpec(wire_name="cdn_frontdoor_custom_domain_id"),
-        "cdn_frontdoor_route_ids": sdk.FieldSpec(wire_name="cdn_frontdoor_route_ids"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "timeouts": sdk.FieldSpec(
+        "cdn_frontdoor_custom_domain_id": ubx.FieldSpec(wire_name="cdn_frontdoor_custom_domain_id"),
+        "cdn_frontdoor_route_ids": ubx.FieldSpec(wire_name="cdn_frontdoor_route_ids"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FrontdoorCustomDomainAssociation_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagerVerifierWorkspaceReachabilityAnalysisIntent_IpTraffic:
@@ -21,17 +21,17 @@ class ManagerVerifierWorkspaceReachabilityAnalysisIntent_Timeouts:
     read: Any = None
 
 _ManagerVerifierWorkspaceReachabilityAnalysisIntent_IpTrafficFields = {
-    "destination_ips": sdk.FieldSpec(wire_name="destination_ips"),
-    "destination_ports": sdk.FieldSpec(wire_name="destination_ports"),
-    "protocols": sdk.FieldSpec(wire_name="protocols"),
-    "source_ips": sdk.FieldSpec(wire_name="source_ips"),
-    "source_ports": sdk.FieldSpec(wire_name="source_ports"),
+    "destination_ips": ubx.FieldSpec(wire_name="destination_ips"),
+    "destination_ports": ubx.FieldSpec(wire_name="destination_ports"),
+    "protocols": ubx.FieldSpec(wire_name="protocols"),
+    "source_ips": ubx.FieldSpec(wire_name="source_ips"),
+    "source_ports": ubx.FieldSpec(wire_name="source_ports"),
 }
 
 _ManagerVerifierWorkspaceReachabilityAnalysisIntent_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -45,21 +45,21 @@ class ManagerVerifierWorkspaceReachabilityAnalysisIntentConfig:
     ip_traffic: Any = None
     timeouts: Any = None
 
-ManagerVerifierWorkspaceReachabilityAnalysisIntent = sdk.ResourceBinding(
+ManagerVerifierWorkspaceReachabilityAnalysisIntent = ubx.ResourceBinding(
     wire_type="azurerm_network_manager_verifier_workspace_reachability_analysis_intent",
     fields={
-        "description": sdk.FieldSpec(wire_name="description"),
-        "destination_resource_id": sdk.FieldSpec(wire_name="destination_resource_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "source_resource_id": sdk.FieldSpec(wire_name="source_resource_id"),
-        "verifier_workspace_id": sdk.FieldSpec(wire_name="verifier_workspace_id"),
-        "ip_traffic": sdk.FieldSpec(
+        "description": ubx.FieldSpec(wire_name="description"),
+        "destination_resource_id": ubx.FieldSpec(wire_name="destination_resource_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "source_resource_id": ubx.FieldSpec(wire_name="source_resource_id"),
+        "verifier_workspace_id": ubx.FieldSpec(wire_name="verifier_workspace_id"),
+        "ip_traffic": ubx.FieldSpec(
             wire_name="ip_traffic",
             kind="list",
             fields=_ManagerVerifierWorkspaceReachabilityAnalysisIntent_IpTrafficFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagerVerifierWorkspaceReachabilityAnalysisIntent_TimeoutsFields,

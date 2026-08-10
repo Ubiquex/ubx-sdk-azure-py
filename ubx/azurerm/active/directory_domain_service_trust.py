@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DirectoryDomainServiceTrust_Timeouts:
@@ -14,10 +14,10 @@ class DirectoryDomainServiceTrust_Timeouts:
     update: Any = None
 
 _DirectoryDomainServiceTrust_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class DirectoryDomainServiceTrustConfig:
     trusted_domain_fqdn: Any = None
     timeouts: Any = None
 
-DirectoryDomainServiceTrust = sdk.ResourceBinding(
+DirectoryDomainServiceTrust = ubx.ResourceBinding(
     wire_type="azurerm_active_directory_domain_service_trust",
     fields={
-        "domain_service_id": sdk.FieldSpec(wire_name="domain_service_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "password": sdk.FieldSpec(wire_name="password"),
-        "trusted_domain_dns_ips": sdk.FieldSpec(wire_name="trusted_domain_dns_ips"),
-        "trusted_domain_fqdn": sdk.FieldSpec(wire_name="trusted_domain_fqdn"),
-        "timeouts": sdk.FieldSpec(
+        "domain_service_id": ubx.FieldSpec(wire_name="domain_service_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "password": ubx.FieldSpec(wire_name="password"),
+        "trusted_domain_dns_ips": ubx.FieldSpec(wire_name="trusted_domain_dns_ips"),
+        "trusted_domain_fqdn": ubx.FieldSpec(wire_name="trusted_domain_fqdn"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DirectoryDomainServiceTrust_TimeoutsFields,

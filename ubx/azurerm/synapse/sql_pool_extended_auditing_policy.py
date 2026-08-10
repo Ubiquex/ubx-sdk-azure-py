@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SqlPoolExtendedAuditingPolicy_Timeouts:
@@ -14,10 +14,10 @@ class SqlPoolExtendedAuditingPolicy_Timeouts:
     update: Any = None
 
 _SqlPoolExtendedAuditingPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class SqlPoolExtendedAuditingPolicyConfig:
     storage_endpoint: Any = None
     timeouts: Any = None
 
-SqlPoolExtendedAuditingPolicy = sdk.ResourceBinding(
+SqlPoolExtendedAuditingPolicy = ubx.ResourceBinding(
     wire_type="azurerm_synapse_sql_pool_extended_auditing_policy",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "log_monitoring_enabled": sdk.FieldSpec(wire_name="log_monitoring_enabled"),
-        "retention_in_days": sdk.FieldSpec(wire_name="retention_in_days"),
-        "sql_pool_id": sdk.FieldSpec(wire_name="sql_pool_id"),
-        "storage_account_access_key": sdk.FieldSpec(wire_name="storage_account_access_key"),
-        "storage_account_access_key_is_secondary": sdk.FieldSpec(wire_name="storage_account_access_key_is_secondary"),
-        "storage_endpoint": sdk.FieldSpec(wire_name="storage_endpoint"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "log_monitoring_enabled": ubx.FieldSpec(wire_name="log_monitoring_enabled"),
+        "retention_in_days": ubx.FieldSpec(wire_name="retention_in_days"),
+        "sql_pool_id": ubx.FieldSpec(wire_name="sql_pool_id"),
+        "storage_account_access_key": ubx.FieldSpec(wire_name="storage_account_access_key"),
+        "storage_account_access_key_is_secondary": ubx.FieldSpec(wire_name="storage_account_access_key_is_secondary"),
+        "storage_endpoint": ubx.FieldSpec(wire_name="storage_endpoint"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SqlPoolExtendedAuditingPolicy_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConnectedRegistry_Notification:
@@ -21,17 +21,17 @@ class ConnectedRegistry_Timeouts:
     update: Any = None
 
 _ConnectedRegistry_NotificationFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "digest": sdk.FieldSpec(wire_name="digest"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "tag": sdk.FieldSpec(wire_name="tag"),
+    "action": ubx.FieldSpec(wire_name="action"),
+    "digest": ubx.FieldSpec(wire_name="digest"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "tag": ubx.FieldSpec(wire_name="tag"),
 }
 
 _ConnectedRegistry_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -51,27 +51,27 @@ class ConnectedRegistryConfig:
     notification: Any = None
     timeouts: Any = None
 
-ConnectedRegistry = sdk.ResourceBinding(
+ConnectedRegistry = ubx.ResourceBinding(
     wire_type="azurerm_container_connected_registry",
     fields={
-        "audit_log_enabled": sdk.FieldSpec(wire_name="audit_log_enabled"),
-        "client_token_ids": sdk.FieldSpec(wire_name="client_token_ids"),
-        "container_registry_id": sdk.FieldSpec(wire_name="container_registry_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "log_level": sdk.FieldSpec(wire_name="log_level"),
-        "mode": sdk.FieldSpec(wire_name="mode"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parent_registry_id": sdk.FieldSpec(wire_name="parent_registry_id"),
-        "sync_message_ttl": sdk.FieldSpec(wire_name="sync_message_ttl"),
-        "sync_schedule": sdk.FieldSpec(wire_name="sync_schedule"),
-        "sync_token_id": sdk.FieldSpec(wire_name="sync_token_id"),
-        "sync_window": sdk.FieldSpec(wire_name="sync_window"),
-        "notification": sdk.FieldSpec(
+        "audit_log_enabled": ubx.FieldSpec(wire_name="audit_log_enabled"),
+        "client_token_ids": ubx.FieldSpec(wire_name="client_token_ids"),
+        "container_registry_id": ubx.FieldSpec(wire_name="container_registry_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "log_level": ubx.FieldSpec(wire_name="log_level"),
+        "mode": ubx.FieldSpec(wire_name="mode"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parent_registry_id": ubx.FieldSpec(wire_name="parent_registry_id"),
+        "sync_message_ttl": ubx.FieldSpec(wire_name="sync_message_ttl"),
+        "sync_schedule": ubx.FieldSpec(wire_name="sync_schedule"),
+        "sync_token_id": ubx.FieldSpec(wire_name="sync_token_id"),
+        "sync_window": ubx.FieldSpec(wire_name="sync_window"),
+        "notification": ubx.FieldSpec(
             wire_name="notification",
             kind="list",
             fields=_ConnectedRegistry_NotificationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ConnectedRegistry_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PolicyVmWorkload_ProtectionPolicy_Backup:
@@ -62,66 +62,66 @@ class PolicyVmWorkload_Timeouts:
     update: Any = None
 
 _PolicyVmWorkload_ProtectionPolicy_BackupFields = {
-    "frequency": sdk.FieldSpec(wire_name="frequency"),
-    "frequency_in_minutes": sdk.FieldSpec(wire_name="frequency_in_minutes"),
-    "time": sdk.FieldSpec(wire_name="time"),
-    "weekdays": sdk.FieldSpec(wire_name="weekdays"),
+    "frequency": ubx.FieldSpec(wire_name="frequency"),
+    "frequency_in_minutes": ubx.FieldSpec(wire_name="frequency_in_minutes"),
+    "time": ubx.FieldSpec(wire_name="time"),
+    "weekdays": ubx.FieldSpec(wire_name="weekdays"),
 }
 
 _PolicyVmWorkload_ProtectionPolicy_RetentionDailyFields = {
-    "count": sdk.FieldSpec(wire_name="count"),
+    "count": ubx.FieldSpec(wire_name="count"),
 }
 
 _PolicyVmWorkload_ProtectionPolicy_RetentionMonthlyFields = {
-    "count": sdk.FieldSpec(wire_name="count"),
-    "format_type": sdk.FieldSpec(wire_name="format_type"),
-    "monthdays": sdk.FieldSpec(wire_name="monthdays"),
-    "weekdays": sdk.FieldSpec(wire_name="weekdays"),
-    "weeks": sdk.FieldSpec(wire_name="weeks"),
+    "count": ubx.FieldSpec(wire_name="count"),
+    "format_type": ubx.FieldSpec(wire_name="format_type"),
+    "monthdays": ubx.FieldSpec(wire_name="monthdays"),
+    "weekdays": ubx.FieldSpec(wire_name="weekdays"),
+    "weeks": ubx.FieldSpec(wire_name="weeks"),
 }
 
 _PolicyVmWorkload_ProtectionPolicy_RetentionWeeklyFields = {
-    "count": sdk.FieldSpec(wire_name="count"),
-    "weekdays": sdk.FieldSpec(wire_name="weekdays"),
+    "count": ubx.FieldSpec(wire_name="count"),
+    "weekdays": ubx.FieldSpec(wire_name="weekdays"),
 }
 
 _PolicyVmWorkload_ProtectionPolicy_RetentionYearlyFields = {
-    "count": sdk.FieldSpec(wire_name="count"),
-    "format_type": sdk.FieldSpec(wire_name="format_type"),
-    "monthdays": sdk.FieldSpec(wire_name="monthdays"),
-    "months": sdk.FieldSpec(wire_name="months"),
-    "weekdays": sdk.FieldSpec(wire_name="weekdays"),
-    "weeks": sdk.FieldSpec(wire_name="weeks"),
+    "count": ubx.FieldSpec(wire_name="count"),
+    "format_type": ubx.FieldSpec(wire_name="format_type"),
+    "monthdays": ubx.FieldSpec(wire_name="monthdays"),
+    "months": ubx.FieldSpec(wire_name="months"),
+    "weekdays": ubx.FieldSpec(wire_name="weekdays"),
+    "weeks": ubx.FieldSpec(wire_name="weeks"),
 }
 
 _PolicyVmWorkload_ProtectionPolicyFields = {
-    "policy_type": sdk.FieldSpec(wire_name="policy_type"),
-    "backup": sdk.FieldSpec(
+    "policy_type": ubx.FieldSpec(wire_name="policy_type"),
+    "backup": ubx.FieldSpec(
         wire_name="backup",
         kind="list",
         fields=_PolicyVmWorkload_ProtectionPolicy_BackupFields,
     ),
-    "retention_daily": sdk.FieldSpec(
+    "retention_daily": ubx.FieldSpec(
         wire_name="retention_daily",
         kind="list",
         fields=_PolicyVmWorkload_ProtectionPolicy_RetentionDailyFields,
     ),
-    "retention_monthly": sdk.FieldSpec(
+    "retention_monthly": ubx.FieldSpec(
         wire_name="retention_monthly",
         kind="list",
         fields=_PolicyVmWorkload_ProtectionPolicy_RetentionMonthlyFields,
     ),
-    "retention_weekly": sdk.FieldSpec(
+    "retention_weekly": ubx.FieldSpec(
         wire_name="retention_weekly",
         kind="list",
         fields=_PolicyVmWorkload_ProtectionPolicy_RetentionWeeklyFields,
     ),
-    "retention_yearly": sdk.FieldSpec(
+    "retention_yearly": ubx.FieldSpec(
         wire_name="retention_yearly",
         kind="list",
         fields=_PolicyVmWorkload_ProtectionPolicy_RetentionYearlyFields,
     ),
-    "simple_retention": sdk.FieldSpec(
+    "simple_retention": ubx.FieldSpec(
         wire_name="simple_retention",
         kind="list",
         fields=_PolicyVmWorkload_ProtectionPolicy_RetentionDailyFields,
@@ -129,15 +129,15 @@ _PolicyVmWorkload_ProtectionPolicyFields = {
 }
 
 _PolicyVmWorkload_SettingsFields = {
-    "compression_enabled": sdk.FieldSpec(wire_name="compression_enabled"),
-    "time_zone": sdk.FieldSpec(wire_name="time_zone"),
+    "compression_enabled": ubx.FieldSpec(wire_name="compression_enabled"),
+    "time_zone": ubx.FieldSpec(wire_name="time_zone"),
 }
 
 _PolicyVmWorkload_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -151,25 +151,25 @@ class PolicyVmWorkloadConfig:
     settings: Any = None
     timeouts: Any = None
 
-PolicyVmWorkload = sdk.ResourceBinding(
+PolicyVmWorkload = ubx.ResourceBinding(
     wire_type="azurerm_backup_policy_vm_workload",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "recovery_vault_name": sdk.FieldSpec(wire_name="recovery_vault_name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "workload_type": sdk.FieldSpec(wire_name="workload_type"),
-        "protection_policy": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "recovery_vault_name": ubx.FieldSpec(wire_name="recovery_vault_name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "workload_type": ubx.FieldSpec(wire_name="workload_type"),
+        "protection_policy": ubx.FieldSpec(
             wire_name="protection_policy",
             kind="set",
             fields=_PolicyVmWorkload_ProtectionPolicyFields,
         ),
-        "settings": sdk.FieldSpec(
+        "settings": ubx.FieldSpec(
             wire_name="settings",
             kind="list",
             fields=_PolicyVmWorkload_SettingsFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_PolicyVmWorkload_TimeoutsFields,

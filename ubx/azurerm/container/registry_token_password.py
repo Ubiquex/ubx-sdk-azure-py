@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RegistryTokenPassword_Password1:
@@ -19,15 +19,15 @@ class RegistryTokenPassword_Timeouts:
     update: Any = None
 
 _RegistryTokenPassword_Password1Fields = {
-    "expiry": sdk.FieldSpec(wire_name="expiry"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "expiry": ubx.FieldSpec(wire_name="expiry"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _RegistryTokenPassword_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -38,22 +38,22 @@ class RegistryTokenPasswordConfig:
     password2: Any = None
     timeouts: Any = None
 
-RegistryTokenPassword = sdk.ResourceBinding(
+RegistryTokenPassword = ubx.ResourceBinding(
     wire_type="azurerm_container_registry_token_password",
     fields={
-        "container_registry_token_id": sdk.FieldSpec(wire_name="container_registry_token_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "password1": sdk.FieldSpec(
+        "container_registry_token_id": ubx.FieldSpec(wire_name="container_registry_token_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "password1": ubx.FieldSpec(
             wire_name="password1",
             kind="list",
             fields=_RegistryTokenPassword_Password1Fields,
         ),
-        "password2": sdk.FieldSpec(
+        "password2": ubx.FieldSpec(
             wire_name="password2",
             kind="list",
             fields=_RegistryTokenPassword_Password1Fields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RegistryTokenPassword_TimeoutsFields,

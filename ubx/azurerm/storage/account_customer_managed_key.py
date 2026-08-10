@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AccountCustomerManagedKey_Timeouts:
@@ -14,10 +14,10 @@ class AccountCustomerManagedKey_Timeouts:
     update: Any = None
 
 _AccountCustomerManagedKey_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class AccountCustomerManagedKeyConfig:
     user_assigned_identity_id: Any = None
     timeouts: Any = None
 
-AccountCustomerManagedKey = sdk.ResourceBinding(
+AccountCustomerManagedKey = ubx.ResourceBinding(
     wire_type="azurerm_storage_account_customer_managed_key",
     fields={
-        "federated_identity_client_id": sdk.FieldSpec(wire_name="federated_identity_client_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "key_vault_key_id": sdk.FieldSpec(wire_name="key_vault_key_id"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "user_assigned_identity_id": sdk.FieldSpec(wire_name="user_assigned_identity_id"),
-        "timeouts": sdk.FieldSpec(
+        "federated_identity_client_id": ubx.FieldSpec(wire_name="federated_identity_client_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "key_vault_key_id": ubx.FieldSpec(wire_name="key_vault_key_id"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "user_assigned_identity_id": ubx.FieldSpec(wire_name="user_assigned_identity_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AccountCustomerManagedKey_TimeoutsFields,

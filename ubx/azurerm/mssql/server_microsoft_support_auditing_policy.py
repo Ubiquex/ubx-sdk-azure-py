@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServerMicrosoftSupportAuditingPolicy_Timeouts:
@@ -14,10 +14,10 @@ class ServerMicrosoftSupportAuditingPolicy_Timeouts:
     update: Any = None
 
 _ServerMicrosoftSupportAuditingPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class ServerMicrosoftSupportAuditingPolicyConfig:
     storage_account_subscription_id: Any = None
     timeouts: Any = None
 
-ServerMicrosoftSupportAuditingPolicy = sdk.ResourceBinding(
+ServerMicrosoftSupportAuditingPolicy = ubx.ResourceBinding(
     wire_type="azurerm_mssql_server_microsoft_support_auditing_policy",
     fields={
-        "blob_storage_endpoint": sdk.FieldSpec(wire_name="blob_storage_endpoint"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "log_monitoring_enabled": sdk.FieldSpec(wire_name="log_monitoring_enabled"),
-        "server_id": sdk.FieldSpec(wire_name="server_id"),
-        "storage_account_access_key": sdk.FieldSpec(wire_name="storage_account_access_key"),
-        "storage_account_subscription_id": sdk.FieldSpec(wire_name="storage_account_subscription_id"),
-        "timeouts": sdk.FieldSpec(
+        "blob_storage_endpoint": ubx.FieldSpec(wire_name="blob_storage_endpoint"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "log_monitoring_enabled": ubx.FieldSpec(wire_name="log_monitoring_enabled"),
+        "server_id": ubx.FieldSpec(wire_name="server_id"),
+        "storage_account_access_key": ubx.FieldSpec(wire_name="storage_account_access_key"),
+        "storage_account_subscription_id": ubx.FieldSpec(wire_name="storage_account_subscription_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ServerMicrosoftSupportAuditingPolicy_TimeoutsFields,

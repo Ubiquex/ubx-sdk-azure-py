@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagedDatabase_LongTermRetentionPolicy:
@@ -26,22 +26,22 @@ class ManagedDatabase_Timeouts:
     update: Any = None
 
 _ManagedDatabase_LongTermRetentionPolicyFields = {
-    "monthly_retention": sdk.FieldSpec(wire_name="monthly_retention"),
-    "week_of_year": sdk.FieldSpec(wire_name="week_of_year"),
-    "weekly_retention": sdk.FieldSpec(wire_name="weekly_retention"),
-    "yearly_retention": sdk.FieldSpec(wire_name="yearly_retention"),
+    "monthly_retention": ubx.FieldSpec(wire_name="monthly_retention"),
+    "week_of_year": ubx.FieldSpec(wire_name="week_of_year"),
+    "weekly_retention": ubx.FieldSpec(wire_name="weekly_retention"),
+    "yearly_retention": ubx.FieldSpec(wire_name="yearly_retention"),
 }
 
 _ManagedDatabase_PointInTimeRestoreFields = {
-    "restore_point_in_time": sdk.FieldSpec(wire_name="restore_point_in_time"),
-    "source_database_id": sdk.FieldSpec(wire_name="source_database_id"),
+    "restore_point_in_time": ubx.FieldSpec(wire_name="restore_point_in_time"),
+    "source_database_id": ubx.FieldSpec(wire_name="source_database_id"),
 }
 
 _ManagedDatabase_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -55,25 +55,25 @@ class ManagedDatabaseConfig:
     point_in_time_restore: Any = None
     timeouts: Any = None
 
-ManagedDatabase = sdk.ResourceBinding(
+ManagedDatabase = ubx.ResourceBinding(
     wire_type="azurerm_mssql_managed_database",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "managed_instance_id": sdk.FieldSpec(wire_name="managed_instance_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "short_term_retention_days": sdk.FieldSpec(wire_name="short_term_retention_days"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "long_term_retention_policy": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "managed_instance_id": ubx.FieldSpec(wire_name="managed_instance_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "short_term_retention_days": ubx.FieldSpec(wire_name="short_term_retention_days"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "long_term_retention_policy": ubx.FieldSpec(
             wire_name="long_term_retention_policy",
             kind="list",
             fields=_ManagedDatabase_LongTermRetentionPolicyFields,
         ),
-        "point_in_time_restore": sdk.FieldSpec(
+        "point_in_time_restore": ubx.FieldSpec(
             wire_name="point_in_time_restore",
             kind="list",
             fields=_ManagedDatabase_PointInTimeRestoreFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagedDatabase_TimeoutsFields,

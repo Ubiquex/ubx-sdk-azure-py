@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class NamespaceAuthorizationRule_Timeouts:
@@ -14,10 +14,10 @@ class NamespaceAuthorizationRule_Timeouts:
     update: Any = None
 
 _NamespaceAuthorizationRule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class NamespaceAuthorizationRuleConfig:
     send: Any = None
     timeouts: Any = None
 
-NamespaceAuthorizationRule = sdk.ResourceBinding(
+NamespaceAuthorizationRule = ubx.ResourceBinding(
     wire_type="azurerm_servicebus_namespace_authorization_rule",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "listen": sdk.FieldSpec(wire_name="listen"),
-        "manage": sdk.FieldSpec(wire_name="manage"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "namespace_id": sdk.FieldSpec(wire_name="namespace_id"),
-        "send": sdk.FieldSpec(wire_name="send"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "listen": ubx.FieldSpec(wire_name="listen"),
+        "manage": ubx.FieldSpec(wire_name="manage"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "namespace_id": ubx.FieldSpec(wire_name="namespace_id"),
+        "send": ubx.FieldSpec(wire_name="send"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_NamespaceAuthorizationRule_TimeoutsFields,

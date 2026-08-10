@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HybridRunbookWorker_Timeouts:
@@ -13,9 +13,9 @@ class HybridRunbookWorker_Timeouts:
     read: Any = None
 
 _HybridRunbookWorker_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -28,16 +28,16 @@ class HybridRunbookWorkerConfig:
     worker_id: Any = None
     timeouts: Any = None
 
-HybridRunbookWorker = sdk.ResourceBinding(
+HybridRunbookWorker = ubx.ResourceBinding(
     wire_type="azurerm_automation_hybrid_runbook_worker",
     fields={
-        "automation_account_name": sdk.FieldSpec(wire_name="automation_account_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "vm_resource_id": sdk.FieldSpec(wire_name="vm_resource_id"),
-        "worker_group_name": sdk.FieldSpec(wire_name="worker_group_name"),
-        "worker_id": sdk.FieldSpec(wire_name="worker_id"),
-        "timeouts": sdk.FieldSpec(
+        "automation_account_name": ubx.FieldSpec(wire_name="automation_account_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "vm_resource_id": ubx.FieldSpec(wire_name="vm_resource_id"),
+        "worker_group_name": ubx.FieldSpec(wire_name="worker_group_name"),
+        "worker_id": ubx.FieldSpec(wire_name="worker_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_HybridRunbookWorker_TimeoutsFields,

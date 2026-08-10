@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudBuilder_BuildPackGroup:
@@ -24,20 +24,20 @@ class CloudBuilder_Timeouts:
     update: Any = None
 
 _CloudBuilder_BuildPackGroupFields = {
-    "build_pack_ids": sdk.FieldSpec(wire_name="build_pack_ids"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "build_pack_ids": ubx.FieldSpec(wire_name="build_pack_ids"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _CloudBuilder_StackFields = {
-    "id": sdk.FieldSpec(wire_name="id"),
-    "version": sdk.FieldSpec(wire_name="version"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _CloudBuilder_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -49,23 +49,23 @@ class CloudBuilderConfig:
     stack: Any = None
     timeouts: Any = None
 
-CloudBuilder = sdk.ResourceBinding(
+CloudBuilder = ubx.ResourceBinding(
     wire_type="azurerm_spring_cloud_builder",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "spring_cloud_service_id": sdk.FieldSpec(wire_name="spring_cloud_service_id"),
-        "build_pack_group": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "spring_cloud_service_id": ubx.FieldSpec(wire_name="spring_cloud_service_id"),
+        "build_pack_group": ubx.FieldSpec(
             wire_name="build_pack_group",
             kind="set",
             fields=_CloudBuilder_BuildPackGroupFields,
         ),
-        "stack": sdk.FieldSpec(
+        "stack": ubx.FieldSpec(
             wire_name="stack",
             kind="list",
             fields=_CloudBuilder_StackFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CloudBuilder_TimeoutsFields,

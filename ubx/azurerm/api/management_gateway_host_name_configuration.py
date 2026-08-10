@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagementGatewayHostNameConfiguration_Timeouts:
@@ -14,10 +14,10 @@ class ManagementGatewayHostNameConfiguration_Timeouts:
     update: Any = None
 
 _ManagementGatewayHostNameConfiguration_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -34,20 +34,20 @@ class ManagementGatewayHostNameConfigurationConfig:
     tls11_enabled: Any = None
     timeouts: Any = None
 
-ManagementGatewayHostNameConfiguration = sdk.ResourceBinding(
+ManagementGatewayHostNameConfiguration = ubx.ResourceBinding(
     wire_type="azurerm_api_management_gateway_host_name_configuration",
     fields={
-        "api_management_id": sdk.FieldSpec(wire_name="api_management_id"),
-        "certificate_id": sdk.FieldSpec(wire_name="certificate_id"),
-        "gateway_name": sdk.FieldSpec(wire_name="gateway_name"),
-        "host_name": sdk.FieldSpec(wire_name="host_name"),
-        "http2_enabled": sdk.FieldSpec(wire_name="http2_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "request_client_certificate_enabled": sdk.FieldSpec(wire_name="request_client_certificate_enabled"),
-        "tls10_enabled": sdk.FieldSpec(wire_name="tls10_enabled"),
-        "tls11_enabled": sdk.FieldSpec(wire_name="tls11_enabled"),
-        "timeouts": sdk.FieldSpec(
+        "api_management_id": ubx.FieldSpec(wire_name="api_management_id"),
+        "certificate_id": ubx.FieldSpec(wire_name="certificate_id"),
+        "gateway_name": ubx.FieldSpec(wire_name="gateway_name"),
+        "host_name": ubx.FieldSpec(wire_name="host_name"),
+        "http2_enabled": ubx.FieldSpec(wire_name="http2_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "request_client_certificate_enabled": ubx.FieldSpec(wire_name="request_client_certificate_enabled"),
+        "tls10_enabled": ubx.FieldSpec(wire_name="tls10_enabled"),
+        "tls11_enabled": ubx.FieldSpec(wire_name="tls11_enabled"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagementGatewayHostNameConfiguration_TimeoutsFields,

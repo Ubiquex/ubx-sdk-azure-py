@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RelicTagRule_LogTagFilter:
@@ -20,16 +20,16 @@ class RelicTagRule_Timeouts:
     update: Any = None
 
 _RelicTagRule_LogTagFilterFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "action": ubx.FieldSpec(wire_name="action"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _RelicTagRule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -44,26 +44,26 @@ class RelicTagRuleConfig:
     metric_tag_filter: Any = None
     timeouts: Any = None
 
-RelicTagRule = sdk.ResourceBinding(
+RelicTagRule = ubx.ResourceBinding(
     wire_type="azurerm_new_relic_tag_rule",
     fields={
-        "activity_log_enabled": sdk.FieldSpec(wire_name="activity_log_enabled"),
-        "azure_active_directory_log_enabled": sdk.FieldSpec(wire_name="azure_active_directory_log_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "metric_enabled": sdk.FieldSpec(wire_name="metric_enabled"),
-        "monitor_id": sdk.FieldSpec(wire_name="monitor_id"),
-        "subscription_log_enabled": sdk.FieldSpec(wire_name="subscription_log_enabled"),
-        "log_tag_filter": sdk.FieldSpec(
+        "activity_log_enabled": ubx.FieldSpec(wire_name="activity_log_enabled"),
+        "azure_active_directory_log_enabled": ubx.FieldSpec(wire_name="azure_active_directory_log_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "metric_enabled": ubx.FieldSpec(wire_name="metric_enabled"),
+        "monitor_id": ubx.FieldSpec(wire_name="monitor_id"),
+        "subscription_log_enabled": ubx.FieldSpec(wire_name="subscription_log_enabled"),
+        "log_tag_filter": ubx.FieldSpec(
             wire_name="log_tag_filter",
             kind="list",
             fields=_RelicTagRule_LogTagFilterFields,
         ),
-        "metric_tag_filter": sdk.FieldSpec(
+        "metric_tag_filter": ubx.FieldSpec(
             wire_name="metric_tag_filter",
             kind="list",
             fields=_RelicTagRule_LogTagFilterFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RelicTagRule_TimeoutsFields,

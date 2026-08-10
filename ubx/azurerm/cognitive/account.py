@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Account_CustomerManagedKey:
@@ -48,27 +48,27 @@ class Account_Timeouts:
     update: Any = None
 
 _Account_CustomerManagedKeyFields = {
-    "identity_client_id": sdk.FieldSpec(wire_name="identity_client_id"),
-    "key_vault_key_id": sdk.FieldSpec(wire_name="key_vault_key_id"),
+    "identity_client_id": ubx.FieldSpec(wire_name="identity_client_id"),
+    "key_vault_key_id": ubx.FieldSpec(wire_name="key_vault_key_id"),
 }
 
 _Account_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Account_NetworkAcls_VirtualNetworkRulesFields = {
-    "ignore_missing_vnet_service_endpoint": sdk.FieldSpec(wire_name="ignore_missing_vnet_service_endpoint"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "ignore_missing_vnet_service_endpoint": ubx.FieldSpec(wire_name="ignore_missing_vnet_service_endpoint"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _Account_NetworkAclsFields = {
-    "bypass": sdk.FieldSpec(wire_name="bypass"),
-    "default_action": sdk.FieldSpec(wire_name="default_action"),
-    "ip_rules": sdk.FieldSpec(wire_name="ip_rules"),
-    "virtual_network_rules": sdk.FieldSpec(
+    "bypass": ubx.FieldSpec(wire_name="bypass"),
+    "default_action": ubx.FieldSpec(wire_name="default_action"),
+    "ip_rules": ubx.FieldSpec(wire_name="ip_rules"),
+    "virtual_network_rules": ubx.FieldSpec(
         wire_name="virtual_network_rules",
         kind="set",
         fields=_Account_NetworkAcls_VirtualNetworkRulesFields,
@@ -76,20 +76,20 @@ _Account_NetworkAclsFields = {
 }
 
 _Account_NetworkInjectionFields = {
-    "scenario": sdk.FieldSpec(wire_name="scenario"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "scenario": ubx.FieldSpec(wire_name="scenario"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _Account_StorageFields = {
-    "identity_client_id": sdk.FieldSpec(wire_name="identity_client_id"),
-    "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
+    "identity_client_id": ubx.FieldSpec(wire_name="identity_client_id"),
+    "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
 }
 
 _Account_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -122,56 +122,56 @@ class AccountConfig:
     storage: Any = None
     timeouts: Any = None
 
-Account = sdk.ResourceBinding(
+Account = ubx.ResourceBinding(
     wire_type="azurerm_cognitive_account",
     fields={
-        "custom_question_answering_search_service_id": sdk.FieldSpec(wire_name="custom_question_answering_search_service_id"),
-        "custom_question_answering_search_service_key": sdk.FieldSpec(wire_name="custom_question_answering_search_service_key"),
-        "custom_subdomain_name": sdk.FieldSpec(wire_name="custom_subdomain_name"),
-        "dynamic_throttling_enabled": sdk.FieldSpec(wire_name="dynamic_throttling_enabled"),
-        "fqdns": sdk.FieldSpec(wire_name="fqdns"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "kind": sdk.FieldSpec(wire_name="kind"),
-        "local_auth_enabled": sdk.FieldSpec(wire_name="local_auth_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "metrics_advisor_aad_client_id": sdk.FieldSpec(wire_name="metrics_advisor_aad_client_id"),
-        "metrics_advisor_aad_tenant_id": sdk.FieldSpec(wire_name="metrics_advisor_aad_tenant_id"),
-        "metrics_advisor_super_user_name": sdk.FieldSpec(wire_name="metrics_advisor_super_user_name"),
-        "metrics_advisor_website_name": sdk.FieldSpec(wire_name="metrics_advisor_website_name"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "outbound_network_access_restricted": sdk.FieldSpec(wire_name="outbound_network_access_restricted"),
-        "project_management_enabled": sdk.FieldSpec(wire_name="project_management_enabled"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "qna_runtime_endpoint": sdk.FieldSpec(wire_name="qna_runtime_endpoint"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "customer_managed_key": sdk.FieldSpec(
+        "custom_question_answering_search_service_id": ubx.FieldSpec(wire_name="custom_question_answering_search_service_id"),
+        "custom_question_answering_search_service_key": ubx.FieldSpec(wire_name="custom_question_answering_search_service_key"),
+        "custom_subdomain_name": ubx.FieldSpec(wire_name="custom_subdomain_name"),
+        "dynamic_throttling_enabled": ubx.FieldSpec(wire_name="dynamic_throttling_enabled"),
+        "fqdns": ubx.FieldSpec(wire_name="fqdns"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "kind": ubx.FieldSpec(wire_name="kind"),
+        "local_auth_enabled": ubx.FieldSpec(wire_name="local_auth_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "metrics_advisor_aad_client_id": ubx.FieldSpec(wire_name="metrics_advisor_aad_client_id"),
+        "metrics_advisor_aad_tenant_id": ubx.FieldSpec(wire_name="metrics_advisor_aad_tenant_id"),
+        "metrics_advisor_super_user_name": ubx.FieldSpec(wire_name="metrics_advisor_super_user_name"),
+        "metrics_advisor_website_name": ubx.FieldSpec(wire_name="metrics_advisor_website_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "outbound_network_access_restricted": ubx.FieldSpec(wire_name="outbound_network_access_restricted"),
+        "project_management_enabled": ubx.FieldSpec(wire_name="project_management_enabled"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "qna_runtime_endpoint": ubx.FieldSpec(wire_name="qna_runtime_endpoint"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "customer_managed_key": ubx.FieldSpec(
             wire_name="customer_managed_key",
             kind="list",
             fields=_Account_CustomerManagedKeyFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Account_IdentityFields,
         ),
-        "network_acls": sdk.FieldSpec(
+        "network_acls": ubx.FieldSpec(
             wire_name="network_acls",
             kind="list",
             fields=_Account_NetworkAclsFields,
         ),
-        "network_injection": sdk.FieldSpec(
+        "network_injection": ubx.FieldSpec(
             wire_name="network_injection",
             kind="list",
             fields=_Account_NetworkInjectionFields,
         ),
-        "storage": sdk.FieldSpec(
+        "storage": ubx.FieldSpec(
             wire_name="storage",
             kind="list",
             fields=_Account_StorageFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Account_TimeoutsFields,

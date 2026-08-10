@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ClusterUser_Role:
@@ -18,14 +18,14 @@ class ClusterUser_Timeouts:
     read: Any = None
 
 _ClusterUser_RoleFields = {
-    "database": sdk.FieldSpec(wire_name="database"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "database": ubx.FieldSpec(wire_name="database"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _ClusterUser_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -38,20 +38,20 @@ class ClusterUserConfig:
     role: Any = None
     timeouts: Any = None
 
-ClusterUser = sdk.ResourceBinding(
+ClusterUser = ubx.ResourceBinding(
     wire_type="azurerm_mongo_cluster_user",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "identity_provider_type": sdk.FieldSpec(wire_name="identity_provider_type"),
-        "mongo_cluster_id": sdk.FieldSpec(wire_name="mongo_cluster_id"),
-        "object_id": sdk.FieldSpec(wire_name="object_id"),
-        "principal_type": sdk.FieldSpec(wire_name="principal_type"),
-        "role": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "identity_provider_type": ubx.FieldSpec(wire_name="identity_provider_type"),
+        "mongo_cluster_id": ubx.FieldSpec(wire_name="mongo_cluster_id"),
+        "object_id": ubx.FieldSpec(wire_name="object_id"),
+        "principal_type": ubx.FieldSpec(wire_name="principal_type"),
+        "role": ubx.FieldSpec(
             wire_name="role",
             kind="list",
             fields=_ClusterUser_RoleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ClusterUser_TimeoutsFields,

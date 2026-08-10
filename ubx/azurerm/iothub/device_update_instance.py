@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DeviceUpdateInstance_DiagnosticStorageAccount:
@@ -19,15 +19,15 @@ class DeviceUpdateInstance_Timeouts:
     update: Any = None
 
 _DeviceUpdateInstance_DiagnosticStorageAccountFields = {
-    "connection_string": sdk.FieldSpec(wire_name="connection_string"),
-    "id": sdk.FieldSpec(wire_name="id"),
+    "connection_string": ubx.FieldSpec(wire_name="connection_string"),
+    "id": ubx.FieldSpec(wire_name="id"),
 }
 
 _DeviceUpdateInstance_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -41,21 +41,21 @@ class DeviceUpdateInstanceConfig:
     diagnostic_storage_account: Any = None
     timeouts: Any = None
 
-DeviceUpdateInstance = sdk.ResourceBinding(
+DeviceUpdateInstance = ubx.ResourceBinding(
     wire_type="azurerm_iothub_device_update_instance",
     fields={
-        "device_update_account_id": sdk.FieldSpec(wire_name="device_update_account_id"),
-        "diagnostic_enabled": sdk.FieldSpec(wire_name="diagnostic_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "iothub_id": sdk.FieldSpec(wire_name="iothub_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "diagnostic_storage_account": sdk.FieldSpec(
+        "device_update_account_id": ubx.FieldSpec(wire_name="device_update_account_id"),
+        "diagnostic_enabled": ubx.FieldSpec(wire_name="diagnostic_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "iothub_id": ubx.FieldSpec(wire_name="iothub_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "diagnostic_storage_account": ubx.FieldSpec(
             wire_name="diagnostic_storage_account",
             kind="list",
             fields=_DeviceUpdateInstance_DiagnosticStorageAccountFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DeviceUpdateInstance_TimeoutsFields,

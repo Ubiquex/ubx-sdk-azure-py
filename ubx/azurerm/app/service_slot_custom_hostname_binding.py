@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServiceSlotCustomHostnameBinding_Timeouts:
@@ -13,9 +13,9 @@ class ServiceSlotCustomHostnameBinding_Timeouts:
     read: Any = None
 
 _ServiceSlotCustomHostnameBinding_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -27,15 +27,15 @@ class ServiceSlotCustomHostnameBindingConfig:
     thumbprint: Any = None
     timeouts: Any = None
 
-ServiceSlotCustomHostnameBinding = sdk.ResourceBinding(
+ServiceSlotCustomHostnameBinding = ubx.ResourceBinding(
     wire_type="azurerm_app_service_slot_custom_hostname_binding",
     fields={
-        "app_service_slot_id": sdk.FieldSpec(wire_name="app_service_slot_id"),
-        "hostname": sdk.FieldSpec(wire_name="hostname"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "ssl_state": sdk.FieldSpec(wire_name="ssl_state"),
-        "thumbprint": sdk.FieldSpec(wire_name="thumbprint"),
-        "timeouts": sdk.FieldSpec(
+        "app_service_slot_id": ubx.FieldSpec(wire_name="app_service_slot_id"),
+        "hostname": ubx.FieldSpec(wire_name="hostname"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "ssl_state": ubx.FieldSpec(wire_name="ssl_state"),
+        "thumbprint": ubx.FieldSpec(wire_name="thumbprint"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ServiceSlotCustomHostnameBinding_TimeoutsFields,

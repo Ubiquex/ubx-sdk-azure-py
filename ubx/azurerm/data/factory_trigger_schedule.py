@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FactoryTriggerSchedule_Pipeline:
@@ -32,21 +32,21 @@ class FactoryTriggerSchedule_Timeouts:
     update: Any = None
 
 _FactoryTriggerSchedule_PipelineFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "parameters": sdk.FieldSpec(wire_name="parameters"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "parameters": ubx.FieldSpec(wire_name="parameters"),
 }
 
 _FactoryTriggerSchedule_Schedule_MonthlyFields = {
-    "week": sdk.FieldSpec(wire_name="week"),
-    "weekday": sdk.FieldSpec(wire_name="weekday"),
+    "week": ubx.FieldSpec(wire_name="week"),
+    "weekday": ubx.FieldSpec(wire_name="weekday"),
 }
 
 _FactoryTriggerSchedule_ScheduleFields = {
-    "days_of_month": sdk.FieldSpec(wire_name="days_of_month"),
-    "days_of_week": sdk.FieldSpec(wire_name="days_of_week"),
-    "hours": sdk.FieldSpec(wire_name="hours"),
-    "minutes": sdk.FieldSpec(wire_name="minutes"),
-    "monthly": sdk.FieldSpec(
+    "days_of_month": ubx.FieldSpec(wire_name="days_of_month"),
+    "days_of_week": ubx.FieldSpec(wire_name="days_of_week"),
+    "hours": ubx.FieldSpec(wire_name="hours"),
+    "minutes": ubx.FieldSpec(wire_name="minutes"),
+    "monthly": ubx.FieldSpec(
         wire_name="monthly",
         kind="list",
         fields=_FactoryTriggerSchedule_Schedule_MonthlyFields,
@@ -54,10 +54,10 @@ _FactoryTriggerSchedule_ScheduleFields = {
 }
 
 _FactoryTriggerSchedule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -79,33 +79,33 @@ class FactoryTriggerScheduleConfig:
     schedule: Any = None
     timeouts: Any = None
 
-FactoryTriggerSchedule = sdk.ResourceBinding(
+FactoryTriggerSchedule = ubx.ResourceBinding(
     wire_type="azurerm_data_factory_trigger_schedule",
     fields={
-        "activated": sdk.FieldSpec(wire_name="activated"),
-        "annotations": sdk.FieldSpec(wire_name="annotations"),
-        "data_factory_id": sdk.FieldSpec(wire_name="data_factory_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "end_time": sdk.FieldSpec(wire_name="end_time"),
-        "frequency": sdk.FieldSpec(wire_name="frequency"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "interval": sdk.FieldSpec(wire_name="interval"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "pipeline_name": sdk.FieldSpec(wire_name="pipeline_name"),
-        "pipeline_parameters": sdk.FieldSpec(wire_name="pipeline_parameters"),
-        "start_time": sdk.FieldSpec(wire_name="start_time"),
-        "time_zone": sdk.FieldSpec(wire_name="time_zone"),
-        "pipeline": sdk.FieldSpec(
+        "activated": ubx.FieldSpec(wire_name="activated"),
+        "annotations": ubx.FieldSpec(wire_name="annotations"),
+        "data_factory_id": ubx.FieldSpec(wire_name="data_factory_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "end_time": ubx.FieldSpec(wire_name="end_time"),
+        "frequency": ubx.FieldSpec(wire_name="frequency"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "interval": ubx.FieldSpec(wire_name="interval"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "pipeline_name": ubx.FieldSpec(wire_name="pipeline_name"),
+        "pipeline_parameters": ubx.FieldSpec(wire_name="pipeline_parameters"),
+        "start_time": ubx.FieldSpec(wire_name="start_time"),
+        "time_zone": ubx.FieldSpec(wire_name="time_zone"),
+        "pipeline": ubx.FieldSpec(
             wire_name="pipeline",
             kind="list",
             fields=_FactoryTriggerSchedule_PipelineFields,
         ),
-        "schedule": sdk.FieldSpec(
+        "schedule": ubx.FieldSpec(
             wire_name="schedule",
             kind="list",
             fields=_FactoryTriggerSchedule_ScheduleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FactoryTriggerSchedule_TimeoutsFields,

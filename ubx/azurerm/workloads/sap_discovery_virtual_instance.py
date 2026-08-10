@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SapDiscoveryVirtualInstance_Identity:
@@ -19,15 +19,15 @@ class SapDiscoveryVirtualInstance_Timeouts:
     update: Any = None
 
 _SapDiscoveryVirtualInstance_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _SapDiscoveryVirtualInstance_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -46,26 +46,26 @@ class SapDiscoveryVirtualInstanceConfig:
     identity: Any = None
     timeouts: Any = None
 
-SapDiscoveryVirtualInstance = sdk.ResourceBinding(
+SapDiscoveryVirtualInstance = ubx.ResourceBinding(
     wire_type="azurerm_workloads_sap_discovery_virtual_instance",
     fields={
-        "central_server_virtual_machine_id": sdk.FieldSpec(wire_name="central_server_virtual_machine_id"),
-        "environment": sdk.FieldSpec(wire_name="environment"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "managed_resource_group_name": sdk.FieldSpec(wire_name="managed_resource_group_name"),
-        "managed_resources_network_access_type": sdk.FieldSpec(wire_name="managed_resources_network_access_type"),
-        "managed_storage_account_name": sdk.FieldSpec(wire_name="managed_storage_account_name"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sap_product": sdk.FieldSpec(wire_name="sap_product"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "identity": sdk.FieldSpec(
+        "central_server_virtual_machine_id": ubx.FieldSpec(wire_name="central_server_virtual_machine_id"),
+        "environment": ubx.FieldSpec(wire_name="environment"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "managed_resource_group_name": ubx.FieldSpec(wire_name="managed_resource_group_name"),
+        "managed_resources_network_access_type": ubx.FieldSpec(wire_name="managed_resources_network_access_type"),
+        "managed_storage_account_name": ubx.FieldSpec(wire_name="managed_storage_account_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sap_product": ubx.FieldSpec(wire_name="sap_product"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_SapDiscoveryVirtualInstance_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SapDiscoveryVirtualInstance_TimeoutsFields,

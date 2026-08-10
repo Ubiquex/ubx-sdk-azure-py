@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FabricManagedCluster_Authentication_ActiveDirectory:
@@ -76,24 +76,24 @@ class FabricManagedCluster_Timeouts:
     update: Any = None
 
 _FabricManagedCluster_Authentication_ActiveDirectoryFields = {
-    "client_application_id": sdk.FieldSpec(wire_name="client_application_id"),
-    "cluster_application_id": sdk.FieldSpec(wire_name="cluster_application_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
+    "client_application_id": ubx.FieldSpec(wire_name="client_application_id"),
+    "cluster_application_id": ubx.FieldSpec(wire_name="cluster_application_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
 }
 
 _FabricManagedCluster_Authentication_CertificateFields = {
-    "common_name": sdk.FieldSpec(wire_name="common_name"),
-    "thumbprint": sdk.FieldSpec(wire_name="thumbprint"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "common_name": ubx.FieldSpec(wire_name="common_name"),
+    "thumbprint": ubx.FieldSpec(wire_name="thumbprint"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _FabricManagedCluster_AuthenticationFields = {
-    "active_directory": sdk.FieldSpec(
+    "active_directory": ubx.FieldSpec(
         wire_name="active_directory",
         kind="list",
         fields=_FabricManagedCluster_Authentication_ActiveDirectoryFields,
     ),
-    "certificate": sdk.FieldSpec(
+    "certificate": ubx.FieldSpec(
         wire_name="certificate",
         kind="list",
         fields=_FabricManagedCluster_Authentication_CertificateFields,
@@ -101,27 +101,27 @@ _FabricManagedCluster_AuthenticationFields = {
 }
 
 _FabricManagedCluster_CustomFabricSettingFields = {
-    "parameter": sdk.FieldSpec(wire_name="parameter"),
-    "section": sdk.FieldSpec(wire_name="section"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "parameter": ubx.FieldSpec(wire_name="parameter"),
+    "section": ubx.FieldSpec(wire_name="section"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _FabricManagedCluster_LbRuleFields = {
-    "backend_port": sdk.FieldSpec(wire_name="backend_port"),
-    "frontend_port": sdk.FieldSpec(wire_name="frontend_port"),
-    "probe_protocol": sdk.FieldSpec(wire_name="probe_protocol"),
-    "probe_request_path": sdk.FieldSpec(wire_name="probe_request_path"),
-    "protocol": sdk.FieldSpec(wire_name="protocol"),
+    "backend_port": ubx.FieldSpec(wire_name="backend_port"),
+    "frontend_port": ubx.FieldSpec(wire_name="frontend_port"),
+    "probe_protocol": ubx.FieldSpec(wire_name="probe_protocol"),
+    "probe_request_path": ubx.FieldSpec(wire_name="probe_request_path"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
 }
 
 _FabricManagedCluster_NodeType_VmSecrets_CertificatesFields = {
-    "store": sdk.FieldSpec(wire_name="store"),
-    "url": sdk.FieldSpec(wire_name="url"),
+    "store": ubx.FieldSpec(wire_name="store"),
+    "url": ubx.FieldSpec(wire_name="url"),
 }
 
 _FabricManagedCluster_NodeType_VmSecretsFields = {
-    "vault_id": sdk.FieldSpec(wire_name="vault_id"),
-    "certificates": sdk.FieldSpec(
+    "vault_id": ubx.FieldSpec(wire_name="vault_id"),
+    "certificates": ubx.FieldSpec(
         wire_name="certificates",
         kind="list",
         fields=_FabricManagedCluster_NodeType_VmSecrets_CertificatesFields,
@@ -129,24 +129,24 @@ _FabricManagedCluster_NodeType_VmSecretsFields = {
 }
 
 _FabricManagedCluster_NodeTypeFields = {
-    "application_port_range": sdk.FieldSpec(wire_name="application_port_range"),
-    "capacities": sdk.FieldSpec(wire_name="capacities"),
-    "data_disk_size_gb": sdk.FieldSpec(wire_name="data_disk_size_gb"),
-    "data_disk_type": sdk.FieldSpec(wire_name="data_disk_type"),
-    "ephemeral_port_range": sdk.FieldSpec(wire_name="ephemeral_port_range"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "multiple_placement_groups_enabled": sdk.FieldSpec(wire_name="multiple_placement_groups_enabled"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "placement_properties": sdk.FieldSpec(wire_name="placement_properties"),
-    "primary": sdk.FieldSpec(wire_name="primary"),
-    "stateless": sdk.FieldSpec(wire_name="stateless"),
-    "vm_image_offer": sdk.FieldSpec(wire_name="vm_image_offer"),
-    "vm_image_publisher": sdk.FieldSpec(wire_name="vm_image_publisher"),
-    "vm_image_sku": sdk.FieldSpec(wire_name="vm_image_sku"),
-    "vm_image_version": sdk.FieldSpec(wire_name="vm_image_version"),
-    "vm_instance_count": sdk.FieldSpec(wire_name="vm_instance_count"),
-    "vm_size": sdk.FieldSpec(wire_name="vm_size"),
-    "vm_secrets": sdk.FieldSpec(
+    "application_port_range": ubx.FieldSpec(wire_name="application_port_range"),
+    "capacities": ubx.FieldSpec(wire_name="capacities"),
+    "data_disk_size_gb": ubx.FieldSpec(wire_name="data_disk_size_gb"),
+    "data_disk_type": ubx.FieldSpec(wire_name="data_disk_type"),
+    "ephemeral_port_range": ubx.FieldSpec(wire_name="ephemeral_port_range"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "multiple_placement_groups_enabled": ubx.FieldSpec(wire_name="multiple_placement_groups_enabled"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "placement_properties": ubx.FieldSpec(wire_name="placement_properties"),
+    "primary": ubx.FieldSpec(wire_name="primary"),
+    "stateless": ubx.FieldSpec(wire_name="stateless"),
+    "vm_image_offer": ubx.FieldSpec(wire_name="vm_image_offer"),
+    "vm_image_publisher": ubx.FieldSpec(wire_name="vm_image_publisher"),
+    "vm_image_sku": ubx.FieldSpec(wire_name="vm_image_sku"),
+    "vm_image_version": ubx.FieldSpec(wire_name="vm_image_version"),
+    "vm_instance_count": ubx.FieldSpec(wire_name="vm_instance_count"),
+    "vm_size": ubx.FieldSpec(wire_name="vm_size"),
+    "vm_secrets": ubx.FieldSpec(
         wire_name="vm_secrets",
         kind="list",
         fields=_FabricManagedCluster_NodeType_VmSecretsFields,
@@ -154,10 +154,10 @@ _FabricManagedCluster_NodeTypeFields = {
 }
 
 _FabricManagedCluster_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -183,45 +183,45 @@ class FabricManagedClusterConfig:
     node_type: Any = None
     timeouts: Any = None
 
-FabricManagedCluster = sdk.ResourceBinding(
+FabricManagedCluster = ubx.ResourceBinding(
     wire_type="azurerm_service_fabric_managed_cluster",
     fields={
-        "backup_service_enabled": sdk.FieldSpec(wire_name="backup_service_enabled"),
-        "client_connection_port": sdk.FieldSpec(wire_name="client_connection_port"),
-        "dns_name": sdk.FieldSpec(wire_name="dns_name"),
-        "dns_service_enabled": sdk.FieldSpec(wire_name="dns_service_enabled"),
-        "http_gateway_port": sdk.FieldSpec(wire_name="http_gateway_port"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "password": sdk.FieldSpec(wire_name="password"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "upgrade_wave": sdk.FieldSpec(wire_name="upgrade_wave"),
-        "username": sdk.FieldSpec(wire_name="username"),
-        "authentication": sdk.FieldSpec(
+        "backup_service_enabled": ubx.FieldSpec(wire_name="backup_service_enabled"),
+        "client_connection_port": ubx.FieldSpec(wire_name="client_connection_port"),
+        "dns_name": ubx.FieldSpec(wire_name="dns_name"),
+        "dns_service_enabled": ubx.FieldSpec(wire_name="dns_service_enabled"),
+        "http_gateway_port": ubx.FieldSpec(wire_name="http_gateway_port"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "password": ubx.FieldSpec(wire_name="password"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "upgrade_wave": ubx.FieldSpec(wire_name="upgrade_wave"),
+        "username": ubx.FieldSpec(wire_name="username"),
+        "authentication": ubx.FieldSpec(
             wire_name="authentication",
             kind="list",
             fields=_FabricManagedCluster_AuthenticationFields,
         ),
-        "custom_fabric_setting": sdk.FieldSpec(
+        "custom_fabric_setting": ubx.FieldSpec(
             wire_name="custom_fabric_setting",
             kind="list",
             fields=_FabricManagedCluster_CustomFabricSettingFields,
         ),
-        "lb_rule": sdk.FieldSpec(
+        "lb_rule": ubx.FieldSpec(
             wire_name="lb_rule",
             kind="list",
             fields=_FabricManagedCluster_LbRuleFields,
         ),
-        "node_type": sdk.FieldSpec(
+        "node_type": ubx.FieldSpec(
             wire_name="node_type",
             kind="list",
             fields=_FabricManagedCluster_NodeTypeFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FabricManagedCluster_TimeoutsFields,

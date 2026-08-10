@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SecurityPerimeterAssociation_Timeouts:
@@ -14,10 +14,10 @@ class SecurityPerimeterAssociation_Timeouts:
     update: Any = None
 
 _SecurityPerimeterAssociation_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class SecurityPerimeterAssociationConfig:
     resource_id: Any = None
     timeouts: Any = None
 
-SecurityPerimeterAssociation = sdk.ResourceBinding(
+SecurityPerimeterAssociation = ubx.ResourceBinding(
     wire_type="azurerm_network_security_perimeter_association",
     fields={
-        "access_mode": sdk.FieldSpec(wire_name="access_mode"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "network_security_perimeter_profile_id": sdk.FieldSpec(wire_name="network_security_perimeter_profile_id"),
-        "resource_id": sdk.FieldSpec(wire_name="resource_id"),
-        "timeouts": sdk.FieldSpec(
+        "access_mode": ubx.FieldSpec(wire_name="access_mode"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network_security_perimeter_profile_id": ubx.FieldSpec(wire_name="network_security_perimeter_profile_id"),
+        "resource_id": ubx.FieldSpec(wire_name="resource_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SecurityPerimeterAssociation_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SqlDedicatedGateway_Timeouts:
@@ -14,10 +14,10 @@ class SqlDedicatedGateway_Timeouts:
     update: Any = None
 
 _SqlDedicatedGateway_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -28,14 +28,14 @@ class SqlDedicatedGatewayConfig:
     instance_size: Any = None
     timeouts: Any = None
 
-SqlDedicatedGateway = sdk.ResourceBinding(
+SqlDedicatedGateway = ubx.ResourceBinding(
     wire_type="azurerm_cosmosdb_sql_dedicated_gateway",
     fields={
-        "cosmosdb_account_id": sdk.FieldSpec(wire_name="cosmosdb_account_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "instance_count": sdk.FieldSpec(wire_name="instance_count"),
-        "instance_size": sdk.FieldSpec(wire_name="instance_size"),
-        "timeouts": sdk.FieldSpec(
+        "cosmosdb_account_id": ubx.FieldSpec(wire_name="cosmosdb_account_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "instance_count": ubx.FieldSpec(wire_name="instance_count"),
+        "instance_size": ubx.FieldSpec(wire_name="instance_size"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SqlDedicatedGateway_TimeoutsFields,

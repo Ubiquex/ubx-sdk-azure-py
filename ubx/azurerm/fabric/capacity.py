@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Capacity_Sku:
@@ -19,15 +19,15 @@ class Capacity_Timeouts:
     update: Any = None
 
 _Capacity_SkuFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "tier": sdk.FieldSpec(wire_name="tier"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "tier": ubx.FieldSpec(wire_name="tier"),
 }
 
 _Capacity_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -41,21 +41,21 @@ class CapacityConfig:
     sku: Any = None
     timeouts: Any = None
 
-Capacity = sdk.ResourceBinding(
+Capacity = ubx.ResourceBinding(
     wire_type="azurerm_fabric_capacity",
     fields={
-        "administration_members": sdk.FieldSpec(wire_name="administration_members"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "sku": sdk.FieldSpec(
+        "administration_members": ubx.FieldSpec(wire_name="administration_members"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "sku": ubx.FieldSpec(
             wire_name="sku",
             kind="list",
             fields=_Capacity_SkuFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Capacity_TimeoutsFields,

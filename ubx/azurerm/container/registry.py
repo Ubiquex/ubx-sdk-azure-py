@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Registry_Encryption:
@@ -43,18 +43,18 @@ class Registry_Timeouts:
     update: Any = None
 
 _Registry_EncryptionFields = {
-    "identity_client_id": sdk.FieldSpec(wire_name="identity_client_id"),
-    "key_vault_key_id": sdk.FieldSpec(wire_name="key_vault_key_id"),
+    "identity_client_id": ubx.FieldSpec(wire_name="identity_client_id"),
+    "key_vault_key_id": ubx.FieldSpec(wire_name="key_vault_key_id"),
 }
 
 _Registry_NetworkRuleSet_IpRuleFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "ip_range": sdk.FieldSpec(wire_name="ip_range"),
+    "action": ubx.FieldSpec(wire_name="action"),
+    "ip_range": ubx.FieldSpec(wire_name="ip_range"),
 }
 
 _Registry_NetworkRuleSetFields = {
-    "default_action": sdk.FieldSpec(wire_name="default_action"),
-    "ip_rule": sdk.FieldSpec(
+    "default_action": ubx.FieldSpec(wire_name="default_action"),
+    "ip_rule": ubx.FieldSpec(
         wire_name="ip_rule",
         kind="set",
         fields=_Registry_NetworkRuleSet_IpRuleFields,
@@ -62,24 +62,24 @@ _Registry_NetworkRuleSetFields = {
 }
 
 _Registry_GeoreplicationsFields = {
-    "global_endpoint_routing_enabled": sdk.FieldSpec(wire_name="global_endpoint_routing_enabled"),
-    "location": sdk.FieldSpec(wire_name="location"),
-    "tags": sdk.FieldSpec(wire_name="tags"),
-    "zone_redundancy_enabled": sdk.FieldSpec(wire_name="zone_redundancy_enabled"),
+    "global_endpoint_routing_enabled": ubx.FieldSpec(wire_name="global_endpoint_routing_enabled"),
+    "location": ubx.FieldSpec(wire_name="location"),
+    "tags": ubx.FieldSpec(wire_name="tags"),
+    "zone_redundancy_enabled": ubx.FieldSpec(wire_name="zone_redundancy_enabled"),
 }
 
 _Registry_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Registry_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -108,48 +108,48 @@ class RegistryConfig:
     identity: Any = None
     timeouts: Any = None
 
-Registry = sdk.ResourceBinding(
+Registry = ubx.ResourceBinding(
     wire_type="azurerm_container_registry",
     fields={
-        "admin_enabled": sdk.FieldSpec(wire_name="admin_enabled"),
-        "anonymous_pull_enabled": sdk.FieldSpec(wire_name="anonymous_pull_enabled"),
-        "azuread_authentication_as_arm_policy_enabled": sdk.FieldSpec(wire_name="azuread_authentication_as_arm_policy_enabled"),
-        "data_endpoint_enabled": sdk.FieldSpec(wire_name="data_endpoint_enabled"),
-        "encryption": sdk.FieldSpec(
+        "admin_enabled": ubx.FieldSpec(wire_name="admin_enabled"),
+        "anonymous_pull_enabled": ubx.FieldSpec(wire_name="anonymous_pull_enabled"),
+        "azuread_authentication_as_arm_policy_enabled": ubx.FieldSpec(wire_name="azuread_authentication_as_arm_policy_enabled"),
+        "data_endpoint_enabled": ubx.FieldSpec(wire_name="data_endpoint_enabled"),
+        "encryption": ubx.FieldSpec(
             wire_name="encryption",
             kind="list",
             fields=_Registry_EncryptionFields,
         ),
-        "export_policy_enabled": sdk.FieldSpec(wire_name="export_policy_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "network_rule_bypass_for_tasks_enabled": sdk.FieldSpec(wire_name="network_rule_bypass_for_tasks_enabled"),
-        "network_rule_bypass_option": sdk.FieldSpec(wire_name="network_rule_bypass_option"),
-        "network_rule_set": sdk.FieldSpec(
+        "export_policy_enabled": ubx.FieldSpec(wire_name="export_policy_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network_rule_bypass_for_tasks_enabled": ubx.FieldSpec(wire_name="network_rule_bypass_for_tasks_enabled"),
+        "network_rule_bypass_option": ubx.FieldSpec(wire_name="network_rule_bypass_option"),
+        "network_rule_set": ubx.FieldSpec(
             wire_name="network_rule_set",
             kind="list",
             fields=_Registry_NetworkRuleSetFields,
         ),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "quarantine_policy_enabled": sdk.FieldSpec(wire_name="quarantine_policy_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "retention_policy_in_days": sdk.FieldSpec(wire_name="retention_policy_in_days"),
-        "role_assignment_mode": sdk.FieldSpec(wire_name="role_assignment_mode"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "zone_redundancy_enabled": sdk.FieldSpec(wire_name="zone_redundancy_enabled"),
-        "georeplications": sdk.FieldSpec(
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "quarantine_policy_enabled": ubx.FieldSpec(wire_name="quarantine_policy_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "retention_policy_in_days": ubx.FieldSpec(wire_name="retention_policy_in_days"),
+        "role_assignment_mode": ubx.FieldSpec(wire_name="role_assignment_mode"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "zone_redundancy_enabled": ubx.FieldSpec(wire_name="zone_redundancy_enabled"),
+        "georeplications": ubx.FieldSpec(
             wire_name="georeplications",
             kind="list",
             fields=_Registry_GeoreplicationsFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Registry_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Registry_TimeoutsFields,

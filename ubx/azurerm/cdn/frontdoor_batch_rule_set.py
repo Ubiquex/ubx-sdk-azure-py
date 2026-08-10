@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FrontdoorBatchRuleSet_Rule_Actions_ModifyRequestHeader:
@@ -114,31 +114,31 @@ class FrontdoorBatchRuleSet_Timeouts:
     update: Any = None
 
 _FrontdoorBatchRuleSet_Rule_Actions_ModifyRequestHeaderFields = {
-    "header_name": sdk.FieldSpec(wire_name="header_name"),
-    "header_value": sdk.FieldSpec(wire_name="header_value"),
-    "operator": sdk.FieldSpec(wire_name="operator"),
+    "header_name": ubx.FieldSpec(wire_name="header_name"),
+    "header_value": ubx.FieldSpec(wire_name="header_value"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
 }
 
 _FrontdoorBatchRuleSet_Rule_Actions_RouteConfigurationOverride_CachingFields = {
-    "behaviour": sdk.FieldSpec(wire_name="behaviour"),
-    "compression_enabled": sdk.FieldSpec(wire_name="compression_enabled"),
-    "duration": sdk.FieldSpec(wire_name="duration"),
-    "query_string_behaviour": sdk.FieldSpec(wire_name="query_string_behaviour"),
-    "query_string_parameters": sdk.FieldSpec(wire_name="query_string_parameters"),
+    "behaviour": ubx.FieldSpec(wire_name="behaviour"),
+    "compression_enabled": ubx.FieldSpec(wire_name="compression_enabled"),
+    "duration": ubx.FieldSpec(wire_name="duration"),
+    "query_string_behaviour": ubx.FieldSpec(wire_name="query_string_behaviour"),
+    "query_string_parameters": ubx.FieldSpec(wire_name="query_string_parameters"),
 }
 
 _FrontdoorBatchRuleSet_Rule_Actions_RouteConfigurationOverride_OriginGroupFields = {
-    "cdn_frontdoor_origin_group_id": sdk.FieldSpec(wire_name="cdn_frontdoor_origin_group_id"),
-    "forwarding_protocol": sdk.FieldSpec(wire_name="forwarding_protocol"),
+    "cdn_frontdoor_origin_group_id": ubx.FieldSpec(wire_name="cdn_frontdoor_origin_group_id"),
+    "forwarding_protocol": ubx.FieldSpec(wire_name="forwarding_protocol"),
 }
 
 _FrontdoorBatchRuleSet_Rule_Actions_RouteConfigurationOverrideFields = {
-    "caching": sdk.FieldSpec(
+    "caching": ubx.FieldSpec(
         wire_name="caching",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Actions_RouteConfigurationOverride_CachingFields,
     ),
-    "origin_group": sdk.FieldSpec(
+    "origin_group": ubx.FieldSpec(
         wire_name="origin_group",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Actions_RouteConfigurationOverride_OriginGroupFields,
@@ -146,42 +146,42 @@ _FrontdoorBatchRuleSet_Rule_Actions_RouteConfigurationOverrideFields = {
 }
 
 _FrontdoorBatchRuleSet_Rule_Actions_UrlRedirectFields = {
-    "destination_fragment": sdk.FieldSpec(wire_name="destination_fragment"),
-    "destination_host_name": sdk.FieldSpec(wire_name="destination_host_name"),
-    "destination_path": sdk.FieldSpec(wire_name="destination_path"),
-    "query_string": sdk.FieldSpec(wire_name="query_string"),
-    "redirect_protocol": sdk.FieldSpec(wire_name="redirect_protocol"),
-    "redirect_type": sdk.FieldSpec(wire_name="redirect_type"),
+    "destination_fragment": ubx.FieldSpec(wire_name="destination_fragment"),
+    "destination_host_name": ubx.FieldSpec(wire_name="destination_host_name"),
+    "destination_path": ubx.FieldSpec(wire_name="destination_path"),
+    "query_string": ubx.FieldSpec(wire_name="query_string"),
+    "redirect_protocol": ubx.FieldSpec(wire_name="redirect_protocol"),
+    "redirect_type": ubx.FieldSpec(wire_name="redirect_type"),
 }
 
 _FrontdoorBatchRuleSet_Rule_Actions_UrlRewriteFields = {
-    "destination_path": sdk.FieldSpec(wire_name="destination_path"),
-    "preserve_unmatched_path_enabled": sdk.FieldSpec(wire_name="preserve_unmatched_path_enabled"),
-    "source_pattern": sdk.FieldSpec(wire_name="source_pattern"),
+    "destination_path": ubx.FieldSpec(wire_name="destination_path"),
+    "preserve_unmatched_path_enabled": ubx.FieldSpec(wire_name="preserve_unmatched_path_enabled"),
+    "source_pattern": ubx.FieldSpec(wire_name="source_pattern"),
 }
 
 _FrontdoorBatchRuleSet_Rule_ActionsFields = {
-    "modify_request_header": sdk.FieldSpec(
+    "modify_request_header": ubx.FieldSpec(
         wire_name="modify_request_header",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Actions_ModifyRequestHeaderFields,
     ),
-    "modify_response_header": sdk.FieldSpec(
+    "modify_response_header": ubx.FieldSpec(
         wire_name="modify_response_header",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Actions_ModifyRequestHeaderFields,
     ),
-    "route_configuration_override": sdk.FieldSpec(
+    "route_configuration_override": ubx.FieldSpec(
         wire_name="route_configuration_override",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Actions_RouteConfigurationOverrideFields,
     ),
-    "url_redirect": sdk.FieldSpec(
+    "url_redirect": ubx.FieldSpec(
         wire_name="url_redirect",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Actions_UrlRedirectFields,
     ),
-    "url_rewrite": sdk.FieldSpec(
+    "url_rewrite": ubx.FieldSpec(
         wire_name="url_rewrite",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Actions_UrlRewriteFields,
@@ -189,120 +189,120 @@ _FrontdoorBatchRuleSet_Rule_ActionsFields = {
 }
 
 _FrontdoorBatchRuleSet_Rule_Conditions_ClientPortFields = {
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "values": sdk.FieldSpec(wire_name="values"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "values": ubx.FieldSpec(wire_name="values"),
 }
 
 _FrontdoorBatchRuleSet_Rule_Conditions_HostNameFields = {
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "transforms": sdk.FieldSpec(wire_name="transforms"),
-    "values": sdk.FieldSpec(wire_name="values"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "transforms": ubx.FieldSpec(wire_name="transforms"),
+    "values": ubx.FieldSpec(wire_name="values"),
 }
 
 _FrontdoorBatchRuleSet_Rule_Conditions_HttpVersionFields = {
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "values": sdk.FieldSpec(wire_name="values"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "values": ubx.FieldSpec(wire_name="values"),
 }
 
 _FrontdoorBatchRuleSet_Rule_Conditions_PostArgumentFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "transforms": sdk.FieldSpec(wire_name="transforms"),
-    "values": sdk.FieldSpec(wire_name="values"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "transforms": ubx.FieldSpec(wire_name="transforms"),
+    "values": ubx.FieldSpec(wire_name="values"),
 }
 
 _FrontdoorBatchRuleSet_Rule_ConditionsFields = {
-    "client_port": sdk.FieldSpec(
+    "client_port": ubx.FieldSpec(
         wire_name="client_port",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Conditions_ClientPortFields,
     ),
-    "device_type": sdk.FieldSpec(
+    "device_type": ubx.FieldSpec(
         wire_name="device_type",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Conditions_ClientPortFields,
     ),
-    "host_name": sdk.FieldSpec(
+    "host_name": ubx.FieldSpec(
         wire_name="host_name",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Conditions_HostNameFields,
     ),
-    "http_version": sdk.FieldSpec(
+    "http_version": ubx.FieldSpec(
         wire_name="http_version",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Conditions_HttpVersionFields,
     ),
-    "post_argument": sdk.FieldSpec(
+    "post_argument": ubx.FieldSpec(
         wire_name="post_argument",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Conditions_PostArgumentFields,
     ),
-    "query_string": sdk.FieldSpec(
+    "query_string": ubx.FieldSpec(
         wire_name="query_string",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Conditions_HostNameFields,
     ),
-    "remote_address": sdk.FieldSpec(
+    "remote_address": ubx.FieldSpec(
         wire_name="remote_address",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Conditions_ClientPortFields,
     ),
-    "request_body": sdk.FieldSpec(
+    "request_body": ubx.FieldSpec(
         wire_name="request_body",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Conditions_HostNameFields,
     ),
-    "request_cookies": sdk.FieldSpec(
+    "request_cookies": ubx.FieldSpec(
         wire_name="request_cookies",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Conditions_PostArgumentFields,
     ),
-    "request_file_extension": sdk.FieldSpec(
+    "request_file_extension": ubx.FieldSpec(
         wire_name="request_file_extension",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Conditions_HostNameFields,
     ),
-    "request_filename": sdk.FieldSpec(
+    "request_filename": ubx.FieldSpec(
         wire_name="request_filename",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Conditions_HostNameFields,
     ),
-    "request_header": sdk.FieldSpec(
+    "request_header": ubx.FieldSpec(
         wire_name="request_header",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Conditions_PostArgumentFields,
     ),
-    "request_method": sdk.FieldSpec(
+    "request_method": ubx.FieldSpec(
         wire_name="request_method",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Conditions_HttpVersionFields,
     ),
-    "request_path": sdk.FieldSpec(
+    "request_path": ubx.FieldSpec(
         wire_name="request_path",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Conditions_HostNameFields,
     ),
-    "request_scheme": sdk.FieldSpec(
+    "request_scheme": ubx.FieldSpec(
         wire_name="request_scheme",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Conditions_ClientPortFields,
     ),
-    "request_url": sdk.FieldSpec(
+    "request_url": ubx.FieldSpec(
         wire_name="request_url",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Conditions_HostNameFields,
     ),
-    "server_port": sdk.FieldSpec(
+    "server_port": ubx.FieldSpec(
         wire_name="server_port",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Conditions_HttpVersionFields,
     ),
-    "socket_address": sdk.FieldSpec(
+    "socket_address": ubx.FieldSpec(
         wire_name="socket_address",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Conditions_ClientPortFields,
     ),
-    "ssl_protocol": sdk.FieldSpec(
+    "ssl_protocol": ubx.FieldSpec(
         wire_name="ssl_protocol",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_Conditions_HttpVersionFields,
@@ -310,15 +310,15 @@ _FrontdoorBatchRuleSet_Rule_ConditionsFields = {
 }
 
 _FrontdoorBatchRuleSet_RuleFields = {
-    "behaviour_on_match": sdk.FieldSpec(wire_name="behaviour_on_match"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "order": sdk.FieldSpec(wire_name="order"),
-    "actions": sdk.FieldSpec(
+    "behaviour_on_match": ubx.FieldSpec(wire_name="behaviour_on_match"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "order": ubx.FieldSpec(wire_name="order"),
+    "actions": ubx.FieldSpec(
         wire_name="actions",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_ActionsFields,
     ),
-    "conditions": sdk.FieldSpec(
+    "conditions": ubx.FieldSpec(
         wire_name="conditions",
         kind="list",
         fields=_FrontdoorBatchRuleSet_Rule_ConditionsFields,
@@ -326,10 +326,10 @@ _FrontdoorBatchRuleSet_RuleFields = {
 }
 
 _FrontdoorBatchRuleSet_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -339,17 +339,17 @@ class FrontdoorBatchRuleSetConfig:
     rule: Any = None
     timeouts: Any = None
 
-FrontdoorBatchRuleSet = sdk.ResourceBinding(
+FrontdoorBatchRuleSet = ubx.ResourceBinding(
     wire_type="azurerm_cdn_frontdoor_batch_rule_set",
     fields={
-        "cdn_frontdoor_profile_id": sdk.FieldSpec(wire_name="cdn_frontdoor_profile_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "rule": sdk.FieldSpec(
+        "cdn_frontdoor_profile_id": ubx.FieldSpec(wire_name="cdn_frontdoor_profile_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "rule": ubx.FieldSpec(
             wire_name="rule",
             kind="list",
             fields=_FrontdoorBatchRuleSet_RuleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FrontdoorBatchRuleSet_TimeoutsFields,

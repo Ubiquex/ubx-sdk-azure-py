@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MoverTargetEndpoint_Timeouts:
@@ -14,10 +14,10 @@ class MoverTargetEndpoint_Timeouts:
     update: Any = None
 
 _MoverTargetEndpoint_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class MoverTargetEndpointConfig:
     storage_mover_id: Any = None
     timeouts: Any = None
 
-MoverTargetEndpoint = sdk.ResourceBinding(
+MoverTargetEndpoint = ubx.ResourceBinding(
     wire_type="azurerm_storage_mover_target_endpoint",
     fields={
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "storage_container_name": sdk.FieldSpec(wire_name="storage_container_name"),
-        "storage_mover_id": sdk.FieldSpec(wire_name="storage_mover_id"),
-        "timeouts": sdk.FieldSpec(
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "storage_container_name": ubx.FieldSpec(wire_name="storage_container_name"),
+        "storage_mover_id": ubx.FieldSpec(wire_name="storage_mover_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_MoverTargetEndpoint_TimeoutsFields,

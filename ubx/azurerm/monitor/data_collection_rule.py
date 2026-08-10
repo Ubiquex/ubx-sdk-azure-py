@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DataCollectionRule_DataFlow:
@@ -170,21 +170,21 @@ class DataCollectionRule_Timeouts:
     update: Any = None
 
 _DataCollectionRule_DataFlowFields = {
-    "built_in_transform": sdk.FieldSpec(wire_name="built_in_transform"),
-    "destinations": sdk.FieldSpec(wire_name="destinations"),
-    "output_stream": sdk.FieldSpec(wire_name="output_stream"),
-    "streams": sdk.FieldSpec(wire_name="streams"),
-    "transform_kql": sdk.FieldSpec(wire_name="transform_kql"),
+    "built_in_transform": ubx.FieldSpec(wire_name="built_in_transform"),
+    "destinations": ubx.FieldSpec(wire_name="destinations"),
+    "output_stream": ubx.FieldSpec(wire_name="output_stream"),
+    "streams": ubx.FieldSpec(wire_name="streams"),
+    "transform_kql": ubx.FieldSpec(wire_name="transform_kql"),
 }
 
 _DataCollectionRule_DataSources_DataImport_EventHubDataSourceFields = {
-    "consumer_group": sdk.FieldSpec(wire_name="consumer_group"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "stream": sdk.FieldSpec(wire_name="stream"),
+    "consumer_group": ubx.FieldSpec(wire_name="consumer_group"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "stream": ubx.FieldSpec(wire_name="stream"),
 }
 
 _DataCollectionRule_DataSources_DataImportFields = {
-    "event_hub_data_source": sdk.FieldSpec(
+    "event_hub_data_source": ubx.FieldSpec(
         wire_name="event_hub_data_source",
         kind="list",
         fields=_DataCollectionRule_DataSources_DataImport_EventHubDataSourceFields,
@@ -192,25 +192,25 @@ _DataCollectionRule_DataSources_DataImportFields = {
 }
 
 _DataCollectionRule_DataSources_ExtensionFields = {
-    "extension_json": sdk.FieldSpec(wire_name="extension_json"),
-    "extension_name": sdk.FieldSpec(wire_name="extension_name"),
-    "input_data_sources": sdk.FieldSpec(wire_name="input_data_sources"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "streams": sdk.FieldSpec(wire_name="streams"),
+    "extension_json": ubx.FieldSpec(wire_name="extension_json"),
+    "extension_name": ubx.FieldSpec(wire_name="extension_name"),
+    "input_data_sources": ubx.FieldSpec(wire_name="input_data_sources"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "streams": ubx.FieldSpec(wire_name="streams"),
 }
 
 _DataCollectionRule_DataSources_IisLogFields = {
-    "log_directories": sdk.FieldSpec(wire_name="log_directories"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "streams": sdk.FieldSpec(wire_name="streams"),
+    "log_directories": ubx.FieldSpec(wire_name="log_directories"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "streams": ubx.FieldSpec(wire_name="streams"),
 }
 
 _DataCollectionRule_DataSources_LogFile_Settings_TextFields = {
-    "record_start_timestamp_format": sdk.FieldSpec(wire_name="record_start_timestamp_format"),
+    "record_start_timestamp_format": ubx.FieldSpec(wire_name="record_start_timestamp_format"),
 }
 
 _DataCollectionRule_DataSources_LogFile_SettingsFields = {
-    "text": sdk.FieldSpec(
+    "text": ubx.FieldSpec(
         wire_name="text",
         kind="list",
         fields=_DataCollectionRule_DataSources_LogFile_Settings_TextFields,
@@ -218,11 +218,11 @@ _DataCollectionRule_DataSources_LogFile_SettingsFields = {
 }
 
 _DataCollectionRule_DataSources_LogFileFields = {
-    "file_patterns": sdk.FieldSpec(wire_name="file_patterns"),
-    "format": sdk.FieldSpec(wire_name="format"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "streams": sdk.FieldSpec(wire_name="streams"),
-    "settings": sdk.FieldSpec(
+    "file_patterns": ubx.FieldSpec(wire_name="file_patterns"),
+    "format": ubx.FieldSpec(wire_name="format"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "streams": ubx.FieldSpec(wire_name="streams"),
+    "settings": ubx.FieldSpec(
         wire_name="settings",
         kind="list",
         fields=_DataCollectionRule_DataSources_LogFile_SettingsFields,
@@ -230,26 +230,26 @@ _DataCollectionRule_DataSources_LogFileFields = {
 }
 
 _DataCollectionRule_DataSources_PerformanceCounterFields = {
-    "counter_specifiers": sdk.FieldSpec(wire_name="counter_specifiers"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "sampling_frequency_in_seconds": sdk.FieldSpec(wire_name="sampling_frequency_in_seconds"),
-    "streams": sdk.FieldSpec(wire_name="streams"),
+    "counter_specifiers": ubx.FieldSpec(wire_name="counter_specifiers"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "sampling_frequency_in_seconds": ubx.FieldSpec(wire_name="sampling_frequency_in_seconds"),
+    "streams": ubx.FieldSpec(wire_name="streams"),
 }
 
 _DataCollectionRule_DataSources_PlatformTelemetryFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "streams": sdk.FieldSpec(wire_name="streams"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "streams": ubx.FieldSpec(wire_name="streams"),
 }
 
 _DataCollectionRule_DataSources_PrometheusForwarder_LabelIncludeFilterFields = {
-    "label": sdk.FieldSpec(wire_name="label"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "label": ubx.FieldSpec(wire_name="label"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _DataCollectionRule_DataSources_PrometheusForwarderFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "streams": sdk.FieldSpec(wire_name="streams"),
-    "label_include_filter": sdk.FieldSpec(
+    "name": ubx.FieldSpec(wire_name="name"),
+    "streams": ubx.FieldSpec(wire_name="streams"),
+    "label_include_filter": ubx.FieldSpec(
         wire_name="label_include_filter",
         kind="set",
         fields=_DataCollectionRule_DataSources_PrometheusForwarder_LabelIncludeFilterFields,
@@ -257,65 +257,65 @@ _DataCollectionRule_DataSources_PrometheusForwarderFields = {
 }
 
 _DataCollectionRule_DataSources_SyslogFields = {
-    "facility_names": sdk.FieldSpec(wire_name="facility_names"),
-    "log_levels": sdk.FieldSpec(wire_name="log_levels"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "streams": sdk.FieldSpec(wire_name="streams"),
+    "facility_names": ubx.FieldSpec(wire_name="facility_names"),
+    "log_levels": ubx.FieldSpec(wire_name="log_levels"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "streams": ubx.FieldSpec(wire_name="streams"),
 }
 
 _DataCollectionRule_DataSources_WindowsEventLogFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "streams": sdk.FieldSpec(wire_name="streams"),
-    "x_path_queries": sdk.FieldSpec(wire_name="x_path_queries"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "streams": ubx.FieldSpec(wire_name="streams"),
+    "x_path_queries": ubx.FieldSpec(wire_name="x_path_queries"),
 }
 
 _DataCollectionRule_DataSourcesFields = {
-    "data_import": sdk.FieldSpec(
+    "data_import": ubx.FieldSpec(
         wire_name="data_import",
         kind="list",
         fields=_DataCollectionRule_DataSources_DataImportFields,
     ),
-    "extension": sdk.FieldSpec(
+    "extension": ubx.FieldSpec(
         wire_name="extension",
         kind="list",
         fields=_DataCollectionRule_DataSources_ExtensionFields,
     ),
-    "iis_log": sdk.FieldSpec(
+    "iis_log": ubx.FieldSpec(
         wire_name="iis_log",
         kind="list",
         fields=_DataCollectionRule_DataSources_IisLogFields,
     ),
-    "log_file": sdk.FieldSpec(
+    "log_file": ubx.FieldSpec(
         wire_name="log_file",
         kind="list",
         fields=_DataCollectionRule_DataSources_LogFileFields,
     ),
-    "performance_counter": sdk.FieldSpec(
+    "performance_counter": ubx.FieldSpec(
         wire_name="performance_counter",
         kind="list",
         fields=_DataCollectionRule_DataSources_PerformanceCounterFields,
     ),
-    "platform_telemetry": sdk.FieldSpec(
+    "platform_telemetry": ubx.FieldSpec(
         wire_name="platform_telemetry",
         kind="list",
         fields=_DataCollectionRule_DataSources_PlatformTelemetryFields,
     ),
-    "prometheus_forwarder": sdk.FieldSpec(
+    "prometheus_forwarder": ubx.FieldSpec(
         wire_name="prometheus_forwarder",
         kind="list",
         fields=_DataCollectionRule_DataSources_PrometheusForwarderFields,
     ),
-    "syslog": sdk.FieldSpec(
+    "syslog": ubx.FieldSpec(
         wire_name="syslog",
         kind="list",
         fields=_DataCollectionRule_DataSources_SyslogFields,
     ),
-    "windows_event_log": sdk.FieldSpec(
+    "windows_event_log": ubx.FieldSpec(
         wire_name="windows_event_log",
         kind="list",
         fields=_DataCollectionRule_DataSources_WindowsEventLogFields,
     ),
-    "windows_firewall_log": sdk.FieldSpec(
+    "windows_firewall_log": ubx.FieldSpec(
         wire_name="windows_firewall_log",
         kind="list",
         fields=_DataCollectionRule_DataSources_PlatformTelemetryFields,
@@ -323,73 +323,73 @@ _DataCollectionRule_DataSourcesFields = {
 }
 
 _DataCollectionRule_Destinations_AzureMonitorMetricsFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _DataCollectionRule_Destinations_EventHubFields = {
-    "event_hub_id": sdk.FieldSpec(wire_name="event_hub_id"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "event_hub_id": ubx.FieldSpec(wire_name="event_hub_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _DataCollectionRule_Destinations_LogAnalyticsFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "workspace_resource_id": sdk.FieldSpec(wire_name="workspace_resource_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "workspace_resource_id": ubx.FieldSpec(wire_name="workspace_resource_id"),
 }
 
 _DataCollectionRule_Destinations_MonitorAccountFields = {
-    "monitor_account_id": sdk.FieldSpec(wire_name="monitor_account_id"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "monitor_account_id": ubx.FieldSpec(wire_name="monitor_account_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _DataCollectionRule_Destinations_StorageBlobFields = {
-    "container_name": sdk.FieldSpec(wire_name="container_name"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
+    "container_name": ubx.FieldSpec(wire_name="container_name"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
 }
 
 _DataCollectionRule_Destinations_StorageTableDirectFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-    "table_name": sdk.FieldSpec(wire_name="table_name"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+    "table_name": ubx.FieldSpec(wire_name="table_name"),
 }
 
 _DataCollectionRule_DestinationsFields = {
-    "azure_monitor_metrics": sdk.FieldSpec(
+    "azure_monitor_metrics": ubx.FieldSpec(
         wire_name="azure_monitor_metrics",
         kind="list",
         fields=_DataCollectionRule_Destinations_AzureMonitorMetricsFields,
     ),
-    "event_hub": sdk.FieldSpec(
+    "event_hub": ubx.FieldSpec(
         wire_name="event_hub",
         kind="list",
         fields=_DataCollectionRule_Destinations_EventHubFields,
     ),
-    "event_hub_direct": sdk.FieldSpec(
+    "event_hub_direct": ubx.FieldSpec(
         wire_name="event_hub_direct",
         kind="list",
         fields=_DataCollectionRule_Destinations_EventHubFields,
     ),
-    "log_analytics": sdk.FieldSpec(
+    "log_analytics": ubx.FieldSpec(
         wire_name="log_analytics",
         kind="list",
         fields=_DataCollectionRule_Destinations_LogAnalyticsFields,
     ),
-    "monitor_account": sdk.FieldSpec(
+    "monitor_account": ubx.FieldSpec(
         wire_name="monitor_account",
         kind="list",
         fields=_DataCollectionRule_Destinations_MonitorAccountFields,
     ),
-    "storage_blob": sdk.FieldSpec(
+    "storage_blob": ubx.FieldSpec(
         wire_name="storage_blob",
         kind="list",
         fields=_DataCollectionRule_Destinations_StorageBlobFields,
     ),
-    "storage_blob_direct": sdk.FieldSpec(
+    "storage_blob_direct": ubx.FieldSpec(
         wire_name="storage_blob_direct",
         kind="list",
         fields=_DataCollectionRule_Destinations_StorageBlobFields,
     ),
-    "storage_table_direct": sdk.FieldSpec(
+    "storage_table_direct": ubx.FieldSpec(
         wire_name="storage_table_direct",
         kind="list",
         fields=_DataCollectionRule_Destinations_StorageTableDirectFields,
@@ -397,20 +397,20 @@ _DataCollectionRule_DestinationsFields = {
 }
 
 _DataCollectionRule_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _DataCollectionRule_StreamDeclaration_ColumnFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _DataCollectionRule_StreamDeclarationFields = {
-    "stream_name": sdk.FieldSpec(wire_name="stream_name"),
-    "column": sdk.FieldSpec(
+    "stream_name": ubx.FieldSpec(wire_name="stream_name"),
+    "column": ubx.FieldSpec(
         wire_name="column",
         kind="list",
         fields=_DataCollectionRule_StreamDeclaration_ColumnFields,
@@ -418,10 +418,10 @@ _DataCollectionRule_StreamDeclarationFields = {
 }
 
 _DataCollectionRule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -441,43 +441,43 @@ class DataCollectionRuleConfig:
     stream_declaration: Any = None
     timeouts: Any = None
 
-DataCollectionRule = sdk.ResourceBinding(
+DataCollectionRule = ubx.ResourceBinding(
     wire_type="azurerm_monitor_data_collection_rule",
     fields={
-        "data_collection_endpoint_id": sdk.FieldSpec(wire_name="data_collection_endpoint_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "kind": sdk.FieldSpec(wire_name="kind"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "data_flow": sdk.FieldSpec(
+        "data_collection_endpoint_id": ubx.FieldSpec(wire_name="data_collection_endpoint_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "kind": ubx.FieldSpec(wire_name="kind"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "data_flow": ubx.FieldSpec(
             wire_name="data_flow",
             kind="list",
             fields=_DataCollectionRule_DataFlowFields,
         ),
-        "data_sources": sdk.FieldSpec(
+        "data_sources": ubx.FieldSpec(
             wire_name="data_sources",
             kind="list",
             fields=_DataCollectionRule_DataSourcesFields,
         ),
-        "destinations": sdk.FieldSpec(
+        "destinations": ubx.FieldSpec(
             wire_name="destinations",
             kind="list",
             fields=_DataCollectionRule_DestinationsFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_DataCollectionRule_IdentityFields,
         ),
-        "stream_declaration": sdk.FieldSpec(
+        "stream_declaration": ubx.FieldSpec(
             wire_name="stream_declaration",
             kind="set",
             fields=_DataCollectionRule_StreamDeclarationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DataCollectionRule_TimeoutsFields,

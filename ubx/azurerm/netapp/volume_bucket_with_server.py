@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VolumeBucketWithServer_FileSystemNfsUser:
@@ -32,28 +32,28 @@ class VolumeBucketWithServer_Timeouts:
     update: Any = None
 
 _VolumeBucketWithServer_FileSystemNfsUserFields = {
-    "group_id": sdk.FieldSpec(wire_name="group_id"),
-    "user_id": sdk.FieldSpec(wire_name="user_id"),
+    "group_id": ubx.FieldSpec(wire_name="group_id"),
+    "user_id": ubx.FieldSpec(wire_name="user_id"),
 }
 
 _VolumeBucketWithServer_KeyVaultFields = {
-    "certificate_key_vault_uri": sdk.FieldSpec(wire_name="certificate_key_vault_uri"),
-    "certificate_name": sdk.FieldSpec(wire_name="certificate_name"),
-    "credentials_key_vault_uri": sdk.FieldSpec(wire_name="credentials_key_vault_uri"),
-    "credentials_secret_name": sdk.FieldSpec(wire_name="credentials_secret_name"),
+    "certificate_key_vault_uri": ubx.FieldSpec(wire_name="certificate_key_vault_uri"),
+    "certificate_name": ubx.FieldSpec(wire_name="certificate_name"),
+    "credentials_key_vault_uri": ubx.FieldSpec(wire_name="credentials_key_vault_uri"),
+    "credentials_secret_name": ubx.FieldSpec(wire_name="credentials_secret_name"),
 }
 
 _VolumeBucketWithServer_ServerFields = {
-    "certificate_pem": sdk.FieldSpec(wire_name="certificate_pem"),
-    "fqdn": sdk.FieldSpec(wire_name="fqdn"),
-    "on_certificate_conflict_action": sdk.FieldSpec(wire_name="on_certificate_conflict_action"),
+    "certificate_pem": ubx.FieldSpec(wire_name="certificate_pem"),
+    "fqdn": ubx.FieldSpec(wire_name="fqdn"),
+    "on_certificate_conflict_action": ubx.FieldSpec(wire_name="on_certificate_conflict_action"),
 }
 
 _VolumeBucketWithServer_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -69,31 +69,31 @@ class VolumeBucketWithServerConfig:
     server: Any = None
     timeouts: Any = None
 
-VolumeBucketWithServer = sdk.ResourceBinding(
+VolumeBucketWithServer = ubx.ResourceBinding(
     wire_type="azurerm_netapp_volume_bucket_with_server",
     fields={
-        "file_system_cifs_username": sdk.FieldSpec(wire_name="file_system_cifs_username"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "path": sdk.FieldSpec(wire_name="path"),
-        "permissions": sdk.FieldSpec(wire_name="permissions"),
-        "volume_id": sdk.FieldSpec(wire_name="volume_id"),
-        "file_system_nfs_user": sdk.FieldSpec(
+        "file_system_cifs_username": ubx.FieldSpec(wire_name="file_system_cifs_username"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "path": ubx.FieldSpec(wire_name="path"),
+        "permissions": ubx.FieldSpec(wire_name="permissions"),
+        "volume_id": ubx.FieldSpec(wire_name="volume_id"),
+        "file_system_nfs_user": ubx.FieldSpec(
             wire_name="file_system_nfs_user",
             kind="list",
             fields=_VolumeBucketWithServer_FileSystemNfsUserFields,
         ),
-        "key_vault": sdk.FieldSpec(
+        "key_vault": ubx.FieldSpec(
             wire_name="key_vault",
             kind="list",
             fields=_VolumeBucketWithServer_KeyVaultFields,
         ),
-        "server": sdk.FieldSpec(
+        "server": ubx.FieldSpec(
             wire_name="server",
             kind="list",
             fields=_VolumeBucketWithServer_ServerFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_VolumeBucketWithServer_TimeoutsFields,

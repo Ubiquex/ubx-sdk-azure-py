@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppEnvironmentManagedCertificate_Timeouts:
@@ -14,10 +14,10 @@ class AppEnvironmentManagedCertificate_Timeouts:
     update: Any = None
 
 _AppEnvironmentManagedCertificate_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class AppEnvironmentManagedCertificateConfig:
     tags: Any = None
     timeouts: Any = None
 
-AppEnvironmentManagedCertificate = sdk.ResourceBinding(
+AppEnvironmentManagedCertificate = ubx.ResourceBinding(
     wire_type="azurerm_container_app_environment_managed_certificate",
     fields={
-        "container_app_environment_id": sdk.FieldSpec(wire_name="container_app_environment_id"),
-        "domain_control_validation": sdk.FieldSpec(wire_name="domain_control_validation"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "subject_name": sdk.FieldSpec(wire_name="subject_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "timeouts": sdk.FieldSpec(
+        "container_app_environment_id": ubx.FieldSpec(wire_name="container_app_environment_id"),
+        "domain_control_validation": ubx.FieldSpec(wire_name="domain_control_validation"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "subject_name": ubx.FieldSpec(wire_name="subject_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AppEnvironmentManagedCertificate_TimeoutsFields,

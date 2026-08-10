@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Cluster_Identity:
@@ -36,32 +36,32 @@ class Cluster_Timeouts:
     update: Any = None
 
 _Cluster_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Cluster_LanguageExtensionFields = {
-    "image": sdk.FieldSpec(wire_name="image"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "image": ubx.FieldSpec(wire_name="image"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _Cluster_OptimizedAutoScaleFields = {
-    "maximum_instances": sdk.FieldSpec(wire_name="maximum_instances"),
-    "minimum_instances": sdk.FieldSpec(wire_name="minimum_instances"),
+    "maximum_instances": ubx.FieldSpec(wire_name="maximum_instances"),
+    "minimum_instances": ubx.FieldSpec(wire_name="minimum_instances"),
 }
 
 _Cluster_SkuFields = {
-    "capacity": sdk.FieldSpec(wire_name="capacity"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "capacity": ubx.FieldSpec(wire_name="capacity"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _Cluster_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -89,47 +89,47 @@ class ClusterConfig:
     sku: Any = None
     timeouts: Any = None
 
-Cluster = sdk.ResourceBinding(
+Cluster = ubx.ResourceBinding(
     wire_type="azurerm_kusto_cluster",
     fields={
-        "allowed_fqdns": sdk.FieldSpec(wire_name="allowed_fqdns"),
-        "allowed_ip_ranges": sdk.FieldSpec(wire_name="allowed_ip_ranges"),
-        "auto_stop_enabled": sdk.FieldSpec(wire_name="auto_stop_enabled"),
-        "disk_encryption_enabled": sdk.FieldSpec(wire_name="disk_encryption_enabled"),
-        "double_encryption_enabled": sdk.FieldSpec(wire_name="double_encryption_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "outbound_network_access_restricted": sdk.FieldSpec(wire_name="outbound_network_access_restricted"),
-        "public_ip_type": sdk.FieldSpec(wire_name="public_ip_type"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "purge_enabled": sdk.FieldSpec(wire_name="purge_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "streaming_ingestion_enabled": sdk.FieldSpec(wire_name="streaming_ingestion_enabled"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "trusted_external_tenants": sdk.FieldSpec(wire_name="trusted_external_tenants"),
-        "zones": sdk.FieldSpec(wire_name="zones"),
-        "identity": sdk.FieldSpec(
+        "allowed_fqdns": ubx.FieldSpec(wire_name="allowed_fqdns"),
+        "allowed_ip_ranges": ubx.FieldSpec(wire_name="allowed_ip_ranges"),
+        "auto_stop_enabled": ubx.FieldSpec(wire_name="auto_stop_enabled"),
+        "disk_encryption_enabled": ubx.FieldSpec(wire_name="disk_encryption_enabled"),
+        "double_encryption_enabled": ubx.FieldSpec(wire_name="double_encryption_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "outbound_network_access_restricted": ubx.FieldSpec(wire_name="outbound_network_access_restricted"),
+        "public_ip_type": ubx.FieldSpec(wire_name="public_ip_type"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "purge_enabled": ubx.FieldSpec(wire_name="purge_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "streaming_ingestion_enabled": ubx.FieldSpec(wire_name="streaming_ingestion_enabled"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "trusted_external_tenants": ubx.FieldSpec(wire_name="trusted_external_tenants"),
+        "zones": ubx.FieldSpec(wire_name="zones"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Cluster_IdentityFields,
         ),
-        "language_extension": sdk.FieldSpec(
+        "language_extension": ubx.FieldSpec(
             wire_name="language_extension",
             kind="list",
             fields=_Cluster_LanguageExtensionFields,
         ),
-        "optimized_auto_scale": sdk.FieldSpec(
+        "optimized_auto_scale": ubx.FieldSpec(
             wire_name="optimized_auto_scale",
             kind="list",
             fields=_Cluster_OptimizedAutoScaleFields,
         ),
-        "sku": sdk.FieldSpec(
+        "sku": ubx.FieldSpec(
             wire_name="sku",
             kind="list",
             fields=_Cluster_SkuFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Cluster_TimeoutsFields,

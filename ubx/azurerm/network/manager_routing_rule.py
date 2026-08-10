@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagerRoutingRule_Destination:
@@ -19,15 +19,15 @@ class ManagerRoutingRule_Timeouts:
     update: Any = None
 
 _ManagerRoutingRule_DestinationFields = {
-    "address": sdk.FieldSpec(wire_name="address"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "address": ubx.FieldSpec(wire_name="address"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _ManagerRoutingRule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -40,24 +40,24 @@ class ManagerRoutingRuleConfig:
     next_hop: Any = None
     timeouts: Any = None
 
-ManagerRoutingRule = sdk.ResourceBinding(
+ManagerRoutingRule = ubx.ResourceBinding(
     wire_type="azurerm_network_manager_routing_rule",
     fields={
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "rule_collection_id": sdk.FieldSpec(wire_name="rule_collection_id"),
-        "destination": sdk.FieldSpec(
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "rule_collection_id": ubx.FieldSpec(wire_name="rule_collection_id"),
+        "destination": ubx.FieldSpec(
             wire_name="destination",
             kind="list",
             fields=_ManagerRoutingRule_DestinationFields,
         ),
-        "next_hop": sdk.FieldSpec(
+        "next_hop": ubx.FieldSpec(
             wire_name="next_hop",
             kind="list",
             fields=_ManagerRoutingRule_DestinationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ManagerRoutingRule_TimeoutsFields,

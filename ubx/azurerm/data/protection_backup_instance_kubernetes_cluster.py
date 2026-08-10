@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ProtectionBackupInstanceKubernetesCluster_BackupDatasourceParameters:
@@ -23,19 +23,19 @@ class ProtectionBackupInstanceKubernetesCluster_Timeouts:
     read: Any = None
 
 _ProtectionBackupInstanceKubernetesCluster_BackupDatasourceParametersFields = {
-    "cluster_scoped_resources_enabled": sdk.FieldSpec(wire_name="cluster_scoped_resources_enabled"),
-    "excluded_namespaces": sdk.FieldSpec(wire_name="excluded_namespaces"),
-    "excluded_resource_types": sdk.FieldSpec(wire_name="excluded_resource_types"),
-    "included_namespaces": sdk.FieldSpec(wire_name="included_namespaces"),
-    "included_resource_types": sdk.FieldSpec(wire_name="included_resource_types"),
-    "label_selectors": sdk.FieldSpec(wire_name="label_selectors"),
-    "volume_snapshot_enabled": sdk.FieldSpec(wire_name="volume_snapshot_enabled"),
+    "cluster_scoped_resources_enabled": ubx.FieldSpec(wire_name="cluster_scoped_resources_enabled"),
+    "excluded_namespaces": ubx.FieldSpec(wire_name="excluded_namespaces"),
+    "excluded_resource_types": ubx.FieldSpec(wire_name="excluded_resource_types"),
+    "included_namespaces": ubx.FieldSpec(wire_name="included_namespaces"),
+    "included_resource_types": ubx.FieldSpec(wire_name="included_resource_types"),
+    "label_selectors": ubx.FieldSpec(wire_name="label_selectors"),
+    "volume_snapshot_enabled": ubx.FieldSpec(wire_name="volume_snapshot_enabled"),
 }
 
 _ProtectionBackupInstanceKubernetesCluster_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -50,22 +50,22 @@ class ProtectionBackupInstanceKubernetesClusterConfig:
     backup_datasource_parameters: Any = None
     timeouts: Any = None
 
-ProtectionBackupInstanceKubernetesCluster = sdk.ResourceBinding(
+ProtectionBackupInstanceKubernetesCluster = ubx.ResourceBinding(
     wire_type="azurerm_data_protection_backup_instance_kubernetes_cluster",
     fields={
-        "backup_policy_id": sdk.FieldSpec(wire_name="backup_policy_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "kubernetes_cluster_id": sdk.FieldSpec(wire_name="kubernetes_cluster_id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "snapshot_resource_group_name": sdk.FieldSpec(wire_name="snapshot_resource_group_name"),
-        "vault_id": sdk.FieldSpec(wire_name="vault_id"),
-        "backup_datasource_parameters": sdk.FieldSpec(
+        "backup_policy_id": ubx.FieldSpec(wire_name="backup_policy_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "kubernetes_cluster_id": ubx.FieldSpec(wire_name="kubernetes_cluster_id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "snapshot_resource_group_name": ubx.FieldSpec(wire_name="snapshot_resource_group_name"),
+        "vault_id": ubx.FieldSpec(wire_name="vault_id"),
+        "backup_datasource_parameters": ubx.FieldSpec(
             wire_name="backup_datasource_parameters",
             kind="list",
             fields=_ProtectionBackupInstanceKubernetesCluster_BackupDatasourceParametersFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ProtectionBackupInstanceKubernetesCluster_TimeoutsFields,

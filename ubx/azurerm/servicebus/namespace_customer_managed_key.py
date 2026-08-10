@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class NamespaceCustomerManagedKey_Timeouts:
@@ -14,10 +14,10 @@ class NamespaceCustomerManagedKey_Timeouts:
     update: Any = None
 
 _NamespaceCustomerManagedKey_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -28,14 +28,14 @@ class NamespaceCustomerManagedKeyConfig:
     namespace_id: Any = None
     timeouts: Any = None
 
-NamespaceCustomerManagedKey = sdk.ResourceBinding(
+NamespaceCustomerManagedKey = ubx.ResourceBinding(
     wire_type="azurerm_servicebus_namespace_customer_managed_key",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "infrastructure_encryption_enabled": sdk.FieldSpec(wire_name="infrastructure_encryption_enabled"),
-        "key_vault_key_id": sdk.FieldSpec(wire_name="key_vault_key_id"),
-        "namespace_id": sdk.FieldSpec(wire_name="namespace_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "infrastructure_encryption_enabled": ubx.FieldSpec(wire_name="infrastructure_encryption_enabled"),
+        "key_vault_key_id": ubx.FieldSpec(wire_name="key_vault_key_id"),
+        "namespace_id": ubx.FieldSpec(wire_name="namespace_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_NamespaceCustomerManagedKey_TimeoutsFields,

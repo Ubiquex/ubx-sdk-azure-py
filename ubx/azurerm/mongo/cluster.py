@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Cluster_CustomerManagedKey:
@@ -29,25 +29,25 @@ class Cluster_Timeouts:
     update: Any = None
 
 _Cluster_CustomerManagedKeyFields = {
-    "key_vault_key_id": sdk.FieldSpec(wire_name="key_vault_key_id"),
-    "user_assigned_identity_id": sdk.FieldSpec(wire_name="user_assigned_identity_id"),
+    "key_vault_key_id": ubx.FieldSpec(wire_name="key_vault_key_id"),
+    "user_assigned_identity_id": ubx.FieldSpec(wire_name="user_assigned_identity_id"),
 }
 
 _Cluster_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Cluster_RestoreFields = {
-    "point_in_time_utc": sdk.FieldSpec(wire_name="point_in_time_utc"),
-    "source_id": sdk.FieldSpec(wire_name="source_id"),
+    "point_in_time_utc": ubx.FieldSpec(wire_name="point_in_time_utc"),
+    "source_id": ubx.FieldSpec(wire_name="source_id"),
 }
 
 _Cluster_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -77,45 +77,45 @@ class ClusterConfig:
     restore: Any = None
     timeouts: Any = None
 
-Cluster = sdk.ResourceBinding(
+Cluster = ubx.ResourceBinding(
     wire_type="azurerm_mongo_cluster",
     fields={
-        "administrator_password": sdk.FieldSpec(wire_name="administrator_password"),
-        "administrator_username": sdk.FieldSpec(wire_name="administrator_username"),
-        "authentication_methods": sdk.FieldSpec(wire_name="authentication_methods"),
-        "compute_tier": sdk.FieldSpec(wire_name="compute_tier"),
-        "create_mode": sdk.FieldSpec(wire_name="create_mode"),
-        "data_api_mode_enabled": sdk.FieldSpec(wire_name="data_api_mode_enabled"),
-        "high_availability_mode": sdk.FieldSpec(wire_name="high_availability_mode"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "preview_features": sdk.FieldSpec(wire_name="preview_features"),
-        "public_network_access": sdk.FieldSpec(wire_name="public_network_access"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "shard_count": sdk.FieldSpec(wire_name="shard_count"),
-        "source_location": sdk.FieldSpec(wire_name="source_location"),
-        "source_server_id": sdk.FieldSpec(wire_name="source_server_id"),
-        "storage_size_in_gb": sdk.FieldSpec(wire_name="storage_size_in_gb"),
-        "storage_type": sdk.FieldSpec(wire_name="storage_type"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "version": sdk.FieldSpec(wire_name="version"),
-        "customer_managed_key": sdk.FieldSpec(
+        "administrator_password": ubx.FieldSpec(wire_name="administrator_password"),
+        "administrator_username": ubx.FieldSpec(wire_name="administrator_username"),
+        "authentication_methods": ubx.FieldSpec(wire_name="authentication_methods"),
+        "compute_tier": ubx.FieldSpec(wire_name="compute_tier"),
+        "create_mode": ubx.FieldSpec(wire_name="create_mode"),
+        "data_api_mode_enabled": ubx.FieldSpec(wire_name="data_api_mode_enabled"),
+        "high_availability_mode": ubx.FieldSpec(wire_name="high_availability_mode"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "preview_features": ubx.FieldSpec(wire_name="preview_features"),
+        "public_network_access": ubx.FieldSpec(wire_name="public_network_access"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "shard_count": ubx.FieldSpec(wire_name="shard_count"),
+        "source_location": ubx.FieldSpec(wire_name="source_location"),
+        "source_server_id": ubx.FieldSpec(wire_name="source_server_id"),
+        "storage_size_in_gb": ubx.FieldSpec(wire_name="storage_size_in_gb"),
+        "storage_type": ubx.FieldSpec(wire_name="storage_type"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "version": ubx.FieldSpec(wire_name="version"),
+        "customer_managed_key": ubx.FieldSpec(
             wire_name="customer_managed_key",
             kind="list",
             fields=_Cluster_CustomerManagedKeyFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Cluster_IdentityFields,
         ),
-        "restore": sdk.FieldSpec(
+        "restore": ubx.FieldSpec(
             wire_name="restore",
             kind="list",
             fields=_Cluster_RestoreFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Cluster_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PolicyRuleCollectionGroup_ApplicationRuleCollection_Rule_HttpHeaders:
@@ -85,32 +85,32 @@ class PolicyRuleCollectionGroup_Timeouts:
     update: Any = None
 
 _PolicyRuleCollectionGroup_ApplicationRuleCollection_Rule_HttpHeadersFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _PolicyRuleCollectionGroup_ApplicationRuleCollection_Rule_ProtocolsFields = {
-    "port": sdk.FieldSpec(wire_name="port"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "port": ubx.FieldSpec(wire_name="port"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _PolicyRuleCollectionGroup_ApplicationRuleCollection_RuleFields = {
-    "description": sdk.FieldSpec(wire_name="description"),
-    "destination_addresses": sdk.FieldSpec(wire_name="destination_addresses"),
-    "destination_fqdn_tags": sdk.FieldSpec(wire_name="destination_fqdn_tags"),
-    "destination_fqdns": sdk.FieldSpec(wire_name="destination_fqdns"),
-    "destination_urls": sdk.FieldSpec(wire_name="destination_urls"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "source_addresses": sdk.FieldSpec(wire_name="source_addresses"),
-    "source_ip_groups": sdk.FieldSpec(wire_name="source_ip_groups"),
-    "terminate_tls": sdk.FieldSpec(wire_name="terminate_tls"),
-    "web_categories": sdk.FieldSpec(wire_name="web_categories"),
-    "http_headers": sdk.FieldSpec(
+    "description": ubx.FieldSpec(wire_name="description"),
+    "destination_addresses": ubx.FieldSpec(wire_name="destination_addresses"),
+    "destination_fqdn_tags": ubx.FieldSpec(wire_name="destination_fqdn_tags"),
+    "destination_fqdns": ubx.FieldSpec(wire_name="destination_fqdns"),
+    "destination_urls": ubx.FieldSpec(wire_name="destination_urls"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "source_addresses": ubx.FieldSpec(wire_name="source_addresses"),
+    "source_ip_groups": ubx.FieldSpec(wire_name="source_ip_groups"),
+    "terminate_tls": ubx.FieldSpec(wire_name="terminate_tls"),
+    "web_categories": ubx.FieldSpec(wire_name="web_categories"),
+    "http_headers": ubx.FieldSpec(
         wire_name="http_headers",
         kind="list",
         fields=_PolicyRuleCollectionGroup_ApplicationRuleCollection_Rule_HttpHeadersFields,
     ),
-    "protocols": sdk.FieldSpec(
+    "protocols": ubx.FieldSpec(
         wire_name="protocols",
         kind="list",
         fields=_PolicyRuleCollectionGroup_ApplicationRuleCollection_Rule_ProtocolsFields,
@@ -118,10 +118,10 @@ _PolicyRuleCollectionGroup_ApplicationRuleCollection_RuleFields = {
 }
 
 _PolicyRuleCollectionGroup_ApplicationRuleCollectionFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "priority": sdk.FieldSpec(wire_name="priority"),
-    "rule": sdk.FieldSpec(
+    "action": ubx.FieldSpec(wire_name="action"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "priority": ubx.FieldSpec(wire_name="priority"),
+    "rule": ubx.FieldSpec(
         wire_name="rule",
         kind="list",
         fields=_PolicyRuleCollectionGroup_ApplicationRuleCollection_RuleFields,
@@ -129,23 +129,23 @@ _PolicyRuleCollectionGroup_ApplicationRuleCollectionFields = {
 }
 
 _PolicyRuleCollectionGroup_NatRuleCollection_RuleFields = {
-    "description": sdk.FieldSpec(wire_name="description"),
-    "destination_address": sdk.FieldSpec(wire_name="destination_address"),
-    "destination_ports": sdk.FieldSpec(wire_name="destination_ports"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "protocols": sdk.FieldSpec(wire_name="protocols"),
-    "source_addresses": sdk.FieldSpec(wire_name="source_addresses"),
-    "source_ip_groups": sdk.FieldSpec(wire_name="source_ip_groups"),
-    "translated_address": sdk.FieldSpec(wire_name="translated_address"),
-    "translated_fqdn": sdk.FieldSpec(wire_name="translated_fqdn"),
-    "translated_port": sdk.FieldSpec(wire_name="translated_port"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "destination_address": ubx.FieldSpec(wire_name="destination_address"),
+    "destination_ports": ubx.FieldSpec(wire_name="destination_ports"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "protocols": ubx.FieldSpec(wire_name="protocols"),
+    "source_addresses": ubx.FieldSpec(wire_name="source_addresses"),
+    "source_ip_groups": ubx.FieldSpec(wire_name="source_ip_groups"),
+    "translated_address": ubx.FieldSpec(wire_name="translated_address"),
+    "translated_fqdn": ubx.FieldSpec(wire_name="translated_fqdn"),
+    "translated_port": ubx.FieldSpec(wire_name="translated_port"),
 }
 
 _PolicyRuleCollectionGroup_NatRuleCollectionFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "priority": sdk.FieldSpec(wire_name="priority"),
-    "rule": sdk.FieldSpec(
+    "action": ubx.FieldSpec(wire_name="action"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "priority": ubx.FieldSpec(wire_name="priority"),
+    "rule": ubx.FieldSpec(
         wire_name="rule",
         kind="list",
         fields=_PolicyRuleCollectionGroup_NatRuleCollection_RuleFields,
@@ -153,22 +153,22 @@ _PolicyRuleCollectionGroup_NatRuleCollectionFields = {
 }
 
 _PolicyRuleCollectionGroup_NetworkRuleCollection_RuleFields = {
-    "description": sdk.FieldSpec(wire_name="description"),
-    "destination_addresses": sdk.FieldSpec(wire_name="destination_addresses"),
-    "destination_fqdns": sdk.FieldSpec(wire_name="destination_fqdns"),
-    "destination_ip_groups": sdk.FieldSpec(wire_name="destination_ip_groups"),
-    "destination_ports": sdk.FieldSpec(wire_name="destination_ports"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "protocols": sdk.FieldSpec(wire_name="protocols"),
-    "source_addresses": sdk.FieldSpec(wire_name="source_addresses"),
-    "source_ip_groups": sdk.FieldSpec(wire_name="source_ip_groups"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "destination_addresses": ubx.FieldSpec(wire_name="destination_addresses"),
+    "destination_fqdns": ubx.FieldSpec(wire_name="destination_fqdns"),
+    "destination_ip_groups": ubx.FieldSpec(wire_name="destination_ip_groups"),
+    "destination_ports": ubx.FieldSpec(wire_name="destination_ports"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "protocols": ubx.FieldSpec(wire_name="protocols"),
+    "source_addresses": ubx.FieldSpec(wire_name="source_addresses"),
+    "source_ip_groups": ubx.FieldSpec(wire_name="source_ip_groups"),
 }
 
 _PolicyRuleCollectionGroup_NetworkRuleCollectionFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "priority": sdk.FieldSpec(wire_name="priority"),
-    "rule": sdk.FieldSpec(
+    "action": ubx.FieldSpec(wire_name="action"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "priority": ubx.FieldSpec(wire_name="priority"),
+    "rule": ubx.FieldSpec(
         wire_name="rule",
         kind="list",
         fields=_PolicyRuleCollectionGroup_NetworkRuleCollection_RuleFields,
@@ -176,10 +176,10 @@ _PolicyRuleCollectionGroup_NetworkRuleCollectionFields = {
 }
 
 _PolicyRuleCollectionGroup_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -193,29 +193,29 @@ class PolicyRuleCollectionGroupConfig:
     network_rule_collection: Any = None
     timeouts: Any = None
 
-PolicyRuleCollectionGroup = sdk.ResourceBinding(
+PolicyRuleCollectionGroup = ubx.ResourceBinding(
     wire_type="azurerm_firewall_policy_rule_collection_group",
     fields={
-        "firewall_policy_id": sdk.FieldSpec(wire_name="firewall_policy_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "priority": sdk.FieldSpec(wire_name="priority"),
-        "application_rule_collection": sdk.FieldSpec(
+        "firewall_policy_id": ubx.FieldSpec(wire_name="firewall_policy_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "priority": ubx.FieldSpec(wire_name="priority"),
+        "application_rule_collection": ubx.FieldSpec(
             wire_name="application_rule_collection",
             kind="list",
             fields=_PolicyRuleCollectionGroup_ApplicationRuleCollectionFields,
         ),
-        "nat_rule_collection": sdk.FieldSpec(
+        "nat_rule_collection": ubx.FieldSpec(
             wire_name="nat_rule_collection",
             kind="list",
             fields=_PolicyRuleCollectionGroup_NatRuleCollectionFields,
         ),
-        "network_rule_collection": sdk.FieldSpec(
+        "network_rule_collection": ubx.FieldSpec(
             wire_name="network_rule_collection",
             kind="list",
             fields=_PolicyRuleCollectionGroup_NetworkRuleCollectionFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_PolicyRuleCollectionGroup_TimeoutsFields,

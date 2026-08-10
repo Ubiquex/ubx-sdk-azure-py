@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RecoveryNetworkMapping_Timeouts:
@@ -13,9 +13,9 @@ class RecoveryNetworkMapping_Timeouts:
     read: Any = None
 
 _RecoveryNetworkMapping_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -30,18 +30,18 @@ class RecoveryNetworkMappingConfig:
     target_recovery_fabric_name: Any = None
     timeouts: Any = None
 
-RecoveryNetworkMapping = sdk.ResourceBinding(
+RecoveryNetworkMapping = ubx.ResourceBinding(
     wire_type="azurerm_site_recovery_network_mapping",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "recovery_vault_name": sdk.FieldSpec(wire_name="recovery_vault_name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "source_network_id": sdk.FieldSpec(wire_name="source_network_id"),
-        "source_recovery_fabric_name": sdk.FieldSpec(wire_name="source_recovery_fabric_name"),
-        "target_network_id": sdk.FieldSpec(wire_name="target_network_id"),
-        "target_recovery_fabric_name": sdk.FieldSpec(wire_name="target_recovery_fabric_name"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "recovery_vault_name": ubx.FieldSpec(wire_name="recovery_vault_name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "source_network_id": ubx.FieldSpec(wire_name="source_network_id"),
+        "source_recovery_fabric_name": ubx.FieldSpec(wire_name="source_recovery_fabric_name"),
+        "target_network_id": ubx.FieldSpec(wire_name="target_network_id"),
+        "target_recovery_fabric_name": ubx.FieldSpec(wire_name="target_recovery_fabric_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RecoveryNetworkMapping_TimeoutsFields,

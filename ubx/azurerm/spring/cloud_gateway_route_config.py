@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudGatewayRouteConfig_OpenApi:
@@ -30,26 +30,26 @@ class CloudGatewayRouteConfig_Timeouts:
     update: Any = None
 
 _CloudGatewayRouteConfig_OpenApiFields = {
-    "uri": sdk.FieldSpec(wire_name="uri"),
+    "uri": ubx.FieldSpec(wire_name="uri"),
 }
 
 _CloudGatewayRouteConfig_RouteFields = {
-    "classification_tags": sdk.FieldSpec(wire_name="classification_tags"),
-    "description": sdk.FieldSpec(wire_name="description"),
-    "filters": sdk.FieldSpec(wire_name="filters"),
-    "order": sdk.FieldSpec(wire_name="order"),
-    "predicates": sdk.FieldSpec(wire_name="predicates"),
-    "sso_validation_enabled": sdk.FieldSpec(wire_name="sso_validation_enabled"),
-    "title": sdk.FieldSpec(wire_name="title"),
-    "token_relay": sdk.FieldSpec(wire_name="token_relay"),
-    "uri": sdk.FieldSpec(wire_name="uri"),
+    "classification_tags": ubx.FieldSpec(wire_name="classification_tags"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "filters": ubx.FieldSpec(wire_name="filters"),
+    "order": ubx.FieldSpec(wire_name="order"),
+    "predicates": ubx.FieldSpec(wire_name="predicates"),
+    "sso_validation_enabled": ubx.FieldSpec(wire_name="sso_validation_enabled"),
+    "title": ubx.FieldSpec(wire_name="title"),
+    "token_relay": ubx.FieldSpec(wire_name="token_relay"),
+    "uri": ubx.FieldSpec(wire_name="uri"),
 }
 
 _CloudGatewayRouteConfig_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -66,28 +66,28 @@ class CloudGatewayRouteConfigConfig:
     route: Any = None
     timeouts: Any = None
 
-CloudGatewayRouteConfig = sdk.ResourceBinding(
+CloudGatewayRouteConfig = ubx.ResourceBinding(
     wire_type="azurerm_spring_cloud_gateway_route_config",
     fields={
-        "filters": sdk.FieldSpec(wire_name="filters"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "predicates": sdk.FieldSpec(wire_name="predicates"),
-        "protocol": sdk.FieldSpec(wire_name="protocol"),
-        "spring_cloud_app_id": sdk.FieldSpec(wire_name="spring_cloud_app_id"),
-        "spring_cloud_gateway_id": sdk.FieldSpec(wire_name="spring_cloud_gateway_id"),
-        "sso_validation_enabled": sdk.FieldSpec(wire_name="sso_validation_enabled"),
-        "open_api": sdk.FieldSpec(
+        "filters": ubx.FieldSpec(wire_name="filters"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "predicates": ubx.FieldSpec(wire_name="predicates"),
+        "protocol": ubx.FieldSpec(wire_name="protocol"),
+        "spring_cloud_app_id": ubx.FieldSpec(wire_name="spring_cloud_app_id"),
+        "spring_cloud_gateway_id": ubx.FieldSpec(wire_name="spring_cloud_gateway_id"),
+        "sso_validation_enabled": ubx.FieldSpec(wire_name="sso_validation_enabled"),
+        "open_api": ubx.FieldSpec(
             wire_name="open_api",
             kind="list",
             fields=_CloudGatewayRouteConfig_OpenApiFields,
         ),
-        "route": sdk.FieldSpec(
+        "route": ubx.FieldSpec(
             wire_name="route",
             kind="set",
             fields=_CloudGatewayRouteConfig_RouteFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CloudGatewayRouteConfig_TimeoutsFields,

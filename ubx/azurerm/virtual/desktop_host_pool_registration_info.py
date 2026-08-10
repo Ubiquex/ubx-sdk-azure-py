@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DesktopHostPoolRegistrationInfo_Timeouts:
@@ -14,10 +14,10 @@ class DesktopHostPoolRegistrationInfo_Timeouts:
     update: Any = None
 
 _DesktopHostPoolRegistrationInfo_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -27,13 +27,13 @@ class DesktopHostPoolRegistrationInfoConfig:
     id: Any = None
     timeouts: Any = None
 
-DesktopHostPoolRegistrationInfo = sdk.ResourceBinding(
+DesktopHostPoolRegistrationInfo = ubx.ResourceBinding(
     wire_type="azurerm_virtual_desktop_host_pool_registration_info",
     fields={
-        "expiration_date": sdk.FieldSpec(wire_name="expiration_date"),
-        "hostpool_id": sdk.FieldSpec(wire_name="hostpool_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "timeouts": sdk.FieldSpec(
+        "expiration_date": ubx.FieldSpec(wire_name="expiration_date"),
+        "hostpool_id": ubx.FieldSpec(wire_name="hostpool_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DesktopHostPoolRegistrationInfo_TimeoutsFields,

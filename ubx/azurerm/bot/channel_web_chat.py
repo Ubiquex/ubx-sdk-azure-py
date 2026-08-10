@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ChannelWebChat_Site:
@@ -21,17 +21,17 @@ class ChannelWebChat_Timeouts:
     update: Any = None
 
 _ChannelWebChat_SiteFields = {
-    "endpoint_parameters_enabled": sdk.FieldSpec(wire_name="endpoint_parameters_enabled"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "storage_enabled": sdk.FieldSpec(wire_name="storage_enabled"),
-    "user_upload_enabled": sdk.FieldSpec(wire_name="user_upload_enabled"),
+    "endpoint_parameters_enabled": ubx.FieldSpec(wire_name="endpoint_parameters_enabled"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "storage_enabled": ubx.FieldSpec(wire_name="storage_enabled"),
+    "user_upload_enabled": ubx.FieldSpec(wire_name="user_upload_enabled"),
 }
 
 _ChannelWebChat_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -43,19 +43,19 @@ class ChannelWebChatConfig:
     site: Any = None
     timeouts: Any = None
 
-ChannelWebChat = sdk.ResourceBinding(
+ChannelWebChat = ubx.ResourceBinding(
     wire_type="azurerm_bot_channel_web_chat",
     fields={
-        "bot_name": sdk.FieldSpec(wire_name="bot_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "site": sdk.FieldSpec(
+        "bot_name": ubx.FieldSpec(wire_name="bot_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "site": ubx.FieldSpec(
             wire_name="site",
             kind="set",
             fields=_ChannelWebChat_SiteFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ChannelWebChat_TimeoutsFields,

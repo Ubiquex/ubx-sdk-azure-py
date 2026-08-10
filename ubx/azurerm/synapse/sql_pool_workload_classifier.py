@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SqlPoolWorkloadClassifier_Timeouts:
@@ -14,10 +14,10 @@ class SqlPoolWorkloadClassifier_Timeouts:
     update: Any = None
 
 _SqlPoolWorkloadClassifier_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -33,19 +33,19 @@ class SqlPoolWorkloadClassifierConfig:
     workload_group_id: Any = None
     timeouts: Any = None
 
-SqlPoolWorkloadClassifier = sdk.ResourceBinding(
+SqlPoolWorkloadClassifier = ubx.ResourceBinding(
     wire_type="azurerm_synapse_sql_pool_workload_classifier",
     fields={
-        "context": sdk.FieldSpec(wire_name="context"),
-        "end_time": sdk.FieldSpec(wire_name="end_time"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "importance": sdk.FieldSpec(wire_name="importance"),
-        "label": sdk.FieldSpec(wire_name="label"),
-        "member_name": sdk.FieldSpec(wire_name="member_name"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "start_time": sdk.FieldSpec(wire_name="start_time"),
-        "workload_group_id": sdk.FieldSpec(wire_name="workload_group_id"),
-        "timeouts": sdk.FieldSpec(
+        "context": ubx.FieldSpec(wire_name="context"),
+        "end_time": ubx.FieldSpec(wire_name="end_time"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "importance": ubx.FieldSpec(wire_name="importance"),
+        "label": ubx.FieldSpec(wire_name="label"),
+        "member_name": ubx.FieldSpec(wire_name="member_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "start_time": ubx.FieldSpec(wire_name="start_time"),
+        "workload_group_id": ubx.FieldSpec(wire_name="workload_group_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SqlPoolWorkloadClassifier_TimeoutsFields,

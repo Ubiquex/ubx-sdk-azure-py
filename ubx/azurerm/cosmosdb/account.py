@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Account_AnalyticalStorage:
@@ -85,73 +85,73 @@ class Account_VirtualNetworkRule:
     ignore_missing_vnet_service_endpoint: Any = None
 
 _Account_AnalyticalStorageFields = {
-    "schema_type": sdk.FieldSpec(wire_name="schema_type"),
+    "schema_type": ubx.FieldSpec(wire_name="schema_type"),
 }
 
 _Account_BackupFields = {
-    "interval_in_minutes": sdk.FieldSpec(wire_name="interval_in_minutes"),
-    "retention_in_hours": sdk.FieldSpec(wire_name="retention_in_hours"),
-    "storage_redundancy": sdk.FieldSpec(wire_name="storage_redundancy"),
-    "tier": sdk.FieldSpec(wire_name="tier"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "interval_in_minutes": ubx.FieldSpec(wire_name="interval_in_minutes"),
+    "retention_in_hours": ubx.FieldSpec(wire_name="retention_in_hours"),
+    "storage_redundancy": ubx.FieldSpec(wire_name="storage_redundancy"),
+    "tier": ubx.FieldSpec(wire_name="tier"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Account_CapabilitiesFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _Account_CapacityFields = {
-    "total_throughput_limit": sdk.FieldSpec(wire_name="total_throughput_limit"),
+    "total_throughput_limit": ubx.FieldSpec(wire_name="total_throughput_limit"),
 }
 
 _Account_ConsistencyPolicyFields = {
-    "consistency_level": sdk.FieldSpec(wire_name="consistency_level"),
-    "max_interval_in_seconds": sdk.FieldSpec(wire_name="max_interval_in_seconds"),
-    "max_staleness_prefix": sdk.FieldSpec(wire_name="max_staleness_prefix"),
+    "consistency_level": ubx.FieldSpec(wire_name="consistency_level"),
+    "max_interval_in_seconds": ubx.FieldSpec(wire_name="max_interval_in_seconds"),
+    "max_staleness_prefix": ubx.FieldSpec(wire_name="max_staleness_prefix"),
 }
 
 _Account_CorsRuleFields = {
-    "allowed_headers": sdk.FieldSpec(wire_name="allowed_headers"),
-    "allowed_methods": sdk.FieldSpec(wire_name="allowed_methods"),
-    "allowed_origins": sdk.FieldSpec(wire_name="allowed_origins"),
-    "exposed_headers": sdk.FieldSpec(wire_name="exposed_headers"),
-    "max_age_in_seconds": sdk.FieldSpec(wire_name="max_age_in_seconds"),
+    "allowed_headers": ubx.FieldSpec(wire_name="allowed_headers"),
+    "allowed_methods": ubx.FieldSpec(wire_name="allowed_methods"),
+    "allowed_origins": ubx.FieldSpec(wire_name="allowed_origins"),
+    "exposed_headers": ubx.FieldSpec(wire_name="exposed_headers"),
+    "max_age_in_seconds": ubx.FieldSpec(wire_name="max_age_in_seconds"),
 }
 
 _Account_GeoLocationFields = {
-    "failover_priority": sdk.FieldSpec(wire_name="failover_priority"),
-    "id": sdk.FieldSpec(wire_name="id"),
-    "location": sdk.FieldSpec(wire_name="location"),
-    "zone_redundant": sdk.FieldSpec(wire_name="zone_redundant"),
+    "failover_priority": ubx.FieldSpec(wire_name="failover_priority"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "location": ubx.FieldSpec(wire_name="location"),
+    "zone_redundant": ubx.FieldSpec(wire_name="zone_redundant"),
 }
 
 _Account_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Account_Restore_DatabaseFields = {
-    "collection_names": sdk.FieldSpec(wire_name="collection_names"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "collection_names": ubx.FieldSpec(wire_name="collection_names"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _Account_Restore_GremlinDatabaseFields = {
-    "graph_names": sdk.FieldSpec(wire_name="graph_names"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "graph_names": ubx.FieldSpec(wire_name="graph_names"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _Account_RestoreFields = {
-    "restore_timestamp_in_utc": sdk.FieldSpec(wire_name="restore_timestamp_in_utc"),
-    "source_cosmosdb_account_id": sdk.FieldSpec(wire_name="source_cosmosdb_account_id"),
-    "tables_to_restore": sdk.FieldSpec(wire_name="tables_to_restore"),
-    "database": sdk.FieldSpec(
+    "restore_timestamp_in_utc": ubx.FieldSpec(wire_name="restore_timestamp_in_utc"),
+    "source_cosmosdb_account_id": ubx.FieldSpec(wire_name="source_cosmosdb_account_id"),
+    "tables_to_restore": ubx.FieldSpec(wire_name="tables_to_restore"),
+    "database": ubx.FieldSpec(
         wire_name="database",
         kind="set",
         fields=_Account_Restore_DatabaseFields,
     ),
-    "gremlin_database": sdk.FieldSpec(
+    "gremlin_database": ubx.FieldSpec(
         wire_name="gremlin_database",
         kind="list",
         fields=_Account_Restore_GremlinDatabaseFields,
@@ -159,15 +159,15 @@ _Account_RestoreFields = {
 }
 
 _Account_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _Account_VirtualNetworkRuleFields = {
-    "id": sdk.FieldSpec(wire_name="id"),
-    "ignore_missing_vnet_service_endpoint": sdk.FieldSpec(wire_name="ignore_missing_vnet_service_endpoint"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "ignore_missing_vnet_service_endpoint": ubx.FieldSpec(wire_name="ignore_missing_vnet_service_endpoint"),
 }
 
 @dataclasses.dataclass
@@ -209,85 +209,85 @@ class AccountConfig:
     timeouts: Any = None
     virtual_network_rule: Any = None
 
-Account = sdk.ResourceBinding(
+Account = ubx.ResourceBinding(
     wire_type="azurerm_cosmosdb_account",
     fields={
-        "access_key_metadata_writes_enabled": sdk.FieldSpec(wire_name="access_key_metadata_writes_enabled"),
-        "analytical_storage_enabled": sdk.FieldSpec(wire_name="analytical_storage_enabled"),
-        "automatic_failover_enabled": sdk.FieldSpec(wire_name="automatic_failover_enabled"),
-        "burst_capacity_enabled": sdk.FieldSpec(wire_name="burst_capacity_enabled"),
-        "create_mode": sdk.FieldSpec(wire_name="create_mode"),
-        "default_identity_type": sdk.FieldSpec(wire_name="default_identity_type"),
-        "free_tier_enabled": sdk.FieldSpec(wire_name="free_tier_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "ip_range_filter": sdk.FieldSpec(wire_name="ip_range_filter"),
-        "is_virtual_network_filter_enabled": sdk.FieldSpec(wire_name="is_virtual_network_filter_enabled"),
-        "key_vault_key_id": sdk.FieldSpec(wire_name="key_vault_key_id"),
-        "kind": sdk.FieldSpec(wire_name="kind"),
-        "local_authentication_enabled": sdk.FieldSpec(wire_name="local_authentication_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "minimal_tls_version": sdk.FieldSpec(wire_name="minimal_tls_version"),
-        "mongo_server_version": sdk.FieldSpec(wire_name="mongo_server_version"),
-        "multiple_write_locations_enabled": sdk.FieldSpec(wire_name="multiple_write_locations_enabled"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "network_acl_bypass_for_azure_services": sdk.FieldSpec(wire_name="network_acl_bypass_for_azure_services"),
-        "network_acl_bypass_ids": sdk.FieldSpec(wire_name="network_acl_bypass_ids"),
-        "offer_type": sdk.FieldSpec(wire_name="offer_type"),
-        "partition_merge_enabled": sdk.FieldSpec(wire_name="partition_merge_enabled"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "analytical_storage": sdk.FieldSpec(
+        "access_key_metadata_writes_enabled": ubx.FieldSpec(wire_name="access_key_metadata_writes_enabled"),
+        "analytical_storage_enabled": ubx.FieldSpec(wire_name="analytical_storage_enabled"),
+        "automatic_failover_enabled": ubx.FieldSpec(wire_name="automatic_failover_enabled"),
+        "burst_capacity_enabled": ubx.FieldSpec(wire_name="burst_capacity_enabled"),
+        "create_mode": ubx.FieldSpec(wire_name="create_mode"),
+        "default_identity_type": ubx.FieldSpec(wire_name="default_identity_type"),
+        "free_tier_enabled": ubx.FieldSpec(wire_name="free_tier_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "ip_range_filter": ubx.FieldSpec(wire_name="ip_range_filter"),
+        "is_virtual_network_filter_enabled": ubx.FieldSpec(wire_name="is_virtual_network_filter_enabled"),
+        "key_vault_key_id": ubx.FieldSpec(wire_name="key_vault_key_id"),
+        "kind": ubx.FieldSpec(wire_name="kind"),
+        "local_authentication_enabled": ubx.FieldSpec(wire_name="local_authentication_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "minimal_tls_version": ubx.FieldSpec(wire_name="minimal_tls_version"),
+        "mongo_server_version": ubx.FieldSpec(wire_name="mongo_server_version"),
+        "multiple_write_locations_enabled": ubx.FieldSpec(wire_name="multiple_write_locations_enabled"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network_acl_bypass_for_azure_services": ubx.FieldSpec(wire_name="network_acl_bypass_for_azure_services"),
+        "network_acl_bypass_ids": ubx.FieldSpec(wire_name="network_acl_bypass_ids"),
+        "offer_type": ubx.FieldSpec(wire_name="offer_type"),
+        "partition_merge_enabled": ubx.FieldSpec(wire_name="partition_merge_enabled"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "analytical_storage": ubx.FieldSpec(
             wire_name="analytical_storage",
             kind="list",
             fields=_Account_AnalyticalStorageFields,
         ),
-        "backup": sdk.FieldSpec(
+        "backup": ubx.FieldSpec(
             wire_name="backup",
             kind="list",
             fields=_Account_BackupFields,
         ),
-        "capabilities": sdk.FieldSpec(
+        "capabilities": ubx.FieldSpec(
             wire_name="capabilities",
             kind="set",
             fields=_Account_CapabilitiesFields,
         ),
-        "capacity": sdk.FieldSpec(
+        "capacity": ubx.FieldSpec(
             wire_name="capacity",
             kind="list",
             fields=_Account_CapacityFields,
         ),
-        "consistency_policy": sdk.FieldSpec(
+        "consistency_policy": ubx.FieldSpec(
             wire_name="consistency_policy",
             kind="list",
             fields=_Account_ConsistencyPolicyFields,
         ),
-        "cors_rule": sdk.FieldSpec(
+        "cors_rule": ubx.FieldSpec(
             wire_name="cors_rule",
             kind="list",
             fields=_Account_CorsRuleFields,
         ),
-        "geo_location": sdk.FieldSpec(
+        "geo_location": ubx.FieldSpec(
             wire_name="geo_location",
             kind="set",
             fields=_Account_GeoLocationFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Account_IdentityFields,
         ),
-        "restore": sdk.FieldSpec(
+        "restore": ubx.FieldSpec(
             wire_name="restore",
             kind="list",
             fields=_Account_RestoreFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Account_TimeoutsFields,
         ),
-        "virtual_network_rule": sdk.FieldSpec(
+        "virtual_network_rule": ubx.FieldSpec(
             wire_name="virtual_network_rule",
             kind="set",
             fields=_Account_VirtualNetworkRuleFields,

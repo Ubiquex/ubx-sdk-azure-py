@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudVmCluster_DataCollectionOptions:
@@ -25,21 +25,21 @@ class CloudVmCluster_Timeouts:
     update: Any = None
 
 _CloudVmCluster_DataCollectionOptionsFields = {
-    "diagnostics_events_enabled": sdk.FieldSpec(wire_name="diagnostics_events_enabled"),
-    "health_monitoring_enabled": sdk.FieldSpec(wire_name="health_monitoring_enabled"),
-    "incident_logs_enabled": sdk.FieldSpec(wire_name="incident_logs_enabled"),
+    "diagnostics_events_enabled": ubx.FieldSpec(wire_name="diagnostics_events_enabled"),
+    "health_monitoring_enabled": ubx.FieldSpec(wire_name="health_monitoring_enabled"),
+    "incident_logs_enabled": ubx.FieldSpec(wire_name="incident_logs_enabled"),
 }
 
 _CloudVmCluster_FileSystemConfigurationFields = {
-    "mount_point": sdk.FieldSpec(wire_name="mount_point"),
-    "size_in_gb": sdk.FieldSpec(wire_name="size_in_gb"),
+    "mount_point": ubx.FieldSpec(wire_name="mount_point"),
+    "size_in_gb": ubx.FieldSpec(wire_name="size_in_gb"),
 }
 
 _CloudVmCluster_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -77,49 +77,49 @@ class CloudVmClusterConfig:
     file_system_configuration: Any = None
     timeouts: Any = None
 
-CloudVmCluster = sdk.ResourceBinding(
+CloudVmCluster = ubx.ResourceBinding(
     wire_type="azurerm_oracle_cloud_vm_cluster",
     fields={
-        "backup_subnet_cidr": sdk.FieldSpec(wire_name="backup_subnet_cidr"),
-        "cloud_exadata_infrastructure_id": sdk.FieldSpec(wire_name="cloud_exadata_infrastructure_id"),
-        "cluster_name": sdk.FieldSpec(wire_name="cluster_name"),
-        "cpu_core_count": sdk.FieldSpec(wire_name="cpu_core_count"),
-        "data_storage_percentage": sdk.FieldSpec(wire_name="data_storage_percentage"),
-        "data_storage_size_in_tbs": sdk.FieldSpec(wire_name="data_storage_size_in_tbs"),
-        "db_node_storage_size_in_gbs": sdk.FieldSpec(wire_name="db_node_storage_size_in_gbs"),
-        "db_servers": sdk.FieldSpec(wire_name="db_servers"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "domain": sdk.FieldSpec(wire_name="domain"),
-        "gi_version": sdk.FieldSpec(wire_name="gi_version"),
-        "hostname": sdk.FieldSpec(wire_name="hostname"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "license_model": sdk.FieldSpec(wire_name="license_model"),
-        "local_backup_enabled": sdk.FieldSpec(wire_name="local_backup_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "memory_size_in_gbs": sdk.FieldSpec(wire_name="memory_size_in_gbs"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "scan_listener_port_tcp": sdk.FieldSpec(wire_name="scan_listener_port_tcp"),
-        "scan_listener_port_tcp_ssl": sdk.FieldSpec(wire_name="scan_listener_port_tcp_ssl"),
-        "sparse_diskgroup_enabled": sdk.FieldSpec(wire_name="sparse_diskgroup_enabled"),
-        "ssh_public_keys": sdk.FieldSpec(wire_name="ssh_public_keys"),
-        "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-        "system_version": sdk.FieldSpec(wire_name="system_version"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "time_zone": sdk.FieldSpec(wire_name="time_zone"),
-        "virtual_network_id": sdk.FieldSpec(wire_name="virtual_network_id"),
-        "zone_id": sdk.FieldSpec(wire_name="zone_id"),
-        "data_collection_options": sdk.FieldSpec(
+        "backup_subnet_cidr": ubx.FieldSpec(wire_name="backup_subnet_cidr"),
+        "cloud_exadata_infrastructure_id": ubx.FieldSpec(wire_name="cloud_exadata_infrastructure_id"),
+        "cluster_name": ubx.FieldSpec(wire_name="cluster_name"),
+        "cpu_core_count": ubx.FieldSpec(wire_name="cpu_core_count"),
+        "data_storage_percentage": ubx.FieldSpec(wire_name="data_storage_percentage"),
+        "data_storage_size_in_tbs": ubx.FieldSpec(wire_name="data_storage_size_in_tbs"),
+        "db_node_storage_size_in_gbs": ubx.FieldSpec(wire_name="db_node_storage_size_in_gbs"),
+        "db_servers": ubx.FieldSpec(wire_name="db_servers"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "domain": ubx.FieldSpec(wire_name="domain"),
+        "gi_version": ubx.FieldSpec(wire_name="gi_version"),
+        "hostname": ubx.FieldSpec(wire_name="hostname"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "license_model": ubx.FieldSpec(wire_name="license_model"),
+        "local_backup_enabled": ubx.FieldSpec(wire_name="local_backup_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "memory_size_in_gbs": ubx.FieldSpec(wire_name="memory_size_in_gbs"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "scan_listener_port_tcp": ubx.FieldSpec(wire_name="scan_listener_port_tcp"),
+        "scan_listener_port_tcp_ssl": ubx.FieldSpec(wire_name="scan_listener_port_tcp_ssl"),
+        "sparse_diskgroup_enabled": ubx.FieldSpec(wire_name="sparse_diskgroup_enabled"),
+        "ssh_public_keys": ubx.FieldSpec(wire_name="ssh_public_keys"),
+        "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+        "system_version": ubx.FieldSpec(wire_name="system_version"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "time_zone": ubx.FieldSpec(wire_name="time_zone"),
+        "virtual_network_id": ubx.FieldSpec(wire_name="virtual_network_id"),
+        "zone_id": ubx.FieldSpec(wire_name="zone_id"),
+        "data_collection_options": ubx.FieldSpec(
             wire_name="data_collection_options",
             kind="list",
             fields=_CloudVmCluster_DataCollectionOptionsFields,
         ),
-        "file_system_configuration": sdk.FieldSpec(
+        "file_system_configuration": ubx.FieldSpec(
             wire_name="file_system_configuration",
             kind="list",
             fields=_CloudVmCluster_FileSystemConfigurationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CloudVmCluster_TimeoutsFields,

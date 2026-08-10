@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServiceCertificateOrder_Timeouts:
@@ -14,10 +14,10 @@ class ServiceCertificateOrder_Timeouts:
     update: Any = None
 
 _ServiceCertificateOrder_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -35,21 +35,21 @@ class ServiceCertificateOrderConfig:
     validity_in_years: Any = None
     timeouts: Any = None
 
-ServiceCertificateOrder = sdk.ResourceBinding(
+ServiceCertificateOrder = ubx.ResourceBinding(
     wire_type="azurerm_app_service_certificate_order",
     fields={
-        "auto_renew": sdk.FieldSpec(wire_name="auto_renew"),
-        "csr": sdk.FieldSpec(wire_name="csr"),
-        "distinguished_name": sdk.FieldSpec(wire_name="distinguished_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "key_size": sdk.FieldSpec(wire_name="key_size"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "product_type": sdk.FieldSpec(wire_name="product_type"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "validity_in_years": sdk.FieldSpec(wire_name="validity_in_years"),
-        "timeouts": sdk.FieldSpec(
+        "auto_renew": ubx.FieldSpec(wire_name="auto_renew"),
+        "csr": ubx.FieldSpec(wire_name="csr"),
+        "distinguished_name": ubx.FieldSpec(wire_name="distinguished_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "key_size": ubx.FieldSpec(wire_name="key_size"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "product_type": ubx.FieldSpec(wire_name="product_type"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "validity_in_years": ubx.FieldSpec(wire_name="validity_in_years"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ServiceCertificateOrder_TimeoutsFields,

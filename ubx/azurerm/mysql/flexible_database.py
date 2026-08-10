@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FlexibleDatabase_Timeouts:
@@ -13,9 +13,9 @@ class FlexibleDatabase_Timeouts:
     read: Any = None
 
 _FlexibleDatabase_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -28,16 +28,16 @@ class FlexibleDatabaseConfig:
     server_name: Any = None
     timeouts: Any = None
 
-FlexibleDatabase = sdk.ResourceBinding(
+FlexibleDatabase = ubx.ResourceBinding(
     wire_type="azurerm_mysql_flexible_database",
     fields={
-        "charset": sdk.FieldSpec(wire_name="charset"),
-        "collation": sdk.FieldSpec(wire_name="collation"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "server_name": sdk.FieldSpec(wire_name="server_name"),
-        "timeouts": sdk.FieldSpec(
+        "charset": ubx.FieldSpec(wire_name="charset"),
+        "collation": ubx.FieldSpec(wire_name="collation"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "server_name": ubx.FieldSpec(wire_name="server_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FlexibleDatabase_TimeoutsFields,

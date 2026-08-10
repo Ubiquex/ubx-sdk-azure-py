@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServerConfigurationPolicyGroup_Policy:
@@ -20,16 +20,16 @@ class ServerConfigurationPolicyGroup_Timeouts:
     update: Any = None
 
 _ServerConfigurationPolicyGroup_PolicyFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "type": sdk.FieldSpec(wire_name="type"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "type": ubx.FieldSpec(wire_name="type"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _ServerConfigurationPolicyGroup_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -42,20 +42,20 @@ class ServerConfigurationPolicyGroupConfig:
     policy: Any = None
     timeouts: Any = None
 
-ServerConfigurationPolicyGroup = sdk.ResourceBinding(
+ServerConfigurationPolicyGroup = ubx.ResourceBinding(
     wire_type="azurerm_vpn_server_configuration_policy_group",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "is_default": sdk.FieldSpec(wire_name="is_default"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "priority": sdk.FieldSpec(wire_name="priority"),
-        "vpn_server_configuration_id": sdk.FieldSpec(wire_name="vpn_server_configuration_id"),
-        "policy": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "is_default": ubx.FieldSpec(wire_name="is_default"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "priority": ubx.FieldSpec(wire_name="priority"),
+        "vpn_server_configuration_id": ubx.FieldSpec(wire_name="vpn_server_configuration_id"),
+        "policy": ubx.FieldSpec(
             wire_name="policy",
             kind="set",
             fields=_ServerConfigurationPolicyGroup_PolicyFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ServerConfigurationPolicyGroup_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ImageVersion_TargetRegion:
@@ -22,18 +22,18 @@ class ImageVersion_Timeouts:
     update: Any = None
 
 _ImageVersion_TargetRegionFields = {
-    "disk_encryption_set_id": sdk.FieldSpec(wire_name="disk_encryption_set_id"),
-    "exclude_from_latest_enabled": sdk.FieldSpec(wire_name="exclude_from_latest_enabled"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "regional_replica_count": sdk.FieldSpec(wire_name="regional_replica_count"),
-    "storage_account_type": sdk.FieldSpec(wire_name="storage_account_type"),
+    "disk_encryption_set_id": ubx.FieldSpec(wire_name="disk_encryption_set_id"),
+    "exclude_from_latest_enabled": ubx.FieldSpec(wire_name="exclude_from_latest_enabled"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "regional_replica_count": ubx.FieldSpec(wire_name="regional_replica_count"),
+    "storage_account_type": ubx.FieldSpec(wire_name="storage_account_type"),
 }
 
 _ImageVersion_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -56,30 +56,30 @@ class ImageVersionConfig:
     target_region: Any = None
     timeouts: Any = None
 
-ImageVersion = sdk.ResourceBinding(
+ImageVersion = ubx.ResourceBinding(
     wire_type="azurerm_shared_image_version",
     fields={
-        "blob_uri": sdk.FieldSpec(wire_name="blob_uri"),
-        "deletion_of_replicated_locations_enabled": sdk.FieldSpec(wire_name="deletion_of_replicated_locations_enabled"),
-        "end_of_life_date": sdk.FieldSpec(wire_name="end_of_life_date"),
-        "exclude_from_latest": sdk.FieldSpec(wire_name="exclude_from_latest"),
-        "gallery_name": sdk.FieldSpec(wire_name="gallery_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "image_name": sdk.FieldSpec(wire_name="image_name"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "managed_image_id": sdk.FieldSpec(wire_name="managed_image_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "os_disk_snapshot_id": sdk.FieldSpec(wire_name="os_disk_snapshot_id"),
-        "replication_mode": sdk.FieldSpec(wire_name="replication_mode"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "target_region": sdk.FieldSpec(
+        "blob_uri": ubx.FieldSpec(wire_name="blob_uri"),
+        "deletion_of_replicated_locations_enabled": ubx.FieldSpec(wire_name="deletion_of_replicated_locations_enabled"),
+        "end_of_life_date": ubx.FieldSpec(wire_name="end_of_life_date"),
+        "exclude_from_latest": ubx.FieldSpec(wire_name="exclude_from_latest"),
+        "gallery_name": ubx.FieldSpec(wire_name="gallery_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "image_name": ubx.FieldSpec(wire_name="image_name"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "managed_image_id": ubx.FieldSpec(wire_name="managed_image_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "os_disk_snapshot_id": ubx.FieldSpec(wire_name="os_disk_snapshot_id"),
+        "replication_mode": ubx.FieldSpec(wire_name="replication_mode"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "target_region": ubx.FieldSpec(
             wire_name="target_region",
             kind="list",
             fields=_ImageVersion_TargetRegionFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ImageVersion_TimeoutsFields,

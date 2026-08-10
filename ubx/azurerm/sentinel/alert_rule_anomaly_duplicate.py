@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AlertRuleAnomalyDuplicate_MultiSelectObservation:
@@ -43,39 +43,39 @@ class AlertRuleAnomalyDuplicate_Timeouts:
     update: Any = None
 
 _AlertRuleAnomalyDuplicate_MultiSelectObservationFields = {
-    "description": sdk.FieldSpec(wire_name="description"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "supported_values": sdk.FieldSpec(wire_name="supported_values"),
-    "values": sdk.FieldSpec(wire_name="values"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "supported_values": ubx.FieldSpec(wire_name="supported_values"),
+    "values": ubx.FieldSpec(wire_name="values"),
 }
 
 _AlertRuleAnomalyDuplicate_PrioritizedExcludeObservationFields = {
-    "description": sdk.FieldSpec(wire_name="description"),
-    "exclude": sdk.FieldSpec(wire_name="exclude"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "prioritize": sdk.FieldSpec(wire_name="prioritize"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "exclude": ubx.FieldSpec(wire_name="exclude"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "prioritize": ubx.FieldSpec(wire_name="prioritize"),
 }
 
 _AlertRuleAnomalyDuplicate_SingleSelectObservationFields = {
-    "description": sdk.FieldSpec(wire_name="description"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "supported_values": sdk.FieldSpec(wire_name="supported_values"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "supported_values": ubx.FieldSpec(wire_name="supported_values"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _AlertRuleAnomalyDuplicate_ThresholdObservationFields = {
-    "description": sdk.FieldSpec(wire_name="description"),
-    "max": sdk.FieldSpec(wire_name="max"),
-    "min": sdk.FieldSpec(wire_name="min"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "max": ubx.FieldSpec(wire_name="max"),
+    "min": ubx.FieldSpec(wire_name="min"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _AlertRuleAnomalyDuplicate_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -92,36 +92,36 @@ class AlertRuleAnomalyDuplicateConfig:
     threshold_observation: Any = None
     timeouts: Any = None
 
-AlertRuleAnomalyDuplicate = sdk.ResourceBinding(
+AlertRuleAnomalyDuplicate = ubx.ResourceBinding(
     wire_type="azurerm_sentinel_alert_rule_anomaly_duplicate",
     fields={
-        "built_in_rule_id": sdk.FieldSpec(wire_name="built_in_rule_id"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "log_analytics_workspace_id": sdk.FieldSpec(wire_name="log_analytics_workspace_id"),
-        "mode": sdk.FieldSpec(wire_name="mode"),
-        "multi_select_observation": sdk.FieldSpec(
+        "built_in_rule_id": ubx.FieldSpec(wire_name="built_in_rule_id"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "log_analytics_workspace_id": ubx.FieldSpec(wire_name="log_analytics_workspace_id"),
+        "mode": ubx.FieldSpec(wire_name="mode"),
+        "multi_select_observation": ubx.FieldSpec(
             wire_name="multi_select_observation",
             kind="list",
             fields=_AlertRuleAnomalyDuplicate_MultiSelectObservationFields,
         ),
-        "prioritized_exclude_observation": sdk.FieldSpec(
+        "prioritized_exclude_observation": ubx.FieldSpec(
             wire_name="prioritized_exclude_observation",
             kind="list",
             fields=_AlertRuleAnomalyDuplicate_PrioritizedExcludeObservationFields,
         ),
-        "single_select_observation": sdk.FieldSpec(
+        "single_select_observation": ubx.FieldSpec(
             wire_name="single_select_observation",
             kind="list",
             fields=_AlertRuleAnomalyDuplicate_SingleSelectObservationFields,
         ),
-        "threshold_observation": sdk.FieldSpec(
+        "threshold_observation": ubx.FieldSpec(
             wire_name="threshold_observation",
             kind="list",
             fields=_AlertRuleAnomalyDuplicate_ThresholdObservationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AlertRuleAnomalyDuplicate_TimeoutsFields,

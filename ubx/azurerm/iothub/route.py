@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Route_Timeouts:
@@ -14,10 +14,10 @@ class Route_Timeouts:
     update: Any = None
 
 _Route_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -32,18 +32,18 @@ class RouteConfig:
     source: Any = None
     timeouts: Any = None
 
-Route = sdk.ResourceBinding(
+Route = ubx.ResourceBinding(
     wire_type="azurerm_iothub_route",
     fields={
-        "condition": sdk.FieldSpec(wire_name="condition"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "endpoint_names": sdk.FieldSpec(wire_name="endpoint_names"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "iothub_name": sdk.FieldSpec(wire_name="iothub_name"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "source": sdk.FieldSpec(wire_name="source"),
-        "timeouts": sdk.FieldSpec(
+        "condition": ubx.FieldSpec(wire_name="condition"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "endpoint_names": ubx.FieldSpec(wire_name="endpoint_names"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "iothub_name": ubx.FieldSpec(wire_name="iothub_name"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "source": ubx.FieldSpec(wire_name="source"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Route_TimeoutsFields,

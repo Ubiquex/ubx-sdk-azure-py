@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VaultKey_ReleasePolicy:
@@ -30,19 +30,19 @@ class VaultKey_Timeouts:
     update: Any = None
 
 _VaultKey_ReleasePolicyFields = {
-    "immutable": sdk.FieldSpec(wire_name="immutable"),
-    "json": sdk.FieldSpec(wire_name="json"),
+    "immutable": ubx.FieldSpec(wire_name="immutable"),
+    "json": ubx.FieldSpec(wire_name="json"),
 }
 
 _VaultKey_RotationPolicy_AutomaticFields = {
-    "time_after_creation": sdk.FieldSpec(wire_name="time_after_creation"),
-    "time_before_expiry": sdk.FieldSpec(wire_name="time_before_expiry"),
+    "time_after_creation": ubx.FieldSpec(wire_name="time_after_creation"),
+    "time_before_expiry": ubx.FieldSpec(wire_name="time_before_expiry"),
 }
 
 _VaultKey_RotationPolicyFields = {
-    "expire_after": sdk.FieldSpec(wire_name="expire_after"),
-    "notify_before_expiry": sdk.FieldSpec(wire_name="notify_before_expiry"),
-    "automatic": sdk.FieldSpec(
+    "expire_after": ubx.FieldSpec(wire_name="expire_after"),
+    "notify_before_expiry": ubx.FieldSpec(wire_name="notify_before_expiry"),
+    "automatic": ubx.FieldSpec(
         wire_name="automatic",
         kind="list",
         fields=_VaultKey_RotationPolicy_AutomaticFields,
@@ -50,10 +50,10 @@ _VaultKey_RotationPolicyFields = {
 }
 
 _VaultKey_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -72,30 +72,30 @@ class VaultKeyConfig:
     rotation_policy: Any = None
     timeouts: Any = None
 
-VaultKey = sdk.ResourceBinding(
+VaultKey = ubx.ResourceBinding(
     wire_type="azurerm_key_vault_key",
     fields={
-        "curve": sdk.FieldSpec(wire_name="curve"),
-        "expiration_date": sdk.FieldSpec(wire_name="expiration_date"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "key_opts": sdk.FieldSpec(wire_name="key_opts"),
-        "key_size": sdk.FieldSpec(wire_name="key_size"),
-        "key_type": sdk.FieldSpec(wire_name="key_type"),
-        "key_vault_id": sdk.FieldSpec(wire_name="key_vault_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "not_before_date": sdk.FieldSpec(wire_name="not_before_date"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "release_policy": sdk.FieldSpec(
+        "curve": ubx.FieldSpec(wire_name="curve"),
+        "expiration_date": ubx.FieldSpec(wire_name="expiration_date"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "key_opts": ubx.FieldSpec(wire_name="key_opts"),
+        "key_size": ubx.FieldSpec(wire_name="key_size"),
+        "key_type": ubx.FieldSpec(wire_name="key_type"),
+        "key_vault_id": ubx.FieldSpec(wire_name="key_vault_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "not_before_date": ubx.FieldSpec(wire_name="not_before_date"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "release_policy": ubx.FieldSpec(
             wire_name="release_policy",
             kind="list",
             fields=_VaultKey_ReleasePolicyFields,
         ),
-        "rotation_policy": sdk.FieldSpec(
+        "rotation_policy": ubx.FieldSpec(
             wire_name="rotation_policy",
             kind="list",
             fields=_VaultKey_RotationPolicyFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_VaultKey_TimeoutsFields,

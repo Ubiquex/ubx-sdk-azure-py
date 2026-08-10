@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AutonomousDatabaseBackup_Timeouts:
@@ -14,10 +14,10 @@ class AutonomousDatabaseBackup_Timeouts:
     update: Any = None
 
 _AutonomousDatabaseBackup_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class AutonomousDatabaseBackupConfig:
     type: Any = None
     timeouts: Any = None
 
-AutonomousDatabaseBackup = sdk.ResourceBinding(
+AutonomousDatabaseBackup = ubx.ResourceBinding(
     wire_type="azurerm_oracle_autonomous_database_backup",
     fields={
-        "autonomous_database_id": sdk.FieldSpec(wire_name="autonomous_database_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "retention_period_in_days": sdk.FieldSpec(wire_name="retention_period_in_days"),
-        "type": sdk.FieldSpec(wire_name="type"),
-        "timeouts": sdk.FieldSpec(
+        "autonomous_database_id": ubx.FieldSpec(wire_name="autonomous_database_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "retention_period_in_days": ubx.FieldSpec(wire_name="retention_period_in_days"),
+        "type": ubx.FieldSpec(wire_name="type"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AutonomousDatabaseBackup_TimeoutsFields,

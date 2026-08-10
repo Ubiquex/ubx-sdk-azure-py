@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MachineExtension_Timeouts:
@@ -14,10 +14,10 @@ class MachineExtension_Timeouts:
     update: Any = None
 
 _MachineExtension_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -36,22 +36,22 @@ class MachineExtensionConfig:
     type_handler_version: Any = None
     timeouts: Any = None
 
-MachineExtension = sdk.ResourceBinding(
+MachineExtension = ubx.ResourceBinding(
     wire_type="azurerm_arc_machine_extension",
     fields={
-        "arc_machine_id": sdk.FieldSpec(wire_name="arc_machine_id"),
-        "automatic_upgrade_enabled": sdk.FieldSpec(wire_name="automatic_upgrade_enabled"),
-        "force_update_tag": sdk.FieldSpec(wire_name="force_update_tag"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "protected_settings": sdk.FieldSpec(wire_name="protected_settings"),
-        "publisher": sdk.FieldSpec(wire_name="publisher"),
-        "settings": sdk.FieldSpec(wire_name="settings"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "type": sdk.FieldSpec(wire_name="type"),
-        "type_handler_version": sdk.FieldSpec(wire_name="type_handler_version"),
-        "timeouts": sdk.FieldSpec(
+        "arc_machine_id": ubx.FieldSpec(wire_name="arc_machine_id"),
+        "automatic_upgrade_enabled": ubx.FieldSpec(wire_name="automatic_upgrade_enabled"),
+        "force_update_tag": ubx.FieldSpec(wire_name="force_update_tag"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "protected_settings": ubx.FieldSpec(wire_name="protected_settings"),
+        "publisher": ubx.FieldSpec(wire_name="publisher"),
+        "settings": ubx.FieldSpec(wire_name="settings"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "type": ubx.FieldSpec(wire_name="type"),
+        "type_handler_version": ubx.FieldSpec(wire_name="type_handler_version"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_MachineExtension_TimeoutsFields,

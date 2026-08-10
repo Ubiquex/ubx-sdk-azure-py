@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Hub_ApnsCredential:
@@ -32,28 +32,28 @@ class Hub_Timeouts:
     update: Any = None
 
 _Hub_ApnsCredentialFields = {
-    "application_mode": sdk.FieldSpec(wire_name="application_mode"),
-    "bundle_id": sdk.FieldSpec(wire_name="bundle_id"),
-    "key_id": sdk.FieldSpec(wire_name="key_id"),
-    "team_id": sdk.FieldSpec(wire_name="team_id"),
-    "token": sdk.FieldSpec(wire_name="token"),
+    "application_mode": ubx.FieldSpec(wire_name="application_mode"),
+    "bundle_id": ubx.FieldSpec(wire_name="bundle_id"),
+    "key_id": ubx.FieldSpec(wire_name="key_id"),
+    "team_id": ubx.FieldSpec(wire_name="team_id"),
+    "token": ubx.FieldSpec(wire_name="token"),
 }
 
 _Hub_BrowserCredentialFields = {
-    "subject": sdk.FieldSpec(wire_name="subject"),
-    "vapid_private_key": sdk.FieldSpec(wire_name="vapid_private_key"),
-    "vapid_public_key": sdk.FieldSpec(wire_name="vapid_public_key"),
+    "subject": ubx.FieldSpec(wire_name="subject"),
+    "vapid_private_key": ubx.FieldSpec(wire_name="vapid_private_key"),
+    "vapid_public_key": ubx.FieldSpec(wire_name="vapid_public_key"),
 }
 
 _Hub_GcmCredentialFields = {
-    "api_key": sdk.FieldSpec(wire_name="api_key"),
+    "api_key": ubx.FieldSpec(wire_name="api_key"),
 }
 
 _Hub_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -69,31 +69,31 @@ class HubConfig:
     gcm_credential: Any = None
     timeouts: Any = None
 
-Hub = sdk.ResourceBinding(
+Hub = ubx.ResourceBinding(
     wire_type="azurerm_notification_hub",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "namespace_name": sdk.FieldSpec(wire_name="namespace_name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "apns_credential": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "namespace_name": ubx.FieldSpec(wire_name="namespace_name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "apns_credential": ubx.FieldSpec(
             wire_name="apns_credential",
             kind="list",
             fields=_Hub_ApnsCredentialFields,
         ),
-        "browser_credential": sdk.FieldSpec(
+        "browser_credential": ubx.FieldSpec(
             wire_name="browser_credential",
             kind="list",
             fields=_Hub_BrowserCredentialFields,
         ),
-        "gcm_credential": sdk.FieldSpec(
+        "gcm_credential": ubx.FieldSpec(
             wire_name="gcm_credential",
             kind="list",
             fields=_Hub_GcmCredentialFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Hub_TimeoutsFields,

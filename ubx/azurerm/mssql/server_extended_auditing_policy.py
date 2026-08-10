@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServerExtendedAuditingPolicy_Timeouts:
@@ -14,10 +14,10 @@ class ServerExtendedAuditingPolicy_Timeouts:
     update: Any = None
 
 _ServerExtendedAuditingPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -35,21 +35,21 @@ class ServerExtendedAuditingPolicyConfig:
     storage_account_subscription_id: Any = None
     timeouts: Any = None
 
-ServerExtendedAuditingPolicy = sdk.ResourceBinding(
+ServerExtendedAuditingPolicy = ubx.ResourceBinding(
     wire_type="azurerm_mssql_server_extended_auditing_policy",
     fields={
-        "audit_actions_and_groups": sdk.FieldSpec(wire_name="audit_actions_and_groups"),
-        "blob_storage_endpoint": sdk.FieldSpec(wire_name="blob_storage_endpoint"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "log_monitoring_enabled": sdk.FieldSpec(wire_name="log_monitoring_enabled"),
-        "predicate_expression": sdk.FieldSpec(wire_name="predicate_expression"),
-        "retention_in_days": sdk.FieldSpec(wire_name="retention_in_days"),
-        "server_id": sdk.FieldSpec(wire_name="server_id"),
-        "storage_account_access_key": sdk.FieldSpec(wire_name="storage_account_access_key"),
-        "storage_account_access_key_is_secondary": sdk.FieldSpec(wire_name="storage_account_access_key_is_secondary"),
-        "storage_account_subscription_id": sdk.FieldSpec(wire_name="storage_account_subscription_id"),
-        "timeouts": sdk.FieldSpec(
+        "audit_actions_and_groups": ubx.FieldSpec(wire_name="audit_actions_and_groups"),
+        "blob_storage_endpoint": ubx.FieldSpec(wire_name="blob_storage_endpoint"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "log_monitoring_enabled": ubx.FieldSpec(wire_name="log_monitoring_enabled"),
+        "predicate_expression": ubx.FieldSpec(wire_name="predicate_expression"),
+        "retention_in_days": ubx.FieldSpec(wire_name="retention_in_days"),
+        "server_id": ubx.FieldSpec(wire_name="server_id"),
+        "storage_account_access_key": ubx.FieldSpec(wire_name="storage_account_access_key"),
+        "storage_account_access_key_is_secondary": ubx.FieldSpec(wire_name="storage_account_access_key_is_secondary"),
+        "storage_account_subscription_id": ubx.FieldSpec(wire_name="storage_account_subscription_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ServerExtendedAuditingPolicy_TimeoutsFields,

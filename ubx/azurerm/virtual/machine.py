@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Machine_AdditionalCapabilities:
@@ -116,36 +116,36 @@ class Machine_Timeouts:
     update: Any = None
 
 _Machine_AdditionalCapabilitiesFields = {
-    "ultra_ssd_enabled": sdk.FieldSpec(wire_name="ultra_ssd_enabled"),
+    "ultra_ssd_enabled": ubx.FieldSpec(wire_name="ultra_ssd_enabled"),
 }
 
 _Machine_BootDiagnosticsFields = {
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "storage_uri": sdk.FieldSpec(wire_name="storage_uri"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "storage_uri": ubx.FieldSpec(wire_name="storage_uri"),
 }
 
 _Machine_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Machine_OsProfileFields = {
-    "admin_password": sdk.FieldSpec(wire_name="admin_password"),
-    "admin_username": sdk.FieldSpec(wire_name="admin_username"),
-    "computer_name": sdk.FieldSpec(wire_name="computer_name"),
-    "custom_data": sdk.FieldSpec(wire_name="custom_data"),
+    "admin_password": ubx.FieldSpec(wire_name="admin_password"),
+    "admin_username": ubx.FieldSpec(wire_name="admin_username"),
+    "computer_name": ubx.FieldSpec(wire_name="computer_name"),
+    "custom_data": ubx.FieldSpec(wire_name="custom_data"),
 }
 
 _Machine_OsProfileLinuxConfig_SshKeysFields = {
-    "key_data": sdk.FieldSpec(wire_name="key_data"),
-    "path": sdk.FieldSpec(wire_name="path"),
+    "key_data": ubx.FieldSpec(wire_name="key_data"),
+    "path": ubx.FieldSpec(wire_name="path"),
 }
 
 _Machine_OsProfileLinuxConfigFields = {
-    "disable_password_authentication": sdk.FieldSpec(wire_name="disable_password_authentication"),
-    "ssh_keys": sdk.FieldSpec(
+    "disable_password_authentication": ubx.FieldSpec(wire_name="disable_password_authentication"),
+    "ssh_keys": ubx.FieldSpec(
         wire_name="ssh_keys",
         kind="list",
         fields=_Machine_OsProfileLinuxConfig_SshKeysFields,
@@ -153,13 +153,13 @@ _Machine_OsProfileLinuxConfigFields = {
 }
 
 _Machine_OsProfileSecrets_VaultCertificatesFields = {
-    "certificate_store": sdk.FieldSpec(wire_name="certificate_store"),
-    "certificate_url": sdk.FieldSpec(wire_name="certificate_url"),
+    "certificate_store": ubx.FieldSpec(wire_name="certificate_store"),
+    "certificate_url": ubx.FieldSpec(wire_name="certificate_url"),
 }
 
 _Machine_OsProfileSecretsFields = {
-    "source_vault_id": sdk.FieldSpec(wire_name="source_vault_id"),
-    "vault_certificates": sdk.FieldSpec(
+    "source_vault_id": ubx.FieldSpec(wire_name="source_vault_id"),
+    "vault_certificates": ubx.FieldSpec(
         wire_name="vault_certificates",
         kind="list",
         fields=_Machine_OsProfileSecrets_VaultCertificatesFields,
@@ -167,27 +167,27 @@ _Machine_OsProfileSecretsFields = {
 }
 
 _Machine_OsProfileWindowsConfig_AdditionalUnattendConfigFields = {
-    "component": sdk.FieldSpec(wire_name="component"),
-    "content": sdk.FieldSpec(wire_name="content"),
-    "pass_": sdk.FieldSpec(wire_name="pass"),
-    "setting_name": sdk.FieldSpec(wire_name="setting_name"),
+    "component": ubx.FieldSpec(wire_name="component"),
+    "content": ubx.FieldSpec(wire_name="content"),
+    "pass_": ubx.FieldSpec(wire_name="pass"),
+    "setting_name": ubx.FieldSpec(wire_name="setting_name"),
 }
 
 _Machine_OsProfileWindowsConfig_WinrmFields = {
-    "certificate_url": sdk.FieldSpec(wire_name="certificate_url"),
-    "protocol": sdk.FieldSpec(wire_name="protocol"),
+    "certificate_url": ubx.FieldSpec(wire_name="certificate_url"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
 }
 
 _Machine_OsProfileWindowsConfigFields = {
-    "enable_automatic_upgrades": sdk.FieldSpec(wire_name="enable_automatic_upgrades"),
-    "provision_vm_agent": sdk.FieldSpec(wire_name="provision_vm_agent"),
-    "timezone": sdk.FieldSpec(wire_name="timezone"),
-    "additional_unattend_config": sdk.FieldSpec(
+    "enable_automatic_upgrades": ubx.FieldSpec(wire_name="enable_automatic_upgrades"),
+    "provision_vm_agent": ubx.FieldSpec(wire_name="provision_vm_agent"),
+    "timezone": ubx.FieldSpec(wire_name="timezone"),
+    "additional_unattend_config": ubx.FieldSpec(
         wire_name="additional_unattend_config",
         kind="list",
         fields=_Machine_OsProfileWindowsConfig_AdditionalUnattendConfigFields,
     ),
-    "winrm": sdk.FieldSpec(
+    "winrm": ubx.FieldSpec(
         wire_name="winrm",
         kind="list",
         fields=_Machine_OsProfileWindowsConfig_WinrmFields,
@@ -195,49 +195,49 @@ _Machine_OsProfileWindowsConfigFields = {
 }
 
 _Machine_PlanFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "product": sdk.FieldSpec(wire_name="product"),
-    "publisher": sdk.FieldSpec(wire_name="publisher"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "product": ubx.FieldSpec(wire_name="product"),
+    "publisher": ubx.FieldSpec(wire_name="publisher"),
 }
 
 _Machine_StorageDataDiskFields = {
-    "caching": sdk.FieldSpec(wire_name="caching"),
-    "create_option": sdk.FieldSpec(wire_name="create_option"),
-    "disk_size_gb": sdk.FieldSpec(wire_name="disk_size_gb"),
-    "lun": sdk.FieldSpec(wire_name="lun"),
-    "managed_disk_id": sdk.FieldSpec(wire_name="managed_disk_id"),
-    "managed_disk_type": sdk.FieldSpec(wire_name="managed_disk_type"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "vhd_uri": sdk.FieldSpec(wire_name="vhd_uri"),
-    "write_accelerator_enabled": sdk.FieldSpec(wire_name="write_accelerator_enabled"),
+    "caching": ubx.FieldSpec(wire_name="caching"),
+    "create_option": ubx.FieldSpec(wire_name="create_option"),
+    "disk_size_gb": ubx.FieldSpec(wire_name="disk_size_gb"),
+    "lun": ubx.FieldSpec(wire_name="lun"),
+    "managed_disk_id": ubx.FieldSpec(wire_name="managed_disk_id"),
+    "managed_disk_type": ubx.FieldSpec(wire_name="managed_disk_type"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "vhd_uri": ubx.FieldSpec(wire_name="vhd_uri"),
+    "write_accelerator_enabled": ubx.FieldSpec(wire_name="write_accelerator_enabled"),
 }
 
 _Machine_StorageImageReferenceFields = {
-    "id": sdk.FieldSpec(wire_name="id"),
-    "offer": sdk.FieldSpec(wire_name="offer"),
-    "publisher": sdk.FieldSpec(wire_name="publisher"),
-    "sku": sdk.FieldSpec(wire_name="sku"),
-    "version": sdk.FieldSpec(wire_name="version"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "offer": ubx.FieldSpec(wire_name="offer"),
+    "publisher": ubx.FieldSpec(wire_name="publisher"),
+    "sku": ubx.FieldSpec(wire_name="sku"),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _Machine_StorageOsDiskFields = {
-    "caching": sdk.FieldSpec(wire_name="caching"),
-    "create_option": sdk.FieldSpec(wire_name="create_option"),
-    "disk_size_gb": sdk.FieldSpec(wire_name="disk_size_gb"),
-    "image_uri": sdk.FieldSpec(wire_name="image_uri"),
-    "managed_disk_id": sdk.FieldSpec(wire_name="managed_disk_id"),
-    "managed_disk_type": sdk.FieldSpec(wire_name="managed_disk_type"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "os_type": sdk.FieldSpec(wire_name="os_type"),
-    "vhd_uri": sdk.FieldSpec(wire_name="vhd_uri"),
-    "write_accelerator_enabled": sdk.FieldSpec(wire_name="write_accelerator_enabled"),
+    "caching": ubx.FieldSpec(wire_name="caching"),
+    "create_option": ubx.FieldSpec(wire_name="create_option"),
+    "disk_size_gb": ubx.FieldSpec(wire_name="disk_size_gb"),
+    "image_uri": ubx.FieldSpec(wire_name="image_uri"),
+    "managed_disk_id": ubx.FieldSpec(wire_name="managed_disk_id"),
+    "managed_disk_type": ubx.FieldSpec(wire_name="managed_disk_type"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "os_type": ubx.FieldSpec(wire_name="os_type"),
+    "vhd_uri": ubx.FieldSpec(wire_name="vhd_uri"),
+    "write_accelerator_enabled": ubx.FieldSpec(wire_name="write_accelerator_enabled"),
 }
 
 _Machine_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -269,79 +269,79 @@ class MachineConfig:
     storage_os_disk: Any = None
     timeouts: Any = None
 
-Machine = sdk.ResourceBinding(
+Machine = ubx.ResourceBinding(
     wire_type="azurerm_virtual_machine",
     fields={
-        "availability_set_id": sdk.FieldSpec(wire_name="availability_set_id"),
-        "delete_data_disks_on_termination": sdk.FieldSpec(wire_name="delete_data_disks_on_termination"),
-        "delete_os_disk_on_termination": sdk.FieldSpec(wire_name="delete_os_disk_on_termination"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "license_type": sdk.FieldSpec(wire_name="license_type"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "network_interface_ids": sdk.FieldSpec(wire_name="network_interface_ids"),
-        "primary_network_interface_id": sdk.FieldSpec(wire_name="primary_network_interface_id"),
-        "proximity_placement_group_id": sdk.FieldSpec(wire_name="proximity_placement_group_id"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "vm_size": sdk.FieldSpec(wire_name="vm_size"),
-        "zones": sdk.FieldSpec(wire_name="zones"),
-        "additional_capabilities": sdk.FieldSpec(
+        "availability_set_id": ubx.FieldSpec(wire_name="availability_set_id"),
+        "delete_data_disks_on_termination": ubx.FieldSpec(wire_name="delete_data_disks_on_termination"),
+        "delete_os_disk_on_termination": ubx.FieldSpec(wire_name="delete_os_disk_on_termination"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "license_type": ubx.FieldSpec(wire_name="license_type"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network_interface_ids": ubx.FieldSpec(wire_name="network_interface_ids"),
+        "primary_network_interface_id": ubx.FieldSpec(wire_name="primary_network_interface_id"),
+        "proximity_placement_group_id": ubx.FieldSpec(wire_name="proximity_placement_group_id"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "vm_size": ubx.FieldSpec(wire_name="vm_size"),
+        "zones": ubx.FieldSpec(wire_name="zones"),
+        "additional_capabilities": ubx.FieldSpec(
             wire_name="additional_capabilities",
             kind="list",
             fields=_Machine_AdditionalCapabilitiesFields,
         ),
-        "boot_diagnostics": sdk.FieldSpec(
+        "boot_diagnostics": ubx.FieldSpec(
             wire_name="boot_diagnostics",
             kind="list",
             fields=_Machine_BootDiagnosticsFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Machine_IdentityFields,
         ),
-        "os_profile": sdk.FieldSpec(
+        "os_profile": ubx.FieldSpec(
             wire_name="os_profile",
             kind="set",
             fields=_Machine_OsProfileFields,
         ),
-        "os_profile_linux_config": sdk.FieldSpec(
+        "os_profile_linux_config": ubx.FieldSpec(
             wire_name="os_profile_linux_config",
             kind="set",
             fields=_Machine_OsProfileLinuxConfigFields,
         ),
-        "os_profile_secrets": sdk.FieldSpec(
+        "os_profile_secrets": ubx.FieldSpec(
             wire_name="os_profile_secrets",
             kind="list",
             fields=_Machine_OsProfileSecretsFields,
         ),
-        "os_profile_windows_config": sdk.FieldSpec(
+        "os_profile_windows_config": ubx.FieldSpec(
             wire_name="os_profile_windows_config",
             kind="set",
             fields=_Machine_OsProfileWindowsConfigFields,
         ),
-        "plan": sdk.FieldSpec(
+        "plan": ubx.FieldSpec(
             wire_name="plan",
             kind="list",
             fields=_Machine_PlanFields,
         ),
-        "storage_data_disk": sdk.FieldSpec(
+        "storage_data_disk": ubx.FieldSpec(
             wire_name="storage_data_disk",
             kind="list",
             fields=_Machine_StorageDataDiskFields,
         ),
-        "storage_image_reference": sdk.FieldSpec(
+        "storage_image_reference": ubx.FieldSpec(
             wire_name="storage_image_reference",
             kind="set",
             fields=_Machine_StorageImageReferenceFields,
         ),
-        "storage_os_disk": sdk.FieldSpec(
+        "storage_os_disk": ubx.FieldSpec(
             wire_name="storage_os_disk",
             kind="list",
             fields=_Machine_StorageOsDiskFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Machine_TimeoutsFields,

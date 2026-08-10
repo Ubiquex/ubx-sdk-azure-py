@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Pool_AutoScale:
@@ -212,111 +212,111 @@ class Pool_Windows:
     enable_automatic_updates: Any = None
 
 _Pool_AutoScaleFields = {
-    "evaluation_interval": sdk.FieldSpec(wire_name="evaluation_interval"),
-    "formula": sdk.FieldSpec(wire_name="formula"),
+    "evaluation_interval": ubx.FieldSpec(wire_name="evaluation_interval"),
+    "formula": ubx.FieldSpec(wire_name="formula"),
 }
 
 _Pool_ContainerConfiguration_ContainerRegistriesFields = {
-    "password": sdk.FieldSpec(wire_name="password"),
-    "registry_server": sdk.FieldSpec(wire_name="registry_server"),
-    "user_assigned_identity_id": sdk.FieldSpec(wire_name="user_assigned_identity_id"),
-    "user_name": sdk.FieldSpec(wire_name="user_name"),
+    "password": ubx.FieldSpec(wire_name="password"),
+    "registry_server": ubx.FieldSpec(wire_name="registry_server"),
+    "user_assigned_identity_id": ubx.FieldSpec(wire_name="user_assigned_identity_id"),
+    "user_name": ubx.FieldSpec(wire_name="user_name"),
 }
 
 _Pool_ContainerConfigurationFields = {
-    "container_image_names": sdk.FieldSpec(wire_name="container_image_names"),
-    "container_registries": sdk.FieldSpec(
+    "container_image_names": ubx.FieldSpec(wire_name="container_image_names"),
+    "container_registries": ubx.FieldSpec(
         wire_name="container_registries",
         kind="list",
         fields=_Pool_ContainerConfiguration_ContainerRegistriesFields,
     ),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Pool_DataDisksFields = {
-    "caching": sdk.FieldSpec(wire_name="caching"),
-    "disk_size_gb": sdk.FieldSpec(wire_name="disk_size_gb"),
-    "lun": sdk.FieldSpec(wire_name="lun"),
-    "storage_account_type": sdk.FieldSpec(wire_name="storage_account_type"),
+    "caching": ubx.FieldSpec(wire_name="caching"),
+    "disk_size_gb": ubx.FieldSpec(wire_name="disk_size_gb"),
+    "lun": ubx.FieldSpec(wire_name="lun"),
+    "storage_account_type": ubx.FieldSpec(wire_name="storage_account_type"),
 }
 
 _Pool_DiskEncryptionFields = {
-    "disk_encryption_target": sdk.FieldSpec(wire_name="disk_encryption_target"),
+    "disk_encryption_target": ubx.FieldSpec(wire_name="disk_encryption_target"),
 }
 
 _Pool_ExtensionsFields = {
-    "auto_upgrade_minor_version": sdk.FieldSpec(wire_name="auto_upgrade_minor_version"),
-    "automatic_upgrade_enabled": sdk.FieldSpec(wire_name="automatic_upgrade_enabled"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "protected_settings": sdk.FieldSpec(wire_name="protected_settings"),
-    "provision_after_extensions": sdk.FieldSpec(wire_name="provision_after_extensions"),
-    "publisher": sdk.FieldSpec(wire_name="publisher"),
-    "settings_json": sdk.FieldSpec(wire_name="settings_json"),
-    "type": sdk.FieldSpec(wire_name="type"),
-    "type_handler_version": sdk.FieldSpec(wire_name="type_handler_version"),
+    "auto_upgrade_minor_version": ubx.FieldSpec(wire_name="auto_upgrade_minor_version"),
+    "automatic_upgrade_enabled": ubx.FieldSpec(wire_name="automatic_upgrade_enabled"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "protected_settings": ubx.FieldSpec(wire_name="protected_settings"),
+    "provision_after_extensions": ubx.FieldSpec(wire_name="provision_after_extensions"),
+    "publisher": ubx.FieldSpec(wire_name="publisher"),
+    "settings_json": ubx.FieldSpec(wire_name="settings_json"),
+    "type": ubx.FieldSpec(wire_name="type"),
+    "type_handler_version": ubx.FieldSpec(wire_name="type_handler_version"),
 }
 
 _Pool_FixedScaleFields = {
-    "node_deallocation_method": sdk.FieldSpec(wire_name="node_deallocation_method"),
-    "resize_timeout": sdk.FieldSpec(wire_name="resize_timeout"),
-    "target_dedicated_nodes": sdk.FieldSpec(wire_name="target_dedicated_nodes"),
-    "target_low_priority_nodes": sdk.FieldSpec(wire_name="target_low_priority_nodes"),
+    "node_deallocation_method": ubx.FieldSpec(wire_name="node_deallocation_method"),
+    "resize_timeout": ubx.FieldSpec(wire_name="resize_timeout"),
+    "target_dedicated_nodes": ubx.FieldSpec(wire_name="target_dedicated_nodes"),
+    "target_low_priority_nodes": ubx.FieldSpec(wire_name="target_low_priority_nodes"),
 }
 
 _Pool_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Pool_Mount_AzureBlobFileSystemFields = {
-    "account_key": sdk.FieldSpec(wire_name="account_key"),
-    "account_name": sdk.FieldSpec(wire_name="account_name"),
-    "blobfuse_options": sdk.FieldSpec(wire_name="blobfuse_options"),
-    "container_name": sdk.FieldSpec(wire_name="container_name"),
-    "identity_id": sdk.FieldSpec(wire_name="identity_id"),
-    "relative_mount_path": sdk.FieldSpec(wire_name="relative_mount_path"),
-    "sas_key": sdk.FieldSpec(wire_name="sas_key"),
+    "account_key": ubx.FieldSpec(wire_name="account_key"),
+    "account_name": ubx.FieldSpec(wire_name="account_name"),
+    "blobfuse_options": ubx.FieldSpec(wire_name="blobfuse_options"),
+    "container_name": ubx.FieldSpec(wire_name="container_name"),
+    "identity_id": ubx.FieldSpec(wire_name="identity_id"),
+    "relative_mount_path": ubx.FieldSpec(wire_name="relative_mount_path"),
+    "sas_key": ubx.FieldSpec(wire_name="sas_key"),
 }
 
 _Pool_Mount_AzureFileShareFields = {
-    "account_key": sdk.FieldSpec(wire_name="account_key"),
-    "account_name": sdk.FieldSpec(wire_name="account_name"),
-    "azure_file_url": sdk.FieldSpec(wire_name="azure_file_url"),
-    "mount_options": sdk.FieldSpec(wire_name="mount_options"),
-    "relative_mount_path": sdk.FieldSpec(wire_name="relative_mount_path"),
+    "account_key": ubx.FieldSpec(wire_name="account_key"),
+    "account_name": ubx.FieldSpec(wire_name="account_name"),
+    "azure_file_url": ubx.FieldSpec(wire_name="azure_file_url"),
+    "mount_options": ubx.FieldSpec(wire_name="mount_options"),
+    "relative_mount_path": ubx.FieldSpec(wire_name="relative_mount_path"),
 }
 
 _Pool_Mount_CifsMountFields = {
-    "mount_options": sdk.FieldSpec(wire_name="mount_options"),
-    "password": sdk.FieldSpec(wire_name="password"),
-    "relative_mount_path": sdk.FieldSpec(wire_name="relative_mount_path"),
-    "source": sdk.FieldSpec(wire_name="source"),
-    "user_name": sdk.FieldSpec(wire_name="user_name"),
+    "mount_options": ubx.FieldSpec(wire_name="mount_options"),
+    "password": ubx.FieldSpec(wire_name="password"),
+    "relative_mount_path": ubx.FieldSpec(wire_name="relative_mount_path"),
+    "source": ubx.FieldSpec(wire_name="source"),
+    "user_name": ubx.FieldSpec(wire_name="user_name"),
 }
 
 _Pool_Mount_NfsMountFields = {
-    "mount_options": sdk.FieldSpec(wire_name="mount_options"),
-    "relative_mount_path": sdk.FieldSpec(wire_name="relative_mount_path"),
-    "source": sdk.FieldSpec(wire_name="source"),
+    "mount_options": ubx.FieldSpec(wire_name="mount_options"),
+    "relative_mount_path": ubx.FieldSpec(wire_name="relative_mount_path"),
+    "source": ubx.FieldSpec(wire_name="source"),
 }
 
 _Pool_MountFields = {
-    "azure_blob_file_system": sdk.FieldSpec(
+    "azure_blob_file_system": ubx.FieldSpec(
         wire_name="azure_blob_file_system",
         kind="list",
         fields=_Pool_Mount_AzureBlobFileSystemFields,
     ),
-    "azure_file_share": sdk.FieldSpec(
+    "azure_file_share": ubx.FieldSpec(
         wire_name="azure_file_share",
         kind="list",
         fields=_Pool_Mount_AzureFileShareFields,
     ),
-    "cifs_mount": sdk.FieldSpec(
+    "cifs_mount": ubx.FieldSpec(
         wire_name="cifs_mount",
         kind="list",
         fields=_Pool_Mount_CifsMountFields,
     ),
-    "nfs_mount": sdk.FieldSpec(
+    "nfs_mount": ubx.FieldSpec(
         wire_name="nfs_mount",
         kind="list",
         fields=_Pool_Mount_NfsMountFields,
@@ -324,18 +324,18 @@ _Pool_MountFields = {
 }
 
 _Pool_NetworkConfiguration_EndpointConfiguration_NetworkSecurityGroupRulesFields = {
-    "access": sdk.FieldSpec(wire_name="access"),
-    "priority": sdk.FieldSpec(wire_name="priority"),
-    "source_address_prefix": sdk.FieldSpec(wire_name="source_address_prefix"),
-    "source_port_ranges": sdk.FieldSpec(wire_name="source_port_ranges"),
+    "access": ubx.FieldSpec(wire_name="access"),
+    "priority": ubx.FieldSpec(wire_name="priority"),
+    "source_address_prefix": ubx.FieldSpec(wire_name="source_address_prefix"),
+    "source_port_ranges": ubx.FieldSpec(wire_name="source_port_ranges"),
 }
 
 _Pool_NetworkConfiguration_EndpointConfigurationFields = {
-    "backend_port": sdk.FieldSpec(wire_name="backend_port"),
-    "frontend_port_range": sdk.FieldSpec(wire_name="frontend_port_range"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "protocol": sdk.FieldSpec(wire_name="protocol"),
-    "network_security_group_rules": sdk.FieldSpec(
+    "backend_port": ubx.FieldSpec(wire_name="backend_port"),
+    "frontend_port_range": ubx.FieldSpec(wire_name="frontend_port_range"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
+    "network_security_group_rules": ubx.FieldSpec(
         wire_name="network_security_group_rules",
         kind="list",
         fields=_Pool_NetworkConfiguration_EndpointConfiguration_NetworkSecurityGroupRulesFields,
@@ -343,12 +343,12 @@ _Pool_NetworkConfiguration_EndpointConfigurationFields = {
 }
 
 _Pool_NetworkConfigurationFields = {
-    "accelerated_networking_enabled": sdk.FieldSpec(wire_name="accelerated_networking_enabled"),
-    "dynamic_vnet_assignment_scope": sdk.FieldSpec(wire_name="dynamic_vnet_assignment_scope"),
-    "public_address_provisioning_type": sdk.FieldSpec(wire_name="public_address_provisioning_type"),
-    "public_ips": sdk.FieldSpec(wire_name="public_ips"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-    "endpoint_configuration": sdk.FieldSpec(
+    "accelerated_networking_enabled": ubx.FieldSpec(wire_name="accelerated_networking_enabled"),
+    "dynamic_vnet_assignment_scope": ubx.FieldSpec(wire_name="dynamic_vnet_assignment_scope"),
+    "public_address_provisioning_type": ubx.FieldSpec(wire_name="public_address_provisioning_type"),
+    "public_ips": ubx.FieldSpec(wire_name="public_ips"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+    "endpoint_configuration": ubx.FieldSpec(
         wire_name="endpoint_configuration",
         kind="list",
         fields=_Pool_NetworkConfiguration_EndpointConfigurationFields,
@@ -356,21 +356,21 @@ _Pool_NetworkConfigurationFields = {
 }
 
 _Pool_NodePlacementFields = {
-    "policy": sdk.FieldSpec(wire_name="policy"),
+    "policy": ubx.FieldSpec(wire_name="policy"),
 }
 
 _Pool_SecurityProfileFields = {
-    "host_encryption_enabled": sdk.FieldSpec(wire_name="host_encryption_enabled"),
-    "secure_boot_enabled": sdk.FieldSpec(wire_name="secure_boot_enabled"),
-    "security_type": sdk.FieldSpec(wire_name="security_type"),
-    "vtpm_enabled": sdk.FieldSpec(wire_name="vtpm_enabled"),
+    "host_encryption_enabled": ubx.FieldSpec(wire_name="host_encryption_enabled"),
+    "secure_boot_enabled": ubx.FieldSpec(wire_name="secure_boot_enabled"),
+    "security_type": ubx.FieldSpec(wire_name="security_type"),
+    "vtpm_enabled": ubx.FieldSpec(wire_name="vtpm_enabled"),
 }
 
 _Pool_StartTask_ContainerFields = {
-    "image_name": sdk.FieldSpec(wire_name="image_name"),
-    "run_options": sdk.FieldSpec(wire_name="run_options"),
-    "working_directory": sdk.FieldSpec(wire_name="working_directory"),
-    "registry": sdk.FieldSpec(
+    "image_name": ubx.FieldSpec(wire_name="image_name"),
+    "run_options": ubx.FieldSpec(wire_name="run_options"),
+    "working_directory": ubx.FieldSpec(wire_name="working_directory"),
+    "registry": ubx.FieldSpec(
         wire_name="registry",
         kind="list",
         fields=_Pool_ContainerConfiguration_ContainerRegistriesFields,
@@ -378,23 +378,23 @@ _Pool_StartTask_ContainerFields = {
 }
 
 _Pool_StartTask_ResourceFileFields = {
-    "auto_storage_container_name": sdk.FieldSpec(wire_name="auto_storage_container_name"),
-    "blob_prefix": sdk.FieldSpec(wire_name="blob_prefix"),
-    "file_mode": sdk.FieldSpec(wire_name="file_mode"),
-    "file_path": sdk.FieldSpec(wire_name="file_path"),
-    "http_url": sdk.FieldSpec(wire_name="http_url"),
-    "storage_container_url": sdk.FieldSpec(wire_name="storage_container_url"),
-    "user_assigned_identity_id": sdk.FieldSpec(wire_name="user_assigned_identity_id"),
+    "auto_storage_container_name": ubx.FieldSpec(wire_name="auto_storage_container_name"),
+    "blob_prefix": ubx.FieldSpec(wire_name="blob_prefix"),
+    "file_mode": ubx.FieldSpec(wire_name="file_mode"),
+    "file_path": ubx.FieldSpec(wire_name="file_path"),
+    "http_url": ubx.FieldSpec(wire_name="http_url"),
+    "storage_container_url": ubx.FieldSpec(wire_name="storage_container_url"),
+    "user_assigned_identity_id": ubx.FieldSpec(wire_name="user_assigned_identity_id"),
 }
 
 _Pool_StartTask_UserIdentity_AutoUserFields = {
-    "elevation_level": sdk.FieldSpec(wire_name="elevation_level"),
-    "scope": sdk.FieldSpec(wire_name="scope"),
+    "elevation_level": ubx.FieldSpec(wire_name="elevation_level"),
+    "scope": ubx.FieldSpec(wire_name="scope"),
 }
 
 _Pool_StartTask_UserIdentityFields = {
-    "user_name": sdk.FieldSpec(wire_name="user_name"),
-    "auto_user": sdk.FieldSpec(
+    "user_name": ubx.FieldSpec(wire_name="user_name"),
+    "auto_user": ubx.FieldSpec(
         wire_name="auto_user",
         kind="list",
         fields=_Pool_StartTask_UserIdentity_AutoUserFields,
@@ -402,21 +402,21 @@ _Pool_StartTask_UserIdentityFields = {
 }
 
 _Pool_StartTaskFields = {
-    "command_line": sdk.FieldSpec(wire_name="command_line"),
-    "common_environment_properties": sdk.FieldSpec(wire_name="common_environment_properties"),
-    "task_retry_maximum": sdk.FieldSpec(wire_name="task_retry_maximum"),
-    "wait_for_success": sdk.FieldSpec(wire_name="wait_for_success"),
-    "container": sdk.FieldSpec(
+    "command_line": ubx.FieldSpec(wire_name="command_line"),
+    "common_environment_properties": ubx.FieldSpec(wire_name="common_environment_properties"),
+    "task_retry_maximum": ubx.FieldSpec(wire_name="task_retry_maximum"),
+    "wait_for_success": ubx.FieldSpec(wire_name="wait_for_success"),
+    "container": ubx.FieldSpec(
         wire_name="container",
         kind="list",
         fields=_Pool_StartTask_ContainerFields,
     ),
-    "resource_file": sdk.FieldSpec(
+    "resource_file": ubx.FieldSpec(
         wire_name="resource_file",
         kind="list",
         fields=_Pool_StartTask_ResourceFileFields,
     ),
-    "user_identity": sdk.FieldSpec(
+    "user_identity": ubx.FieldSpec(
         wire_name="user_identity",
         kind="list",
         fields=_Pool_StartTask_UserIdentityFields,
@@ -424,44 +424,44 @@ _Pool_StartTaskFields = {
 }
 
 _Pool_StorageImageReferenceFields = {
-    "id": sdk.FieldSpec(wire_name="id"),
-    "offer": sdk.FieldSpec(wire_name="offer"),
-    "publisher": sdk.FieldSpec(wire_name="publisher"),
-    "sku": sdk.FieldSpec(wire_name="sku"),
-    "version": sdk.FieldSpec(wire_name="version"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "offer": ubx.FieldSpec(wire_name="offer"),
+    "publisher": ubx.FieldSpec(wire_name="publisher"),
+    "sku": ubx.FieldSpec(wire_name="sku"),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _Pool_TaskSchedulingPolicyFields = {
-    "node_fill_type": sdk.FieldSpec(wire_name="node_fill_type"),
+    "node_fill_type": ubx.FieldSpec(wire_name="node_fill_type"),
 }
 
 _Pool_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _Pool_UserAccounts_LinuxUserConfigurationFields = {
-    "gid": sdk.FieldSpec(wire_name="gid"),
-    "ssh_private_key": sdk.FieldSpec(wire_name="ssh_private_key"),
-    "uid": sdk.FieldSpec(wire_name="uid"),
+    "gid": ubx.FieldSpec(wire_name="gid"),
+    "ssh_private_key": ubx.FieldSpec(wire_name="ssh_private_key"),
+    "uid": ubx.FieldSpec(wire_name="uid"),
 }
 
 _Pool_UserAccounts_WindowsUserConfigurationFields = {
-    "login_mode": sdk.FieldSpec(wire_name="login_mode"),
+    "login_mode": ubx.FieldSpec(wire_name="login_mode"),
 }
 
 _Pool_UserAccountsFields = {
-    "elevation_level": sdk.FieldSpec(wire_name="elevation_level"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "password": sdk.FieldSpec(wire_name="password"),
-    "linux_user_configuration": sdk.FieldSpec(
+    "elevation_level": ubx.FieldSpec(wire_name="elevation_level"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "password": ubx.FieldSpec(wire_name="password"),
+    "linux_user_configuration": ubx.FieldSpec(
         wire_name="linux_user_configuration",
         kind="list",
         fields=_Pool_UserAccounts_LinuxUserConfigurationFields,
     ),
-    "windows_user_configuration": sdk.FieldSpec(
+    "windows_user_configuration": ubx.FieldSpec(
         wire_name="windows_user_configuration",
         kind="list",
         fields=_Pool_UserAccounts_WindowsUserConfigurationFields,
@@ -469,7 +469,7 @@ _Pool_UserAccountsFields = {
 }
 
 _Pool_WindowsFields = {
-    "enable_automatic_updates": sdk.FieldSpec(wire_name="enable_automatic_updates"),
+    "enable_automatic_updates": ubx.FieldSpec(wire_name="enable_automatic_updates"),
 }
 
 @dataclasses.dataclass
@@ -506,104 +506,104 @@ class PoolConfig:
     user_accounts: Any = None
     windows: Any = None
 
-Pool = sdk.ResourceBinding(
+Pool = ubx.ResourceBinding(
     wire_type="azurerm_batch_pool",
     fields={
-        "account_name": sdk.FieldSpec(wire_name="account_name"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "inter_node_communication": sdk.FieldSpec(wire_name="inter_node_communication"),
-        "license_type": sdk.FieldSpec(wire_name="license_type"),
-        "max_tasks_per_node": sdk.FieldSpec(wire_name="max_tasks_per_node"),
-        "metadata": sdk.FieldSpec(wire_name="metadata"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "node_agent_sku_id": sdk.FieldSpec(wire_name="node_agent_sku_id"),
-        "os_disk_placement": sdk.FieldSpec(wire_name="os_disk_placement"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "stop_pending_resize_operation": sdk.FieldSpec(wire_name="stop_pending_resize_operation"),
-        "target_node_communication_mode": sdk.FieldSpec(wire_name="target_node_communication_mode"),
-        "vm_size": sdk.FieldSpec(wire_name="vm_size"),
-        "auto_scale": sdk.FieldSpec(
+        "account_name": ubx.FieldSpec(wire_name="account_name"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "inter_node_communication": ubx.FieldSpec(wire_name="inter_node_communication"),
+        "license_type": ubx.FieldSpec(wire_name="license_type"),
+        "max_tasks_per_node": ubx.FieldSpec(wire_name="max_tasks_per_node"),
+        "metadata": ubx.FieldSpec(wire_name="metadata"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "node_agent_sku_id": ubx.FieldSpec(wire_name="node_agent_sku_id"),
+        "os_disk_placement": ubx.FieldSpec(wire_name="os_disk_placement"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "stop_pending_resize_operation": ubx.FieldSpec(wire_name="stop_pending_resize_operation"),
+        "target_node_communication_mode": ubx.FieldSpec(wire_name="target_node_communication_mode"),
+        "vm_size": ubx.FieldSpec(wire_name="vm_size"),
+        "auto_scale": ubx.FieldSpec(
             wire_name="auto_scale",
             kind="list",
             fields=_Pool_AutoScaleFields,
         ),
-        "container_configuration": sdk.FieldSpec(
+        "container_configuration": ubx.FieldSpec(
             wire_name="container_configuration",
             kind="list",
             fields=_Pool_ContainerConfigurationFields,
         ),
-        "data_disks": sdk.FieldSpec(
+        "data_disks": ubx.FieldSpec(
             wire_name="data_disks",
             kind="list",
             fields=_Pool_DataDisksFields,
         ),
-        "disk_encryption": sdk.FieldSpec(
+        "disk_encryption": ubx.FieldSpec(
             wire_name="disk_encryption",
             kind="list",
             fields=_Pool_DiskEncryptionFields,
         ),
-        "extensions": sdk.FieldSpec(
+        "extensions": ubx.FieldSpec(
             wire_name="extensions",
             kind="list",
             fields=_Pool_ExtensionsFields,
         ),
-        "fixed_scale": sdk.FieldSpec(
+        "fixed_scale": ubx.FieldSpec(
             wire_name="fixed_scale",
             kind="list",
             fields=_Pool_FixedScaleFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Pool_IdentityFields,
         ),
-        "mount": sdk.FieldSpec(
+        "mount": ubx.FieldSpec(
             wire_name="mount",
             kind="list",
             fields=_Pool_MountFields,
         ),
-        "network_configuration": sdk.FieldSpec(
+        "network_configuration": ubx.FieldSpec(
             wire_name="network_configuration",
             kind="list",
             fields=_Pool_NetworkConfigurationFields,
         ),
-        "node_placement": sdk.FieldSpec(
+        "node_placement": ubx.FieldSpec(
             wire_name="node_placement",
             kind="list",
             fields=_Pool_NodePlacementFields,
         ),
-        "security_profile": sdk.FieldSpec(
+        "security_profile": ubx.FieldSpec(
             wire_name="security_profile",
             kind="list",
             fields=_Pool_SecurityProfileFields,
         ),
-        "start_task": sdk.FieldSpec(
+        "start_task": ubx.FieldSpec(
             wire_name="start_task",
             kind="list",
             fields=_Pool_StartTaskFields,
         ),
-        "storage_image_reference": sdk.FieldSpec(
+        "storage_image_reference": ubx.FieldSpec(
             wire_name="storage_image_reference",
             kind="list",
             fields=_Pool_StorageImageReferenceFields,
         ),
-        "task_scheduling_policy": sdk.FieldSpec(
+        "task_scheduling_policy": ubx.FieldSpec(
             wire_name="task_scheduling_policy",
             kind="list",
             fields=_Pool_TaskSchedulingPolicyFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Pool_TimeoutsFields,
         ),
-        "user_accounts": sdk.FieldSpec(
+        "user_accounts": ubx.FieldSpec(
             wire_name="user_accounts",
             kind="list",
             fields=_Pool_UserAccountsFields,
         ),
-        "windows": sdk.FieldSpec(
+        "windows": ubx.FieldSpec(
             wire_name="windows",
             kind="list",
             fields=_Pool_WindowsFields,

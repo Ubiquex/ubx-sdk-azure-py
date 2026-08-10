@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RouteCircuitPeering_Ipv6_MicrosoftPeering:
@@ -29,18 +29,18 @@ class RouteCircuitPeering_Timeouts:
     update: Any = None
 
 _RouteCircuitPeering_Ipv6_MicrosoftPeeringFields = {
-    "advertised_communities": sdk.FieldSpec(wire_name="advertised_communities"),
-    "advertised_public_prefixes": sdk.FieldSpec(wire_name="advertised_public_prefixes"),
-    "customer_asn": sdk.FieldSpec(wire_name="customer_asn"),
-    "routing_registry_name": sdk.FieldSpec(wire_name="routing_registry_name"),
+    "advertised_communities": ubx.FieldSpec(wire_name="advertised_communities"),
+    "advertised_public_prefixes": ubx.FieldSpec(wire_name="advertised_public_prefixes"),
+    "customer_asn": ubx.FieldSpec(wire_name="customer_asn"),
+    "routing_registry_name": ubx.FieldSpec(wire_name="routing_registry_name"),
 }
 
 _RouteCircuitPeering_Ipv6Fields = {
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "primary_peer_address_prefix": sdk.FieldSpec(wire_name="primary_peer_address_prefix"),
-    "route_filter_id": sdk.FieldSpec(wire_name="route_filter_id"),
-    "secondary_peer_address_prefix": sdk.FieldSpec(wire_name="secondary_peer_address_prefix"),
-    "microsoft_peering": sdk.FieldSpec(
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "primary_peer_address_prefix": ubx.FieldSpec(wire_name="primary_peer_address_prefix"),
+    "route_filter_id": ubx.FieldSpec(wire_name="route_filter_id"),
+    "secondary_peer_address_prefix": ubx.FieldSpec(wire_name="secondary_peer_address_prefix"),
+    "microsoft_peering": ubx.FieldSpec(
         wire_name="microsoft_peering",
         kind="list",
         fields=_RouteCircuitPeering_Ipv6_MicrosoftPeeringFields,
@@ -48,10 +48,10 @@ _RouteCircuitPeering_Ipv6Fields = {
 }
 
 _RouteCircuitPeering_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -71,31 +71,31 @@ class RouteCircuitPeeringConfig:
     microsoft_peering_config: Any = None
     timeouts: Any = None
 
-RouteCircuitPeering = sdk.ResourceBinding(
+RouteCircuitPeering = ubx.ResourceBinding(
     wire_type="azurerm_express_route_circuit_peering",
     fields={
-        "express_route_circuit_name": sdk.FieldSpec(wire_name="express_route_circuit_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "ipv4_enabled": sdk.FieldSpec(wire_name="ipv4_enabled"),
-        "peer_asn": sdk.FieldSpec(wire_name="peer_asn"),
-        "peering_type": sdk.FieldSpec(wire_name="peering_type"),
-        "primary_peer_address_prefix": sdk.FieldSpec(wire_name="primary_peer_address_prefix"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "route_filter_id": sdk.FieldSpec(wire_name="route_filter_id"),
-        "secondary_peer_address_prefix": sdk.FieldSpec(wire_name="secondary_peer_address_prefix"),
-        "shared_key": sdk.FieldSpec(wire_name="shared_key"),
-        "vlan_id": sdk.FieldSpec(wire_name="vlan_id"),
-        "ipv6": sdk.FieldSpec(
+        "express_route_circuit_name": ubx.FieldSpec(wire_name="express_route_circuit_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "ipv4_enabled": ubx.FieldSpec(wire_name="ipv4_enabled"),
+        "peer_asn": ubx.FieldSpec(wire_name="peer_asn"),
+        "peering_type": ubx.FieldSpec(wire_name="peering_type"),
+        "primary_peer_address_prefix": ubx.FieldSpec(wire_name="primary_peer_address_prefix"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "route_filter_id": ubx.FieldSpec(wire_name="route_filter_id"),
+        "secondary_peer_address_prefix": ubx.FieldSpec(wire_name="secondary_peer_address_prefix"),
+        "shared_key": ubx.FieldSpec(wire_name="shared_key"),
+        "vlan_id": ubx.FieldSpec(wire_name="vlan_id"),
+        "ipv6": ubx.FieldSpec(
             wire_name="ipv6",
             kind="list",
             fields=_RouteCircuitPeering_Ipv6Fields,
         ),
-        "microsoft_peering_config": sdk.FieldSpec(
+        "microsoft_peering_config": ubx.FieldSpec(
             wire_name="microsoft_peering_config",
             kind="list",
             fields=_RouteCircuitPeering_Ipv6_MicrosoftPeeringFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RouteCircuitPeering_TimeoutsFields,

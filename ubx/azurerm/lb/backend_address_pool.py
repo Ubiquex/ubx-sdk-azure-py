@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BackendAddressPool_Timeouts:
@@ -21,17 +21,17 @@ class BackendAddressPool_TunnelInterface:
     type: Any = None
 
 _BackendAddressPool_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _BackendAddressPool_TunnelInterfaceFields = {
-    "identifier": sdk.FieldSpec(wire_name="identifier"),
-    "port": sdk.FieldSpec(wire_name="port"),
-    "protocol": sdk.FieldSpec(wire_name="protocol"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identifier": ubx.FieldSpec(wire_name="identifier"),
+    "port": ubx.FieldSpec(wire_name="port"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 @dataclasses.dataclass
@@ -44,20 +44,20 @@ class BackendAddressPoolConfig:
     timeouts: Any = None
     tunnel_interface: Any = None
 
-BackendAddressPool = sdk.ResourceBinding(
+BackendAddressPool = ubx.ResourceBinding(
     wire_type="azurerm_lb_backend_address_pool",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "loadbalancer_id": sdk.FieldSpec(wire_name="loadbalancer_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "synchronous_mode": sdk.FieldSpec(wire_name="synchronous_mode"),
-        "virtual_network_id": sdk.FieldSpec(wire_name="virtual_network_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "loadbalancer_id": ubx.FieldSpec(wire_name="loadbalancer_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "synchronous_mode": ubx.FieldSpec(wire_name="synchronous_mode"),
+        "virtual_network_id": ubx.FieldSpec(wire_name="virtual_network_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_BackendAddressPool_TimeoutsFields,
         ),
-        "tunnel_interface": sdk.FieldSpec(
+        "tunnel_interface": ubx.FieldSpec(
             wire_name="tunnel_interface",
             kind="list",
             fields=_BackendAddressPool_TunnelInterfaceFields,

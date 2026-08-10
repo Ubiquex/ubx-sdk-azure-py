@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DesktopApplicationGroup_Timeouts:
@@ -14,10 +14,10 @@ class DesktopApplicationGroup_Timeouts:
     update: Any = None
 
 _DesktopApplicationGroup_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -34,20 +34,20 @@ class DesktopApplicationGroupConfig:
     type: Any = None
     timeouts: Any = None
 
-DesktopApplicationGroup = sdk.ResourceBinding(
+DesktopApplicationGroup = ubx.ResourceBinding(
     wire_type="azurerm_virtual_desktop_application_group",
     fields={
-        "default_desktop_display_name": sdk.FieldSpec(wire_name="default_desktop_display_name"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "friendly_name": sdk.FieldSpec(wire_name="friendly_name"),
-        "host_pool_id": sdk.FieldSpec(wire_name="host_pool_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "type": sdk.FieldSpec(wire_name="type"),
-        "timeouts": sdk.FieldSpec(
+        "default_desktop_display_name": ubx.FieldSpec(wire_name="default_desktop_display_name"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "friendly_name": ubx.FieldSpec(wire_name="friendly_name"),
+        "host_pool_id": ubx.FieldSpec(wire_name="host_pool_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "type": ubx.FieldSpec(wire_name="type"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DesktopApplicationGroup_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnalyticsOutputCosmosdb_Timeouts:
@@ -14,10 +14,10 @@ class AnalyticsOutputCosmosdb_Timeouts:
     update: Any = None
 
 _AnalyticsOutputCosmosdb_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -33,19 +33,19 @@ class AnalyticsOutputCosmosdbConfig:
     stream_analytics_job_id: Any = None
     timeouts: Any = None
 
-AnalyticsOutputCosmosdb = sdk.ResourceBinding(
+AnalyticsOutputCosmosdb = ubx.ResourceBinding(
     wire_type="azurerm_stream_analytics_output_cosmosdb",
     fields={
-        "authentication_mode": sdk.FieldSpec(wire_name="authentication_mode"),
-        "container_name": sdk.FieldSpec(wire_name="container_name"),
-        "cosmosdb_account_key": sdk.FieldSpec(wire_name="cosmosdb_account_key"),
-        "cosmosdb_sql_database_id": sdk.FieldSpec(wire_name="cosmosdb_sql_database_id"),
-        "document_id": sdk.FieldSpec(wire_name="document_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "partition_key": sdk.FieldSpec(wire_name="partition_key"),
-        "stream_analytics_job_id": sdk.FieldSpec(wire_name="stream_analytics_job_id"),
-        "timeouts": sdk.FieldSpec(
+        "authentication_mode": ubx.FieldSpec(wire_name="authentication_mode"),
+        "container_name": ubx.FieldSpec(wire_name="container_name"),
+        "cosmosdb_account_key": ubx.FieldSpec(wire_name="cosmosdb_account_key"),
+        "cosmosdb_sql_database_id": ubx.FieldSpec(wire_name="cosmosdb_sql_database_id"),
+        "document_id": ubx.FieldSpec(wire_name="document_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "partition_key": ubx.FieldSpec(wire_name="partition_key"),
+        "stream_analytics_job_id": ubx.FieldSpec(wire_name="stream_analytics_job_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AnalyticsOutputCosmosdb_TimeoutsFields,

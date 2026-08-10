@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ChannelSlack_Timeouts:
@@ -14,10 +14,10 @@ class ChannelSlack_Timeouts:
     update: Any = None
 
 _ChannelSlack_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -33,19 +33,19 @@ class ChannelSlackConfig:
     verification_token: Any = None
     timeouts: Any = None
 
-ChannelSlack = sdk.ResourceBinding(
+ChannelSlack = ubx.ResourceBinding(
     wire_type="azurerm_bot_channel_slack",
     fields={
-        "bot_name": sdk.FieldSpec(wire_name="bot_name"),
-        "client_id": sdk.FieldSpec(wire_name="client_id"),
-        "client_secret": sdk.FieldSpec(wire_name="client_secret"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "landing_page_url": sdk.FieldSpec(wire_name="landing_page_url"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "signing_secret": sdk.FieldSpec(wire_name="signing_secret"),
-        "verification_token": sdk.FieldSpec(wire_name="verification_token"),
-        "timeouts": sdk.FieldSpec(
+        "bot_name": ubx.FieldSpec(wire_name="bot_name"),
+        "client_id": ubx.FieldSpec(wire_name="client_id"),
+        "client_secret": ubx.FieldSpec(wire_name="client_secret"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "landing_page_url": ubx.FieldSpec(wire_name="landing_page_url"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "signing_secret": ubx.FieldSpec(wire_name="signing_secret"),
+        "verification_token": ubx.FieldSpec(wire_name="verification_token"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ChannelSlack_TimeoutsFields,

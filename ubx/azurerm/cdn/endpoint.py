@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Endpoint_DeliveryRule_CacheExpirationAction:
@@ -113,156 +113,156 @@ class Endpoint_Timeouts:
     update: Any = None
 
 _Endpoint_DeliveryRule_CacheExpirationActionFields = {
-    "behavior": sdk.FieldSpec(wire_name="behavior"),
-    "duration": sdk.FieldSpec(wire_name="duration"),
+    "behavior": ubx.FieldSpec(wire_name="behavior"),
+    "duration": ubx.FieldSpec(wire_name="duration"),
 }
 
 _Endpoint_DeliveryRule_CacheKeyQueryStringActionFields = {
-    "behavior": sdk.FieldSpec(wire_name="behavior"),
-    "parameters": sdk.FieldSpec(wire_name="parameters"),
+    "behavior": ubx.FieldSpec(wire_name="behavior"),
+    "parameters": ubx.FieldSpec(wire_name="parameters"),
 }
 
 _Endpoint_DeliveryRule_CookiesConditionFields = {
-    "match_values": sdk.FieldSpec(wire_name="match_values"),
-    "negate_condition": sdk.FieldSpec(wire_name="negate_condition"),
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "selector": sdk.FieldSpec(wire_name="selector"),
-    "transforms": sdk.FieldSpec(wire_name="transforms"),
+    "match_values": ubx.FieldSpec(wire_name="match_values"),
+    "negate_condition": ubx.FieldSpec(wire_name="negate_condition"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "selector": ubx.FieldSpec(wire_name="selector"),
+    "transforms": ubx.FieldSpec(wire_name="transforms"),
 }
 
 _Endpoint_DeliveryRule_DeviceConditionFields = {
-    "match_values": sdk.FieldSpec(wire_name="match_values"),
-    "negate_condition": sdk.FieldSpec(wire_name="negate_condition"),
-    "operator": sdk.FieldSpec(wire_name="operator"),
+    "match_values": ubx.FieldSpec(wire_name="match_values"),
+    "negate_condition": ubx.FieldSpec(wire_name="negate_condition"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
 }
 
 _Endpoint_DeliveryRule_ModifyRequestHeaderActionFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "action": ubx.FieldSpec(wire_name="action"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _Endpoint_DeliveryRule_QueryStringConditionFields = {
-    "match_values": sdk.FieldSpec(wire_name="match_values"),
-    "negate_condition": sdk.FieldSpec(wire_name="negate_condition"),
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "transforms": sdk.FieldSpec(wire_name="transforms"),
+    "match_values": ubx.FieldSpec(wire_name="match_values"),
+    "negate_condition": ubx.FieldSpec(wire_name="negate_condition"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "transforms": ubx.FieldSpec(wire_name="transforms"),
 }
 
 _Endpoint_DeliveryRule_UrlRedirectActionFields = {
-    "fragment": sdk.FieldSpec(wire_name="fragment"),
-    "hostname": sdk.FieldSpec(wire_name="hostname"),
-    "path": sdk.FieldSpec(wire_name="path"),
-    "protocol": sdk.FieldSpec(wire_name="protocol"),
-    "query_string": sdk.FieldSpec(wire_name="query_string"),
-    "redirect_type": sdk.FieldSpec(wire_name="redirect_type"),
+    "fragment": ubx.FieldSpec(wire_name="fragment"),
+    "hostname": ubx.FieldSpec(wire_name="hostname"),
+    "path": ubx.FieldSpec(wire_name="path"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
+    "query_string": ubx.FieldSpec(wire_name="query_string"),
+    "redirect_type": ubx.FieldSpec(wire_name="redirect_type"),
 }
 
 _Endpoint_DeliveryRule_UrlRewriteActionFields = {
-    "destination": sdk.FieldSpec(wire_name="destination"),
-    "preserve_unmatched_path": sdk.FieldSpec(wire_name="preserve_unmatched_path"),
-    "source_pattern": sdk.FieldSpec(wire_name="source_pattern"),
+    "destination": ubx.FieldSpec(wire_name="destination"),
+    "preserve_unmatched_path": ubx.FieldSpec(wire_name="preserve_unmatched_path"),
+    "source_pattern": ubx.FieldSpec(wire_name="source_pattern"),
 }
 
 _Endpoint_DeliveryRuleFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "order": sdk.FieldSpec(wire_name="order"),
-    "cache_expiration_action": sdk.FieldSpec(
+    "name": ubx.FieldSpec(wire_name="name"),
+    "order": ubx.FieldSpec(wire_name="order"),
+    "cache_expiration_action": ubx.FieldSpec(
         wire_name="cache_expiration_action",
         kind="list",
         fields=_Endpoint_DeliveryRule_CacheExpirationActionFields,
     ),
-    "cache_key_query_string_action": sdk.FieldSpec(
+    "cache_key_query_string_action": ubx.FieldSpec(
         wire_name="cache_key_query_string_action",
         kind="list",
         fields=_Endpoint_DeliveryRule_CacheKeyQueryStringActionFields,
     ),
-    "cookies_condition": sdk.FieldSpec(
+    "cookies_condition": ubx.FieldSpec(
         wire_name="cookies_condition",
         kind="list",
         fields=_Endpoint_DeliveryRule_CookiesConditionFields,
     ),
-    "device_condition": sdk.FieldSpec(
+    "device_condition": ubx.FieldSpec(
         wire_name="device_condition",
         kind="list",
         fields=_Endpoint_DeliveryRule_DeviceConditionFields,
     ),
-    "http_version_condition": sdk.FieldSpec(
+    "http_version_condition": ubx.FieldSpec(
         wire_name="http_version_condition",
         kind="list",
         fields=_Endpoint_DeliveryRule_DeviceConditionFields,
     ),
-    "modify_request_header_action": sdk.FieldSpec(
+    "modify_request_header_action": ubx.FieldSpec(
         wire_name="modify_request_header_action",
         kind="list",
         fields=_Endpoint_DeliveryRule_ModifyRequestHeaderActionFields,
     ),
-    "modify_response_header_action": sdk.FieldSpec(
+    "modify_response_header_action": ubx.FieldSpec(
         wire_name="modify_response_header_action",
         kind="list",
         fields=_Endpoint_DeliveryRule_ModifyRequestHeaderActionFields,
     ),
-    "post_arg_condition": sdk.FieldSpec(
+    "post_arg_condition": ubx.FieldSpec(
         wire_name="post_arg_condition",
         kind="list",
         fields=_Endpoint_DeliveryRule_CookiesConditionFields,
     ),
-    "query_string_condition": sdk.FieldSpec(
+    "query_string_condition": ubx.FieldSpec(
         wire_name="query_string_condition",
         kind="list",
         fields=_Endpoint_DeliveryRule_QueryStringConditionFields,
     ),
-    "remote_address_condition": sdk.FieldSpec(
+    "remote_address_condition": ubx.FieldSpec(
         wire_name="remote_address_condition",
         kind="list",
         fields=_Endpoint_DeliveryRule_DeviceConditionFields,
     ),
-    "request_body_condition": sdk.FieldSpec(
+    "request_body_condition": ubx.FieldSpec(
         wire_name="request_body_condition",
         kind="list",
         fields=_Endpoint_DeliveryRule_QueryStringConditionFields,
     ),
-    "request_header_condition": sdk.FieldSpec(
+    "request_header_condition": ubx.FieldSpec(
         wire_name="request_header_condition",
         kind="list",
         fields=_Endpoint_DeliveryRule_CookiesConditionFields,
     ),
-    "request_method_condition": sdk.FieldSpec(
+    "request_method_condition": ubx.FieldSpec(
         wire_name="request_method_condition",
         kind="list",
         fields=_Endpoint_DeliveryRule_DeviceConditionFields,
     ),
-    "request_scheme_condition": sdk.FieldSpec(
+    "request_scheme_condition": ubx.FieldSpec(
         wire_name="request_scheme_condition",
         kind="list",
         fields=_Endpoint_DeliveryRule_DeviceConditionFields,
     ),
-    "request_uri_condition": sdk.FieldSpec(
+    "request_uri_condition": ubx.FieldSpec(
         wire_name="request_uri_condition",
         kind="list",
         fields=_Endpoint_DeliveryRule_QueryStringConditionFields,
     ),
-    "url_file_extension_condition": sdk.FieldSpec(
+    "url_file_extension_condition": ubx.FieldSpec(
         wire_name="url_file_extension_condition",
         kind="list",
         fields=_Endpoint_DeliveryRule_QueryStringConditionFields,
     ),
-    "url_file_name_condition": sdk.FieldSpec(
+    "url_file_name_condition": ubx.FieldSpec(
         wire_name="url_file_name_condition",
         kind="list",
         fields=_Endpoint_DeliveryRule_QueryStringConditionFields,
     ),
-    "url_path_condition": sdk.FieldSpec(
+    "url_path_condition": ubx.FieldSpec(
         wire_name="url_path_condition",
         kind="list",
         fields=_Endpoint_DeliveryRule_QueryStringConditionFields,
     ),
-    "url_redirect_action": sdk.FieldSpec(
+    "url_redirect_action": ubx.FieldSpec(
         wire_name="url_redirect_action",
         kind="list",
         fields=_Endpoint_DeliveryRule_UrlRedirectActionFields,
     ),
-    "url_rewrite_action": sdk.FieldSpec(
+    "url_rewrite_action": ubx.FieldSpec(
         wire_name="url_rewrite_action",
         kind="list",
         fields=_Endpoint_DeliveryRule_UrlRewriteActionFields,
@@ -270,38 +270,38 @@ _Endpoint_DeliveryRuleFields = {
 }
 
 _Endpoint_GeoFilterFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "country_codes": sdk.FieldSpec(wire_name="country_codes"),
-    "relative_path": sdk.FieldSpec(wire_name="relative_path"),
+    "action": ubx.FieldSpec(wire_name="action"),
+    "country_codes": ubx.FieldSpec(wire_name="country_codes"),
+    "relative_path": ubx.FieldSpec(wire_name="relative_path"),
 }
 
 _Endpoint_GlobalDeliveryRuleFields = {
-    "cache_expiration_action": sdk.FieldSpec(
+    "cache_expiration_action": ubx.FieldSpec(
         wire_name="cache_expiration_action",
         kind="list",
         fields=_Endpoint_DeliveryRule_CacheExpirationActionFields,
     ),
-    "cache_key_query_string_action": sdk.FieldSpec(
+    "cache_key_query_string_action": ubx.FieldSpec(
         wire_name="cache_key_query_string_action",
         kind="list",
         fields=_Endpoint_DeliveryRule_CacheKeyQueryStringActionFields,
     ),
-    "modify_request_header_action": sdk.FieldSpec(
+    "modify_request_header_action": ubx.FieldSpec(
         wire_name="modify_request_header_action",
         kind="list",
         fields=_Endpoint_DeliveryRule_ModifyRequestHeaderActionFields,
     ),
-    "modify_response_header_action": sdk.FieldSpec(
+    "modify_response_header_action": ubx.FieldSpec(
         wire_name="modify_response_header_action",
         kind="list",
         fields=_Endpoint_DeliveryRule_ModifyRequestHeaderActionFields,
     ),
-    "url_redirect_action": sdk.FieldSpec(
+    "url_redirect_action": ubx.FieldSpec(
         wire_name="url_redirect_action",
         kind="list",
         fields=_Endpoint_DeliveryRule_UrlRedirectActionFields,
     ),
-    "url_rewrite_action": sdk.FieldSpec(
+    "url_rewrite_action": ubx.FieldSpec(
         wire_name="url_rewrite_action",
         kind="list",
         fields=_Endpoint_DeliveryRule_UrlRewriteActionFields,
@@ -309,17 +309,17 @@ _Endpoint_GlobalDeliveryRuleFields = {
 }
 
 _Endpoint_OriginFields = {
-    "host_name": sdk.FieldSpec(wire_name="host_name"),
-    "http_port": sdk.FieldSpec(wire_name="http_port"),
-    "https_port": sdk.FieldSpec(wire_name="https_port"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "host_name": ubx.FieldSpec(wire_name="host_name"),
+    "http_port": ubx.FieldSpec(wire_name="http_port"),
+    "https_port": ubx.FieldSpec(wire_name="https_port"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _Endpoint_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -345,45 +345,45 @@ class EndpointConfig:
     origin: Any = None
     timeouts: Any = None
 
-Endpoint = sdk.ResourceBinding(
+Endpoint = ubx.ResourceBinding(
     wire_type="azurerm_cdn_endpoint",
     fields={
-        "content_types_to_compress": sdk.FieldSpec(wire_name="content_types_to_compress"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "is_compression_enabled": sdk.FieldSpec(wire_name="is_compression_enabled"),
-        "is_http_allowed": sdk.FieldSpec(wire_name="is_http_allowed"),
-        "is_https_allowed": sdk.FieldSpec(wire_name="is_https_allowed"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "optimization_type": sdk.FieldSpec(wire_name="optimization_type"),
-        "origin_host_header": sdk.FieldSpec(wire_name="origin_host_header"),
-        "origin_path": sdk.FieldSpec(wire_name="origin_path"),
-        "probe_path": sdk.FieldSpec(wire_name="probe_path"),
-        "profile_name": sdk.FieldSpec(wire_name="profile_name"),
-        "querystring_caching_behaviour": sdk.FieldSpec(wire_name="querystring_caching_behaviour"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "delivery_rule": sdk.FieldSpec(
+        "content_types_to_compress": ubx.FieldSpec(wire_name="content_types_to_compress"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "is_compression_enabled": ubx.FieldSpec(wire_name="is_compression_enabled"),
+        "is_http_allowed": ubx.FieldSpec(wire_name="is_http_allowed"),
+        "is_https_allowed": ubx.FieldSpec(wire_name="is_https_allowed"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "optimization_type": ubx.FieldSpec(wire_name="optimization_type"),
+        "origin_host_header": ubx.FieldSpec(wire_name="origin_host_header"),
+        "origin_path": ubx.FieldSpec(wire_name="origin_path"),
+        "probe_path": ubx.FieldSpec(wire_name="probe_path"),
+        "profile_name": ubx.FieldSpec(wire_name="profile_name"),
+        "querystring_caching_behaviour": ubx.FieldSpec(wire_name="querystring_caching_behaviour"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "delivery_rule": ubx.FieldSpec(
             wire_name="delivery_rule",
             kind="list",
             fields=_Endpoint_DeliveryRuleFields,
         ),
-        "geo_filter": sdk.FieldSpec(
+        "geo_filter": ubx.FieldSpec(
             wire_name="geo_filter",
             kind="list",
             fields=_Endpoint_GeoFilterFields,
         ),
-        "global_delivery_rule": sdk.FieldSpec(
+        "global_delivery_rule": ubx.FieldSpec(
             wire_name="global_delivery_rule",
             kind="list",
             fields=_Endpoint_GlobalDeliveryRuleFields,
         ),
-        "origin": sdk.FieldSpec(
+        "origin": ubx.FieldSpec(
             wire_name="origin",
             kind="set",
             fields=_Endpoint_OriginFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Endpoint_TimeoutsFields,

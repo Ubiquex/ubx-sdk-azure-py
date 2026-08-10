@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TopicAuthorizationRule_Timeouts:
@@ -14,10 +14,10 @@ class TopicAuthorizationRule_Timeouts:
     update: Any = None
 
 _TopicAuthorizationRule_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class TopicAuthorizationRuleConfig:
     topic_id: Any = None
     timeouts: Any = None
 
-TopicAuthorizationRule = sdk.ResourceBinding(
+TopicAuthorizationRule = ubx.ResourceBinding(
     wire_type="azurerm_servicebus_topic_authorization_rule",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "listen": sdk.FieldSpec(wire_name="listen"),
-        "manage": sdk.FieldSpec(wire_name="manage"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "send": sdk.FieldSpec(wire_name="send"),
-        "topic_id": sdk.FieldSpec(wire_name="topic_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "listen": ubx.FieldSpec(wire_name="listen"),
+        "manage": ubx.FieldSpec(wire_name="manage"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "send": ubx.FieldSpec(wire_name="send"),
+        "topic_id": ubx.FieldSpec(wire_name="topic_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_TopicAuthorizationRule_TimeoutsFields,

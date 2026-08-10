@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudElasticsearch_Logs_FilteringTag:
@@ -27,16 +27,16 @@ class CloudElasticsearch_Timeouts:
     update: Any = None
 
 _CloudElasticsearch_Logs_FilteringTagFields = {
-    "action": sdk.FieldSpec(wire_name="action"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "action": ubx.FieldSpec(wire_name="action"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _CloudElasticsearch_LogsFields = {
-    "send_activity_logs": sdk.FieldSpec(wire_name="send_activity_logs"),
-    "send_azuread_logs": sdk.FieldSpec(wire_name="send_azuread_logs"),
-    "send_subscription_logs": sdk.FieldSpec(wire_name="send_subscription_logs"),
-    "filtering_tag": sdk.FieldSpec(
+    "send_activity_logs": ubx.FieldSpec(wire_name="send_activity_logs"),
+    "send_azuread_logs": ubx.FieldSpec(wire_name="send_azuread_logs"),
+    "send_subscription_logs": ubx.FieldSpec(wire_name="send_subscription_logs"),
+    "filtering_tag": ubx.FieldSpec(
         wire_name="filtering_tag",
         kind="list",
         fields=_CloudElasticsearch_Logs_FilteringTagFields,
@@ -44,10 +44,10 @@ _CloudElasticsearch_LogsFields = {
 }
 
 _CloudElasticsearch_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -63,23 +63,23 @@ class CloudElasticsearchConfig:
     logs: Any = None
     timeouts: Any = None
 
-CloudElasticsearch = sdk.ResourceBinding(
+CloudElasticsearch = ubx.ResourceBinding(
     wire_type="azurerm_elastic_cloud_elasticsearch",
     fields={
-        "elastic_cloud_email_address": sdk.FieldSpec(wire_name="elastic_cloud_email_address"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "monitoring_enabled": sdk.FieldSpec(wire_name="monitoring_enabled"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "logs": sdk.FieldSpec(
+        "elastic_cloud_email_address": ubx.FieldSpec(wire_name="elastic_cloud_email_address"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "monitoring_enabled": ubx.FieldSpec(wire_name="monitoring_enabled"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "logs": ubx.FieldSpec(
             wire_name="logs",
             kind="list",
             fields=_CloudElasticsearch_LogsFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CloudElasticsearch_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class NatRuleCollection_Rule:
@@ -26,22 +26,22 @@ class NatRuleCollection_Timeouts:
     update: Any = None
 
 _NatRuleCollection_RuleFields = {
-    "description": sdk.FieldSpec(wire_name="description"),
-    "destination_addresses": sdk.FieldSpec(wire_name="destination_addresses"),
-    "destination_ports": sdk.FieldSpec(wire_name="destination_ports"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "protocols": sdk.FieldSpec(wire_name="protocols"),
-    "source_addresses": sdk.FieldSpec(wire_name="source_addresses"),
-    "source_ip_groups": sdk.FieldSpec(wire_name="source_ip_groups"),
-    "translated_address": sdk.FieldSpec(wire_name="translated_address"),
-    "translated_port": sdk.FieldSpec(wire_name="translated_port"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "destination_addresses": ubx.FieldSpec(wire_name="destination_addresses"),
+    "destination_ports": ubx.FieldSpec(wire_name="destination_ports"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "protocols": ubx.FieldSpec(wire_name="protocols"),
+    "source_addresses": ubx.FieldSpec(wire_name="source_addresses"),
+    "source_ip_groups": ubx.FieldSpec(wire_name="source_ip_groups"),
+    "translated_address": ubx.FieldSpec(wire_name="translated_address"),
+    "translated_port": ubx.FieldSpec(wire_name="translated_port"),
 }
 
 _NatRuleCollection_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -55,21 +55,21 @@ class NatRuleCollectionConfig:
     rule: Any = None
     timeouts: Any = None
 
-NatRuleCollection = sdk.ResourceBinding(
+NatRuleCollection = ubx.ResourceBinding(
     wire_type="azurerm_firewall_nat_rule_collection",
     fields={
-        "action": sdk.FieldSpec(wire_name="action"),
-        "azure_firewall_name": sdk.FieldSpec(wire_name="azure_firewall_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "priority": sdk.FieldSpec(wire_name="priority"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "rule": sdk.FieldSpec(
+        "action": ubx.FieldSpec(wire_name="action"),
+        "azure_firewall_name": ubx.FieldSpec(wire_name="azure_firewall_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "priority": ubx.FieldSpec(wire_name="priority"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "rule": ubx.FieldSpec(
             wire_name="rule",
             kind="list",
             fields=_NatRuleCollection_RuleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_NatRuleCollection_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RouteTableAssociation_Timeouts:
@@ -13,9 +13,9 @@ class RouteTableAssociation_Timeouts:
     read: Any = None
 
 _RouteTableAssociation_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -25,13 +25,13 @@ class RouteTableAssociationConfig:
     subnet_id: Any = None
     timeouts: Any = None
 
-RouteTableAssociation = sdk.ResourceBinding(
+RouteTableAssociation = ubx.ResourceBinding(
     wire_type="azurerm_subnet_route_table_association",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "route_table_id": sdk.FieldSpec(wire_name="route_table_id"),
-        "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "route_table_id": ubx.FieldSpec(wire_name="route_table_id"),
+        "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RouteTableAssociation_TimeoutsFields,

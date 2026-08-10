@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppEnvironmentCustomDomain_Timeouts:
@@ -14,10 +14,10 @@ class AppEnvironmentCustomDomain_Timeouts:
     update: Any = None
 
 _AppEnvironmentCustomDomain_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class AppEnvironmentCustomDomainConfig:
     id: Any = None
     timeouts: Any = None
 
-AppEnvironmentCustomDomain = sdk.ResourceBinding(
+AppEnvironmentCustomDomain = ubx.ResourceBinding(
     wire_type="azurerm_container_app_environment_custom_domain",
     fields={
-        "certificate_blob_base64": sdk.FieldSpec(wire_name="certificate_blob_base64"),
-        "certificate_password": sdk.FieldSpec(wire_name="certificate_password"),
-        "container_app_environment_id": sdk.FieldSpec(wire_name="container_app_environment_id"),
-        "dns_suffix": sdk.FieldSpec(wire_name="dns_suffix"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "timeouts": sdk.FieldSpec(
+        "certificate_blob_base64": ubx.FieldSpec(wire_name="certificate_blob_base64"),
+        "certificate_password": ubx.FieldSpec(wire_name="certificate_password"),
+        "container_app_environment_id": ubx.FieldSpec(wire_name="container_app_environment_id"),
+        "dns_suffix": ubx.FieldSpec(wire_name="dns_suffix"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AppEnvironmentCustomDomain_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MedtechServiceFhirDestination_Timeouts:
@@ -14,10 +14,10 @@ class MedtechServiceFhirDestination_Timeouts:
     update: Any = None
 
 _MedtechServiceFhirDestination_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class MedtechServiceFhirDestinationConfig:
     name: Any = None
     timeouts: Any = None
 
-MedtechServiceFhirDestination = sdk.ResourceBinding(
+MedtechServiceFhirDestination = ubx.ResourceBinding(
     wire_type="azurerm_healthcare_medtech_service_fhir_destination",
     fields={
-        "destination_fhir_mapping_json": sdk.FieldSpec(wire_name="destination_fhir_mapping_json"),
-        "destination_fhir_service_id": sdk.FieldSpec(wire_name="destination_fhir_service_id"),
-        "destination_identity_resolution_type": sdk.FieldSpec(wire_name="destination_identity_resolution_type"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "medtech_service_id": sdk.FieldSpec(wire_name="medtech_service_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "timeouts": sdk.FieldSpec(
+        "destination_fhir_mapping_json": ubx.FieldSpec(wire_name="destination_fhir_mapping_json"),
+        "destination_fhir_service_id": ubx.FieldSpec(wire_name="destination_fhir_service_id"),
+        "destination_identity_resolution_type": ubx.FieldSpec(wire_name="destination_identity_resolution_type"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "medtech_service_id": ubx.FieldSpec(wire_name="medtech_service_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_MedtechServiceFhirDestination_TimeoutsFields,

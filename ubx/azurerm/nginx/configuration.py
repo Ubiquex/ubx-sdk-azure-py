@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Configuration_ConfigFile:
@@ -25,21 +25,21 @@ class Configuration_Timeouts:
     update: Any = None
 
 _Configuration_ConfigFileFields = {
-    "content": sdk.FieldSpec(wire_name="content"),
-    "virtual_path": sdk.FieldSpec(wire_name="virtual_path"),
+    "content": ubx.FieldSpec(wire_name="content"),
+    "virtual_path": ubx.FieldSpec(wire_name="virtual_path"),
 }
 
 _Configuration_ProtectedFileFields = {
-    "content": sdk.FieldSpec(wire_name="content"),
-    "content_hash": sdk.FieldSpec(wire_name="content_hash"),
-    "virtual_path": sdk.FieldSpec(wire_name="virtual_path"),
+    "content": ubx.FieldSpec(wire_name="content"),
+    "content_hash": ubx.FieldSpec(wire_name="content_hash"),
+    "virtual_path": ubx.FieldSpec(wire_name="virtual_path"),
 }
 
 _Configuration_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -52,24 +52,24 @@ class ConfigurationConfig:
     protected_file: Any = None
     timeouts: Any = None
 
-Configuration = sdk.ResourceBinding(
+Configuration = ubx.ResourceBinding(
     wire_type="azurerm_nginx_configuration",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "nginx_deployment_id": sdk.FieldSpec(wire_name="nginx_deployment_id"),
-        "package_data": sdk.FieldSpec(wire_name="package_data"),
-        "root_file": sdk.FieldSpec(wire_name="root_file"),
-        "config_file": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "nginx_deployment_id": ubx.FieldSpec(wire_name="nginx_deployment_id"),
+        "package_data": ubx.FieldSpec(wire_name="package_data"),
+        "root_file": ubx.FieldSpec(wire_name="root_file"),
+        "config_file": ubx.FieldSpec(
             wire_name="config_file",
             kind="set",
             fields=_Configuration_ConfigFileFields,
         ),
-        "protected_file": sdk.FieldSpec(
+        "protected_file": ubx.FieldSpec(
             wire_name="protected_file",
             kind="set",
             fields=_Configuration_ProtectedFileFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Configuration_TimeoutsFields,

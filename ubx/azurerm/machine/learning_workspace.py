@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LearningWorkspace_Encryption:
@@ -43,39 +43,39 @@ class LearningWorkspace_Timeouts:
     update: Any = None
 
 _LearningWorkspace_EncryptionFields = {
-    "key_id": sdk.FieldSpec(wire_name="key_id"),
-    "key_vault_id": sdk.FieldSpec(wire_name="key_vault_id"),
-    "user_assigned_identity_id": sdk.FieldSpec(wire_name="user_assigned_identity_id"),
+    "key_id": ubx.FieldSpec(wire_name="key_id"),
+    "key_vault_id": ubx.FieldSpec(wire_name="key_vault_id"),
+    "user_assigned_identity_id": ubx.FieldSpec(wire_name="user_assigned_identity_id"),
 }
 
 _LearningWorkspace_FeatureStoreFields = {
-    "computer_spark_runtime_version": sdk.FieldSpec(wire_name="computer_spark_runtime_version"),
-    "offline_connection_name": sdk.FieldSpec(wire_name="offline_connection_name"),
-    "online_connection_name": sdk.FieldSpec(wire_name="online_connection_name"),
+    "computer_spark_runtime_version": ubx.FieldSpec(wire_name="computer_spark_runtime_version"),
+    "offline_connection_name": ubx.FieldSpec(wire_name="offline_connection_name"),
+    "online_connection_name": ubx.FieldSpec(wire_name="online_connection_name"),
 }
 
 _LearningWorkspace_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _LearningWorkspace_ManagedNetworkFields = {
-    "isolation_mode": sdk.FieldSpec(wire_name="isolation_mode"),
-    "provision_on_creation_enabled": sdk.FieldSpec(wire_name="provision_on_creation_enabled"),
+    "isolation_mode": ubx.FieldSpec(wire_name="isolation_mode"),
+    "provision_on_creation_enabled": ubx.FieldSpec(wire_name="provision_on_creation_enabled"),
 }
 
 _LearningWorkspace_ServerlessComputeFields = {
-    "public_ip_enabled": sdk.FieldSpec(wire_name="public_ip_enabled"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "public_ip_enabled": ubx.FieldSpec(wire_name="public_ip_enabled"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _LearningWorkspace_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -107,55 +107,55 @@ class LearningWorkspaceConfig:
     serverless_compute: Any = None
     timeouts: Any = None
 
-LearningWorkspace = sdk.ResourceBinding(
+LearningWorkspace = ubx.ResourceBinding(
     wire_type="azurerm_machine_learning_workspace",
     fields={
-        "application_insights_id": sdk.FieldSpec(wire_name="application_insights_id"),
-        "container_registry_id": sdk.FieldSpec(wire_name="container_registry_id"),
-        "description": sdk.FieldSpec(wire_name="description"),
-        "friendly_name": sdk.FieldSpec(wire_name="friendly_name"),
-        "high_business_impact": sdk.FieldSpec(wire_name="high_business_impact"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "image_build_compute_name": sdk.FieldSpec(wire_name="image_build_compute_name"),
-        "key_vault_id": sdk.FieldSpec(wire_name="key_vault_id"),
-        "kind": sdk.FieldSpec(wire_name="kind"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "primary_user_assigned_identity": sdk.FieldSpec(wire_name="primary_user_assigned_identity"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "service_side_encryption_enabled": sdk.FieldSpec(wire_name="service_side_encryption_enabled"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "storage_account_access_type": sdk.FieldSpec(wire_name="storage_account_access_type"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "v1_legacy_mode_enabled": sdk.FieldSpec(wire_name="v1_legacy_mode_enabled"),
-        "encryption": sdk.FieldSpec(
+        "application_insights_id": ubx.FieldSpec(wire_name="application_insights_id"),
+        "container_registry_id": ubx.FieldSpec(wire_name="container_registry_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "friendly_name": ubx.FieldSpec(wire_name="friendly_name"),
+        "high_business_impact": ubx.FieldSpec(wire_name="high_business_impact"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "image_build_compute_name": ubx.FieldSpec(wire_name="image_build_compute_name"),
+        "key_vault_id": ubx.FieldSpec(wire_name="key_vault_id"),
+        "kind": ubx.FieldSpec(wire_name="kind"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "primary_user_assigned_identity": ubx.FieldSpec(wire_name="primary_user_assigned_identity"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "service_side_encryption_enabled": ubx.FieldSpec(wire_name="service_side_encryption_enabled"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "storage_account_access_type": ubx.FieldSpec(wire_name="storage_account_access_type"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "v1_legacy_mode_enabled": ubx.FieldSpec(wire_name="v1_legacy_mode_enabled"),
+        "encryption": ubx.FieldSpec(
             wire_name="encryption",
             kind="list",
             fields=_LearningWorkspace_EncryptionFields,
         ),
-        "feature_store": sdk.FieldSpec(
+        "feature_store": ubx.FieldSpec(
             wire_name="feature_store",
             kind="list",
             fields=_LearningWorkspace_FeatureStoreFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_LearningWorkspace_IdentityFields,
         ),
-        "managed_network": sdk.FieldSpec(
+        "managed_network": ubx.FieldSpec(
             wire_name="managed_network",
             kind="list",
             fields=_LearningWorkspace_ManagedNetworkFields,
         ),
-        "serverless_compute": sdk.FieldSpec(
+        "serverless_compute": ubx.FieldSpec(
             wire_name="serverless_compute",
             kind="list",
             fields=_LearningWorkspace_ServerlessComputeFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_LearningWorkspace_TimeoutsFields,

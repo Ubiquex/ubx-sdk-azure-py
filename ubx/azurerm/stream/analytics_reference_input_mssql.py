@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnalyticsReferenceInputMssql_Timeouts:
@@ -14,10 +14,10 @@ class AnalyticsReferenceInputMssql_Timeouts:
     update: Any = None
 
 _AnalyticsReferenceInputMssql_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -37,23 +37,23 @@ class AnalyticsReferenceInputMssqlConfig:
     username: Any = None
     timeouts: Any = None
 
-AnalyticsReferenceInputMssql = sdk.ResourceBinding(
+AnalyticsReferenceInputMssql = ubx.ResourceBinding(
     wire_type="azurerm_stream_analytics_reference_input_mssql",
     fields={
-        "database": sdk.FieldSpec(wire_name="database"),
-        "delta_snapshot_query": sdk.FieldSpec(wire_name="delta_snapshot_query"),
-        "full_snapshot_query": sdk.FieldSpec(wire_name="full_snapshot_query"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "password": sdk.FieldSpec(wire_name="password"),
-        "refresh_interval_duration": sdk.FieldSpec(wire_name="refresh_interval_duration"),
-        "refresh_type": sdk.FieldSpec(wire_name="refresh_type"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "server": sdk.FieldSpec(wire_name="server"),
-        "stream_analytics_job_name": sdk.FieldSpec(wire_name="stream_analytics_job_name"),
-        "table": sdk.FieldSpec(wire_name="table"),
-        "username": sdk.FieldSpec(wire_name="username"),
-        "timeouts": sdk.FieldSpec(
+        "database": ubx.FieldSpec(wire_name="database"),
+        "delta_snapshot_query": ubx.FieldSpec(wire_name="delta_snapshot_query"),
+        "full_snapshot_query": ubx.FieldSpec(wire_name="full_snapshot_query"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "password": ubx.FieldSpec(wire_name="password"),
+        "refresh_interval_duration": ubx.FieldSpec(wire_name="refresh_interval_duration"),
+        "refresh_type": ubx.FieldSpec(wire_name="refresh_type"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "server": ubx.FieldSpec(wire_name="server"),
+        "stream_analytics_job_name": ubx.FieldSpec(wire_name="stream_analytics_job_name"),
+        "table": ubx.FieldSpec(wire_name="table"),
+        "username": ubx.FieldSpec(wire_name="username"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AnalyticsReferenceInputMssql_TimeoutsFields,

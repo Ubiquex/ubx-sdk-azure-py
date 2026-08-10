@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnalyticsLinkedStorageAccount_Timeouts:
@@ -14,10 +14,10 @@ class AnalyticsLinkedStorageAccount_Timeouts:
     update: Any = None
 
 _AnalyticsLinkedStorageAccount_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -29,15 +29,15 @@ class AnalyticsLinkedStorageAccountConfig:
     workspace_id: Any = None
     timeouts: Any = None
 
-AnalyticsLinkedStorageAccount = sdk.ResourceBinding(
+AnalyticsLinkedStorageAccount = ubx.ResourceBinding(
     wire_type="azurerm_log_analytics_linked_storage_account",
     fields={
-        "data_source_type": sdk.FieldSpec(wire_name="data_source_type"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "storage_account_ids": sdk.FieldSpec(wire_name="storage_account_ids"),
-        "workspace_id": sdk.FieldSpec(wire_name="workspace_id"),
-        "timeouts": sdk.FieldSpec(
+        "data_source_type": ubx.FieldSpec(wire_name="data_source_type"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "storage_account_ids": ubx.FieldSpec(wire_name="storage_account_ids"),
+        "workspace_id": ubx.FieldSpec(wire_name="workspace_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AnalyticsLinkedStorageAccount_TimeoutsFields,

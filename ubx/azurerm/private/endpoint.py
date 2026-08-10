@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Endpoint_IpConfiguration:
@@ -37,33 +37,33 @@ class Endpoint_Timeouts:
     update: Any = None
 
 _Endpoint_IpConfigurationFields = {
-    "member_name": sdk.FieldSpec(wire_name="member_name"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "private_ip_address": sdk.FieldSpec(wire_name="private_ip_address"),
-    "subresource_name": sdk.FieldSpec(wire_name="subresource_name"),
+    "member_name": ubx.FieldSpec(wire_name="member_name"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "private_ip_address": ubx.FieldSpec(wire_name="private_ip_address"),
+    "subresource_name": ubx.FieldSpec(wire_name="subresource_name"),
 }
 
 _Endpoint_PrivateDnsZoneGroupFields = {
-    "id": sdk.FieldSpec(wire_name="id"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "private_dns_zone_ids": sdk.FieldSpec(wire_name="private_dns_zone_ids"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "private_dns_zone_ids": ubx.FieldSpec(wire_name="private_dns_zone_ids"),
 }
 
 _Endpoint_PrivateServiceConnectionFields = {
-    "is_manual_connection": sdk.FieldSpec(wire_name="is_manual_connection"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "private_connection_resource_alias": sdk.FieldSpec(wire_name="private_connection_resource_alias"),
-    "private_connection_resource_id": sdk.FieldSpec(wire_name="private_connection_resource_id"),
-    "private_ip_address": sdk.FieldSpec(wire_name="private_ip_address"),
-    "request_message": sdk.FieldSpec(wire_name="request_message"),
-    "subresource_names": sdk.FieldSpec(wire_name="subresource_names"),
+    "is_manual_connection": ubx.FieldSpec(wire_name="is_manual_connection"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "private_connection_resource_alias": ubx.FieldSpec(wire_name="private_connection_resource_alias"),
+    "private_connection_resource_id": ubx.FieldSpec(wire_name="private_connection_resource_id"),
+    "private_ip_address": ubx.FieldSpec(wire_name="private_ip_address"),
+    "request_message": ubx.FieldSpec(wire_name="request_message"),
+    "subresource_names": ubx.FieldSpec(wire_name="subresource_names"),
 }
 
 _Endpoint_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -81,33 +81,33 @@ class EndpointConfig:
     private_service_connection: Any = None
     timeouts: Any = None
 
-Endpoint = sdk.ResourceBinding(
+Endpoint = ubx.ResourceBinding(
     wire_type="azurerm_private_endpoint",
     fields={
-        "custom_network_interface_name": sdk.FieldSpec(wire_name="custom_network_interface_name"),
-        "edge_zone": sdk.FieldSpec(wire_name="edge_zone"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "ip_configuration": sdk.FieldSpec(
+        "custom_network_interface_name": ubx.FieldSpec(wire_name="custom_network_interface_name"),
+        "edge_zone": ubx.FieldSpec(wire_name="edge_zone"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "ip_configuration": ubx.FieldSpec(
             wire_name="ip_configuration",
             kind="list",
             fields=_Endpoint_IpConfigurationFields,
         ),
-        "private_dns_zone_group": sdk.FieldSpec(
+        "private_dns_zone_group": ubx.FieldSpec(
             wire_name="private_dns_zone_group",
             kind="list",
             fields=_Endpoint_PrivateDnsZoneGroupFields,
         ),
-        "private_service_connection": sdk.FieldSpec(
+        "private_service_connection": ubx.FieldSpec(
             wire_name="private_service_connection",
             kind="list",
             fields=_Endpoint_PrivateServiceConnectionFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Endpoint_TimeoutsFields,

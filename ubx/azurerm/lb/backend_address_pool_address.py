@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BackendAddressPoolAddress_Timeouts:
@@ -14,10 +14,10 @@ class BackendAddressPoolAddress_Timeouts:
     update: Any = None
 
 _BackendAddressPoolAddress_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -30,16 +30,16 @@ class BackendAddressPoolAddressConfig:
     virtual_network_id: Any = None
     timeouts: Any = None
 
-BackendAddressPoolAddress = sdk.ResourceBinding(
+BackendAddressPoolAddress = ubx.ResourceBinding(
     wire_type="azurerm_lb_backend_address_pool_address",
     fields={
-        "backend_address_ip_configuration_id": sdk.FieldSpec(wire_name="backend_address_ip_configuration_id"),
-        "backend_address_pool_id": sdk.FieldSpec(wire_name="backend_address_pool_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "ip_address": sdk.FieldSpec(wire_name="ip_address"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "virtual_network_id": sdk.FieldSpec(wire_name="virtual_network_id"),
-        "timeouts": sdk.FieldSpec(
+        "backend_address_ip_configuration_id": ubx.FieldSpec(wire_name="backend_address_ip_configuration_id"),
+        "backend_address_pool_id": ubx.FieldSpec(wire_name="backend_address_pool_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "ip_address": ubx.FieldSpec(wire_name="ip_address"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "virtual_network_id": ubx.FieldSpec(wire_name="virtual_network_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_BackendAddressPoolAddress_TimeoutsFields,

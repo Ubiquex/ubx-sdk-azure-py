@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Webhook_Timeouts:
@@ -14,10 +14,10 @@ class Webhook_Timeouts:
     update: Any = None
 
 _Webhook_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -34,20 +34,20 @@ class WebhookConfig:
     uri: Any = None
     timeouts: Any = None
 
-Webhook = sdk.ResourceBinding(
+Webhook = ubx.ResourceBinding(
     wire_type="azurerm_automation_webhook",
     fields={
-        "automation_account_name": sdk.FieldSpec(wire_name="automation_account_name"),
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "expiry_time": sdk.FieldSpec(wire_name="expiry_time"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parameters": sdk.FieldSpec(wire_name="parameters"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "run_on_worker_group": sdk.FieldSpec(wire_name="run_on_worker_group"),
-        "runbook_name": sdk.FieldSpec(wire_name="runbook_name"),
-        "uri": sdk.FieldSpec(wire_name="uri"),
-        "timeouts": sdk.FieldSpec(
+        "automation_account_name": ubx.FieldSpec(wire_name="automation_account_name"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "expiry_time": ubx.FieldSpec(wire_name="expiry_time"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parameters": ubx.FieldSpec(wire_name="parameters"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "run_on_worker_group": ubx.FieldSpec(wire_name="run_on_worker_group"),
+        "runbook_name": ubx.FieldSpec(wire_name="runbook_name"),
+        "uri": ubx.FieldSpec(wire_name="uri"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Webhook_TimeoutsFields,

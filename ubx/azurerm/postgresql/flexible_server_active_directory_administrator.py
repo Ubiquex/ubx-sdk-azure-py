@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FlexibleServerActiveDirectoryAdministrator_Timeouts:
@@ -13,9 +13,9 @@ class FlexibleServerActiveDirectoryAdministrator_Timeouts:
     read: Any = None
 
 _FlexibleServerActiveDirectoryAdministrator_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -29,17 +29,17 @@ class FlexibleServerActiveDirectoryAdministratorConfig:
     tenant_id: Any = None
     timeouts: Any = None
 
-FlexibleServerActiveDirectoryAdministrator = sdk.ResourceBinding(
+FlexibleServerActiveDirectoryAdministrator = ubx.ResourceBinding(
     wire_type="azurerm_postgresql_flexible_server_active_directory_administrator",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "object_id": sdk.FieldSpec(wire_name="object_id"),
-        "principal_name": sdk.FieldSpec(wire_name="principal_name"),
-        "principal_type": sdk.FieldSpec(wire_name="principal_type"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "server_name": sdk.FieldSpec(wire_name="server_name"),
-        "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "object_id": ubx.FieldSpec(wire_name="object_id"),
+        "principal_name": ubx.FieldSpec(wire_name="principal_name"),
+        "principal_type": ubx.FieldSpec(wire_name="principal_type"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "server_name": ubx.FieldSpec(wire_name="server_name"),
+        "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_FlexibleServerActiveDirectoryAdministrator_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GroupPolicyRemediation_Timeouts:
@@ -14,10 +14,10 @@ class GroupPolicyRemediation_Timeouts:
     update: Any = None
 
 _GroupPolicyRemediation_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -34,20 +34,20 @@ class GroupPolicyRemediationConfig:
     resource_group_id: Any = None
     timeouts: Any = None
 
-GroupPolicyRemediation = sdk.ResourceBinding(
+GroupPolicyRemediation = ubx.ResourceBinding(
     wire_type="azurerm_resource_group_policy_remediation",
     fields={
-        "failure_percentage": sdk.FieldSpec(wire_name="failure_percentage"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location_filters": sdk.FieldSpec(wire_name="location_filters"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parallel_deployments": sdk.FieldSpec(wire_name="parallel_deployments"),
-        "policy_assignment_id": sdk.FieldSpec(wire_name="policy_assignment_id"),
-        "policy_definition_reference_id": sdk.FieldSpec(wire_name="policy_definition_reference_id"),
-        "resource_count": sdk.FieldSpec(wire_name="resource_count"),
-        "resource_discovery_mode": sdk.FieldSpec(wire_name="resource_discovery_mode"),
-        "resource_group_id": sdk.FieldSpec(wire_name="resource_group_id"),
-        "timeouts": sdk.FieldSpec(
+        "failure_percentage": ubx.FieldSpec(wire_name="failure_percentage"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location_filters": ubx.FieldSpec(wire_name="location_filters"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parallel_deployments": ubx.FieldSpec(wire_name="parallel_deployments"),
+        "policy_assignment_id": ubx.FieldSpec(wire_name="policy_assignment_id"),
+        "policy_definition_reference_id": ubx.FieldSpec(wire_name="policy_definition_reference_id"),
+        "resource_count": ubx.FieldSpec(wire_name="resource_count"),
+        "resource_discovery_mode": ubx.FieldSpec(wire_name="resource_discovery_mode"),
+        "resource_group_id": ubx.FieldSpec(wire_name="resource_group_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_GroupPolicyRemediation_TimeoutsFields,

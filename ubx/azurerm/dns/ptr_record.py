@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PtrRecord_Timeouts:
@@ -14,10 +14,10 @@ class PtrRecord_Timeouts:
     update: Any = None
 
 _PtrRecord_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -31,17 +31,17 @@ class PtrRecordConfig:
     zone_name: Any = None
     timeouts: Any = None
 
-PtrRecord = sdk.ResourceBinding(
+PtrRecord = ubx.ResourceBinding(
     wire_type="azurerm_dns_ptr_record",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "records": sdk.FieldSpec(wire_name="records"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "ttl": sdk.FieldSpec(wire_name="ttl"),
-        "zone_name": sdk.FieldSpec(wire_name="zone_name"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "records": ubx.FieldSpec(wire_name="records"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "ttl": ubx.FieldSpec(wire_name="ttl"),
+        "zone_name": ubx.FieldSpec(wire_name="zone_name"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_PtrRecord_TimeoutsFields,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RecoveryReplicationRecoveryPlan_AzureToAzureSettings:
@@ -43,31 +43,31 @@ class RecoveryReplicationRecoveryPlan_Timeouts:
     update: Any = None
 
 _RecoveryReplicationRecoveryPlan_AzureToAzureSettingsFields = {
-    "primary_edge_zone": sdk.FieldSpec(wire_name="primary_edge_zone"),
-    "primary_zone": sdk.FieldSpec(wire_name="primary_zone"),
-    "recovery_edge_zone": sdk.FieldSpec(wire_name="recovery_edge_zone"),
-    "recovery_zone": sdk.FieldSpec(wire_name="recovery_zone"),
+    "primary_edge_zone": ubx.FieldSpec(wire_name="primary_edge_zone"),
+    "primary_zone": ubx.FieldSpec(wire_name="primary_zone"),
+    "recovery_edge_zone": ubx.FieldSpec(wire_name="recovery_edge_zone"),
+    "recovery_zone": ubx.FieldSpec(wire_name="recovery_zone"),
 }
 
 _RecoveryReplicationRecoveryPlan_BootRecoveryGroup_PostActionFields = {
-    "fabric_location": sdk.FieldSpec(wire_name="fabric_location"),
-    "fail_over_directions": sdk.FieldSpec(wire_name="fail_over_directions"),
-    "fail_over_types": sdk.FieldSpec(wire_name="fail_over_types"),
-    "manual_action_instruction": sdk.FieldSpec(wire_name="manual_action_instruction"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "runbook_id": sdk.FieldSpec(wire_name="runbook_id"),
-    "script_path": sdk.FieldSpec(wire_name="script_path"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "fabric_location": ubx.FieldSpec(wire_name="fabric_location"),
+    "fail_over_directions": ubx.FieldSpec(wire_name="fail_over_directions"),
+    "fail_over_types": ubx.FieldSpec(wire_name="fail_over_types"),
+    "manual_action_instruction": ubx.FieldSpec(wire_name="manual_action_instruction"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "runbook_id": ubx.FieldSpec(wire_name="runbook_id"),
+    "script_path": ubx.FieldSpec(wire_name="script_path"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _RecoveryReplicationRecoveryPlan_BootRecoveryGroupFields = {
-    "replicated_protected_items": sdk.FieldSpec(wire_name="replicated_protected_items"),
-    "post_action": sdk.FieldSpec(
+    "replicated_protected_items": ubx.FieldSpec(wire_name="replicated_protected_items"),
+    "post_action": ubx.FieldSpec(
         wire_name="post_action",
         kind="list",
         fields=_RecoveryReplicationRecoveryPlan_BootRecoveryGroup_PostActionFields,
     ),
-    "pre_action": sdk.FieldSpec(
+    "pre_action": ubx.FieldSpec(
         wire_name="pre_action",
         kind="list",
         fields=_RecoveryReplicationRecoveryPlan_BootRecoveryGroup_PostActionFields,
@@ -75,12 +75,12 @@ _RecoveryReplicationRecoveryPlan_BootRecoveryGroupFields = {
 }
 
 _RecoveryReplicationRecoveryPlan_FailoverRecoveryGroupFields = {
-    "post_action": sdk.FieldSpec(
+    "post_action": ubx.FieldSpec(
         wire_name="post_action",
         kind="list",
         fields=_RecoveryReplicationRecoveryPlan_BootRecoveryGroup_PostActionFields,
     ),
-    "pre_action": sdk.FieldSpec(
+    "pre_action": ubx.FieldSpec(
         wire_name="pre_action",
         kind="list",
         fields=_RecoveryReplicationRecoveryPlan_BootRecoveryGroup_PostActionFields,
@@ -88,10 +88,10 @@ _RecoveryReplicationRecoveryPlan_FailoverRecoveryGroupFields = {
 }
 
 _RecoveryReplicationRecoveryPlan_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -107,35 +107,35 @@ class RecoveryReplicationRecoveryPlanConfig:
     shutdown_recovery_group: Any = None
     timeouts: Any = None
 
-RecoveryReplicationRecoveryPlan = sdk.ResourceBinding(
+RecoveryReplicationRecoveryPlan = ubx.ResourceBinding(
     wire_type="azurerm_site_recovery_replication_recovery_plan",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "recovery_vault_id": sdk.FieldSpec(wire_name="recovery_vault_id"),
-        "source_recovery_fabric_id": sdk.FieldSpec(wire_name="source_recovery_fabric_id"),
-        "target_recovery_fabric_id": sdk.FieldSpec(wire_name="target_recovery_fabric_id"),
-        "azure_to_azure_settings": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "recovery_vault_id": ubx.FieldSpec(wire_name="recovery_vault_id"),
+        "source_recovery_fabric_id": ubx.FieldSpec(wire_name="source_recovery_fabric_id"),
+        "target_recovery_fabric_id": ubx.FieldSpec(wire_name="target_recovery_fabric_id"),
+        "azure_to_azure_settings": ubx.FieldSpec(
             wire_name="azure_to_azure_settings",
             kind="list",
             fields=_RecoveryReplicationRecoveryPlan_AzureToAzureSettingsFields,
         ),
-        "boot_recovery_group": sdk.FieldSpec(
+        "boot_recovery_group": ubx.FieldSpec(
             wire_name="boot_recovery_group",
             kind="list",
             fields=_RecoveryReplicationRecoveryPlan_BootRecoveryGroupFields,
         ),
-        "failover_recovery_group": sdk.FieldSpec(
+        "failover_recovery_group": ubx.FieldSpec(
             wire_name="failover_recovery_group",
             kind="list",
             fields=_RecoveryReplicationRecoveryPlan_FailoverRecoveryGroupFields,
         ),
-        "shutdown_recovery_group": sdk.FieldSpec(
+        "shutdown_recovery_group": ubx.FieldSpec(
             wire_name="shutdown_recovery_group",
             kind="list",
             fields=_RecoveryReplicationRecoveryPlan_FailoverRecoveryGroupFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RecoveryReplicationRecoveryPlan_TimeoutsFields,

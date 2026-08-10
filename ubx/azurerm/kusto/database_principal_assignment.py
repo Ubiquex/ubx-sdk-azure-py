@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DatabasePrincipalAssignment_Timeouts:
@@ -13,9 +13,9 @@ class DatabasePrincipalAssignment_Timeouts:
     read: Any = None
 
 _DatabasePrincipalAssignment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -31,19 +31,19 @@ class DatabasePrincipalAssignmentConfig:
     tenant_id: Any = None
     timeouts: Any = None
 
-DatabasePrincipalAssignment = sdk.ResourceBinding(
+DatabasePrincipalAssignment = ubx.ResourceBinding(
     wire_type="azurerm_kusto_database_principal_assignment",
     fields={
-        "cluster_name": sdk.FieldSpec(wire_name="cluster_name"),
-        "database_name": sdk.FieldSpec(wire_name="database_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-        "principal_type": sdk.FieldSpec(wire_name="principal_type"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "role": sdk.FieldSpec(wire_name="role"),
-        "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-        "timeouts": sdk.FieldSpec(
+        "cluster_name": ubx.FieldSpec(wire_name="cluster_name"),
+        "database_name": ubx.FieldSpec(wire_name="database_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+        "principal_type": ubx.FieldSpec(wire_name="principal_type"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "role": ubx.FieldSpec(wire_name="role"),
+        "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_DatabasePrincipalAssignment_TimeoutsFields,

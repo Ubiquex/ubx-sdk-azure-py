@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BudgetResourceGroup_Filter_Dimension:
@@ -40,18 +40,18 @@ class BudgetResourceGroup_Timeouts:
     update: Any = None
 
 _BudgetResourceGroup_Filter_DimensionFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "values": sdk.FieldSpec(wire_name="values"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "values": ubx.FieldSpec(wire_name="values"),
 }
 
 _BudgetResourceGroup_FilterFields = {
-    "dimension": sdk.FieldSpec(
+    "dimension": ubx.FieldSpec(
         wire_name="dimension",
         kind="set",
         fields=_BudgetResourceGroup_Filter_DimensionFields,
     ),
-    "tag": sdk.FieldSpec(
+    "tag": ubx.FieldSpec(
         wire_name="tag",
         kind="set",
         fields=_BudgetResourceGroup_Filter_DimensionFields,
@@ -59,25 +59,25 @@ _BudgetResourceGroup_FilterFields = {
 }
 
 _BudgetResourceGroup_NotificationFields = {
-    "contact_emails": sdk.FieldSpec(wire_name="contact_emails"),
-    "contact_groups": sdk.FieldSpec(wire_name="contact_groups"),
-    "contact_roles": sdk.FieldSpec(wire_name="contact_roles"),
-    "enabled": sdk.FieldSpec(wire_name="enabled"),
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "threshold": sdk.FieldSpec(wire_name="threshold"),
-    "threshold_type": sdk.FieldSpec(wire_name="threshold_type"),
+    "contact_emails": ubx.FieldSpec(wire_name="contact_emails"),
+    "contact_groups": ubx.FieldSpec(wire_name="contact_groups"),
+    "contact_roles": ubx.FieldSpec(wire_name="contact_roles"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "threshold": ubx.FieldSpec(wire_name="threshold"),
+    "threshold_type": ubx.FieldSpec(wire_name="threshold_type"),
 }
 
 _BudgetResourceGroup_TimePeriodFields = {
-    "end_date": sdk.FieldSpec(wire_name="end_date"),
-    "start_date": sdk.FieldSpec(wire_name="start_date"),
+    "end_date": ubx.FieldSpec(wire_name="end_date"),
+    "start_date": ubx.FieldSpec(wire_name="start_date"),
 }
 
 _BudgetResourceGroup_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -93,31 +93,31 @@ class BudgetResourceGroupConfig:
     time_period: Any = None
     timeouts: Any = None
 
-BudgetResourceGroup = sdk.ResourceBinding(
+BudgetResourceGroup = ubx.ResourceBinding(
     wire_type="azurerm_consumption_budget_resource_group",
     fields={
-        "amount": sdk.FieldSpec(wire_name="amount"),
-        "etag": sdk.FieldSpec(wire_name="etag"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_id": sdk.FieldSpec(wire_name="resource_group_id"),
-        "time_grain": sdk.FieldSpec(wire_name="time_grain"),
-        "filter": sdk.FieldSpec(
+        "amount": ubx.FieldSpec(wire_name="amount"),
+        "etag": ubx.FieldSpec(wire_name="etag"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_id": ubx.FieldSpec(wire_name="resource_group_id"),
+        "time_grain": ubx.FieldSpec(wire_name="time_grain"),
+        "filter": ubx.FieldSpec(
             wire_name="filter",
             kind="list",
             fields=_BudgetResourceGroup_FilterFields,
         ),
-        "notification": sdk.FieldSpec(
+        "notification": ubx.FieldSpec(
             wire_name="notification",
             kind="set",
             fields=_BudgetResourceGroup_NotificationFields,
         ),
-        "time_period": sdk.FieldSpec(
+        "time_period": ubx.FieldSpec(
             wire_name="time_period",
             kind="list",
             fields=_BudgetResourceGroup_TimePeriodFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_BudgetResourceGroup_TimeoutsFields,

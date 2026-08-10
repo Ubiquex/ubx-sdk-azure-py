@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudDynatraceApplicationPerformanceMonitoring_Timeouts:
@@ -14,10 +14,10 @@ class CloudDynatraceApplicationPerformanceMonitoring_Timeouts:
     update: Any = None
 
 _CloudDynatraceApplicationPerformanceMonitoring_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -34,20 +34,20 @@ class CloudDynatraceApplicationPerformanceMonitoringConfig:
     tenant_token: Any = None
     timeouts: Any = None
 
-CloudDynatraceApplicationPerformanceMonitoring = sdk.ResourceBinding(
+CloudDynatraceApplicationPerformanceMonitoring = ubx.ResourceBinding(
     wire_type="azurerm_spring_cloud_dynatrace_application_performance_monitoring",
     fields={
-        "api_token": sdk.FieldSpec(wire_name="api_token"),
-        "api_url": sdk.FieldSpec(wire_name="api_url"),
-        "connection_point": sdk.FieldSpec(wire_name="connection_point"),
-        "environment_id": sdk.FieldSpec(wire_name="environment_id"),
-        "globally_enabled": sdk.FieldSpec(wire_name="globally_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "spring_cloud_service_id": sdk.FieldSpec(wire_name="spring_cloud_service_id"),
-        "tenant": sdk.FieldSpec(wire_name="tenant"),
-        "tenant_token": sdk.FieldSpec(wire_name="tenant_token"),
-        "timeouts": sdk.FieldSpec(
+        "api_token": ubx.FieldSpec(wire_name="api_token"),
+        "api_url": ubx.FieldSpec(wire_name="api_url"),
+        "connection_point": ubx.FieldSpec(wire_name="connection_point"),
+        "environment_id": ubx.FieldSpec(wire_name="environment_id"),
+        "globally_enabled": ubx.FieldSpec(wire_name="globally_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "spring_cloud_service_id": ubx.FieldSpec(wire_name="spring_cloud_service_id"),
+        "tenant": ubx.FieldSpec(wire_name="tenant"),
+        "tenant_token": ubx.FieldSpec(wire_name="tenant_token"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CloudDynatraceApplicationPerformanceMonitoring_TimeoutsFields,

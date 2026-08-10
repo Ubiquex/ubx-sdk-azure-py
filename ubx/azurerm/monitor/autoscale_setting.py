@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AutoscaleSetting_Notification_Email:
@@ -94,23 +94,23 @@ class AutoscaleSetting_Timeouts:
     update: Any = None
 
 _AutoscaleSetting_Notification_EmailFields = {
-    "custom_emails": sdk.FieldSpec(wire_name="custom_emails"),
-    "send_to_subscription_administrator": sdk.FieldSpec(wire_name="send_to_subscription_administrator"),
-    "send_to_subscription_co_administrator": sdk.FieldSpec(wire_name="send_to_subscription_co_administrator"),
+    "custom_emails": ubx.FieldSpec(wire_name="custom_emails"),
+    "send_to_subscription_administrator": ubx.FieldSpec(wire_name="send_to_subscription_administrator"),
+    "send_to_subscription_co_administrator": ubx.FieldSpec(wire_name="send_to_subscription_co_administrator"),
 }
 
 _AutoscaleSetting_Notification_WebhookFields = {
-    "properties": sdk.FieldSpec(wire_name="properties"),
-    "service_uri": sdk.FieldSpec(wire_name="service_uri"),
+    "properties": ubx.FieldSpec(wire_name="properties"),
+    "service_uri": ubx.FieldSpec(wire_name="service_uri"),
 }
 
 _AutoscaleSetting_NotificationFields = {
-    "email": sdk.FieldSpec(
+    "email": ubx.FieldSpec(
         wire_name="email",
         kind="list",
         fields=_AutoscaleSetting_Notification_EmailFields,
     ),
-    "webhook": sdk.FieldSpec(
+    "webhook": ubx.FieldSpec(
         wire_name="webhook",
         kind="list",
         fields=_AutoscaleSetting_Notification_WebhookFields,
@@ -118,47 +118,47 @@ _AutoscaleSetting_NotificationFields = {
 }
 
 _AutoscaleSetting_PredictiveFields = {
-    "look_ahead_time": sdk.FieldSpec(wire_name="look_ahead_time"),
-    "scale_mode": sdk.FieldSpec(wire_name="scale_mode"),
+    "look_ahead_time": ubx.FieldSpec(wire_name="look_ahead_time"),
+    "scale_mode": ubx.FieldSpec(wire_name="scale_mode"),
 }
 
 _AutoscaleSetting_Profile_CapacityFields = {
-    "default": sdk.FieldSpec(wire_name="default"),
-    "maximum": sdk.FieldSpec(wire_name="maximum"),
-    "minimum": sdk.FieldSpec(wire_name="minimum"),
+    "default": ubx.FieldSpec(wire_name="default"),
+    "maximum": ubx.FieldSpec(wire_name="maximum"),
+    "minimum": ubx.FieldSpec(wire_name="minimum"),
 }
 
 _AutoscaleSetting_Profile_FixedDateFields = {
-    "end": sdk.FieldSpec(wire_name="end"),
-    "start": sdk.FieldSpec(wire_name="start"),
-    "timezone": sdk.FieldSpec(wire_name="timezone"),
+    "end": ubx.FieldSpec(wire_name="end"),
+    "start": ubx.FieldSpec(wire_name="start"),
+    "timezone": ubx.FieldSpec(wire_name="timezone"),
 }
 
 _AutoscaleSetting_Profile_RecurrenceFields = {
-    "days": sdk.FieldSpec(wire_name="days"),
-    "hours": sdk.FieldSpec(wire_name="hours"),
-    "minutes": sdk.FieldSpec(wire_name="minutes"),
-    "timezone": sdk.FieldSpec(wire_name="timezone"),
+    "days": ubx.FieldSpec(wire_name="days"),
+    "hours": ubx.FieldSpec(wire_name="hours"),
+    "minutes": ubx.FieldSpec(wire_name="minutes"),
+    "timezone": ubx.FieldSpec(wire_name="timezone"),
 }
 
 _AutoscaleSetting_Profile_Rule_MetricTrigger_DimensionsFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "values": sdk.FieldSpec(wire_name="values"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "values": ubx.FieldSpec(wire_name="values"),
 }
 
 _AutoscaleSetting_Profile_Rule_MetricTriggerFields = {
-    "divide_by_instance_count": sdk.FieldSpec(wire_name="divide_by_instance_count"),
-    "metric_name": sdk.FieldSpec(wire_name="metric_name"),
-    "metric_namespace": sdk.FieldSpec(wire_name="metric_namespace"),
-    "metric_resource_id": sdk.FieldSpec(wire_name="metric_resource_id"),
-    "operator": sdk.FieldSpec(wire_name="operator"),
-    "statistic": sdk.FieldSpec(wire_name="statistic"),
-    "threshold": sdk.FieldSpec(wire_name="threshold"),
-    "time_aggregation": sdk.FieldSpec(wire_name="time_aggregation"),
-    "time_grain": sdk.FieldSpec(wire_name="time_grain"),
-    "time_window": sdk.FieldSpec(wire_name="time_window"),
-    "dimensions": sdk.FieldSpec(
+    "divide_by_instance_count": ubx.FieldSpec(wire_name="divide_by_instance_count"),
+    "metric_name": ubx.FieldSpec(wire_name="metric_name"),
+    "metric_namespace": ubx.FieldSpec(wire_name="metric_namespace"),
+    "metric_resource_id": ubx.FieldSpec(wire_name="metric_resource_id"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "statistic": ubx.FieldSpec(wire_name="statistic"),
+    "threshold": ubx.FieldSpec(wire_name="threshold"),
+    "time_aggregation": ubx.FieldSpec(wire_name="time_aggregation"),
+    "time_grain": ubx.FieldSpec(wire_name="time_grain"),
+    "time_window": ubx.FieldSpec(wire_name="time_window"),
+    "dimensions": ubx.FieldSpec(
         wire_name="dimensions",
         kind="list",
         fields=_AutoscaleSetting_Profile_Rule_MetricTrigger_DimensionsFields,
@@ -166,19 +166,19 @@ _AutoscaleSetting_Profile_Rule_MetricTriggerFields = {
 }
 
 _AutoscaleSetting_Profile_Rule_ScaleActionFields = {
-    "cooldown": sdk.FieldSpec(wire_name="cooldown"),
-    "direction": sdk.FieldSpec(wire_name="direction"),
-    "type": sdk.FieldSpec(wire_name="type"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "cooldown": ubx.FieldSpec(wire_name="cooldown"),
+    "direction": ubx.FieldSpec(wire_name="direction"),
+    "type": ubx.FieldSpec(wire_name="type"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _AutoscaleSetting_Profile_RuleFields = {
-    "metric_trigger": sdk.FieldSpec(
+    "metric_trigger": ubx.FieldSpec(
         wire_name="metric_trigger",
         kind="list",
         fields=_AutoscaleSetting_Profile_Rule_MetricTriggerFields,
     ),
-    "scale_action": sdk.FieldSpec(
+    "scale_action": ubx.FieldSpec(
         wire_name="scale_action",
         kind="list",
         fields=_AutoscaleSetting_Profile_Rule_ScaleActionFields,
@@ -186,23 +186,23 @@ _AutoscaleSetting_Profile_RuleFields = {
 }
 
 _AutoscaleSetting_ProfileFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "capacity": sdk.FieldSpec(
+    "name": ubx.FieldSpec(wire_name="name"),
+    "capacity": ubx.FieldSpec(
         wire_name="capacity",
         kind="list",
         fields=_AutoscaleSetting_Profile_CapacityFields,
     ),
-    "fixed_date": sdk.FieldSpec(
+    "fixed_date": ubx.FieldSpec(
         wire_name="fixed_date",
         kind="list",
         fields=_AutoscaleSetting_Profile_FixedDateFields,
     ),
-    "recurrence": sdk.FieldSpec(
+    "recurrence": ubx.FieldSpec(
         wire_name="recurrence",
         kind="list",
         fields=_AutoscaleSetting_Profile_RecurrenceFields,
     ),
-    "rule": sdk.FieldSpec(
+    "rule": ubx.FieldSpec(
         wire_name="rule",
         kind="list",
         fields=_AutoscaleSetting_Profile_RuleFields,
@@ -210,10 +210,10 @@ _AutoscaleSetting_ProfileFields = {
 }
 
 _AutoscaleSetting_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -230,32 +230,32 @@ class AutoscaleSettingConfig:
     profile: Any = None
     timeouts: Any = None
 
-AutoscaleSetting = sdk.ResourceBinding(
+AutoscaleSetting = ubx.ResourceBinding(
     wire_type="azurerm_monitor_autoscale_setting",
     fields={
-        "enabled": sdk.FieldSpec(wire_name="enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "target_resource_id": sdk.FieldSpec(wire_name="target_resource_id"),
-        "notification": sdk.FieldSpec(
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "target_resource_id": ubx.FieldSpec(wire_name="target_resource_id"),
+        "notification": ubx.FieldSpec(
             wire_name="notification",
             kind="list",
             fields=_AutoscaleSetting_NotificationFields,
         ),
-        "predictive": sdk.FieldSpec(
+        "predictive": ubx.FieldSpec(
             wire_name="predictive",
             kind="list",
             fields=_AutoscaleSetting_PredictiveFields,
         ),
-        "profile": sdk.FieldSpec(
+        "profile": ubx.FieldSpec(
             wire_name="profile",
             kind="list",
             fields=_AutoscaleSetting_ProfileFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_AutoscaleSetting_TimeoutsFields,

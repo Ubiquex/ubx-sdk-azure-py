@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Firewall_IpConfiguration:
@@ -28,24 +28,24 @@ class Firewall_VirtualHub:
     virtual_hub_id: Any = None
 
 _Firewall_IpConfigurationFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "private_ip_address": sdk.FieldSpec(wire_name="private_ip_address"),
-    "public_ip_address_id": sdk.FieldSpec(wire_name="public_ip_address_id"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "private_ip_address": ubx.FieldSpec(wire_name="private_ip_address"),
+    "public_ip_address_id": ubx.FieldSpec(wire_name="public_ip_address_id"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _Firewall_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _Firewall_VirtualHubFields = {
-    "private_ip_address": sdk.FieldSpec(wire_name="private_ip_address"),
-    "public_ip_addresses": sdk.FieldSpec(wire_name="public_ip_addresses"),
-    "public_ip_count": sdk.FieldSpec(wire_name="public_ip_count"),
-    "virtual_hub_id": sdk.FieldSpec(wire_name="virtual_hub_id"),
+    "private_ip_address": ubx.FieldSpec(wire_name="private_ip_address"),
+    "public_ip_addresses": ubx.FieldSpec(wire_name="public_ip_addresses"),
+    "public_ip_count": ubx.FieldSpec(wire_name="public_ip_count"),
+    "virtual_hub_id": ubx.FieldSpec(wire_name="virtual_hub_id"),
 }
 
 @dataclasses.dataclass
@@ -68,38 +68,38 @@ class FirewallConfig:
     timeouts: Any = None
     virtual_hub: Any = None
 
-Firewall = sdk.ResourceBinding(
+Firewall = ubx.ResourceBinding(
     wire_type="azurerm_firewall",
     fields={
-        "dns_proxy_enabled": sdk.FieldSpec(wire_name="dns_proxy_enabled"),
-        "dns_servers": sdk.FieldSpec(wire_name="dns_servers"),
-        "firewall_policy_id": sdk.FieldSpec(wire_name="firewall_policy_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "private_ip_ranges": sdk.FieldSpec(wire_name="private_ip_ranges"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku_name": sdk.FieldSpec(wire_name="sku_name"),
-        "sku_tier": sdk.FieldSpec(wire_name="sku_tier"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "threat_intel_mode": sdk.FieldSpec(wire_name="threat_intel_mode"),
-        "zones": sdk.FieldSpec(wire_name="zones"),
-        "ip_configuration": sdk.FieldSpec(
+        "dns_proxy_enabled": ubx.FieldSpec(wire_name="dns_proxy_enabled"),
+        "dns_servers": ubx.FieldSpec(wire_name="dns_servers"),
+        "firewall_policy_id": ubx.FieldSpec(wire_name="firewall_policy_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "private_ip_ranges": ubx.FieldSpec(wire_name="private_ip_ranges"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku_name": ubx.FieldSpec(wire_name="sku_name"),
+        "sku_tier": ubx.FieldSpec(wire_name="sku_tier"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "threat_intel_mode": ubx.FieldSpec(wire_name="threat_intel_mode"),
+        "zones": ubx.FieldSpec(wire_name="zones"),
+        "ip_configuration": ubx.FieldSpec(
             wire_name="ip_configuration",
             kind="list",
             fields=_Firewall_IpConfigurationFields,
         ),
-        "management_ip_configuration": sdk.FieldSpec(
+        "management_ip_configuration": ubx.FieldSpec(
             wire_name="management_ip_configuration",
             kind="list",
             fields=_Firewall_IpConfigurationFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Firewall_TimeoutsFields,
         ),
-        "virtual_hub": sdk.FieldSpec(
+        "virtual_hub": ubx.FieldSpec(
             wire_name="virtual_hub",
             kind="list",
             fields=_Firewall_VirtualHubFields,

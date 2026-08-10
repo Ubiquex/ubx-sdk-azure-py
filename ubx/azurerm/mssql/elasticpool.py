@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Elasticpool_PerDatabaseSettings:
@@ -26,22 +26,22 @@ class Elasticpool_Timeouts:
     update: Any = None
 
 _Elasticpool_PerDatabaseSettingsFields = {
-    "max_capacity": sdk.FieldSpec(wire_name="max_capacity"),
-    "min_capacity": sdk.FieldSpec(wire_name="min_capacity"),
+    "max_capacity": ubx.FieldSpec(wire_name="max_capacity"),
+    "min_capacity": ubx.FieldSpec(wire_name="min_capacity"),
 }
 
 _Elasticpool_SkuFields = {
-    "capacity": sdk.FieldSpec(wire_name="capacity"),
-    "family": sdk.FieldSpec(wire_name="family"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "tier": sdk.FieldSpec(wire_name="tier"),
+    "capacity": ubx.FieldSpec(wire_name="capacity"),
+    "family": ubx.FieldSpec(wire_name="family"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "tier": ubx.FieldSpec(wire_name="tier"),
 }
 
 _Elasticpool_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -63,33 +63,33 @@ class ElasticpoolConfig:
     sku: Any = None
     timeouts: Any = None
 
-Elasticpool = sdk.ResourceBinding(
+Elasticpool = ubx.ResourceBinding(
     wire_type="azurerm_mssql_elasticpool",
     fields={
-        "enclave_type": sdk.FieldSpec(wire_name="enclave_type"),
-        "high_availability_replica_count": sdk.FieldSpec(wire_name="high_availability_replica_count"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "license_type": sdk.FieldSpec(wire_name="license_type"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "maintenance_configuration_name": sdk.FieldSpec(wire_name="maintenance_configuration_name"),
-        "max_size_bytes": sdk.FieldSpec(wire_name="max_size_bytes"),
-        "max_size_gb": sdk.FieldSpec(wire_name="max_size_gb"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "server_name": sdk.FieldSpec(wire_name="server_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "zone_redundant": sdk.FieldSpec(wire_name="zone_redundant"),
-        "per_database_settings": sdk.FieldSpec(
+        "enclave_type": ubx.FieldSpec(wire_name="enclave_type"),
+        "high_availability_replica_count": ubx.FieldSpec(wire_name="high_availability_replica_count"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "license_type": ubx.FieldSpec(wire_name="license_type"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "maintenance_configuration_name": ubx.FieldSpec(wire_name="maintenance_configuration_name"),
+        "max_size_bytes": ubx.FieldSpec(wire_name="max_size_bytes"),
+        "max_size_gb": ubx.FieldSpec(wire_name="max_size_gb"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "server_name": ubx.FieldSpec(wire_name="server_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "zone_redundant": ubx.FieldSpec(wire_name="zone_redundant"),
+        "per_database_settings": ubx.FieldSpec(
             wire_name="per_database_settings",
             kind="list",
             fields=_Elasticpool_PerDatabaseSettingsFields,
         ),
-        "sku": sdk.FieldSpec(
+        "sku": ubx.FieldSpec(
             wire_name="sku",
             kind="list",
             fields=_Elasticpool_SkuFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Elasticpool_TimeoutsFields,

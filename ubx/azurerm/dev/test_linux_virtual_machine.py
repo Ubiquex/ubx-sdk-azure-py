@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TestLinuxVirtualMachine_GalleryImageReference:
@@ -27,23 +27,23 @@ class TestLinuxVirtualMachine_Timeouts:
     update: Any = None
 
 _TestLinuxVirtualMachine_GalleryImageReferenceFields = {
-    "offer": sdk.FieldSpec(wire_name="offer"),
-    "publisher": sdk.FieldSpec(wire_name="publisher"),
-    "sku": sdk.FieldSpec(wire_name="sku"),
-    "version": sdk.FieldSpec(wire_name="version"),
+    "offer": ubx.FieldSpec(wire_name="offer"),
+    "publisher": ubx.FieldSpec(wire_name="publisher"),
+    "sku": ubx.FieldSpec(wire_name="sku"),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _TestLinuxVirtualMachine_InboundNatRuleFields = {
-    "backend_port": sdk.FieldSpec(wire_name="backend_port"),
-    "frontend_port": sdk.FieldSpec(wire_name="frontend_port"),
-    "protocol": sdk.FieldSpec(wire_name="protocol"),
+    "backend_port": ubx.FieldSpec(wire_name="backend_port"),
+    "frontend_port": ubx.FieldSpec(wire_name="frontend_port"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
 }
 
 _TestLinuxVirtualMachine_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -68,36 +68,36 @@ class TestLinuxVirtualMachineConfig:
     inbound_nat_rule: Any = None
     timeouts: Any = None
 
-TestLinuxVirtualMachine = sdk.ResourceBinding(
+TestLinuxVirtualMachine = ubx.ResourceBinding(
     wire_type="azurerm_dev_test_linux_virtual_machine",
     fields={
-        "allow_claim": sdk.FieldSpec(wire_name="allow_claim"),
-        "disallow_public_ip_address": sdk.FieldSpec(wire_name="disallow_public_ip_address"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "lab_name": sdk.FieldSpec(wire_name="lab_name"),
-        "lab_subnet_name": sdk.FieldSpec(wire_name="lab_subnet_name"),
-        "lab_virtual_network_id": sdk.FieldSpec(wire_name="lab_virtual_network_id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "notes": sdk.FieldSpec(wire_name="notes"),
-        "password": sdk.FieldSpec(wire_name="password"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "size": sdk.FieldSpec(wire_name="size"),
-        "ssh_key": sdk.FieldSpec(wire_name="ssh_key"),
-        "storage_type": sdk.FieldSpec(wire_name="storage_type"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "username": sdk.FieldSpec(wire_name="username"),
-        "gallery_image_reference": sdk.FieldSpec(
+        "allow_claim": ubx.FieldSpec(wire_name="allow_claim"),
+        "disallow_public_ip_address": ubx.FieldSpec(wire_name="disallow_public_ip_address"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "lab_name": ubx.FieldSpec(wire_name="lab_name"),
+        "lab_subnet_name": ubx.FieldSpec(wire_name="lab_subnet_name"),
+        "lab_virtual_network_id": ubx.FieldSpec(wire_name="lab_virtual_network_id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "notes": ubx.FieldSpec(wire_name="notes"),
+        "password": ubx.FieldSpec(wire_name="password"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "size": ubx.FieldSpec(wire_name="size"),
+        "ssh_key": ubx.FieldSpec(wire_name="ssh_key"),
+        "storage_type": ubx.FieldSpec(wire_name="storage_type"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "username": ubx.FieldSpec(wire_name="username"),
+        "gallery_image_reference": ubx.FieldSpec(
             wire_name="gallery_image_reference",
             kind="list",
             fields=_TestLinuxVirtualMachine_GalleryImageReferenceFields,
         ),
-        "inbound_nat_rule": sdk.FieldSpec(
+        "inbound_nat_rule": ubx.FieldSpec(
             wire_name="inbound_nat_rule",
             kind="set",
             fields=_TestLinuxVirtualMachine_InboundNatRuleFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_TestLinuxVirtualMachine_TimeoutsFields,

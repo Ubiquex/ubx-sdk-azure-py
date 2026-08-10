@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Factory_GithubConfiguration:
@@ -46,42 +46,42 @@ class Factory_VstsConfiguration:
     tenant_id: Any = None
 
 _Factory_GithubConfigurationFields = {
-    "account_name": sdk.FieldSpec(wire_name="account_name"),
-    "branch_name": sdk.FieldSpec(wire_name="branch_name"),
-    "git_url": sdk.FieldSpec(wire_name="git_url"),
-    "publishing_enabled": sdk.FieldSpec(wire_name="publishing_enabled"),
-    "repository_name": sdk.FieldSpec(wire_name="repository_name"),
-    "root_folder": sdk.FieldSpec(wire_name="root_folder"),
+    "account_name": ubx.FieldSpec(wire_name="account_name"),
+    "branch_name": ubx.FieldSpec(wire_name="branch_name"),
+    "git_url": ubx.FieldSpec(wire_name="git_url"),
+    "publishing_enabled": ubx.FieldSpec(wire_name="publishing_enabled"),
+    "repository_name": ubx.FieldSpec(wire_name="repository_name"),
+    "root_folder": ubx.FieldSpec(wire_name="root_folder"),
 }
 
 _Factory_GlobalParameterFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "type": sdk.FieldSpec(wire_name="type"),
-    "value": sdk.FieldSpec(wire_name="value"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "type": ubx.FieldSpec(wire_name="type"),
+    "value": ubx.FieldSpec(wire_name="value"),
 }
 
 _Factory_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Factory_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _Factory_VstsConfigurationFields = {
-    "account_name": sdk.FieldSpec(wire_name="account_name"),
-    "branch_name": sdk.FieldSpec(wire_name="branch_name"),
-    "project_name": sdk.FieldSpec(wire_name="project_name"),
-    "publishing_enabled": sdk.FieldSpec(wire_name="publishing_enabled"),
-    "repository_name": sdk.FieldSpec(wire_name="repository_name"),
-    "root_folder": sdk.FieldSpec(wire_name="root_folder"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
+    "account_name": ubx.FieldSpec(wire_name="account_name"),
+    "branch_name": ubx.FieldSpec(wire_name="branch_name"),
+    "project_name": ubx.FieldSpec(wire_name="project_name"),
+    "publishing_enabled": ubx.FieldSpec(wire_name="publishing_enabled"),
+    "repository_name": ubx.FieldSpec(wire_name="repository_name"),
+    "root_folder": ubx.FieldSpec(wire_name="root_folder"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
 }
 
 @dataclasses.dataclass
@@ -102,40 +102,40 @@ class FactoryConfig:
     timeouts: Any = None
     vsts_configuration: Any = None
 
-Factory = sdk.ResourceBinding(
+Factory = ubx.ResourceBinding(
     wire_type="azurerm_data_factory",
     fields={
-        "customer_managed_key_id": sdk.FieldSpec(wire_name="customer_managed_key_id"),
-        "customer_managed_key_identity_id": sdk.FieldSpec(wire_name="customer_managed_key_identity_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "managed_virtual_network_enabled": sdk.FieldSpec(wire_name="managed_virtual_network_enabled"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "public_network_enabled": sdk.FieldSpec(wire_name="public_network_enabled"),
-        "purview_id": sdk.FieldSpec(wire_name="purview_id"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "github_configuration": sdk.FieldSpec(
+        "customer_managed_key_id": ubx.FieldSpec(wire_name="customer_managed_key_id"),
+        "customer_managed_key_identity_id": ubx.FieldSpec(wire_name="customer_managed_key_identity_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "managed_virtual_network_enabled": ubx.FieldSpec(wire_name="managed_virtual_network_enabled"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public_network_enabled": ubx.FieldSpec(wire_name="public_network_enabled"),
+        "purview_id": ubx.FieldSpec(wire_name="purview_id"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "github_configuration": ubx.FieldSpec(
             wire_name="github_configuration",
             kind="list",
             fields=_Factory_GithubConfigurationFields,
         ),
-        "global_parameter": sdk.FieldSpec(
+        "global_parameter": ubx.FieldSpec(
             wire_name="global_parameter",
             kind="set",
             fields=_Factory_GlobalParameterFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Factory_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Factory_TimeoutsFields,
         ),
-        "vsts_configuration": sdk.FieldSpec(
+        "vsts_configuration": ubx.FieldSpec(
             wire_name="vsts_configuration",
             kind="list",
             fields=_Factory_VstsConfigurationFields,

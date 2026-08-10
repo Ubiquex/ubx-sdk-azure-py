@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Assignment_Identity:
@@ -21,17 +21,17 @@ class Assignment_Timeouts:
     update: Any = None
 
 _Assignment_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Assignment_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -49,25 +49,25 @@ class AssignmentConfig:
     identity: Any = None
     timeouts: Any = None
 
-Assignment = sdk.ResourceBinding(
+Assignment = ubx.ResourceBinding(
     wire_type="azurerm_blueprint_assignment",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "lock_exclude_actions": sdk.FieldSpec(wire_name="lock_exclude_actions"),
-        "lock_exclude_principals": sdk.FieldSpec(wire_name="lock_exclude_principals"),
-        "lock_mode": sdk.FieldSpec(wire_name="lock_mode"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "parameter_values": sdk.FieldSpec(wire_name="parameter_values"),
-        "resource_groups": sdk.FieldSpec(wire_name="resource_groups"),
-        "target_subscription_id": sdk.FieldSpec(wire_name="target_subscription_id"),
-        "version_id": sdk.FieldSpec(wire_name="version_id"),
-        "identity": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "lock_exclude_actions": ubx.FieldSpec(wire_name="lock_exclude_actions"),
+        "lock_exclude_principals": ubx.FieldSpec(wire_name="lock_exclude_principals"),
+        "lock_mode": ubx.FieldSpec(wire_name="lock_mode"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parameter_values": ubx.FieldSpec(wire_name="parameter_values"),
+        "resource_groups": ubx.FieldSpec(wire_name="resource_groups"),
+        "target_subscription_id": ubx.FieldSpec(wire_name="target_subscription_id"),
+        "version_id": ubx.FieldSpec(wire_name="version_id"),
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Assignment_IdentityFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Assignment_TimeoutsFields,

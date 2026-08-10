@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RecoveryProtectionContainerMapping_AutomaticUpdate:
@@ -19,15 +19,15 @@ class RecoveryProtectionContainerMapping_Timeouts:
     update: Any = None
 
 _RecoveryProtectionContainerMapping_AutomaticUpdateFields = {
-    "authentication_type": sdk.FieldSpec(wire_name="authentication_type"),
-    "automation_account_id": sdk.FieldSpec(wire_name="automation_account_id"),
+    "authentication_type": ubx.FieldSpec(wire_name="authentication_type"),
+    "automation_account_id": ubx.FieldSpec(wire_name="automation_account_id"),
 }
 
 _RecoveryProtectionContainerMapping_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -43,23 +43,23 @@ class RecoveryProtectionContainerMappingConfig:
     automatic_update: Any = None
     timeouts: Any = None
 
-RecoveryProtectionContainerMapping = sdk.ResourceBinding(
+RecoveryProtectionContainerMapping = ubx.ResourceBinding(
     wire_type="azurerm_site_recovery_protection_container_mapping",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "recovery_fabric_name": sdk.FieldSpec(wire_name="recovery_fabric_name"),
-        "recovery_replication_policy_id": sdk.FieldSpec(wire_name="recovery_replication_policy_id"),
-        "recovery_source_protection_container_name": sdk.FieldSpec(wire_name="recovery_source_protection_container_name"),
-        "recovery_target_protection_container_id": sdk.FieldSpec(wire_name="recovery_target_protection_container_id"),
-        "recovery_vault_name": sdk.FieldSpec(wire_name="recovery_vault_name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "automatic_update": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "recovery_fabric_name": ubx.FieldSpec(wire_name="recovery_fabric_name"),
+        "recovery_replication_policy_id": ubx.FieldSpec(wire_name="recovery_replication_policy_id"),
+        "recovery_source_protection_container_name": ubx.FieldSpec(wire_name="recovery_source_protection_container_name"),
+        "recovery_target_protection_container_id": ubx.FieldSpec(wire_name="recovery_target_protection_container_id"),
+        "recovery_vault_name": ubx.FieldSpec(wire_name="recovery_vault_name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "automatic_update": ubx.FieldSpec(
             wire_name="automatic_update",
             kind="list",
             fields=_RecoveryProtectionContainerMapping_AutomaticUpdateFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_RecoveryProtectionContainerMapping_TimeoutsFields,

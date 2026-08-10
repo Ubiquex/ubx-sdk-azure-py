@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Cluster_AciConnectorLinux_ConnectorIdentity:
@@ -368,114 +368,114 @@ class Cluster_WorkloadAutoscalerProfile:
     vertical_pod_autoscaler_enabled: Any = None
 
 _Cluster_AciConnectorLinux_ConnectorIdentityFields = {
-    "client_id": sdk.FieldSpec(wire_name="client_id"),
-    "object_id": sdk.FieldSpec(wire_name="object_id"),
-    "user_assigned_identity_id": sdk.FieldSpec(wire_name="user_assigned_identity_id"),
+    "client_id": ubx.FieldSpec(wire_name="client_id"),
+    "object_id": ubx.FieldSpec(wire_name="object_id"),
+    "user_assigned_identity_id": ubx.FieldSpec(wire_name="user_assigned_identity_id"),
 }
 
 _Cluster_AciConnectorLinuxFields = {
-    "connector_identity": sdk.FieldSpec(
+    "connector_identity": ubx.FieldSpec(
         wire_name="connector_identity",
         kind="list",
         fields=_Cluster_AciConnectorLinux_ConnectorIdentityFields,
     ),
-    "subnet_name": sdk.FieldSpec(wire_name="subnet_name"),
+    "subnet_name": ubx.FieldSpec(wire_name="subnet_name"),
 }
 
 _Cluster_ApiServerAccessProfileFields = {
-    "authorized_ip_ranges": sdk.FieldSpec(wire_name="authorized_ip_ranges"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
-    "virtual_network_integration_enabled": sdk.FieldSpec(wire_name="virtual_network_integration_enabled"),
+    "authorized_ip_ranges": ubx.FieldSpec(wire_name="authorized_ip_ranges"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
+    "virtual_network_integration_enabled": ubx.FieldSpec(wire_name="virtual_network_integration_enabled"),
 }
 
 _Cluster_AutoScalerProfileFields = {
-    "balance_similar_node_groups": sdk.FieldSpec(wire_name="balance_similar_node_groups"),
-    "daemonset_eviction_for_empty_nodes_enabled": sdk.FieldSpec(wire_name="daemonset_eviction_for_empty_nodes_enabled"),
-    "daemonset_eviction_for_occupied_nodes_enabled": sdk.FieldSpec(wire_name="daemonset_eviction_for_occupied_nodes_enabled"),
-    "empty_bulk_delete_max": sdk.FieldSpec(wire_name="empty_bulk_delete_max"),
-    "expander": sdk.FieldSpec(wire_name="expander"),
-    "ignore_daemonsets_utilization_enabled": sdk.FieldSpec(wire_name="ignore_daemonsets_utilization_enabled"),
-    "max_graceful_termination_sec": sdk.FieldSpec(wire_name="max_graceful_termination_sec"),
-    "max_node_provisioning_time": sdk.FieldSpec(wire_name="max_node_provisioning_time"),
-    "max_unready_nodes": sdk.FieldSpec(wire_name="max_unready_nodes"),
-    "max_unready_percentage": sdk.FieldSpec(wire_name="max_unready_percentage"),
-    "new_pod_scale_up_delay": sdk.FieldSpec(wire_name="new_pod_scale_up_delay"),
-    "scale_down_delay_after_add": sdk.FieldSpec(wire_name="scale_down_delay_after_add"),
-    "scale_down_delay_after_delete": sdk.FieldSpec(wire_name="scale_down_delay_after_delete"),
-    "scale_down_delay_after_failure": sdk.FieldSpec(wire_name="scale_down_delay_after_failure"),
-    "scale_down_unneeded": sdk.FieldSpec(wire_name="scale_down_unneeded"),
-    "scale_down_unready": sdk.FieldSpec(wire_name="scale_down_unready"),
-    "scale_down_utilization_threshold": sdk.FieldSpec(wire_name="scale_down_utilization_threshold"),
-    "scan_interval": sdk.FieldSpec(wire_name="scan_interval"),
-    "skip_nodes_with_local_storage": sdk.FieldSpec(wire_name="skip_nodes_with_local_storage"),
-    "skip_nodes_with_system_pods": sdk.FieldSpec(wire_name="skip_nodes_with_system_pods"),
+    "balance_similar_node_groups": ubx.FieldSpec(wire_name="balance_similar_node_groups"),
+    "daemonset_eviction_for_empty_nodes_enabled": ubx.FieldSpec(wire_name="daemonset_eviction_for_empty_nodes_enabled"),
+    "daemonset_eviction_for_occupied_nodes_enabled": ubx.FieldSpec(wire_name="daemonset_eviction_for_occupied_nodes_enabled"),
+    "empty_bulk_delete_max": ubx.FieldSpec(wire_name="empty_bulk_delete_max"),
+    "expander": ubx.FieldSpec(wire_name="expander"),
+    "ignore_daemonsets_utilization_enabled": ubx.FieldSpec(wire_name="ignore_daemonsets_utilization_enabled"),
+    "max_graceful_termination_sec": ubx.FieldSpec(wire_name="max_graceful_termination_sec"),
+    "max_node_provisioning_time": ubx.FieldSpec(wire_name="max_node_provisioning_time"),
+    "max_unready_nodes": ubx.FieldSpec(wire_name="max_unready_nodes"),
+    "max_unready_percentage": ubx.FieldSpec(wire_name="max_unready_percentage"),
+    "new_pod_scale_up_delay": ubx.FieldSpec(wire_name="new_pod_scale_up_delay"),
+    "scale_down_delay_after_add": ubx.FieldSpec(wire_name="scale_down_delay_after_add"),
+    "scale_down_delay_after_delete": ubx.FieldSpec(wire_name="scale_down_delay_after_delete"),
+    "scale_down_delay_after_failure": ubx.FieldSpec(wire_name="scale_down_delay_after_failure"),
+    "scale_down_unneeded": ubx.FieldSpec(wire_name="scale_down_unneeded"),
+    "scale_down_unready": ubx.FieldSpec(wire_name="scale_down_unready"),
+    "scale_down_utilization_threshold": ubx.FieldSpec(wire_name="scale_down_utilization_threshold"),
+    "scan_interval": ubx.FieldSpec(wire_name="scan_interval"),
+    "skip_nodes_with_local_storage": ubx.FieldSpec(wire_name="skip_nodes_with_local_storage"),
+    "skip_nodes_with_system_pods": ubx.FieldSpec(wire_name="skip_nodes_with_system_pods"),
 }
 
 _Cluster_AzureActiveDirectoryRoleBasedAccessControlFields = {
-    "admin_group_object_ids": sdk.FieldSpec(wire_name="admin_group_object_ids"),
-    "azure_rbac_enabled": sdk.FieldSpec(wire_name="azure_rbac_enabled"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
+    "admin_group_object_ids": ubx.FieldSpec(wire_name="admin_group_object_ids"),
+    "azure_rbac_enabled": ubx.FieldSpec(wire_name="azure_rbac_enabled"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
 }
 
 _Cluster_BootstrapProfileFields = {
-    "artifact_source": sdk.FieldSpec(wire_name="artifact_source"),
-    "container_registry_id": sdk.FieldSpec(wire_name="container_registry_id"),
+    "artifact_source": ubx.FieldSpec(wire_name="artifact_source"),
+    "container_registry_id": ubx.FieldSpec(wire_name="container_registry_id"),
 }
 
 _Cluster_ConfidentialComputingFields = {
-    "sgx_quote_helper_enabled": sdk.FieldSpec(wire_name="sgx_quote_helper_enabled"),
+    "sgx_quote_helper_enabled": ubx.FieldSpec(wire_name="sgx_quote_helper_enabled"),
 }
 
 _Cluster_DefaultNodePool_KubeletConfigFields = {
-    "allowed_unsafe_sysctls": sdk.FieldSpec(wire_name="allowed_unsafe_sysctls"),
-    "container_log_max_files": sdk.FieldSpec(wire_name="container_log_max_files"),
-    "container_log_max_size_mb": sdk.FieldSpec(wire_name="container_log_max_size_mb"),
-    "cpu_cfs_quota_enabled": sdk.FieldSpec(wire_name="cpu_cfs_quota_enabled"),
-    "cpu_cfs_quota_period": sdk.FieldSpec(wire_name="cpu_cfs_quota_period"),
-    "cpu_manager_policy": sdk.FieldSpec(wire_name="cpu_manager_policy"),
-    "image_gc_high_threshold": sdk.FieldSpec(wire_name="image_gc_high_threshold"),
-    "image_gc_low_threshold": sdk.FieldSpec(wire_name="image_gc_low_threshold"),
-    "pod_max_pid": sdk.FieldSpec(wire_name="pod_max_pid"),
-    "topology_manager_policy": sdk.FieldSpec(wire_name="topology_manager_policy"),
+    "allowed_unsafe_sysctls": ubx.FieldSpec(wire_name="allowed_unsafe_sysctls"),
+    "container_log_max_files": ubx.FieldSpec(wire_name="container_log_max_files"),
+    "container_log_max_size_mb": ubx.FieldSpec(wire_name="container_log_max_size_mb"),
+    "cpu_cfs_quota_enabled": ubx.FieldSpec(wire_name="cpu_cfs_quota_enabled"),
+    "cpu_cfs_quota_period": ubx.FieldSpec(wire_name="cpu_cfs_quota_period"),
+    "cpu_manager_policy": ubx.FieldSpec(wire_name="cpu_manager_policy"),
+    "image_gc_high_threshold": ubx.FieldSpec(wire_name="image_gc_high_threshold"),
+    "image_gc_low_threshold": ubx.FieldSpec(wire_name="image_gc_low_threshold"),
+    "pod_max_pid": ubx.FieldSpec(wire_name="pod_max_pid"),
+    "topology_manager_policy": ubx.FieldSpec(wire_name="topology_manager_policy"),
 }
 
 _Cluster_DefaultNodePool_LinuxOsConfig_SysctlConfigFields = {
-    "fs_aio_max_nr": sdk.FieldSpec(wire_name="fs_aio_max_nr"),
-    "fs_file_max": sdk.FieldSpec(wire_name="fs_file_max"),
-    "fs_inotify_max_user_watches": sdk.FieldSpec(wire_name="fs_inotify_max_user_watches"),
-    "fs_nr_open": sdk.FieldSpec(wire_name="fs_nr_open"),
-    "kernel_threads_max": sdk.FieldSpec(wire_name="kernel_threads_max"),
-    "net_core_netdev_max_backlog": sdk.FieldSpec(wire_name="net_core_netdev_max_backlog"),
-    "net_core_optmem_max": sdk.FieldSpec(wire_name="net_core_optmem_max"),
-    "net_core_rmem_default": sdk.FieldSpec(wire_name="net_core_rmem_default"),
-    "net_core_rmem_max": sdk.FieldSpec(wire_name="net_core_rmem_max"),
-    "net_core_somaxconn": sdk.FieldSpec(wire_name="net_core_somaxconn"),
-    "net_core_wmem_default": sdk.FieldSpec(wire_name="net_core_wmem_default"),
-    "net_core_wmem_max": sdk.FieldSpec(wire_name="net_core_wmem_max"),
-    "net_ipv4_ip_local_port_range_max": sdk.FieldSpec(wire_name="net_ipv4_ip_local_port_range_max"),
-    "net_ipv4_ip_local_port_range_min": sdk.FieldSpec(wire_name="net_ipv4_ip_local_port_range_min"),
-    "net_ipv4_neigh_default_gc_thresh1": sdk.FieldSpec(wire_name="net_ipv4_neigh_default_gc_thresh1"),
-    "net_ipv4_neigh_default_gc_thresh2": sdk.FieldSpec(wire_name="net_ipv4_neigh_default_gc_thresh2"),
-    "net_ipv4_neigh_default_gc_thresh3": sdk.FieldSpec(wire_name="net_ipv4_neigh_default_gc_thresh3"),
-    "net_ipv4_tcp_fin_timeout": sdk.FieldSpec(wire_name="net_ipv4_tcp_fin_timeout"),
-    "net_ipv4_tcp_keepalive_intvl": sdk.FieldSpec(wire_name="net_ipv4_tcp_keepalive_intvl"),
-    "net_ipv4_tcp_keepalive_probes": sdk.FieldSpec(wire_name="net_ipv4_tcp_keepalive_probes"),
-    "net_ipv4_tcp_keepalive_time": sdk.FieldSpec(wire_name="net_ipv4_tcp_keepalive_time"),
-    "net_ipv4_tcp_max_syn_backlog": sdk.FieldSpec(wire_name="net_ipv4_tcp_max_syn_backlog"),
-    "net_ipv4_tcp_max_tw_buckets": sdk.FieldSpec(wire_name="net_ipv4_tcp_max_tw_buckets"),
-    "net_ipv4_tcp_tw_reuse": sdk.FieldSpec(wire_name="net_ipv4_tcp_tw_reuse"),
-    "net_netfilter_nf_conntrack_buckets": sdk.FieldSpec(wire_name="net_netfilter_nf_conntrack_buckets"),
-    "net_netfilter_nf_conntrack_max": sdk.FieldSpec(wire_name="net_netfilter_nf_conntrack_max"),
-    "vm_max_map_count": sdk.FieldSpec(wire_name="vm_max_map_count"),
-    "vm_swappiness": sdk.FieldSpec(wire_name="vm_swappiness"),
-    "vm_vfs_cache_pressure": sdk.FieldSpec(wire_name="vm_vfs_cache_pressure"),
+    "fs_aio_max_nr": ubx.FieldSpec(wire_name="fs_aio_max_nr"),
+    "fs_file_max": ubx.FieldSpec(wire_name="fs_file_max"),
+    "fs_inotify_max_user_watches": ubx.FieldSpec(wire_name="fs_inotify_max_user_watches"),
+    "fs_nr_open": ubx.FieldSpec(wire_name="fs_nr_open"),
+    "kernel_threads_max": ubx.FieldSpec(wire_name="kernel_threads_max"),
+    "net_core_netdev_max_backlog": ubx.FieldSpec(wire_name="net_core_netdev_max_backlog"),
+    "net_core_optmem_max": ubx.FieldSpec(wire_name="net_core_optmem_max"),
+    "net_core_rmem_default": ubx.FieldSpec(wire_name="net_core_rmem_default"),
+    "net_core_rmem_max": ubx.FieldSpec(wire_name="net_core_rmem_max"),
+    "net_core_somaxconn": ubx.FieldSpec(wire_name="net_core_somaxconn"),
+    "net_core_wmem_default": ubx.FieldSpec(wire_name="net_core_wmem_default"),
+    "net_core_wmem_max": ubx.FieldSpec(wire_name="net_core_wmem_max"),
+    "net_ipv4_ip_local_port_range_max": ubx.FieldSpec(wire_name="net_ipv4_ip_local_port_range_max"),
+    "net_ipv4_ip_local_port_range_min": ubx.FieldSpec(wire_name="net_ipv4_ip_local_port_range_min"),
+    "net_ipv4_neigh_default_gc_thresh1": ubx.FieldSpec(wire_name="net_ipv4_neigh_default_gc_thresh1"),
+    "net_ipv4_neigh_default_gc_thresh2": ubx.FieldSpec(wire_name="net_ipv4_neigh_default_gc_thresh2"),
+    "net_ipv4_neigh_default_gc_thresh3": ubx.FieldSpec(wire_name="net_ipv4_neigh_default_gc_thresh3"),
+    "net_ipv4_tcp_fin_timeout": ubx.FieldSpec(wire_name="net_ipv4_tcp_fin_timeout"),
+    "net_ipv4_tcp_keepalive_intvl": ubx.FieldSpec(wire_name="net_ipv4_tcp_keepalive_intvl"),
+    "net_ipv4_tcp_keepalive_probes": ubx.FieldSpec(wire_name="net_ipv4_tcp_keepalive_probes"),
+    "net_ipv4_tcp_keepalive_time": ubx.FieldSpec(wire_name="net_ipv4_tcp_keepalive_time"),
+    "net_ipv4_tcp_max_syn_backlog": ubx.FieldSpec(wire_name="net_ipv4_tcp_max_syn_backlog"),
+    "net_ipv4_tcp_max_tw_buckets": ubx.FieldSpec(wire_name="net_ipv4_tcp_max_tw_buckets"),
+    "net_ipv4_tcp_tw_reuse": ubx.FieldSpec(wire_name="net_ipv4_tcp_tw_reuse"),
+    "net_netfilter_nf_conntrack_buckets": ubx.FieldSpec(wire_name="net_netfilter_nf_conntrack_buckets"),
+    "net_netfilter_nf_conntrack_max": ubx.FieldSpec(wire_name="net_netfilter_nf_conntrack_max"),
+    "vm_max_map_count": ubx.FieldSpec(wire_name="vm_max_map_count"),
+    "vm_swappiness": ubx.FieldSpec(wire_name="vm_swappiness"),
+    "vm_vfs_cache_pressure": ubx.FieldSpec(wire_name="vm_vfs_cache_pressure"),
 }
 
 _Cluster_DefaultNodePool_LinuxOsConfigFields = {
-    "swap_file_size_mb": sdk.FieldSpec(wire_name="swap_file_size_mb"),
-    "transparent_huge_page": sdk.FieldSpec(wire_name="transparent_huge_page"),
-    "transparent_huge_page_defrag": sdk.FieldSpec(wire_name="transparent_huge_page_defrag"),
-    "sysctl_config": sdk.FieldSpec(
+    "swap_file_size_mb": ubx.FieldSpec(wire_name="swap_file_size_mb"),
+    "transparent_huge_page": ubx.FieldSpec(wire_name="transparent_huge_page"),
+    "transparent_huge_page_defrag": ubx.FieldSpec(wire_name="transparent_huge_page_defrag"),
+    "sysctl_config": ubx.FieldSpec(
         wire_name="sysctl_config",
         kind="list",
         fields=_Cluster_DefaultNodePool_LinuxOsConfig_SysctlConfigFields,
@@ -483,15 +483,15 @@ _Cluster_DefaultNodePool_LinuxOsConfigFields = {
 }
 
 _Cluster_DefaultNodePool_NodeNetworkProfile_AllowedHostPortsFields = {
-    "port_end": sdk.FieldSpec(wire_name="port_end"),
-    "port_start": sdk.FieldSpec(wire_name="port_start"),
-    "protocol": sdk.FieldSpec(wire_name="protocol"),
+    "port_end": ubx.FieldSpec(wire_name="port_end"),
+    "port_start": ubx.FieldSpec(wire_name="port_start"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
 }
 
 _Cluster_DefaultNodePool_NodeNetworkProfileFields = {
-    "application_security_group_ids": sdk.FieldSpec(wire_name="application_security_group_ids"),
-    "node_public_ip_tags": sdk.FieldSpec(wire_name="node_public_ip_tags"),
-    "allowed_host_ports": sdk.FieldSpec(
+    "application_security_group_ids": ubx.FieldSpec(wire_name="application_security_group_ids"),
+    "node_public_ip_tags": ubx.FieldSpec(wire_name="node_public_ip_tags"),
+    "allowed_host_ports": ubx.FieldSpec(
         wire_name="allowed_host_ports",
         kind="list",
         fields=_Cluster_DefaultNodePool_NodeNetworkProfile_AllowedHostPortsFields,
@@ -499,62 +499,62 @@ _Cluster_DefaultNodePool_NodeNetworkProfileFields = {
 }
 
 _Cluster_DefaultNodePool_UpgradeSettingsFields = {
-    "drain_timeout_in_minutes": sdk.FieldSpec(wire_name="drain_timeout_in_minutes"),
-    "max_surge": sdk.FieldSpec(wire_name="max_surge"),
-    "node_soak_duration_in_minutes": sdk.FieldSpec(wire_name="node_soak_duration_in_minutes"),
-    "undrainable_node_behavior": sdk.FieldSpec(wire_name="undrainable_node_behavior"),
+    "drain_timeout_in_minutes": ubx.FieldSpec(wire_name="drain_timeout_in_minutes"),
+    "max_surge": ubx.FieldSpec(wire_name="max_surge"),
+    "node_soak_duration_in_minutes": ubx.FieldSpec(wire_name="node_soak_duration_in_minutes"),
+    "undrainable_node_behavior": ubx.FieldSpec(wire_name="undrainable_node_behavior"),
 }
 
 _Cluster_DefaultNodePoolFields = {
-    "auto_scaling_enabled": sdk.FieldSpec(wire_name="auto_scaling_enabled"),
-    "capacity_reservation_group_id": sdk.FieldSpec(wire_name="capacity_reservation_group_id"),
-    "fips_enabled": sdk.FieldSpec(wire_name="fips_enabled"),
-    "gpu_driver": sdk.FieldSpec(wire_name="gpu_driver"),
-    "gpu_instance": sdk.FieldSpec(wire_name="gpu_instance"),
-    "host_encryption_enabled": sdk.FieldSpec(wire_name="host_encryption_enabled"),
-    "host_group_id": sdk.FieldSpec(wire_name="host_group_id"),
-    "kubelet_disk_type": sdk.FieldSpec(wire_name="kubelet_disk_type"),
-    "max_count": sdk.FieldSpec(wire_name="max_count"),
-    "max_pods": sdk.FieldSpec(wire_name="max_pods"),
-    "min_count": sdk.FieldSpec(wire_name="min_count"),
-    "name": sdk.FieldSpec(wire_name="name"),
-    "node_count": sdk.FieldSpec(wire_name="node_count"),
-    "node_labels": sdk.FieldSpec(wire_name="node_labels"),
-    "node_public_ip_enabled": sdk.FieldSpec(wire_name="node_public_ip_enabled"),
-    "node_public_ip_prefix_id": sdk.FieldSpec(wire_name="node_public_ip_prefix_id"),
-    "only_critical_addons_enabled": sdk.FieldSpec(wire_name="only_critical_addons_enabled"),
-    "orchestrator_version": sdk.FieldSpec(wire_name="orchestrator_version"),
-    "os_disk_size_gb": sdk.FieldSpec(wire_name="os_disk_size_gb"),
-    "os_disk_type": sdk.FieldSpec(wire_name="os_disk_type"),
-    "os_sku": sdk.FieldSpec(wire_name="os_sku"),
-    "pod_subnet_id": sdk.FieldSpec(wire_name="pod_subnet_id"),
-    "proximity_placement_group_id": sdk.FieldSpec(wire_name="proximity_placement_group_id"),
-    "scale_down_mode": sdk.FieldSpec(wire_name="scale_down_mode"),
-    "snapshot_id": sdk.FieldSpec(wire_name="snapshot_id"),
-    "tags": sdk.FieldSpec(wire_name="tags"),
-    "temporary_name_for_rotation": sdk.FieldSpec(wire_name="temporary_name_for_rotation"),
-    "type": sdk.FieldSpec(wire_name="type"),
-    "ultra_ssd_enabled": sdk.FieldSpec(wire_name="ultra_ssd_enabled"),
-    "vm_size": sdk.FieldSpec(wire_name="vm_size"),
-    "vnet_subnet_id": sdk.FieldSpec(wire_name="vnet_subnet_id"),
-    "workload_runtime": sdk.FieldSpec(wire_name="workload_runtime"),
-    "zones": sdk.FieldSpec(wire_name="zones"),
-    "kubelet_config": sdk.FieldSpec(
+    "auto_scaling_enabled": ubx.FieldSpec(wire_name="auto_scaling_enabled"),
+    "capacity_reservation_group_id": ubx.FieldSpec(wire_name="capacity_reservation_group_id"),
+    "fips_enabled": ubx.FieldSpec(wire_name="fips_enabled"),
+    "gpu_driver": ubx.FieldSpec(wire_name="gpu_driver"),
+    "gpu_instance": ubx.FieldSpec(wire_name="gpu_instance"),
+    "host_encryption_enabled": ubx.FieldSpec(wire_name="host_encryption_enabled"),
+    "host_group_id": ubx.FieldSpec(wire_name="host_group_id"),
+    "kubelet_disk_type": ubx.FieldSpec(wire_name="kubelet_disk_type"),
+    "max_count": ubx.FieldSpec(wire_name="max_count"),
+    "max_pods": ubx.FieldSpec(wire_name="max_pods"),
+    "min_count": ubx.FieldSpec(wire_name="min_count"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "node_count": ubx.FieldSpec(wire_name="node_count"),
+    "node_labels": ubx.FieldSpec(wire_name="node_labels"),
+    "node_public_ip_enabled": ubx.FieldSpec(wire_name="node_public_ip_enabled"),
+    "node_public_ip_prefix_id": ubx.FieldSpec(wire_name="node_public_ip_prefix_id"),
+    "only_critical_addons_enabled": ubx.FieldSpec(wire_name="only_critical_addons_enabled"),
+    "orchestrator_version": ubx.FieldSpec(wire_name="orchestrator_version"),
+    "os_disk_size_gb": ubx.FieldSpec(wire_name="os_disk_size_gb"),
+    "os_disk_type": ubx.FieldSpec(wire_name="os_disk_type"),
+    "os_sku": ubx.FieldSpec(wire_name="os_sku"),
+    "pod_subnet_id": ubx.FieldSpec(wire_name="pod_subnet_id"),
+    "proximity_placement_group_id": ubx.FieldSpec(wire_name="proximity_placement_group_id"),
+    "scale_down_mode": ubx.FieldSpec(wire_name="scale_down_mode"),
+    "snapshot_id": ubx.FieldSpec(wire_name="snapshot_id"),
+    "tags": ubx.FieldSpec(wire_name="tags"),
+    "temporary_name_for_rotation": ubx.FieldSpec(wire_name="temporary_name_for_rotation"),
+    "type": ubx.FieldSpec(wire_name="type"),
+    "ultra_ssd_enabled": ubx.FieldSpec(wire_name="ultra_ssd_enabled"),
+    "vm_size": ubx.FieldSpec(wire_name="vm_size"),
+    "vnet_subnet_id": ubx.FieldSpec(wire_name="vnet_subnet_id"),
+    "workload_runtime": ubx.FieldSpec(wire_name="workload_runtime"),
+    "zones": ubx.FieldSpec(wire_name="zones"),
+    "kubelet_config": ubx.FieldSpec(
         wire_name="kubelet_config",
         kind="list",
         fields=_Cluster_DefaultNodePool_KubeletConfigFields,
     ),
-    "linux_os_config": sdk.FieldSpec(
+    "linux_os_config": ubx.FieldSpec(
         wire_name="linux_os_config",
         kind="list",
         fields=_Cluster_DefaultNodePool_LinuxOsConfigFields,
     ),
-    "node_network_profile": sdk.FieldSpec(
+    "node_network_profile": ubx.FieldSpec(
         wire_name="node_network_profile",
         kind="list",
         fields=_Cluster_DefaultNodePool_NodeNetworkProfileFields,
     ),
-    "upgrade_settings": sdk.FieldSpec(
+    "upgrade_settings": ubx.FieldSpec(
         wire_name="upgrade_settings",
         kind="list",
         fields=_Cluster_DefaultNodePool_UpgradeSettingsFields,
@@ -562,54 +562,54 @@ _Cluster_DefaultNodePoolFields = {
 }
 
 _Cluster_HttpProxyConfigFields = {
-    "http_proxy": sdk.FieldSpec(wire_name="http_proxy"),
-    "https_proxy": sdk.FieldSpec(wire_name="https_proxy"),
-    "no_proxy": sdk.FieldSpec(wire_name="no_proxy"),
-    "trusted_ca": sdk.FieldSpec(wire_name="trusted_ca"),
+    "http_proxy": ubx.FieldSpec(wire_name="http_proxy"),
+    "https_proxy": ubx.FieldSpec(wire_name="https_proxy"),
+    "no_proxy": ubx.FieldSpec(wire_name="no_proxy"),
+    "trusted_ca": ubx.FieldSpec(wire_name="trusted_ca"),
 }
 
 _Cluster_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Cluster_IngressApplicationGatewayFields = {
-    "effective_gateway_id": sdk.FieldSpec(wire_name="effective_gateway_id"),
-    "gateway_id": sdk.FieldSpec(wire_name="gateway_id"),
-    "gateway_name": sdk.FieldSpec(wire_name="gateway_name"),
-    "ingress_application_gateway_identity": sdk.FieldSpec(
+    "effective_gateway_id": ubx.FieldSpec(wire_name="effective_gateway_id"),
+    "gateway_id": ubx.FieldSpec(wire_name="gateway_id"),
+    "gateway_name": ubx.FieldSpec(wire_name="gateway_name"),
+    "ingress_application_gateway_identity": ubx.FieldSpec(
         wire_name="ingress_application_gateway_identity",
         kind="list",
         fields=_Cluster_AciConnectorLinux_ConnectorIdentityFields,
     ),
-    "subnet_cidr": sdk.FieldSpec(wire_name="subnet_cidr"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "subnet_cidr": ubx.FieldSpec(wire_name="subnet_cidr"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _Cluster_KeyManagementServiceFields = {
-    "key_vault_key_id": sdk.FieldSpec(wire_name="key_vault_key_id"),
-    "key_vault_network_access": sdk.FieldSpec(wire_name="key_vault_network_access"),
+    "key_vault_key_id": ubx.FieldSpec(wire_name="key_vault_key_id"),
+    "key_vault_network_access": ubx.FieldSpec(wire_name="key_vault_network_access"),
 }
 
 _Cluster_KeyVaultSecretsProviderFields = {
-    "secret_identity": sdk.FieldSpec(
+    "secret_identity": ubx.FieldSpec(
         wire_name="secret_identity",
         kind="list",
         fields=_Cluster_AciConnectorLinux_ConnectorIdentityFields,
     ),
-    "secret_rotation_enabled": sdk.FieldSpec(wire_name="secret_rotation_enabled"),
-    "secret_rotation_interval": sdk.FieldSpec(wire_name="secret_rotation_interval"),
+    "secret_rotation_enabled": ubx.FieldSpec(wire_name="secret_rotation_enabled"),
+    "secret_rotation_interval": ubx.FieldSpec(wire_name="secret_rotation_interval"),
 }
 
 _Cluster_LinuxProfile_SshKeyFields = {
-    "key_data": sdk.FieldSpec(wire_name="key_data"),
+    "key_data": ubx.FieldSpec(wire_name="key_data"),
 }
 
 _Cluster_LinuxProfileFields = {
-    "admin_username": sdk.FieldSpec(wire_name="admin_username"),
-    "ssh_key": sdk.FieldSpec(
+    "admin_username": ubx.FieldSpec(wire_name="admin_username"),
+    "ssh_key": ubx.FieldSpec(
         wire_name="ssh_key",
         kind="list",
         fields=_Cluster_LinuxProfile_SshKeyFields,
@@ -617,22 +617,22 @@ _Cluster_LinuxProfileFields = {
 }
 
 _Cluster_MaintenanceWindow_AllowedFields = {
-    "day": sdk.FieldSpec(wire_name="day"),
-    "hours": sdk.FieldSpec(wire_name="hours"),
+    "day": ubx.FieldSpec(wire_name="day"),
+    "hours": ubx.FieldSpec(wire_name="hours"),
 }
 
 _Cluster_MaintenanceWindow_NotAllowedFields = {
-    "end": sdk.FieldSpec(wire_name="end"),
-    "start": sdk.FieldSpec(wire_name="start"),
+    "end": ubx.FieldSpec(wire_name="end"),
+    "start": ubx.FieldSpec(wire_name="start"),
 }
 
 _Cluster_MaintenanceWindowFields = {
-    "allowed": sdk.FieldSpec(
+    "allowed": ubx.FieldSpec(
         wire_name="allowed",
         kind="set",
         fields=_Cluster_MaintenanceWindow_AllowedFields,
     ),
-    "not_allowed": sdk.FieldSpec(
+    "not_allowed": ubx.FieldSpec(
         wire_name="not_allowed",
         kind="set",
         fields=_Cluster_MaintenanceWindow_NotAllowedFields,
@@ -640,16 +640,16 @@ _Cluster_MaintenanceWindowFields = {
 }
 
 _Cluster_MaintenanceWindowAutoUpgradeFields = {
-    "day_of_month": sdk.FieldSpec(wire_name="day_of_month"),
-    "day_of_week": sdk.FieldSpec(wire_name="day_of_week"),
-    "duration": sdk.FieldSpec(wire_name="duration"),
-    "frequency": sdk.FieldSpec(wire_name="frequency"),
-    "interval": sdk.FieldSpec(wire_name="interval"),
-    "start_date": sdk.FieldSpec(wire_name="start_date"),
-    "start_time": sdk.FieldSpec(wire_name="start_time"),
-    "utc_offset": sdk.FieldSpec(wire_name="utc_offset"),
-    "week_index": sdk.FieldSpec(wire_name="week_index"),
-    "not_allowed": sdk.FieldSpec(
+    "day_of_month": ubx.FieldSpec(wire_name="day_of_month"),
+    "day_of_week": ubx.FieldSpec(wire_name="day_of_week"),
+    "duration": ubx.FieldSpec(wire_name="duration"),
+    "frequency": ubx.FieldSpec(wire_name="frequency"),
+    "interval": ubx.FieldSpec(wire_name="interval"),
+    "start_date": ubx.FieldSpec(wire_name="start_date"),
+    "start_time": ubx.FieldSpec(wire_name="start_time"),
+    "utc_offset": ubx.FieldSpec(wire_name="utc_offset"),
+    "week_index": ubx.FieldSpec(wire_name="week_index"),
+    "not_allowed": ubx.FieldSpec(
         wire_name="not_allowed",
         kind="set",
         fields=_Cluster_MaintenanceWindow_NotAllowedFields,
@@ -657,61 +657,61 @@ _Cluster_MaintenanceWindowAutoUpgradeFields = {
 }
 
 _Cluster_MicrosoftDefenderFields = {
-    "log_analytics_workspace_id": sdk.FieldSpec(wire_name="log_analytics_workspace_id"),
+    "log_analytics_workspace_id": ubx.FieldSpec(wire_name="log_analytics_workspace_id"),
 }
 
 _Cluster_MonitorMetricsFields = {
-    "annotations_allowed": sdk.FieldSpec(wire_name="annotations_allowed"),
-    "labels_allowed": sdk.FieldSpec(wire_name="labels_allowed"),
+    "annotations_allowed": ubx.FieldSpec(wire_name="annotations_allowed"),
+    "labels_allowed": ubx.FieldSpec(wire_name="labels_allowed"),
 }
 
 _Cluster_NetworkProfile_AdvancedNetworkingFields = {
-    "observability_enabled": sdk.FieldSpec(wire_name="observability_enabled"),
-    "security_enabled": sdk.FieldSpec(wire_name="security_enabled"),
+    "observability_enabled": ubx.FieldSpec(wire_name="observability_enabled"),
+    "security_enabled": ubx.FieldSpec(wire_name="security_enabled"),
 }
 
 _Cluster_NetworkProfile_LoadBalancerProfileFields = {
-    "backend_pool_type": sdk.FieldSpec(wire_name="backend_pool_type"),
-    "effective_outbound_ips": sdk.FieldSpec(wire_name="effective_outbound_ips"),
-    "idle_timeout_in_minutes": sdk.FieldSpec(wire_name="idle_timeout_in_minutes"),
-    "managed_outbound_ip_count": sdk.FieldSpec(wire_name="managed_outbound_ip_count"),
-    "managed_outbound_ipv6_count": sdk.FieldSpec(wire_name="managed_outbound_ipv6_count"),
-    "outbound_ip_address_ids": sdk.FieldSpec(wire_name="outbound_ip_address_ids"),
-    "outbound_ip_prefix_ids": sdk.FieldSpec(wire_name="outbound_ip_prefix_ids"),
-    "outbound_ports_allocated": sdk.FieldSpec(wire_name="outbound_ports_allocated"),
+    "backend_pool_type": ubx.FieldSpec(wire_name="backend_pool_type"),
+    "effective_outbound_ips": ubx.FieldSpec(wire_name="effective_outbound_ips"),
+    "idle_timeout_in_minutes": ubx.FieldSpec(wire_name="idle_timeout_in_minutes"),
+    "managed_outbound_ip_count": ubx.FieldSpec(wire_name="managed_outbound_ip_count"),
+    "managed_outbound_ipv6_count": ubx.FieldSpec(wire_name="managed_outbound_ipv6_count"),
+    "outbound_ip_address_ids": ubx.FieldSpec(wire_name="outbound_ip_address_ids"),
+    "outbound_ip_prefix_ids": ubx.FieldSpec(wire_name="outbound_ip_prefix_ids"),
+    "outbound_ports_allocated": ubx.FieldSpec(wire_name="outbound_ports_allocated"),
 }
 
 _Cluster_NetworkProfile_NatGatewayProfileFields = {
-    "effective_outbound_ips": sdk.FieldSpec(wire_name="effective_outbound_ips"),
-    "idle_timeout_in_minutes": sdk.FieldSpec(wire_name="idle_timeout_in_minutes"),
-    "managed_outbound_ip_count": sdk.FieldSpec(wire_name="managed_outbound_ip_count"),
+    "effective_outbound_ips": ubx.FieldSpec(wire_name="effective_outbound_ips"),
+    "idle_timeout_in_minutes": ubx.FieldSpec(wire_name="idle_timeout_in_minutes"),
+    "managed_outbound_ip_count": ubx.FieldSpec(wire_name="managed_outbound_ip_count"),
 }
 
 _Cluster_NetworkProfileFields = {
-    "dns_service_ip": sdk.FieldSpec(wire_name="dns_service_ip"),
-    "ip_versions": sdk.FieldSpec(wire_name="ip_versions"),
-    "load_balancer_sku": sdk.FieldSpec(wire_name="load_balancer_sku"),
-    "network_data_plane": sdk.FieldSpec(wire_name="network_data_plane"),
-    "network_mode": sdk.FieldSpec(wire_name="network_mode"),
-    "network_plugin": sdk.FieldSpec(wire_name="network_plugin"),
-    "network_plugin_mode": sdk.FieldSpec(wire_name="network_plugin_mode"),
-    "network_policy": sdk.FieldSpec(wire_name="network_policy"),
-    "outbound_type": sdk.FieldSpec(wire_name="outbound_type"),
-    "pod_cidr": sdk.FieldSpec(wire_name="pod_cidr"),
-    "pod_cidrs": sdk.FieldSpec(wire_name="pod_cidrs"),
-    "service_cidr": sdk.FieldSpec(wire_name="service_cidr"),
-    "service_cidrs": sdk.FieldSpec(wire_name="service_cidrs"),
-    "advanced_networking": sdk.FieldSpec(
+    "dns_service_ip": ubx.FieldSpec(wire_name="dns_service_ip"),
+    "ip_versions": ubx.FieldSpec(wire_name="ip_versions"),
+    "load_balancer_sku": ubx.FieldSpec(wire_name="load_balancer_sku"),
+    "network_data_plane": ubx.FieldSpec(wire_name="network_data_plane"),
+    "network_mode": ubx.FieldSpec(wire_name="network_mode"),
+    "network_plugin": ubx.FieldSpec(wire_name="network_plugin"),
+    "network_plugin_mode": ubx.FieldSpec(wire_name="network_plugin_mode"),
+    "network_policy": ubx.FieldSpec(wire_name="network_policy"),
+    "outbound_type": ubx.FieldSpec(wire_name="outbound_type"),
+    "pod_cidr": ubx.FieldSpec(wire_name="pod_cidr"),
+    "pod_cidrs": ubx.FieldSpec(wire_name="pod_cidrs"),
+    "service_cidr": ubx.FieldSpec(wire_name="service_cidr"),
+    "service_cidrs": ubx.FieldSpec(wire_name="service_cidrs"),
+    "advanced_networking": ubx.FieldSpec(
         wire_name="advanced_networking",
         kind="list",
         fields=_Cluster_NetworkProfile_AdvancedNetworkingFields,
     ),
-    "load_balancer_profile": sdk.FieldSpec(
+    "load_balancer_profile": ubx.FieldSpec(
         wire_name="load_balancer_profile",
         kind="list",
         fields=_Cluster_NetworkProfile_LoadBalancerProfileFields,
     ),
-    "nat_gateway_profile": sdk.FieldSpec(
+    "nat_gateway_profile": ubx.FieldSpec(
         wire_name="nat_gateway_profile",
         kind="list",
         fields=_Cluster_NetworkProfile_NatGatewayProfileFields,
@@ -719,14 +719,14 @@ _Cluster_NetworkProfileFields = {
 }
 
 _Cluster_NodeProvisioningProfileFields = {
-    "default_node_pools": sdk.FieldSpec(wire_name="default_node_pools"),
-    "mode": sdk.FieldSpec(wire_name="mode"),
+    "default_node_pools": ubx.FieldSpec(wire_name="default_node_pools"),
+    "mode": ubx.FieldSpec(wire_name="mode"),
 }
 
 _Cluster_OmsAgentFields = {
-    "log_analytics_workspace_id": sdk.FieldSpec(wire_name="log_analytics_workspace_id"),
-    "msi_auth_for_monitoring_enabled": sdk.FieldSpec(wire_name="msi_auth_for_monitoring_enabled"),
-    "oms_agent_identity": sdk.FieldSpec(
+    "log_analytics_workspace_id": ubx.FieldSpec(wire_name="log_analytics_workspace_id"),
+    "msi_auth_for_monitoring_enabled": ubx.FieldSpec(wire_name="msi_auth_for_monitoring_enabled"),
+    "oms_agent_identity": ubx.FieldSpec(
         wire_name="oms_agent_identity",
         kind="list",
         fields=_Cluster_AciConnectorLinux_ConnectorIdentityFields,
@@ -734,19 +734,19 @@ _Cluster_OmsAgentFields = {
 }
 
 _Cluster_ServiceMeshProfile_CertificateAuthorityFields = {
-    "cert_chain_object_name": sdk.FieldSpec(wire_name="cert_chain_object_name"),
-    "cert_object_name": sdk.FieldSpec(wire_name="cert_object_name"),
-    "key_object_name": sdk.FieldSpec(wire_name="key_object_name"),
-    "key_vault_id": sdk.FieldSpec(wire_name="key_vault_id"),
-    "root_cert_object_name": sdk.FieldSpec(wire_name="root_cert_object_name"),
+    "cert_chain_object_name": ubx.FieldSpec(wire_name="cert_chain_object_name"),
+    "cert_object_name": ubx.FieldSpec(wire_name="cert_object_name"),
+    "key_object_name": ubx.FieldSpec(wire_name="key_object_name"),
+    "key_vault_id": ubx.FieldSpec(wire_name="key_vault_id"),
+    "root_cert_object_name": ubx.FieldSpec(wire_name="root_cert_object_name"),
 }
 
 _Cluster_ServiceMeshProfileFields = {
-    "external_ingress_gateway_enabled": sdk.FieldSpec(wire_name="external_ingress_gateway_enabled"),
-    "internal_ingress_gateway_enabled": sdk.FieldSpec(wire_name="internal_ingress_gateway_enabled"),
-    "mode": sdk.FieldSpec(wire_name="mode"),
-    "revisions": sdk.FieldSpec(wire_name="revisions"),
-    "certificate_authority": sdk.FieldSpec(
+    "external_ingress_gateway_enabled": ubx.FieldSpec(wire_name="external_ingress_gateway_enabled"),
+    "internal_ingress_gateway_enabled": ubx.FieldSpec(wire_name="internal_ingress_gateway_enabled"),
+    "mode": ubx.FieldSpec(wire_name="mode"),
+    "revisions": ubx.FieldSpec(wire_name="revisions"),
+    "certificate_authority": ubx.FieldSpec(
         wire_name="certificate_authority",
         kind="list",
         fields=_Cluster_ServiceMeshProfile_CertificateAuthorityFields,
@@ -754,33 +754,33 @@ _Cluster_ServiceMeshProfileFields = {
 }
 
 _Cluster_ServicePrincipalFields = {
-    "client_id": sdk.FieldSpec(wire_name="client_id"),
-    "client_secret": sdk.FieldSpec(wire_name="client_secret"),
+    "client_id": ubx.FieldSpec(wire_name="client_id"),
+    "client_secret": ubx.FieldSpec(wire_name="client_secret"),
 }
 
 _Cluster_StorageProfileFields = {
-    "blob_driver_enabled": sdk.FieldSpec(wire_name="blob_driver_enabled"),
-    "disk_driver_enabled": sdk.FieldSpec(wire_name="disk_driver_enabled"),
-    "file_driver_enabled": sdk.FieldSpec(wire_name="file_driver_enabled"),
-    "snapshot_controller_enabled": sdk.FieldSpec(wire_name="snapshot_controller_enabled"),
+    "blob_driver_enabled": ubx.FieldSpec(wire_name="blob_driver_enabled"),
+    "disk_driver_enabled": ubx.FieldSpec(wire_name="disk_driver_enabled"),
+    "file_driver_enabled": ubx.FieldSpec(wire_name="file_driver_enabled"),
+    "snapshot_controller_enabled": ubx.FieldSpec(wire_name="snapshot_controller_enabled"),
 }
 
 _Cluster_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 _Cluster_UpgradeOverrideFields = {
-    "effective_until": sdk.FieldSpec(wire_name="effective_until"),
-    "force_upgrade_enabled": sdk.FieldSpec(wire_name="force_upgrade_enabled"),
+    "effective_until": ubx.FieldSpec(wire_name="effective_until"),
+    "force_upgrade_enabled": ubx.FieldSpec(wire_name="force_upgrade_enabled"),
 }
 
 _Cluster_WebAppRoutingFields = {
-    "default_nginx_controller": sdk.FieldSpec(wire_name="default_nginx_controller"),
-    "dns_zone_ids": sdk.FieldSpec(wire_name="dns_zone_ids"),
-    "web_app_routing_identity": sdk.FieldSpec(
+    "default_nginx_controller": ubx.FieldSpec(wire_name="default_nginx_controller"),
+    "dns_zone_ids": ubx.FieldSpec(wire_name="dns_zone_ids"),
+    "web_app_routing_identity": ubx.FieldSpec(
         wire_name="web_app_routing_identity",
         kind="list",
         fields=_Cluster_AciConnectorLinux_ConnectorIdentityFields,
@@ -788,15 +788,15 @@ _Cluster_WebAppRoutingFields = {
 }
 
 _Cluster_WindowsProfile_GmsaFields = {
-    "dns_server": sdk.FieldSpec(wire_name="dns_server"),
-    "root_domain": sdk.FieldSpec(wire_name="root_domain"),
+    "dns_server": ubx.FieldSpec(wire_name="dns_server"),
+    "root_domain": ubx.FieldSpec(wire_name="root_domain"),
 }
 
 _Cluster_WindowsProfileFields = {
-    "admin_password": sdk.FieldSpec(wire_name="admin_password"),
-    "admin_username": sdk.FieldSpec(wire_name="admin_username"),
-    "license": sdk.FieldSpec(wire_name="license"),
-    "gmsa": sdk.FieldSpec(
+    "admin_password": ubx.FieldSpec(wire_name="admin_password"),
+    "admin_username": ubx.FieldSpec(wire_name="admin_username"),
+    "license": ubx.FieldSpec(wire_name="license"),
+    "gmsa": ubx.FieldSpec(
         wire_name="gmsa",
         kind="list",
         fields=_Cluster_WindowsProfile_GmsaFields,
@@ -804,8 +804,8 @@ _Cluster_WindowsProfileFields = {
 }
 
 _Cluster_WorkloadAutoscalerProfileFields = {
-    "keda_enabled": sdk.FieldSpec(wire_name="keda_enabled"),
-    "vertical_pod_autoscaler_enabled": sdk.FieldSpec(wire_name="vertical_pod_autoscaler_enabled"),
+    "keda_enabled": ubx.FieldSpec(wire_name="keda_enabled"),
+    "vertical_pod_autoscaler_enabled": ubx.FieldSpec(wire_name="vertical_pod_autoscaler_enabled"),
 }
 
 @dataclasses.dataclass
@@ -872,186 +872,186 @@ class ClusterConfig:
     windows_profile: Any = None
     workload_autoscaler_profile: Any = None
 
-Cluster = sdk.ResourceBinding(
+Cluster = ubx.ResourceBinding(
     wire_type="azurerm_kubernetes_cluster",
     fields={
-        "ai_toolchain_operator_enabled": sdk.FieldSpec(wire_name="ai_toolchain_operator_enabled"),
-        "automatic_upgrade_channel": sdk.FieldSpec(wire_name="automatic_upgrade_channel"),
-        "azure_policy_enabled": sdk.FieldSpec(wire_name="azure_policy_enabled"),
-        "cost_analysis_enabled": sdk.FieldSpec(wire_name="cost_analysis_enabled"),
-        "custom_ca_trust_certificates_base64": sdk.FieldSpec(wire_name="custom_ca_trust_certificates_base64"),
-        "disk_encryption_set_id": sdk.FieldSpec(wire_name="disk_encryption_set_id"),
-        "dns_prefix": sdk.FieldSpec(wire_name="dns_prefix"),
-        "dns_prefix_private_cluster": sdk.FieldSpec(wire_name="dns_prefix_private_cluster"),
-        "edge_zone": sdk.FieldSpec(wire_name="edge_zone"),
-        "http_application_routing_enabled": sdk.FieldSpec(wire_name="http_application_routing_enabled"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "image_cleaner_enabled": sdk.FieldSpec(wire_name="image_cleaner_enabled"),
-        "image_cleaner_interval_hours": sdk.FieldSpec(wire_name="image_cleaner_interval_hours"),
-        "kubernetes_version": sdk.FieldSpec(wire_name="kubernetes_version"),
-        "local_account_disabled": sdk.FieldSpec(wire_name="local_account_disabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "node_os_upgrade_channel": sdk.FieldSpec(wire_name="node_os_upgrade_channel"),
-        "node_resource_group": sdk.FieldSpec(wire_name="node_resource_group"),
-        "oidc_issuer_enabled": sdk.FieldSpec(wire_name="oidc_issuer_enabled"),
-        "open_service_mesh_enabled": sdk.FieldSpec(wire_name="open_service_mesh_enabled"),
-        "private_cluster_enabled": sdk.FieldSpec(wire_name="private_cluster_enabled"),
-        "private_cluster_public_fqdn_enabled": sdk.FieldSpec(wire_name="private_cluster_public_fqdn_enabled"),
-        "private_dns_zone_id": sdk.FieldSpec(wire_name="private_dns_zone_id"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "role_based_access_control_enabled": sdk.FieldSpec(wire_name="role_based_access_control_enabled"),
-        "run_command_enabled": sdk.FieldSpec(wire_name="run_command_enabled"),
-        "sku_tier": sdk.FieldSpec(wire_name="sku_tier"),
-        "support_plan": sdk.FieldSpec(wire_name="support_plan"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "workload_identity_enabled": sdk.FieldSpec(wire_name="workload_identity_enabled"),
-        "aci_connector_linux": sdk.FieldSpec(
+        "ai_toolchain_operator_enabled": ubx.FieldSpec(wire_name="ai_toolchain_operator_enabled"),
+        "automatic_upgrade_channel": ubx.FieldSpec(wire_name="automatic_upgrade_channel"),
+        "azure_policy_enabled": ubx.FieldSpec(wire_name="azure_policy_enabled"),
+        "cost_analysis_enabled": ubx.FieldSpec(wire_name="cost_analysis_enabled"),
+        "custom_ca_trust_certificates_base64": ubx.FieldSpec(wire_name="custom_ca_trust_certificates_base64"),
+        "disk_encryption_set_id": ubx.FieldSpec(wire_name="disk_encryption_set_id"),
+        "dns_prefix": ubx.FieldSpec(wire_name="dns_prefix"),
+        "dns_prefix_private_cluster": ubx.FieldSpec(wire_name="dns_prefix_private_cluster"),
+        "edge_zone": ubx.FieldSpec(wire_name="edge_zone"),
+        "http_application_routing_enabled": ubx.FieldSpec(wire_name="http_application_routing_enabled"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "image_cleaner_enabled": ubx.FieldSpec(wire_name="image_cleaner_enabled"),
+        "image_cleaner_interval_hours": ubx.FieldSpec(wire_name="image_cleaner_interval_hours"),
+        "kubernetes_version": ubx.FieldSpec(wire_name="kubernetes_version"),
+        "local_account_disabled": ubx.FieldSpec(wire_name="local_account_disabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "node_os_upgrade_channel": ubx.FieldSpec(wire_name="node_os_upgrade_channel"),
+        "node_resource_group": ubx.FieldSpec(wire_name="node_resource_group"),
+        "oidc_issuer_enabled": ubx.FieldSpec(wire_name="oidc_issuer_enabled"),
+        "open_service_mesh_enabled": ubx.FieldSpec(wire_name="open_service_mesh_enabled"),
+        "private_cluster_enabled": ubx.FieldSpec(wire_name="private_cluster_enabled"),
+        "private_cluster_public_fqdn_enabled": ubx.FieldSpec(wire_name="private_cluster_public_fqdn_enabled"),
+        "private_dns_zone_id": ubx.FieldSpec(wire_name="private_dns_zone_id"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "role_based_access_control_enabled": ubx.FieldSpec(wire_name="role_based_access_control_enabled"),
+        "run_command_enabled": ubx.FieldSpec(wire_name="run_command_enabled"),
+        "sku_tier": ubx.FieldSpec(wire_name="sku_tier"),
+        "support_plan": ubx.FieldSpec(wire_name="support_plan"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "workload_identity_enabled": ubx.FieldSpec(wire_name="workload_identity_enabled"),
+        "aci_connector_linux": ubx.FieldSpec(
             wire_name="aci_connector_linux",
             kind="list",
             fields=_Cluster_AciConnectorLinuxFields,
         ),
-        "api_server_access_profile": sdk.FieldSpec(
+        "api_server_access_profile": ubx.FieldSpec(
             wire_name="api_server_access_profile",
             kind="list",
             fields=_Cluster_ApiServerAccessProfileFields,
         ),
-        "auto_scaler_profile": sdk.FieldSpec(
+        "auto_scaler_profile": ubx.FieldSpec(
             wire_name="auto_scaler_profile",
             kind="list",
             fields=_Cluster_AutoScalerProfileFields,
         ),
-        "azure_active_directory_role_based_access_control": sdk.FieldSpec(
+        "azure_active_directory_role_based_access_control": ubx.FieldSpec(
             wire_name="azure_active_directory_role_based_access_control",
             kind="list",
             fields=_Cluster_AzureActiveDirectoryRoleBasedAccessControlFields,
         ),
-        "bootstrap_profile": sdk.FieldSpec(
+        "bootstrap_profile": ubx.FieldSpec(
             wire_name="bootstrap_profile",
             kind="list",
             fields=_Cluster_BootstrapProfileFields,
         ),
-        "confidential_computing": sdk.FieldSpec(
+        "confidential_computing": ubx.FieldSpec(
             wire_name="confidential_computing",
             kind="list",
             fields=_Cluster_ConfidentialComputingFields,
         ),
-        "default_node_pool": sdk.FieldSpec(
+        "default_node_pool": ubx.FieldSpec(
             wire_name="default_node_pool",
             kind="list",
             fields=_Cluster_DefaultNodePoolFields,
         ),
-        "http_proxy_config": sdk.FieldSpec(
+        "http_proxy_config": ubx.FieldSpec(
             wire_name="http_proxy_config",
             kind="list",
             fields=_Cluster_HttpProxyConfigFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Cluster_IdentityFields,
         ),
-        "ingress_application_gateway": sdk.FieldSpec(
+        "ingress_application_gateway": ubx.FieldSpec(
             wire_name="ingress_application_gateway",
             kind="list",
             fields=_Cluster_IngressApplicationGatewayFields,
         ),
-        "key_management_service": sdk.FieldSpec(
+        "key_management_service": ubx.FieldSpec(
             wire_name="key_management_service",
             kind="list",
             fields=_Cluster_KeyManagementServiceFields,
         ),
-        "key_vault_secrets_provider": sdk.FieldSpec(
+        "key_vault_secrets_provider": ubx.FieldSpec(
             wire_name="key_vault_secrets_provider",
             kind="list",
             fields=_Cluster_KeyVaultSecretsProviderFields,
         ),
-        "kubelet_identity": sdk.FieldSpec(
+        "kubelet_identity": ubx.FieldSpec(
             wire_name="kubelet_identity",
             kind="list",
             fields=_Cluster_AciConnectorLinux_ConnectorIdentityFields,
         ),
-        "linux_profile": sdk.FieldSpec(
+        "linux_profile": ubx.FieldSpec(
             wire_name="linux_profile",
             kind="list",
             fields=_Cluster_LinuxProfileFields,
         ),
-        "maintenance_window": sdk.FieldSpec(
+        "maintenance_window": ubx.FieldSpec(
             wire_name="maintenance_window",
             kind="list",
             fields=_Cluster_MaintenanceWindowFields,
         ),
-        "maintenance_window_auto_upgrade": sdk.FieldSpec(
+        "maintenance_window_auto_upgrade": ubx.FieldSpec(
             wire_name="maintenance_window_auto_upgrade",
             kind="list",
             fields=_Cluster_MaintenanceWindowAutoUpgradeFields,
         ),
-        "maintenance_window_node_os": sdk.FieldSpec(
+        "maintenance_window_node_os": ubx.FieldSpec(
             wire_name="maintenance_window_node_os",
             kind="list",
             fields=_Cluster_MaintenanceWindowAutoUpgradeFields,
         ),
-        "microsoft_defender": sdk.FieldSpec(
+        "microsoft_defender": ubx.FieldSpec(
             wire_name="microsoft_defender",
             kind="list",
             fields=_Cluster_MicrosoftDefenderFields,
         ),
-        "monitor_metrics": sdk.FieldSpec(
+        "monitor_metrics": ubx.FieldSpec(
             wire_name="monitor_metrics",
             kind="list",
             fields=_Cluster_MonitorMetricsFields,
         ),
-        "network_profile": sdk.FieldSpec(
+        "network_profile": ubx.FieldSpec(
             wire_name="network_profile",
             kind="list",
             fields=_Cluster_NetworkProfileFields,
         ),
-        "node_provisioning_profile": sdk.FieldSpec(
+        "node_provisioning_profile": ubx.FieldSpec(
             wire_name="node_provisioning_profile",
             kind="list",
             fields=_Cluster_NodeProvisioningProfileFields,
         ),
-        "oms_agent": sdk.FieldSpec(
+        "oms_agent": ubx.FieldSpec(
             wire_name="oms_agent",
             kind="list",
             fields=_Cluster_OmsAgentFields,
         ),
-        "service_mesh_profile": sdk.FieldSpec(
+        "service_mesh_profile": ubx.FieldSpec(
             wire_name="service_mesh_profile",
             kind="list",
             fields=_Cluster_ServiceMeshProfileFields,
         ),
-        "service_principal": sdk.FieldSpec(
+        "service_principal": ubx.FieldSpec(
             wire_name="service_principal",
             kind="list",
             fields=_Cluster_ServicePrincipalFields,
         ),
-        "storage_profile": sdk.FieldSpec(
+        "storage_profile": ubx.FieldSpec(
             wire_name="storage_profile",
             kind="list",
             fields=_Cluster_StorageProfileFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Cluster_TimeoutsFields,
         ),
-        "upgrade_override": sdk.FieldSpec(
+        "upgrade_override": ubx.FieldSpec(
             wire_name="upgrade_override",
             kind="list",
             fields=_Cluster_UpgradeOverrideFields,
         ),
-        "web_app_routing": sdk.FieldSpec(
+        "web_app_routing": ubx.FieldSpec(
             wire_name="web_app_routing",
             kind="list",
             fields=_Cluster_WebAppRoutingFields,
         ),
-        "windows_profile": sdk.FieldSpec(
+        "windows_profile": ubx.FieldSpec(
             wire_name="windows_profile",
             kind="list",
             fields=_Cluster_WindowsProfileFields,
         ),
-        "workload_autoscaler_profile": sdk.FieldSpec(
+        "workload_autoscaler_profile": ubx.FieldSpec(
             wire_name="workload_autoscaler_profile",
             kind="list",
             fields=_Cluster_WorkloadAutoscalerProfileFields,

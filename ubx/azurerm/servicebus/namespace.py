@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Namespace_CustomerManagedKey:
@@ -40,29 +40,29 @@ class Namespace_Timeouts:
     update: Any = None
 
 _Namespace_CustomerManagedKeyFields = {
-    "identity_id": sdk.FieldSpec(wire_name="identity_id"),
-    "infrastructure_encryption_enabled": sdk.FieldSpec(wire_name="infrastructure_encryption_enabled"),
-    "key_vault_key_id": sdk.FieldSpec(wire_name="key_vault_key_id"),
+    "identity_id": ubx.FieldSpec(wire_name="identity_id"),
+    "infrastructure_encryption_enabled": ubx.FieldSpec(wire_name="infrastructure_encryption_enabled"),
+    "key_vault_key_id": ubx.FieldSpec(wire_name="key_vault_key_id"),
 }
 
 _Namespace_IdentityFields = {
-    "identity_ids": sdk.FieldSpec(wire_name="identity_ids"),
-    "principal_id": sdk.FieldSpec(wire_name="principal_id"),
-    "tenant_id": sdk.FieldSpec(wire_name="tenant_id"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "identity_ids": ubx.FieldSpec(wire_name="identity_ids"),
+    "principal_id": ubx.FieldSpec(wire_name="principal_id"),
+    "tenant_id": ubx.FieldSpec(wire_name="tenant_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Namespace_NetworkRuleSet_NetworkRulesFields = {
-    "ignore_missing_vnet_service_endpoint": sdk.FieldSpec(wire_name="ignore_missing_vnet_service_endpoint"),
-    "subnet_id": sdk.FieldSpec(wire_name="subnet_id"),
+    "ignore_missing_vnet_service_endpoint": ubx.FieldSpec(wire_name="ignore_missing_vnet_service_endpoint"),
+    "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
 }
 
 _Namespace_NetworkRuleSetFields = {
-    "default_action": sdk.FieldSpec(wire_name="default_action"),
-    "ip_rules": sdk.FieldSpec(wire_name="ip_rules"),
-    "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-    "trusted_services_allowed": sdk.FieldSpec(wire_name="trusted_services_allowed"),
-    "network_rules": sdk.FieldSpec(
+    "default_action": ubx.FieldSpec(wire_name="default_action"),
+    "ip_rules": ubx.FieldSpec(wire_name="ip_rules"),
+    "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+    "trusted_services_allowed": ubx.FieldSpec(wire_name="trusted_services_allowed"),
+    "network_rules": ubx.FieldSpec(
         wire_name="network_rules",
         kind="set",
         fields=_Namespace_NetworkRuleSet_NetworkRulesFields,
@@ -70,10 +70,10 @@ _Namespace_NetworkRuleSetFields = {
 }
 
 _Namespace_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -94,36 +94,36 @@ class NamespaceConfig:
     network_rule_set: Any = None
     timeouts: Any = None
 
-Namespace = sdk.ResourceBinding(
+Namespace = ubx.ResourceBinding(
     wire_type="azurerm_servicebus_namespace",
     fields={
-        "capacity": sdk.FieldSpec(wire_name="capacity"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "local_auth_enabled": sdk.FieldSpec(wire_name="local_auth_enabled"),
-        "location": sdk.FieldSpec(wire_name="location"),
-        "minimum_tls_version": sdk.FieldSpec(wire_name="minimum_tls_version"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "premium_messaging_partitions": sdk.FieldSpec(wire_name="premium_messaging_partitions"),
-        "public_network_access_enabled": sdk.FieldSpec(wire_name="public_network_access_enabled"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "sku": sdk.FieldSpec(wire_name="sku"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "customer_managed_key": sdk.FieldSpec(
+        "capacity": ubx.FieldSpec(wire_name="capacity"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "local_auth_enabled": ubx.FieldSpec(wire_name="local_auth_enabled"),
+        "location": ubx.FieldSpec(wire_name="location"),
+        "minimum_tls_version": ubx.FieldSpec(wire_name="minimum_tls_version"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "premium_messaging_partitions": ubx.FieldSpec(wire_name="premium_messaging_partitions"),
+        "public_network_access_enabled": ubx.FieldSpec(wire_name="public_network_access_enabled"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "sku": ubx.FieldSpec(wire_name="sku"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "customer_managed_key": ubx.FieldSpec(
             wire_name="customer_managed_key",
             kind="list",
             fields=_Namespace_CustomerManagedKeyFields,
         ),
-        "identity": sdk.FieldSpec(
+        "identity": ubx.FieldSpec(
             wire_name="identity",
             kind="list",
             fields=_Namespace_IdentityFields,
         ),
-        "network_rule_set": sdk.FieldSpec(
+        "network_rule_set": ubx.FieldSpec(
             wire_name="network_rule_set",
             kind="list",
             fields=_Namespace_NetworkRuleSetFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_Namespace_TimeoutsFields,

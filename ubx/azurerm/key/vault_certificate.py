@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VaultCertificate_Certificate:
@@ -71,38 +71,38 @@ class VaultCertificate_Timeouts:
     update: Any = None
 
 _VaultCertificate_CertificateFields = {
-    "contents": sdk.FieldSpec(wire_name="contents"),
-    "password": sdk.FieldSpec(wire_name="password"),
+    "contents": ubx.FieldSpec(wire_name="contents"),
+    "password": ubx.FieldSpec(wire_name="password"),
 }
 
 _VaultCertificate_CertificatePolicy_IssuerParametersFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _VaultCertificate_CertificatePolicy_KeyPropertiesFields = {
-    "curve": sdk.FieldSpec(wire_name="curve"),
-    "exportable": sdk.FieldSpec(wire_name="exportable"),
-    "key_size": sdk.FieldSpec(wire_name="key_size"),
-    "key_type": sdk.FieldSpec(wire_name="key_type"),
-    "reuse_key": sdk.FieldSpec(wire_name="reuse_key"),
+    "curve": ubx.FieldSpec(wire_name="curve"),
+    "exportable": ubx.FieldSpec(wire_name="exportable"),
+    "key_size": ubx.FieldSpec(wire_name="key_size"),
+    "key_type": ubx.FieldSpec(wire_name="key_type"),
+    "reuse_key": ubx.FieldSpec(wire_name="reuse_key"),
 }
 
 _VaultCertificate_CertificatePolicy_LifetimeAction_ActionFields = {
-    "action_type": sdk.FieldSpec(wire_name="action_type"),
+    "action_type": ubx.FieldSpec(wire_name="action_type"),
 }
 
 _VaultCertificate_CertificatePolicy_LifetimeAction_TriggerFields = {
-    "days_before_expiry": sdk.FieldSpec(wire_name="days_before_expiry"),
-    "lifetime_percentage": sdk.FieldSpec(wire_name="lifetime_percentage"),
+    "days_before_expiry": ubx.FieldSpec(wire_name="days_before_expiry"),
+    "lifetime_percentage": ubx.FieldSpec(wire_name="lifetime_percentage"),
 }
 
 _VaultCertificate_CertificatePolicy_LifetimeActionFields = {
-    "action": sdk.FieldSpec(
+    "action": ubx.FieldSpec(
         wire_name="action",
         kind="list",
         fields=_VaultCertificate_CertificatePolicy_LifetimeAction_ActionFields,
     ),
-    "trigger": sdk.FieldSpec(
+    "trigger": ubx.FieldSpec(
         wire_name="trigger",
         kind="list",
         fields=_VaultCertificate_CertificatePolicy_LifetimeAction_TriggerFields,
@@ -110,21 +110,21 @@ _VaultCertificate_CertificatePolicy_LifetimeActionFields = {
 }
 
 _VaultCertificate_CertificatePolicy_SecretPropertiesFields = {
-    "content_type": sdk.FieldSpec(wire_name="content_type"),
+    "content_type": ubx.FieldSpec(wire_name="content_type"),
 }
 
 _VaultCertificate_CertificatePolicy_X509CertificateProperties_SubjectAlternativeNamesFields = {
-    "dns_names": sdk.FieldSpec(wire_name="dns_names"),
-    "emails": sdk.FieldSpec(wire_name="emails"),
-    "upns": sdk.FieldSpec(wire_name="upns"),
+    "dns_names": ubx.FieldSpec(wire_name="dns_names"),
+    "emails": ubx.FieldSpec(wire_name="emails"),
+    "upns": ubx.FieldSpec(wire_name="upns"),
 }
 
 _VaultCertificate_CertificatePolicy_X509CertificatePropertiesFields = {
-    "extended_key_usage": sdk.FieldSpec(wire_name="extended_key_usage"),
-    "key_usage": sdk.FieldSpec(wire_name="key_usage"),
-    "subject": sdk.FieldSpec(wire_name="subject"),
-    "validity_in_months": sdk.FieldSpec(wire_name="validity_in_months"),
-    "subject_alternative_names": sdk.FieldSpec(
+    "extended_key_usage": ubx.FieldSpec(wire_name="extended_key_usage"),
+    "key_usage": ubx.FieldSpec(wire_name="key_usage"),
+    "subject": ubx.FieldSpec(wire_name="subject"),
+    "validity_in_months": ubx.FieldSpec(wire_name="validity_in_months"),
+    "subject_alternative_names": ubx.FieldSpec(
         wire_name="subject_alternative_names",
         kind="list",
         fields=_VaultCertificate_CertificatePolicy_X509CertificateProperties_SubjectAlternativeNamesFields,
@@ -132,27 +132,27 @@ _VaultCertificate_CertificatePolicy_X509CertificatePropertiesFields = {
 }
 
 _VaultCertificate_CertificatePolicyFields = {
-    "issuer_parameters": sdk.FieldSpec(
+    "issuer_parameters": ubx.FieldSpec(
         wire_name="issuer_parameters",
         kind="list",
         fields=_VaultCertificate_CertificatePolicy_IssuerParametersFields,
     ),
-    "key_properties": sdk.FieldSpec(
+    "key_properties": ubx.FieldSpec(
         wire_name="key_properties",
         kind="list",
         fields=_VaultCertificate_CertificatePolicy_KeyPropertiesFields,
     ),
-    "lifetime_action": sdk.FieldSpec(
+    "lifetime_action": ubx.FieldSpec(
         wire_name="lifetime_action",
         kind="list",
         fields=_VaultCertificate_CertificatePolicy_LifetimeActionFields,
     ),
-    "secret_properties": sdk.FieldSpec(
+    "secret_properties": ubx.FieldSpec(
         wire_name="secret_properties",
         kind="list",
         fields=_VaultCertificate_CertificatePolicy_SecretPropertiesFields,
     ),
-    "x509_certificate_properties": sdk.FieldSpec(
+    "x509_certificate_properties": ubx.FieldSpec(
         wire_name="x509_certificate_properties",
         kind="list",
         fields=_VaultCertificate_CertificatePolicy_X509CertificatePropertiesFields,
@@ -160,10 +160,10 @@ _VaultCertificate_CertificatePolicyFields = {
 }
 
 _VaultCertificate_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -176,24 +176,24 @@ class VaultCertificateConfig:
     certificate_policy: Any = None
     timeouts: Any = None
 
-VaultCertificate = sdk.ResourceBinding(
+VaultCertificate = ubx.ResourceBinding(
     wire_type="azurerm_key_vault_certificate",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "key_vault_id": sdk.FieldSpec(wire_name="key_vault_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "tags": sdk.FieldSpec(wire_name="tags"),
-        "certificate": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "key_vault_id": ubx.FieldSpec(wire_name="key_vault_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "certificate": ubx.FieldSpec(
             wire_name="certificate",
             kind="list",
             fields=_VaultCertificate_CertificateFields,
         ),
-        "certificate_policy": sdk.FieldSpec(
+        "certificate_policy": ubx.FieldSpec(
             wire_name="certificate_policy",
             kind="list",
             fields=_VaultCertificate_CertificatePolicyFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_VaultCertificate_TimeoutsFields,

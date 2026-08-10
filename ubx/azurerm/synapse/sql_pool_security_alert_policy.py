@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SqlPoolSecurityAlertPolicy_Timeouts:
@@ -14,10 +14,10 @@ class SqlPoolSecurityAlertPolicy_Timeouts:
     update: Any = None
 
 _SqlPoolSecurityAlertPolicy_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -33,19 +33,19 @@ class SqlPoolSecurityAlertPolicyConfig:
     storage_endpoint: Any = None
     timeouts: Any = None
 
-SqlPoolSecurityAlertPolicy = sdk.ResourceBinding(
+SqlPoolSecurityAlertPolicy = ubx.ResourceBinding(
     wire_type="azurerm_synapse_sql_pool_security_alert_policy",
     fields={
-        "disabled_alerts": sdk.FieldSpec(wire_name="disabled_alerts"),
-        "email_account_admins_enabled": sdk.FieldSpec(wire_name="email_account_admins_enabled"),
-        "email_addresses": sdk.FieldSpec(wire_name="email_addresses"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "policy_state": sdk.FieldSpec(wire_name="policy_state"),
-        "retention_days": sdk.FieldSpec(wire_name="retention_days"),
-        "sql_pool_id": sdk.FieldSpec(wire_name="sql_pool_id"),
-        "storage_account_access_key": sdk.FieldSpec(wire_name="storage_account_access_key"),
-        "storage_endpoint": sdk.FieldSpec(wire_name="storage_endpoint"),
-        "timeouts": sdk.FieldSpec(
+        "disabled_alerts": ubx.FieldSpec(wire_name="disabled_alerts"),
+        "email_account_admins_enabled": ubx.FieldSpec(wire_name="email_account_admins_enabled"),
+        "email_addresses": ubx.FieldSpec(wire_name="email_addresses"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "policy_state": ubx.FieldSpec(wire_name="policy_state"),
+        "retention_days": ubx.FieldSpec(wire_name="retention_days"),
+        "sql_pool_id": ubx.FieldSpec(wire_name="sql_pool_id"),
+        "storage_account_access_key": ubx.FieldSpec(wire_name="storage_account_access_key"),
+        "storage_endpoint": ubx.FieldSpec(wire_name="storage_endpoint"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_SqlPoolSecurityAlertPolicy_TimeoutsFields,

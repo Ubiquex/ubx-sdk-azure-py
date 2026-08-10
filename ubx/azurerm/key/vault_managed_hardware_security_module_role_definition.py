@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VaultManagedHardwareSecurityModuleRoleDefinition_Permission:
@@ -21,17 +21,17 @@ class VaultManagedHardwareSecurityModuleRoleDefinition_Timeouts:
     update: Any = None
 
 _VaultManagedHardwareSecurityModuleRoleDefinition_PermissionFields = {
-    "actions": sdk.FieldSpec(wire_name="actions"),
-    "data_actions": sdk.FieldSpec(wire_name="data_actions"),
-    "not_actions": sdk.FieldSpec(wire_name="not_actions"),
-    "not_data_actions": sdk.FieldSpec(wire_name="not_data_actions"),
+    "actions": ubx.FieldSpec(wire_name="actions"),
+    "data_actions": ubx.FieldSpec(wire_name="data_actions"),
+    "not_actions": ubx.FieldSpec(wire_name="not_actions"),
+    "not_data_actions": ubx.FieldSpec(wire_name="not_data_actions"),
 }
 
 _VaultManagedHardwareSecurityModuleRoleDefinition_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -44,20 +44,20 @@ class VaultManagedHardwareSecurityModuleRoleDefinitionConfig:
     permission: Any = None
     timeouts: Any = None
 
-VaultManagedHardwareSecurityModuleRoleDefinition = sdk.ResourceBinding(
+VaultManagedHardwareSecurityModuleRoleDefinition = ubx.ResourceBinding(
     wire_type="azurerm_key_vault_managed_hardware_security_module_role_definition",
     fields={
-        "description": sdk.FieldSpec(wire_name="description"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "managed_hsm_id": sdk.FieldSpec(wire_name="managed_hsm_id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "role_name": sdk.FieldSpec(wire_name="role_name"),
-        "permission": sdk.FieldSpec(
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "managed_hsm_id": ubx.FieldSpec(wire_name="managed_hsm_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "role_name": ubx.FieldSpec(wire_name="role_name"),
+        "permission": ubx.FieldSpec(
             wire_name="permission",
             kind="list",
             fields=_VaultManagedHardwareSecurityModuleRoleDefinition_PermissionFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_VaultManagedHardwareSecurityModuleRoleDefinition_TimeoutsFields,

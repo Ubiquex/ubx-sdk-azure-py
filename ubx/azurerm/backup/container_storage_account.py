@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ContainerStorageAccount_Timeouts:
@@ -13,9 +13,9 @@ class ContainerStorageAccount_Timeouts:
     read: Any = None
 
 _ContainerStorageAccount_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -26,14 +26,14 @@ class ContainerStorageAccountConfig:
     storage_account_id: Any = None
     timeouts: Any = None
 
-ContainerStorageAccount = sdk.ResourceBinding(
+ContainerStorageAccount = ubx.ResourceBinding(
     wire_type="azurerm_backup_container_storage_account",
     fields={
-        "id": sdk.FieldSpec(wire_name="id"),
-        "recovery_vault_name": sdk.FieldSpec(wire_name="recovery_vault_name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "storage_account_id": sdk.FieldSpec(wire_name="storage_account_id"),
-        "timeouts": sdk.FieldSpec(
+        "id": ubx.FieldSpec(wire_name="id"),
+        "recovery_vault_name": ubx.FieldSpec(wire_name="recovery_vault_name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "storage_account_id": ubx.FieldSpec(wire_name="storage_account_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_ContainerStorageAccount_TimeoutsFields,

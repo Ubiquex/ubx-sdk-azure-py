@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GroupCostManagementView_Dataset_Aggregation:
@@ -40,33 +40,33 @@ class GroupCostManagementView_Timeouts:
     update: Any = None
 
 _GroupCostManagementView_Dataset_AggregationFields = {
-    "column_name": sdk.FieldSpec(wire_name="column_name"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "column_name": ubx.FieldSpec(wire_name="column_name"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _GroupCostManagementView_Dataset_GroupingFields = {
-    "name": sdk.FieldSpec(wire_name="name"),
-    "type": sdk.FieldSpec(wire_name="type"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _GroupCostManagementView_Dataset_SortingFields = {
-    "direction": sdk.FieldSpec(wire_name="direction"),
-    "name": sdk.FieldSpec(wire_name="name"),
+    "direction": ubx.FieldSpec(wire_name="direction"),
+    "name": ubx.FieldSpec(wire_name="name"),
 }
 
 _GroupCostManagementView_DatasetFields = {
-    "granularity": sdk.FieldSpec(wire_name="granularity"),
-    "aggregation": sdk.FieldSpec(
+    "granularity": ubx.FieldSpec(wire_name="granularity"),
+    "aggregation": ubx.FieldSpec(
         wire_name="aggregation",
         kind="set",
         fields=_GroupCostManagementView_Dataset_AggregationFields,
     ),
-    "grouping": sdk.FieldSpec(
+    "grouping": ubx.FieldSpec(
         wire_name="grouping",
         kind="list",
         fields=_GroupCostManagementView_Dataset_GroupingFields,
     ),
-    "sorting": sdk.FieldSpec(
+    "sorting": ubx.FieldSpec(
         wire_name="sorting",
         kind="list",
         fields=_GroupCostManagementView_Dataset_SortingFields,
@@ -74,14 +74,14 @@ _GroupCostManagementView_DatasetFields = {
 }
 
 _GroupCostManagementView_KpiFields = {
-    "type": sdk.FieldSpec(wire_name="type"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _GroupCostManagementView_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -99,33 +99,33 @@ class GroupCostManagementViewConfig:
     pivot: Any = None
     timeouts: Any = None
 
-GroupCostManagementView = sdk.ResourceBinding(
+GroupCostManagementView = ubx.ResourceBinding(
     wire_type="azurerm_resource_group_cost_management_view",
     fields={
-        "accumulated": sdk.FieldSpec(wire_name="accumulated"),
-        "chart_type": sdk.FieldSpec(wire_name="chart_type"),
-        "display_name": sdk.FieldSpec(wire_name="display_name"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "report_type": sdk.FieldSpec(wire_name="report_type"),
-        "resource_group_id": sdk.FieldSpec(wire_name="resource_group_id"),
-        "timeframe": sdk.FieldSpec(wire_name="timeframe"),
-        "dataset": sdk.FieldSpec(
+        "accumulated": ubx.FieldSpec(wire_name="accumulated"),
+        "chart_type": ubx.FieldSpec(wire_name="chart_type"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "report_type": ubx.FieldSpec(wire_name="report_type"),
+        "resource_group_id": ubx.FieldSpec(wire_name="resource_group_id"),
+        "timeframe": ubx.FieldSpec(wire_name="timeframe"),
+        "dataset": ubx.FieldSpec(
             wire_name="dataset",
             kind="list",
             fields=_GroupCostManagementView_DatasetFields,
         ),
-        "kpi": sdk.FieldSpec(
+        "kpi": ubx.FieldSpec(
             wire_name="kpi",
             kind="list",
             fields=_GroupCostManagementView_KpiFields,
         ),
-        "pivot": sdk.FieldSpec(
+        "pivot": ubx.FieldSpec(
             wire_name="pivot",
             kind="list",
             fields=_GroupCostManagementView_Dataset_GroupingFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_GroupCostManagementView_TimeoutsFields,

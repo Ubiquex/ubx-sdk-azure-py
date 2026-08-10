@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CenterGallery_Timeouts:
@@ -13,9 +13,9 @@ class CenterGallery_Timeouts:
     read: Any = None
 
 _CenterGallery_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
 }
 
 @dataclasses.dataclass
@@ -26,14 +26,14 @@ class CenterGalleryConfig:
     shared_gallery_id: Any = None
     timeouts: Any = None
 
-CenterGallery = sdk.ResourceBinding(
+CenterGallery = ubx.ResourceBinding(
     wire_type="azurerm_dev_center_gallery",
     fields={
-        "dev_center_id": sdk.FieldSpec(wire_name="dev_center_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "shared_gallery_id": sdk.FieldSpec(wire_name="shared_gallery_id"),
-        "timeouts": sdk.FieldSpec(
+        "dev_center_id": ubx.FieldSpec(wire_name="dev_center_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "shared_gallery_id": ubx.FieldSpec(wire_name="shared_gallery_id"),
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CenterGallery_TimeoutsFields,

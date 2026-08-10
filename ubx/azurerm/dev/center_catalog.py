@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-import ubx_sdk as sdk
+import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CenterCatalog_CatalogAdogit:
@@ -21,17 +21,17 @@ class CenterCatalog_Timeouts:
     update: Any = None
 
 _CenterCatalog_CatalogAdogitFields = {
-    "branch": sdk.FieldSpec(wire_name="branch"),
-    "key_vault_key_url": sdk.FieldSpec(wire_name="key_vault_key_url"),
-    "path": sdk.FieldSpec(wire_name="path"),
-    "uri": sdk.FieldSpec(wire_name="uri"),
+    "branch": ubx.FieldSpec(wire_name="branch"),
+    "key_vault_key_url": ubx.FieldSpec(wire_name="key_vault_key_url"),
+    "path": ubx.FieldSpec(wire_name="path"),
+    "uri": ubx.FieldSpec(wire_name="uri"),
 }
 
 _CenterCatalog_TimeoutsFields = {
-    "create": sdk.FieldSpec(wire_name="create"),
-    "delete": sdk.FieldSpec(wire_name="delete"),
-    "read": sdk.FieldSpec(wire_name="read"),
-    "update": sdk.FieldSpec(wire_name="update"),
+    "create": ubx.FieldSpec(wire_name="create"),
+    "delete": ubx.FieldSpec(wire_name="delete"),
+    "read": ubx.FieldSpec(wire_name="read"),
+    "update": ubx.FieldSpec(wire_name="update"),
 }
 
 @dataclasses.dataclass
@@ -44,24 +44,24 @@ class CenterCatalogConfig:
     catalog_github: Any = None
     timeouts: Any = None
 
-CenterCatalog = sdk.ResourceBinding(
+CenterCatalog = ubx.ResourceBinding(
     wire_type="azurerm_dev_center_catalog",
     fields={
-        "dev_center_id": sdk.FieldSpec(wire_name="dev_center_id"),
-        "id": sdk.FieldSpec(wire_name="id"),
-        "name": sdk.FieldSpec(wire_name="name"),
-        "resource_group_name": sdk.FieldSpec(wire_name="resource_group_name"),
-        "catalog_adogit": sdk.FieldSpec(
+        "dev_center_id": ubx.FieldSpec(wire_name="dev_center_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "resource_group_name": ubx.FieldSpec(wire_name="resource_group_name"),
+        "catalog_adogit": ubx.FieldSpec(
             wire_name="catalog_adogit",
             kind="list",
             fields=_CenterCatalog_CatalogAdogitFields,
         ),
-        "catalog_github": sdk.FieldSpec(
+        "catalog_github": ubx.FieldSpec(
             wire_name="catalog_github",
             kind="list",
             fields=_CenterCatalog_CatalogAdogitFields,
         ),
-        "timeouts": sdk.FieldSpec(
+        "timeouts": ubx.FieldSpec(
             wire_name="timeouts",
             kind="object",
             fields=_CenterCatalog_TimeoutsFields,
