@@ -9,12 +9,9 @@ name: version-watch
 # Ported from ubx-sdk-kubernetes-py's own proven version-watch.yml -- same
 # registry-call shape (just a different provider), same $RUNNER_TEMP
 # scratch-isolation. `ubx_sdk` (the shared Python runtime) resolves via
-# plain PYTHONPATH (no module-proxy like Go, no import map like Deno) --
-# it's vendored into vendor/ubx_sdk/ (see this repo's own README) rather
-# than published to PyPI (re-checked live via the JSON + Simple index
-# APIs, not the bot-challenged HTML page -- UBI-111/114), so vendor/ and
-# .gitignore are excluded from the regeneration diff the same way
-# go.mod/go.sum and deno.json/vendor/ were for Go/TS.
+# a real published PyPI dependency (`ubx_sdk`,
+# https://pypi.org/project/ubx-sdk/, UBI-107) pinned in pyproject.toml --
+# no module-proxy like Go, no import map like Deno, just `pip install`.
 #
 # UBI-117, checked BEFORE the first dispatch (UBI-116's own lesson,
 # learned the hard way on this same repo's TS sibling -- don't discover
@@ -142,15 +139,14 @@ jobs:
           # `--out` writes a repo-shaped tree under <out>/<lang>/<source>;
           # flatten it back to this repo's own root, matching the initial
           # commit's own layout (pyproject.toml, azurerm/ namespace
-          # directory per UBI-106, at the repo root). vendor//.gitignore
-          # are excluded deliberately: `ubx sdk gen` never generates
-          # either (this repo's own `ubx_sdk` vendoring is hand-
-          # maintained, not codegen output) -- without this exclusion,
-          # rsync --delete would silently wipe the vendored runtime every
-          # run.
+          # directory per UBI-106, at the repo root). pyproject.toml IS
+          # real codegen output (GeneratedRepo's own pyprojectTOML,
+          # UBI-107) and is no longer excluded -- a future runtime
+          # version-pin bump in the template now flows through to this
+          # repo on the next regen, same as everything else in the tree.
           rsync -a --delete \
             --exclude='.git' --exclude='.github' --exclude='VERSION' --exclude='README.md' \
-            --exclude='.gitignore' --exclude='vendor' \
+            --exclude='.gitignore' \
             "$gendir/out/py/hashicorp-azurerm/" ./
           # pyproject.toml's "name" is NOT excluded above (its
           # "description" needs the version bump like the kubernetes-py
@@ -167,6 +163,21 @@ jobs:
           sed -i 's/^name = "ubx-sdk-azurerm"$/name = "ubx-sdk-azure"/' pyproject.toml
           echo "${{ steps.registry.outputs.latest }}" > VERSION
 
+      - name: Install the real ubx_sdk runtime dependency
+        if: steps.compare.outputs.newer == 'true'
+        run: |
+          set -euo pipefail
+          # This repo IS genuinely `pip install`-able as its own real
+          # package (published as ubx-sdk-azure on PyPI) -- but the
+          # sanity check below imports straight off this checkout via a
+          # plain PYTHONPATH-style relative import, not via an installed
+          # copy, so only the runtime dependency itself needs installing
+          # here. Read its pin straight out of pyproject.toml (tomllib,
+          # stdlib) so this step can never drift from the real declared
+          # version range.
+          deps="$(python3 -c "import tomllib; print(' '.join(tomllib.load(open('pyproject.toml','rb'))['project']['dependencies']))")"
+          pip install $deps
+
       - name: Sanity-check the regenerated tree -- real import of every module
         if: steps.compare.outputs.newer == 'true'
         env:
@@ -175,9 +186,9 @@ jobs:
           set -euo pipefail
           # Matches UBI-98/105/111/114's own verification bar: a real
           # recursive `importlib.import_module` of every generated
-          # module (not a syntax lint) -- resolved via plain PYTHONPATH,
-          # no import-map equivalent needed the way Deno's deno.json
-          # required for TS. hashicorp/azurerm has no sibling-`_config`
+          # module (not a syntax lint) -- `ubx_sdk` itself resolves via
+          # the real PyPI install above, no PYTHONPATH/vendor trick
+          # needed anymore. hashicorp/azurerm has no sibling-`_config`
           # collision surface (UBI-115/116/117 -- checked directly,
           # 0/1,103 candidates), so this import is the same general
           # regression guard every sibling repo runs, not a targeted
@@ -186,14 +197,12 @@ jobs:
           import os, sys, importlib
 
           repo_root = os.getcwd()
-          vendor = os.path.join(repo_root, "vendor")
-          sys.path.insert(0, vendor)
           sys.path.insert(0, repo_root)
 
           count = 0
           errors = []
           for dirpath, dirnames, filenames in os.walk(repo_root):
-              dirnames[:] = [d for d in dirnames if d not in (".git", ".github", "vendor")]
+              dirnames[:] = [d for d in dirnames if d not in (".git", ".github")]
               for f in filenames:
                   if not f.endswith(".py"):
                       continue
