@@ -1,73 +1,69 @@
 # ubx-sdk-azure-py
 
 Python bindings for the `hashicorp/azurerm` Terraform provider, generated
-by [ubx](https://github.com/ubiquex/ubiquex) (`ubx sdk gen --lang py`). One
-directory per derived Azure service boundary (`kubernetes/`, `network/`,
-`storage/`, ...), one file per resource type, one `__init__.py` per service
-directory (also the real Python package marker), all nested under
-`azurerm/` (UBI-106 shape) — matches the real Terraform provider source,
-`hashicorp/azurerm`, exactly.
+by [ubx](https://github.com/ubiquex/ubiquex) (`ubx sdk gen --lang py`),
+published to PyPI as [ubx-sdk-azure](https://pypi.org/project/ubx-sdk-azure/).
 
-Regenerated automatically on a weekly schedule (and via manual dispatch) by
-`.github/workflows/version-watch.yml` — it checks the real
+Real, `pip install`-able namespace-package layout, matching real, strong
+precedent (`google.cloud.*`, `azure.mgmt.*`): every package nests under
+the shared `ubx` namespace, one directory per derived Azure service
+boundary below that (`ubx/azurerm/kubernetes/`, `ubx/azurerm/network/`,
+`ubx/azurerm/storage/`, ... — `azurerm/`, not `azure/`, matching the
+real Terraform provider source, `hashicorp/azurerm`, exactly, same as
+this repo's own Go/TS siblings), one file per resource type, one
+`__init__.py` per service directory re-exporting that service's own
+resource classes:
+
+```python
+from ubx.azurerm.kubernetes import Cluster, ClusterConfig
+```
+
+`ubx/` itself deliberately has NO `__init__.py` — a real PEP 420
+implicit namespace package, not a regular one any single distribution
+owns, so `ubx-sdk-aws-py`/`-google-py`/`-kubernetes-py` can each
+independently contribute their own `ubx.aws`/`ubx.google`/
+`ubx.kubernetes` sibling under the same shared `ubx` namespace without
+conflicting. `ubx/azurerm/__init__.py` (one level down) is a real,
+ordinary package, same as every service package below it.
+
+**Install**: `pip install ubx-sdk-azure` (note the package NAME says
+`azure`, matching this repo's own name, even though the internal
+import path says `ubx.azurerm` — `ubx sdk gen`'s mechanical shortName
+derivation writes `ubx-sdk-azurerm` on every regen, corrected back to
+`ubx-sdk-azure` by a `sed` step in `version-watch.yml`, same as this
+repo's Go/TS siblings; the internal `azurerm` namespace segment is
+correct as-is and NOT part of that correction).
+`[tool.setuptools.packages.find]`'s `namespaces = true` is what makes
+`ubx` resolve as a real PEP 420 namespace package on install rather
+than an ordinary one.
+
+Regenerated automatically on a weekly schedule (and via manual dispatch)
+by `.github/workflows/version-watch.yml` — it checks the real
 [Terraform Registry provider-versions API](https://registry.terraform.io/v1/providers/hashicorp/azurerm/versions)
 for a newer `hashicorp/azurerm` release, and opens a PR with the
-regenerated diff for review (never auto-merges). The version this repo was
-last generated from is tracked in `VERSION`, not `.ubx/config.hcl` — this
-repo carries no ubx stack/config of its own, only generated bindings.
+regenerated diff for review (never auto-merges). The version this repo
+was last generated from is tracked in `VERSION`, not `.ubx/config.hcl` —
+this repo carries no ubx stack/config of its own, only generated
+bindings. A separate, manually-dispatched `.github/workflows/publish.yml`
+(gated `workflow_dispatch`, UBI-135) is what actually publishes a new
+version to PyPI after a regen PR is reviewed and merged.
 
 **Shared runtime (`ubx_sdk`)**: a real, published PyPI package —
 [ubx-sdk](https://pypi.org/project/ubx-sdk/) (import name `ubx_sdk`,
-UBI-107) — declared as an ordinary dependency in `pyproject.toml`. This
-repo previously vendored a local copy at `vendor/ubx_sdk/` before the
-real publish existed — that vendored copy is gone as of the switch to
-the real package.
+UBI-107) — declared as an ordinary dependency in `pyproject.toml`,
+resolved automatically by `pip install`; no vendoring, no `PYTHONPATH`
+trick needed. This repo previously vendored a local copy at
+`vendor/ubx_sdk/` before the real publish existed — that vendored copy
+is gone as of the switch to the real package.
 
-**Python sibling to `ubx-sdk-azure-go` (UBI-115) / `ubx-sdk-azure-ts`
-(UBI-116) — real findings, checked directly for Python, not assumed to
-match Go/TS by analogy:**
-
-- **A real, pre-emptively fixed bug — checked BEFORE the first dispatch,
-  not discovered via a bad PR diff (UBI-116's own lesson)**: `ubx sdk
-  gen`'s mechanical shortName derivation (the provider source's own last
-  `/`-segment, `"hashicorp/azurerm"` → `"azurerm"`) writes
-  `pyproject.toml`'s `name` as `ubx-sdk-azurerm` on every generation —
-  confirmed directly by running the generator locally before touching
-  this repo. Azure is the first provider in this family whose repo
-  shortname (`azure`) diverges from its mechanically-derived one
-  (`azurerm`) — UBI-116 found and fixed the identical class of bug in
-  `ubx-sdk-azure-ts`'s `package.json` `name` field, and UBI-115 in
-  `ubx-sdk-azure-go`'s `go.mod` module path; this repo's `pyproject.toml`
-  carries the same latent risk and is corrected the same way, both in
-  this initial commit and in `version-watch.yml`'s regeneration step
-  (a `sed` correction applied every run, since `pyproject.toml`'s
-  `description` field legitimately needs the live version-stamp update
-  and so can't just be excluded from regen like `VERSION`).
-- **The ticket's own real ask — UBI-115/116's v5-protocol finding
-  confirmed for Python's own generation path too, checked directly not
-  assumed**: `hashicorp/azurerm@5.0.0` negotiates tfplugin **protocol
-  v5** for `--lang py` generation too — reconfirmed via a raw handshake
-  against the real provider binary (`TF_PLUGIN_MAGIC_COOKIE` +
-  `PLUGIN_PROTOCOL_VERSIONS=6,5`, response `1|5|unix|...|grpc`), the same
-  direct method used for the earlier AWS/Google binaries. Expected, since
-  protocol negotiation happens once in `provider/` — shared,
-  language-independent code that runs identically regardless of
-  `--lang` — but checked live rather than assumed. Kubernetes remains
-  the only v6 provider in this whole rollout; v5 is the norm across
-  AWS/Google/Azure (UBI-116's own correction).
-- **Real schema scale, confirmed independently**: **1,103 resource
-  types** for `hashicorp/azurerm@5.0.0`, exactly matching Go's and TS's
-  own counts — 144 derived service packages, 1,247 files, real recursive
-  `importlib.import_module` of every generated module, zero errors
-  (largest file `azurerm/kubernetes/cluster.py`, 1,060 lines — no
-  compiler-crash-class issue).
-- **Sibling-`_config` collision (UBI-96/108) and bare-version-suffix
-  collision (UBI-112)**: both wire-name-level facts, language-independent
-  — UBI-115's own Go-side check (0/1,103 candidates) carries over
-  unchanged, reconfirmed directly here (0/1,103 candidates against the
-  real generated local-name list; zero bare `v<N>.py`-style filenames
-  anywhere in the tree).
-- **Zero `ubiquex`-core changes needed this session.**
+**Sibling-`_config` collision (UBI-96/108/re-export-aggregation)**:
+Azure's real 1,103 types were checked directly against this
+restructuring's own new collision class (two resource types in the same
+service whose local names `pascalCase` identically, which this repo's
+new re-export aggregation could silently shadow — the exact class
+`ubx-sdk-google-py` hit for real, `google_migration_center_report` +
+`_config`) — zero real hits for Azure, confirmed by regenerating and
+importing every module clean, not assumed safe by analogy.
 
 Every file under a service directory except `__init__.py` is generated —
 do not hand-edit; re-run `ubx sdk gen` (or wait for the automated PR)
