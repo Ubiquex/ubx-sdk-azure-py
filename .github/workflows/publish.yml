@@ -1,0 +1,123 @@
+name: publish
+
+# Manual-trigger only (UBI-135, scoped down): after a regen PR merges,
+# someone clicks "Run workflow" here to actually publish. The workflow
+# itself still computes the correct version bump automatically -- diffing
+# ubx/ between the last published tag and current main -- so the human
+# step is a confirmation click, not a manual version decision.
+#
+# This repo has never been published to PyPI at all (real 404, checked
+# live before this workflow was written) -- the first dispatch is a
+# genuinely first-ever publish, not a version bump. Sources the target
+# version from the real PyPI registry rather than a git tag or
+# pyproject.toml alone (ubx-sdk-aws-py's own first publish.yml had this
+# gap; fixed there in a follow-up, ported here from the start -- same
+# pattern as ubx-sdk-kubernetes-py's/ubx-sdk-google-py's own publish.yml).
+#
+# Requires a PYPI_TOKEN repo secret (Settings -> Secrets and variables ->
+# Actions), scoped to this repo/package.
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out ubx-sdk-azure-py
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Determine version to publish
+        id: bump
+        run: |
+          set -euo pipefail
+          current="$(python3 -c "import tomllib; print(tomllib.load(open('pyproject.toml','rb'))['project']['version'])")"
+          http_code="$(curl -s -o /tmp/pypi_meta.json -w '%{http_code}' https://pypi.org/pypi/ubx-sdk-azure/json)"
+
+          if [ "$http_code" = "404" ]; then
+            new_version="0.1.0"
+            echo "package never published to PyPI (404) -- first real publish, using 0.1.0"
+          elif [ "$http_code" = "200" ]; then
+            published="$(python3 -c "import json; print(json.load(open('/tmp/pypi_meta.json'))['info']['version'])")"
+            if [ "$current" != "$published" ]; then
+              new_version="$current"
+              echo "pyproject.toml ($current) already ahead of the real published version ($published) -- publishing as-is"
+            else
+              # MINOR if ubx/ gained new files since the last published
+              # tag (a new resource type or new Azure service) -- PATCH
+              # if only existing files changed.
+              latest_tag="$(git tag -l 'v*' --sort=-v:refname | head -1)"
+              added_count=0
+              if [ -n "$latest_tag" ]; then
+                added_count="$(git diff --name-status "$latest_tag" HEAD -- ubx/ | awk '$1=="A"' | wc -l | tr -d ' ')"
+              fi
+              IFS='.' read -r major minor patch <<< "$current"
+              if [ "$added_count" -gt 0 ]; then
+                new_version="${major}.$((minor + 1)).0"
+              else
+                new_version="${major}.${minor}.$((patch + 1))"
+              fi
+              echo "latest_tag=${latest_tag:-<none>}, new files under ubx/ since last tag: $added_count -> $new_version"
+            fi
+          else
+            echo "unexpected HTTP $http_code querying PyPI -- failing loudly rather than guessing" >&2
+            exit 1
+          fi
+          echo "new_version=$new_version" >> "$GITHUB_OUTPUT"
+
+      - name: Bump pyproject.toml version
+        run: |
+          set -euo pipefail
+          python3 -c "
+          import re
+          content = open('pyproject.toml').read()
+          content = re.sub(r'version = \"[^\"]+\"', 'version = \"${{ steps.bump.outputs.new_version }}\"', content, count=1)
+          open('pyproject.toml', 'w').write(content)
+          "
+
+      - name: Commit version bump
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- pyproject.toml; then
+            echo "pyproject.toml already at ${{ steps.bump.outputs.new_version }} -- nothing to commit"
+          else
+            git config user.name "ubx-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add pyproject.toml
+            git commit -m "sdk: bump ubx-sdk-azure to v${{ steps.bump.outputs.new_version }}"
+            git push origin main
+          fi
+
+      - name: Build
+        run: |
+          set -euo pipefail
+          pip install build
+          python3 -m build
+
+      - name: Publish to PyPI
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
+        run: |
+          set -euo pipefail
+          pip install twine
+          twine upload dist/ubx_sdk_azure-${{ steps.bump.outputs.new_version }}*
+
+      - name: Tag the published commit
+        run: |
+          set -euo pipefail
+          git config user.name "ubx-bot"
+          git config user.email "actions@users.noreply.github.com"
+          v="v${{ steps.bump.outputs.new_version }}"
+          git tag -a "$v" -m "$v"
+          git push origin "$v"
